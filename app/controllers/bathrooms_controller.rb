@@ -1,22 +1,39 @@
 class BathroomsController < ApplicationController
 
+  def index
+    @bathrooms = Bathroom.all
+  end
 
-def index
-  @bathrooms = Bathroom.all
+  def show
+    @bathroom = Bathroom.find(params[:id])
+  end
 
-end
+  def new
+    @bathroom = Bathroom.new
+  end
 
-def new
-  @post = Post.new
-end
+  def create
+    @bathroom = Bathroom.new(permitted_params)
+    if @bathroom.save
+      redirect_to @bathroom
+    end
+  end
 
-def create
-  @post = Post.new(post_params)
+  def update
+  end
 
-  if @post.save
-    flash[:notice] = "You're Bathroom listing was sucessfully created!"
-    redirect to @post
-end
+  def edit
+  end
 
+  def destroy
+  end
 
+  def delete
+  end
+
+  private
+  def permitted_params
+    params.require(:bathroom).permit!
+  end
+  
 end

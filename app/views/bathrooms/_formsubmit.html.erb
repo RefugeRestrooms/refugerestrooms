@@ -1,6 +1,6 @@
 <h3> Submit A Bathroom To Our Database </h3>
 
-<%= form_for :bathroom do |f| %>
+<%= form_for :bathroom, url: bathrooms_path do |f| %>
   <p>
     <strong> Location/Place/Business Name:</strong> <%= f.text_field :name %><br>
     <strong> Street Address: </strong> <%= f.text_field :street %><br>
