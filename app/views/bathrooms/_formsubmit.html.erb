@@ -1,0 +1,20 @@
+<h3> Submit A Bathroom To Our Database </h3>
+
+<%= form_for :bathroom do |f| %>
+  <p>
+    <strong> Location/Place/Business Name:</strong> <%= f.text_field :name %><br>
+    <strong> Street Address: </strong> <%= f.text_field :street %><br>
+    <strong> City: </strong> <%= f.text_field :city %><br>
+    <strong> State: </strong> <%= f.select :state, us_states %> <br>
+    <strong> Accessable? </strong> <%= f.check_box :access %> Yes, the restroom is accessable! <br>
+    <strong> Type of Bathroom: </strong> <%= f.check_box :type %> This bathroom is not unisex, but still safe! <br>
+    <strong> Directions: </strong> (ie: third floor in the back, by the dressing rooms...) <br>
+    <%= f.text_area :directions %> <br>
+    <strong> Comments: </strong> (ie: you have to be a "paying customer.", just act like you are browsing for a bit...)<br>
+    <%= f.text_area :comment %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
