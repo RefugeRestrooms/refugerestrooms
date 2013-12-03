@@ -11,4 +11,21 @@
  *= require_self
  *= require_tree .
  */
- 
+
+ .container {
+ 	max-width: 800px;
+ 	margin: 0 auto;
+ }
+
+ .menu {
+ 	width:210px; 
+ 	float:left; 
+ 	padding-top:15px; 
+    padding-right:0px;
+ }
+
+ #containsMap {
+ 	float:left; 
+ 	padding-left: 25px; 
+ 	padding-top: 35px;
+ }
