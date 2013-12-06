@@ -1,1 +1,21 @@
-<% @bathrooms.each do |post|
+<% @bathrooms.each do |b| %>
+  <strong> Location/Place/Business Name:</strong> <%= b.name %><br>
+  <strong> Address: </strong> <%= b.street %>, <%= b.city %>, <%= b.state %> <br>
+  <strong> Accessable? </strong> 
+  <% if b.access == 1 %>
+    Yes, the restroom is accessable!
+  <% else %>
+    Unfortunately this bathroom is not accessable!
+  <% end %> <br>
+  <strong> Type of Bathroom: </strong> 
+  <% if b.type == 0 %>
+    This is a unisex restroom!
+  <% else %>
+    This bathroom is not unisex, but is still a safe place to pee!"
+  <% end %> <br>
+  <strong> Directions: </strong> 
+  <%= b.directions %> <br>
+  <strong> Comments: </strong> <br>
+    <%= b.comment %>
+  <hr>
+<% end %>
