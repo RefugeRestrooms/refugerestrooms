@@ -14,21 +14,40 @@ class BathroomsController < ApplicationController
 
   def create
     @bathroom = Bathroom.new(permitted_params)
+    @bathroom.flag = 0
+    
     if @bathroom.save
       redirect_to @bathroom
+    else
+      render 'new'
     end
   end
 
   def update
+    @bathroom = Bathroom.find(params[:id])
+
+    if @bathroom.update(permitted_params)
+      redirect_to @bathroom
+    else
+      render 'edit'
+    end
+  end
+
+  def flag
+    @bathroom = Bathroom.find(params[:id])
+    @bathroom.flag += 1
+    @bathroom.save
   end
 
   def edit
+    @bathroom = Bathroom.find(params[:id])
   end
 
   def destroy
-  end
-
-  def delete
+    :confirm
+    @bathroom = Bathroom.find(params[:id])
+    @bathroom.destroy
+    redirect_to bathrooms_path
   end
 
   private
