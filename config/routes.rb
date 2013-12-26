@@ -2,12 +2,16 @@ SaferstallsRails::Application.routes.draw do
   resources :bathrooms
 
 
+
   root to: "welcome#index"
+
+  put "bathrooms/:id" => "bathrooms#flag"
 
   get "bathrooms/index" => "bathrooms#index"
   get "bathrooms/submit" => "bathrooms#submit"
 
   get "welcome/index"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

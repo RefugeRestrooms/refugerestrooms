@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128044650) do
+ActiveRecord::Schema.define(version: 20131225221341) do
 
   create_table "bathrooms", force: true do |t|
     t.string   "name"
@@ -19,13 +19,14 @@ ActiveRecord::Schema.define(version: 20131128044650) do
     t.string   "city"
     t.string   "state"
     t.integer  "access"
-    t.integer  "type"
+    t.integer  "bath_type"
     t.text     "directions"
     t.text     "comment"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "flags",      default: 0
   end
 
 end

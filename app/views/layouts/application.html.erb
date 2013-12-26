@@ -13,38 +13,31 @@
 <body>
 
 <main role="main">
+
   
   <div class="container">
+
+    <div class ="header">
+      <center><h1> Safer Stalls </h1>
+      <p> an open source gender neutral bathroom resource for queer, trans, and gender nonconforming folk.</p>
+    </center> </div>
     
-    <div class="menu">
-    <h3> Safer Stalls</h3>
-    an open source gender neutral bathroom resource for queer, trans, and gender nonconforming folk.<br><br>
-    thanks 2 safe2pee data for starting us off. <br><br>
-    <a id="#find_me" href="">Find me!</a><br><br>
-    <a HREF="http://www.github.com/tkwidmer/saferstalls_rails"> github </a>
+    <div class="nav">
+      <%= link_to "submit a bathroom", new_bathroom_path %> ||
+      <%= link_to "list all bathrooms",bathrooms_path %> ||
+      <a HREF="http://www.github.com/tkwidmer/saferstalls_rails"> find us on github </a>
     </div>
 
-    <div id="containsMap" class="content">
-      <div class="row">
-        <div class="span12">
-          <%= yield %>
-        </div>
-      </div>
+    <div class="content" >
+      <%= render 'layouts/flash_messages' %>
+      <%= yield %>
       <footer>
       </footer>
     </div>
-  
   </div> <!-- /container -->
 
 </main>
 
-
-  <div id="content" style="background-color:#FFFFFF;width:800px;float:left; padding-top: 15px">
-  </div>
-
-
-
-</div>
 
 </body>
 </html>

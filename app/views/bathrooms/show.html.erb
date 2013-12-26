@@ -1,4 +1,4 @@
-<p>
+
   <strong> Location/Place/Business Name:</strong> <%= @bathroom.name %><br>
   <strong> Street Address: </strong> <%= @bathroom.street %><br>
   <strong> City: </strong> <%= @bathroom.city %><br>
@@ -10,13 +10,16 @@
     Unfortunately this bathroom is not accessable!
   <% end %> <br>
   <strong> Type of Bathroom: </strong> 
-  <% if @bathroom.type == 0 %>
+  <% if @bathroom.bath_type == 0 %>
     This is a unisex restroom!
   <% else %>
     This bathroom is not unisex, but is still a safe place to pee!"
   <% end %> <br>
   <strong> Directions: </strong> 
   <%= @bathroom.directions %> <br>
-  <strong> Comments: </strong> <br>
+  <strong> Comments: </strong>
     <%= @bathroom.comment %>
-</p>
+<br><br>
+  Flagged? <%= @bathroom.flags %>
+
+<%= button_to "Flag This Post", :method => "flag" %>

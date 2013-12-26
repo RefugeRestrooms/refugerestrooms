@@ -1,4 +1,8 @@
 <h3> Submit A Bathroom To Our Database </h3>
+<p> 
+  At this time we are only indexing bathrooms in the USA. <br>
+  Mostly because i'm a beginner at this programming stuffs and this makes its easier for me atm. 
+</p>
 
 <%= form_for :bathroom, url: bathrooms_path do |f| %>
   <p>
@@ -6,8 +10,8 @@
     <strong> Street Address: </strong> <%= f.text_field :street %><br>
     <strong> City: </strong> <%= f.text_field :city %><br>
     <strong> State: </strong> <%= f.select :state, us_states %> <br>
-    <strong> Accessable? </strong> <%= f.check_box :access %> Yes, the restroom is accessable! <br>
-    <strong> Type of Bathroom: </strong> <%= f.check_box :type %> This bathroom is not unisex, but still safe! <br>
+    <strong> Accessable? </strong> <%= f.select :access, [["Accessable", 1], ["Not accessable", 0]] %> <br>
+    <strong> Type of Bathroom: </strong> <%= f.select :bath_type, [["Unisex / Gender Neutral", 0], ["Gendered Single Stall or Safe Place", 1]] %> <br>
     <strong> Directions: </strong> (ie: third floor in the back, by the dressing rooms...) <br>
     <%= f.text_area :directions %> <br>
     <strong> Comments: </strong> (ie: you have to be a "paying customer.", just act like you are browsing for a bit...)<br>
