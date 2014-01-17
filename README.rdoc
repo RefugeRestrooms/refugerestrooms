@@ -9,4 +9,3 @@ Right now this is a work in progress for me. I'm learning rails, and learning ea
 
 ** TEAM **
 Teagan Widmer
-Jeanine Honer
