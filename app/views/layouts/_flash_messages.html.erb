@@ -2,7 +2,9 @@
   <% if msg.is_a?(String) %>
     <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
       <a class="close" data-dismiss="alert">&#214;</a>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <center><h3>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </h3></center>
     </div>
   <% end %>
 <% end %>

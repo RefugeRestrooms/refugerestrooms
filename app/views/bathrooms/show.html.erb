@@ -21,5 +21,7 @@
     <%= @bathroom.comment %>
 <br><br>
   Flagged? <%= @bathroom.flags %>
+  lat: <%= @bathroom.latitude %>
+  long: <%= @bathroom.longitude %>
 
-<%= button_to "Flag This Post", :method => "flag" %>
+<%= button_to "Flag This Post", flag_bathroom_path, confirm: "Are you sure you want to flag this bathroom?" %>

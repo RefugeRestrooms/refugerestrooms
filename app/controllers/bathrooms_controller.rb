@@ -16,10 +16,10 @@ class BathroomsController < ApplicationController
     @bathroom = Bathroom.new(permitted_params)
     
     if @bathroom.save
-      flash[:notice] = "A new bathroom entry has been created for #{@bathroom.title}."
+      flash[:notice] = "A new bathroom entry has been created for #{@bathroom.name}."
       redirect_to @bathroom
     else
-      flash[:alert] = "There was a problem saving your entery to the database."
+      flash[:alert] = "There was a problem saving your entry to the database."
       render 'new'
     end
   end
@@ -46,6 +46,11 @@ class BathroomsController < ApplicationController
       flash[:alert] = "There was an unexpected problem flagging this post."
       redirect_to @bathroom
     end
+
+    if @bathroom.flags >= 5
+      @bathroom.visable = false
+      @bathroom.save
+    end
   end
 
   def edit
@@ -53,7 +58,6 @@ class BathroomsController < ApplicationController
   end
 
   def destroy
-    :confirm
     @bathroom = Bathroom.find(params[:id])
     if @bathroom.destroy
       flash[:notice] = "This bathroom entry has been deleted."
@@ -62,8 +66,8 @@ class BathroomsController < ApplicationController
       flash[:alert] = "This bathroom entry could not be deleted."
       redirect_to @bathroom
     end
-    
   end
+
 
   private
   def permitted_params

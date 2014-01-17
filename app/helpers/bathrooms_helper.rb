@@ -1,6 +1,5 @@
 module BathroomsHelper
 
-
   def us_states
     [
       ['Alabama', 'AL'],
@@ -57,9 +56,5 @@ module BathroomsHelper
       ['Wyoming', 'WY']
     ]
   end
-
-def type_helper
-      [["Unisex"], ["Single stall locking or safe place"]]
-end
 
 end

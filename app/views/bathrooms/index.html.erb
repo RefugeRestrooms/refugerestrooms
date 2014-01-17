@@ -1,7 +1,12 @@
-<% @bathrooms.each do |b| %>
-  <strong> Location/Place/Business Name:</strong> 
-<%= b.name %><br>
-  <strong> Address: </strong> <%= b.street %>, <%= b.city %>, <%= b.state %> <br>
-  <%= link_to "More information about this bathroom...", bathroom_path(b) %>
-  <hr>
-<% end %>
+<h3> List of all Bathroom Listings </h3>
+
+<ul>
+    <% @bathrooms.reverse.each do |b| %>
+      <% if b.visable == true %>
+        <li> <%= link_to b.name, bathroom_path(b) %> || <%= b.street %>, <%= b.city %>, <%= b.state %> </li>
+        <hr>
+      <% end %>
+    <% end %>
+  
+</ul>
+

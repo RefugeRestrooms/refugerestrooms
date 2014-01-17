@@ -1,5 +1,8 @@
 SaferstallsRails::Application.routes.draw do
-  resources :bathrooms
+  resources :bathrooms do
+    post :flag, :on => :member
+    get :flag, :on => :member
+  end
 
 
 
@@ -11,6 +14,8 @@ SaferstallsRails::Application.routes.draw do
   get "bathrooms/submit" => "bathrooms#submit"
 
   get "welcome/index"
+
+
 
 
 
