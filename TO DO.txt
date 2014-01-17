@@ -1,0 +1,10 @@
+TO DO
+- Geocoding
+  - saves lat / long into the db upon user submission to minimise requests via an API.
+  - searchable by closest to an inputted location.
+
+- Display mapping. 
+
+- Localization / Acessibility 
+
+- Text returning results to those with low tech --

@@ -1,7 +1,10 @@
 SaferstallsRails::Application.routes.draw do
   resources :bathrooms do
-    post :flag, :on => :member
-    get :flag, :on => :member
+    post :upvote, :on => :member
+    get :upvote, :on => :member
+
+    post :downvote, :on => :member
+    get :downvote, :on => :member
   end
 
 

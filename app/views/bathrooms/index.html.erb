@@ -2,10 +2,11 @@
 
 <ul>
     <% @bathrooms.reverse.each do |b| %>
-      <% if b.visable == true %>
-        <li> <%= link_to b.name, bathroom_path(b) %> || <%= b.street %>, <%= b.city %>, <%= b.state %> </li>
+        <li> 
+          <%= b.name %><br>  
+          <%= b.street %>, <%= b.city %>, <%= b.state %> <br>
+          <%= link_to "Comments", bathroom_path(b, :anchor => "disqus_thread") %> </li>
         <hr>
-      <% end %>
     <% end %>
   
 </ul>

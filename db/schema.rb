@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117004118) do
+ActiveRecord::Schema.define(version: 20140117055923) do
 
   create_table "bathrooms", force: true do |t|
     t.string   "name"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20140117004118) do
     t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "flags",      default: 0
-    t.boolean  "visable",    default: true
+    t.integer  "downvote",   default: 0
+    t.integer  "upvote",     default: 0
   end
 
 end

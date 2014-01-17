@@ -36,22 +36,30 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def flag
+  def downvote
     @bathroom = Bathroom.find(params[:id])
-    @bathroom.flags += 1
+    @bathroom.downvote += 1
     if @bathroom.save
-      flash[:notice] = "This bathroom has been flagged as a \"bad entry!\" Thank you for contributing to our community. "
+      flash[:notice] = "This bathroom has been downvoted! Thank you for contributing to our community. "
       redirect_to @bathroom
     else
-      flash[:alert] = "There was an unexpected problem flagging this post."
+      flash[:alert] = "There was an unexpected problem downvoting this post."
       redirect_to @bathroom
     end
+  end
 
-    if @bathroom.flags >= 5
-      @bathroom.visable = false
-      @bathroom.save
+  def upvote
+    @bahtroom = Bathroom.find(params[:id])
+    @bathroom.upvote += 1
+    if @bathroom.save
+      flash[:notice] = "This bathroom has been upvoted! Thank you for contributing to our community. "
+      redirect_to @bathroom
+    else
+      flash[:alert] = "There was an unexpected problem upvoting this post."
+      redirect_to @bahtroom
     end
   end
+
 
   def edit
     @bathroom = Bathroom.find(params[:id])
