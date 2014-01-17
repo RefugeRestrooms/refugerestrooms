@@ -36,7 +36,7 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def downvote
+  def down_vote
     @bathroom = Bathroom.find(params[:id])
     @bathroom.downvote += 1
     if @bathroom.save
@@ -48,8 +48,8 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def upvote
-    @bahtroom = Bathroom.find(params[:id])
+  def up_vote
+    @bathroom = Bathroom.find(params[:id])
     @bathroom.upvote += 1
     if @bathroom.save
       flash[:notice] = "This bathroom has been upvoted! Thank you for contributing to our community. "
