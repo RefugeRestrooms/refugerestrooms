@@ -11,11 +11,7 @@ SaferstallsRails::Application.routes.draw do
 
   root to: "welcome#index"
 
-  put "bathrooms/:id" => "bathrooms#flag"
-
   get "bathrooms/index" => "bathrooms#index"
-  get "bathrooms/submit" => "bathrooms#submit"
-  get '/list', to: 'bathrooms#list'
 
   get "welcome/index"
 
