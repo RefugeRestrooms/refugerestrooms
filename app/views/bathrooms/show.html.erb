@@ -5,9 +5,9 @@
   <strong> State: </strong> <%= @bathroom.state %> <br>
   <strong> Accessable? </strong> 
   <% if @bathroom.access == 1 %>
-    Yes, the restroom is accessable!
+    Yes, the restroom is ADA accessable!
   <% else %>
-    Unfortunately this bathroom is not accessable!
+    Unfortunately this bathroom is not ADA accessable!
   <% end %> <br>
   <strong> Type of Bathroom: </strong> 
   <% if @bathroom.bath_type == 0 %>
