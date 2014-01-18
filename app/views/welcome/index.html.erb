@@ -2,16 +2,32 @@
 
 <div id="mapArea"></div>
 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
 <script type="text/javascript">
+var headerHidden = false;
+
 $(function(){
-	initmap();
+	initMap();
+	
+	$(".hideHeader").click(function(){
+		if(headerHidden){
+			$(".headerContainer").animate({top: 0});
+			$(".hideHeader").html("Hide Header");
+		}else{
+			$(".headerContainer").animate({top: -($(".headerContainer").height() + 20)});
+			$(".hideHeader").html("Show Header");
+		}
+		headerHidden = !headerHidden;
+		
+	});
+	
 
 	$.get( "list", function( data ) {
 	  for(var i = 0; i < data.length; i++){
-		point = data[i];
-		string = point.street + " " + point.city + " " + point.state;
-		setPoint(string);
+		setPoint(data[i]);
 	  }
 	});
+	
 });
 </script>
