@@ -4,6 +4,10 @@ class BathroomsController < ApplicationController
     @bathrooms = Bathroom.all
   end
 
+	def list
+		render json: Bathroom.all
+	end
+  
   def show
     @bathroom = Bathroom.find(params[:id])
   end
@@ -81,5 +85,7 @@ class BathroomsController < ApplicationController
   def permitted_params
     params.require(:bathroom).permit!
   end
+  
+
   
 end

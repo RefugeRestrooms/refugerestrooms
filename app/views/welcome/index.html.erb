@@ -3,5 +3,15 @@
 <div id="mapArea"></div>
 
 <script type="text/javascript">
-initmap();
+$(function(){
+	initmap();
+
+	$.get( "list", function( data ) {
+	  for(var i = 0; i < data.length; i++){
+		point = data[i];
+		string = point.street + " " + point.city + " " + point.state;
+		setPoint(string);
+	  }
+	});
+});
 </script>

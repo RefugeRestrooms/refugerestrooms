@@ -15,6 +15,7 @@ SaferstallsRails::Application.routes.draw do
 
   get "bathrooms/index" => "bathrooms#index"
   get "bathrooms/submit" => "bathrooms#submit"
+  get '/list', to: 'bathrooms#list'
 
   get "welcome/index"
 
