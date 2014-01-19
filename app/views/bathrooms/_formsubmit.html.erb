@@ -9,9 +9,10 @@
     <strong> Location/Place/Business Name:</strong> <%= f.text_field :name %><br>
     <strong> Street Address: </strong> <%= f.text_field :street %><br>
     <strong> City: </strong> <%= f.text_field :city %><br>
-    <strong> Latitude: </strong> <%= f.text_field :latitude %>
-    <strong> Longitude: </strong> <%= f.text_field :longitude %>
-    <strong> State: </strong> <%= f.select :state, us_states %> <br>
+    <strong> State: </strong> <%= f.text_field :state %> <br>
+    <strong> Country: </strong> <%= f.text_field :country %> <br>
+    <strong> Latitude: </strong> <%= f.text_field :latitude %><br>
+    <strong> Longitude: </strong> <%= f.text_field :longitude %><br>
     <strong> Accessable? </strong> <%= f.select :access, [["Accessable", 1], ["Not accessable", 0]] %> <br>
     <strong> Type of Bathroom: </strong> <%= f.select :bath_type, [["Unisex / Gender Neutral", 0], ["Gendered Single Stall or Safe Place", 1]] %> <br>
     <strong> Directions: </strong> (ie: third floor in the back, by the dressing rooms...) <br>

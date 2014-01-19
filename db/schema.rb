@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117055923) do
+ActiveRecord::Schema.define(version: 20140119222501) do
 
   create_table "bathrooms", force: true do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140117055923) do
     t.datetime "updated_at"
     t.integer  "downvote",   default: 0
     t.integer  "upvote",     default: 0
+    t.string   "country"
   end
 
 end

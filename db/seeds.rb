@@ -19,6 +19,7 @@ CSV.foreach('db/export.csv') do |row|
     :directions => row[11],
     :comment => row[12],
     :latitude => row[8],
-    :longitude => row[9]
+    :longitude => row[9],
+    :country => row[6]
     )
 end
