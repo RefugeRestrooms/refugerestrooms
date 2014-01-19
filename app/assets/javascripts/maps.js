@@ -43,8 +43,8 @@ function placeMarker(lat, lng, content){
 }
 
 function generateContent(data){
-console.log(data);
-var string = "<a href='bathrooms/"
+var string = data.name
+	+ "<br/><a href='bathrooms/"
 	+ data.id
 	+"'>"
 	+ data.street
@@ -54,10 +54,10 @@ var string = "<a href='bathrooms/"
 }
 
 function setPoint(data){
-
+	console.log(data);
 	var string = new String(data.street + " " + data.city + " " + data.state);
 	
-	getPoint(string, function(point){
-		placeMarker(point.lat, point.lng, generateContent(data));
-	});
+	if(data.latitude && data.longitude){
+		placeMarker(data.latitude, data.longitude, generateContent(data));
+	}
 }
