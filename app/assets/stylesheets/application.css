@@ -12,11 +12,16 @@
  *= require_tree .
  */
 
+ body {
+  font-family: helvetica;
+  font-size: .8em;
+ }
+
  .container {
   padding-left: 30px; 
   padding-top: 30px;
   padding-right: 30px;
- 	margin: 0 auto;
+  margin: 0 auto;
  }
 
  .header {
@@ -24,9 +29,22 @@
   text-align: center;
  }
 
+   .header h1 {
+   	margin-top: 0;
+   }
+
+   .header p {
+   	color: #444;
+   }
+
  .nav {
   text-align: center;
  }
+
+   .nav a {
+   	color: #444;
+   	text-decoration: none;
+   } 
 
  .content {
   padding-top: 30px;
