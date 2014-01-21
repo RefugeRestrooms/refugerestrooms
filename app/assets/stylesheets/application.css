@@ -15,8 +15,33 @@
  body {
   font-family: helvetica;
   font-size: .8em;
+  background: #75669f;
+ }
+ 
+ .container, main, body, html{
+		height: 100%;
+ }
+ 
+ .container{
+	max-width: 1000px;
+	margin: 0 auto !important;
+	background: #FFF;
+	height: 100%;
+ }
+ 
+ #list{
+	color: #161616;
  }
 
+ .textItem{
+	width: 100%;
+	padding: 20px 0;
+	text-align: center;
+	font-family: Arial;
+	font-size: 20px;
+	background: #FFF;
+ }
+ 
  .container {
   padding-left: 30px; 
   padding-top: 30px;
@@ -25,39 +50,93 @@
  }
 
  .header {
+	position: relative;
   width: 100%;
-  text-align: center;
+  height: 75px;
+  background: #41326b;
  }
-
-   .header h1 {
-   	margin-top: 0;
-   }
-
-   .header p {
-   	color: #444;
-   }
-
- .nav {
-  text-align: center;
+ 
+ .toiletLogo{
+	width:47px;
+	height: 54px;
+	background: url("ToiletLogo.png");
+	position: relative;
+	float: left;
+	margin: 10px 15px;
  }
-
-   .nav a {
-   	color: #444;
-   	text-decoration: none;
-   	transition: .25s;
-   } 
-
-   .nav a:hover {
-   	color: #5EAB99;
-   }
-
- .content {
-  padding-top: 30px;
-  width: 100%;
- 	float: left; 
-
+ 
+ .searchBarContainer{
+	position:absolute;
+	left: 80px;
+	right: 105px;
+	top: 10px;
+	bottom: 10px;
  }
-
- .hideHeader{
+ 
+ .searchBar{
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	border-radius: 3px;
+ }
+ 
+ .searchButtonContainer{
+	position:absolute;
+	width: 86px;
+	right: 15px;
+	top: 10px;
+	bottom: 10px;
+ }
+ 
+ .searchButton{
+	 position: relative;
+	 float: right;
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+	border: none;
+	border-radius: 3px;
+ }
+ 
+ .listItem{
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid #e1e1e1;
+	background: #FFF;
+	cursor: pointer;
+ }
+ 
+ .listItemTemplate{
 	display:none;
+ }
+ 
+ .listItemImage{
+	position: relative;
+	width: 110px;
+	height: 110px;
+	margin: 15px;
+	border-radius: 5px;
+	background: #41326b url("ToiletLogo.png") 50% 50% no-repeat;
+	display:inline-block;
+ }
+ 
+ .itemInfo{
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	left: 140px;
+	right: 50px;
+	overflow:none;
+ }
+ 
+ .itemName{
+	position:relative;
+	font-size: 20px;	
+ }
+ 
+ .itemStreet{
+	position:relative;
+	font-size: 15px;
  }

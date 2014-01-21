@@ -1,4 +1,9 @@
-
+<div class="nav">
+  <%= link_to "home", root_path %> ||
+  <%= link_to "submit a bathroom", new_bathroom_path %> ||
+  <%= link_to "list all bathrooms",bathrooms_path %> ||
+  <a HREF="http://www.github.com/tkwidmer/saferstalls_rails"> find us on github </a>
+</div>
 
 <div id="mapArea"></div>
 
@@ -10,24 +15,15 @@ var headerHidden = false;
 $(function(){
 	initMap();
 	
-	$(".hideHeader").click(function(){
-		if(headerHidden){
-			$(".headerContainer").animate({top: 0});
-			$(".hideHeader").html("Hide Header");
-		}else{
-			$(".headerContainer").animate({top: -($(".headerContainer").height() + 20)});
-			$(".hideHeader").html("Show Header");
-		}
-		headerHidden = !headerHidden;
-		
-	});
 	
-
+	
+	/*
 	$.get( "list", function( data ) {
 	  for(var i = 0; i < data.length; i++){
 		setPoint(data[i]);
 	  }
 	});
+	*/
 	
 });
 </script>

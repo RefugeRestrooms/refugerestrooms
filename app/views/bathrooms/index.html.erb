@@ -1,13 +1,65 @@
-<h3> List of all Bathroom Listings </h3>
+<div id="list">
+		<div id="loading" class="textItem" >Loading...</div>
 
-<ul>
-    <% @bathrooms.reverse.each do |b| %>
-        <li> 
-          <%= b.name %><br>  
-          <%= b.street %>, <%= b.city %>, <%= b.state %> <br>
-          <%= link_to "Comments", bathroom_path(b, :anchor => "disqus_thread") %> </li>
-        <hr>
-    <% end %>
-  
-</ul>
+        <div class="listItem listItemTemplate">
+			<div class="listItemImage">
+				<!-- image tag goes here -->
+			</div>
+			
+			<div class="itemInfo">
+				<div class="itemName"></div>
+				<div class="itemStreet"></div>
+			</div>
+        </div>
+		
+		<div class="loadMore textItem">
+			Load More
+		</div>
+</div>  
 
+<script type="text/javascript">
+var headerHidden = false;
+
+$(function(){
+	var itemArray = new Array();
+	var list = $("#list");
+	var template = $(".listItemTemplate").clone();
+	var loading = $("#loading").clone();
+	var loadMore = $(".loadMore").clone();
+	var itemsPerLoad = 20;
+	var loadedLocation = 0;
+	
+	template.removeClass("listItemTemplate");
+	
+	$(".listItemTemplate").remove();
+	$(".loadMore").remove();
+	
+	$(document).on("click", ".loadMore", loadData);
+	$(document).on("click", ".listItem", function(){
+		window.location = "http://" + window.location.host + "/bathrooms/" + $(this).attr("data-id");
+	});
+	
+	$.get( "list", function( data ) {
+		itemArray = data;
+		loadData();
+	});
+	
+	function loadData(){
+		$("#loading").remove();
+		$(".loadMore").remove();
+		for(var i = 0; (loadedLocation < itemArray.length && i < itemsPerLoad); i++, loadedLocation++){
+			var item = itemArray[loadedLocation];
+			var container = template.clone();
+			
+			container.find(".itemName").html(item.name);
+			container.find(".itemStreet").html(item.street + ", " + item.city + ", " + item.state);
+			container.attr("data-id", item.id);
+			
+			list.append(container);
+		}
+		list.append(loadMore.clone());
+		
+	}
+	
+});
+</script>
