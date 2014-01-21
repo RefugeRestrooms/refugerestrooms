@@ -1,11 +1,25 @@
 class BathroomsController < ApplicationController
 
   def index
-    @bathrooms = Bathroom.all
+    if params[:search].present?
+      @bathrooms = Bathroom.near(params(:search), 20, :order => :distance)
+      render json: @bathrooms
+    else
+      @bathrooms = Bathroom.all.reverse
+      render json: @bathrooms
+    end
+
+   
   end
 
 	def list
-		render json: Bathroom.all
+    if params[:search].present?
+      @bathrooms = Bathroom.near(params(:search), 20, :order => :distance)
+      render json: @bathrooms
+    else
+      @bathrooms = Bathroom.all.reverse
+      render json: @bathrooms
+    end
 	end
   
   def show
