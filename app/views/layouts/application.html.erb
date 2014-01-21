@@ -45,6 +45,12 @@ var disqus_shortname = 'refugerestrooms'; // required: replace example with your
     s.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
+
+$(function(){
+	$("#logo").click(function(){
+		window.location = "http://" + window.location.host;
+	});
+});
 </script>
     
 

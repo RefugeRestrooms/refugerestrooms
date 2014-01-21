@@ -9,6 +9,13 @@
 			<div class="itemInfo">
 				<div class="itemName"></div>
 				<div class="itemStreet"></div>
+				<div class="itemRating">80% Positive</div>
+			</div>
+			
+			<div class="itemExtraInfo">
+				<div class="itemDistance">N/A</div>
+				<div class="unisexBathroom"></div>
+				<div class="ADABathroom"></div>
 			</div>
         </div>
 		
@@ -36,9 +43,11 @@ $(function(){
 	
 	$(document).on("click", ".loadMore", loadData);
 	$(document).on("click", ".listItem", function(){
+		// go to items show page
 		window.location = "http://" + window.location.host + "/bathrooms/" + $(this).attr("data-id");
 	});
 	
+	//get list of locations from server
 	$.get( "list", function( data ) {
 		itemArray = data;
 		loadData();
@@ -49,11 +58,34 @@ $(function(){
 		$(".loadMore").remove();
 		for(var i = 0; (loadedLocation < itemArray.length && i < itemsPerLoad); i++, loadedLocation++){
 			var item = itemArray[loadedLocation];
+			console.log(item);
 			var container = template.clone();
 			
 			container.find(".itemName").html(item.name);
 			container.find(".itemStreet").html(item.street + ", " + item.city + ", " + item.state);
 			container.attr("data-id", item.id);
+			
+			var percentString;
+			if(item.upvote || item.downvote){
+				var percent = item.upvote / (item.upvote + item.downvote);
+				percentString = percent + "% Positive";
+				if(pecent > 0.75){
+					container.find(".itemRating").addClass("greenRating");
+				}else if(percent > 0.5){
+					container.find(".itemRating").addClass("yellowRating");
+				}else{
+					container.find(".itemRating").addClass("redRating");
+				}
+			}else{
+				percentString = "Not Yet Rated";
+			}
+			container.find(".itemRating").html(percentString);
+			
+			if(item.bath_type == 1)
+				container.find(".unisexBathroom").remove();
+			if(item.access == 0)
+				container.find(".ADABathroom").remove();
+			
 			
 			list.append(container);
 		}

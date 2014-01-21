@@ -40,6 +40,7 @@
 	font-family: Arial;
 	font-size: 20px;
 	background: #FFF;
+	display: block;
  }
  
  .container {
@@ -63,6 +64,7 @@
 	position: relative;
 	float: left;
 	margin: 10px 15px;
+	cursor:pointer;
  }
  
  .searchBarContainer{
@@ -122,21 +124,89 @@
 	display:inline-block;
  }
  
+ .listItemImage img{
+	width: 100%;
+	height: 100%;
+ }
+ 
  .itemInfo{
 	position: absolute;
 	top: 10px;
 	bottom: 10px;
 	left: 140px;
-	right: 50px;
+	right: 65px;
 	overflow:none;
  }
  
  .itemName{
 	position:relative;
 	font-size: 20px;	
+	width: 100%;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
  }
  
  .itemStreet{
 	position:relative;
+	width: 100%;
 	font-size: 15px;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+ }
+ 
+ .itemRating{
+	position:absolute;
+	width: 150px;
+	background: #41326b;
+	border-radius: 5px;
+	bottom: 10px;
+	left: 0;
+	color: #FFF;
+	text-align: center;
+	vertical-align: middle;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 11px 0;
+	max-width: 100%;
+ }
+ 
+ .greenRating{
+	background: #69b94a;
+ }
+ 
+ .yellowRating{
+	background: #f5a939;
+ }
+ 
+ .redRating{
+	background: #d6564b;
+ }
+ 
+ .itemExtraInfo{
+	position: absolute;
+	top: 20px;
+	right: 15px;
+ }
+ 
+ .itemDistance{
+	position:relative;
+	color: #676767;
+	text-align: right;
+	font-size: 15px;
+	font-family: Arial;
+	padding: 5px;
+ }
+ 
+ .unisexBathroom{
+	width: 45px;
+	height: 43px;
+	background: url("UnisexBathroom.png");
+ }
+ 
+  .ADABathroom{
+	width: 44px;
+	height: 47px;
+	background: url("ADABathroom.png");
  }
