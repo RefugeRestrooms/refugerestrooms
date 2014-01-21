@@ -44,7 +44,12 @@
    .nav a {
    	color: #444;
    	text-decoration: none;
+   	transition: .25s;
    } 
+
+   .nav a:hover {
+   	color: #5EAB99;
+   }
 
  .content {
   padding-top: 30px;
