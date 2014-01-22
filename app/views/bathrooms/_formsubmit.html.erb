@@ -1,8 +1,4 @@
 <h3> Submit A Bathroom To Our Database </h3>
-<p> 
-  At this time we are only indexing bathrooms in the USA. <br>
-  Mostly because i'm a beginner at this programming stuffs and this makes its easier for me atm. 
-</p>
 
 <%= form_for :bathroom, url: bathrooms_path do |f| %>
   <p>
@@ -25,28 +21,3 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-<script>
-$(function(){
-
-	function updateLatLng(){
-		if($("#bathroom_street").val() != "" && $("#bathroom_city").val() != "" && $("#bathroom_country").val() != ""){
-			var string = $("#bathroom_street").val()
-				+ " "
-				+ $("#bathroom_city").val()
-				+ " " 
-				+ $("#bathroom_state").val();
-				+ " " 
-				+ $("#bathroom_country").val();
-			getPoint(string, function(point){
-				$("#bathroom_latitude").val(point.lat);
-				$("#bathroom_longitude").val(point.lng);
-			});
-		}
-	}
-	$("#bathroom_state").blur(updateLatLng);
-	$("#bathroom_street").blur(updateLatLng);
-	$("#bathroom_city").blur(updateLatLng);
-	$("#bathroom_country").blur(updateLatLng);
-});
-</script>
