@@ -16,6 +16,7 @@
   font-family: helvetica;
   font-size: .8em;
   background: #75669f;
+  color: #161616;
  }
  
  .container, main, body, html{
@@ -27,10 +28,6 @@
 	margin: 0 auto !important;
 	background: #FFF;
 	height: 100%;
- }
- 
- #list{
-	color: #161616;
  }
 
  .textItem{

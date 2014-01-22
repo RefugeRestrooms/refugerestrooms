@@ -3,7 +3,7 @@
 	<div class="toiletLogo" id="logo"></div>
   <%= form_tag bathrooms_path, :method => :get do %>
 	<div class="searchBarContainer">
-    <%= text_field_tag :search, params[:search], :class => "searchBarContainer" %>
+    <%= text_field_tag :search, params[:search], :class => "searchBar" %>
 	</div>
 	<div class="searchButtonContainer">
     <%= submit_tag "Search", :name => nil, :class=> "searchButton" %>

@@ -1,6 +1,36 @@
+<div id="filters">
+
+</div>
+
 <div id="list">
 		<div id="loading" class="textItem" >Loading...</div>
+		
+		<% @bathrooms.each_with_index do |b, i| %>
+			<div class="listItem" data-id="<%= b.id %>">
+				<div class="listItemImage">
+					<!-- image tag goes here -->
+				</div>
+				
+				<div class="itemInfo">
+					<div class="itemName"><%= b.name %></div>
+					<div class="itemStreet"><%= b.street %>, <%= b.city %>, <%= b.state %></div>
+					<div class="itemRating">80% Positive</div>
+				</div>
+				
+				<div class="itemExtraInfo">
+					<div class="itemDistance">N/A</div>
+					<% if b.bath_type == 0 %>
+						<div class="unisexBathroom"></div>
+					<% end %>
+					<% if b.access == 1 %>
+						<div class="ADABathroom"></div>
+					<% end %>
+				</div>
+			</div>
+			<% break if i >= 20 %>
+        <% end %>
 
+		
         <div class="listItem listItemTemplate">
 			<div class="listItemImage">
 				<!-- image tag goes here -->
@@ -50,7 +80,7 @@ $(function(){
 	//get list of locations from server
 	$.get( "list", function( data ) {
 		itemArray = data;
-		loadData();
+		//loadData();
 	});
 	
 	function loadData(){
