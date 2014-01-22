@@ -4,7 +4,7 @@ class Bathroom < ActiveRecord::Base
   after_validation :geocode
 
   def full_address
-    "#{street}, #{city}, #{state}"
+    "#{street}, #{city}, #{state}, #{country}"
   end
-  
+
 end
