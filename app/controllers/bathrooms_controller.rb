@@ -2,7 +2,7 @@ class BathroomsController < ApplicationController
 
   def index
     if params[:search].present?
-      @bathrooms = Bathroom.near(params[:search], 20, :order => 'distance')
+      @bathrooms = Bathroom.all.near(params[:search], 20, :order => 'distance')
     else
       @bathrooms = Bathroom.all.reverse
     end

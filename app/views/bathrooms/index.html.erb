@@ -18,7 +18,12 @@
 				</div>
 				
 				<div class="itemExtraInfo">
-					<div class="itemDistance">N/A</div>
+					<div class="itemDistance"> 
+						<% if b.respond_to?(:distance) %>
+							<%= b.distance.round(2) %> miles
+						<% end %>
+
+					</div>
 					<% if b.bath_type == 0 %>
 						<div class="unisexBathroom"></div>
 					<% end %>
