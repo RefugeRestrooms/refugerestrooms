@@ -22,12 +22,17 @@ $secondary-background: white
 $green: #69b94a
 $yellow: #f5a939
 $red: #d6564b
+$rounded-corners: 5px
 
 body
   font-family: $font-stack
   font-size: .8em
   background: $purple
   color: $base-color
+
+h1
+  padding: 5px
+  text-align: center
 
 .container, main, body, html
   height: 100%
@@ -55,8 +60,6 @@ body
 
 .header
   position: relative
-  width: 100%
-  height: 100px
   background: $purple
 
 .header .nav
@@ -71,6 +74,11 @@ body
   margin: 10px 15px
   cursor: pointer
 
+.search, .nav
+  overflow: auto
+  width: 100%
+  margin: 0 auto
+
 .searchBarContainer
   position: absolute
   left: 80px
@@ -79,46 +87,29 @@ body
   bottom: 10px
 
 .searchBar
-  width: 100%
+  width: 80%
   height: 50%
   padding: 0
   margin: 0
   border: none
-  border-radius: 3px
-
-.searchButtonContainer
-  position: absolute
-  width: 86px
-  right: 12px
-  top: 10px
-  bottom: 10px
-
-.searchButton
-  position: relative
-  float: right
-  width: 100%
-  height: 100%
-  background: #FFF
-  border: none
-  border-radius: 3px
+  border-radius: $rounded-corners
 
 .linkbutton
+  border: none
   position: relative
   float: left
-  margin-top: 60px
-  margin-left: 5px
-  background-color: $secondary-background
-  border-radius: 5px
+  border-radius: $rounded-corners
+  background: #FFF
   padding: 10px
+  margin: 5px
+
+.searchButton
+  float: none
 
 .filter
   position: relative
   float: left
-  margin-top: 60px
-  margin-left: 5px
-  background-color: $secondary-background
-  border-radius: 5px
-  padding: 10px
+  border-radius: $rounded-corners
 
 .adafilterlabelimage
   line-height: 0px
@@ -173,7 +164,7 @@ form label
   width: 110px
   height: 110px
   margin: 15px
-  border-radius: 5px
+  border-radius: $rounded-corners
   background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat
   display: inline-block
 
@@ -209,7 +200,7 @@ form label
   position: absolute
   width: 150px
   background: #41326b
-  border-radius: 5px
+  border-radius: $rounded-corners
   bottom: 10px
   left: 0
   color: #FFF
