@@ -1,13 +1,9 @@
 var map;
 
 function initMap(x, y){
-	
-
   var mapOptions = {
-    zoom: 11,
+    zoom: 13,
     center: new google.maps.LatLng(x, y)
-
-    
   };
 
   map = new google.maps.Map(document.getElementById('mapArea'),
@@ -16,8 +12,8 @@ function initMap(x, y){
 
 
 function getPoint(string, callback){
-	
-		
+
+
 		//google Geocoding API
 		var url = "http://maps.googleapis.com/maps/api/geocode/json?address=" + string.replace(" ", "+") + "&sensor=false";
 		$.get( url, function( data ) {
@@ -35,7 +31,7 @@ function placeMarker(lat, lng, content){
 	  });
 
 	marker.setMap(map);
-	
+
 	var infowindow = new google.maps.InfoWindow({
 	  content:content
 	  });
@@ -52,14 +48,14 @@ var string = data.name
 	+"'>"
 	+ data.street
 	+ "</a>";
-	
+
 	return string;
 }
 
 function setPoint(data){
 	console.log(data);
 	var string = new String(data.street + " " + data.city + " " + data.state);
-	
+
 	if(data.latitude && data.longitude){
 		placeMarker(data.latitude, data.longitude, generateContent(data));
 	}

@@ -1,40 +1,28 @@
 <div id="filters">
 
 </div>
-<% if params[:search].present? %>
-	<% latlong = Geocoder.coordinates(params[:search]) %>
-<% else %>
-	<% latlong = Geocoder.coordinates("San Francisco, CA") %>
-<% end %>
 
 <% if params[:map] == "1" %>
-<div id ="map">
-	<div id="mapArea"></div>
+	<div id ="map">
+		<div id="mapArea"></div>
 
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script type="text/javascript">
+			var headerHidden = false;
 
-	<script type="text/javascript">
-	var headerHidden = false;
+			$(function(){
 
-	$(function(){
+				initMap(<%= params[:lat] %>, <%= params[:long] %>);
 
-		initMap(<%= latlong[0] %>, <%= latlong[1] %>);
+				$.get( "<%= list_bathrooms_path %>" + window.location.search , function( data ) {
+				  for(var i = 0; i < data.length; i++){
+					setPoint(data[i]);
+				  }
+				});
 
-
-		console.log( window.location.search )
-
-		$.get( "list" + window.location.search , function( data ) {
-		  for(var i = 0; i < data.length; i++){
-			setPoint(data[i]);
-		  }
-		});
-
-	});
-	</script>
-
-
-
-</div>
+			});
+		</script>
+	</div>
 <% else %>
 <div id="list">
 		<% @bathrooms.each_with_index do |b, i| %>

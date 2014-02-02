@@ -1,22 +1,18 @@
 SaferstallsRails::Application.routes.draw do
   resources :bathrooms do
-    post :up_vote, :on => :member
-    get :up_vote, :on => :member
+    member do
+      get :up_vote
+      get :down_vote
+    end
 
-    post :down_vote, :on => :member
-    get :down_vote, :on => :member
+    collection do
+      get :list
+    end
   end
-
-
-
-  root to: "welcome#index"
-
-  get "bathrooms/index" => "bathrooms#index"
 
   get '/about', to: 'welcome#about'
 
-  get '/list', to: 'bathrooms#list'
-
+  root to: "welcome#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -59,7 +55,7 @@ SaferstallsRails::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
