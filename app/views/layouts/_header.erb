@@ -11,30 +11,41 @@
     <%= submit_tag "Search", :name => nil, :class=> "searchButton" %>
 	</div>
 
-<div class="adaFilter filter">
-  <%= check_box_tag :adafilter, 1, params[:adafilter] == '1', :onchange => 'this.form.submit()', :class => 'adacheck' %> 
-  <label for="adafilter" class="adaFilterlabel">
-    <img src="<%= asset_path("ADABathroom.png") %>" class='adafilterlabelimage' />
-    <span class="adafilterlabeltext"><%= params[:adafilter] == '1' ? "ON" : "OFF" %> </span>
-  </label>
-</div>
 
-<div class="unisexFilter filter">
-  <%= check_box_tag :unisexfilter, 0, params[:unisexfilter] == '0', :onchange => 'this.form.submit()', :class => 'unisexcheck' %>
-  <label for="unisexfilter" class="unisexFilterlabel">
-    <img src="<%= asset_path("UnisexBathroom.png") %>" class='unisexfilterlabelimage' />
-    <span class="unisexfilterlabeltext"><%= params[:unisexfilter] == '0' ? "ON" : "OFF" %> 
-  </label>
-</div>
+  <div class="homebuttoncontainer linkbutton">
+    <%= link_to "Home", root_path,:class => 'homebutton' %>
+  </div>
 
-<div class="mapToggle filter">
-  <%= check_box_tag :map, 1, params[:map] == '1', :onchange => 'this.form.submit()', :class => 'mapcheck' %> 
-  <label for="map" class="mapTogglelabel">
-    <%= params[:map] == '1' ? "List" : "Map" %> View
-  </label>
-</div>
 
-  <% end %>
+  <div class="aboutbuttoncontainer linkbutton">
+    <%= link_to "About", about_path, :class => 'aboutbutton' %>
+  </div>
+
+
+  <div class="adaFilter filter">
+    <%= check_box_tag :adafilter, 1, params[:adafilter] == '1', :onchange => 'this.form.submit()', :class => 'adacheck' %> 
+    <label for="adafilter" class="adaFilterlabel">
+      <img src="<%= asset_path("ADABathroom.png") %>" class='adafilterlabelimage' />
+      <span class="adafilterlabeltext"><%= params[:adafilter] == '1' ? "ON" : "OFF" %> </span>
+    </label>
+  </div>
+
+  <div class="unisexFilter filter">
+    <%= check_box_tag :unisexfilter, 0, params[:unisexfilter] == '0', :onchange => 'this.form.submit()', :class => 'unisexcheck' %>
+    <label for="unisexfilter" class="unisexFilterlabel">
+      <img src="<%= asset_path("UnisexBathroom.png") %>" class='unisexfilterlabelimage' />
+      <span class="unisexfilterlabeltext"><%= params[:unisexfilter] == '0' ? "ON" : "OFF" %> 
+    </label>
+  </div>
+
+  <div class="mapToggle filter">
+    <%= check_box_tag :map, 1, params[:map] == '1', :onchange => 'this.form.submit()', :class => 'mapcheck' %> 
+    <label for="map" class="mapTogglelabel">
+      <%= params[:map] == '1' ? "List" : "Map" %> View
+    </label>
+  </div>
+
+    <% end %>
 
 </div>
 

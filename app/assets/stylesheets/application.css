@@ -99,6 +99,17 @@
 	border-radius: 3px;
  }
 
+ .linkbutton{
+ 	position: relative;
+ 	float: left;
+ 	margin-top: 60px;
+ 	margin-left: 5px;
+ 	background-color: #FFFFFF;
+ 	border-radius: 5px;
+ 	padding: 10px;
+ }
+
+
  .filter{
  	position: relative;
  	float:left;

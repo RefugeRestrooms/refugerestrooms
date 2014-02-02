@@ -13,7 +13,7 @@ SaferstallsRails::Application.routes.draw do
 
   get "bathrooms/index" => "bathrooms#index"
 
-  get "welcome/index"
+  get '/about', to: 'welcome#about'
 
   get '/list', to: 'bathrooms#list'
 
