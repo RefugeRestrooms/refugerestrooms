@@ -19,16 +19,16 @@
 	$(function(){
 
 		initMap(<%= latlong[0] %>, <%= latlong[1] %>);
-		
-		
+
+
 		console.log( window.location.search )
-		
+
 		$.get( "list" + window.location.search , function( data ) {
 		  for(var i = 0; i < data.length; i++){
 			setPoint(data[i]);
 		  }
 		});
-		
+
 	});
 	</script>
 
@@ -36,21 +36,21 @@
 
 </div>
 <% else %>
-<div id="list">		
+<div id="list">
 		<% @bathrooms.each_with_index do |b, i| %>
 			<div class="listItem" data-id="<%= b.id %>">
 				<div class="listItemImage">
 					<!-- image tag goes here -->
 				</div>
-				
+
 				<div class="itemInfo">
-					<div class="itemName"><%= b.name %></div>
+					<div class="itemName"><%= link_to b.name, b %></div>
 					<div class="itemStreet"><%= b.street %>, <%= b.city %>, <%= b.state %></div>
 					<div class="itemRating">80% Positive</div>
 				</div>
-				
+
 				<div class="itemExtraInfo">
-					<div class="itemDistance"> 
+					<div class="itemDistance">
 						<% if b.respond_to?(:distance) %>
 							<%= b.distance.round(2) %> miles
 						<% end %>
@@ -67,29 +67,29 @@
 			<% break if i >= 20 %>
         <% end %>
 
-		
+
         <div class="listItem listItemTemplate">
 			<div class="listItemImage">
 				<!-- image tag goes here -->
 			</div>
-			
+
 			<div class="itemInfo">
 				<div class="itemName"></div>
 				<div class="itemStreet"></div>
 				<div class="itemRating">80% Positive</div>
 			</div>
-			
+
 			<div class="itemExtraInfo">
 				<div class="itemDistance">N/A</div>
 				<div class="unisexBathroom"></div>
 				<div class="ADABathroom"></div>
 			</div>
         </div>
-		
+
 		<div class="loadMore textItem">
 			Load More
 		</div>
-</div> 
+</div>
 
-<% end %> 
+<% end %>
 
