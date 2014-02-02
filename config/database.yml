@@ -4,7 +4,6 @@ development:
   database: bathrooms_development
   pool: 5
 
-
 test:
   adapter: postgresql
   encoding: unicode
