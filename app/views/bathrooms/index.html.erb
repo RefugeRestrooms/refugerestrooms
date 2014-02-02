@@ -1,7 +1,37 @@
 <div id="filters">
 
 </div>
+<% latlong = Geocoder.coordinates(params[:search]) %>
 
+<% if params[:map] == "1" %>
+<div id ="map">
+	<div id="mapArea"></div>
+
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+	<script type="text/javascript">
+	var headerHidden = false;
+
+	$(function(){
+
+		initMap(<%= latlong[0] %>, <%= latlong[1] %>);
+		
+		
+		console.log( window.location.search )
+		
+		$.get( "list" + window.location.search , function( data ) {
+		  for(var i = 0; i < data.length; i++){
+			setPoint(data[i]);
+		  }
+		});
+		
+	});
+	</script>
+
+
+
+</div>
+<% else %>
 <div id="list">
 		<div id="loading" class="textItem" >Loading...</div>
 		
@@ -57,76 +87,7 @@
 		<div class="loadMore textItem">
 			Load More
 		</div>
-</div>  
+</div> 
 
-<script type="text/javascript">
-var headerHidden = false;
+<% end %> 
 
-$(function(){
-	var itemArray = new Array();
-	var list = $("#list");
-	var template = $(".listItemTemplate").clone();
-	var loading = $("#loading").clone();
-	var loadMore = $(".loadMore").clone();
-	var itemsPerLoad = 20;
-	var loadedLocation = 0;
-	
-	template.removeClass("listItemTemplate");
-	
-	$(".listItemTemplate").remove();
-	$(".loadMore").remove();
-	
-	$(document).on("click", ".loadMore", loadData);
-	$(document).on("click", ".listItem", function(){
-		// go to items show page
-		window.location = "http://" + window.location.host + "/bathrooms/" + $(this).attr("data-id");
-	});
-	
-	//get list of locations from server
-	$.get( "list", function( data ) {
-		itemArray = data;
-		//loadData();
-	});
-	
-	function loadData(){
-		$("#loading").remove();
-		$(".loadMore").remove();
-		for(var i = 0; (loadedLocation < itemArray.length && i < itemsPerLoad); i++, loadedLocation++){
-			var item = itemArray[loadedLocation];
-			console.log(item);
-			var container = template.clone();
-			
-			container.find(".itemName").html(item.name);
-			container.find(".itemStreet").html(item.street + ", " + item.city + ", " + item.state);
-			container.attr("data-id", item.id);
-			
-			var percentString;
-			if(item.upvote || item.downvote){
-				var percent = item.upvote / (item.upvote + item.downvote);
-				percentString = percent + "% Positive";
-				if(pecent > 0.75){
-					container.find(".itemRating").addClass("greenRating");
-				}else if(percent > 0.5){
-					container.find(".itemRating").addClass("yellowRating");
-				}else{
-					container.find(".itemRating").addClass("redRating");
-				}
-			}else{
-				percentString = "Not Yet Rated";
-			}
-			container.find(".itemRating").html(percentString);
-			
-			if(item.bath_type == 1)
-				container.find(".unisexBathroom").remove();
-			if(item.access == 0)
-				container.find(".ADABathroom").remove();
-			
-			
-			list.append(container);
-		}
-		list.append(loadMore.clone());
-		
-	}
-	
-});
-</script>

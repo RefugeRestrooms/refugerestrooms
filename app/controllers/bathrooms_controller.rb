@@ -1,15 +1,29 @@
 class BathroomsController < ApplicationController
 
   def index
+
+    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
+
     if params[:search].present?
-      @bathrooms = Bathroom.all.near(params[:search], 20, :order => 'distance')
+      @bathrooms = @bathrooms.near(params[:search], 50, :order => 'distance')
     else
-      @bathrooms = Bathroom.all.reverse
+      @bathrooms = @bathrooms.find(:all, :limit => 50)
     end
+
+
   end
 
 	def list
-		render json: Bathroom.all
+
+    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
+
+    if params[:search].present?
+      @bathrooms = @bathrooms.near(params[:search], 50, :order => 'distance')
+    else
+      @bathrooms = @bathrooms.find(:all, :limit => 50)
+    end
+
+		render json: @bathrooms
 	end
   
   def show

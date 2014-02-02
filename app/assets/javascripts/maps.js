@@ -1,12 +1,15 @@
 var map;
 
-function initMap(){
+function initMap(x, y){
 	
 
   var mapOptions = {
     zoom: 11,
-    center: new google.maps.LatLng(37.8, -122.4)
+    center: new google.maps.LatLng(x, y)
+
+    
   };
+
   map = new google.maps.Map(document.getElementById('mapArea'),
       mapOptions);
 }

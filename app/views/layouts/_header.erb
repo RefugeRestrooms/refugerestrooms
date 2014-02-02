@@ -8,6 +8,9 @@
 	<div class="searchButtonContainer">
     <%= submit_tag "Search", :name => nil, :class=> "searchButton" %>
 	</div>
+    <%= check_box_tag :adafilter, 1, params[:adafilter] == "1", :onchange => 'this.form.submit()' %> ADA Filter
+    <%= check_box_tag :unisexfilter, 0, params[:unisexfilter] == "0", :onchange => 'this.form.submit()' %> UNISEX filter
+    <%= check_box_tag :map, 1, params[:map] == "1", :onchange => 'this.form.submit()' %> Map View
   <% end %>
 </div>
 
