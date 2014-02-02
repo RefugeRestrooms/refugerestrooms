@@ -7,7 +7,8 @@ class BathroomsController < ApplicationController
     if params[:search].present?
       @bathrooms = @bathrooms.near(params[:search], 20, :order => 'distance')
     else
-      @bathrooms = @bathrooms.limit(20)
+      @bathrooms.reverse!
+      @bathrooms.limit(20)
     end
 
 
@@ -18,7 +19,7 @@ class BathroomsController < ApplicationController
     @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
 
     if params[:search].present?
-      @bathrooms = @bathrooms.near(params[:search]).limit(20)
+      @bathrooms = @bathrooms.near(params[:search], 20)
     else
       @bathrooms = @bathrooms.limit(20)
     end

@@ -1,3 +1,4 @@
 Geocoder.configure(
-  :lookup => :freegeoip
+  :timeout => 2,
+  :cashe => Redis.new
   )

@@ -2,11 +2,13 @@
 
 
 <div class="header">
+
 	<div class="toiletLogo" id="logo"></div>
   <%= form_tag bathrooms_path, :method => :get do %>
 	<div class="searchBarContainer">
     <%= text_field_tag :search, params[:search], :class => "searchBar" %>
 	</div>
+
 	<div class="searchButtonContainer">
     <%= submit_tag "Search", :name => nil, :class=> "searchButton" %>
 	</div>
@@ -48,19 +50,3 @@
     <% end %>
 
 </div>
-
-<!--
-<div class ="header">
-  <center><h1> REFUGE </h1>
-  <p> Providing access to safe restrooms for trans, intesex, and gender nonconforming folk.</p>
-</center> </div>
-
-<div class="nav">
-  <%= link_to "home", root_path %> ||
-  <%= link_to "submit a bathroom", new_bathroom_path %> ||
-  <%= link_to "list all bathrooms",bathrooms_path %> ||
-  <a HREF="http://www.github.com/tkwidmer/saferstalls_rails"> find us on github </a>
-</div>
-
-<div class="hideHeader">Hide Header</div>
--->
