@@ -57,224 +57,6 @@ body {
   width: 100%;
   height: 100px;
   background: #41326b;
-<<<<<<< HEAD
- }
- 
- .toiletLogo{
-	width:47px;
-	height: 54px;
-	background: url("ToiletLogo.png");
-	position: relative;
-	float: left;
-	margin: 10px 15px;
-	cursor:pointer;
- }
- 
- .searchBarContainer{
-	position:absolute;
-	left: 80px;
-	right: 105px;
-	top: 10px;
-	bottom: 10px;
- }
- 
- .searchBar{
-	width: 100%;
-	height: 50%;
-	padding: 0;
-	margin: 0;
-	border: none;
-	border-radius: 3px;
- }
- 
- .searchButtonContainer{
-	position:absolute;
-	width: 86px;
-	right: 12px;
-	top: 10px;
-	bottom: 10px;
- }
- 
- .searchButton{
-	position: relative;
-	float: right;
-	width: 100%;
-	height: 100%;
-	background: #FFF;
-	border: none;
-	border-radius: 3px;
- }
-
- .linkbutton{
- 	position: relative;
- 	float: left;
- 	margin-top: 60px;
- 	margin-left: 5px;
- 	background-color: #FFFFFF;
- 	border-radius: 5px;
- 	padding: 10px;
- }
-
-
- .filter{
- 	position: relative;
- 	float:left;
- 	margin-top: 60px;
- 	margin-left: 5px;
- 	background-color: #FFFFFF;
- 	border-radius: 5px;
- 	padding: 10px;
- }
-
- .adafilterlabelimage{
-	line-height: 0px;
-	height: 20px;
-	width: 20px;
-	float: left;
-	position: absolute;
-	top: 7px;
- }
-
- .adafilterlabeltext{
- 	margin-left: 25px;
- }
-
-.unisexfilterlabelimage{
-	line-height: 0px;
-	height: 20px;
-	width: 20px;
-	float: left;
-	position: absolute;
-	top: 7px;
-}
-
- .unisexfilterlabeltext{
- 	margin-left: 25px;
- }
-
- .adacheck{
- 	display: none;
- }
-
-
- .unisexcheck{
- 	display: none;
- }
-
- .mapcheck{
- 	display: none;
-
- }
- 
- .listItem{
-	position: relative;
-	width: 100%;
-	border-bottom: 1px solid #e1e1e1;
-	background: #FFF;
-	cursor: pointer;
- }
- 
- .listItemTemplate{
-	display:none;
- }
- 
- .listItemImage{
-	position: relative;
-	width: 110px;
-	height: 110px;
-	margin: 15px;
-	border-radius: 5px;
-	background: #41326b url("ToiletLogo.png") 50% 50% no-repeat;
-	display:inline-block;
- }
- 
- .listItemImage img{
-	width: 100%;
-	height: 100%;
- }
- 
- .itemInfo{
-	position: absolute;
-	top: 10px;
-	bottom: 10px;
-	left: 140px;
-	right: 65px;
-	overflow:none;
- }
- 
- .itemName{
-	position:relative;
-	font-size: 20px;	
-	width: 100%;
-	white-space: nowrap;
-	text-overflow:ellipsis;
-	overflow:hidden;
- }
- 
- .itemStreet{
-	position:relative;
-	width: 100%;
-	font-size: 15px;
-	white-space: nowrap;
-	text-overflow:ellipsis;
-	overflow:hidden;
- }
- 
- .itemRating{
-	position:absolute;
-	width: 150px;
-	background: #41326b;
-	border-radius: 5px;
-	bottom: 10px;
-	left: 0;
-	color: #FFF;
-	text-align: center;
-	vertical-align: middle;
-	font-family: Arial;
-	font-size: 15px;
-	padding: 11px 0;
-	max-width: 100%;
- }
- 
- .greenRating{
-	background: #69b94a;
- }
- 
- .yellowRating{
-	background: #f5a939;
- }
- 
- .redRating{
-	background: #d6564b;
- }
- 
- .itemExtraInfo{
-	position: absolute;
-	top: 20px;
-	right: 15px;
- }
- 
- .itemDistance{
-	position:relative;
-	color: #676767;
-	text-align: right;
-	font-size: 15px;
-	font-family: Arial;
-	padding: 5px;
- }
- 
- .unisexBathroom{
-	width: 45px;
-	height: 43px;
-	background: url("UnisexBathroom.png");
- }
- 
-  .ADABathroom{
-	width: 44px;
-	height: 47px;
-	background: url("ADABathroom.png");
- }
-=======
 }
 
 /* line 57, ../sass/application.css.scss */
@@ -328,6 +110,17 @@ body {
 }
 
 /* line 102, ../sass/application.css.scss */
+.linkbutton {
+  position: relative;
+  float: left;
+  margin-top: 60px;
+  margin-left: 5px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* line 113, ../sass/application.css.scss */
 .filter {
   position: relative;
   float: left;
@@ -338,7 +131,7 @@ body {
   padding: 10px;
 }
 
-/* line 112, ../sass/application.css.scss */
+/* line 123, ../sass/application.css.scss */
 .adafilterlabelimage {
   line-height: 0px;
   height: 20px;
@@ -348,12 +141,12 @@ body {
   top: 7px;
 }
 
-/* line 121, ../sass/application.css.scss */
+/* line 132, ../sass/application.css.scss */
 .adafilterlabeltext {
   margin-left: 25px;
 }
 
-/* line 125, ../sass/application.css.scss */
+/* line 136, ../sass/application.css.scss */
 .unisexfilterlabelimage {
   line-height: 0px;
   height: 20px;
@@ -363,27 +156,27 @@ body {
   top: 7px;
 }
 
-/* line 134, ../sass/application.css.scss */
+/* line 145, ../sass/application.css.scss */
 .unisexfilterlabeltext {
   margin-left: 25px;
 }
 
-/* line 138, ../sass/application.css.scss */
+/* line 149, ../sass/application.css.scss */
 .adacheck {
   display: none;
 }
 
-/* line 143, ../sass/application.css.scss */
+/* line 154, ../sass/application.css.scss */
 .unisexcheck {
   display: none;
 }
 
-/* line 147, ../sass/application.css.scss */
+/* line 158, ../sass/application.css.scss */
 .mapcheck {
   display: none;
 }
 
-/* line 152, ../sass/application.css.scss */
+/* line 163, ../sass/application.css.scss */
 .listItem {
   position: relative;
   width: 100%;
@@ -392,12 +185,12 @@ body {
   cursor: pointer;
 }
 
-/* line 160, ../sass/application.css.scss */
+/* line 171, ../sass/application.css.scss */
 .listItemTemplate {
   display: none;
 }
 
-/* line 164, ../sass/application.css.scss */
+/* line 175, ../sass/application.css.scss */
 .listItemImage {
   position: relative;
   width: 110px;
@@ -408,13 +201,13 @@ body {
   display: inline-block;
 }
 
-/* line 174, ../sass/application.css.scss */
+/* line 185, ../sass/application.css.scss */
 .listItemImage img {
   width: 100%;
   height: 100%;
 }
 
-/* line 179, ../sass/application.css.scss */
+/* line 190, ../sass/application.css.scss */
 .itemInfo {
   position: absolute;
   top: 10px;
@@ -424,7 +217,7 @@ body {
   overflow: none;
 }
 
-/* line 188, ../sass/application.css.scss */
+/* line 199, ../sass/application.css.scss */
 .itemName {
   position: relative;
   font-size: 20px;
@@ -434,7 +227,7 @@ body {
   overflow: hidden;
 }
 
-/* line 197, ../sass/application.css.scss */
+/* line 208, ../sass/application.css.scss */
 .itemStreet {
   position: relative;
   width: 100%;
@@ -444,7 +237,7 @@ body {
   overflow: hidden;
 }
 
-/* line 206, ../sass/application.css.scss */
+/* line 217, ../sass/application.css.scss */
 .itemRating {
   position: absolute;
   width: 150px;
@@ -461,29 +254,29 @@ body {
   max-width: 100%;
 }
 
-/* line 222, ../sass/application.css.scss */
+/* line 233, ../sass/application.css.scss */
 .greenRating {
   background: #69b94a;
 }
 
-/* line 226, ../sass/application.css.scss */
+/* line 237, ../sass/application.css.scss */
 .yellowRating {
   background: #f5a939;
 }
 
-/* line 230, ../sass/application.css.scss */
+/* line 241, ../sass/application.css.scss */
 .redRating {
   background: #d6564b;
 }
 
-/* line 234, ../sass/application.css.scss */
+/* line 245, ../sass/application.css.scss */
 .itemExtraInfo {
   position: absolute;
   top: 20px;
   right: 15px;
 }
 
-/* line 240, ../sass/application.css.scss */
+/* line 251, ../sass/application.css.scss */
 .itemDistance {
   position: relative;
   color: #676767;
@@ -493,17 +286,16 @@ body {
   padding: 5px;
 }
 
-/* line 249, ../sass/application.css.scss */
+/* line 260, ../sass/application.css.scss */
 .unisexBathroom {
   width: 45px;
   height: 43px;
   background: url("UnisexBathroom.png");
 }
 
-/* line 255, ../sass/application.css.scss */
+/* line 266, ../sass/application.css.scss */
 .ADABathroom {
   width: 44px;
   height: 47px;
   background: url("ADABathroom.png");
 }
->>>>>>> Added sass and compass

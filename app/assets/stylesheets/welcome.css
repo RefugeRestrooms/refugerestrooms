@@ -1,0 +1,13 @@
+/* line 5, ../sass/welcome.css.scss */
+html, body, main, .container, .content {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 10, ../sass/welcome.css.scss */
+#mapArea {
+  width: 100%;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+}
