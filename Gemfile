@@ -8,9 +8,9 @@ gem 'rails', '4.0.0'
 gem 'pg'
 
 # Use SCSS for stylesheets
+gem 'compass-rails'
 group :assets do
     gem 'sass-rails'
-    gem 'compass-rails'
     gem 'susy'
 end
 
