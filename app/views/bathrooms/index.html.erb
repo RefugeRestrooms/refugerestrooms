@@ -1,7 +1,11 @@
 <div id="filters">
 
 </div>
-<% latlong = Geocoder.coordinates(params[:search]) %>
+<% if params[:search].present? %>
+	<% latlong = Geocoder.coordinates(params[:search]) %>
+<% else %>
+	<% latlong = Geocoder.coordinates("San Francisco, CA") %>
+<% end %>
 
 <% if params[:map] == "1" %>
 <div id ="map">
@@ -32,9 +36,7 @@
 
 </div>
 <% else %>
-<div id="list">
-		<div id="loading" class="textItem" >Loading...</div>
-		
+<div id="list">		
 		<% @bathrooms.each_with_index do |b, i| %>
 			<div class="listItem" data-id="<%= b.id %>">
 				<div class="listItemImage">
