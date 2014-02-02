@@ -15,7 +15,8 @@
 
 $font-stack: "Open Sans", Helvetica, sans-serif
 $primary-color: #333333
-$purple: #75669f
+$purple: #41326B
+$dark-purple: #0E0036
 $base-color: #161616
 $secondary-background: white
 $green: #69b94a
@@ -56,12 +57,15 @@ body
   position: relative
   width: 100%
   height: 100px
-  background: #41326b
+  background: $purple
+
+.header .nav
+  background: $dark-purple
 
 .toiletLogo
   width: 47px
   height: 54px
-  background: url("ToiletLogo.png")
+  background: asset-url("ToiletLogo.png")
   position: relative
   float: left
   margin: 10px 15px
@@ -147,12 +151,19 @@ body
 .mapcheck
   display: none
 
+form label
+  cursor: pointer
+
+#mapArea
+  width: 600px
+  height: 400px
+  padding: 5px
+
 .listItem
   position: relative
   width: 100%
   border-bottom: 1px solid #e1e1e1
   background: $secondary-background
-  cursor: pointer
 
 .listItemTemplate
   display: none
@@ -163,7 +174,7 @@ body
   height: 110px
   margin: 15px
   border-radius: 5px
-  background: #41326b url("ToiletLogo.png") 50% 50% no-repeat
+  background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat
   display: inline-block
 
 .listItemImage img
@@ -234,9 +245,9 @@ body
 .unisexBathroom
   width: 45px
   height: 43px
-  background: url("UnisexBathroom.png")
+  background: asset-url("UnisexBathroom.png")
 
 .ADABathroom
   width: 44px
   height: 47px
-  background: url("ADABathroom.png")
+  background: asset-url("ADABathroom.png")

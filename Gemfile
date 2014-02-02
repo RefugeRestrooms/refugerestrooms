@@ -10,9 +10,10 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'compass-rails'
 gem 'sass-rails'
-group :assets do
-    gem 'susy'
-end
+gem 'susy'
+
+# Heroku support
+gem 'rails_12factor'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
