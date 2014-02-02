@@ -12,6 +12,9 @@ gem 'compass-rails'
 gem 'sass-rails'
 gem 'susy'
 
+# Heroku support
+gem 'rails_12factor'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
