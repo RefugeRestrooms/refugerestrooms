@@ -11,6 +11,7 @@ gem 'pg'
 group :assets do
     gem 'sass-rails'
     gem 'compass-rails'
+    gem 'susy'
 end
 
 # Use Uglifier as compressor for JavaScript assets

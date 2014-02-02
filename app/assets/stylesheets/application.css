@@ -1,301 +1,58 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
-/* line 15, ../sass/application.css.scss */
-body {
-  font-family: helvetica;
-  font-size: .8em;
-  background: #75669f;
-  color: #161616;
-}
+Syntax error: File to import not found or unreadable: susy.
+              Load paths:
+                /Users/pocampo/dev/refuge/app/assets/sass
+                /Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets
+                /Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets
+                Compass::SpriteImporter
+        on line 18 of /Users/pocampo/dev/refuge/app/assets/sass/application.css.sass
 
-/* line 22, ../sass/application.css.scss */
-.container, main, body, html {
-  height: 100%;
-}
-
-/* line 26, ../sass/application.css.scss */
-.container {
-  max-width: 600px;
-  margin: 0 auto !important;
-  background: #FFF;
-  height: 100%;
-}
-
-/* line 33, ../sass/application.css.scss */
-.textItem {
-  width: 100%;
-  padding: 20px 0;
-  text-align: center;
-  font-family: Arial;
-  font-size: 20px;
-  background: #FFF;
-  display: block;
-}
-
-/* line 43, ../sass/application.css.scss */
-.container {
-  padding-left: 30px;
-  padding-top: 30px;
-  padding-right: 30px;
-  margin: 0 auto;
-}
-
-/* line 50, ../sass/application.css.scss */
-.header {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  background: #41326b;
-}
-
-/* line 57, ../sass/application.css.scss */
-.toiletLogo {
-  width: 47px;
-  height: 54px;
-  background: url("ToiletLogo.png");
-  position: relative;
-  float: left;
-  margin: 10px 15px;
-  cursor: pointer;
-}
-
-/* line 67, ../sass/application.css.scss */
-.searchBarContainer {
-  position: absolute;
-  left: 80px;
-  right: 105px;
-  top: 10px;
-  bottom: 10px;
-}
-
-/* line 75, ../sass/application.css.scss */
-.searchBar {
-  width: 100%;
-  height: 50%;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 3px;
-}
-
-/* line 84, ../sass/application.css.scss */
-.searchButtonContainer {
-  position: absolute;
-  width: 86px;
-  right: 12px;
-  top: 10px;
-  bottom: 10px;
-}
-
-/* line 92, ../sass/application.css.scss */
-.searchButton {
-  position: relative;
-  float: right;
-  width: 100%;
-  height: 100%;
-  background: #FFF;
-  border: none;
-  border-radius: 3px;
-}
-
-/* line 102, ../sass/application.css.scss */
-.linkbutton {
-  position: relative;
-  float: left;
-  margin-top: 60px;
-  margin-left: 5px;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-/* line 113, ../sass/application.css.scss */
-.filter {
-  position: relative;
-  float: left;
-  margin-top: 60px;
-  margin-left: 5px;
-  background-color: #FFFFFF;
-  border-radius: 5px;
-  padding: 10px;
-}
-
-/* line 123, ../sass/application.css.scss */
-.adafilterlabelimage {
-  line-height: 0px;
-  height: 20px;
-  width: 20px;
-  float: left;
-  position: absolute;
-  top: 7px;
-}
-
-/* line 132, ../sass/application.css.scss */
-.adafilterlabeltext {
-  margin-left: 25px;
-}
-
-/* line 136, ../sass/application.css.scss */
-.unisexfilterlabelimage {
-  line-height: 0px;
-  height: 20px;
-  width: 20px;
-  float: left;
-  position: absolute;
-  top: 7px;
-}
-
-/* line 145, ../sass/application.css.scss */
-.unisexfilterlabeltext {
-  margin-left: 25px;
-}
-
-/* line 149, ../sass/application.css.scss */
-.adacheck {
-  display: none;
-}
-
-/* line 154, ../sass/application.css.scss */
-.unisexcheck {
-  display: none;
-}
-
-/* line 158, ../sass/application.css.scss */
-.mapcheck {
-  display: none;
-}
-
-/* line 163, ../sass/application.css.scss */
-.listItem {
-  position: relative;
-  width: 100%;
-  border-bottom: 1px solid #e1e1e1;
-  background: #FFF;
-  cursor: pointer;
-}
-
-/* line 171, ../sass/application.css.scss */
-.listItemTemplate {
-  display: none;
-}
-
-/* line 175, ../sass/application.css.scss */
-.listItemImage {
-  position: relative;
-  width: 110px;
-  height: 110px;
-  margin: 15px;
-  border-radius: 5px;
-  background: #41326b url("ToiletLogo.png") 50% 50% no-repeat;
-  display: inline-block;
-}
-
-/* line 185, ../sass/application.css.scss */
-.listItemImage img {
-  width: 100%;
-  height: 100%;
-}
-
-/* line 190, ../sass/application.css.scss */
-.itemInfo {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 140px;
-  right: 65px;
-  overflow: none;
-}
-
-/* line 199, ../sass/application.css.scss */
-.itemName {
-  position: relative;
-  font-size: 20px;
-  width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-/* line 208, ../sass/application.css.scss */
-.itemStreet {
-  position: relative;
-  width: 100%;
-  font-size: 15px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-/* line 217, ../sass/application.css.scss */
-.itemRating {
-  position: absolute;
-  width: 150px;
-  background: #41326b;
-  border-radius: 5px;
-  bottom: 10px;
-  left: 0;
-  color: #FFF;
-  text-align: center;
-  vertical-align: middle;
-  font-family: Arial;
-  font-size: 15px;
-  padding: 11px 0;
-  max-width: 100%;
-}
-
-/* line 233, ../sass/application.css.scss */
-.greenRating {
-  background: #69b94a;
-}
-
-/* line 237, ../sass/application.css.scss */
-.yellowRating {
-  background: #f5a939;
-}
-
-/* line 241, ../sass/application.css.scss */
-.redRating {
-  background: #d6564b;
-}
-
-/* line 245, ../sass/application.css.scss */
-.itemExtraInfo {
-  position: absolute;
-  top: 20px;
-  right: 15px;
-}
-
-/* line 251, ../sass/application.css.scss */
-.itemDistance {
-  position: relative;
-  color: #676767;
-  text-align: right;
-  font-size: 15px;
-  font-family: Arial;
-  padding: 5px;
-}
-
-/* line 260, ../sass/application.css.scss */
-.unisexBathroom {
-  width: 45px;
-  height: 43px;
-  background: url("UnisexBathroom.png");
-}
-
-/* line 266, ../sass/application.css.scss */
-.ADABathroom {
-  width: 44px;
-  height: 47px;
-  background: url("ADABathroom.png");
-}
+Backtrace:
+/Users/pocampo/dev/refuge/app/assets/sass/application.css.sass:18
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:45:in `import'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:217:in `visit_import'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:7:in `visit'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/root_node.rb:20:in `render'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:315:in `_render'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:262:in `render'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/update_project.rb:45:in `perform'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `call'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/bin/compass:23:in `load'
+/Users/pocampo/.rbenv/versions/2.0.0-p247/bin/compass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: File to import not found or unreadable: susy.\A               Load paths:\A                 /Users/pocampo/dev/refuge/app/assets/sass\A                 /Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/blueprint/stylesheets\A                 /Users/pocampo/.rbenv/versions/2.0.0-p247/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets\A                 Compass::SpriteImporter\A         on line 18 of /Users/pocampo/dev/refuge/app/assets/sass/application.css.sass"; }
