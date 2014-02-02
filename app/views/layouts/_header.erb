@@ -11,8 +11,6 @@
     <%= submit_tag "Search", :name => nil, :class=> "linkbutton searchButton" %>
 	</div>
 </div>
-  <% end %>
-
 <div class="nav">
   <div class="adaFilter filter">
     <%= check_box_tag :adafilter, 1, params[:adafilter] == '1', :onchange => 'this.form.submit()', :class => 'adacheck' %>
@@ -37,5 +35,7 @@
     </label>
   </div>
 </div>
+
+  <% end %>
 
 </div>
