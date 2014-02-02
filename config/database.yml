@@ -3,10 +3,6 @@ development:
   encoding: unicode
   database: bathrooms_development
   pool: 5
-<<<<<<< HEAD
-
-=======
->>>>>>> 0408b5e8d076d265b04eab6b0b29a5533cd10bb6
 
 test:
   adapter: postgresql
