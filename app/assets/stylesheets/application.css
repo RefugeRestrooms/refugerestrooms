@@ -11,39 +11,39 @@
  *= require_self
  *= require_tree .
  */
-/* line 15, ../sass/application.css.scss */
+/* line 24, ../sass/application.css.scss */
 body {
-  font-family: helvetica;
+  font-family: Helvetica, sans-serif;
   font-size: .8em;
   background: #75669f;
   color: #161616;
 }
 
-/* line 22, ../sass/application.css.scss */
+/* line 31, ../sass/application.css.scss */
 .container, main, body, html {
   height: 100%;
 }
 
-/* line 26, ../sass/application.css.scss */
+/* line 35, ../sass/application.css.scss */
 .container {
   max-width: 600px;
   margin: 0 auto !important;
-  background: #FFF;
+  background: white;
   height: 100%;
 }
 
-/* line 33, ../sass/application.css.scss */
+/* line 42, ../sass/application.css.scss */
 .textItem {
   width: 100%;
   padding: 20px 0;
   text-align: center;
-  font-family: Arial;
+  font-family: Helvetica, sans-serif;
   font-size: 20px;
-  background: #FFF;
+  background: white;
   display: block;
 }
 
-/* line 43, ../sass/application.css.scss */
+/* line 52, ../sass/application.css.scss */
 .container {
   padding-left: 30px;
   padding-top: 30px;
@@ -51,7 +51,7 @@ body {
   margin: 0 auto;
 }
 
-/* line 50, ../sass/application.css.scss */
+/* line 59, ../sass/application.css.scss */
 .header {
   position: relative;
   width: 100%;
@@ -59,7 +59,7 @@ body {
   background: #41326b;
 }
 
-/* line 57, ../sass/application.css.scss */
+/* line 66, ../sass/application.css.scss */
 .toiletLogo {
   width: 47px;
   height: 54px;
@@ -70,7 +70,7 @@ body {
   cursor: pointer;
 }
 
-/* line 67, ../sass/application.css.scss */
+/* line 76, ../sass/application.css.scss */
 .searchBarContainer {
   position: absolute;
   left: 80px;
@@ -79,7 +79,7 @@ body {
   bottom: 10px;
 }
 
-/* line 75, ../sass/application.css.scss */
+/* line 84, ../sass/application.css.scss */
 .searchBar {
   width: 100%;
   height: 50%;
@@ -89,7 +89,7 @@ body {
   border-radius: 3px;
 }
 
-/* line 84, ../sass/application.css.scss */
+/* line 93, ../sass/application.css.scss */
 .searchButtonContainer {
   position: absolute;
   width: 86px;
@@ -98,7 +98,7 @@ body {
   bottom: 10px;
 }
 
-/* line 92, ../sass/application.css.scss */
+/* line 101, ../sass/application.css.scss */
 .searchButton {
   position: relative;
   float: right;
@@ -109,29 +109,29 @@ body {
   border-radius: 3px;
 }
 
-/* line 102, ../sass/application.css.scss */
+/* line 111, ../sass/application.css.scss */
 .linkbutton {
   position: relative;
   float: left;
   margin-top: 60px;
   margin-left: 5px;
-  background-color: #FFFFFF;
+  background-color: white;
   border-radius: 5px;
   padding: 10px;
 }
 
-/* line 113, ../sass/application.css.scss */
+/* line 122, ../sass/application.css.scss */
 .filter {
   position: relative;
   float: left;
   margin-top: 60px;
   margin-left: 5px;
-  background-color: #FFFFFF;
+  background-color: white;
   border-radius: 5px;
   padding: 10px;
 }
 
-/* line 123, ../sass/application.css.scss */
+/* line 132, ../sass/application.css.scss */
 .adafilterlabelimage {
   line-height: 0px;
   height: 20px;
@@ -141,12 +141,12 @@ body {
   top: 7px;
 }
 
-/* line 132, ../sass/application.css.scss */
+/* line 141, ../sass/application.css.scss */
 .adafilterlabeltext {
   margin-left: 25px;
 }
 
-/* line 136, ../sass/application.css.scss */
+/* line 145, ../sass/application.css.scss */
 .unisexfilterlabelimage {
   line-height: 0px;
   height: 20px;
@@ -156,41 +156,41 @@ body {
   top: 7px;
 }
 
-/* line 145, ../sass/application.css.scss */
+/* line 154, ../sass/application.css.scss */
 .unisexfilterlabeltext {
   margin-left: 25px;
 }
 
-/* line 149, ../sass/application.css.scss */
+/* line 158, ../sass/application.css.scss */
 .adacheck {
   display: none;
 }
 
-/* line 154, ../sass/application.css.scss */
+/* line 163, ../sass/application.css.scss */
 .unisexcheck {
   display: none;
 }
 
-/* line 158, ../sass/application.css.scss */
+/* line 167, ../sass/application.css.scss */
 .mapcheck {
   display: none;
 }
 
-/* line 163, ../sass/application.css.scss */
+/* line 172, ../sass/application.css.scss */
 .listItem {
   position: relative;
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
-  background: #FFF;
+  background: white;
   cursor: pointer;
 }
 
-/* line 171, ../sass/application.css.scss */
+/* line 180, ../sass/application.css.scss */
 .listItemTemplate {
   display: none;
 }
 
-/* line 175, ../sass/application.css.scss */
+/* line 184, ../sass/application.css.scss */
 .listItemImage {
   position: relative;
   width: 110px;
@@ -201,13 +201,13 @@ body {
   display: inline-block;
 }
 
-/* line 185, ../sass/application.css.scss */
+/* line 194, ../sass/application.css.scss */
 .listItemImage img {
   width: 100%;
   height: 100%;
 }
 
-/* line 190, ../sass/application.css.scss */
+/* line 199, ../sass/application.css.scss */
 .itemInfo {
   position: absolute;
   top: 10px;
@@ -217,7 +217,7 @@ body {
   overflow: none;
 }
 
-/* line 199, ../sass/application.css.scss */
+/* line 208, ../sass/application.css.scss */
 .itemName {
   position: relative;
   font-size: 20px;
@@ -227,7 +227,7 @@ body {
   overflow: hidden;
 }
 
-/* line 208, ../sass/application.css.scss */
+/* line 217, ../sass/application.css.scss */
 .itemStreet {
   position: relative;
   width: 100%;
@@ -237,7 +237,7 @@ body {
   overflow: hidden;
 }
 
-/* line 217, ../sass/application.css.scss */
+/* line 226, ../sass/application.css.scss */
 .itemRating {
   position: absolute;
   width: 150px;
@@ -254,29 +254,29 @@ body {
   max-width: 100%;
 }
 
-/* line 233, ../sass/application.css.scss */
+/* line 242, ../sass/application.css.scss */
 .greenRating {
   background: #69b94a;
 }
 
-/* line 237, ../sass/application.css.scss */
+/* line 246, ../sass/application.css.scss */
 .yellowRating {
   background: #f5a939;
 }
 
-/* line 241, ../sass/application.css.scss */
+/* line 250, ../sass/application.css.scss */
 .redRating {
   background: #d6564b;
 }
 
-/* line 245, ../sass/application.css.scss */
+/* line 254, ../sass/application.css.scss */
 .itemExtraInfo {
   position: absolute;
   top: 20px;
   right: 15px;
 }
 
-/* line 251, ../sass/application.css.scss */
+/* line 260, ../sass/application.css.scss */
 .itemDistance {
   position: relative;
   color: #676767;
@@ -286,14 +286,14 @@ body {
   padding: 5px;
 }
 
-/* line 260, ../sass/application.css.scss */
+/* line 269, ../sass/application.css.scss */
 .unisexBathroom {
   width: 45px;
   height: 43px;
   background: url("UnisexBathroom.png");
 }
 
-/* line 266, ../sass/application.css.scss */
+/* line 275, ../sass/application.css.scss */
 .ADABathroom {
   width: 44px;
   height: 47px;

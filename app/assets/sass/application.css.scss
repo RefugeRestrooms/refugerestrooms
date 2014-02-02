@@ -12,11 +12,20 @@
  *= require_tree .
  */
 
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$purple: #75669f;
+$base-color: #161616;
+$secondary-background: #FFFFFF;
+$green: #69b94a;
+$yellow: #f5a939;
+$red: #d6564b;
+
 body {
-  font-family: helvetica;
+  font-family: $font-stack;
   font-size: .8em;
-  background: #75669f;
-  color: #161616;
+  background: $purple;
+  color: $base-color;
 }
 
 .container, main, body, html {
@@ -26,7 +35,7 @@ body {
 .container {
   max-width: 600px;
   margin: 0 auto !important;
-  background: #FFF;
+  background: $secondary-background;
   height: 100%;
 }
 
@@ -34,9 +43,9 @@ body {
   width: 100%;
   padding: 20px 0;
   text-align: center;
-  font-family: Arial;
+  font-family: $font-stack;
   font-size: 20px;
-  background: #FFF;
+  background: $secondary-background;
   display: block;
 }
 
@@ -104,7 +113,7 @@ body {
  	float: left;
  	margin-top: 60px;
  	margin-left: 5px;
- 	background-color: #FFFFFF;
+ 	background-color: $secondary-background;
  	border-radius: 5px;
  	padding: 10px;
  }
@@ -115,7 +124,7 @@ body {
  	float:left;
  	margin-top: 60px;
  	margin-left: 5px;
- 	background-color: #FFFFFF;
+ 	background-color: $secondary-background;
  	border-radius: 5px;
  	padding: 10px;
  }
@@ -164,7 +173,7 @@ body {
 	position: relative;
 	width: 100%;
 	border-bottom: 1px solid #e1e1e1;
-	background: #FFF;
+	background: $secondary-background;
 	cursor: pointer;
  }
 
@@ -231,15 +240,15 @@ body {
  }
 
  .greenRating{
-	background: #69b94a;
+	background: $green;
  }
 
  .yellowRating{
-	background: #f5a939;
+	background: $yellow;
  }
 
  .redRating{
-	background: #d6564b;
+	background: $red;
  }
 
  .itemExtraInfo{
