@@ -8,11 +8,9 @@ gem 'rails', '4.0.0'
 gem 'pg'
 
 # Use SCSS for stylesheets
-# group :assets do
-    gem 'sass-rails'
-    gem 'compass-rails'
-    gem 'susy'
-# end
+gem 'compass-rails'
+gem 'sass-rails'
+gem 'susy'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
