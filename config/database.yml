@@ -3,7 +3,6 @@ development:
   encoding: unicode
   database: bathrooms_development
   pool: 5
-  username: tkwidmer
   password:
 
 test:
@@ -11,5 +10,4 @@ test:
   encoding: unicode
   database: bathrooms_test
   pool: 5
-  username: tkwidmer
   password:
