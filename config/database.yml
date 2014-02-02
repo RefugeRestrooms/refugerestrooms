@@ -3,20 +3,10 @@ development:
   encoding: unicode
   database: bathrooms_development
   pool: 5
-<<<<<<< HEAD
-=======
-  username: pocampo
->>>>>>> 55d7f9807097c7b8e2dc4bafb2e0a741c22064ea
-  password:
+
 
 test:
   adapter: postgresql
   encoding: unicode
   database: bathrooms_test
   pool: 5
-<<<<<<< HEAD
-  password:
-=======
-  username: pocampo
-  password:
->>>>>>> 55d7f9807097c7b8e2dc4bafb2e0a741c22064ea
