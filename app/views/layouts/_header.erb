@@ -28,7 +28,7 @@
     </label>
   </div>
 
-  <div class="mapToggle filter">
+  <div class="mapToggle">
     <%= check_box_tag :map, 1, params[:map] == '1', :onchange => 'this.form.submit()', :class => 'mapcheck' %>
     <label for="map" class="mapTogglelabel linkbutton">
       <%= params[:map] == '1' ? "List" : "Map" %> View
