@@ -1,8 +1,7 @@
-<div class="imgsplash" style="margin: 0 auto; width: 400px; margin-top: 100px">
-<img src="<%= asset_path('splashlanding.png') %>" align="center" />
-</div>
+<h1> REFUGE restrooms </h1>
 
-<div id="list" style="text-align: center; margin-top: 25px; margin-bottom: 50px; ">
-	<%= link_to "Add A Bathroom", new_bathroom_path, {:class=>"textItem"} %> || <%= link_to "About", about_path, {:class=>"textItem"} %> ||
+<div id="list">
+	<%= link_to "Add A Bathroom", new_bathroom_path, {:class=>"textItem"} %>
+  <%= link_to "About", about_path, {:class=>"textItem"} %>
 	<a HREF="http://www.github.com/tkwidmer/saferstalls_rails" class="textItem"> Find us on Github </a>
 </div>
