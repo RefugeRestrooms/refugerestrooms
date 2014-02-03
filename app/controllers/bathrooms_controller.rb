@@ -101,17 +101,17 @@ class BathroomsController < ApplicationController
   SAN_FRANCISCO_LOCATION = [37.7577, -122.4376]
 
   def encode_search
+    error = nil
+
     if (!params[:search].blank? || params[:map] == "1") && (!params[:lat] || !params[:long])
-      location = if params[:search].blank?
-        SAN_FRANCISCO_LOCATION
-      else
-        Geocoder.coordinates(params[:search])
-      end
+      location = Geocoder.coordinates(params[:search]) if params[:search]
+      error = "There was an error searching for your location." unless location
+      location ||= SAN_FRANCISCO_LOCATION
 
       params[:lat] = location[0]
       params[:long] = location[1]
 
-      redirect_to url_for(params)
+      redirect_to url_for(params), flash: {alert: error}
     elsif params[:search].blank? && params[:map] != "1" && (params[:lat] || params[:long])
       params.delete(:lat)
       params.delete(:long)
