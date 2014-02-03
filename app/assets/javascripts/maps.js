@@ -2,7 +2,7 @@ var map;
 
 function initMap(x, y){
 	
-
+	//init map
   var mapOptions = {
     zoom: 11,
     center: new google.maps.LatLng(x, y)
@@ -12,6 +12,15 @@ function initMap(x, y){
 
   map = new google.maps.Map(document.getElementById('mapArea'),
       mapOptions);
+	  
+	  //set marker at current location
+	  var image = '/assets/marker-icon.png';
+	  var myLatLng = new google.maps.LatLng(x, y);
+	  var currentLocation = new google.maps.Marker({
+		  position: myLatLng,
+		  map: map,
+		  icon: image
+	  });
 }
 
 
@@ -30,16 +39,20 @@ function getPoint(string, callback){
 }
 
 function placeMarker(lat, lng, content){
+	//create marker
 	var marker=new google.maps.Marker({
 	  position:new google.maps.LatLng(lat,lng),
 	  });
 
+	//put marker on map
 	marker.setMap(map);
 	
+	//create popup
 	var infowindow = new google.maps.InfoWindow({
 	  content:content
 	  });
-
+	
+	//linke popup to marker
 	google.maps.event.addListener(marker, 'click', function() {
 	  infowindow.open(map,marker);
 	  });
@@ -56,10 +69,7 @@ var string = data.name
 	return string;
 }
 
-function setPoint(data){
-	console.log(data);
-	var string = new String(data.street + " " + data.city + " " + data.state);
-	
+function setPoint(data){	
 	if(data.latitude && data.longitude){
 		placeMarker(data.latitude, data.longitude, generateContent(data));
 	}
