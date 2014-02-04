@@ -14,12 +14,11 @@ function initMap(x, y){
       mapOptions);
 	  
 	  //set marker at current location
-	  var image = '/assets/marker-icon.png';
 	  var myLatLng = new google.maps.LatLng(x, y);
 	  var currentLocation = new google.maps.Marker({
 		  position: myLatLng,
 		  map: map,
-		  icon: image
+		  icon: currentLocationImage
 	  });
 }
 

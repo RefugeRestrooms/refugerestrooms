@@ -49,6 +49,8 @@ var disqus_shortname = 'refugerestrooms'; // required: replace example with your
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
 
+var currentLocationImage = "<%= image_path('marker-icon.png') %>";
+
 $(function(){
 	$("#logo").click(function(){
 		window.location = "http://" + window.location.host;
