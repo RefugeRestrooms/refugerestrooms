@@ -67,6 +67,10 @@
 			<% break if i >= 20 %>
         <% end %>
 
+        <% if count(@bathrooms) == 0 && params[:search].present? %>
+        <div class="textItem">No results found for <% params[:search] %></div>
+        <% end %>
+
 
         <div class="listItem listItemTemplate">
 			<div class="listItemImage">
