@@ -67,10 +67,11 @@
 			<% break if i >= 20 %>
         <% end %>
 
-        <% if count(@bathrooms) == 0 && params[:search].present? %>
-        <div class="textItem">No results found for <% params[:search] %></div>
+        <% if @bathrooms.count == 0 && params[:search].present? %>
+            <div class="textItem">No results found.</div>
+        <% elsif !params[:search].present? %>
+             <div class="textItem">Please enter a search term.</div>
         <% end %>
-
 
         <div class="listItem listItemTemplate">
 			<div class="listItemImage">
@@ -89,10 +90,6 @@
 				<div class="ADABathroom"></div>
 			</div>
         </div>
-
-		<div class="loadMore textItem">
-			Load More
-		</div>
 </div>
 
 <% end %>
