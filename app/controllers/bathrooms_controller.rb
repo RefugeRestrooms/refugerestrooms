@@ -80,7 +80,7 @@ class BathroomsController < ApplicationController
       redirect_to @bathroom
     else
       flash[:alert] = "There was an unexpected problem upvoting this post."
-      redirect_to @bahtroom
+      redirect_to @bathroom
     end
   end
 
