@@ -1,42 +1,29 @@
 <div id="filters">
 
 </div>
-<% if params[:search].present? %>
-	<% latlong = Geocoder.coordinates(params[:search]) %>
-<% else %>
-	<% latlong = Geocoder.coordinates("San Francisco, CA") %>
-<% end %>
 
 <% if params[:map] == "1" %>
-<div id ="map">
-	<div id="mapArea"></div>
+	<div id ="map">
+		<div id="mapArea"></div>
 
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script type="text/javascript">
+			var headerHidden = false;
 
-	<script type="text/javascript">
-	var headerHidden = false;
+			$(function(){
+				initMap(<%= params[:lat] %>, <%= params[:long] %>);
 
-	$(function(){
+				//get a list of points from the server based on the searched location
+				$.get( "<%= list_bathrooms_path %>" + window.location.search , function( data ) {
+				  for(var i = 0; i < data.length; i++){
 
-		initMap(<%= latlong[0] %>, <%= latlong[1] %>);
-
-
-		console.log( window.location.search )
-		
-		//get a list of points from the server based on the searched location
-		$.get( "list" + window.location.search , function( data ) {
-		  for(var i = 0; i < data.length; i++){
-			//for each point in the data, put a point on the map
-			setPoint(data[i]);
-		  }
-		});
-
-	});
-	</script>
-
-
-
-</div>
+					//for each point in the data, put a point on the map
+					setPoint(data[i]);
+				  }
+				});
+			});
+		</script>
+	</div>
 <% else %>
 <div id="list">
 		<% @bathrooms.each_with_index do |b, i| %>
@@ -48,26 +35,26 @@
 				<div class="itemInfo">
 					<div class="itemName"><%= link_to b.name, b %></div>
 					<div class="itemStreet"><%= b.street %>, <%= b.city %>, <%= b.state %></div>
-					
+
 					<% if (b.upvote + b.downvote) != 0 %>
 						<% percentage = (b.upvote / (b.upvote + b.downvote).to_f) * 100 %>
-						
+
 						<% if percentage > 70 %>
 						<% className = "greenRating" %>
 						<% else %>
-						
+
 							<% if percentage > 50 %>
 							<% className = "yellowRating" %>
 							<% else %>
 							<% className = "redRating" %>
 							<% end %>
 						<% end %>
-						
+
 						<div class="itemRating <%= className %>"><%= percentage.round %>% Positive</div>
 					<% else %>
 						<div class="itemRating">Not Yet Rated</div>
 					<% end %>
-					
+
 				</div>
 
 				<div class="itemExtraInfo">

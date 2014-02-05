@@ -1,35 +1,17 @@
 class BathroomsController < ApplicationController
 
+  before_filter :encode_search, only: :index
+  before_filter :list_bathrooms, only: [:index, :list]
+  before_filter :find_bathroom, only: [:show, :update, :destroy, :up_vote, :down_vote]
+
   def index
-
-    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
-
-    if params[:search].present?
-      @bathrooms = @bathrooms.near(params[:search], 20, :order => 'distance')
-    else
-      @bathrooms.reverse!
-      @bathrooms.limit(20)
-    end
-
-
   end
 
 	def list
-
-    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
-
-    if params[:search].present?
-      @bathrooms = @bathrooms.near(params[:search]).limit(20)
-    else
-      @bathrooms.reverse!
-      @bathrooms.limit(20)
-    end
-
 		render json: @bathrooms
 	end
-  
+
   def show
-    @bathroom = Bathroom.find(params[:id])
   end
 
   def new
@@ -38,7 +20,7 @@ class BathroomsController < ApplicationController
 
   def create
     @bathroom = Bathroom.new(permitted_params)
-    
+
     if @bathroom.save
       flash[:notice] = "A new bathroom entry has been created for #{@bathroom.name}."
       redirect_to @bathroom
@@ -49,8 +31,6 @@ class BathroomsController < ApplicationController
   end
 
   def update
-    @bathroom = Bathroom.find(params[:id])
-
     if @bathroom.update(permitted_params)
       flash[:notice] = "This bathroom entry has been updated."
       redirect_to @bathroom
@@ -60,8 +40,20 @@ class BathroomsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def destroy
+    if @bathroom.destroy
+      flash[:notice] = "This bathroom entry has been deleted."
+      redirect_to bathrooms_path
+    else
+      flash[:alert] = "This bathroom entry could not be deleted."
+      redirect_to @bathroom
+    end
+  end
+
   def down_vote
-    @bathroom = Bathroom.find(params[:id])
     @bathroom.downvote += 1
     if @bathroom.save
       flash[:notice] = "This bathroom has been downvoted! Thank you for contributing to our community. "
@@ -73,7 +65,6 @@ class BathroomsController < ApplicationController
   end
 
   def up_vote
-    @bathroom = Bathroom.find(params[:id])
     @bathroom.upvote += 1
     if @bathroom.save
       flash[:notice] = "This bathroom has been upvoted! Thank you for contributing to our community. "
@@ -85,27 +76,47 @@ class BathroomsController < ApplicationController
   end
 
 
-  def edit
-    @bathroom = Bathroom.find(params[:id])
-  end
-
-  def destroy
-    @bathroom = Bathroom.find(params[:id])
-    if @bathroom.destroy
-      flash[:notice] = "This bathroom entry has been deleted."
-      redirect_to bathrooms_path
-    else
-      flash[:alert] = "This bathroom entry could not be deleted."
-      redirect_to @bathroom
-    end
-  end
-
-
   private
+
+  def list_bathrooms
+    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
+
+    if params[:search].present? || params[:map] == "1"
+      @bathrooms = @bathrooms.near([params[:lat], params[:long]])
+    else
+      @bathrooms.reverse!
+    end
+
+    @bathrooms = @bathrooms.limit(20)
+  end
+
+  def find_bathroom
+    @bathroom = Bathroom.find(params[:id])
+  end
+
   def permitted_params
     params.require(:bathroom).permit!
   end
-  
 
-  
+  SAN_FRANCISCO_LOCATION = [37.7577, -122.4376]
+
+  def encode_search
+    error = nil
+
+    if (!params[:search].blank? || params[:map] == "1") && (!params[:lat] || !params[:long])
+      location = Geocoder.coordinates(params[:search]) if params[:search]
+      error = "There was an error searching for your location." unless location
+      location ||= SAN_FRANCISCO_LOCATION
+
+      params[:lat] = location[0]
+      params[:long] = location[1]
+
+      redirect_to url_for(params), flash: {alert: error}
+    elsif params[:search].blank? && params[:map] != "1" && (params[:lat] || params[:long])
+      params.delete(:lat)
+      params.delete(:long)
+      redirect_to url_for(params)
+    end
+  end
+
 end
