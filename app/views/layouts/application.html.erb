@@ -58,7 +58,17 @@ $(function(){
 	});
 	
 	var search = $("#search");
-	setDefaultText(search, "1 Embarcadero Center, San Francisco, CA");
+	var searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
+	setDefaultText(search, searchDefaultText);
+	
+	//remove default text on empty search
+	$(".searchButton").click(function(){
+		
+		//use class to determine if the text has been modified or not
+		if(search.hasClass("fadedText")){
+			search.val("");
+		}
+	});
 	
 });
 
