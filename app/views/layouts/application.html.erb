@@ -56,7 +56,29 @@ $(function(){
 	$("#logo").click(function(){
 		window.location = "http://" + window.location.host;
 	});
+	
+	var search = $("#search");
+	setDefaultText(search, "1 Embarcadero Center, San Francisco, CA");
+	
 });
+
+function setDefaultText(element, text){
+	//ensure we're not overwriting a value
+	if(element.val() == ""){
+		element.val(text);
+		element.addClass("fadedText");
+		
+		//remove effects on focus
+		element.focus(function(){ 
+			element.removeClass("fadedText");
+			element.val("");
+			
+			//when unfocused set back to default if there is no text
+			element.blur(function(){setDefaultText(element,text);});
+		});
+	}
+}
+
 </script>
 
 <script>
