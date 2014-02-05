@@ -1,32 +1,53 @@
 <% # ADA filter and UNISEX filter have inconsistant default boolean values because i'm using the format originally used by the Safe2Pee db because the engineers were stupid and used different 1 for ADA and 0 for UNISEX. %>
 
-  <strong> Location/Place/Business Name:</strong> <%= @bathroom.name %><br>
-  <strong> Street Address: </strong> <%= @bathroom.street %><br>
-  <strong> City: </strong> <%= @bathroom.city %><br>
-  <strong> State: </strong> <%= @bathroom.state %> <br>
-  <strong> Country: </strong> <%= @bathroom.country %> <br>
-  <strong> Accessable? </strong> 
+<div class="showtext">
+  <h2> <%= @bathroom.name %> </h2>
+
+  <p> <%= @bathroom.street %>. <br>
+    <%= @bathroom.city %>, <%= @bathroom.state %> 
+  </p>
+
+</div>
+
+<div class="ratingscontainer">
+  <%= button_to "Thumbs Up", up_vote_bathroom_path %> 
+  <%= button_to "Thumbs Down", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?" %>
+</div>
+
+  <p>
+    <strong> Directions: </strong> 
+  <%= @bathroom.directions %> <br>
+  </p>
+
+  <p>
+  <strong> Comments: </strong>
+    <%= @bathroom.comment %><br>
+  </p>
+
+</div>
+
+<div class="showadaimage">
   <% if @bathroom.access == 1 %>
     Yes, the restroom is ADA accessable!
   <% else %>
     Unfortunately this bathroom is not ADA accessable!
   <% end %> <br>
-  <strong> Type of Bathroom: </strong> 
+</div>
+
+<div class="showuniseximage">
   <% if @bathroom.bath_type == 0 %>
     This is a unisex restroom!
   <% else %>
     This bathroom is not unisex, but is still a safe place to pee!"
   <% end %> <br>
-  <strong> Directions: </strong> 
-  <%= @bathroom.directions %> <br>
-  <strong> Comments: </strong>
-    <%= @bathroom.comment %><br>
+</div>  
+  
   Latitude:<%= @bathroom.latitude %><br>
   longitude: <%= @bathroom.longitude %>
 <br><br>
 
 
-<%= button_to "Thumbs Up", up_vote_bathroom_path %> <%= button_to "Thumbs Down", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?" %>
+
 
 
 <hr>

@@ -1,10 +1,13 @@
-<center>
-<h1> REFUGE restrooms </h1>
-</center>
-
-<div id="list">
-	<%= link_to "home", root_path, {:class=>"textItem"} %>
-	<%= link_to "submit a bathroom", new_bathroom_path, {:class=>"textItem"} %>
-	<%= link_to "list all bathrooms",bathrooms_path, {:class=>"textItem"} %>
-	<a HREF="http://www.github.com/tkwidmer/saferstalls_rails" class="textItem"> find us on github </a>
+<div class="imgsplash">
+  <span class="fontLarge">REFUGE</span><br/>
+  restrooms
+</div>
+<p>
+	This website is currently functional yet still under development. You may find that there are bugs. If you find any please contact us at one of the links below so that we can resolve the issue ASAP. This is an Open Source project and we encourage you to contribute on githib.
+</p>
+<div id="navlist">
+  <%= link_to "Add A Bathroom", new_bathroom_path, {:class=>"textItem"} %> || <%= link_to "About", about_path, {:class=>"textItem"} %> ||
+    <a HREF="https://github.com/tkwidmer/refugerestrooms" class="textItem"> Find us on Github </a> <br />
+	<a HREF="https://twitter.com/refugerestrooms" class="textItem"> Find us on Twitter </a> ||
+	<a HREF="https://www.facebook.com/refugerestrooms" class="textItem"> Find us on Facebook </a>
 </div>

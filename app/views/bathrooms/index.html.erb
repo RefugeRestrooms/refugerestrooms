@@ -11,15 +11,16 @@
 			var headerHidden = false;
 
 			$(function(){
-
 				initMap(<%= params[:lat] %>, <%= params[:long] %>);
 
+				//get a list of points from the server based on the searched location
 				$.get( "<%= list_bathrooms_path %>" + window.location.search , function( data ) {
 				  for(var i = 0; i < data.length; i++){
+
+					//for each point in the data, put a point on the map
 					setPoint(data[i]);
 				  }
 				});
-
 			});
 		</script>
 	</div>
@@ -34,7 +35,26 @@
 				<div class="itemInfo">
 					<div class="itemName"><%= link_to b.name, b %></div>
 					<div class="itemStreet"><%= b.street %>, <%= b.city %>, <%= b.state %></div>
-					<div class="itemRating">80% Positive</div>
+
+					<% if (b.upvote + b.downvote) != 0 %>
+						<% percentage = (b.upvote / (b.upvote + b.downvote).to_f) * 100 %>
+
+						<% if percentage > 70 %>
+						<% className = "greenRating" %>
+						<% else %>
+
+							<% if percentage > 50 %>
+							<% className = "yellowRating" %>
+							<% else %>
+							<% className = "redRating" %>
+							<% end %>
+						<% end %>
+
+						<div class="itemRating <%= className %>"><%= percentage.round %>% Positive</div>
+					<% else %>
+						<div class="itemRating">Not Yet Rated</div>
+					<% end %>
+
 				</div>
 
 				<div class="itemExtraInfo">
@@ -55,10 +75,10 @@
 			<% break if i >= 20 %>
         <% end %>
 
-
+<!--
         <div class="listItem listItemTemplate">
 			<div class="listItemImage">
-				<!-- image tag goes here -->
+
 			</div>
 
 			<div class="itemInfo">
@@ -77,6 +97,7 @@
 		<div class="loadMore textItem">
 			Load More
 		</div>
+-->
 </div>
 
 <% end %>

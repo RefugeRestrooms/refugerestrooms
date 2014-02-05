@@ -71,7 +71,7 @@ class BathroomsController < ApplicationController
       redirect_to @bathroom
     else
       flash[:alert] = "There was an unexpected problem upvoting this post."
-      redirect_to @bahtroom
+      redirect_to @bathroom
     end
   end
 
@@ -82,12 +82,12 @@ class BathroomsController < ApplicationController
     @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
 
     if params[:search].present? || params[:map] == "1"
-      @bathrooms = @bathrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+      @bathrooms = @bathrooms.near([params[:lat], params[:long]])
     else
       @bathrooms.reverse!
     end
 
-    @bathrooms = @bathrooms.limit(100)
+    @bathrooms = @bathrooms.limit(20)
   end
 
   def find_bathroom
