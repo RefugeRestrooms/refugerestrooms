@@ -13,6 +13,7 @@ function initMap(x, y){
 
 	  //set marker at current location
 	  var myLatLng = new google.maps.LatLng(x, y);
+	  
 	  var currentLocation = new google.maps.Marker({
 		  position: myLatLng,
 		  map: map,
@@ -35,24 +36,16 @@ function getPoint(string, callback){
 		});
 }
 
-function placeMarker(lat, lng, content){
-	//create marker
-	var marker=new google.maps.Marker({
-	  position:new google.maps.LatLng(lat,lng),
-	  });
-
-	//put marker on map
-	marker.setMap(map);
+function placeMarker(lat, lng, content, number){
 
 	//create popup
 	var infowindow = new google.maps.InfoWindow({
 	  content:content
 	  });
 
-	//linke popup to marker
-	google.maps.event.addListener(marker, 'click', function() {
-	  infowindow.open(map,marker);
-	  });
+	//create marker
+	var marker = new numberedCircle(new google.maps.LatLng(lat,lng), circleMarkerImage, number, map, infowindow);
+	
 }
 
 function generateContent(data){
@@ -66,8 +59,107 @@ var string = data.name
 	return string;
 }
 
-function setPoint(data){
+function setPoint(data, number){
 	if(data.latitude && data.longitude){
-		placeMarker(data.latitude, data.longitude, generateContent(data));
+		placeMarker(data.latitude, data.longitude, generateContent(data), number);
 	}
 }
+
+
+/*
+* Create a new marker that allows text
+*/
+numberedCircle.prototype = new google.maps.OverlayView();
+
+function numberedCircle(center, image, text, map, infoWindow) {
+
+	// Initialize all properties.
+	this.center_ = center;
+	this.image_ = image;
+	this.text_ = text;
+	this.map_ = map;
+	this.infoWindow_ = infoWindow;
+
+	// this will hold the div displayed on the map
+	this.div_ = null;
+
+	// Place on map
+	this.setMap(map);
+}
+
+numberedCircle.prototype.onAdd = function() {
+	var me = this;
+
+	//generate the content
+	var div = document.createElement('div');
+	div.style.borderStyle = 'none';
+	div.style.borderWidth = '0px';
+	div.style.position = 'absolute';
+	div.className = "numberCircle";
+	div.onclick = function(){
+		me.infoWindow_.open(map);
+		me.infoWindow_.setPosition(me.center_);
+	}
+	
+	var img = document.createElement('img');
+	img.src = this.image_;
+	img.style.position = 'absolute';
+	div.appendChild(img);
+	
+	var textDiv = document.createElement('div');
+	textDiv.style.position = 'absolute';
+	textDiv.style.top = 0;
+	textDiv.style.left = 0;
+	textDiv.style.width = '100%';
+	textDiv.style.height = '100%';
+	textDiv.innerHTML = this.text_;
+	div.appendChild(textDiv);
+
+	this.div_ = div;
+
+	// Add the element to the "overlayLayer" pane.
+	var panes = this.getPanes();
+	panes.overlayMouseTarget.appendChild(div);
+};
+
+numberedCircle.prototype.draw = function() {
+
+	// retrieve the projection from the overlay.
+	var overlayProjection = this.getProjection();
+
+	// convert the lat/lng to pixel units
+	var center = overlayProjection.fromLatLngToDivPixel(this.center_);
+
+	//get image for size calculations
+	var div = this.div_;
+	var image = div.getElementsByTagName("IMG")[0];
+
+	//detect if image has loaded yet or not (we can't get the size until it's loaded)
+	if(image.width == 0){
+		//set div's location, only thing we can do until image loads
+		div.style.left = center.x + 'px';
+		div.style.top = center.y + 'px';
+		
+		image.onload = function(){
+			var parent = this.parentNode;
+			//offset the parent div so that the image is centered
+			parent.style.left = (parent.offsetLeft - (this.width / 2)) + 'px';
+			parent.style.top = (parent.offsetTop - (this.height / 2)) + 'px';
+			parent.style.width = this.width + 'px';
+			parent.style.height = this.height + 'px';
+		}
+	}else{
+		//the image is loaded so we can easily access the size
+		//offset the div so that the image is centered
+		div.style.left = (center.x - (image.width / 2)) + 'px';
+		div.style.top = (center.y - (image.height / 2)) + 'px';
+		div.style.width = image.width + 'px';
+		div.style.height = image.height + 'px';
+	}
+  
+};
+
+numberedCircle.prototype.onRemove = function() {
+  this.div_.parentNode.removeChild(this.div_);
+  this.div_ = null;
+};

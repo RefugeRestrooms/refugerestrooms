@@ -3,6 +3,7 @@
 <head>
   <title>REFUGE restrooms</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -52,6 +53,7 @@ var disqus_shortname = 'refugerestrooms'; // required: replace example with your
 }());
 
 var currentLocationImage = "<%= image_path('marker-icon.png') %>";
+var circleMarkerImage = "<%= image_path('marker-circle.png') %>";
 
 $(function(){
 	$("#logo").click(function(){

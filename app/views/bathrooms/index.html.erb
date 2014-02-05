@@ -6,7 +6,7 @@
 	<div id ="map">
 		<div id="mapArea"></div>
 
-		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		
 		<script type="text/javascript">
 			var headerHidden = false;
 
@@ -18,7 +18,7 @@
 				  for(var i = 0; i < data.length; i++){
 
 					//for each point in the data, put a point on the map
-					setPoint(data[i]);
+					setPoint(data[i], i + 1);
 				  }
 				});
 			});
