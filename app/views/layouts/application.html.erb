@@ -63,13 +63,8 @@ $(function(){
 	setDefaultText(search, searchDefaultText);
 	
 	//remove default text on empty search
-	$(".searchButton").click(function(){
-		
-		//use class to determine if the text has been modified or not
-		if(search.hasClass("fadedText")){
-			search.val("");
-		}
-	});
+	preventSearchWithDefault($(".searchButton"), search);
+	preventSearchWithDefault($(".mapTogglelabel"), search);
 	
 });
 
@@ -88,6 +83,17 @@ function setDefaultText(element, text){
 			element.blur(function(){setDefaultText(element,text);});
 		});
 	}
+}
+
+function preventSearchWithDefault(element, searchBox){
+	element.click(function(){
+		
+		//use class to determine if the text has been modified or not
+		if(searchBox.hasClass("fadedText")){
+			//set search field back to blank
+			searchBox.val("");
+		}
+	});
 }
 
 </script>
