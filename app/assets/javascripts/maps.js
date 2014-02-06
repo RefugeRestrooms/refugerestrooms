@@ -5,7 +5,7 @@ function initMap(x, y, image){
 	
 	//init map
   var mapOptions = {
-    zoom: 13,
+    zoom: 15,
     center: new google.maps.LatLng(x, y)
   };
 
@@ -134,7 +134,7 @@ numberedCircle.prototype.draw = function() {
 	//get image for size calculations
 	var div = this.div_;
 	var image = div.getElementsByTagName("IMG")[0];
-
+	
 	//detect if image has loaded yet or not (we can't get the size until it's loaded)
 	if(image.width == 0){
 		//set div's location, only thing we can do until image loads
@@ -152,10 +152,18 @@ numberedCircle.prototype.draw = function() {
 	}else{
 		//the image is loaded so we can easily access the size
 		//offset the div so that the image is centered
+		if(map.getZoom() <= 14){
+			image.width = image.naturalWidth / 2;
+		}else{
+			image.width = image.naturalWidth;
+		}
 		div.style.left = (center.x - (image.width / 2)) + 'px';
 		div.style.top = (center.y - (image.height / 2)) + 'px';
 		div.style.width = image.width + 'px';
 		div.style.height = image.height + 'px';
+		
+		//adjust line-height to center text
+		div.getElementsByTagName("DIV")[0].style.lineHeight = image.height + 'px';
 	}
   
 };
