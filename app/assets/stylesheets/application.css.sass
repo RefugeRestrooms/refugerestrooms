@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require_tree .
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800)
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800)
 
 
 $font-stack: "Open Sans", Helvetica, sans-serif
@@ -288,6 +288,52 @@ h1
   line-height: 37px
   color: #FFF
   text-align: center
+
+.showPageItem
+  min-height: 140px
+  border-bottom: none
+  
+.showPageItem .itemInfo
+  left: 15px
+  
+.showPageItem .itemName
+  font-weight: 600
+  font-size: 25px
+  
+.thumbsButton 
+  position: relative
+  float: left
+  width: 50%
+  height: 100px
+  padding: 0
+  margin: 0
+  line-height: 100px
+  text-align: center
+  border: none
+  font-size: 18px
+  background-position: 15% 50%
+  background-repeat: no-repeat
+  margin-bottom: 20px
+
+.thumbsUp
+  background-color: #d9ebd3
+  border-top-left-radius: 5px
+  border-bottom-left-radius: 5px
+  color: #69b74a
+  background-image: url('thumbsUp.jpg')
+  
+.thumbsDown
+  background-color: #f5c1c5
+  border-top-right-radius: 5px
+  border-bottom-right-radius: 5px
+  color: #e0140b
+  background-image: url('thumbsDown.jpg')
+
+.showPageContent
+  padding: 10px
+
+.showPageContent #mapArea
+  border-radius: 5px
   
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px)
   .imgsplash
@@ -339,3 +385,15 @@ h1
 
   .textItem
     font-size: 12px
+
+  .showPageItem .itemName
+    font-size: 15px
+
+  .thumbsDown
+    background-image: url('thumbsDownSmall.jpg')
+	
+  .thumbsUp
+    background-image: url('thumbsUpSmall.jpg')
+
+  .thumbsButton 
+    font-size: 15px

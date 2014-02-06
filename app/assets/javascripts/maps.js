@@ -1,7 +1,8 @@
 var map;
 
-function initMap(x, y){
-
+function initMap(x, y, image){
+	image = typeof image !== 'undefined' ? image : currentLocationImage;
+	
 	//init map
   var mapOptions = {
     zoom: 13,
@@ -17,7 +18,7 @@ function initMap(x, y){
 	  var currentLocation = new google.maps.Marker({
 		  position: myLatLng,
 		  map: map,
-		  icon: currentLocationImage
+		  icon: image
 	  });
 }
 

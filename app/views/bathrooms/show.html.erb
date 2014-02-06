@@ -1,54 +1,76 @@
 <% # ADA filter and UNISEX filter have inconsistant default boolean values because i'm using the format originally used by the Safe2Pee db because the engineers were stupid and used different 1 for ADA and 0 for UNISEX. %>
 
-<div class="showtext">
-  <h2> <%= @bathroom.name %> </h2>
+<div class="listItem showPageItem" data-id="<%= @bathroom.id %>">
+	<div class="itemInfo">
+		<div class="itemName"><%= @bathroom.name %></div>
+		<div class="itemStreet"><%= @bathroom.street %>, <%= @bathroom.city %>, <%= @bathroom.state %></div>
 
-  <p> <%= @bathroom.street %>. <br>
-    <%= @bathroom.city %>, <%= @bathroom.state %> 
-  </p>
+		<% if (@bathroom.upvote + @bathroom.downvote) != 0 %>
+			<% percentage = (@bathroom.upvote / (@bathroom.upvote + @bathroom.downvote).to_f) * 100 %>
 
+			<% if percentage > 70 %>
+			<% className = "greenRating" %>
+			<% else %>
+
+				<% if percentage > 50 %>
+				<% className = "yellowRating" %>
+				<% else %>
+				<% className = "redRating" %>
+				<% end %>
+			<% end %>
+
+			<div class="itemRating <%= className %>"><%= percentage.round %>% Positive</div>
+		<% else %>
+			<div class="itemRating">Not Yet Rated</div>
+		<% end %>
+
+	</div>
+
+	<div class="itemExtraInfo">
+		
+		<% if @bathroom.bath_type == 0 %>
+			<div class="unisexBathroom"></div>
+		<% end %>
+		<% if @bathroom.access == 1 %>
+			<div class="ADABathroom"></div>
+		<% end %>
+	</div>
 </div>
 
-<div class="ratingscontainer">
-  <%= button_to "Thumbs Up", up_vote_bathroom_path %> 
-  <%= button_to "Thumbs Down", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?" %>
+<div class="showPageContent">
+	<div class="ratingscontainer">
+	  <%= button_to "Loved It!", up_vote_bathroom_path, :class => 'thumbsButton thumbsUp' %> 
+	  <%= button_to "Not Safe", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?", :class => 'thumbsButton thumbsDown' %>
+	</div>
+
+	<div id ="map">
+			<div id="mapArea"></div>
+
+			
+			<script type="text/javascript">
+				var headerHidden = false;
+
+				$(function(){
+					initMap(<%= @bathroom.latitude %>, <%= @bathroom.longitude %>, showMarkerImage);
+
+				});
+			</script>
+		</div>
+
+	  <p>
+		<strong> Directions: </strong> 
+	  <%= @bathroom.directions %> <br>
+	  </p>
+
+	  <p>
+	  <strong> Comments: </strong>
+		<%= @bathroom.comment %><br>
+	  </p>
+
+	</div>
 </div>
 
-  <p>
-    <strong> Directions: </strong> 
-  <%= @bathroom.directions %> <br>
-  </p>
-
-  <p>
-  <strong> Comments: </strong>
-    <%= @bathroom.comment %><br>
-  </p>
-
-</div>
-
-<div class="showadaimage">
-  <% if @bathroom.access == 1 %>
-    Yes, the restroom is ADA accessable!
-  <% else %>
-    Unfortunately this bathroom is not ADA accessable!
-  <% end %> <br>
-</div>
-
-<div class="showuniseximage">
-  <% if @bathroom.bath_type == 0 %>
-    This is a unisex restroom!
-  <% else %>
-    This bathroom is not unisex, but is still a safe place to pee!"
-  <% end %> <br>
-</div>  
-  
-  Latitude:<%= @bathroom.latitude %><br>
-  longitude: <%= @bathroom.longitude %>
 <br><br>
-
-
-
-
 
 <hr>
 
