@@ -39,7 +39,7 @@
 
 <div class="showPageContent">
 	<div class="ratingscontainer">
-	  <%= button_to "Loved It!", up_vote_bathroom_path, :class => 'thumbsButton thumbsUp' %> 
+	  <%= button_to "Loved It!", up_vote_bathroom_path, confirm: "Are you sure you want to upvote this bathroom?", :class => 'thumbsButton thumbsUp' %> 
 	  <%= button_to "Not Safe", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?", :class => 'thumbsButton thumbsDown' %>
 	</div>
 

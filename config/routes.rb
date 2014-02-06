@@ -2,7 +2,9 @@ SaferstallsRails::Application.routes.draw do
   resources :bathrooms do
     member do
       get :up_vote
+      post :up_vote
       get :down_vote
+      post :down_vote
     end
 
     collection do
