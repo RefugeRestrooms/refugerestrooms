@@ -198,5 +198,7 @@ function searchLocation(search){
 function handleSearchResults(lat, lng){
 	$("#lat").val(lat);
 	$("#long").val(lng);
+	console.log(lat);
+	console.log(lng);
 	$(".search").find("form").submit();
 }

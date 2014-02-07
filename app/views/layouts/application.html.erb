@@ -72,6 +72,13 @@ $(function(){
 		searchLocation(search.val());
 	});
 	
+	$(".search").find("form").submit(function(event){
+		if($("#lat").val() == "" || $("#long").val() == "" || $("#lat").val() == undefined || $("#long").val() == undefined){
+			event.preventDefault();
+			searchLocation(search.val());
+		}
+	});
+	
 });
 
 function setDefaultText(element, text){
