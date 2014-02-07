@@ -43,29 +43,31 @@
 	  <%= button_to "Not Safe", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?", :class => 'thumbsButton thumbsDown' %>
 	</div>
 
+	<p>
+	<strong> Directions: </strong> 
+	<%= @bathroom.directions %> <br>
+	</p>
+
+	<p>
+	<strong> Comments: </strong>
+	<%= @bathroom.comment %><br>
+	</p>
+	
 	<div id ="map">
-			<div id="mapArea"></div>
+		<div id="mapArea"></div>
 
-			
-			<script type="text/javascript">
-				var headerHidden = false;
+		
+		<script type="text/javascript">
+			var headerHidden = false;
 
-				$(function(){
-					initMap(<%= @bathroom.latitude %>, <%= @bathroom.longitude %>, showMarkerImage);
+			$(function(){
+				initMap(<%= @bathroom.latitude %>, <%= @bathroom.longitude %>, showMarkerImage);
 
-				});
-			</script>
-		</div>
+			});
+		</script>
+	</div>
 
-	  <p>
-		<strong> Directions: </strong> 
-	  <%= @bathroom.directions %> <br>
-	  </p>
-
-	  <p>
-	  <strong> Comments: </strong>
-		<%= @bathroom.comment %><br>
-	  </p>
+	
 
 	</div>
 </div>
