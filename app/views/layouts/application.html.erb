@@ -66,8 +66,11 @@ $(function(){
 	setDefaultText(search, searchDefaultText);
 	
 	//remove default text on empty search
-	preventSearchWithDefault($(".searchButton"), search);
-	preventSearchWithDefault($(".mapTogglelabel"), search);
+	preventSearchWithDefault($(".linkbutton"), search);
+	
+	$(".linkbutton").click(function(){
+		searchLocation(search.val());
+	});
 	
 });
 

@@ -172,3 +172,31 @@ numberedCircle.prototype.onRemove = function() {
   this.div_.parentNode.removeChild(this.div_);
   this.div_ = null;
 };
+
+/*
+* Geocoding
+*/
+
+function searchLocation(search){
+	if(search != ""){
+		var geocoder = new google.maps.Geocoder();
+		geocoder.geocode({
+		  'address': search
+		}, function (results, status) {
+		  // if match
+		  if (status == google.maps.GeocoderStatus.OK) {
+				handleSearchResults(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+		  } else {
+			  alert("Geocoder failed due to: " + status);
+		  }
+		});
+	}else{
+		handleSearchResults(37.7577, -122.4376);
+	}
+}
+
+function handleSearchResults(lat, lng){
+	$("#lat").val(lat);
+	$("#long").val(lng);
+	$(".search").find("form").submit();
+}
