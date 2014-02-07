@@ -104,7 +104,7 @@ class BathroomsController < ApplicationController
     error = nil
 
     if (!params[:search].blank? || params[:map] == "1") && (!params[:lat] || !params[:long])
-      location = Geocoder.coordinates(params[:search]) if params[:search]
+      location = params[:search] if params[:search]
       error = "There was an error searching for your location." unless location
       location ||= SAN_FRANCISCO_LOCATION
 
