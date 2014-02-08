@@ -66,6 +66,11 @@ GEM
       sass (~> 3.1)
     compass-rails (1.1.3)
       compass (>= 0.12.2)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    country_select (1.3.1)
+      countries (= 0.9.3)
+    currencies (0.4.2)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -182,6 +187,7 @@ DEPENDENCIES
   activeadmin!
   coffee-rails (~> 4.0.0)
   compass-rails
+  country_select
   geocoder
   jbuilder (~> 1.2)
   jquery-rails
