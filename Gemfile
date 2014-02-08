@@ -39,6 +39,9 @@ gem 'geocoder'
 # Use Active Admin
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+# Use country_select plugin
+gem 'country_select'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
