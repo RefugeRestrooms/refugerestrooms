@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 1.2'
 # Use Gecoder for easy searching of lat/long data
 gem 'geocoder'
 
+# Use Active Admin
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
