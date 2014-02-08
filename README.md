@@ -1,12 +1,13 @@
-**REFUGE restrooms**
+# REFUGE restrooms
 
-Providing safe restroom access for transgender, intersex, and gender noncomforming individuals. 
+Providing safe restroom access for transgender, intersex, and gender noncomforming individuals.
 
-REFUGE is an effort to fill the hole by the now defunct Safe2Pee website. It provides a resource for trans and queer individuals in need of gender neutral and other safe bathrooms. 
+REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. It provides a resource for trans* and queer individuals in need of gender neutral and other safe bathrooms.
 
-This project is open source. Feel free to contribute. We could use the help. 
+This project is open source. Feel free to contribute. We could use the help.
 
-**TECH**
+## Tech
+
 * Ruby on Rails
 * Postgres
 * Geocoder Gem
@@ -15,15 +16,17 @@ This project is open source. Feel free to contribute. We could use the help.
 * Deployed on Heroku
 
 
-** DEV TEAM **
+## Dev Team
+
 * Teagan Widmer - Ruby on Rails Eng
 * Alicia Woitte - JS/CSS/HTML
 * Stephan Leavens - UI/UX Design
 * Pam
 * Dominic - Heroku Consulting
 
-** LISCENCE **
-Copyright (C) 2014  Teagan Widmer
+## License
+
+Copyright (C) 2014 Teagan Widmer
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
