@@ -50,9 +50,9 @@
 							<% end %>
 						<% end %>
 
-						<div class="itemRating <%= className %>"><%= percentage.round %>% Positive</div>
+						<div class="itemRating <%= className %>"><%= t('bathroom.positive', percentage: percentage.round) %></div>
 					<% else %>
-						<div class="itemRating">Not Yet Rated</div>
+            <div class="itemRating"><%= t('bathroom.unrated') %></div>
 					<% end %>
 
 				</div>

@@ -19,9 +19,9 @@
 				<% end %>
 			<% end %>
 
-			<div class="itemRating <%= className %>"><%= percentage.round %>% Positive</div>
+			<div class="itemRating <%= className %>"><%= t('bathroom.rating.positive', percentage: percentage.round) %></div>
 		<% else %>
-			<div class="itemRating">Not Yet Rated</div>
+      <div class="itemRating"><%= t('bathroom.rating.unrated') %></div>
 		<% end %>
 
 	</div>
@@ -39,17 +39,17 @@
 
 <div class="showPageContent">
 	<div class="ratingscontainer">
-	  <%= button_to "Loved It!", up_vote_bathroom_path, confirm: "Are you sure you want to upvote this bathroom?", :class => 'thumbsButton thumbsUp' %> 
-	  <%= button_to "Not Safe", down_vote_bathroom_path, confirm: "Are you sure you want to down vote this bathroom?", :class => 'thumbsButton thumbsDown' %>
+	  <%= button_to t('bathroom.upvote'), up_vote_bathroom_path, confirm: t('bathroom.confirm.upvote'), :class => 'thumbsButton thumbsUp' %>
+	  <%= button_to t('bathroom.downvote'), down_vote_bathroom_path, confirm: t('bathroom.confirm.downvote'), :class => 'thumbsButton thumbsDown' %>
 	</div>
 
 	<p>
-	<strong> Directions: </strong> 
+  <strong> <%= t('bathrooom.directions') %>: </strong>
 	<%= @bathroom.directions %> <br>
 	</p>
 
 	<p>
-	<strong> Comments: </strong>
+  <strong> <%= t('bathroom.comments') %>: </strong>
 	<%= @bathroom.comment %><br>
 	</p>
 	
@@ -90,4 +90,4 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
+
