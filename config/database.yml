@@ -3,9 +3,11 @@ development:
   encoding: unicode
   database: bathrooms_development
   pool: 5
+  host: localhost
 
 test:
   adapter: postgresql
   encoding: unicode
   database: bathrooms_test
   pool: 5
+  host: localhost

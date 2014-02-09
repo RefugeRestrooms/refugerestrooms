@@ -2,7 +2,7 @@ class BathroomsController < ApplicationController
 
   before_filter :encode_search, only: :index
   before_filter :list_bathrooms, only: [:index, :list]
-  before_filter :find_bathroom, only: [:show, :update, :destroy, :up_vote, :down_vote]
+  before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
   def index
   end
