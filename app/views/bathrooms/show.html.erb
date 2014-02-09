@@ -3,7 +3,9 @@
 <div class="listItem showPageItem" data-id="<%= @bathroom.id %>">
 	<div class="itemInfo">
 		<div class="itemName"><%= @bathroom.name %></div>
-		<div class="itemStreet"><%= @bathroom.street %>, <%= @bathroom.city %>, <%= @bathroom.state %></div>
+		<div class="itemStreet"><%= @bathroom.street %>, <%= @bathroom.city %>, <%= @bathroom.state %>
+		<li><%= link_to t('Contact'), new_contact_path %></li>
+		</div>
 
 		<% if (@bathroom.upvote + @bathroom.downvote) != 0 %>
 			<% percentage = (@bathroom.upvote / (@bathroom.upvote + @bathroom.downvote).to_f) * 100 %>
