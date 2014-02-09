@@ -68,7 +68,7 @@ $(function(){
 	//remove default text on empty search
 	preventSearchWithDefault($(".linkbutton"), search);
 	
-	$(".linkbutton").click(function(){
+	$(".linkbutton").not(".currentLocationButton").click(function(){
 		searchLocation(search.val());
 	});
 	
@@ -77,6 +77,10 @@ $(function(){
 			event.preventDefault();
 			searchLocation(search.val());
 		}
+	});
+	
+	$(".currentLocationButton").click(function(){
+	    searchCurrent();
 	});
 	
 });

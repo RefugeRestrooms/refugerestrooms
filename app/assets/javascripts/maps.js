@@ -177,22 +177,31 @@ numberedCircle.prototype.onRemove = function() {
 * Geocoding
 */
 
+var currentLocationText = "Current Location";
+
 function searchLocation(search){
-	if(search != ""){
-		var geocoder = new google.maps.Geocoder();
-		geocoder.geocode({
-		  'address': search
-		}, function (results, status) {
-		  // if match
-		  if (status == google.maps.GeocoderStatus.OK) {
-				handleSearchResults(results[0].geometry.location.lat(), results[0].geometry.location.lng());
-		  } else {
-			  alert("Geocoder failed due to: " + status);
-		  }
-		});
-	}else{
-		handleSearchResults(37.7577, -122.4376);
+	if (search == currentLocationText) {
+		searchCurrent();
+		return;
 	}
+	
+	if(search == ""){
+		handleSearchResults(37.7577, -122.4376);
+		return;
+	}
+	
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({
+	  'address': search
+	}, function (results, status) {
+	  // if match
+	  if (status == google.maps.GeocoderStatus.OK) {
+			handleSearchResults(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+	  } else {
+		  alert("Geocoder failed due to: " + status);
+	  }
+	});
+
 }
 
 function handleSearchResults(lat, lng){
@@ -201,4 +210,21 @@ function handleSearchResults(lat, lng){
 	console.log(lat);
 	console.log(lng);
 	$(".search").find("form").submit();
+}
+
+function searchCurrent(){
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function (pos) {
+
+                  // set map
+		  console.log("lat: %s , long: %s", pos.coords.latitude, pos.coords.longitude);
+		  $("#search").val(currentLocationText);
+                  handleSearchResults(pos.coords.latitude, pos.coords.longitude);
+
+              }, function (error) {
+                  alert("Location dectection failed due to:" + error);
+              });
+          }else{
+		alert("Unable to aquire current location");
+	  }
 }
