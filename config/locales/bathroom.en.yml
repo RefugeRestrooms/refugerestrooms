@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    attributes:
+      bathroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Location/Place/Business name'
+        street: 'Street Address'
+        state: 'State/Province'
+        access: 'Accessible?'
+        bath_type: 'Type of bathroom'
+
+  bathroom:
+    add_new: 'Submit a bathroom to our database'
+    directions: 'Directions'
+    directions_hint: '(e.g.: third floor in the back, by the dressing rooms...)'
+    comments_hint: '(e.g.: you have to be a "paying customer", just act like you are browsing for a bit...)'
+    comments: 'Comments'
+    accessible: 'Accessible'
+    not_accessible: 'Not accessible'
+    type:
+      unisex: 'Unisex / Gender neutral'
+      single_stall: 'Gendered single stall or safe place'
+    rating:
+      positive: '%{percentage}% positive'
+      unrated: 'Not yet rated'
+    upvote: 'Loved it!'
+    downvote: 'Not safe'
+    confirm:
+      upvote: 'Are you sure you want to upvote to his bathroom?'
+      downvote: 'Are you sure you want to down vote this bathroom?'
