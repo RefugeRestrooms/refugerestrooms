@@ -67,6 +67,10 @@
 	var list = $("#list");
 	var mapToggle = $(".mapTogglelabel");
 	$(function(){
+		<% if params[:lat].blank? || params[:long].blank? %>
+			//catch bad URL
+			searchLocation(search.val());
+		<% end %>
 		//get default height for animation later
 		mapHeight = mapContainer.height();
 		listHeight = list.height();
@@ -115,17 +119,19 @@
 	function doInit(){
 		//initialize the map if it wasn't already on
 		if (!mapOn) {
-			initMap(<%= params[:lat] %>, <%= params[:long] %>);
-	
-			//get a list of points from the server based on the searched location
-			$.get( "<%= list_bathrooms_path %>" + window.location.search , function( data ) {
-			  for(var i = 0; i < data.length; i++){
-	
-				//for each point in the data, put a point on the map
-				setPoint(data[i], i + 1);
-			  }
-			});
-			mapOn = true;
+			<% if !params[:lat].blank? && !params[:long].blank? %>
+				initMap(<%= params[:lat] %>, <%= params[:long] %>);
+		
+				//get a list of points from the server based on the searched location
+				$.get( "<%= list_bathrooms_path %>" + window.location.search , function( data ) {
+				  for(var i = 0; i < data.length; i++){
+		
+					//for each point in the data, put a point on the map
+					setPoint(data[i], i + 1);
+				  }
+				});
+				mapOn = true;
+			<% end %>
 		}
 	}
 </script>

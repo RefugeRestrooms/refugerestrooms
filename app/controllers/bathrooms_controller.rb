@@ -108,8 +108,8 @@ class BathroomsController < ApplicationController
       error = "There was an error searching for your location." unless location
       location ||= SAN_FRANCISCO_LOCATION
 
-      params[:lat] = location[0]
-      params[:long] = location[1]
+      params[:lat] = ""
+      params[:long] = ""
 
       redirect_to url_for(params), flash: {alert: error}
     elsif params[:search].blank? && (params[:lat] || params[:long])

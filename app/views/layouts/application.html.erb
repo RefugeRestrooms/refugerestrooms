@@ -58,12 +58,13 @@ var showMarkerImage = "<%= image_path('show-icon.png') %>";
 
 var searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
 
+var search = $("#search");
 $(function(){
 	$("#logo").click(function(){
 		window.location = "http://" + window.location.host;
 	});
 	
-	var search = $("#search");
+	
 	
 	setDefaultText(search, searchDefaultText);
 	
