@@ -23,6 +23,7 @@ This project is open source. Feel free to contribute. We could use the help.
 * Stephan Leavens - UI/UX Design
 * Pam
 * Dominic - Heroku Consulting
+* Natalie Roman - Vector/Raster Design
 
 ## License
 
