@@ -9,14 +9,14 @@
 	<div class="searchBarContainer">
 		<%= text_field_tag :search, params[:search], :class => "searchBar" %>
 	</div>
-	<%= submit_tag "Search", :type => 'button', :name => nil, :class=> "linkbutton searchButton" %>
+	<%= submit_tag "Search", :type => 'button', :name => nil, :class=> "linkbutton searchButton submitButton" %>
 	<%= submit_tag "", :type => 'button', :name => nil, :class=> "linkbutton currentLocationButton" %>
 	<%= hidden_field_tag :lat, "" %>
 	<%= hidden_field_tag :long, "" %>
 </div>
 <div class="nav">
   <div class="adaFilter filter">
-    <%= check_box_tag :adafilter, 1, params[:adafilter] == '1', :class => 'adacheck' %>
+    <%= check_box_tag :adafilter, 1, params[:adafilter] == '1', :class => 'adacheck submitButton' %>
     <label for="adafilter" class="adaFilterlabel linkbutton">
       <img src="<%= asset_path("ADABathroom.png") %>" class='adafilterlabelimage' />
       <span class="adafilterlabeltext"><%= params[:adafilter] == '1' ? "ON" : "OFF" %> </span>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="unisexFilter filter">
-    <%= check_box_tag :unisexfilter, 0, params[:unisexfilter] == '0', :class => 'unisexcheck' %>
+    <%= check_box_tag :unisexfilter, 0, params[:unisexfilter] == '0', :class => 'unisexcheck submitButton' %>
     <label for="unisexfilter" class="unisexFilterlabel linkbutton">
       <img src="<%= asset_path("UnisexBathroom.png") %>" class='unisexfilterlabelimage' />
       <span class="unisexfilterlabeltext"><%= params[:unisexfilter] == '0' ? "ON" : "OFF" %></span>
@@ -32,10 +32,9 @@
   </div>
 
   <div class="mapToggle">
-    <%= check_box_tag :map, 1, params[:map] == '1', :class => 'mapcheck' %>
-    <label for="map" class="mapTogglelabel linkbutton">
-      <%= params[:map] == '1' ? "List" : "Map" %> View
-    </label>
+    <div class="mapTogglelabel linkbutton">
+      Map View
+    </div>
   </div>
 </div>
 

@@ -20,6 +20,7 @@ function initMap(x, y, image){
 		  map: map,
 		  icon: image
 	  });
+	  
 }
 
 
@@ -39,25 +40,17 @@ function getPoint(string, callback){
 
 function placeMarker(lat, lng, content, number){
 
-	//create popup
-	var infowindow = new google.maps.InfoWindow({
-	  content:content
-	  });
-
 	//create marker
-	var marker = new numberedCircle(new google.maps.LatLng(lat,lng), circleMarkerImage, number, map, infowindow);
+	var marker = new numberedCircle(new google.maps.LatLng(lat,lng), circleMarkerImage, number, map, content);
 	
 }
 
 function generateContent(data){
-var string = data.name
-	+ "<br/><a href='bathrooms/"
-	+ data.id
-	+"'>"
-	+ data.street
-	+ "</a>";
+	var item = $(".listItem[data-id=" + data.id + "]");
+	var container = $("<div class='markerPopup' />");
+	container.append(item.clone());
 
-	return string;
+	return container;
 }
 
 function setPoint(data, number){
@@ -72,15 +65,17 @@ function setPoint(data, number){
 */
 numberedCircle.prototype = new google.maps.OverlayView();
 
-function numberedCircle(center, image, text, map, infoWindow) {
-
+function numberedCircle(center, image, text, map, content) {
+	
 	// Initialize all properties.
 	this.center_ = center;
 	this.image_ = image;
 	this.text_ = text;
 	this.map_ = map;
-	this.infoWindow_ = infoWindow;
-
+	this.content_ = content;
+	
+	
+	
 	// this will hold the div displayed on the map
 	this.div_ = null;
 
@@ -92,15 +87,15 @@ numberedCircle.prototype.onAdd = function() {
 	var me = this;
 
 	//generate the content
+	//TODO: move all style to css using className
 	var div = document.createElement('div');
 	div.style.borderStyle = 'none';
 	div.style.borderWidth = '0px';
 	div.style.position = 'absolute';
 	div.className = "numberCircle";
 	div.onclick = function(){
-		me.infoWindow_.open(map);
-		me.infoWindow_.setPosition(me.center_);
-	}
+		me.openPopup(me.content_);
+		};
 	
 	var img = document.createElement('img');
 	img.src = this.image_;
@@ -108,6 +103,7 @@ numberedCircle.prototype.onAdd = function() {
 	div.appendChild(img);
 	
 	var textDiv = document.createElement('div');
+	textDiv.className = "numberCircleText";
 	textDiv.style.position = 'absolute';
 	textDiv.style.top = 0;
 	textDiv.style.left = 0;
@@ -115,6 +111,8 @@ numberedCircle.prototype.onAdd = function() {
 	textDiv.style.height = '100%';
 	textDiv.innerHTML = this.text_;
 	div.appendChild(textDiv);
+	
+	this.content_.appendTo(div);
 
 	this.div_ = div;
 
@@ -163,8 +161,9 @@ numberedCircle.prototype.draw = function() {
 		div.style.height = image.height + 'px';
 		
 		//adjust line-height to center text
-		div.getElementsByTagName("DIV")[0].style.lineHeight = image.height + 'px';
+		div.children[1].style.lineHeight = image.height + 'px';
 	}
+	console.log(this.content_[0]);
   
 };
 
@@ -172,6 +171,15 @@ numberedCircle.prototype.onRemove = function() {
   this.div_.parentNode.removeChild(this.div_);
   this.div_ = null;
 };
+
+numberedCircle.prototype.openPopup = function(content){
+	$(content).show();
+	
+	//hide popup after 10 seconds
+	setTimeout(function(){
+		content.fadeOut();
+		}, 10000);
+}
 
 /*
 * Geocoding
@@ -207,8 +215,6 @@ function searchLocation(search){
 function handleSearchResults(lat, lng){
 	$("#lat").val(lat);
 	$("#long").val(lng);
-	console.log(lat);
-	console.log(lng);
 	$(".search").find("form").submit();
 }
 

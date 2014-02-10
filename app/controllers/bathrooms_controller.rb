@@ -103,7 +103,7 @@ class BathroomsController < ApplicationController
   def encode_search
     error = nil
 
-    if (!params[:search].blank? || params[:map] == "1") && (!params[:lat] || !params[:long])
+    if (!params[:search].blank? ) && (!params[:lat] || !params[:long])
       location = params[:search] if params[:search]
       error = "There was an error searching for your location." unless location
       location ||= SAN_FRANCISCO_LOCATION
@@ -112,7 +112,7 @@ class BathroomsController < ApplicationController
       params[:long] = location[1]
 
       redirect_to url_for(params), flash: {alert: error}
-    elsif params[:search].blank? && params[:map] != "1" && (params[:lat] || params[:long])
+    elsif params[:search].blank? && (params[:lat] || params[:long])
       params.delete(:lat)
       params.delete(:long)
       redirect_to url_for(params)
