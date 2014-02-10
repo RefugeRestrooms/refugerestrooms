@@ -98,24 +98,32 @@ class BathroomsController < ApplicationController
     params.require(:bathroom).permit!
   end
 
-  SAN_FRANCISCO_LOCATION = [37.7577, -122.4376]
-
   def encode_search
-    error = nil
+    # The case where the search parameter is populated, but the lat and long
+    # parameters are blank, has to be handled on the client side, so does not
+    # appear here.
 
-    if (!params[:search].blank? ) && (!params[:lat] || !params[:long])
-      location = params[:search] if params[:search]
-      error = "There was an error searching for your location." unless location
-      location ||= SAN_FRANCISCO_LOCATION
+    # Normalize the search query a bit.
+    case params[:search]
+    when /(-?[\d.]+), *(-?[\d.]+)/
+      # If someone searches with latitude and longitude, populate the lat/long params.
+      params[:lat], params[:long] = [$1, $2]
 
-      params[:lat] = location[0]
-      params[:long] = location[1]
+    when ''
+      if params[:lat].blank? && params[:long].blank?
+        # If all of the search, lat, and long parameters are blank,
+        # redirect to the homepage.
+        redirect_to '/'
 
-      redirect_to url_for(params), flash: {alert: error}
-    elsif params[:search].blank? && (params[:lat] || params[:long])
-      params.delete(:lat)
-      params.delete(:long)
-      redirect_to url_for(params)
+      elsif !params[:lat].blank? && !params[:long].blank?
+        # If lat/long parameters are populated, but the search parameter is not,
+        # set the search parameter to "<lat>, <long>"
+        params[:search] = "#{params[:lat]}, #{params[:long]}"
+
+      else
+        # Only one of the latitude or longitude parameters is blank.
+        # FIXME: I'm not sure how this could ever happen. Do we need to handle it? If so, how?
+      end
     end
   end
 
