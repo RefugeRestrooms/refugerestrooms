@@ -54,7 +54,8 @@ class BathroomsController < ApplicationController
   end
 
   def down_vote
-    @bathroom.downvote += 1
+    @bathroom.downvote!
+
     if @bathroom.save
       flash[:notice] = "This bathroom has been downvoted! Thank you for contributing to our community. "
       redirect_to @bathroom
@@ -65,7 +66,8 @@ class BathroomsController < ApplicationController
   end
 
   def up_vote
-    @bathroom.upvote += 1
+    @bathroom.upvote!
+
     if @bathroom.save
       flash[:notice] = "This bathroom has been upvoted! Thank you for contributing to our community. "
       redirect_to @bathroom
