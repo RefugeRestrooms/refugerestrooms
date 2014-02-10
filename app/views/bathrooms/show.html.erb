@@ -1,42 +1,6 @@
-<% # ADA filter and UNISEX filter have inconsistant default boolean values because i'm using the format originally used by the Safe2Pee db because the engineers were stupid and used different 1 for ADA and 0 for UNISEX. %>
-
 <div class="listItem showPageItem" data-id="<%= @bathroom.id %>">
-	<div class="itemInfo">
-		<div class="itemName"><%= @bathroom.name %></div>
-		<div class="itemStreet"><%= @bathroom.street %>, <%= @bathroom.city %>, <%= @bathroom.state %></div>
-
-		<% if (@bathroom.upvote + @bathroom.downvote) != 0 %>
-			<% percentage = (@bathroom.upvote / (@bathroom.upvote + @bathroom.downvote).to_f) * 100 %>
-
-			<% if percentage > 70 %>
-			<% className = "greenRating" %>
-			<% else %>
-
-				<% if percentage > 50 %>
-				<% className = "yellowRating" %>
-				<% else %>
-				<% className = "redRating" %>
-				<% end %>
-			<% end %>
-
-			<div class="itemRating <%= className %>"><%= t('bathroom.rating.positive', percentage: percentage.round) %></div>
-		<% else %>
-      <div class="itemRating"><%= t('bathroom.rating.unrated') %></div>
-		<% end %>
-
-	</div>
-
-	<div class="itemExtraInfo">
-		
-		<% if @bathroom.bath_type == 0 %>
-			<div class="unisexBathroom"></div>
-		<% end %>
-		<% if @bathroom.access == 1 %>
-			<div class="ADABathroom"></div>
-		<% end %>
-	</div>
+  <%= render partial: 'bathrooms/bathroom_summary', locals: { bathroom: @bathroom } %>
 </div>
-
 <div class="showPageContent">
 	<div class="ratingscontainer">
 	  <%= button_to t('bathroom.upvote'), up_vote_bathroom_path, confirm: t('bathroom.confirm.upvote'), :class => 'thumbsButton thumbsUp' %>
