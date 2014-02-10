@@ -121,8 +121,16 @@ class BathroomsController < ApplicationController
         params[:search] = "#{params[:lat]}, #{params[:long]}"
 
       else
-        # Only one of the latitude or longitude parameters is blank.
-        # FIXME: I'm not sure how this could ever happen. Do we need to handle it? If so, how?
+        # The search parameter is empty, but only *one* of the latitude or
+        # longitude parameters is blank.
+        # We can't really recover from this, so redirect to the homepage and
+        # show an error.
+
+        params.delete(:lat)
+        params.delete(:long)
+
+        error = "There was an error searching for your location."
+        redirect_to url_for(params), flash: {error: error}
       end
     end
   end
