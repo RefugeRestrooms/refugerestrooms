@@ -136,6 +136,9 @@ h1
   float: right
   border-raidus: $rounded-corners
 
+.adaFilterlabel
+  background-image: asset-url('ada-slider.svg')
+
 .adafilterlabelimage
   line-height: 0px
   height: 20px
@@ -147,6 +150,15 @@ h1
 .adafilterlabeltext
   margin-left: 25px
 
+.unisexFilterlabel
+  background-image: asset-url('unisex-slider.svg')
+  
+.unisexFilterlabel, .adaFilterlabel
+  width: 69px
+  height: 34px
+  padding: 0
+  background-size: 138px 34px
+
 .unisexfilterlabelimage
   line-height: 0px
   height: 20px
@@ -154,6 +166,9 @@ h1
   float: left
   position: absolute
   top: 7px
+  
+.buttonOn
+  background-position: 69px 0
 
 .unisexfilterlabeltext
   margin-left: 25px
@@ -344,14 +359,14 @@ h1
   border-top-left-radius: 5px
   border-bottom-left-radius: 5px
   color: #69b74a
-  background-image: url('thumbsUp.jpg')
+  background-image: asset-url('thumbsUp.jpg')
   
 .thumbsDown
   background-color: #f5c1c5
   border-top-right-radius: 5px
   border-bottom-right-radius: 5px
   color: #e0140b
-  background-image: url('thumbsDown.jpg')
+  background-image: asset-url('thumbsDown.jpg')
 
 .showPageContent
   padding: 10px
@@ -399,6 +414,19 @@ h1
   
 #mapContainer, #list
   overflow: hidden
+  
+.submitBathroomButton
+  display: inline-block
+  background: asset-url('submit.svg') no-repeat
+  width: 300px
+  height: 70px
+  max-width: 100%
+  background-size: 200% auto
+  margin-top: 20px
+  background-position: 0 50%
+  
+.submitBathroomButton:hover
+  background-position: 100% 50%
   
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px)
   .imgsplash
