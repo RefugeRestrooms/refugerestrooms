@@ -27,10 +27,14 @@
   </div>
 
   <% if bathroom.unisex? %>
-    <div class="unisexBathroom"></div>
+    <div class="unisexBathroom">
+      <%= image_tag "UnisexBathroom.png", {alt: "Unisex Bathroom"} %>
+    </div>
   <% end %>
   <% if bathroom.accessible? %>
-    <div class="ADABathroom"></div>
+    <div class="ADABathroom">
+      <%= image_tag "ADABathroom.png", {alt: "ADA Compliant Bathroom"} %>
+    </div>
   <% end %>
 </div>
 
