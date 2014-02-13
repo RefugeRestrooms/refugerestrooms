@@ -206,7 +206,7 @@ function searchLocation(search){
 	  if (status == google.maps.GeocoderStatus.OK) {
 			handleSearchResults(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 	  } else {
-		  alert("Geocoder failed due to: " + status);
+		  emitError("Geocoder failed due to: " + status);
 	  }
 	});
 
@@ -228,9 +228,17 @@ function searchCurrent(){
                   handleSearchResults(pos.coords.latitude, pos.coords.longitude);
 
               }, function (error) {
-                  alert("Location dectection failed due to:" + error);
+                  emitError("Location dectection failed due to:" + error);
               });
           }else{
-		alert("Unable to aquire current location");
+		emitError("Unable to aquire current location");
 	  }
+}
+
+/*
+ * Error Handling
+ */
+
+function emitError(error){
+	alert(error);	
 }
