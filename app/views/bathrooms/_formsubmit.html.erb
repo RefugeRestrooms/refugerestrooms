@@ -1,13 +1,12 @@
-<% # ADA filter and UNISEX filter have inconsistant default boolean values because i'm using the format originally used by the Safe2Pee db because the engineers were stupid and used different 1 for ADA and 0 for UNISEX. %>
-
-<h3><%= t('bathroom.add_new') %></h3>
+<h1><%= t('bathroom.add_new') %></h1>
+<h3><%= t('bathroom.required') %></h3>
 
 <%= form_for :bathroom, url: bathrooms_path do |f| %>
   <p>
-    <strong><%= f.label :name %>:</strong> <%= f.text_field :name %><br>
-    <strong><%= f.label :street %>:</strong> <%= f.text_field :street %><br>
-    <strong><%= f.label :city %>:</strong> <%= f.text_field :city %><br>
-    <strong><%= f.label :state %>:</strong> <%= f.text_field :state %> <br>
+    <strong><%= f.label :name %>:</strong> <%= f.text_field :name %>*<br>
+    <strong><%= f.label :street %>:</strong> <%= f.text_field :street %>*<br>
+    <strong><%= f.label :city %>:</strong> <%= f.text_field :city %>*<br>
+    <strong><%= f.label :state %>:</strong> <%= f.text_field :state %>*<br>
     <strong><%= f.label :country %>: </strong> <%= f.text_field :country %> <br>
     <%= f.hidden_field :latitude %>
     <%= f.hidden_field :longitude %> <br/>

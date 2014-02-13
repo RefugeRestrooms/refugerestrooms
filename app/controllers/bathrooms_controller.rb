@@ -1,4 +1,5 @@
 class BathroomsController < ApplicationController
+  helper :bathrooms
 
   before_filter :encode_search, only: :index
   before_filter :list_bathrooms, only: [:index, :list]
@@ -25,7 +26,7 @@ class BathroomsController < ApplicationController
       flash[:notice] = "A new bathroom entry has been created for #{@bathroom.name}."
       redirect_to @bathroom
     else
-      flash[:alert] = "There was a problem saving your entry to the database."
+      display_errors
       render 'new'
     end
   end
@@ -35,7 +36,7 @@ class BathroomsController < ApplicationController
       flash[:notice] = "This bathroom entry has been updated."
       redirect_to @bathroom
     else
-      flash[:alert] = "There was an unexpected problem updating this post."
+      display_errors
       render 'edit'
     end
   end
@@ -48,7 +49,7 @@ class BathroomsController < ApplicationController
       flash[:notice] = "This bathroom entry has been deleted."
       redirect_to bathrooms_path
     else
-      flash[:alert] = "This bathroom entry could not be deleted."
+      display_errors
       redirect_to @bathroom
     end
   end
@@ -90,6 +91,16 @@ class BathroomsController < ApplicationController
     end
 
     @bathrooms = @bathrooms.limit(20)
+  end
+
+  def display_errors
+    if @bathroom.errors.any?
+      @bathroom.errors.each do |attr,msg|
+        flash[:alert] = msg
+      end
+    else
+      flash[:alert] = "We ran into an unexpected problem, please contact us if the problem continues."
+    end
   end
 
   def find_bathroom
