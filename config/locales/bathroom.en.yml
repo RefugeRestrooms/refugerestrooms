@@ -37,7 +37,7 @@ en:
       upvotesuccess: 'This bathroom has been upvoted! Thank you for contributing to our community.'
       downvoteerror: 'There was an unexpected problem downvoting this post.'
       downvotesuccess: 'This bathroom has been downvoted! Thank you for contributing to our community.'
-      new: 'A new bathroom entry has been created for #{name}.'
+      new: 'A new bathroom entry has been created for %{name}.'
       updated: 'This bathroom entry has been updated'
       deleted: 'This bathroom entry has been deleted'
       searcherror: 'There was an error searching for your location.'
