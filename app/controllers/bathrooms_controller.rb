@@ -23,7 +23,7 @@ class BathroomsController < ApplicationController
     @bathroom = Bathroom.new(permitted_params)
 
     if @bathroom.save
-      flash[:notice] = I18n.t('bathroom.flash.new')
+      flash[:notice] = I18n.t('bathroom.flash.new', name: @bathroom.name)
       redirect_to @bathroom
     else
       display_errors
