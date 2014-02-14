@@ -37,18 +37,15 @@ h1
   padding: 5px
   text-align: center
 
-form
-  background: $purple
+.addForm
+  border: 2px solid $purple
   max-width: 720px
   width: 80%
   border-radius: $rounded-corners
   padding: 1px 0px 0px 10px
   margin: 0 auto
 
-form strong, form p
-  color: $white
-
-form input[name=commit]
+.addForm input[name=commit]
   padding: 4px 
   float: center
   border:none
@@ -58,7 +55,7 @@ form input[name=commit]
   cursor: pointer
   
 
-form input[name=commit]:hover
+.addForm input[name=commit]:hover
   background-color: $light-purple
   color: white
 
@@ -487,6 +484,9 @@ form input[name=commit]:hover
   
 .hiddenText
   visibility: hidden
+  
+footer
+  margin-top: 15px
   
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px)
   .imgsplash

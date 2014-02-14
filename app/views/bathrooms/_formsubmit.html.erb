@@ -1,7 +1,9 @@
 <h1><%= t('bathroom.add_new') %></h1>
+
+<%= form_for :bathroom, html: {class: "addForm"}, url: bathrooms_path do |f| %>
+
 <h3><%= t('bathroom.required') %></h3>
 
-<%= form_for :bathroom, url: bathrooms_path do |f| %>
   <p>
     <strong><%= f.label :name %>:</strong> <%= f.text_field :name %>*<br>
     <strong><%= f.label :street %>:</strong> <%= f.text_field :street %>*<br>
