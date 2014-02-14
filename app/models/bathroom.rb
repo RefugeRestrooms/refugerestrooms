@@ -4,8 +4,7 @@
 
 class Bathroom < ActiveRecord::Base
 
-  validates :name, :street, :city, :state, 
-            :presence => {:message => "A required field is blank! Please fill out all required fields and resubmit!" }
+  validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
   after_validation :geocode, :lookup => :google

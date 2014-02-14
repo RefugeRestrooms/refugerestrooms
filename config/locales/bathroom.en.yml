@@ -30,3 +30,15 @@ en:
     confirm:
       upvote: 'Are you sure you want to upvote to his bathroom?'
       downvote: 'Are you sure you want to down vote this bathroom?'
+    flash:
+      field: 'A required field has been left blank. Please recheck your submission and submit the form again.'
+      unexpected: 'We ran into an unexpected problem, please contact us if the problem continues.'
+      upvoteerror: 'There was an unexpected problem upvoting this post.'
+      upvotesuccess: 'This bathroom has been upvoted! Thank you for contributing to our community.'
+      downvoteerror: 'There was an unexpected problem downvoting this post.'
+      downvotesuccess: 'This bathroom has been downvoted! Thank you for contributing to our community.'
+      new: 'A new bathroom entry has been created for #{@bathroom.name}.'
+      updated: 'This bathroom entry has been updated'
+      deleted: 'This bathroom entry has been deleted'
+      searcherror: 'There was an error searching for your location.'
+

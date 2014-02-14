@@ -23,7 +23,7 @@ class BathroomsController < ApplicationController
     @bathroom = Bathroom.new(permitted_params)
 
     if @bathroom.save
-      flash[:notice] = "A new bathroom entry has been created for #{@bathroom.name}."
+      flash[:notice] = I18n.t('bathroom.flash.new')
       redirect_to @bathroom
     else
       display_errors
@@ -33,7 +33,7 @@ class BathroomsController < ApplicationController
 
   def update
     if @bathroom.update(permitted_params)
-      flash[:notice] = "This bathroom entry has been updated."
+      flash[:notice] = I18n.t('bathroom.flash.updated')
       redirect_to @bathroom
     else
       display_errors
@@ -46,7 +46,7 @@ class BathroomsController < ApplicationController
 
   def destroy
     if @bathroom.destroy
-      flash[:notice] = "This bathroom entry has been deleted."
+      flash[:notice] = I18n.t('bathroom.flash.deleted')
       redirect_to bathrooms_path
     else
       display_errors
@@ -58,10 +58,10 @@ class BathroomsController < ApplicationController
     @bathroom.downvote!
 
     if @bathroom.save
-      flash[:notice] = "This bathroom has been downvoted! Thank you for contributing to our community. "
+      flash[:notice] = I18n.t('bathroom.flash.downvotesuccess')
       redirect_to @bathroom
     else
-      flash[:alert] = "There was an unexpected problem downvoting this post."
+      flash[:alert] = I18n.t('bathroom.flash.downvoteerror')
       redirect_to @bathroom
     end
   end
@@ -70,10 +70,10 @@ class BathroomsController < ApplicationController
     @bathroom.upvote!
 
     if @bathroom.save
-      flash[:notice] = "This bathroom has been upvoted! Thank you for contributing to our community. "
+      flash[:notice] = I18n.t('bathroom.flash.upvoteerror')
       redirect_to @bathroom
     else
-      flash[:alert] = "There was an unexpected problem upvoting this post."
+      flash[:alert] = I18n.t('bathroom.flash.upvotesuccess')
       redirect_to @bathroom
     end
   end
@@ -95,11 +95,11 @@ class BathroomsController < ApplicationController
 
   def display_errors
     if @bathroom.errors.any?
-      @bathroom.errors.each do |attr,msg|
-        flash[:alert] = msg
+      errors = @bathroom.errors.each do |attribute, message|
+        flash[:alert] = I18n.t('bathroom.flash.field')
       end
     else
-      flash[:alert] = "We ran into an unexpected problem, please contact us if the problem continues."
+      flash[:alert] = I18n.t('bathroom.flash.unexpected') 
     end
   end
 
