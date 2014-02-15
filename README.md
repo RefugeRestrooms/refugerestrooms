@@ -6,9 +6,17 @@ REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. I
 
 This project is open source. Feel free to contribute. We could use the help.
 
+
+## Set Up For Contributing
+
+Fork the repository. Make sure you have Ruby 2.0 and Rails 4.0. Make sure you have postgres, and that the client is running. I reccomend installing with homebrew. Once you have postgres up and running, run <code>rake db:migrate </code> and <code> rake db:seed </code>. This will give you the original safe2pee data that you can use for development. 
+
+
 ## Tech
 
 * Ruby on Rails
+* Javascript
+* HTML / SASS
 * Postgres
 * Geocoder Gem
 * Google Maps API
@@ -16,14 +24,16 @@ This project is open source. Feel free to contribute. We could use the help.
 * Deployed on Heroku
 
 
+
 ## Dev Team
 
 * Teagan Widmer - Ruby on Rails Eng
 * Alicia Woitte - JS/CSS/HTML
 * Stephan Leavens - UI/UX Design
-* Pam
+* Pamela Ocampo - Front End Framework Setup.
 * Dominic - Heroku Consulting
 * Natalie Roman - Vector/Raster Design
+
 
 ## License
 
