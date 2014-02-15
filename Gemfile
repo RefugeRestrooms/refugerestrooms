@@ -48,6 +48,11 @@ gem 'country_select'
 gem 'mail_form'
 gem 'simple_form'
 
+#Use the quimby Ruby wrapper for the Foursquare API
+gem "json"
+gem "typhoeus"
+gem "quimby"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
