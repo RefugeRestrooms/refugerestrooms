@@ -98,6 +98,7 @@ numberedCircle.prototype.onAdd = function() {
 		};
 	
 	var img = document.createElement('img');
+	img.className = "mapIconImage";
 	img.src = this.image_;
 	img.style.position = 'absolute';
 	div.appendChild(img);
