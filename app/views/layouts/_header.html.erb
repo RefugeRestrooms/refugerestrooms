@@ -14,14 +14,8 @@
   	<%= hidden_field_tag :long, "" %>
   </div>
   <div class="nav2">
-    <%= link_to "", new_bathroom_path, {:class=>"submitBathroomButton"} %>
-    <a HREF="https://github.com/tkwidmer/refugerestrooms" class="icon iconGitHub"></a>
-    <a HREF="https://twitter.com/refugerestrooms" class="icon iconTwitter"></a> 
-    <a HREF="https://www.facebook.com/refugerestrooms" class="icon iconFacebook"></a> 
-    <a HREF="http://blog.refugerestrooms.org/" class="icon iconTumblr"></a>
-    <a href="mailto:refugerestrooms@gmail.com" class="icon iconEmail"></a>
-
-  </div>
+	    <%= link_to "", new_bathroom_path, {:class=>"submitBathroomButton"} %>
+	  </div>
 </div>
 
   <%= render :partial => 'layouts/filters' if @show_filters %>
