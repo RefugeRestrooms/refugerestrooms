@@ -220,20 +220,24 @@ function handleSearchResults(lat, lng){
 }
 
 function searchCurrent(){
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(function (pos) {
+	if (navigator.geolocation) {
+		$('.currentLocationButton').addClass('currentLocationButtonLocating')
 
-                  // set map
-		  console.log("lat: %s , long: %s", pos.coords.latitude, pos.coords.longitude);
-		  $("#search").val(currentLocationText);
-                  handleSearchResults(pos.coords.latitude, pos.coords.longitude);
+		navigator.geolocation.getCurrentPosition(function (pos) {
+			// set map
+			console.log("lat: %s , long: %s", pos.coords.latitude, pos.coords.longitude);
+			$("#search").val(currentLocationText);
+			handleSearchResults(pos.coords.latitude, pos.coords.longitude);
 
-              }, function (error) {
-                  emitError("Location dectection failed due to:" + error);
-              });
-          }else{
+		}, function (error) {
+			// we only need to kill the animation if detection fails
+			// — otherwise it can run while the next page loads
+			$('.currentLocationButton').removeClass('currentLocationButtonLocating')
+			emitError("Location dectection failed due to:" + error);
+		});
+	}else{
 		emitError("Unable to aquire current location");
-	  }
+	}
 }
 
 /*

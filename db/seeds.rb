@@ -8,18 +8,20 @@
 
 require 'csv'
 
-CSV.foreach('db/export.csv') do |row|
-  Bathroom.create(
-    :name => row[1],
-    :street => row[3],
-    :city => row[4],
-    :state => row[5],
-    :access => row[10],
-    :bath_type => row[2],
-    :directions => row[11],
-    :comment => row[12],
-    :latitude => row[8],
-    :longitude => row[9],
-    :country => row[6]
-    )
+Bathroom.transaction do
+  CSV.foreach('db/export.csv') do |row|
+    Bathroom.create(
+      :name => row[1],
+      :street => row[3],
+      :city => row[4],
+      :state => row[5],
+      :access => row[10],
+      :bath_type => row[2],
+      :directions => row[11],
+      :comment => row[12],
+      :latitude => row[8],
+      :longitude => row[9],
+      :country => row[6]
+      )
+  end
 end
