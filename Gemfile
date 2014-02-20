@@ -42,6 +42,10 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # Use country_select plugin
 gem 'country_select'
 
+# Use mail_form
+gem 'mail_form'
+gem 'simple_form'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
