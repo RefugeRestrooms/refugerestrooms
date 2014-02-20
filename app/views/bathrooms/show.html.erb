@@ -1,45 +1,7 @@
 <div class="listItem showPageItem" data-id="<%= @bathroom.id %>">
-<<<<<<< HEAD
   <%= render partial: 'bathrooms/bathroom_summary', locals: { bathroom: @bathroom } %>
-=======
-	<div class="itemInfo">
-		<div class="itemName"><%= @bathroom.name %></div>
-		<div class="itemStreet"><%= @bathroom.street %>, <%= @bathroom.city %>, <%= @bathroom.state %>
-		<li><%= link_to t('Contact'), new_contact_path %></li>
-		</div>
-
-		<% if (@bathroom.upvote + @bathroom.downvote) != 0 %>
-			<% percentage = (@bathroom.upvote / (@bathroom.upvote + @bathroom.downvote).to_f) * 100 %>
-
-			<% if percentage > 70 %>
-			<% className = "greenRating" %>
-			<% else %>
-
-				<% if percentage > 50 %>
-				<% className = "yellowRating" %>
-				<% else %>
-				<% className = "redRating" %>
-				<% end %>
-			<% end %>
-
-			<div class="itemRating <%= className %>"><%= percentage.round %>% Positive</div>
-		<% else %>
-			<div class="itemRating">Not Yet Rated</div>
-		<% end %>
-
-	</div>
-
-	<div class="itemExtraInfo">
-		
-		<% if @bathroom.bath_type == 0 %>
-			<div class="unisexBathroom"></div>
-		<% end %>
-		<% if @bathroom.access == 1 %>
-			<div class="ADABathroom"></div>
-		<% end %>
-	</div>
->>>>>>> pr/52
 </div>
+
 <div class="showPageContent">
 	<div class="ratingscontainer">
 	  <%= button_to t('bathroom.upvote'), up_vote_bathroom_path, confirm: t('bathroom.confirm.upvote'), :class => 'thumbsButton thumbsUp' %>
@@ -54,6 +16,10 @@
 	<p>
   <strong> <%= t('bathroom.comments') %>: </strong>
 	<%= @bathroom.comment %><br>
+	</p>
+
+	<p>
+		<%= link_to t('Contact'), new_contact_path %>
 	</p>
 	
 	<div id ="map">
