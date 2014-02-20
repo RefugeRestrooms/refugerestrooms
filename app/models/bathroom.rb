@@ -12,6 +12,8 @@ class Bathroom < ActiveRecord::Base
   scope :unisex, -> (unisex) { where(bath_type: unisex) if unisex != nil }
   scope :ada, -> (ada) { where(access: ada) if ada != nil }
 
+  after_find :strip_slashes
+
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
   end
@@ -41,5 +43,13 @@ class Bathroom < ActiveRecord::Base
   def accessible?
     access == 1
   end
+
+  private
+
+    def strip_slashes
+      ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
+        attributes[field].try(:gsub!, "\\'", "'")
+      end
+    end
 
 end
