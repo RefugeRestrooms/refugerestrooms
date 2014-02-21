@@ -4,11 +4,11 @@ en:
       bathroom:
         # only overridden attributes here, defaults work as expected
         # (e.g. database field 'city' will be appear as 'City')
-        name: 'Location/Place/Business name'
+        name: 'Location/Place/Business Name'
         street: 'Street Address'
         state: 'State/Province'
         access: 'Accessible?'
-        bath_type: 'Type of bathroom'
+        bath_type: 'Type of Bathroom'
 
   bathroom:
     add_new: 'Submit a bathroom to our database'
@@ -22,6 +22,7 @@ en:
     type:
       unisex: 'Unisex / Gender neutral'
       single_stall: 'Gendered single stall or safe place'
+    bathsubmit: 'Save Bathroom'
     rating:
       positive: '%{percentage}% positive'
       unrated: 'Not yet rated'

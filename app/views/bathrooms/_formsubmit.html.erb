@@ -1,26 +1,19 @@
 <h1><%= t('bathroom.add_new') %></h1>
 
-<%= form_for :bathroom, html: {class: "addForm"}, url: bathrooms_path do |f| %>
+<%= simple_form_for @bathroom, :html => {:class => 'addForm'} do |f| %>
 
 <h3><%= t('bathroom.required') %></h3>
 
-  <p>
-    <strong><%= f.label :name %>:</strong> <%= f.text_field :name %>*<br>
-    <strong><%= f.label :street %>:</strong> <%= f.text_field :street %>*<br>
-    <strong><%= f.label :city %>:</strong> <%= f.text_field :city %>*<br>
-    <strong><%= f.label :state %>:</strong> <%= f.text_field :state %>*<br>
-    <strong><%= f.label :country %>: </strong> <%= f.text_field :country %> <br>
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %> <br/>
-    <strong><%= f.label :access %></strong> <%= f.select :access, [[t('bathroom.accessible'), 1], [t('bathroom.not_accessible'), 0]] %> <br>
-    <strong><%= f.label :bath_type %>:</strong> <%= f.select :bath_type, [[t('bathroom.unisex'), 0], [t('bathroom.single_stall'), 1]] %> <br>
-    <strong><%= f.label :directions %>: </strong> <%= t('bathroom.directions_hint') %> <br>
-    <%= f.text_area :directions %> <br>
-    <strong><%= f.label :comment %>:</strong> <%= t('bathroom.comments_hint') %> <br>
-    <%= f.text_area :comment %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
+<%= f.input :name, :required => true %>
+<%= f.input :street, :required => true %>
+<%= f.input :city, :required => true %>
+<%= f.input :state, :required => true %>
+<%= f.input :country, priority: ["United States", "Canada", "United Kingdom"], :required => true %>
+<%= f.hidden_field :latitude %>
+<%= f.hidden_field :longitude %>
+<%= f.input :access, :collection => [[t('bathroom.accessible'), 1], [t('bathroom.not_accessible'), 0]], :include_blank => false %>
+<%= f.input :bath_type, :collection => [[t('bathroom.type.unisex'), 0], [t('bathroom.type.single_stall'), 1]], :include_blank => false %>
+<%= f.input :directions, :hint => t('bathroom.directions_hint'), :as => :text, :required => false, :input_html => {:rows => 10, :cols => 20} %>
+<%= f.input :comment, :hint => t('bathroom.comments_hint'), :as => :text, :required => false, :input_html => {:rows => 10, :cols => 20} %>
+<%= f.button :submit, t('bathroom.bathsubmit'), :class => 'btn btn-primary' %>
 <% end %>
