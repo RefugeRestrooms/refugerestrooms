@@ -37,3 +37,4 @@ geocoder.rb
 ## Environment normalisation:
 /.bundle
 /vendor/bundle
+.env
