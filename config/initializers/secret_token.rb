@@ -9,4 +9,8 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SaferstallsRails::Application.config.secret_key_base = ENV['RAILS_SECRET_KEY']
+SaferstallsRails::Application.configure do
+  
+  config.secret_key_base = ENV['RAILS_SECRET_KEY'] if Rails.env == 'production'
+  config.secret_key_base = '4944cf251e3dbf309ed71ebcd8990a1479d793011cd4011761e3fbea9ecc59edefd0cb49a0ed9b5c0261ab0dda841962bb7dd28fd3f99579bfa2beec26329961' if Rails.env == 'development'
+end

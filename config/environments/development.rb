@@ -1,4 +1,7 @@
 SaferstallsRails::Application.configure do
+  DEVISE_SECRET_KEY = '8d1014508e87bd179cabfd63646d29571f8573b5010f1ffb78536cebfa58ce4b06f791d62142bd24aae68a8f872d5f42cabbda9aa0207d2b2c32c9749840a17f'
+  RAILS_SECRET_KEY = 'd68aab12ae1506435fe1e9ef0ed25b25a5f9f67b7f6c41e2b9c3c44c89315f0d1324235870a9139104646c4f0e27870863193e08044a821069963cc68a2c1385'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,3 +30,5 @@ SaferstallsRails::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 end
+
+  
