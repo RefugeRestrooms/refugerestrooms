@@ -45,7 +45,7 @@ h1
   padding: 1px 0px 0px 10px
   margin: 0 auto
 
-.addForm input[name=commit]
+.addForm input[name=commit], .addForm input[type=button]
   padding: 4px 
   float: center
   border: none
@@ -55,7 +55,7 @@ h1
   cursor: pointer
   
 
-.addForm input[name=commit]:hover
+.addForm input[name=commit]:hover, .addForm input[type=button]:hover
   background-color: $light-purple
   color: white
 
@@ -595,5 +595,5 @@ footer
     display: block
     font-style: italic
 
-div.boolean, .simple_form input[type='submit']
+div.boolean, .simple_form input[type='submit'], .simple_form input[type='button']
   margin-left: 210px

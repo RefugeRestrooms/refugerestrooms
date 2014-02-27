@@ -220,16 +220,28 @@ function handleSearchResults(lat, lng){
 }
 
 function searchCurrent(){
-	if (navigator.geolocation) {
-		$('.currentLocationButton').addClass('currentLocationButtonLocating')
-
-		navigator.geolocation.getCurrentPosition(function (pos) {
+	getCurrent(function (pos) {
 			// set map
 			console.log("lat: %s , long: %s", pos.coords.latitude, pos.coords.longitude);
 			$("#search").val(currentLocationText);
 			handleSearchResults(pos.coords.latitude, pos.coords.longitude);
 
-		}, function (error) {
+		});
+}
+
+/*
+ * Error Handling
+ */
+
+function emitError(error){
+	alert(error);	
+}
+
+function getCurrent (callback) {
+	if (navigator.geolocation) {
+		$('.currentLocationButton').addClass('currentLocationButtonLocating')
+
+		navigator.geolocation.getCurrentPosition(callback, function (error) {
 			// we only need to kill the animation if detection fails
 			// — otherwise it can run while the next page loads
 			$('.currentLocationButton').removeClass('currentLocationButtonLocating')
@@ -240,10 +252,16 @@ function searchCurrent(){
 	}
 }
 
-/*
- * Error Handling
- */
-
-function emitError(error){
-	alert(error);	
+function guessPosition (coords, callback) {
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({
+	  'location': new google.maps.LatLng(coords.latitude, coords.longitude)
+	}, function (results, status) {
+	  // if match
+	  if (status == google.maps.GeocoderStatus.OK) {
+			callback(results);
+	  } else {
+		  emitError("Geocoder failed due to: " + status);
+	  }
+	});
 }
