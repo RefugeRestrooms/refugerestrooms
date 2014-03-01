@@ -1,5 +1,19 @@
-<div id="filters">
+<div id="filters nav">
+    <div class="adaFilter filter">
+      <%= check_box_tag :adafilter, 1, params[:adafilter] == '1', :class => 'adacheck submitButton' %>
+      <label for="adafilter" class="adaFilterlabel linkbutton <%= params[:adafilter] == '1' ? "" : "buttonOn" %>"><span class="hiddenText">ADA Compliant Filter</span></label>
+    </div>
 
+    <div class="unisexFilter filter">
+      <%= check_box_tag :unisexfilter, 0, params[:unisexfilter] == '0', :class => 'unisexcheck submitButton' %>
+      <label for="unisexfilter" class="unisexFilterlabel linkbutton <%= params[:unisexfilter] == '0' ? "buttonOn" : "" %>"><span class="hiddenText">Unisex Filter</span></label>
+    </div>
+
+    <div class="mapToggle">
+      <div class="mapTogglelabel linkbutton">
+        Map View
+      </div>
+    </div>
 </div>
 
 

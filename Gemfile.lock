@@ -131,7 +131,6 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_layout (1.0.8)
     rails_serve_static_assets (0.0.2)
     rails_stdout_logging (0.0.3)
     railties (4.0.0)
@@ -201,7 +200,6 @@ DEPENDENCIES
   pg
   rails (= 4.0.0)
   rails_12factor
-  rails_layout
   sass-rails
   sdoc
   simple_form
