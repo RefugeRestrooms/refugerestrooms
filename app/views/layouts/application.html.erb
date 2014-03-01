@@ -23,23 +23,26 @@
 
     <main role="main">
 
-      <div class='content'>
+      <div class='container'>
        <%= render 'layouts/messages' %>
        <%= yield %>
 
-      <footer>
-        <div class="footer">
-        <a HREF="https://github.com/tkwidmer/refugerestrooms" class="icon iconGitHub"></a>
-        <a HREF="https://twitter.com/refugerestrooms" class="icon iconTwitter"></a> 
-        <a HREF="https://www.facebook.com/refugerestrooms" class="icon iconFacebook"></a> 
-        <a HREF="http://blog.refugerestrooms.org/" class="icon iconTumblr"></a>
-        <a href="<%= contact_path %>" class="icon iconEmail"></a>
-        <br/>
-          refuge restrooms is open source.  
-        <a HREF="https://github.com/tkwidmer/refugerestrooms"> code on github. </a> <br> &copy; copyleft 2014 refuge restrooms.
+        <footer>
+          <div class="footer">
+          <a HREF="https://github.com/tkwidmer/refugerestrooms" class="icon iconGitHub"></a>
+          <a HREF="https://twitter.com/refugerestrooms" class="icon iconTwitter"></a> 
+          <a HREF="https://www.facebook.com/refugerestrooms" class="icon iconFacebook"></a> 
+          <a HREF="http://blog.refugerestrooms.org/" class="icon iconTumblr"></a>
+          <a href="<%= contact_path %>" class="icon iconEmail"></a>
+          <br/>
+            refuge restrooms is open source.  
+          <a HREF="https://github.com/tkwidmer/refugerestrooms"> code on github. </a> <br> &copy; copyleft 2014 refuge restrooms.
 
-        </div>
+          </div>
       </footer>
+    </div>
+
+
     </main>
   </body>
 </html>
