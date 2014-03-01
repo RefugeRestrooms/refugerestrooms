@@ -10,9 +10,8 @@ gem 'rails', '4.0.0'
 gem 'pg'
 
 # Use SCSS for stylesheets
-gem 'compass-rails'
 gem 'sass-rails'
-gem 'susy'
+gem 'bootstrap-sass'
 
 # Heroku support
 gem 'rails_12factor'

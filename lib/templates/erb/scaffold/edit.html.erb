@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%%= link_to <%= index_helper %>_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <%% end %>
+  <%%= link_to @<%= singular_table_name %>, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Show
+  <%% end %>
+  <h1>Editing <%= singular_table_name %></h1>
+</div>
+
+<%%= render 'form' %>
