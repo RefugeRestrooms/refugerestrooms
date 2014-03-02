@@ -12,7 +12,7 @@
  *= require_tree .
  */
 
-@import 'bootstrap.css';
+
 /*@import 'bootstrap-responsive.css';*/
 
 /*All From Susy File*/
@@ -42,7 +42,7 @@ body {
   content: ".";    
   display: block;    
   height: 0;    
-  overflow: hidden;	
+  overflow: hidden; 
 }
 .clearfix:after {clear: both;}
 .clearfix {zoom: 1;} /* IE < 8 */
@@ -59,10 +59,8 @@ h1 {
 }
 
 .addForm {
-  border: 2px solid $purple;
   max-width: 720px;
   width: 80%;
-  border-radius: $rounded-corners;
   padding: 1px 0px 0px 10px;
   margin: 0 auto;
 }
@@ -111,7 +109,6 @@ h1 {
 .nav {
   background: $purple;
   overflow: auto;
-  width: 100%;
   margin: 0 auto;
 }
 
@@ -120,8 +117,8 @@ h1 {
 }
 
 .toiletLogo {
-  width: 77px;
-  height: 74px;
+  width: 45px;
+  height: 45px;
   background: asset-url("logo-100x100.png");
   background-size: 100% 100%;
   position: relative;
@@ -136,17 +133,12 @@ h1 {
 }
 
 .searchBarContainer {
-  position: absolute;
-  left: 80px;
-  right: 125px;
-  top: 10px;
-  bottom: 10px;
-  height: 50px;
-  height: 50px;
+  width: 100%;
+  margin: 15px;
 }
 
 .searchBar {
-  width: 100%;
+  width: 99%;
   height: 50px;
   padding: 0 0 0 1rem;
   margin: 0;
@@ -163,11 +155,28 @@ h1 {
   padding: 10px;
   margin: 5px;
   cursor: pointer;
-  background-color: $purple;
+  background-color: $light-purple;
   color: #FFFFFF;
 }
 
 .linkbutton:hover {
+  background-color: $purple; 
+  color: white;
+}
+
+.whitelinkbutton {
+  border: none;
+  position: relative;
+  float: left;
+  border-radius: $rounded-corners;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.whitelinkbutton:hover {
   background-color: $light-purple; 
   color: white;
 }

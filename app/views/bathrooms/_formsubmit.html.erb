@@ -1,11 +1,14 @@
 <h1><%= t('bathroom.add_new') %></h1> 
 
-<div class="linkbutton" type="button" id="guess" value="<%= t('bathroom.guess_location') %>">
-	Guess Location
-</div>
-
+<div class="addForm"
 <%= simple_form_for @bathroom, :html => { :class => 'form-horizontal' } do |f| %>
 	<h5><%= t('bathroom.required') %></h5>
+	<div class="clearfix">
+		<div class="linkbutton" type="button" id="guess" value="<%= t('bathroom.guess_location') %>">
+			Guess Location
+		</div>
+	</div>
+
 	<div class="form-group">
 	<%= f.input :name, :required => true %>
 	<%= f.input :street, :required => true %>
