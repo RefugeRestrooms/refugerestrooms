@@ -12,6 +12,550 @@
  *= require_tree .
  */
 
+@import 'bootstrap.css';
+/*@import 'bootstrap-responsive.css';*/
+
+/*All From Susy File*/
+$font-stack: "Ubuntu", "Helvetica Neue", Arial, Gotham, "Helvetica", sans-serif;
+$primary-color: #333333;
+$purple: #41326B;
+$light-purple: #8377af;
+$dark-purple: #0E0036;
+$base-color: #161616;
+$secondary-background: white;
+$green: #69b94a;
+$yellow: #f5a939;
+$red: #d6564b;
+$gray: #AAA;
+$white: #FFFFFF;
+$rounded-corners: 5px;
+
+body {
+  font-family: $font-stack;
+  font-size: .8em;
+  background: $purple;
+  color: $base-color;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+h1 {
+  padding: 5px;
+  text-align: center;
+}
+
+.addForm {
+  border: 2px solid $purple;
+  max-width: 720px;
+  width: 80%;
+  border-radius: $rounded-corners;
+  padding: 1px 0px 0px 10px;
+  margin: 0 auto;
+}
+
+.addForm input[name=commit], .addForm input[type=button] {
+  padding: 4px;
+  float: center;
+  border: none;
+  position: relative;
+  border-radius: $rounded-corners;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.addForm input[name=commit]:hover, .addForm input[type=button]:hover {
+  background-color: $light-purple;
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto !important;
+  background: $secondary-background;
+  width: 90%;
+  box-shadow: 0px 5px 10px #27003D;
+  border-radius: 5px;
+}
+
+.textItem {
+  width: 100%;
+  text-align: center;
+  font-family: $font-stack;
+  font-size: 20px;
+}
+
+.container {
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  background: $purple;
+}
+
+.nav {
+  background: $purple;
+  overflow: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav2 {
+  background: $dark-purple;
+}
+
+.toiletLogo {
+  width: 77px;
+  height: 74px;
+  background: asset-url("logo-100x100.png");
+  background-size: 100% 100%;
+  position: relative;
+  float: left;
+  cursor: pointer;
+}
+
+.search {
+  overflow: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.searchBarContainer {
+  position: absolute;
+  left: 80px;
+  right: 125px;
+  top: 10px;
+  bottom: 10px;
+  height: 50px;
+  height: 50px;
+}
+
+.searchBar {
+  width: 100%;
+  height: 50px;
+  padding: 0 0 0 1rem;
+  margin: 0;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: $rounded-corners;
+}
+
+.linkbutton {
+  border: none;
+  position: relative;
+  float: left;
+  border-radius: $rounded-corners;
+  background: #FFF;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.linkbutton:hover {
+  background-color: $light-purple;
+  color: white;
+}
+
+.searchButton {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  padding-right: 2px;
+  padding-left: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.currentLocationButton {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  padding-right: 2px;
+  padding-left: 2px;
+  width: 50px;
+  height: 50px;
+  word-wrap: break-word;
+  background: #FFF asset-url('currentLocation.png') no-repeat;
+  background-size: 75%;
+  background-position: 50%;
+}
+
+.currentLocationButtonLocating {
+  background: #fff asset-url('loading.gif');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  &:hover {
+    background-color: white;
+  }
+}
+
+.filter {
+  position: relative;
+  float: left;
+  border-radius: $rounded-corners;
+}
+
+.mapToggle {
+  position: relative;
+  float: right;
+  border-raidus: $rounded-corners;
+}
+
+.adaFilterlabel {
+  background-image: asset-url('ada-slider.svg');
+}
+
+.adafilterlabelimage {
+  line-height: 0px;
+  height: 20px;
+  width: 20px;
+  float: left;
+  position: absolute;
+  top: 7px;
+}
+
+.adafilterlabeltext {
+  margin-left: 25px;
+}
+
+.unisexFilterlabel {
+  background-image: asset-url('unisex-slider.svg');
+}
+
+.unisexFilterlabel, .adaFilterlabel {
+  width: 69px;
+  height: 34px;
+  padding: 0;
+  background-size: 138px 34px;
+  background-color: $dark-purple;
+  overflow: hidden;
+}
+
+.unisexfilterlabelimage {
+  line-height: 0px;
+  height: 20px;
+  width: 20px;
+  float: left;
+  position: absolute;
+  top: 7px;
+}
+
+.buttonOn {
+  background-position: 69px 0;
+}
+
+.unisexfilterlabeltext {
+  margin-left: 25px;
+}
+
+.adacheck {
+  display: none;
+}
+
+.unisexcheck {
+  display: none;
+}
+
+.mapcheck {
+  display: none;
+}
+
+#mapArea {
+  width: 100%;
+  height: 400px;
+}
+
+.imgsplash {
+  width: 600px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $font-stack;
+  font-weight: bolder;
+  font-size: 60px;
+  line-height: 10px;
+  color: $purple;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.fontLarge {
+  font-size: 150px;
+  line-height: 150px;
+}
+
+#navlist {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.listItem {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #e1e1e1;
+  background: $secondary-background;
+  min-height: 115px;
+}
+
+.listItemTemplate {
+  display: none;
+}
+
+.listItemImage {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 15px;
+  border-radius: $rounded-corners;
+  background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
+  display: inline-block;
+}
+
+.listItemImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.itemInfo {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 140px;
+  right: 95px;
+  overflow: none;
+}
+
+.itemName {
+  position: relative;
+  font-size: 20px;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.itemStreet {
+  position: relative;
+  width: 100%;
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.itemRating {
+  position: absolute;
+  width: 150px;
+  background: #41326b;
+  border-radius: $rounded-corners;
+  bottom: 10px;
+  left: 0;
+  color: #FFF;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 11px 0;
+  max-width: 100%;
+}
+
+.greenRating {
+  background: $green;
+}
+
+.yellowRating {
+  background: $yellow;
+}
+
+.redRating {
+  background: $red;
+}
+
+.itemExtraInfo {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+
+.itemDistance {
+  position: relative;
+  color: #676767;
+  text-align: right;
+  font-size: 15px;
+  font-family: Arial;
+  padding: 5px;
+}
+
+.unisexBathroom {
+  width: 45px;
+  height: 43px;
+}
+
+.ADABathroom {
+  width: 44px;
+  height: 47px;
+}
+
+.unisexBathroom img, .ADABathroom img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  text-align: center;
+  text-size: 15px;
+  color: #41326b;
+  background-color: #ffffff;
+}
+
+.centerText {
+  padding: 10px;
+  text-align: center;
+}
+
+.fadedText {
+  color: $gray;
+}
+
+.numberCircle {
+  cursor: pointer;
+}
+
+.mapIconImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.numberCircle .numberCircleText {
+  line-height: 37px;
+  color: #FFF;
+  text-align: center;
+}
+
+.showPageItem {
+  min-height: 140px;
+  border-bottom: none;
+}
+
+.showPageItem .itemInfo {
+  left: 15px;
+}
+
+.showPageItem .itemName {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.thumbsButton {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  line-height: 100px;
+  text-align: center;
+  border: none;
+  font-size: 18px;
+  background-position: 15% 50%;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.thumbsUp {
+  background-color: #d9ebd3;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #69b74a;
+  background-image: asset-url('thumbsUp.jpg');
+}
+
+.thumbsDown {
+  background-color: #f5c1c5;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #e0140b;
+  background-image: asset-url('thumbsDown.jpg');
+}
+
+.showPageContent {
+  padding: 10px;
+}
+
+.showPageContent #mapArea {
+  border-radius: 5px;
+  float: left;
+}
+
+.ratingscontainer {
+  height: 100px;
+}
+
+.markerPopup {
+  display: none;
+  position: absolute;
+  top: -122px;
+  left: 50%;
+  margin-left: -195px;
+  width: 370px;
+  height: 122px;
+  background-color: #FFF;
+  border: 1px solid $purple;
+  z-index: 1000;
+  color: #000;
+}
+
+.markerPopup .listItem {
+  position: static;
+}
+
+.markerPopup .listItemImage {
+  display: none;
+}
+
+.markerPopup .itemInfo {
+  left: 10px;
+}
+
+.markerPopup .itemExtraInfo {
+  top: 0;
+}
+
+.markerPopup .itemRating {
+  padding: 3px 0;
+}
+
+.itemStreet {
+  color: #000;
+}
+
+#mapContainer, #list {
+  overflow: hidden;
+}
+
+.submitBathroomButton {
+  display: inline-block;
+  background: asset-url('submit.svg') no-repeat;
+  width: 150px;
+  height: 40px;
+  max-width: 100%;
+  background-size: 200% auto;
+  margin-top: 2px;
+  margin-left: 3px;
+  background-position: 0 50%;
+}
+
+.submitBathroomButton:hover {
+  background-position: 100% 50%;
+}
+
 .icon {
   display: inline-block;
   width: 10px;
@@ -23,7 +567,7 @@
   padding: 12px;
   margin: 4px;
   
-	&:hover {
+  &:hover {
     background-position: 100% 50%;
   }
   
@@ -46,4 +590,132 @@
   &.iconEmail {
     background-image: asset-url('buttons_mail.svg');
   }
+}
+
+.hiddenText {
+  visibility: hidden;
+}
+
+footer {
+  margin-top: 15px;
+}
+
+.numberCircle .listItem {
+  border: none;
+}
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+  .imgsplash {
+    width: 100%;
+  }
+
+  .fontLarge {
+    font-size: 110px;
+    line-height: 110px;
+  }
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .searchBar {
+    font-size: 0.7rem;
+  }
+  
+  .itemName {
+    font-size: 15px;
+  }
+
+  .listItemImage {
+    width: 60px;
+    height: 60px;
+    margin: 25px 10px;
+  }
+
+  .itemInfo {
+    left: 80px;
+    right: 85px;
+  }
+
+  .itemExtraInfo {
+    top: 0;
+  }
+
+  .itemDistance {
+    font-size: 12px;
+    padding-bottom: 0;
+  }
+
+  .itemStreet {
+    font-size: 10px;
+  }
+
+  .itemRating {
+    font-size: 12px;
+    width: 120px;
+  }
+
+  #mapArea {
+    height: 200px;
+  }
+
+  .fontLarge {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .imgsplash {
+    font-size: 40px;
+  }
+  
+  .textItem {
+    font-size: 12px;
+  }
+
+  .showPageItem .itemName {
+    font-size: 15px;
+  }
+
+  .thumbsDown {
+    background-image: url('thumbsDownSmall.jpg');
+  }
+
+  .thumbsUp {
+    background-image: url('thumbsUpSmall.jpg');
+  }
+
+  .thumbsButton {
+    font-size: 15px;
+  }
+}
+
+.simple_form {
+  div.input {
+    clear: both;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    float: left;
+    width: 190px;
+    text-align: right;
+    margin: 2px 10px;
+  }
+
+  .error {
+    clear: left;
+    color: black;
+    display: block;
+    margin-left: 120px;
+  }
+
+  .hint {
+    clear: left;
+    margin-left: 210px;
+    color: #555;
+    display: block;
+    font-style: italic;
+  }
+}
+
+div.boolean, .simple_form input[type='submit'], .simple_form input[type='button'] {
+  margin-left: 210px;
 }
