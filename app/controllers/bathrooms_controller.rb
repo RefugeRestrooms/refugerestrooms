@@ -6,11 +6,9 @@ class BathroomsController < ApplicationController
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
   def index
-    @show_filters = true
   end
 
 	def list
-    @show_filters = true
 		render json: @bathrooms
 	end
 
