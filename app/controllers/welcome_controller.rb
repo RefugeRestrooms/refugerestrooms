@@ -9,4 +9,7 @@ class WelcomeController < ApplicationController
 
   def about
   end
+
+  def text_msg
+  end
 end
