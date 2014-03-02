@@ -1,4 +1,4 @@
-<div id="filters nav">
+<div id="filters" class="clearfix">
   <div id="ada_filter" class="filter">
     <div class="toggle filter_off"></div>
     <div class="toggle filter_on"></div>
@@ -18,12 +18,14 @@
   </div>
 </div>
 
-<div id="mapContainer">
-	<div id="mapArea"></div>
-</div>
+<div id="results">
+  <div id="mapContainer">
+  	<div id="mapArea"></div>
+  </div>
 
-<div id="list">
-  <%= render @bathrooms %>
+  <div id="list">
+    <%= render @bathrooms %>
+  </div>
 </div>
 
 <%=render 'bathrooms/map' %>
