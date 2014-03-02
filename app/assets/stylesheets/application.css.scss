@@ -556,40 +556,6 @@ h1 {
   background-position: 100% 50%;
 }
 
-.icon {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-size: 200% 100%;
-  background-position: 0 50%;
-  padding: 12px;
-  margin: 4px;
-}
-
-.icon:hover {
-  background-position: 100% 50%;
-}
-
-.iconGitHub {
-  background-image: asset-url('buttons_github.svg');
-}
-
-.iconTwitter {
-  background-image: asset-url('buttons_twitter.svg');
-}
-
-.iconFacebook {
-  background-image: asset-url('buttons_facebook.svg');
-}
-
-.iconTumblr {
-  background-image: asset-url('buttons_tumblr.svg');
-}
-
-.iconEmail {
-  background-image: asset-url('buttons_mail.svg');
-}
-
 .hiddenText {
   visibility: hidden;
 }
@@ -605,10 +571,12 @@ footer {
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
   .imgsplash {
     width: 100%;
+  }
 
   .fontLarge {
     font-size: 110px;
     line-height: 110px;
+  }
 }
 
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
@@ -660,7 +628,8 @@ footer {
 
   .imgsplash {
     font-size: 40px;
-
+  }
+  
   .textItem {
     font-size: 12px;
   }
@@ -680,10 +649,9 @@ footer {
   .thumbsButton {
     font-size: 15px;
   }
-
-.simple_form {
 }
 
+.simple_form {
   div.input {
     clear: both;
     margin-bottom: 10px;
@@ -710,8 +678,8 @@ footer {
     display: block;
     font-style: italic;
   }
+}
 
 div.boolean, .simple_form input[type='submit'], .simple_form input[type='button'] {
   margin-left: 210px;
 }
-  }
