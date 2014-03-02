@@ -1,7 +1,6 @@
-<h1><%= t('bathroom.add_new') %></h1> <input type="button" id="guess" value="<%= t('bathroom.guess_location') %>" class="btn btn-primary" />
+<h1><%= t('bathroom.add_new') %></h1> 
 
-<div class="form-horizontal" role="form">
-	<div class="form-group">
+<input type="button" id="guess" value="<%= t('bathroom.guess_location') %>" class="btn" />
 
 <%= simple_form_for @bathroom, :html => {:class => 'bootstrap3_horizontal', :role => "form"} do |f| %>
 
