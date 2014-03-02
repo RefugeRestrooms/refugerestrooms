@@ -1,8 +1,25 @@
 <div class="imgsplash">
   <%= image_tag('logo-dark.svg') %>
 </div>
+
+<div class="splashsearch">
+    <div class="toiletLogo" id="logo"></div>
+    <%= form_tag bathrooms_path, :method => :get do %>
+    <div class="searchBarContainer">
+      <%= text_field_tag :search, params[:search], :class => "searchBar" %>
+    </div>
+    <%= submit_tag "Search", :type => 'button', :name => nil, :class=> "linkbutton searchButton submitButton" %>
+    <%= hidden_field_tag :lat, "" %>
+    <%= hidden_field_tag :long, "" %>
+    <%= submit_tag "", :type => 'button', :name => nil, :class=> "linkbutton currentLocationButton", :title => 'Search by current location' %>
+    <% end %>
+    </div
+
+</div>
+
 <div class="centerText">
-	This website is currently functional yet still under development. You may find that there are bugs. If you find any please submit an issue on github, or send us a <%= link_to 'message', contact_path %> so that we can resolve the issue ASAP. This is an Open Source project and we encourage you to contribute on github.
+  <p>
+	This website is currently functional yet still under development. You may find that there are bugs. If you find any please submit an issue on github, or send us a <%= link_to 'message', contact_path %> so that we can resolve the issue ASAP. This is an Open Source project and we encourage you to contribute on github.</p>
 	<br/>
 </div>
 
