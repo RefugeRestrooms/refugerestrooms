@@ -77,4 +77,7 @@ SaferstallsRails::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Use memcached instead of simple default in-memory store 
+  config.cache_store = :dalli_store
 end

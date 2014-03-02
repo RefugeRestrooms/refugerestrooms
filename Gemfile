@@ -48,10 +48,12 @@ gem 'country_select'
 gem 'mail_form'
 gem 'simple_form'
 
-#Use the quimby Ruby wrapper for the Foursquare API
-gem "json"
-gem "typhoeus"
-gem "quimby"
+# Use foursquare-api
+gem 'foursquare2'
+
+# Use MemCachier to cache responses from the Foursquare API
+gem 'memcachier'
+gem 'dalli'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

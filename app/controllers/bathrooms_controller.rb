@@ -5,6 +5,8 @@ class BathroomsController < ApplicationController
   before_filter :list_bathrooms, only: [:index, :list]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
+  day_of_week = time.wday + 1
+  
   def index
     @show_filters = true
   end
