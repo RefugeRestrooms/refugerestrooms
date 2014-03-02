@@ -9,7 +9,6 @@
     <script language="javascript" type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
-
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
@@ -27,9 +26,7 @@
       </div>
     </main>
     
-
-<%= render 'layouts/ga_tag' %>
-<%= render 'layouts/search' %>
+    <%= render 'layouts/ga_tag' %>
+    <%= render 'layouts/search' %>
   </body>
-
-  </html>
+</html>
