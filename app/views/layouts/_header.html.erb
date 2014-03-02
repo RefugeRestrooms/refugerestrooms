@@ -1,20 +1,3 @@
-<% # ADA filter and UNISEX filter have inconsistant default boolean values because i'm using the format originally used by the Safe2Pee db because the engineers were stupid and used different 1 for ADA and 0 for UNISEX. %>
-
-
 <div class="header">
-  <div class="search">
-  	<div class="toiletLogo" id="logo"></div>
-  	<%= form_tag bathrooms_path, :method => :get do %>
-  	<div class="searchBarContainer">
-  		<%= text_field_tag :search, params[:search], :class => "searchBar" %>
-  	</div>
-  	<%= submit_tag "Search", :type => 'button', :name => nil, :class=> "linkbutton searchButton submitButton" %>
-  	<%= hidden_field_tag :lat, "" %>
-  	<%= hidden_field_tag :long, "" %>
-    <%= submit_tag "", :type => 'button', :name => nil, :class=> "linkbutton currentLocationButton", :title => 'Search by current location' %>
-    <% end %>
-  </div>
-
+  <%= render 'layouts/search' %>
 </div>
-
-
