@@ -37,6 +37,16 @@ body {
   color: $base-color;
 }
 
+.clearfix:before,
+.clearfix:after {
+  content: ".";    
+  display: block;    
+  height: 0;    
+  overflow: hidden;	
+}
+.clearfix:after {clear: both;}
+.clearfix {zoom: 1;} /* IE < 8 */
+
 input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
@@ -195,7 +205,6 @@ h1 {
 }
 
 .filter {
-  position: relative;
   float: left;
   
   .toggle {
@@ -235,7 +244,6 @@ h1 {
 }
 
 .mapToggle {
-  position: relative;
   float: right;
   border-raidus: $rounded-corners;
 }
