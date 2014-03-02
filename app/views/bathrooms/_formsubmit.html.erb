@@ -5,7 +5,7 @@
 <%= simple_form_for @bathroom, :html => {:class => 'bootstrap3_horizontal', :role => "form"} do |f| %>
 
 <h5><%= t('bathroom.required') %></h5>
-
+<div class="form-group">
 <%= f.input :name, :required => true %>
 <%= f.input :street, :required => true %>
 <%= f.input :city, :required => true %>
