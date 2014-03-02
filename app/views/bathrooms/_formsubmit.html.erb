@@ -1,10 +1,11 @@
-<h1><%= t('bathroom.add_new') %></h1>
+<h1><%= t('bathroom.add_new') %></h1> <input type="button" id="guess" value="<%= t('bathroom.guess_location') %>" class="btn btn-primary" />
 
-<%= simple_form_for @bathroom, :html => {:class => 'addForm'} do |f| %>
+<div class="form-horizontal" role="form">
+	<div class="form-group">
 
-<h3><%= t('bathroom.required') %></h3>
+<%= simple_form_for @bathroom, :html => {:class => 'bootstrap3_horizontal', :role => "form"} do |f| %>
 
-<input type="button" id="guess" value="<%= t('bathroom.guess_location') %>" />
+<h5><%= t('bathroom.required') %></h5>
 
 <%= f.input :name, :required => true %>
 <%= f.input :street, :required => true %>
@@ -13,12 +14,17 @@
 <%= f.input :country, priority: ["United States", "Canada", "United Kingdom"], :required => true %>
 <%= f.hidden_field :latitude %>
 <%= f.hidden_field :longitude %>
+	</div>
+	<div class="form-group">
 <%= f.input :access, :collection => [[t('bathroom.accessible'), 1], [t('bathroom.not_accessible'), 0]], :include_blank => false %>
 <%= f.input :bath_type, :collection => [[t('bathroom.type.unisex'), 0], [t('bathroom.type.single_stall'), 1]], :include_blank => false %>
-<%= f.input :directions, :hint => t('bathroom.directions_hint'), :as => :text, :required => false, :input_html => {:rows => 10, :cols => 20} %>
-<%= f.input :comment, :hint => t('bathroom.comments_hint'), :as => :text, :required => false, :input_html => {:rows => 10, :cols => 20} %>
+<%= f.input :directions, :placeholder => t('bathroom.directions_hint'), :as => :text, :required => false, :input_html => { :class => "span6" } %>
+<%= f.input :comment, :placeholder => t('bathroom.comments_hint'), :as => :text, :required => false, :input_html => { :class => "span6" } %>
 <%= f.button :submit, t('bathroom.bathsubmit'), :class => 'btn btn-primary' %>
 <% end %>
+</div>
+
+</div>
 
 <script type="text/javascript">
 	$(function () {
