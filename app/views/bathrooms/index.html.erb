@@ -2,19 +2,21 @@
   <div id="ada_filter" class="filter">
     <div class="toggle filter_off"></div>
     <div class="toggle filter_on"></div>
-    <span class="hiddenText">ADA Compliant Filter</span>
   </div>
+  <label for="ada_filter">
+    <span class="hiddenText">ADA Compliant Filter</span>
+  </label>
 
   <div id="unisex_filter" class="filter">
     <div class="toggle filter_off"></div>
     <div class="toggle filter_on"></div>
-    <span class="hiddenText">Unisex Filter</span>
   </div>
+  <label for="unisex_filter">
+    <span class="hiddenText">ADA Compliant Filter</span>
+  </label>
 
-  <div class="mapToggle">
-    <div class="mapTogglelabel linkbutton">
-      Map View
-    </div>
+  <div class="mapToggle linkbutton">
+    Map View
   </div>
 </div>
 
@@ -37,7 +39,7 @@
 	var mapHeight, listHeight;
 	var mapContainer = $("#mapContainer");
 	var list = $("#list");
-	var mapToggle = $(".mapTogglelabel");
+	var mapToggle = $(".mapToggle");
 	$(function(){
 		<% if params[:lat].blank? || params[:long].blank? %>
 			//catch bad URL
