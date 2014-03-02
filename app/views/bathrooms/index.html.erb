@@ -11,10 +11,8 @@
     <span class="hiddenText">Unisex Filter</span>
   </div>
 
-  <div class="mapToggle">
-    <div class="mapTogglelabel linkbutton">
-      Map View
-    </div>
+  <div class="mapToggle linkbutton">
+    Map View
   </div>
 </div>
 
@@ -37,7 +35,7 @@
 	var mapHeight, listHeight;
 	var mapContainer = $("#mapContainer");
 	var list = $("#list");
-	var mapToggle = $(".mapTogglelabel");
+	var mapToggle = $(".mapToggle");
 	$(function(){
 		<% if params[:lat].blank? || params[:long].blank? %>
 			//catch bad URL
