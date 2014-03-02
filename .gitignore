@@ -38,3 +38,6 @@ geocoder.rb
 /.bundle
 /vendor/bundle
 .env
+
+## Mac Directory
+.DS_Store
