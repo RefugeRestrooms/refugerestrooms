@@ -82,7 +82,7 @@ class BathroomsController < ApplicationController
   private
 
   def list_bathrooms
-    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
+    @bathrooms = Bathroom.all
 
     @bathrooms = if params[:search].present? || params[:map] == "1"
       @bathrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
