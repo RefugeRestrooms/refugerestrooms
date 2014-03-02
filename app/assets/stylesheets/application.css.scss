@@ -197,7 +197,41 @@ h1 {
 .filter {
   position: relative;
   float: left;
-  border-radius: $rounded-corners;
+  
+  .toggle {
+    border-radius: $rounded-corners;
+    width: 69px;
+    height: 34px;
+    padding: 0;
+    background-size: 138px 34px;
+    background-color: $dark-purple;
+    overflow: hidden;
+    margin: 8px;
+  }
+}
+
+#ada_filter {
+  .filter_off {
+    background-image: asset-url('ada-slider.svg');
+    background-position: 69px 0;
+  }
+  
+  .filter_on {
+    background-image: asset-url('ada-slider.svg');
+    display: none;
+  }  
+}
+
+#unisex_filter {
+  .filter_off {
+    background-image: asset-url('unisex-slider.svg');
+  }
+  
+  .filter_on {
+    background-image: asset-url('unisex-slider.svg');
+    background-position: 69px 0;
+    display: none;
+  }
 }
 
 .mapToggle {
@@ -206,52 +240,31 @@ h1 {
   border-raidus: $rounded-corners;
 }
 
-.adaFilterlabel {
-  background-image: asset-url('ada-slider.svg');
-}
-
-.adafilterlabelimage {
-  line-height: 0px;
-  height: 20px;
-  width: 20px;
-  float: left;
-  position: absolute;
-  top: 7px;
-}
-
-.adafilterlabeltext {
-  margin-left: 25px;
-}
-
-.unisexFilterlabel {
-  background-image: asset-url('unisex-slider.svg');
-}
-
-.unisexFilterlabel, .adaFilterlabel {
-  width: 69px;
-  height: 34px;
-  padding: 0;
-  background-size: 138px 34px;
-  background-color: $dark-purple;
-  overflow: hidden;
-}
-
-.unisexfilterlabelimage {
-  line-height: 0px;
-  height: 20px;
-  width: 20px;
-  float: left;
-  position: absolute;
-  top: 7px;
-}
-
-.buttonOn {
-  background-position: 69px 0;
-}
-
-.unisexfilterlabeltext {
-  margin-left: 25px;
-}
+//.adafilterlabelimage {
+//  line-height: 0px;
+//  height: 20px;
+//  width: 20px;
+//  float: left;
+//  position: absolute;
+//  top: 7px;
+//}
+//
+//.adafilterlabeltext {
+//  margin-left: 25px;
+//}
+//
+//.unisexfilterlabelimage {
+//  line-height: 0px;
+//  height: 20px;
+//  width: 20px;
+//  float: left;
+//  position: absolute;
+//  top: 7px;
+//}
+//
+//.unisexfilterlabeltext {
+//  margin-left: 25px;
+//}
 
 .adacheck {
   display: none;
