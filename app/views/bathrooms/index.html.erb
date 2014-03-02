@@ -23,14 +23,7 @@
 	</div>
 
 <div id="list">
-  <% @bathrooms.each do |bathroom| %>
-    <div class="listItem" data-id="<%= bathroom.id %>">
-      <div class="listItemImage">
-        <!-- image tag goes here -->
-      </div>
-      <%= render partial: 'bathrooms/bathroom_summary', locals: { bathroom: bathroom } %>
-    </div>
-  <% end %>
+  <%= render @bathrooms %>
 </div>
 
 <script type="text/javascript">
