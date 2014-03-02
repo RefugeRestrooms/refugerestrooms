@@ -1,18 +1,19 @@
 <div style="padding-left: 25px; padding-right: 25px;">
-    <h1>Downloadable Restroom Signs</h1>
-    <p>If you have a public restroom in your building or business that is gender-neutral, let people know. You (and/or the building owner/management) can <a href="/bathrooms/new">add it to the database</a>, and post one of the signs below to let people know you support safe access for all. Both signs are printable PDF files.</p>
+    <h1> <%= t('about.signs.title') %> </h1>
+    <p><%= t('about.signs.intro')  %></p>
     
     <div style="float:left;width:45%;text-align:center;margin:0 15px;">
-        <h3>Accessible Bathrooms</h3>
+        <h3><%= t("about.signs.head-accessible") %></h3>
         <a href="/rr-sign-with-handi.pdf"><img src="/assets/rr-sign-with-handi.png" style="padding:15px;border:1px solid #444;">
-        <p>Download PDF</p></a>
+        <p><%= t("about.signs.download") %></p></a>
         <img src="/assets/qrcode-sign-with-handi.png" width="200">
     </div>
     <div style="float:left;width:45%;text-align:center;margin:0 15px;">
-        <h3>Non-Accessible Bathrooms</h3>
+        <h3><%= t("about.signs.head-non-accessible") %></h3>
         <a href="/rr-sign-no-handi.pdf"><img src="/assets/rr-sign-no-handi.png" style="padding:15px;border:1px solid #444;">
-        <p>Download PDF</p></a>
+        <p><%= t("about.signs.download") %></p></a>
         <img src="/assets/qrcode-sign-no-handi.png" width="200">
     </div>
-    <div style="clear:both;"></div>
+    <div style="clear:both;"><br></div>
 </div>
+
