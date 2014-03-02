@@ -37,7 +37,7 @@
 	$(function(){
 		<% if params[:lat].blank? || params[:long].blank? %>
 			//catch bad URL
-			searchLocation(search.val());
+			searchLocation(search.value);
 		<% end %>
 		//get default height for animation later
 		mapHeight = mapContainer.height();
