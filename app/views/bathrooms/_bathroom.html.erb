@@ -1,4 +1,4 @@
-<div class="listItem" data-id="<%= bathroom.id %>">
+<div class="listItem <%= bathroom.unisex? ? '' : 'not_unisex' %> <%= bathroom.accessible? ? '' : 'not_accessible' %>" data-id="<%= bathroom.id %>">
   <div class="listItemImage">
     <!-- image tag goes here -->
   </div>
