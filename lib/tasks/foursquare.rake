@@ -16,16 +16,19 @@ namespace :db do
 	id = venue[0]["id"]
 
 	# get venue hours
-	hours = client.venue_hours(id)
-	hours_hash = hours.to_hash
-	if hours_hash["hours"].empty?
-	all_timeframes = hours_hash["popular"]
-	else all_timeframes = hours_hash["hours"]
+	all_hours = client.venue_hours(id)
+	all_hours_hash = all_hours.to_hash
+	if !all_hours_hash["hours"].empty?
+	venue_hours = all_hours_hash["hours"]
+	if !venue_hours.empty?
+	has_hours = true
 	end
-	puts all_timeframes
+	end
+	end
 
-	# cache the result 
-  	# Rails.cache.write(bathroom.name + "hours", hours_hash)
+	#cache the result 
+	if has_hours
+  	Rails.cache.write(bathroom.name, venue_hours)
 end
 end
 end
