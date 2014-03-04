@@ -58,6 +58,10 @@ h1 {
   text-align: center;
 }
 
+.splashcontainer {
+  margin-top: 0px;
+}
+
 .addForm {
   max-width: 720px;
   width: 80%;
@@ -85,7 +89,6 @@ h1 {
   margin: 0 auto !important;
   background: $secondary-background;
   width: 90%;
-  box-shadow: 0px 5px 10px #27003D;
   border-radius: 5px;
 }
 

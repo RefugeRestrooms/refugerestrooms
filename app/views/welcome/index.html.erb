@@ -1,14 +1,15 @@
 <div class="imgsplash">
   <%= image_tag('logo-dark.svg') %>
 </div>
-<div class="splashsearchcontainer">
+<div class="splashsearchcontainer"><center>
   <%= form_tag bathrooms_path, :method => :get do %>
-  <%= text_field_tag :search, params[:search] %>
+  <%= text_field_tag :search, params[:search], :style => "width: 50%;" %> <br>
   <%= submit_tag "Search", :type => 'button', :name => nil, :class=> "btn btn-default" %>
   <%= hidden_field_tag :lat, "" %>
   <%= hidden_field_tag :long, "" %>
   <%= submit_tag "Search Current Location", :type => 'button', :name => nil, :class=> "btn btn-default", :title => 'Search by current location' %>
   <% end %>
+  </center>
 </div>
 
 <div class="centerText">
@@ -18,3 +19,5 @@
 </div>
  
 </div>
+
+<%= render 'layouts/search_js' %>
