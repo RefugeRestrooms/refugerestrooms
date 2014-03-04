@@ -39,5 +39,5 @@ geocoder.rb
 /vendor/bundle
 .env
 
-## Mac Directory
+## Ignore .DS_Store files in case people haven't setup a global gitignore
 .DS_Store
