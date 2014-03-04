@@ -1,6 +1,10 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 <script type="text/javascript">
   var searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
-
+  //Try using google maps search autocomplete
+  var input = (document.getElementById('search'));
+  var searchBox = new google.maps.places.SearchBox((input));
+  
   var search = $("#search");
   
   $(function(){
