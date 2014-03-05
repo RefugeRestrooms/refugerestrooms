@@ -24,19 +24,12 @@ This project is open source. Feel free to contribute. We could use the help.
 * Postgres
 * Geocoder Gem
 * Google Maps API
-* Suzy Framework
+* Twitter Boostrap Framework
 * Deployed on Heroku
 
+## Refuge SMS messaging app
 
-
-## Dev Team
-
-* Teagan Widmer - Ruby on Rails Eng
-* Alicia Woitte - JS/CSS/HTML
-* Stephan Leavens - UI/UX Design
-* Pamela Ocampo - Front End Framework Setup.
-* Dominic - Heroku Consulting
-* Natalie Roman - Vector/Raster Design
+The info on the text messaging response portion of the application [can be found here](https://github.com/tkwidmer/refugerest_sms).
 
 
 ## License
