@@ -47,6 +47,9 @@ gem 'country_select'
 gem 'mail_form'
 gem 'simple_form'
 
+# Use grape for REST-ful an API
+gem 'grape'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
