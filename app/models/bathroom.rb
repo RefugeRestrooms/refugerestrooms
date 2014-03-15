@@ -41,6 +41,15 @@ class Bathroom < ActiveRecord::Base
     access == 1
   end
 
+  # PostgreSQL Full-Text Search for the API.
+  def self.text_search(query)
+    if query.present?
+      where('name @@ ? OR street @@ ? OR city @@ ? OR comment @@ ?', query, query, query, query)
+    else
+      scoped
+    end
+  end
+
   private
 
     def strip_slashes
