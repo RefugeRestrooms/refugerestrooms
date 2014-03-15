@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'geocoder'
 
 # Use Active Admin
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
 
 # Use country_select plugin
 gem 'country_select'
