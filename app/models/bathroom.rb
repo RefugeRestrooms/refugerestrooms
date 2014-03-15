@@ -48,9 +48,10 @@ class Bathroom < ActiveRecord::Base
         ts_rank(to_tsvector(name), plainto_tsquery(#{sanitize(query)})) +
         ts_rank(to_tsvector(street), plainto_tsquery(#{sanitize(query)})) +
         ts_rank(to_tsvector(city), plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(directions), plainto_tsquery(#{sanitize(query)})) +
         ts_rank(to_tsvector(comment), plainto_tsquery(#{sanitize(query)}))
       RANK
-      where('name @@ :q OR street @@ :q OR city @@ :q OR comment @@ :q', q: query).order("#{rank} desc")
+      where('name @@ :q OR street @@ :q OR city @@ :q OR directions @@ :q OR comment @@ :q', q: query).order("#{rank} desc")
     else
       scoped
     end
