@@ -5,11 +5,11 @@ FactoryGirl.define do
     city 'San Francisco'
     state 'CA'
     country 'US'
-    bath_type 0
+    bath_type 1
     access 0
 
     trait :unisex do
-      bath_type 1
+      bath_type 0
     end
     
     trait :ada do
