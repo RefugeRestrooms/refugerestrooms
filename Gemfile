@@ -9,6 +9,9 @@ gem 'rails', '4.0.0'
 # Use postgres as the database for Active Record because its default for Heroku
 gem 'pg'
 
+# Use pg_search for powerful full-text searching on postgres
+gem 'pg_search'
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'bootstrap-sass'

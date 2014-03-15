@@ -4,6 +4,19 @@
 
 class Bathroom < ActiveRecord::Base
 
+  include PgSearch
+  pg_search_scope :search, against: {
+    :name => 'A',
+    :street => 'B',
+    :city => 'C',
+    :state => 'D',
+    :comment => 'B',
+    :directions => 'B',
+    :country => 'D',
+  },
+  using: {tsearch: {dictionary: "english"}},
+  ignoring: :accents
+
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
@@ -44,14 +57,7 @@ class Bathroom < ActiveRecord::Base
   # PostgreSQL Full-Text Search for the API.
   def self.text_search(query)
     if query.present?
-      rank = <<-RANK
-        ts_rank(to_tsvector(name), plainto_tsquery(#{sanitize(query)})) +
-        ts_rank(to_tsvector(street), plainto_tsquery(#{sanitize(query)})) +
-        ts_rank(to_tsvector(city), plainto_tsquery(#{sanitize(query)})) +
-        ts_rank(to_tsvector(directions), plainto_tsquery(#{sanitize(query)})) +
-        ts_rank(to_tsvector(comment), plainto_tsquery(#{sanitize(query)}))
-      RANK
-      where('name @@ :q OR street @@ :q OR city @@ :q OR directions @@ :q OR comment @@ :q', q: query).order("#{rank} desc")
+      search(query)
     else
       scoped
     end
