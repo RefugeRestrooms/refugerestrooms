@@ -85,6 +85,11 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.0.2)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     geocoder (1.1.9)
@@ -257,6 +262,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   country_select
   dotenv-rails
+  factory_girl_rails (~> 4.0)
   geocoder
   grape
   grape-kaminari

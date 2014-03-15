@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe 'Bathrooms API' do
-  it 'sends a list of bathrooms'
+  it 'sends a list of bathrooms' do
+     FactoryGirl.create_list(:bathroom, 15)
+  end
   it 'filters a list of bathrooms by unisex type'
   it 'filters a list of bathrooms by ADA availability'
 
