@@ -55,6 +55,11 @@ gem 'grape'
 gem 'grape-swagger'
 gem 'grape-kaminari'
 
+# RSpec for REST-ful API testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

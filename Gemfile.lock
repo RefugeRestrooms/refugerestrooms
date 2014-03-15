@@ -78,6 +78,7 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     dotenv (0.10.0)
     dotenv-rails (0.10.0)
       dotenv (= 0.10.0)
@@ -186,6 +187,26 @@ GEM
       json (~> 1.4)
     responders (1.0.0)
       railties (>= 3.2, < 5)
+    rspec-collection_matchers (0.0.3)
+      rspec-expectations (>= 2.99.0.beta1)
+    rspec-core (3.0.0.beta2)
+      rspec-support (= 3.0.0.beta2)
+    rspec-expectations (3.0.0.beta2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.0.0.beta2)
+    rspec-mocks (3.0.0.beta2)
+      rspec-support (= 3.0.0.beta2)
+    rspec-rails (3.0.0.beta2)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-collection_matchers
+      rspec-core (= 3.0.0.beta2)
+      rspec-expectations (= 3.0.0.beta2)
+      rspec-mocks (= 3.0.0.beta2)
+      rspec-support (= 3.0.0.beta2)
+    rspec-support (3.0.0.beta2)
     sass (3.2.14)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -248,6 +269,7 @@ DEPENDENCIES
   pg_search
   rails (= 4.0.0)
   rails_12factor
+  rspec-rails (~> 3.0.0.beta)
   sass-rails
   sdoc
   simple_form
