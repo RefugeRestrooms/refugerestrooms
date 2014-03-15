@@ -49,6 +49,7 @@ gem 'simple_form'
 
 # Use grape for REST-ful an API
 gem 'grape'
+gem 'grape-swagger'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
