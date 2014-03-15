@@ -1,13 +1,16 @@
 module API
   module V1
     class Bathrooms < Grape::API
+      include Grape::Kaminari
+      paginate :per_page => 10
+
       version 'v1'
       format :json
 
       resource :bathrooms do
         desc "Get all bathroom records ordered by date descending."
         get do
-          Bathroom.order(created_at: :desc)
+          paginate(Bathroom.order(created_at: :desc))
         end
 
         desc "Perform full-text search of bathroom records."
@@ -15,7 +18,7 @@ module API
           requires :query, type: String, desc: "Your search query."
         end
         get :search do
-          Bathroom.text_search(params[:query])
+          paginate(Bathroom.text_search(params[:query]))
         end
       end
     end
