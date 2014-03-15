@@ -24,6 +24,9 @@ class Bathroom < ActiveRecord::Base
 
   after_find :strip_slashes
 
+  scope :accessible, -> { where(access: 1) }
+  scope :unisex, -> { where(bath_type: 0) }
+
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
   end

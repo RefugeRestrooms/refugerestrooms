@@ -15,8 +15,8 @@ module API
         end
         get do
           b = Bathroom
-          b = b.where(access: 1) if params[:ada] === true
-          b = b.where(bath_type: 0) if params[:unisex] === true
+          b = b.accessible if params[:ada] === true
+          b = b.unisex if params[:unisex] === true
 
           paginate(b.order(created_at: :desc))
         end
@@ -29,8 +29,8 @@ module API
         end
         get :search do
           b = Bathroom
-          b = b.where(access: 1) if params[:ada] === true
-          b = b.where(bath_type: 0) if params[:unisex] === true
+          b = b.accessible if params[:ada] === true
+          b = b.unisex if params[:unisex] === true
 
           paginate(b.text_search(params[:query]))
         end
