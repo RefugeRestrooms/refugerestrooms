@@ -42,3 +42,19 @@ RSpec.configure do |config|
   # Include FactoryGirl methods into the RSpec test suite.
   config.include FactoryGirl::Syntax::Methods
 end
+
+Geocoder.configure(:lookup => :test)
+
+Geocoder::Lookup::Test.add_stub(
+  '123 Example St., San Francisco, CA, US', [
+    {
+      'latitude'     => 37.7749295,
+      'longitude'    => -122.41941550000001,
+      'address'      => '123 Example St., San Francisco, CA, USA',
+      'state'        => 'California',
+      'state_code'   => 'CA',
+      'country'      => 'United States',
+      'country_code' => 'US'
+    }
+  ]
+)

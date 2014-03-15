@@ -4,8 +4,7 @@ FactoryGirl.define do
     street '123 Example St.'
     city 'San Francisco'
     state 'CA'
-    latitude 37.7749295
-    longitude -122.41941550000001
+    country 'US'
     bath_type 0
     access 0
 
