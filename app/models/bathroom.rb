@@ -44,7 +44,13 @@ class Bathroom < ActiveRecord::Base
   # PostgreSQL Full-Text Search for the API.
   def self.text_search(query)
     if query.present?
-      where('name @@ ? OR street @@ ? OR city @@ ? OR comment @@ ?', query, query, query, query)
+      rank = <<-RANK
+        ts_rank(to_tsvector(name), plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(street), plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(city), plainto_tsquery(#{sanitize(query)})) +
+        ts_rank(to_tsvector(comment), plainto_tsquery(#{sanitize(query)}))
+      RANK
+      where('name @@ :q OR street @@ :q OR city @@ :q OR comment @@ :q', q: query).order("#{rank} desc")
     else
       scoped
     end

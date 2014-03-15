@@ -10,7 +10,7 @@ module API
           Bathroom.order(created_at: :desc)
         end
 
-        desc "Search bathroom records."
+        desc "Perform full-text search of bathroom records."
         params do
           requires :query, type: String, desc: "Your search query."
         end
