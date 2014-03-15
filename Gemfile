@@ -9,6 +9,9 @@ gem 'rails', '4.0.0'
 # Use postgres as the database for Active Record because its default for Heroku
 gem 'pg'
 
+# Use pg_search for powerful full-text searching on postgres
+gem 'pg_search'
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 gem 'bootstrap-sass'
@@ -46,6 +49,17 @@ gem 'country_select'
 # Use mail_form
 gem 'mail_form'
 gem 'simple_form'
+
+# Use grape for REST-ful an API
+gem 'grape'
+gem 'grape-swagger'
+gem 'grape-kaminari'
+
+# RSpec for REST-ful API testing
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem "factory_girl_rails", "~> 4.0"
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

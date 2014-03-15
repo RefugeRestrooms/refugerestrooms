@@ -14,6 +14,8 @@ SaferstallsRails::Application.routes.draw do
     end
   end
 
+  mount API::Base => '/api'
+
   get '/about', to: 'welcome#about'
   get '/signs', to: 'welcome#signs'
   get '/text', to: 'welcome#text_msg'

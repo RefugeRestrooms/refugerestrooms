@@ -4,12 +4,28 @@
 
 class Bathroom < ActiveRecord::Base
 
+  include PgSearch
+  pg_search_scope :search, against: {
+    :name => 'A',
+    :street => 'B',
+    :city => 'C',
+    :state => 'D',
+    :comment => 'B',
+    :directions => 'B',
+    :country => 'D',
+  },
+  using: {tsearch: {dictionary: "english"}},
+  ignoring: :accents
+
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
   after_validation :geocode, :lookup => :google
 
   after_find :strip_slashes
+
+  scope :accessible, -> { where(access: 1) }
+  scope :unisex, -> { where(bath_type: 0) }
 
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
@@ -39,6 +55,15 @@ class Bathroom < ActiveRecord::Base
 
   def accessible?
     access == 1
+  end
+
+  # PostgreSQL Full-Text Search for the API.
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      all
+    end
   end
 
   private
