@@ -1,31 +1,29 @@
 <h1><%= t('bathroom.add_new') %></h1> 
 
 <div class="addForm">
-<%= simple_form_for @bathroom, :html => { :class => 'form-horizontal' } do |f| %>
-	<h5><%= t('bathroom.required') %></h5>
-	<div class="clearfix">
-		<div class="linkbutton" type="button" id="guess" value="<%= t('bathroom.guess_location') %>">
-			Guess Location
+	<%= simple_form_for @bathroom, :html => { :class => 'form-horizontal' } do |f| %>
+		<h5><%= t('bathroom.required') %></h5>
+		<div class="clearfix">
+			<div class="linkbutton" type="button" id="guess" value="<%= t('bathroom.guess_location') %>">
+				Guess Location
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">
-	<%= f.input :name, :required => true %>
-	<%= f.input :street, :required => true %>
-	<%= f.input :city, :required => true %>
-	<%= f.input :state, :required => true %>
-	<%= f.input :country, priority: ["United States", "Canada", "United Kingdom"], :required => true %>
-	<%= f.hidden_field :latitude %>
-	<%= f.hidden_field :longitude %>
+		<div class="form-group">
+			<%= f.input :name, :required => true %>
+			<%= f.input :street, :required => true %>
+			<%= f.input :city, :required => true %>
+			<%= f.input :state, :required => true %>
+			<%= f.input :country, priority: ["United States", "Canada", "United Kingdom"], :required => true %>
+			<%= f.hidden_field :latitude %>
+			<%= f.hidden_field :longitude %>
 		</div>
 		<div class="form-group">
-	<%= f.input :access, :collection => [[t('bathroom.accessible'), 1], [t('bathroom.not_accessible'), 0]], :include_blank => false %>
-	<%= f.input :bath_type, :collection => [[t('bathroom.type.unisex'), 0], [t('bathroom.type.single_stall'), 1]], :include_blank => false %>
-	<%= f.input :directions, :placeholder => t('bathroom.directions_hint'), :as => :text, :required => false, :input_html => { :class => "span6" } %>
-	<%= f.input :comment, :placeholder => t('bathroom.comments_hint'), :as => :text, :required => false, :input_html => { :class => "span6" } %>
-	<%= f.button :submit, t('bathroom.bathsubmit'), :class => "linkbutton" %>
-<% end %>
-</div>
-
-</div>
-</div>
+			<%= f.input :access, :collection => [[t('bathroom.accessible'), 1], [t('bathroom.not_accessible'), 0]], :include_blank => false %>
+			<%= f.input :bath_type, :collection => [[t('bathroom.type.unisex'), 0], [t('bathroom.type.single_stall'), 1]], :include_blank => false %>
+			<%= f.input :directions, :placeholder => t('bathroom.directions_hint'), :as => :text, :required => false, :input_html => { :class => "span6" } %>
+			<%= f.input :comment, :placeholder => t('bathroom.comments_hint'), :as => :text, :required => false, :input_html => { :class => "span6" } %>
+			<%= f.button :submit, t('bathroom.bathsubmit'), :class => "linkbutton" %>
+		</div>
+	<% end %>
+</div><!-- /#addForm -->
