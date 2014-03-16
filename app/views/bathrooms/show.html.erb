@@ -43,4 +43,4 @@
 
 <hr>
 
-<%= render 'layouts/disqus_tag' %>
+<%= render partial: 'layouts/disqus_tag', locals: { identifier: "bathroom-#{@bathroom.id}", title: @bathroom.name, url: request.original_url } %>

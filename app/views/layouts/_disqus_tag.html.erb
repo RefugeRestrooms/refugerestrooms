@@ -1,6 +1,15 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'refugerestrooms';
+    <% if defined? identifier %>
+      var disqus_identifier = '<%= identifier %>';
+    <% end %>
+    <% if defined? title %>
+      var disqus_title = '<%= title %>';
+    <% end %>
+    <% if defined? url %>
+      var disqus_url = '<%= url %>';
+    <% end %>
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
