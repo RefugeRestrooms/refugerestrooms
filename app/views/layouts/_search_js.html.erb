@@ -3,9 +3,9 @@
   //Try using google maps search autocomplete
   var input = (document.getElementById('search'));
   var searchBox = new google.maps.places.SearchBox((input));
-  
+
   var search = $("#search");
-  
+
   $(function(){
     $("#logo").click(function(){
       window.location = "http://" + window.location.host;
@@ -22,9 +22,9 @@
       //remove default text on empty search
       preventSearchWithDefault(search);
 
-      if($("#lat").val() == "" 
-          || $("#long").val() == "" 
-          || $("#lat").val() == undefined 
+      if($("#lat").val() == ""
+          || $("#long").val() == ""
+          || $("#lat").val() == undefined
           || $("#long").val() == undefined
       ){
         event.preventDefault();
@@ -44,7 +44,7 @@
       element.addClass("fadedText");
 
       //remove effects on focus
-      element.focus(function(){ 
+      element.focus(function(){
         element.removeClass("fadedText");
         element.val("");
 

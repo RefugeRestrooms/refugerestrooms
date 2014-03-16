@@ -2,7 +2,7 @@ var map;
 
 function initMap(x, y, image){
 	image = typeof image !== 'undefined' ? image : currentLocationImage;
-	
+
 	//init map
   var mapOptions = {
     zoom: 15,
@@ -12,15 +12,14 @@ function initMap(x, y, image){
   map = new google.maps.Map(document.getElementById('mapArea'),
       mapOptions);
 
-	  //set marker at current location
-	  var myLatLng = new google.maps.LatLng(x, y);
-	  
-	  var currentLocation = new google.maps.Marker({
-		  position: myLatLng,
-		  map: map,
-		  icon: image
-	  });
-	  
+  //set marker at current location
+  var myLatLng = new google.maps.LatLng(x, y);
+
+  var currentLocation = new google.maps.Marker({
+	  position: myLatLng,
+	  map: map,
+	  icon: image
+  });
 }
 
 
@@ -41,8 +40,8 @@ function getPoint(string, callback){
 function placeMarker(lat, lng, content, number){
 
 	//create marker
-	var marker = new numberedCircle(new google.maps.LatLng(lat,lng), circleMarkerImage, number, map, content);
-	
+	var marker = new NumberedCircle(new google.maps.LatLng(lat,lng), circleMarkerImage, number, content);
+
 }
 
 function generateContent(data){
@@ -63,19 +62,16 @@ function setPoint(data, number){
 /*
 * Create a new marker that allows text
 */
-numberedCircle.prototype = new google.maps.OverlayView();
+NumberedCircle.prototype = new google.maps.OverlayView();
 
-function numberedCircle(center, image, text, map, content) {
-	
+function NumberedCircle(center, image, text, content) {
 	// Initialize all properties.
 	this.center_ = center;
 	this.image_ = image;
 	this.text_ = text;
 	this.map_ = map;
 	this.content_ = content;
-	
-	
-	
+
 	// this will hold the div displayed on the map
 	this.div_ = null;
 
@@ -83,7 +79,7 @@ function numberedCircle(center, image, text, map, content) {
 	this.setMap(map);
 }
 
-numberedCircle.prototype.onAdd = function() {
+NumberedCircle.prototype.onAdd = function() {
 	var me = this;
 
 	//generate the content
@@ -96,13 +92,13 @@ numberedCircle.prototype.onAdd = function() {
 	div.onclick = function(){
 		me.openPopup(me.content_);
 		};
-	
+
 	var img = document.createElement('img');
 	img.className = "mapIconImage";
 	img.src = this.image_;
 	img.style.position = 'absolute';
 	div.appendChild(img);
-	
+
 	var textDiv = document.createElement('div');
 	textDiv.className = "numberCircleText";
 	textDiv.style.position = 'absolute';
@@ -112,7 +108,7 @@ numberedCircle.prototype.onAdd = function() {
 	textDiv.style.height = '100%';
 	textDiv.innerHTML = this.text_;
 	div.appendChild(textDiv);
-	
+
 	this.content_.appendTo(div);
 
 	this.div_ = div;
@@ -122,7 +118,7 @@ numberedCircle.prototype.onAdd = function() {
 	panes.overlayMouseTarget.appendChild(div);
 };
 
-numberedCircle.prototype.draw = function() {
+NumberedCircle.prototype.draw = function() {
 
 	// retrieve the projection from the overlay.
 	var overlayProjection = this.getProjection();
@@ -133,13 +129,13 @@ numberedCircle.prototype.draw = function() {
 	//get image for size calculations
 	var div = this.div_;
 	var image = div.getElementsByTagName("IMG")[0];
-	
+
 	//detect if image has loaded yet or not (we can't get the size until it's loaded)
 	if(image.width == 0){
 		//set div's location, only thing we can do until image loads
 		div.style.left = center.x + 'px';
 		div.style.top = center.y + 'px';
-		
+
 		image.onload = function(){
 			var parent = this.parentNode;
 			//offset the parent div so that the image is centered
@@ -160,22 +156,20 @@ numberedCircle.prototype.draw = function() {
 		div.style.top = (center.y - (image.height / 2)) + 'px';
 		div.style.width = image.width + 'px';
 		div.style.height = image.height + 'px';
-		
+
 		//adjust line-height to center text
 		div.children[1].style.lineHeight = image.height + 'px';
 	}
-	console.log(this.content_[0]);
-  
 };
 
-numberedCircle.prototype.onRemove = function() {
+NumberedCircle.prototype.onRemove = function() {
   this.div_.parentNode.removeChild(this.div_);
   this.div_ = null;
 };
 
-numberedCircle.prototype.openPopup = function(content){
+NumberedCircle.prototype.openPopup = function(content){
 	$(content).show();
-	
+
 	//hide popup after 10 seconds
 	setTimeout(function(){
 		content.fadeOut();
@@ -193,12 +187,12 @@ function searchLocation(search){
 		searchCurrent();
 		return;
 	}
-	
+
 	if(search == ""){
 		handleSearchResults(37.7577, -122.4376);
 		return;
 	}
-	
+
 	var geocoder = new google.maps.Geocoder();
 	geocoder.geocode({
 	  'address': search
@@ -222,7 +216,6 @@ function handleSearchResults(lat, lng){
 function searchCurrent(){
 	getCurrent(function (pos) {
 			// set map
-			console.log("lat: %s , long: %s", pos.coords.latitude, pos.coords.longitude);
 			$("#search").val(currentLocationText);
 			handleSearchResults(pos.coords.latitude, pos.coords.longitude);
 
@@ -234,7 +227,7 @@ function searchCurrent(){
  */
 
 function emitError(error){
-	alert(error);	
+	alert(error);
 }
 
 function getCurrent (callback) {

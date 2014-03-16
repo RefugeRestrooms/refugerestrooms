@@ -1,7 +1,6 @@
 class BathroomsController < ApplicationController
   helper :bathrooms
 
-  before_filter :encode_search, only: :index
   before_filter :list_bathrooms, only: [:index, :list]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
@@ -78,8 +77,7 @@ class BathroomsController < ApplicationController
     end
   end
 
-
-  private
+private
 
   def list_bathrooms
     @bathrooms = Bathroom.all
@@ -99,7 +97,7 @@ class BathroomsController < ApplicationController
         flash[:alert] = I18n.t('bathroom.flash.field')
       end
     else
-      flash[:alert] = I18n.t('bathroom.flash.unexpected') 
+      flash[:alert] = I18n.t('bathroom.flash.unexpected')
     end
   end
 
@@ -109,43 +107,6 @@ class BathroomsController < ApplicationController
 
   def permitted_params
     params.require(:bathroom).permit!
-  end
-
-  def encode_search
-    # The case where the search parameter is populated, but the lat and long
-    # parameters are blank, has to be handled on the client side, so does not
-    # appear here.
-
-    # Normalize the search query a bit.
-    case params[:search]
-    when /(-?[\d.]+), *(-?[\d.]+)/
-      # If someone searches with latitude and longitude, populate the lat/long params.
-      params[:lat], params[:long] = [$1, $2]
-
-    when ''
-      if params[:lat].blank? && params[:long].blank?
-        # If all of the search, lat, and long parameters are blank,
-        # redirect to the homepage.
-        redirect_to '/'
-
-      elsif !params[:lat].blank? && !params[:long].blank?
-        # If lat/long parameters are populated, but the search parameter is not,
-        # set the search parameter to "<lat>, <long>"
-        params[:search] = "#{params[:lat]}, #{params[:long]}"
-
-      else
-        # The search parameter is empty, but only *one* of the latitude or
-        # longitude parameters is blank.
-        # We can't really recover from this, so redirect to the homepage and
-        # show an error.
-
-        params.delete(:lat)
-        params.delete(:long)
-
-        error = "There was an error searching for your location."
-        redirect_to url_for(params), flash: {error: error}
-      end
-    end
   end
 
 end
