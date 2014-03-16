@@ -7,8 +7,7 @@
     <meta name="keywords" content="gender neutral restrooms,gender,neutral,restrooms, unisex restrooms, unisex, restrooms, refuge restrooms, refuge, restrooms">
     <meta name="author" content="RefugeRestrooms.org">
     <script language="javascript" type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -28,7 +27,7 @@
         <%= render 'layouts/footer' %>
       </div>
     </main>
-    
+
     <%= render 'layouts/disqus_tag' %>
     <%= render 'layouts/ga_tag' %>
   </body>
