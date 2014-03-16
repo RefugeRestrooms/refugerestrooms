@@ -56,3 +56,11 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+// This fixes Bootstrap from messing with Google Maps CSS
+#mapArea img {
+  max-width: none;
+}
+#mapArea label {
+  width: auto; display:inline;
+}

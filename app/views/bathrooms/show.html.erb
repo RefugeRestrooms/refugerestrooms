@@ -23,17 +23,8 @@
 		<%= link_to t('bathroom.contact.contactlisting'), contact_path %>
 	</p>
 	
-	<div id ="map">
-		<div id="mapArea"></div>
-
-		<script type="text/javascript">
-			var headerHidden = false;
-
-			$(function(){
-				initMap(<%= @bathroom.latitude %>, <%= @bathroom.longitude %>, showMarkerImage);
-
-			});
-		</script>
+  <div id="map">
+    <%= content_tag 'div', id: 'mapArea', data: { latitude: @bathroom.latitude, longitude: @bathroom.longitude } do %><% end %>
 	</div>
 
 </div>
