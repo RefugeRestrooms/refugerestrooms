@@ -43,22 +43,22 @@
 	$(function(){
 		<% if params[:lat].blank? || params[:long].blank? %>
 			//catch bad URL
-			searchLocation(search.value);
+			searchLocation(search.val());
 		<% end %>
 		//get default height for animation later
 		mapHeight = mapContainer.height();
 		listHeight = list.height();
-		
+
 		//hide the map
 		mapContainer.hide();
 		mapContainer.height(0);
-		
+
 		mapToggle.click(function(){
 			//toggle which display is open
 			toggleMap();
 		});
 	});
-	
+
 	function toggleMap (){
 		if (mapShow) {
 			mapToggle.html("Map View");
@@ -71,7 +71,7 @@
 		}
 		mapShow = !mapShow;
 	}
-	
+
 	function scrollDown(object, height, callback){
 		object.show();
 		object.animate({height: height}, 1000, function(){
@@ -80,7 +80,7 @@
 			}
 		});
 	}
-	
+
 	function scrollUp(object, callback){
 		object.animate({height: 0}, 1000, function(){
 			object.hide();
@@ -89,17 +89,16 @@
 			}
 		})
 	}
-	
+
 	function doInit(){
 		//initialize the map if it wasn't already on
 		if (!mapOn) {
 			<% if !params[:lat].blank? && !params[:long].blank? %>
 				initMap(<%= params[:lat] %>, <%= params[:long] %>);
-		
+
 				//get a list of points from the server based on the searched location
 				$.get( "<%= list_bathrooms_path %>" + window.location.search , function( data ) {
 				  for(var i = 0; i < data.length; i++){
-		
 					//for each point in the data, put a point on the map
 					setPoint(data[i], i + 1);
 				  }
