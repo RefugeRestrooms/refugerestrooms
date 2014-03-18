@@ -33,7 +33,7 @@ The info on the text messaging response portion of the application [can be found
 
 ## Contributors
 
-Teagan Widmer (tkwidmer), Alicia Woitte (awoitte), Veronica Ray (mathonsunday), Emily Leathers (eleathers), Justin Bull (f3ndot), Natalie Groman (nataliegroman), Pamela Ocampo (pamo), Lisa French (lisafrench), Dominic Dagradi (dominic), Carol Gunby (rakuista), Dimiter Petrov (crackofdusk), Buck Doyle (backspace), Jeanine Otter (g-knee), Caden Lovelace (neoeno), r19m89s, Miriam Knadler (mknadler), Nik Markwell (duckinator), drcable Walpole (drcable), emstans,
+Teagan Widmer (tkwidmer), Alicia Woitte (awoitte), Stephan Leavans (leavens9), Veronica Ray (mathonsunday), Emily Leathers (eleather), Sabra Pratt (prattsj), Justin Bull (f3ndot), Natalie Groman (nataliegroman), Pamela Ocampo (pamo), Lisa French (lisafrench), Dominic Dagradi (dominic), Carol Gunby (rakuista), Dimiter Petrov (crackofdusk), Buck Doyle (backspace), Jeanine Otter (g-knee), Caden Lovelace (neoeno), r19m89s, Miriam Knadler (mknadler), Nik Markwell (duckinator), drcable Walpole (drcable), emstans, Kyra Pranks (kxra)
 
 ## Consultants
 
