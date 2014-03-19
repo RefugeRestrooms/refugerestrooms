@@ -23,17 +23,8 @@
 		<%= link_to t('bathroom.contact.contactlisting'), contact_path %>
 	</p>
 	
-	<div id ="map">
-		<div id="mapArea"></div>
-
-		<script type="text/javascript">
-			var headerHidden = false;
-
-			$(function(){
-				initMap(<%= @bathroom.latitude %>, <%= @bathroom.longitude %>, showMarkerImage);
-
-			});
-		</script>
+  <div id="map">
+    <%= content_tag 'div', id: 'mapArea', data: { latitude: @bathroom.latitude, longitude: @bathroom.longitude } do %><% end %>
 	</div>
 
 </div>
@@ -43,20 +34,4 @@
 
 <hr>
 
-<%=render 'bathrooms/map' %>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'refugerestrooms'; // required: replace example with your forum shortname
-
-/* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
+<%= render partial: 'layouts/disqus_tag', locals: { identifier: "bathroom-#{@bathroom.id}", title: @bathroom.name, url: request.original_url } %>

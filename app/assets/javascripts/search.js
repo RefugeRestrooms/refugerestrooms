@@ -1,41 +1,10 @@
-<script type="text/javascript">
+$(function(){
   var searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
   //Try using google maps search autocomplete
   var input = (document.getElementById('search'));
   var searchBox = new google.maps.places.SearchBox((input));
 
   var search = $("#search");
-
-  $(function(){
-    $("#logo").click(function(){
-      window.location = "http://" + window.location.host;
-    });
-
-    setDefaultText(search, searchDefaultText);
-
-    $(".submitButton").click(function(){
-      $(".search").find("form").submit();
-    });
-
-
-    $(".search").find("form").submit(function(event){
-      //remove default text on empty search
-      preventSearchWithDefault(search);
-
-      if($("#lat").val() == ""
-          || $("#long").val() == ""
-          || $("#lat").val() == undefined
-          || $("#long").val() == undefined
-      ){
-        event.preventDefault();
-        searchLocation(search.val());
-      }
-    });
-
-    $(".currentLocationButton").click(function(){
-        searchCurrent();
-    });
-  });
 
   function setDefaultText(element, text){
     //ensure we're not overwriting a value
@@ -61,4 +30,33 @@
       searchBox.val("");
     }
   }
-</script>
+
+  $("#logo").click(function(){
+    window.location = "http://" + window.location.host;
+  });
+
+  setDefaultText(search, searchDefaultText);
+
+  $(".submitButton").click(function(){
+    $(".search").find("form").submit();
+  });
+
+
+  $(".search").find("form").submit(function(event){
+    //remove default text on empty search
+    preventSearchWithDefault(search);
+
+    if($("#lat").val() == ""
+        || $("#long").val() == ""
+        || $("#lat").val() == undefined
+        || $("#long").val() == undefined
+    ){
+      event.preventDefault();
+      searchLocation(search.val());
+    }
+  });
+
+  $(".currentLocationButton").click(function(){
+      searchCurrent();
+  });
+});
