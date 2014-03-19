@@ -8,9 +8,14 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+ *= require 'active_admin'
+ #= require_self
+ *= require_tree
  */
+
+@import 'bootstrap';
+
+
 
 /*All From Susy File*/
 $font-stack: "Ubuntu", "Helvetica Neue", Arial, Gotham, "Helvetica", sans-serif;
@@ -27,19 +32,38 @@ $gray: #AAA;
 $white: #FFFFFF;
 $rounded-corners: 5px;
 
+// make all images responsive by default
+
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+  }
+
 body {
   font-family: $font-stack;
-  font-size: .8em;
-  background: $purple;
+  font-size: 1.2em;
   color: $base-color;
 }
 
+main {
+  @extend .container;
+  background-color: #ffffff;
+  padding-bottom: 80px;
+  width: 100%;
+  margin-top: 51px; // accommodate the navbar
+  }
+
+section {
+  @extend .row;
+  margin-top: 20px;
+  }
+
 .clearfix:before,
 .clearfix:after {
-  content: ".";    
-  display: block;    
-  height: 0;    
-  overflow: hidden; 
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
 }
 .clearfix:after {clear: both;}
 .clearfix {zoom: 1;} /* IE < 8 */
@@ -55,9 +79,62 @@ h1 {
   text-align: center;
 }
 
+p {
+  font-size: 1.2em;
+}
+
+
+.navbar-default  {
+  width: 100%;
+  background-color: $purple;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-brand {
+  color: $white;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $white;
+  text-decoration: none;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: $light-purple;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-nav > .open > a {
+  color: $white;
+  text-decoration: none;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: $light-purple;
+  text-decoration: none;
+}
+
 .splashcontainer {
   margin-top: 0px;
 }
+
+.column {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.form {
+  @extend .col-md-6;
+  }
+.form-centered {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  }
 
 .addForm {
   max-width: 720px;
@@ -82,9 +159,9 @@ h1 {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 940px;
   margin: 0 auto !important;
-  background: $secondary-background;
+  background: $white;
   width: 90%;
   border-radius: 5px;
 }
@@ -108,6 +185,7 @@ h1 {
 
 .nav {
   background: $purple;
+  font-size: 1.2em;
 }
 
 .nav2 {
@@ -159,7 +237,7 @@ h1 {
 }
 
 .linkbutton:hover {
-  background-color: $purple; 
+  background-color: $purple;
   color: white;
 }
 
@@ -176,7 +254,7 @@ h1 {
 }
 
 .whitelinkbutton:hover {
-  background-color: $light-purple; 
+  background-color: $light-purple;
   color: white;
 }
 
@@ -215,7 +293,7 @@ h1 {
 
 .filter {
   float: left;
-  
+
   .toggle {
     border-radius: $rounded-corners;
     width: 69px;
@@ -233,18 +311,18 @@ h1 {
     background-image: asset-url('ada-slider.svg');
     background-position: 69px 0;
   }
-  
+
   .filter_on {
     background-image: asset-url('ada-slider.svg');
     display: none;
-  }  
+  }
 }
 
 #unisex_filter {
   .filter_off {
     background-image: asset-url('unisex-slider.svg');
   }
-  
+
   .filter_on {
     background-image: asset-url('unisex-slider.svg');
     background-position: 69px 0;
@@ -581,23 +659,23 @@ input.thumbsButton.thumbsUp:hover {
   }
   padding: 12px;
   margin: 4px;
-  
+
   &:hover {
     background-position: 100% 50%;
   }
-  
+
   &.iconGitHub {
     background-image: asset-url('buttons_github.svg');
   }
-  
+
   &.iconTwitter {
     background-image: asset-url('buttons_twitter.svg');
   }
-  
+
   &.iconFacebook {
     background-image: asset-url('buttons_facebook.svg');
   }
-  
+
   &.iconTumblr {
     background-image: asset-url('buttons_tumblr.svg');
   }
@@ -619,6 +697,13 @@ footer {
   border: none;
 }
 
+#mapArea img {
+  max-width: none;
+}
+#mapArea label {
+  width: auto; display:inline;
+}
+
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
   .imgsplash {
     width: 100%;
@@ -630,7 +715,7 @@ footer {
   }
 
   .showPageItem.listItemImage {
-    
+
   }
 
   .showPageItem .itemInfo {
@@ -643,7 +728,7 @@ footer {
   .searchBar {
     font-size: 0.7rem;
   }
-  
+
   .itemName {
     font-size: 15px;
   }
@@ -689,7 +774,7 @@ footer {
   .imgsplash {
     font-size: 40px;
   }
-  
+
   .textItem {
     font-size: 12px;
   }
@@ -715,4 +800,6 @@ footer {
   .thumbsButton {
     font-size: 15px;
   }
+
+
 }

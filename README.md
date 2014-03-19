@@ -27,9 +27,10 @@ This project is open source. Feel free to contribute. We could use the help.
 * Twitter Boostrap Framework
 * Deployed on Heroku
 
-## Refuge SMS messaging app
+## Links to Refuge projects on other platforms
 
-The info on the text messaging response portion of the application [can be found here](https://github.com/tkwidmer/refugerest_sms).
+[SMS messaging Twillio Application](https://github.com/tkwidmer/refugerest_sms)
+[Android Native Application](https://github.com/JPumphrey/refugerestrooms-android)
 
 ## Contributors
 
@@ -38,6 +39,11 @@ Teagan Widmer (tkwidmer), Alicia Woitte (awoitte), Stephan Leavans (leavens9), V
 ## Consultants
 
 Kelly Becker ([KellyLSB](http://www.github.com/kellyLSB))
+
+## IRC
+
+Server: irc.freenode.com
+Channel: #refugerestrooms
 
 ## License
 
