@@ -84,15 +84,13 @@ class BathroomsController < ApplicationController
   private
 
   def list_bathrooms
-    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter])
+    @bathrooms = Bathroom.ada(params[:adafilter]).unisex(params[:unisexfilter]).page(params[:page])
 
     @bathrooms = if params[:search].present? || params[:map] == "1"
-      @bathrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+      @bathrooms.near([params[:lat], params[:long]], 20, :order => 'distance') 
     else
-      @bathrooms.reverse_order
+      @bathrooms.reverse_order 
     end
-
-    @bathrooms = @bathrooms.limit(20)
   end
 
   def display_errors

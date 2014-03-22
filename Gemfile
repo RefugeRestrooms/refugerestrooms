@@ -48,6 +48,8 @@ gem 'country_select'
 gem 'mail_form'
 gem 'simple_form'
 
+gem 'kaminari'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
