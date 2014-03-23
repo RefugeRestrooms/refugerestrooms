@@ -51,9 +51,11 @@ gem 'simple_form'
 # Use foursquare-api
 gem 'foursquare2'
 
-# Use MemCachier to cache responses from the Foursquare API
-gem 'memcachier'
-gem 'dalli'
+gem 'redis'
+
+# # Use MemCachier to cache responses from the Foursquare API
+# gem 'memcachier'
+# gem 'dalli'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

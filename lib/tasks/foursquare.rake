@@ -4,6 +4,7 @@ namespace :db do
   	puts "Running foursquare"
   	puts ""
 
+	redis = Redis.new
 	# get a foursquare
 	client = Foursquare2::Client.new(:client_id => ENV["FOURSQUARE_CLIENT_ID"], :client_secret => ENV["FOURSQUARE_CLIENT_SECRET"], :api_version => '20120505')
   	
@@ -21,15 +22,12 @@ namespace :db do
 	if !all_hours_hash["hours"].empty?
 	venue_hours = all_hours_hash["hours"]
 	if !venue_hours.empty?
-	has_hours = true
-	end
+	redis.set(bathroom.name, venue_hours)
 	end
 	end
 
-	#cache the result 
-	if has_hours
-  	Rails.cache.write(bathroom.name, venue_hours)
-end
+	end
+
 end
 end
 end
