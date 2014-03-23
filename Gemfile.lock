@@ -269,6 +269,7 @@ DEPENDENCIES
   grape-swagger
   jbuilder (~> 1.2)
   jquery-rails
+  kaminari
   mail_form
   minitest-rails (~> 0.9.2)
   pg
