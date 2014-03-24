@@ -90,8 +90,16 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    faraday (0.8.9)
+      multipart-post (~> 1.2.0)
+    faraday_middleware (0.9.0)
+      faraday (>= 0.7.4, < 0.9)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
+    foursquare2 (1.9.7)
+      faraday (~> 0.8)
+      faraday_middleware (>= 0.8)
+      hashie (>= 1.0, < 3.0.0)
     geocoder (1.1.9)
     grape (0.6.1)
       activesupport
@@ -149,6 +157,7 @@ GEM
       rails (>= 3.0)
     multi_json (1.8.4)
     multi_xml (0.5.5)
+    multipart-post (1.2.0)
     orm_adapter (0.5.0)
     pg (0.17.1)
     pg_search (0.7.3)
@@ -190,6 +199,7 @@ GEM
       polyamorous (~> 0.6.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    redis (3.0.7)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec-collection_matchers (0.0.3)
@@ -263,6 +273,7 @@ DEPENDENCIES
   country_select
   dotenv-rails
   factory_girl_rails (~> 4.0)
+  foursquare2
   geocoder
   grape
   grape-kaminari
@@ -276,6 +287,7 @@ DEPENDENCIES
   pg_search
   rails (= 4.0.0)
   rails_12factor
+  redis
   rspec-rails (~> 3.0.0.beta)
   sass-rails
   sdoc

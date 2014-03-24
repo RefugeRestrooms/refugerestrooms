@@ -63,6 +63,11 @@ end
 
 gem 'kaminari'
 
+# Use foursquare-api
+gem 'foursquare2'
+
+gem 'redis'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
