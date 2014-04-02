@@ -206,7 +206,11 @@ h1 {
   background-position: 50%;
 }
 
-.currentLocationButtonLocating {
+.splashcontainer .currentLocationButton {
+  background-image: none;
+}
+
+.search .currentLocationButtonLocating {
   background: #fff asset-url('loading.gif');
   background-repeat: no-repeat;
   background-position: 50%;
