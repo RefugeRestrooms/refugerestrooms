@@ -70,6 +70,7 @@ end
 
 group :test do
   gem 'minitest-rails', '~> 0.9.2'
+  gem 'rake'
 end
 
 # Use ActiveModel has_secure_password
