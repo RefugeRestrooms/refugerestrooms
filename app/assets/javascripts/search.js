@@ -31,10 +31,6 @@ $(function(){
     }
   }
 
-  $("#logo").click(function(){
-    window.location = "http://" + window.location.host;
-  });
-
   setDefaultText(search, searchDefaultText);
 
   $(".submitButton").click(function(){
