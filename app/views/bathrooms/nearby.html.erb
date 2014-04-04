@@ -1,6 +1,12 @@
-<h2><%= t('.heading') %></h2>
-<p><%= t('.body') %></p>
-<div class="minimalBathroomList">
-  <%= render @bathrooms %>
-</div>
-<div class='clearfix'></div>
+<% if @bathrooms.empty? %>
+  <div class='none'>
+    <p><%= t('.none') %></p>
+  </div>
+<% else %>
+  <h2><%= t('.heading') %></h2>
+  <p><%= t('.body') %></p>
+  <div class="minimalBathroomList">
+    <%= render @bathrooms %>
+  </div>
+  <div class='clearfix'></div>
+<% end %>

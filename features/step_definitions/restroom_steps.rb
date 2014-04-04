@@ -9,3 +9,7 @@ end
 Then(/^I should see an existing restroom nearby$/) do
   expect(page).to have_css('#nearby .listItem')
 end
+
+Then(/^I should not see an existing restroom nearby$/) do
+  expect(page).to have_css('#nearby .none')
+end

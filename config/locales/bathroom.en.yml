@@ -51,3 +51,4 @@ en:
     nearby:
       heading: 'Nearby restrooms'
       body: 'Before you submit a restroom, please ensure it is not already one of the known restrooms nearby.'
+      none: 'No restrooms were found nearby.'
