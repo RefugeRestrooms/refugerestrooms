@@ -74,6 +74,7 @@ group :test do
 
   gem 'cucumber-rails', '~> 1.4', require: false
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 # Use ActiveModel has_secure_password
