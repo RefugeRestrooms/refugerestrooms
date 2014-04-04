@@ -3,6 +3,5 @@ cache: bundler
 script:
   - bundle exec rake
   - bundle exec rspec
-  - bundle exec cucumber
 rvm:
   - 2.0.0
