@@ -71,6 +71,10 @@ end
 group :test do
   gem 'minitest-rails', '~> 0.9.2'
   gem 'rake'
+
+  gem 'cucumber-rails', '~> 1.4', require: false
+  gem 'database_cleaner'
+  gem 'poltergeist'
 end
 
 # Use ActiveModel has_secure_password
