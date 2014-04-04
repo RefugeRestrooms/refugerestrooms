@@ -1,7 +1,7 @@
 class BathroomsController < ApplicationController
   helper :bathrooms
 
-  before_filter :list_bathrooms, only: [:index, :list]
+  before_filter :list_bathrooms, only: [:index, :list, :nearby]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
   def index
@@ -10,6 +10,10 @@ class BathroomsController < ApplicationController
 	def list
 		render json: @bathrooms
 	end
+
+  def nearby
+    render layout: false
+  end
 
   def show
   end
@@ -83,9 +87,9 @@ private
     @bathrooms = Bathroom.all.page(params[:page])
 
     @bathrooms = if params[:search].present? || params[:map] == "1"
-      @bathrooms.near([params[:lat], params[:long]], 20, :order => 'distance') 
+      @bathrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
     else
-      @bathrooms.reverse_order 
+      @bathrooms.reverse_order
     end
   end
 

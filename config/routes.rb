@@ -11,6 +11,7 @@ SaferstallsRails::Application.routes.draw do
 
     collection do
       get :list
+      get :nearby
     end
   end
 
