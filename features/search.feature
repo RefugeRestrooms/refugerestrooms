@@ -9,7 +9,6 @@ Feature: Search for restrooms
 
   Scenario: Location search from splash page
     Given a restroom exists in Winnipeg
-    And I am in Vancouver
     When I am on the splash page
-    And I search from my location
+    And I search from Vancouver
     Then I should not see a restroom
