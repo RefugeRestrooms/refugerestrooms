@@ -132,8 +132,7 @@ h1 {
 }
 
 .searchBarContainer {
-  width: 100%;
-  margin: 15px;
+  margin: 15px 130px 15px 15px;
 }
 
 .searchBar {
@@ -183,7 +182,7 @@ h1 {
 .header {
   .searchButton, .currentLocationButton {
     position: absolute;
-    top: 5px;
+    top: 15px;
     padding-right: 2px;
     padding-left: 2px;
     width: 50px;
@@ -191,11 +190,11 @@ h1 {
   }
 
   .searchButton {
-    right: 0;
+    right: 15px;
   }
 
   .currentLocationButton {
-    right: 60px;
+    right: 75px;
   }
 }
 
