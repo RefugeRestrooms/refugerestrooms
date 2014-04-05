@@ -112,26 +112,6 @@ h1 {
   top: 5px
 }
 
-.search {
-  overflow: auto;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.searchBarContainer {
-  margin: 15px 130px 15px 15px;
-}
-
-.searchBar {
-  width: 99%;
-  height: 50px;
-  padding: 0 0 0 1rem;
-  margin: 0;
-  border: none;
-  font-size: 1.2rem;
-  border-radius: $rounded-corners;
-}
-
 .linkbutton {
   border: none;
   position: relative;
@@ -164,51 +144,6 @@ h1 {
 .whitelinkbutton:hover {
   background-color: $light-purple; 
   color: white;
-}
-
-.header {
-  .searchButton, .currentLocationButton {
-    position: absolute;
-    top: 15px;
-    padding-right: 2px;
-    padding-left: 2px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .searchButton {
-    right: 15px;
-  }
-
-  .currentLocationButton {
-    right: 75px;
-  }
-}
-
-.search .currentLocationButton {
-  word-wrap: break-word;
-  background: #FFF asset-url('currentLocation.png') no-repeat;
-  background-size: 75%;
-  background-position: 50%;
-}
-
-.splashcontainer {
-  .searchBarContainer {
-    margin-right: 15px;
-  }
-
-  .currentLocationButton {
-   background-image: none;
- }
-}
-
-.search .currentLocationButtonLocating {
-  background: #fff asset-url('loading.gif');
-  background-repeat: no-repeat;
-  background-position: 50%;
-  &:hover {
-    background-color: white;
-  }
 }
 
 .filter {
