@@ -205,8 +205,14 @@ h1 {
   background-position: 50%;
 }
 
-.splashcontainer .currentLocationButton {
-  background-image: none;
+.splashcontainer {
+  .searchBarContainer {
+    margin-right: 15px;
+  }
+
+  .currentLocationButton {
+   background-image: none;
+ }
 }
 
 .search .currentLocationButtonLocating {
