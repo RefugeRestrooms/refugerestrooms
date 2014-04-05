@@ -1,0 +1,13 @@
+@import 'variables';
+
+.navbar-default .navbar-nav > li > a {
+  color: white;
+
+  &:hover {
+    color: $light-purple;
+  }
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
