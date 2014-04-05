@@ -15,13 +15,16 @@
   height: 50px;
   padding: 0 0 0 1rem;
   margin: 0;
-  border: none;
   font-size: 1.2rem;
   border-radius: $rounded-corners;
 }
 
 
 .header {
+  .searchBar {
+    border: 0;
+  }
+
   .searchButton, .currentLocationButton {
     position: absolute;
     top: 15px;
