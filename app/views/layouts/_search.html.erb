@@ -3,7 +3,7 @@
   <%= form_tag bathrooms_path, :method => :get do %>
     <%= content_tag (splash ? :center : :div) do %>
       <div class="searchBarContainer">
-        <%= text_field_tag :search, params[:search], :class => "searchBar" %>
+        <%= text_field_tag :search, params[:search], :class => "searchBar form-control" %>
       </div>
       <%= hidden_field_tag :lat, "" %>
       <%= hidden_field_tag :long, "" %>

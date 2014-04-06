@@ -9,23 +9,12 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require framework_and_overrides
+ *= require nav
+ *= require search
  */
 
-/*All From Susy File*/
-$font-stack: "Ubuntu", "Helvetica Neue", Arial, Gotham, "Helvetica", sans-serif;
-$primary-color: #333333;
-$purple: #41326B;
-$light-purple: #8377af;
-$dark-purple: #0E0036;
-$base-color: #161616;
-$secondary-background: white;
-$green: #69b94a;
-$yellow: #f5a939;
-$red: #d6564b;
-$gray: #AAA;
-$white: #FFFFFF;
-$rounded-corners: 5px;
+@import 'variables';
 
 body {
   font-family: $font-stack;
@@ -125,27 +114,6 @@ h1 {
   top: 5px
 }
 
-.search {
-  overflow: auto;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.searchBarContainer {
-  width: 100%;
-  margin: 15px;
-}
-
-.searchBar {
-  width: 99%;
-  height: 50px;
-  padding: 0 0 0 1rem;
-  margin: 0;
-  border: none;
-  font-size: 1.2rem;
-  border-radius: $rounded-corners;
-}
-
 .linkbutton {
   border: none;
   position: relative;
@@ -178,45 +146,6 @@ h1 {
 .whitelinkbutton:hover {
   background-color: $light-purple; 
   color: white;
-}
-
-.header {
-  .searchButton, .currentLocationButton {
-    position: absolute;
-    top: 5px;
-    padding-right: 2px;
-    padding-left: 2px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .searchButton {
-    right: 0;
-  }
-
-  .currentLocationButton {
-    right: 60px;
-  }
-}
-
-.search .currentLocationButton {
-  word-wrap: break-word;
-  background: #FFF asset-url('currentLocation.png') no-repeat;
-  background-size: 75%;
-  background-position: 50%;
-}
-
-.splashcontainer .currentLocationButton {
-  background-image: none;
-}
-
-.search .currentLocationButtonLocating {
-  background: #fff asset-url('loading.gif');
-  background-repeat: no-repeat;
-  background-position: 50%;
-  &:hover {
-    background-color: white;
-  }
 }
 
 .filter {
