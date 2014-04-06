@@ -46,3 +46,9 @@ en:
     contact: 
       contactlisting: "Contact us about this post!"
       contactmessage: "If you are contacting us about a specific bathroom listing please include the ID of the bathroom listing (found at the end of the url for the listing page) in the body of your message. This helps us to address the issue as quickly as possible. Thank you!"
+
+  bathrooms:
+    nearby:
+      heading: 'Nearby restrooms'
+      body: 'Before you submit a restroom, please ensure it is not already one of the known restrooms nearby.'
+      none: 'No restrooms were found nearby.'
