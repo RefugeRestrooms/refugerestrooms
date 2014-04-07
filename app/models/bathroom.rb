@@ -24,6 +24,7 @@ class Bathroom < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
+      obj.name    = geo.address
       obj.street  = geo.address.split(',').first
       obj.city    = geo.city
       obj.state   = geo.state
