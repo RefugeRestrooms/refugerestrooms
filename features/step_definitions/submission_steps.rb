@@ -10,11 +10,11 @@ Given(/^I submit a restroom in Vancouver$/) do
   click_button 'Save Bathroom'
 end
 
-When(/^I am in Winnipeg and I guess my location on the submission page$/) do
+When(/^I am in (.*) and I guess my location on the submission page$/) do |city|
   visit '/'
   click_link 'Submit a New Bathroom'
 
-  mock_location(:Winnipeg)
+  mock_location(city.to_sym)
 
   find('#guess').click
 end
