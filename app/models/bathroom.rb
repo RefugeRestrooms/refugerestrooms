@@ -22,6 +22,15 @@ class Bathroom < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode, :lookup => :google
 
+  reverse_geocoded_by :latitude, :longitude do |obj, results|
+    if geo = results.first
+      obj.street  = geo.address.split(',').first
+      obj.city    = geo.city
+      obj.state   = geo.state
+      obj.country = geo.country
+    end
+  end
+
   after_find :strip_slashes
 
   scope :accessible, -> { where(access: 1) }
