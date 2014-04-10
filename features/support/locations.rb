@@ -2,7 +2,8 @@ module Locations
   def locations
     {
       Winnipeg: {latitude: 49.8975494, longitude: -97.140118},
-      Vancouver: {latitude: 49.281006, longitude: -123.089959}
+      Vancouver: {latitude: 49.281006, longitude: -123.089959},
+      Oakland: {latitude: 37.8044, longitude: -122.2708}
     }
   end
 
