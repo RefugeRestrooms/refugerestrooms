@@ -2,18 +2,6 @@ require 'spec_helper'
 
 describe Bathroom do
   let (:bathroom) { Bathroom.new }
-  describe '#upvote!' do
-
-    it 'should increment the number of upvotes by 1' do
-      expect { bathroom.upvote! }.to change { bathroom.upvote }.by 1
-    end
-  end
-
-  describe '#downvote!' do
-    it 'should increment the number of downvotes by 1' do
-      expect { bathroom.downvote! }.to change { bathroom.downvote }.by 1
-    end
-  end
 
   describe '#rated?' do
     let (:unrated_bathroom) { Bathroom.new }

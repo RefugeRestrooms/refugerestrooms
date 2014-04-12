@@ -41,14 +41,6 @@ class Bathroom < ActiveRecord::Base
     "#{street}, #{city}, #{state}, #{country}"
   end
 
-  def upvote!
-    self.upvote += 1
-  end
-
-  def downvote!
-    self.downvote += 1
-  end
-
   def rated?
     upvote > 0 || downvote > 0
   end
