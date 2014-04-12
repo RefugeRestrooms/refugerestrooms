@@ -3,8 +3,7 @@
     / image tag goes here
   .itemInfo
     .itemName= link_to_unless_current(bathroom.name, bathroom)
-    .itemStreet
-      ="#{bathroom.street}, #{bathroom.city}, #{bathroom.state}"
+    .itemStreet="#{bathroom.street}, #{bathroom.city}, #{bathroom.state}"
     - if bathroom.rated?
       - rating_class_name = case RatingLevel.for_bathroom(bathroom)
       - when RatingLevel.green  then 'greenRating'

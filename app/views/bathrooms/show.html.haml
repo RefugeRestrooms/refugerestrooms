@@ -5,22 +5,13 @@
     = link_to t('bathroom.upvote'), up_vote_bathroom_path, confirm: t('bathroom.confirm.upvote'), :class => 'thumbsButton thumbsUp'
     = link_to t('bathroom.downvote'), down_vote_bathroom_path, confirm: t('bathroom.confirm.downvote'), :class => 'thumbsButton thumbsDown'
   %p
-    %strong
-      = t('bathrooom.directions')
-      \:
+    %strong #{t('bathrooom.directions')}:
     = @bathroom.directions
-    %br/
   %p
-    %strong
-      = t('bathroom.comments')
-      \:
+    %strong #{t('bathroom.comments')}:
     = @bathroom.comment
-    %br/
-  %p
-    = link_to t('bathroom.contact.contactlisting'), contact_path
+  %p= link_to t('bathroom.contact.contactlisting'), contact_path
   #map
     %div#mapArea{ data: { latitude: @bathroom.latitude, longitude: @bathroom.longitude } }
-  %br
-  %br
   %hr
   = render partial: 'layouts/disqus_tag', locals: { identifier: "bathroom-#{@bathroom.id}", title: @bathroom.name, url: request.original_url }
