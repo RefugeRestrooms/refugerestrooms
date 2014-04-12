@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    = render 'layouts/head'
+  %body
+    %header
+      = render 'layouts/navigation'
+      = render 'layouts/header'
+    %main{:role => "main"}
+      .container
+        = render 'layouts/messages'
+        = yield
+        = render 'layouts/footer'
+    = render 'layouts/ga_tag'

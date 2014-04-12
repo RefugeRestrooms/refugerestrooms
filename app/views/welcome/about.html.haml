@@ -1,0 +1,36 @@
+%span.abouttext
+  %center
+    %h1= t('about.title')
+    %h3
+      %a{:href => "https://github.com/tkwidmer/refugerestrooms"}
+        = t('about.contribute')
+  %div{:style => "padding-left: 25px; padding-right: 25px;"}
+    %h3
+      = t('about.p1header')
+    %p= t('about.p1')
+    %h3
+      = t('about.p2header')
+    %p
+      = t('about.p2')
+    %h3
+      = t('about.p3header')
+    = t('about.p3')
+    %p/
+    %h3
+      = t('about.p4header')
+    %p
+      = t('about.p4')
+    %h3
+      = t('about.p5header')
+    %p
+      = t('about.p5.first').html_safe
+    %p
+      = t('about.p5.second').html_safe
+    %p
+      = t('about.p5.third').html_safe
+    %p
+      = t('about.p5.fourth').html_safe
+    %h3
+      = t('about.p6header')
+    %p
+      = t('about.p6').html_safe
