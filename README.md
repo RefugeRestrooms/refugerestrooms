@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/tkwidmer/refugerestrooms.svg)](https://travis-ci.org/tkwidmer/refugerestrooms) [![Stories in Ready](https://badge.waffle.io/tkwidmer/refugerestrooms.png?label=ready)](https://waffle.io/tkwidmer/refugerestrooms)
+[![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg)](https://travis-ci.org/tkwidmer/refugerestrooms) [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/tkwidmer/refugerestrooms)
 # REFUGE restrooms
 
 Providing safe restroom access for transgender, intersex, and gender noncomforming individuals.
