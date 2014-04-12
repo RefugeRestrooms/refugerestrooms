@@ -20,7 +20,7 @@
 	</p>
 
 	<p>
-		<%= link_to t('bathroom.contact.contactlisting'), contact_path %>
+		<%= link_to t('bathroom.contact.contactlisting'), contact_path(bathroom_id: @bathroom.id) %>
 	</p>
 	
   <div id="map">
