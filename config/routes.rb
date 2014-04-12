@@ -11,7 +11,6 @@ SaferstallsRails::Application.routes.draw do
 
     collection do
       get :list
-      get :guess
     end
   end
 

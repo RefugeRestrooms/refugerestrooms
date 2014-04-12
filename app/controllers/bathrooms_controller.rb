@@ -13,16 +13,19 @@ class BathroomsController < ApplicationController
 	end
 
   def guess
-    @bathroom = Bathroom.new(permitted_params)
-    @bathroom.reverse_geocode
-    render 'new', layout: false
   end
 
   def show
   end
 
   def new
-    @bathroom = Bathroom.new
+    if params[:guess]
+      @bathroom = Bathroom.new(permitted_params)
+      @bathroom.reverse_geocode
+      render 'new', layout: false
+    else
+      @bathroom = Bathroom.new
+    end
   end
 
   def create

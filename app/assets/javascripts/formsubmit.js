@@ -7,8 +7,8 @@ $(function () {
         if(results && results.length > 0){
           $.ajax({
             type: 'GET',
-            url: '/bathrooms/guess',
-            data: {bathroom: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}},
+            url: '/bathrooms/new',
+            data: {guess: true, bathroom: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}},
             success: function(data, textStatus) {
               $(".form-container").html(data);
               
