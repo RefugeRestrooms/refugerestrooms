@@ -4,9 +4,6 @@ class BathroomsController < ApplicationController
   before_filter :list_bathrooms, only: [:index, :list, :nearby]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
-  def index
-  end
-
 	def list
 		render json: @bathrooms
 	end
@@ -19,9 +16,6 @@ class BathroomsController < ApplicationController
     @bathroom = Bathroom.new(permitted_params)
     @bathroom.reverse_geocode
     render 'new', layout: false
-  end
-
-  def show
   end
 
   def new
@@ -48,9 +42,6 @@ class BathroomsController < ApplicationController
       display_errors
       render 'edit'
     end
-  end
-
-  def edit
   end
 
   def destroy
