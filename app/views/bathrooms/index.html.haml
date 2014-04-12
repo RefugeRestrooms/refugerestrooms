@@ -1,0 +1,19 @@
+#filters.clearfix
+  #ada_filter.filter
+    .toggle.filter_off
+    .toggle.filter_on
+  %label{:for => "ada_filter"}
+    %span.hiddenText ADA Compliant Filter
+  #unisex_filter.filter
+    .toggle.filter_off
+    .toggle.filter_on
+  %label{:for => "unisex_filter"}
+    %span.hiddenText Unisex Filter
+  .mapToggle.linkbutton
+    Map View
+#results
+  = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long], listpath: list_bathrooms_path } do
+    #mapArea
+  #list
+    = render @bathrooms
+    = paginate @bathrooms

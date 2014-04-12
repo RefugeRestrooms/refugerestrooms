@@ -16,6 +16,10 @@ gem 'pg_search'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 
+# Use haml to replace erb
+gem 'haml'
+gem 'html2haml'
+
 # Heroku support
 gem 'rails_12factor'
 
