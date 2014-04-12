@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/tkwidmer/refugerestrooms.svg)](https://travis-ci.org/tkwidmer/refugerestrooms) [![Stories in Ready](https://badge.waffle.io/tkwidmer/refugerestrooms.png?label=ready)](https://waffle.io/tkwidmer/refugerestrooms)
+[![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg)](https://travis-ci.org/tkwidmer/refugerestrooms) [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/tkwidmer/refugerestrooms)
 # REFUGE restrooms
 
 Providing safe restroom access for transgender, intersex, and gender noncomforming individuals.
@@ -30,8 +30,8 @@ This project is open source. Feel free to contribute. We could use the help.
 
 ## Links to Refuge project on other platforms
 
-- [SMS messaging Twillio Application](https://github.com/tkwidmer/refugerest_sms)
-- [Android Native Application](https://github.com/JPumphrey/refugerestrooms-android)
+- [SMS messaging Twillio Application](https://github.com/RefugeRestrooms/refugerest_sms)
+- [Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
 
 ## IRC
 
