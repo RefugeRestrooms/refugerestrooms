@@ -16,10 +16,15 @@ This project is open source. Feel free to contribute. We could use the help.
 4. Make sure Postgres is running, then run <code>rake db:setup</code>. This will create the development database, set it up for the application and fill it with the original safe2pee data, which you can use during development.
 5. Optionally, run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2pee data. (Use <code>rake db:fix_accents[dry_run]</code> to preview the changes.)
 
+### Testing
+
+Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
+
 ## Tech
 
 * Ruby Version - ruby-2.0.0-p247
 * Ruby on Rails
+* RSpec
 * Javascript
 * HTML / SASS
 * Postgres
