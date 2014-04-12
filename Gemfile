@@ -29,6 +29,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem "factory_girl_rails", "~> 4.0"
   gem 'dotenv-rails'
+  gem 'pry', '~> 0.9.12.6'
+  gem 'quiet_assets', '~> 1.0.2'
 end
 
 group :test do
