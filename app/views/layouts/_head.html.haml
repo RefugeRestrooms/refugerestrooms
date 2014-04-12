@@ -1,0 +1,9 @@
+%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+%title= content_for?(:title) ? yield(:title) : "REFUGE Restrooms"
+%meta{:content => content_for?(:description) ? yield(:description) : "Refuge Restrooms", :name => "description"}/
+%meta{:content => "gender neutral restrooms,gender,neutral,restrooms, unisex restrooms, unisex, restrooms, refuge restrooms, refuge, restrooms", :name => "keywords"}/
+%meta{:content => "RefugeRestrooms.org", :name => "author"}/
+%script{:src => "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
+= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+= javascript_include_tag "application", "data-turbolinks-track" => true
+= csrf_meta_tags
