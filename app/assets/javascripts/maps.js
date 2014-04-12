@@ -11,6 +11,10 @@ function initMap(x, y, image){
 
   map = new google.maps.Map(document.getElementById('mapArea'),
       mapOptions);
+  
+  google.maps.event.addListenerOnce(map, 'idle', function() {
+    $('#mapArea').addClass('loaded');
+  });
 
   //set marker at current location
   var myLatLng = new google.maps.LatLng(x, y);

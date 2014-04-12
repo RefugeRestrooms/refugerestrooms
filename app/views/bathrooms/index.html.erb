@@ -21,7 +21,7 @@
 </div>
 
 <div id="results">
-  <%= content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long], listpath: list_bathrooms_path } do %>
+  <%= content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do %>
     <div id="mapArea"></div>
   <% end %>
 
