@@ -8,10 +8,6 @@ SaferstallsRails::Application.routes.draw do
       get :down_vote
       post :down_vote
     end
-
-    collection do
-      get :list
-    end
   end
 
   mount API::Base => '/api'

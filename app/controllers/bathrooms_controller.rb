@@ -1,16 +1,18 @@
 class BathroomsController < ApplicationController
+  respond_to :html, :json
+
   helper :bathrooms
 
-  before_filter :list_bathrooms, only: [:index, :list]
+  before_filter :list_bathrooms, only: [:index]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
   def index
-    render :nearby, layout: false if params[:nearby]
+    if params[:nearby]
+      render :nearby, layout: false
+    else
+      respond_with @bathrooms
+    end
   end
-
-	def list
-		render json: @bathrooms
-	end
 
   def guess
   end
