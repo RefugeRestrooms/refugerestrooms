@@ -44,12 +44,12 @@ $(function(){
 			initMap(mapContainer.data('latitude'), mapContainer.data('longitude'));
 
 			//get a list of points from the server based on the searched location
-			$.get( mapContainer.data('listpath') + window.location.search , function( data ) {
+			$.get( '/bathrooms' + window.location.search , {}, function( data ) {
 			  for(var i = 0; i < data.length; i++){
 				//for each point in the data, put a point on the map
 				setPoint(data[i], i + 1);
 			  }
-			});
+			}, 'json');
 			mapOn = true;
 		}
 	}
