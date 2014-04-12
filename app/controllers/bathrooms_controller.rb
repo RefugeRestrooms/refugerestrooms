@@ -55,27 +55,21 @@ class BathroomsController < ApplicationController
   end
 
   def down_vote
-    @bathroom.downvote!
-
-    if @bathroom.save
+    if @bathroom.update_attributes downvote: @bathroom.downvote + 1
       flash[:notice] = I18n.t('bathroom.flash.downvotesuccess')
-      redirect_to @bathroom
     else
       flash[:alert] = I18n.t('bathroom.flash.downvoteerror')
-      redirect_to @bathroom
     end
+    redirect_to @bathroom
   end
 
   def up_vote
-    @bathroom.upvote!
-
-    if @bathroom.save
+    if @bathroom.update_attributes upvote: @bathroom.upvote + 1
       flash[:notice] = I18n.t('bathroom.flash.upvotesucess')
-      redirect_to @bathroom
     else
       flash[:alert] = I18n.t('bathroom.flash.upvoteerror')
-      redirect_to @bathroom
     end
+    redirect_to @bathroom
   end
 
 private
