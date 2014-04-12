@@ -15,6 +15,12 @@ class BathroomsController < ApplicationController
     render layout: false
   end
 
+  def guess
+    @bathroom = Bathroom.new(permitted_params)
+    @bathroom.reverse_geocode
+    render 'new', layout: false
+  end
+
   def show
   end
 
