@@ -14,8 +14,8 @@ $(function () {
               
               $.ajax({
                 type: 'GET',
-                url: '/bathrooms/nearby',
-                data: {search: 'true', lat: pos.coords.latitude, long: pos.coords.longitude},
+                url: '/bathrooms',
+                data: {search: 'true', nearby: true, lat: pos.coords.latitude, long: pos.coords.longitude},
                 success: function(data, textStatus) {
                   $('#nearby').html(data);
                 }

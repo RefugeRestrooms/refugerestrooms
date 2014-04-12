@@ -1,19 +1,16 @@
 class BathroomsController < ApplicationController
   helper :bathrooms
 
-  before_filter :list_bathrooms, only: [:index, :list, :nearby]
+  before_filter :list_bathrooms, only: [:index, :list]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
   def index
+    render :nearby, layout: false if params[:nearby]
   end
 
 	def list
 		render json: @bathrooms
 	end
-
-  def nearby
-    render layout: false
-  end
 
   def guess
     @bathroom = Bathroom.new(permitted_params)
