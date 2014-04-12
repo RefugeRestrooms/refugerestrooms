@@ -29,8 +29,8 @@ This project is open source. Feel free to contribute. We could use the help.
 
 ## Links to Refuge project on other platforms
 
--[SMS messaging Twillio Application](https://github.com/tkwidmer/refugerest_sms)
--[Android Native Application](https://github.com/JPumphrey/refugerestrooms-android)
+-[SMS messaging Twillio Application](https://github.com/RefugeRestrooms/refugerest_sms)
+-[Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
 
 ## IRC
 
