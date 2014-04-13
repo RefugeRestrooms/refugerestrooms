@@ -2,7 +2,7 @@
 = simple_form_for @restroom, html: {class: 'form-vertical'} do |f|
   %h5= t('restroom.required')
   .clearfix
-    #guess.linkbutton{:type => "button", :value => t('restroom.guess_location')}
+    #guess.linkbutton{:style => "width: 120px", :type => "button", :value => t('restroom.guess_location')}
       Guess Location
   #nearby
   = f.input :name, :required => true
