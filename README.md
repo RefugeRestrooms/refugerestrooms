@@ -9,12 +9,7 @@ This project is open source. Feel free to contribute. We could use the help.
 
 
 ## Set Up For Contributing
-
-1. Fork and clone the repository.
-2. Make sure you have Ruby 2.0 and PostgreSQL (on Mac, it's recommended to install Postgres with [homebrew](http://brew.sh/)).
-3. In the repository directory run <code>bundle install</code> to install all dependencies.
-4. Make sure Postgres is running, then run <code>rake db:setup</code>. This will create the development database, set it up for the application and fill it with the original safe2pee data, which you can use during development.
-5. Optionally, run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2pee data. (Use <code>rake db:fix_accents[dry_run]</code> to preview the changes.)
+[Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Envrioment-for-Contributing-to-Refuge-Restrooms)
 
 ### Testing
 
