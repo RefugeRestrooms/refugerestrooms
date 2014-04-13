@@ -54,26 +54,7 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def down_vote
-    if @bathroom.update_attributes downvote: @bathroom.downvote + 1
-      flash[:notice] = I18n.t('bathroom.flash.downvotesuccess')
-    else
-      flash[:alert] = I18n.t('bathroom.flash.downvoteerror')
-    end
-    redirect_to @bathroom
-  end
-
-  def up_vote
-    if @bathroom.update_attributes upvote: @bathroom.upvote + 1
-      flash[:notice] = I18n.t('bathroom.flash.upvotesucess')
-    else
-      flash[:alert] = I18n.t('bathroom.flash.upvoteerror')
-    end
-    redirect_to @bathroom
-  end
-
 private
-
   def list_bathrooms
     @bathrooms = Bathroom.all.page(params[:page])
 
@@ -99,7 +80,12 @@ private
   end
 
   def permitted_params
+    if params[:bathroom][:downvote]
+      params[:bathroom][:downvote] = @bathroom.downvote + 1
+    elsif params[:bathroom][:upvote]
+      params[:bathroom][:upvote] = @bathroom.upvote + 1
+    end
+
     params.require(:bathroom).permit!
   end
-
 end

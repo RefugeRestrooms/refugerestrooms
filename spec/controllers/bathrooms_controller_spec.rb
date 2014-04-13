@@ -11,13 +11,13 @@ describe BathroomsController do
 
     it "should downvote" do
       expect {
-        post :down_vote, id: bathroom.id
+        post :update, id: bathroom.id, bathroom: { downvote: true }
       }.to change { bathroom.reload.downvote }.by 1
     end
 
     it "should upvote" do
       expect {
-        post :up_vote, id: bathroom.id
+        post :update, id: bathroom.id, bathroom: { upvote: true }
       }.to change { bathroom.reload.upvote }.by 1
     end
   end
