@@ -7,14 +7,14 @@ $(function () {
         if(results && results.length > 0){
           $.ajax({
             type: 'GET',
-            url: '/bathrooms/new',
-            data: {guess: true, bathroom: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}},
+            url: '/restrooms/new',
+            data: {guess: true, restroom: {latitude: pos.coords.latitude, longitude: pos.coords.longitude}},
             success: function(data, textStatus) {
               $(".form-container").html(data);
-              
+
               $.ajax({
                 type: 'GET',
-                url: '/bathrooms',
+                url: '/restrooms',
                 data: {search: 'true', nearby: true, lat: pos.coords.latitude, long: pos.coords.longitude},
                 success: function(data, textStatus) {
                   $('#nearby').html(data);

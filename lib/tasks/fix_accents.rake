@@ -39,14 +39,14 @@ namespace :db do
 
       puts field, "="*field.length,""
 
-      Bathroom.where(where_clause).each do |bathroom|
+      Restroom.where(where_clause).each do |restroom|
         transformations.each do |original, transformed|
-          bathroom.send("#{field}=", bathroom.send(field).gsub(original, transformed))
+          restroom.send("#{field}=", restroom.send(field).gsub(original, transformed))
         end
 
-        puts bathroom.id, "", bathroom.send("#{field}_was"), "", bathroom.send(field), "\n\n"
+        puts restroom.id, "", restroom.send("#{field}_was"), "", restroom.send(field), "\n\n"
 
-        bathroom.save unless args.dry_run
+        restroom.save unless args.dry_run
       end
     end
   end

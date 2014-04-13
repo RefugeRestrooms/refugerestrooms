@@ -3,7 +3,7 @@
 
 Providing safe restroom access for transgender, intersex, and gender noncomforming individuals.
 
-REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. It provides a resource for trans\* and queer individuals in need of gender neutral and other safe bathrooms.
+REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. It provides a resource for trans\* and queer individuals in need of gender neutral and other safe restrooms.
 
 This project is open source. Feel free to contribute. We could use the help.
 

@@ -1,7 +1,7 @@
 SaferstallsRails::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :bathrooms do
+  resources :restrooms do
     member do
       get :up_vote
       post :up_vote

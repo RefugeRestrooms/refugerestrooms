@@ -1,6 +1,6 @@
 class RatingLevel
-  def self.for_bathroom(bathroom)
-    percentage = bathroom.rating_percentage
+  def self.for_restroom(restroom)
+    percentage = restroom.rating_percentage
 
     if percentage > 70
       self.green

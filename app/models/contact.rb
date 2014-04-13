@@ -1,15 +1,15 @@
 class Contact < MailForm::Base
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
-  attribute :bathroom_id, :allow_blank => true
-  validate :bathroom_must_exist
+  attribute :restroom_id, :allow_blank => true
+  validate :restroom_must_exist
   attribute :message
   attribute :nickname,  :captcha  => true
 
-  def bathroom_must_exist
-    if bathroom_id.present?
-      if Bathroom.where(:id => bathroom_id).blank?
-        errors.add(:base, "Must be valid bathroom ID")
+  def restroom_must_exist
+    if restroom_id.present?
+      if Restroom.where(:id => restroom_id).blank?
+        errors.add(:base, "Must be valid restroom ID")
       end
     end
   end
@@ -17,7 +17,7 @@ class Contact < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      :subject => "My Contact Form #{bathroom_id}",
+      :subject => "My Contact Form #{restroom_id}",
       :to => "refugerestrooms@gmail.com",
       :from => %("#{name}" <#{email}>)
     }
