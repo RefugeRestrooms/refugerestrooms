@@ -1,17 +1,17 @@
 en:
   activerecord:
     attributes:
-      bathroom:
+      restroom:
         # only overridden attributes here, defaults work as expected
         # (e.g. database field 'city' will be appear as 'City')
         name: 'Location/Place/Business Name'
         street: 'Street Address'
         state: 'State/Province'
         access: 'Accessible?'
-        bath_type: 'Type of Bathroom'
+        bath_type: 'Type of Restroom'
 
-  bathroom:
-    add_new: 'Submit a bathroom to our database'
+  restroom:
+    add_new: 'Submit a restroom to our database'
     required: '* marks required field'
     guess_location: 'Guess current location'
     directions: 'Directions'
@@ -23,30 +23,30 @@ en:
     type:
       unisex: 'Unisex / Gender neutral'
       single_stall: 'Gendered single stall or safe place'
-    bathsubmit: 'Save Bathroom'
+    restsubmit: 'Save Restroom'
     rating:
       positive: '%{percentage}% positive'
       unrated: 'Not yet rated'
     upvote: 'Loved it!'
     downvote: 'Not safe'
     confirm:
-      upvote: 'Are you sure you want to upvote to his bathroom?'
-      downvote: 'Are you sure you want to down vote this bathroom?'
+      upvote: 'Are you sure you want to upvote to his restroom?'
+      downvote: 'Are you sure you want to down vote this restroom?'
     flash:
       field: 'A required field has been left blank. Please recheck your submission and submit the form again.'
       unexpected: 'We ran into an unexpected problem, please contact us if the problem continues.'
       upvoteerror: 'There was an unexpected problem upvoting this post.'
-      upvotesuccess: 'This bathroom has been upvoted! Thank you for contributing to our community.'
+      upvotesuccess: 'This restroom has been upvoted! Thank you for contributing to our community.'
       downvoteerror: 'There was an unexpected problem downvoting this post.'
-      downvotesuccess: 'This bathroom has been downvoted! Thank you for contributing to our community.'
-      new: 'A new bathroom entry has been created for %{name}.'
-      updated: 'This bathroom entry has been updated'
-      deleted: 'This bathroom entry has been deleted'
+      downvotesuccess: 'This restroom has been downvoted! Thank you for contributing to our community.'
+      new: 'A new restroom entry has been created for %{name}.'
+      updated: 'This restroom entry has been updated'
+      deleted: 'This restroom entry has been deleted'
       searcherror: 'There was an error searching for your location.'
     contact:
       contactlisting: "Contact us about this post!"
 
-  bathrooms:
+  restrooms:
     nearby:
       heading: 'Nearby restrooms'
       body: 'Before you submit a restroom, please ensure it is not already one of the known restrooms nearby.'

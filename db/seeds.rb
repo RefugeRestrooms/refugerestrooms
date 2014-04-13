@@ -8,9 +8,9 @@
 
 require 'csv'
 
-Bathroom.transaction do
+Restroom.transaction do
   CSV.foreach('db/export.csv') do |row|
-    Bathroom.create(
+    Restroom.create(
       :name => row[1],
       :street => row[3],
       :city => row[4],

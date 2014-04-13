@@ -1,5 +1,5 @@
-- if @contact.bathroom_name.present?
-  %h1 Request Edit for #{@contact.bathroom_name} Restroom
+- if @contact.restroom_name.present?
+  %h1 Request Edit for #{@contact.restroom_name} Restroom
 - else
   %h1 Contact
 = simple_form_for @contact, html: {class: 'form-vertical' } do |f|
@@ -9,8 +9,8 @@
   = f.input :email, :required => true
   = f.input :message, :as => :text, :required => false, :input_html => {:rows => 10}
   .hidden
-    = f.hidden_field :bathroom_id, :required => false
-    = f.hidden_field :bathroom_name, :required => false
+    = f.hidden_field :restroom_id, :required => false
+    = f.hidden_field :restroom_name, :required => false
     = f.hidden_field :nickname, :hint => 'Leave this field blank!'
   .form-actions
     = f.button :submit, 'Send message', :class=> "linkbutton"

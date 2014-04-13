@@ -1,0 +1,25 @@
+.listItem.showPageItem{"data-id" => @restroom.id}
+  = render partial: 'restrooms/restroom', locals: { restroom: @restroom }
+.showPageContent
+  .ratingscontainer
+    = link_to t('restroom.upvote'),
+                restroom_path(restroom: { upvote: true }),
+                confirm: t('restroom.confirm.upvote'),
+                method: 'put',
+                class: 'thumbsButton thumbsUp'
+    = link_to t('restroom.downvote'),
+                restroom_path(restroom: { downvote: true }),
+                confirm: t('restroom.confirm.downvote'),
+                method: 'put',
+                class: 'thumbsButton thumbsDown'
+  %p
+    %strong #{t('restrooom.directions')}:
+    = @restroom.directions
+  %p
+    %strong #{t('restroom.comments')}:
+    = @restroom.comment
+  %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id, restroom_name: @restroom.name)
+  #map
+    %div#mapArea{ data: { latitude: @restroom.latitude, longitude: @restroom.longitude } }
+  %hr
+  = render partial: 'layouts/disqus_tag', locals: { identifier: "restroom-#{@restroom.id}", title: @restroom.name, url: request.original_url }
