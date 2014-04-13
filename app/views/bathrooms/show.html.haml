@@ -10,7 +10,7 @@
   %p
     %strong #{t('bathroom.comments')}:
     = @bathroom.comment
-  %p= link_to t('bathroom.contact.contactlisting'), contact_path
+  %p= link_to t('bathroom.contact.contactlisting'), contact_path(bathroom_id: @bathroom.id)
   #map
     %div#mapArea{ data: { latitude: @bathroom.latitude, longitude: @bathroom.longitude } }
   %hr
