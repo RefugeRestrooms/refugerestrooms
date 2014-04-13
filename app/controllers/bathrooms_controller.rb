@@ -1,10 +1,8 @@
 class BathroomsController < ApplicationController
   respond_to :html, :json
 
-  helper :bathrooms
-
   before_filter :list_bathrooms, only: [:index]
-  before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
+  before_filter :find_bathroom, only: [:show, :update, :edit, :destroy]
 
   def index
     if params[:nearby]
@@ -12,9 +10,6 @@ class BathroomsController < ApplicationController
     else
       respond_with @bathrooms
     end
-  end
-
-  def guess
   end
 
   def new
@@ -40,13 +35,18 @@ class BathroomsController < ApplicationController
   end
 
   def update
-    if @bathroom.update(permitted_params)
+    if params[:bathroom][:downvote]
+      Bathroom.increment_counter(:downvote, @bathroom.id)
+    elsif params[:bathroom][:upvote]
+      Bathroom.increment_counter(:upvote, @bathroom.id)
+    elsif @bathroom.update(permitted_params)
       flash[:notice] = I18n.t('bathroom.flash.updated')
-      redirect_to @bathroom
     else
       display_errors
       render 'edit'
     end
+
+    redirect_to @bathroom
   end
 
   def destroy
@@ -85,12 +85,6 @@ private
   end
 
   def permitted_params
-    if params[:bathroom][:downvote]
-      params[:bathroom][:downvote] = @bathroom.downvote + 1
-    elsif params[:bathroom][:upvote]
-      params[:bathroom][:upvote] = @bathroom.upvote + 1
-    end
-
     params.require(:bathroom).permit!
   end
 end
