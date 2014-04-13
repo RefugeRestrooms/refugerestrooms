@@ -1,0 +1,25 @@
+.listItem.showPageItem{"data-id" => @bathroom.id}
+  = render partial: 'bathrooms/bathroom', locals: { bathroom: @bathroom }
+.showPageContent
+  .ratingscontainer
+    = link_to t('bathroom.upvote'),
+                bathroom_path(bathroom: { upvote: true }),
+                confirm: t('bathroom.confirm.upvote'),
+                method: 'put',
+                class: 'thumbsButton thumbsUp'
+    = link_to t('bathroom.downvote'),
+                bathroom_path(bathroom: { downvote: true }),
+                confirm: t('bathroom.confirm.downvote'),
+                method: 'put',
+                class: 'thumbsButton thumbsDown'
+  %p
+    %strong #{t('bathrooom.directions')}:
+    = @bathroom.directions
+  %p
+    %strong #{t('bathroom.comments')}:
+    = @bathroom.comment
+  %p= link_to t('bathroom.contact.contactlisting'), contact_path(bathroom_id: @bathroom.id)
+  #map
+    %div#mapArea{ data: { latitude: @bathroom.latitude, longitude: @bathroom.longitude } }
+  %hr
+  = render partial: 'layouts/disqus_tag', locals: { identifier: "bathroom-#{@bathroom.id}", title: @bathroom.name, url: request.original_url }

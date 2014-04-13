@@ -1,25 +1,30 @@
 class BathroomsController < ApplicationController
+  respond_to :html, :json
+
   helper :bathrooms
 
-  before_filter :list_bathrooms, only: [:index, :list, :nearby]
+  before_filter :list_bathrooms, only: [:index]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
 
-	def list
-		render json: @bathrooms
-	end
-
-  def nearby
-    render layout: false
+  def index
+    if params[:nearby]
+      render :nearby, layout: false
+    else
+      respond_with @bathrooms
+    end
   end
 
   def guess
-    @bathroom = Bathroom.new(permitted_params)
-    @bathroom.reverse_geocode
-    render 'new', layout: false
   end
 
   def new
-    @bathroom = Bathroom.new
+    if params[:guess]
+      @bathroom = Bathroom.new(permitted_params)
+      @bathroom.reverse_geocode
+      render 'new', layout: false
+    else
+      @bathroom = Bathroom.new
+    end
   end
 
   def create

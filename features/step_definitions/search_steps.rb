@@ -3,7 +3,7 @@ When(/^I search for "(.*?)"$/) do |search|
   find('.searchButton').click
 end
 
-When(/^I search from Vancouver$/) do
-  mock_location 'Vancouver'
+When(/^I search from (.*?)$/) do |location|
+  mock_location location
   find('.currentLocationButton').click
 end
