@@ -1,3 +1,0 @@
-module RestroomsHelper
-
-end
