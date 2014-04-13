@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :bathroom do
+  factory :restroom do
     name 'Moonlight Café'
     street '123 Example St.'
     city 'San Francisco'
@@ -26,8 +26,8 @@ FactoryGirl.define do
       directions 'Near the back, past the counter on the left.'
     end
 
-    factory :unisex_bathroom, traits: [:unisex]
-    factory :ada_bathroom, traits: [:ada]
-    factory :unisex_and_ada_bathroom, traits: [:unisex, :ada]
+    factory :unisex_restroom, traits: [:unisex]
+    factory :ada_restroom, traits: [:ada]
+    factory :unisex_and_ada_restroom, traits: [:unisex, :ada]
   end
 end

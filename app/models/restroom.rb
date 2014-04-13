@@ -2,7 +2,7 @@
 # In the dataset on which the application is based, UNISEX is coded by 0, ADA
 # (accessible) is coded by 1
 
-class Bathroom < ActiveRecord::Base
+class Restroom < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search, against: {

@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require framework_and_overrides
- *= require bathrooms
+ *= require restrooms
  *= require nav
  *= require search
  */
@@ -325,17 +325,17 @@ h1 {
   padding: 5px;
 }
 
-.unisexBathroom {
+.unisexRestroom {
   width: 45px;
   height: 43px;
 }
 
-.ADABathroom {
+.ADARestroom {
   width: 44px;
   height: 47px;
 }
 
-.unisexBathroom img, .ADABathroom img {
+.unisexRestroom img, .ADARestroom img {
   width: 100%;
   height: 100%;
 }
@@ -490,7 +490,7 @@ input.thumbsButton.thumbsUp:hover {
   overflow: hidden;
 }
 
-.submitBathroomButton {
+.submitRestroomButton {
   display: inline-block;
   background: asset-url('submit.svg') no-repeat;
   width: 150px;
@@ -502,7 +502,7 @@ input.thumbsButton.thumbsUp:hover {
   background-position: 0 50%;
 }
 
-.submitBathroomButton:hover {
+.submitRestroomButton:hover {
   background-position: 100% 50%;
 }
 

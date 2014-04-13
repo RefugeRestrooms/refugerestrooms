@@ -1,6 +1,6 @@
 - splash = false if local_assigns[:splash].nil?
 .search
-  = form_tag bathrooms_path, :method => :get do
+  = form_tag restrooms_path, :method => :get do
     = content_tag (splash ? :center : :div) do
       .searchBarContainer
         = text_field_tag :search, params[:search], :class => "searchBar form-control"
