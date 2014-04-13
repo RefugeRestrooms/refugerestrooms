@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/justinfrench/formtastic.git
+  revision: f56c1a03502a3e5583bf87017e0ec60742bf754c
+  specs:
+    formtastic (2.3.0.rc3)
+      actionpack (>= 3.2.13)
+
+GIT
   remote: https://github.com/gregbell/active_admin.git
   revision: 60d8be97ec2c29a871f55bd28e00ca9ec9257028
   specs:
@@ -110,8 +117,6 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    formtastic (2.3.0.rc2)
-      actionpack (>= 3.0)
     geocoder (1.1.9)
     gherkin (2.12.2)
       multi_json (~> 1.3)
@@ -306,6 +311,7 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   factory_girl_rails (~> 4.0)
+  formtastic!
   geocoder
   grape
   grape-kaminari
