@@ -1,5 +1,5 @@
 - splash = false if local_assigns[:splash].nil?
-.search
+.search.constraint
   = form_tag restrooms_path, :method => :get do
     = content_tag (splash ? :center : :div) do
       .searchBarContainer
