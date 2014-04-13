@@ -14,9 +14,6 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def guess
-  end
-
   def new
     if params[:guess]
       @bathroom = Bathroom.new(permitted_params)
