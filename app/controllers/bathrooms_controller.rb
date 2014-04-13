@@ -1,8 +1,6 @@
 class BathroomsController < ApplicationController
   respond_to :html, :json
 
-  helper :bathrooms
-
   before_filter :list_bathrooms, only: [:index]
   before_filter :find_bathroom, only: [:show, :update, :edit, :destroy]
 
