@@ -2,7 +2,6 @@
 = simple_form_for @contact, html: {class: 'form-vertical' } do |f|
   %br/
   %p
-    = t('bathroom.contact.contactmessage')
   = f.input :name, :required => true
   = f.input :email, :required => true
   = f.input :bathroom_id, :hint => 'Must be valid bathroom ID issue', :label => 'Bathroom ID (Leave blank if not bathroom specific)', :required => false, :placeholder => @bathroom_id

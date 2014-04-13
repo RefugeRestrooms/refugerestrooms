@@ -43,9 +43,8 @@ en:
       updated: 'This bathroom entry has been updated'
       deleted: 'This bathroom entry has been deleted'
       searcherror: 'There was an error searching for your location.'
-    contact: 
+    contact:
       contactlisting: "Contact us about this post!"
-      contactmessage: "If you are contacting us about a specific bathroom listing please include the ID of the bathroom listing (found at the end of the url for the listing page) in the body of your message. This helps us to address the issue as quickly as possible. Thank you!"
 
   bathrooms:
     nearby:

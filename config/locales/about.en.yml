@@ -10,11 +10,9 @@ en:
     p4header: "What's the big deal about bathrooms anyway and why do we need this resource?"
     p4: "One of the biggest battlefields upon which the fight for transgender rights is taking place daily are bathrooms. It seems that every other week a transgender child is made the center of a national news story because they used the bathroom assigned to the gender they identify with. Obviously, we believe that every transgender person should have the right to use the bathroom they want to. However, we also realize that despite legislative victories in recent years regarding bathroom usage, many transgender individuals still face both verbal and physical harassment simply for using the bathroom. Nobody should have to face that - and that is why we created REFUGE."
     p5header: 'What can we to help?'
-    p5: 
-      first: "<strong>First:</strong> Add listings. The database is only as big as you make it. The more listings, the more comprehensive and valuable the resource can be." 
-      second: "<strong>Secondly:</strong> Spread the word. Tweet. Facebook. Tumblr. Blog. Whatever it is that you do, do it. Let people know about this resource." 
-      third: "<strong>Thirdly:</strong> If you know how to code, visit the github and let us know about a bug, suggest an improvement, or even contribute a little bit of code and help out the project. REFUGE is open source and we can't do it without you." 
+    p5:
+      first: "<strong>First:</strong> Add listings. The database is only as big as you make it. The more listings, the more comprehensive and valuable the resource can be."
+      second: "<strong>Secondly:</strong> Spread the word. Tweet. Facebook. Tumblr. Blog. Whatever it is that you do, do it. Let people know about this resource."
+      third: "<strong>Thirdly:</strong> If you know how to code, visit the github and let us know about a bug, suggest an improvement, or even contribute a little bit of code and help out the project. REFUGE is open source and we can't do it without you."
       fourth: "<strong>Fourthly: </strong> Donate. Keep your eyes peeled for an upcoming crowd funding campaign to fund some of the technology we need to use as well as to pay our fabulous designers and engineers a little bit of money for their hard and tireless work. They have been working for free to bring this service to you and we don't want anybody to work for free. Most of the core team are transgender and underemployed at this time."
-    p6header: "Who all is behind this thing?"
-    p6: "Teagan Widmer and Alicia Woitte were the primary engineers for the web application. The site was designed by Stephan Castro (UI/UX) and Natalie Roman (Vectors/UI). As well as lots of AMAZING contributors on the github"
     contribute: 'Fork us and contribute on Github!'
