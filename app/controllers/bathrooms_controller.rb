@@ -4,7 +4,7 @@ class BathroomsController < ApplicationController
   helper :bathrooms
 
   before_filter :list_bathrooms, only: [:index]
-  before_filter :find_bathroom, only: [:show, :update, :edit, :destroy, :up_vote, :down_vote]
+  before_filter :find_bathroom, only: [:show, :update, :edit, :destroy]
 
   def index
     if params[:nearby]
