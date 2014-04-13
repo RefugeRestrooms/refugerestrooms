@@ -17,9 +17,6 @@ class BathroomsController < ApplicationController
   def guess
   end
 
-  def show
-  end
-
   def new
     if params[:guess]
       @bathroom = Bathroom.new(permitted_params)
@@ -52,9 +49,6 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def destroy
     if @bathroom.destroy
       flash[:notice] = I18n.t('bathroom.flash.deleted')
@@ -65,32 +59,7 @@ class BathroomsController < ApplicationController
     end
   end
 
-  def down_vote
-    @bathroom.downvote!
-
-    if @bathroom.save
-      flash[:notice] = I18n.t('bathroom.flash.downvotesuccess')
-      redirect_to @bathroom
-    else
-      flash[:alert] = I18n.t('bathroom.flash.downvoteerror')
-      redirect_to @bathroom
-    end
-  end
-
-  def up_vote
-    @bathroom.upvote!
-
-    if @bathroom.save
-      flash[:notice] = I18n.t('bathroom.flash.upvotesucess')
-      redirect_to @bathroom
-    else
-      flash[:alert] = I18n.t('bathroom.flash.upvoteerror')
-      redirect_to @bathroom
-    end
-  end
-
 private
-
   def list_bathrooms
     @bathrooms = Bathroom.all.page(params[:page])
 
@@ -116,7 +85,12 @@ private
   end
 
   def permitted_params
+    if params[:bathroom][:downvote]
+      params[:bathroom][:downvote] = @bathroom.downvote + 1
+    elsif params[:bathroom][:upvote]
+      params[:bathroom][:upvote] = @bathroom.upvote + 1
+    end
+
     params.require(:bathroom).permit!
   end
-
 end

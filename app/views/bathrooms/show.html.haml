@@ -2,8 +2,16 @@
   = render partial: 'bathrooms/bathroom', locals: { bathroom: @bathroom }
 .showPageContent
   .ratingscontainer
-    = link_to t('bathroom.upvote'), up_vote_bathroom_path, confirm: t('bathroom.confirm.upvote'), :class => 'thumbsButton thumbsUp'
-    = link_to t('bathroom.downvote'), down_vote_bathroom_path, confirm: t('bathroom.confirm.downvote'), :class => 'thumbsButton thumbsDown'
+    = link_to t('bathroom.upvote'),
+                bathroom_path(bathroom: { upvote: true }),
+                confirm: t('bathroom.confirm.upvote'),
+                method: 'put',
+                class: 'thumbsButton thumbsUp'
+    = link_to t('bathroom.downvote'),
+                bathroom_path(bathroom: { downvote: true }),
+                confirm: t('bathroom.confirm.downvote'),
+                method: 'put',
+                class: 'thumbsButton thumbsDown'
   %p
     %strong #{t('bathrooom.directions')}:
     = @bathroom.directions
