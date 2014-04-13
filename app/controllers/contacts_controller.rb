@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new(bathroom_id: params['bathroom_id'])
+    @contact = Contact.new(bathroom_id: params['bathroom_id'], bathroom_name: params['bathroom_name'])
   end
 
   def create
