@@ -18,6 +18,10 @@ img {
   border-color: #41326B;
 }
 
+.btn:hover, .submit:hover, .btn:focus, .submit:focus {
+  color: white;
+  text-decoration: none; }
+
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral

@@ -1,5 +1,5 @@
 %h1 Contact
-= simple_form_for @contact, :html => {:class => 'addForm' } do |f|
+= simple_form_for @contact, html: {class: 'form-vertical' } do |f|
   %br/
   %p
     = t('bathroom.contact.contactmessage')
@@ -9,4 +9,4 @@
   .hidden
     = f.hidden_field :nickname, :hint => 'Leave this field blank!'
   .form-actions
-    = f.button :submit, 'Send message', :class=> "btn btn-primary"
+    = f.button :submit, 'Send message', :class=> "linkbutton"

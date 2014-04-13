@@ -26,10 +26,10 @@ body {
 
 .clearfix:before,
 .clearfix:after {
-  content: ".";    
-  display: block;    
-  height: 0;    
-  overflow: hidden; 
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
 }
 .clearfix:after {clear: both;}
 .clearfix {zoom: 1;} /* IE < 8 */
@@ -128,8 +128,8 @@ h1 {
 }
 
 .linkbutton:hover {
-  background-color: $purple; 
-  color: white;
+  background-color: $purple;
+  color: white !important;
 }
 
 .whitelinkbutton {
@@ -145,13 +145,13 @@ h1 {
 }
 
 .whitelinkbutton:hover {
-  background-color: $light-purple; 
+  background-color: $light-purple;
   color: white;
 }
 
 .filter {
   float: left;
-  
+
   .toggle {
     border-radius: $rounded-corners;
     width: 69px;
@@ -169,18 +169,18 @@ h1 {
     background-image: asset-url('ada-slider.svg');
     background-position: 69px 0;
   }
-  
+
   .filter_on {
     background-image: asset-url('ada-slider.svg');
     display: none;
-  }  
+  }
 }
 
 #unisex_filter {
   .filter_off {
     background-image: asset-url('unisex-slider.svg');
   }
-  
+
   .filter_on {
     background-image: asset-url('unisex-slider.svg');
     background-position: 69px 0;
@@ -426,11 +426,6 @@ a.thumbsButton.thumbsDown:hover {
   color: white;
 }
 
-form input[type=submit], form input[type=submit]:not(.disabled):hover {
-  background: orange;
-  color: yellow;
-}
-
 input.thumbsButton.thumbsUp:hover {
   background-color: blue;
   color: orange;
@@ -517,23 +512,23 @@ input.thumbsButton.thumbsUp:hover {
   }
   padding: 12px;
   margin: 4px;
-  
+
   &:hover {
     background-position: 100% 50%;
   }
-  
+
   &.iconGitHub {
     background-image: asset-url('buttons_github.svg');
   }
-  
+
   &.iconTwitter {
     background-image: asset-url('buttons_twitter.svg');
   }
-  
+
   &.iconFacebook {
     background-image: asset-url('buttons_facebook.svg');
   }
-  
+
   &.iconTumblr {
     background-image: asset-url('buttons_tumblr.svg');
   }
@@ -566,7 +561,7 @@ footer {
   }
 
   .showPageItem.listItemImage {
-    
+
   }
 
   .showPageItem .itemInfo {
@@ -579,7 +574,7 @@ footer {
   .searchBar {
     font-size: 0.7rem;
   }
-  
+
   .itemName {
     font-size: 15px;
   }
@@ -625,7 +620,7 @@ footer {
   .imgsplash {
     font-size: 40px;
   }
-  
+
   .textItem {
     font-size: 12px;
   }
