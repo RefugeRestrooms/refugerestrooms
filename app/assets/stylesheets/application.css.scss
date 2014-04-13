@@ -192,6 +192,11 @@ h1 {
   border-raidus: $rounded-corners;
 }
 
+.mapToggle.linkbutton {
+  padding: 7px;
+  margin: 7.5px;
+}
+
 #mapArea {
   width: 100%;
   height: 400px;
@@ -538,7 +543,7 @@ input.thumbsButton.thumbsUp:hover {
 }
 
 .hiddenText {
-  visibility: hidden;
+  display: none;
 }
 
 footer {
