@@ -1,13 +1,13 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: restrooms_development
+  database: bathrooms_development
   pool: 5
   host: localhost
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: restrooms_test
+  database: bathrooms_test
   pool: 5
   host: localhost
