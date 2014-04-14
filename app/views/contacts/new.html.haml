@@ -1,12 +1,16 @@
-%h1 Contact
+- if @contact.restroom_name.present?
+  %h1 Request Edit for #{@contact.restroom_name} Restroom
+- else
+  %h1 Contact
 = simple_form_for @contact, html: {class: 'form-vertical' } do |f|
   %br/
   %p
   = f.input :name, :required => true
   = f.input :email, :required => true
-  = f.input :restroom_id, :hint => 'Must be valid restroom ID issue', :label => 'Restroom ID (Leave blank if not restroom specific)', :required => false, :placeholder => @restroom_id
   = f.input :message, :as => :text, :required => false, :input_html => {:rows => 10}
   .hidden
+    = f.hidden_field :restroom_id, :required => false
+    = f.hidden_field :restroom_name, :required => false
     = f.hidden_field :nickname, :hint => 'Leave this field blank!'
   .form-actions
     = f.button :submit, 'Send message', :class=> "linkbutton"

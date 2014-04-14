@@ -18,7 +18,7 @@
   %p
     %strong #{t('restroom.comments')}:
     = @restroom.comment
-  %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id)
+  %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id, restroom_name: @restroom.name)
   #map
     %div#mapArea{ data: { latitude: @restroom.latitude, longitude: @restroom.longitude } }
   %hr
