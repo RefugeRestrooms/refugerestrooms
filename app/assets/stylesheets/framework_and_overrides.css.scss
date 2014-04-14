@@ -19,7 +19,7 @@ img {
 
 .navbar-default {
   width: 100%;
-  background-color: #41326B;
+  background-color: transparent;
   border-color: #41326B;
 }
 
@@ -27,12 +27,22 @@ img {
   color: white;
   text-decoration: none; }
 
+header {
+  background-color: $purple;
+}
+
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
 
-.container{
+.constraint {
+  position: relative;
   max-width: 940px;
+  margin: auto;
+}
+
+.container {
+  @extend .constraint;
   background-color: ffffff;
 }
 
