@@ -9,7 +9,7 @@ This project is open source. Feel free to contribute. We could use the help.
 
 
 ## Set Up For Contributing
-[Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Envrioment-for-Contributing-to-Refuge-Restrooms)
+[Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Enviroment-for-Contributing-to-Refuge-Restrooms)
 
 ### Testing
 
