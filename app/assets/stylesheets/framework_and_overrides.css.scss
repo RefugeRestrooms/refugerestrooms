@@ -10,27 +10,7 @@ img {
   }
 
 // override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: $light-purple
-}
-
-.navbar-default {
-  width: 100%;
-  background-color: transparent;
-  border-color: #41326B;
-}
-
-.btn:hover, .submit:hover, .btn:focus, .submit:focus {
-  color: white;
-  text-decoration: none; }
-
-header {
-  background-color: $purple;
-}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes

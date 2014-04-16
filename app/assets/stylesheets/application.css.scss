@@ -36,7 +36,7 @@ body {
 .clearfix:after {clear: both;}
 .clearfix {zoom: 1;} /* IE < 8 */
 
-// text Elements
+// text elements
 h1 {
   padding: 5px;
   text-align: center;
@@ -51,6 +51,29 @@ input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
   border-radius: 0;
+}
+
+// add form?
+.addForm {
+  max-width: 720px;
+  width: 80%;
+  padding: 1px 0px 0px 10px;
+  margin: 0 auto;
+}
+
+.addForm input[name=commit], .addForm input[type=button] {
+  padding: 4px;
+  float: center;
+  border: none;
+  position: relative;
+  border-radius: $rounded-corners;
+  background: $light-purple;
+  cursor: pointer;
+}
+
+.addForm input[name=commit]:hover, .addForm input[type=button]:hover {
+  background-color: $light-purple;
+  color: white;
 }
 
 // parts of page
@@ -265,7 +288,7 @@ input {
 
         .itemExtraInfo {
           position: absolute;
-          top: 20px;
+          top: 10px;
           right: 15px;
         }
 
@@ -291,13 +314,6 @@ input {
         .unisexRestroom img, .ADARestroom img {
           width: 100%;
           height: 100%;
-        }
-
-        .footer {
-          text-align: center;
-          text-size: 15px;
-          color: #41326b;
-          background-color: #ffffff;
         }
 
         .centerText {
@@ -326,6 +342,7 @@ input {
         }
 
         .showPageItem {
+          margin-top: 40px;
           min-height: 140px;
           border-bottom: none;
         }
@@ -447,6 +464,13 @@ input {
   // footer
   footer {
     margin-top: 15px;
+  }
+
+  .footer {
+    text-align: center;
+    text-size: 15px;
+    color: #41326b;
+    background-color: #ffffff;
   }
 
   .numberCircle .listItem {
