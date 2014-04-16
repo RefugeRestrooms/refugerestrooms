@@ -39,6 +39,7 @@ body {
 // text elements
 h1 {
   padding: 5px;
+  padding-top: 40px;
   text-align: center;
 }
 .fontLarge {
@@ -417,7 +418,12 @@ input {
         .ratingscontainer {
           height: 100px;
         }
-
+      // map view
+      #mapArea {
+        width: 100%;
+        height: 400px;
+      }
+      
         .markerPopup {
           display: none;
           position: absolute;
@@ -455,11 +461,6 @@ input {
         .itemStreet {
           color: #000;
         }
-      // map view
-      #mapArea {
-        width: 100%;
-        height: 400px;
-      }
 
   // footer
   footer {
