@@ -8,6 +8,7 @@ img {
   @extend .img-responsive;
   margin: 0 auto;
   }
+
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
@@ -44,6 +45,7 @@ header {
 .container {
   @extend .constraint;
   background-color: ffffff;
+  padding: 0;
 }
 
 .column {
@@ -73,7 +75,7 @@ main {
   }
 section {
   @extend .row;
-  margin-top: 20px;
+  padding-top: 20px;
   }
 
 // This fixes Bootstrap from messing with Google Maps CSS

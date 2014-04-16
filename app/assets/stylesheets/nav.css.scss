@@ -1,5 +1,13 @@
 @import 'variables';
 
+.nav {
+  background: $purple;
+}
+
+.nav2 {
+  background: $dark-purple;
+}
+
 .navbar-default .navbar-nav > li > a {
   color: white;
 
