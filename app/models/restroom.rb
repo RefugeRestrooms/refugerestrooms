@@ -51,14 +51,6 @@ class Restroom < ActiveRecord::Base
     upvote.to_f / (upvote + downvote).to_f * 100
   end
 
-  def unisex?
-    bath_type == 0
-  end
-
-  def accessible?
-    access == 1
-  end
-
   # PostgreSQL Full-Text Search for the API.
   def self.text_search(query)
     if query.present?
