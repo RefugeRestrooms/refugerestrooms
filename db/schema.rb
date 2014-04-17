@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20140417035142) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.boolean  "accessibile"
-    t.boolean  "unisex"
+    t.boolean  "accessibile", default: false
+    t.boolean  "unisex",      default: false
     t.text     "directions"
     t.text     "comment"
     t.float    "latitude"
