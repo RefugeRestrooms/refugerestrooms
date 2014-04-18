@@ -5,17 +5,17 @@ FactoryGirl.define do
     city 'San Francisco'
     state 'CA'
     country 'US'
-    bath_type 1
-    access 0
+    unisex false
+    accessibile false
     upvote 22
     downvote 11
 
     trait :unisex do
-      bath_type 0
+      unisex true
     end
 
     trait :ada do
-      access 1
+      accessibile true
     end
 
     trait :comment do
