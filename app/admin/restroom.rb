@@ -1,6 +1,7 @@
 ActiveAdmin.register Restroom do
 
-permit_params :name, :street, :city, :state, :access, :bath_type, :directions, :comment, :latitude, :longitude, :country
+permit_params :name, :street, :city, :state, :accessibile, :unisex, :directions,
+              :comment, :latitude, :longitude, :country
 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
