@@ -37,6 +37,8 @@ class Restroom < ActiveRecord::Base
   scope :accessibile, -> { where(accessibile: true) }
   scope :unisex, -> { where(unisex: true) }
 
+  alias_attribute :accessible, :accessibile
+
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
   end
