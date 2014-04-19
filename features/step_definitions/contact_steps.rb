@@ -12,6 +12,6 @@ Given(/^I click to contact from restroom Mission Creek Cafe$/) do
   click_link 'Contact'
 end
 
-Then(/^I should not see Mission Creek Cafe Restroom in the header$/) do
+Then(/^I should not see Mission Creek Cafe in the header$/) do
   expect(page).to have_no_content('Mission Creek Cafe')
 end
