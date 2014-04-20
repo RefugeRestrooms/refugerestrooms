@@ -1,4 +1,3 @@
-@javascript
 Feature: Request a contact form
 
   Scenario: Request edit from restroom
