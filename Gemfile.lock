@@ -176,6 +176,9 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
+    paper_trail (3.0.1)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     pg (0.17.1)
     pg_search (0.7.3)
       activerecord (>= 3.1)
@@ -315,6 +318,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mail_form
+  paper_trail (~> 3.0.1)
   pg
   pg_search
   poltergeist
