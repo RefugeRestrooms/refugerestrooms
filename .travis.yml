@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 script:
-  - bundle exec rake
-  - bundle exec rspec
+  - bundle exec rake spec
+  - bundle exec rake cucumber
 rvm:
   - 2.0.0
