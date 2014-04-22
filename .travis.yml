@@ -6,4 +6,4 @@ script:
 rvm:
   - 2.0.0
 notifications:
-    irc: "chat.freenode.net#refugrerestrooms"
+    irc: "chat.freenode.com#refugrerestrooms"
