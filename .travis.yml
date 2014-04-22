@@ -5,3 +5,5 @@ script:
   - bundle exec rake cucumber
 rvm:
   - 2.0.0
+notifications:
+    irc: "chat.freenode.net#refugrerestrooms"
