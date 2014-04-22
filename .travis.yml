@@ -6,7 +6,7 @@ script:
 rvm:
   - 2.0.0
 notifications:
-    irc: "chat.freenode.com#refugrerestrooms"
+    irc: "chat.freenode.com#refugerestrooms"
     skip_join: true
     template:
       - "Build #%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
