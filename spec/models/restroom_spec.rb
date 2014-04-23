@@ -32,12 +32,12 @@ describe Restroom do
   end
 
   describe '#unisex?' do
-    it { expect(Restroom.new(bath_type: 0).unisex?).to be true }
-    it { expect(Restroom.new(bath_type: 1).unisex?).to be false }
+    it { expect(Restroom.new.unisex?).to be false }
+    it { expect(Restroom.new(unisex: true).unisex?).to be true }
   end
 
   describe '#accessible?' do
-    it { expect(Restroom.new(access: 0).accessible?).to be false }
-    it { expect(Restroom.new(access: 1).accessible?).to be true }
+    it { expect(Restroom.new.accessible?).to be false }
+    it { expect(Restroom.new(accessible: true).accessible?).to be true }
   end
 end
