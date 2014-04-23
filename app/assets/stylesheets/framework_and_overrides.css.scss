@@ -8,28 +8,9 @@ img {
   @extend .img-responsive;
   margin: 0 auto;
   }
+
 // override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
 
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: $light-purple
-}
-
-.navbar-default {
-  width: 100%;
-  background-color: transparent;
-  border-color: #41326B;
-}
-
-.btn:hover, .submit:hover, .btn:focus, .submit:focus {
-  color: white;
-  text-decoration: none; }
-
-header {
-  background-color: $purple;
-}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -44,6 +25,7 @@ header {
 .container {
   @extend .constraint;
   background-color: ffffff;
+  padding: 0;
 }
 
 .column {
@@ -69,11 +51,10 @@ main {
   background-color: #ffffff;
   padding-bottom: 80px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
   }
 section {
   @extend .row;
-  margin-top: 20px;
+  padding-top: 20px;
   }
 
 // This fixes Bootstrap from messing with Google Maps CSS
