@@ -15,8 +15,8 @@ module API
         end
         get do
           r = Restroom
-          r = r.accessible if params[:ada] === true
-          r = r.unisex if params[:unisex] === true
+          r = r.accessible if params[:ada].present?
+          r = r.unisex if params[:unisex].present?
 
           paginate(r.order(created_at: :desc))
         end
@@ -29,8 +29,8 @@ module API
         end
         get :search do
           r = Restroom
-          r = r.accessible if params[:ada] === true
-          r = r.unisex if params[:unisex] === true
+          r = r.accessible if params[:ada].present?
+          r = r.unisex if params[:unisex].present?
 
           paginate(r.text_search(params[:query]))
         end
