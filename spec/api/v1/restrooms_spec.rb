@@ -33,35 +33,50 @@ describe 'Restrooms API' do
     expect(response.header['X-Total']).to eq('15')
   end
 
-  it 'filters a list of restrooms by unisex type' do
-    FactoryGirl.create_list(:restroom, 5)
-    FactoryGirl.create_list(:unisex_restroom, 5)
-    FactoryGirl.create_list(:ada_restroom, 5)
-    FactoryGirl.create_list(:unisex_and_ada_restroom, 5)
-
-    get '/api/v1/restrooms', { unisex: true }
-    expect(response).to be_success
-
-    json = JSON.parse(response.body)
-    expect(json.length).to eq(5 + 5)
-    json.each do |restroom|
-      expect(restroom['bath_type']).to be_truthy
+  context 'filters' do
+    before :each do
+      FactoryGirl.create_list(:restroom, 5)
+      FactoryGirl.create_list(:unisex_restroom, 5)
+      FactoryGirl.create_list(:ada_restroom, 5)
+      FactoryGirl.create_list(:unisex_and_ada_restroom, 5)
     end
-  end
 
-  it 'filters a list of restrooms by ADA availability' do
-    FactoryGirl.create_list(:restroom, 5)
-    FactoryGirl.create_list(:unisex_restroom, 5)
-    FactoryGirl.create_list(:ada_restroom, 5)
-    FactoryGirl.create_list(:unisex_and_ada_restroom, 5)
+    let(:json) { JSON.parse(response.body) }
 
-    get '/api/v1/restrooms', { ada: true }
-    expect(response).to be_success
+    context 'a list of unisex restrooms' do
+      before :each do
+        get '/api/v1/restrooms', { unisex: true }
+      end
 
-    json = JSON.parse(response.body)
-    expect(json.length).to eq(5 + 5)
-    json.each do |restroom|
-      expect(restroom['access']).to be_truthy
+      it "is successful" do
+        expect(response).to be_success
+      end
+
+      it "returns unisex restro3ms" do
+        expect(json.select { |restroom| restroom["unisex"] }.count).to eq 10
+      end
+
+      it "does not return non-unisex restrooms" do
+        expect(json.reject { |restroom| restroom["unisex"] }.count).to eq 0
+      end
+    end
+
+    context 'a list of restrooms by ADA availability' do
+      before :each do
+        get '/api/v1/restrooms', { ada: true }
+      end
+
+      it "is successful" do
+        expect(response).to be_success
+      end
+
+      it "returns accessible restrooms" do
+        expect(json.select { |restroom| restroom["accessible"] }.count).to eq 10
+      end
+
+      it "does not return non-accessible restrooms" do
+        expect(json.reject { |restroom| restroom["accessible"] }.count).to eq 0
+      end
     end
   end
 
@@ -106,35 +121,58 @@ describe 'Restrooms API' do
     expect(response.header['X-Total']).to eq('15')
   end
 
-  it 'filters a full-text searched list of restrooms by unisex type' do
-    FactoryGirl.create(:restroom)
-    FactoryGirl.create(:unisex_restroom, name: 'Frankie\'s Coffee Shop')
-    FactoryGirl.create(:ada_restroom, name: 'Hipster Coffee Shop')
-    FactoryGirl.create(:unisex_and_ada_restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
-
-    get '/api/v1/restrooms/search', { query: 'Coffee', unisex: true }
-    expect(response).to be_success
-
-    json = JSON.parse(response.body)
-    expect(json.length).to eq(2)
-    json.each do |restroom|
-      expect(restroom['bath_type']).to be_truthy
+  context "queries" do
+    before :each do
+      FactoryGirl.create(:restroom)
+      FactoryGirl.create(:unisex_restroom, name: 'Frankie\'s Coffee Shop')
+      FactoryGirl.create(:ada_restroom, name: 'Hipster Coffee Shop')
+      FactoryGirl.create(:unisex_and_ada_restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
     end
-  end
 
-  it 'filters a full-text searched list of restrooms by ADA availability' do
-    FactoryGirl.create(:restroom)
-    FactoryGirl.create(:unisex_restroom, name: 'Frankie\'s Coffee Shop')
-    FactoryGirl.create(:ada_restroom, name: 'Hipster Coffee Shop')
-    FactoryGirl.create(:unisex_and_ada_restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
+    let(:json) { JSON.parse(response.body) }
 
-    get '/api/v1/restrooms/search', { query: 'Coffee', ada: true }
-    expect(response).to be_success
+    context 'filters a full-text searched list of restrooms by unisex type' do
+      before :each do
+        get '/api/v1/restrooms/search', { query: 'Coffee', unisex: true }
+      end
 
-    json = JSON.parse(response.body)
-    expect(json.length).to eq(2)
-    json.each do |restroom|
-      expect(restroom['access']).to be_truthy
+      it "is successful" do
+        expect(response).to be_success
+      end
+
+      it "finds two coffeeshops with unisex restrooms" do
+        expect(json.length).to eq(2)
+      end
+
+      it "returns accessible restrooms" do
+        expect(json.select { |restroom| restroom["unisex"] }.count).to eq 2
+      end
+
+      it "does not return non-accessible restrooms" do
+        expect(json.reject { |restroom| restroom["unisex"] }.count).to eq 0
+      end
+    end
+
+    context 'filters a full-text searched list of restrooms by ADA availability' do
+      before :each do
+        get '/api/v1/restrooms/search', { query: 'Coffee', ada: true }
+      end
+
+      it "is successful" do
+        expect(response).to be_success
+      end
+
+      it "finds two coffeeshops with accessible restrooms" do
+        expect(json.length).to eq(2)
+      end
+
+      it "returns accessible restrooms" do
+        expect(json.select { |restroom| restroom["accessible"] }.count).to eq 2
+      end
+
+      it "does not return non-accessible restrooms" do
+        expect(json.reject { |restroom| restroom["accessible"] }.count).to eq 0
+      end
     end
   end
 end

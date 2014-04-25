@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140420085947) do
+ActiveRecord::Schema.define(version: 20140423031801) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "unaccent"
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -51,8 +55,8 @@ ActiveRecord::Schema.define(version: 20140420085947) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.integer  "access"
-    t.integer  "bath_type"
+    t.boolean  "accessible", default: false
+    t.boolean  "unisex",     default: false
     t.text     "directions"
     t.text     "comment"
     t.float    "latitude"
