@@ -3,8 +3,11 @@
 # (accessible) is coded by 1
 
 class Restroom < ActiveRecord::Base
-
+  include Rails.application.routes.url_helpers
   include PgSearch
+
+  has_paper_trail
+
   pg_search_scope :search, against: {
     :name => 'A',
     :street => 'B',
@@ -58,6 +61,10 @@ class Restroom < ActiveRecord::Base
     else
       all
     end
+  end
+
+  def admin_permalink
+    admin_restroom_path(self)
   end
 
   private
