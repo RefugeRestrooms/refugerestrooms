@@ -1,9 +1,28 @@
 require 'spec_helper'
 
 describe RestroomsController do
-  it "should get index" do
-    get :index
-    expect(response).to be_success
+  describe "GET index" do
+    it "should get index" do
+      get :index
+      expect(response).to be_success
+    end
+  end
+
+  describe "GET edit" do
+    before :each do
+      @restroom = double("Restroom")
+      allow(Restroom).to receive(:find) { @restroom }
+    end
+
+    it "should get index" do
+      get :edit, id: 1
+      expect(response).to be_success
+    end
+
+    it "should assign @restroom" do
+      get :edit, id: 1
+      expect(assigns(:restroom)).to eq(@restroom)
+    end
   end
 
   context "voting" do
