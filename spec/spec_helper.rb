@@ -39,6 +39,8 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  config.color_enabled = true
+
   # Include FactoryGirl methods into the RSpec test suite.
   config.include FactoryGirl::Syntax::Methods
 end
