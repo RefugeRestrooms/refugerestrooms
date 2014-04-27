@@ -41,7 +41,6 @@ class RestroomsController < ApplicationController
       display_errors
       render 'edit'
     end
-
     redirect_to @restroom
   end
 
@@ -61,7 +60,6 @@ class RestroomsController < ApplicationController
     elsif params[:restroom][:downvote]
       Restroom.increment_counter(:downvote, @restroom.id)
     end
-    display_errors
     redirect_to :back
   end
 
