@@ -28,24 +28,41 @@ describe RestroomsController do
 
   describe "PUT vote" do
     before :each do
-      @restroom = double("Restroom", id: 1, errors: {}, model_name: 'Restroom')
       request.env["HTTP_REFERER"] = "http://example.com/restroom/1"
+      @restroom = double("Restroom", id: 1, errors: {}, model_name: 'Restroom')
       allow(Restroom).to receive(:find) { @restroom }
     end
 
-    it "should downvote" do
-      expect(Restroom).to receive(:increment_counter).with(:downvote, 1)
-      put :vote, id: 1, restroom: { downvote: true }
+    context "with valid params" do
+      before :each do
+        allow(@restroom).to receive(:increment!).and_return(true)
+      end
+
+      it "should downvote" do
+        expect(@restroom).to receive(:increment!).with(:downvote)
+        put :vote, id: 1, restroom: { downvote: true }
+      end
+
+      it "should upvote" do
+        expect(@restroom).to receive(:increment!).with(:upvote)
+        put :vote, id: 1, restroom: { upvote: true }
+      end
+
+      it "should redirect back" do
+        put :vote, id: 1, restroom: { upvote: true }
+        expect(response).to redirect_to("http://example.com/restroom/1")
+      end
+
+      it "should notify the user they have voted" do
+        put :vote, id: 1, restroom: { upvote: true }
+        expect(flash[:notice]).to eq("This restroom has been upvoted! Thank you for contributing to our community.")
+      end
     end
 
-    it "should upvote" do
-      expect(Restroom).to receive(:increment_counter).with(:upvote, 1)
-      put :vote, id: 1, restroom: { upvote: true }
-    end
-
-    it "should redirect back" do
-      put :vote, id: 1, restroom: { upvote: true }
-      expect(response).to redirect_to("http://example.com/restroom/1")
+    context "without valid params" do
+      it "should raise an exception" do
+        expect { put :vote, id: 1, restroom: {} }.to raise_error(ArgumentError)
+      end
     end
   end
 end

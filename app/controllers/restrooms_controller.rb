@@ -55,15 +55,26 @@ class RestroomsController < ApplicationController
   end
 
   def vote
-    if params[:restroom][:upvote]
-      Restroom.increment_counter(:upvote, @restroom.id)
-    elsif params[:restroom][:downvote]
-      Restroom.increment_counter(:downvote, @restroom.id)
+    vote_action
+    if @restroom.increment!(@action)
+      flash[:notice] = I18n.t("restroom.flash.#{@action.to_s}success")
+    else
+      flash[:notice] = I18n.t("restroom.flash.#{@action.to_s}error")
     end
     redirect_to :back
   end
 
 private
+
+  def vote_action
+    if params[:restroom][:downvote]
+      @action = :downvote
+    elsif params[:restroom][:upvote]
+      @action = :upvote
+    else
+      raise ArgumentError
+    end
+  end
 
   def list_restrooms
     @restrooms = Restroom.all.page(params[:page])
