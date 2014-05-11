@@ -34,8 +34,8 @@ class Restroom < ActiveRecord::Base
 
   after_find :strip_slashes
 
-  scope :accessible, -> { where(access: 1) }
-  scope :unisex, -> { where(bath_type: 0) }
+  scope :accessible, -> { where(accessible: true) }
+  scope :unisex, -> { where(unisex: true) }
 
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
@@ -49,14 +49,6 @@ class Restroom < ActiveRecord::Base
     return 0 unless rated?
 
     upvote.to_f / (upvote + downvote).to_f * 100
-  end
-
-  def unisex?
-    bath_type == 0
-  end
-
-  def accessible?
-    access == 1
   end
 
   # PostgreSQL Full-Text Search for the API.
