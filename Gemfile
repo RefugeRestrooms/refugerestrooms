@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '4.0.5'
+gem 'rails', '4.1.1'
 gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
@@ -14,12 +14,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
-gem 'geocoder'
+gem 'geocoder', '~> 1.2.1'
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
+gem 'devise', '~> 3.2'
+
 gem 'country_select'
 
 gem 'mail_form'
-gem 'simple_form'
+gem 'simple_form', '~> 3.0.2'
 
 gem 'grape'
 gem 'grape-swagger'
@@ -32,9 +34,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry', '~> 0.9.12.6'
   gem 'quiet_assets', '~> 1.0.2'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'spring'
+  # gem 'better_errors'
+  # gem 'binding_of_caller'
 end
 
 group :test do
