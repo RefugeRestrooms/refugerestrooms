@@ -39,7 +39,7 @@ end
 
 group :test do
   gem 'rake'
-  gem 'cucumber-rails', '~> 1.4', require: false
+  gem 'cucumber-rails', '~> 1.4.1', require: false
   gem 'database_cleaner'
   gem 'poltergeist'
 end
