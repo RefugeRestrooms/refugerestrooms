@@ -27,7 +27,7 @@ gem 'grape-kaminari'
 gem 'kaminari'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails', '~> 3.0.0.beta2'
   gem "factory_girl_rails", "~> 4.0"
   gem 'dotenv-rails'
   gem 'pry', '~> 0.9.12.6'
