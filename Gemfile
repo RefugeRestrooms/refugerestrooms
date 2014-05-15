@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '4.1.1'
+gem 'rails', '4.0.5'
 gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
@@ -34,8 +34,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry', '~> 0.9.12.6'
   gem 'quiet_assets', '~> 1.0.2'
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
