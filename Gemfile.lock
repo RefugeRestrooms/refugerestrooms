@@ -51,6 +51,11 @@ GEM
       descendants_tracker (~> 0.0.1)
       ice_nine (~> 0.9)
     bcrypt-ruby (3.1.2)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     bourbon (3.1.8)
@@ -91,6 +96,7 @@ GEM
       rails (>= 3.0.0)
     currencies (0.4.2)
     database_cleaner (1.2.0)
+    debug_inspector (0.0.2)
     descendants_tracker (0.0.3)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
@@ -302,6 +308,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  better_errors
+  binding_of_caller
   bootstrap-sass
   coffee-rails (~> 4.0.0)
   country_select

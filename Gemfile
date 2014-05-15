@@ -33,6 +33,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'pry', '~> 0.9.12.6'
   gem 'quiet_assets', '~> 1.0.2'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
