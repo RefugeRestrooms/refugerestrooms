@@ -647,4 +647,10 @@ footer {
   }
 }
 
-a.iconLink {text-decoration:none;}
+a.iconLink {
+  text-decoration:none;
+}
+
+.searchButton:hover,.splashcontainer .currentLocationButton:hover {
+  background:#bbbbbb;
+}
