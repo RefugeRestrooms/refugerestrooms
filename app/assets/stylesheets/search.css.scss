@@ -60,7 +60,7 @@
  }
 }
 
-.search .currentLocationButtonLocating {
+.search .currentLocationButtonLocating, #guess.locating {
   background: #fff asset-url('loading.gif');
   background-repeat: no-repeat;
   background-position: 50%;
