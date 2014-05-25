@@ -4,8 +4,6 @@ development:
   database: bathrooms_development
   pool: 5
   host: localhost
-  username: postgres
-  password: ***REMOVED***
 
 test:
   adapter: postgresql
@@ -13,5 +11,3 @@ test:
   database: bathrooms_test
   pool: 5
   host: localhost
-  username: postgres
-  password: ***REMOVED***
