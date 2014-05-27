@@ -1,5 +1,7 @@
 $(function () {
   $("#guess").click(function () {
+    $("#guess").toggleClass('locating');
+
     getCurrent(function (pos) {
       $('.currentLocationButton').removeClass('currentLocationButtonLocating');
 
