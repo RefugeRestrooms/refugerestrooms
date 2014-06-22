@@ -16,18 +16,6 @@ img {
 // create your own classes
 // to make views framework-neutral
 
-.constraint {
-  position: relative;
-  max-width: 940px;
-  margin: auto;
-}
-
-.container {
-  @extend .constraint;
-  background-color: ffffff;
-  padding: 0;
-}
-
 .column {
   @extend .col-md-6;
   @extend .text-center;
