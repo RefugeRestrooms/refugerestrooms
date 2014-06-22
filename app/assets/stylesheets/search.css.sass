@@ -1,0 +1,53 @@
+@import variables
+
+.search
+  overflow: auto
+  width: 100%
+  margin: 0 auto
+
+.searchBarContainer
+  margin: 15px 130px 15px 10px
+
+.searchBar
+  width: 99%
+  height: 50px
+  padding: 0 0 0 1rem
+  margin: 0
+  font-size: 1.2rem
+  border-radius: $rounded-corners
+
+.header
+  .searchBar
+    border: 0
+  .searchButton, .currentLocationButton
+    position: absolute
+    top: 15px
+    padding-right: 5px
+    padding-left: 5px
+    height: 50px
+  .searchButton
+    right: 10px
+    width: 60px
+  .currentLocationButton
+    right: 75px
+    width: 50px
+
+.search .currentLocationButton
+  word-wrap: break-word
+  background: white asset-url("currentLocation.png") no-repeat
+  background-size: 75%
+  background-position: 50%
+
+.splashcontainer
+  .searchBarContainer
+    margin-right: 15px
+  .currentLocationButton
+    background-image: none
+    background: #d9ebd3
+
+.search .currentLocationButtonLocating
+  background: white asset-url("loading.gif")
+  background-repeat: no-repeat
+  background-position: 50%
+  &:hover
+    background-color: white

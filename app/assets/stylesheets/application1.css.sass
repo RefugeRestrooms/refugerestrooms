@@ -1,0 +1,538 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require framework_and_overrides
+ *= require restrooms
+ *= require nav
+ *= require search
+
+@import variables
+
+body
+  font-family: $font-stack
+  font-size: .8em
+  background: $purple
+  color: $base-color
+
+.clearfix:before,
+.clearfix:after
+  content: "."
+  display: block
+  height: 0
+  overflow: hidden
+
+.clearfix:after
+  clear: both
+
+.clearfix
+  zoom: 1
+
+/* IE < 8
+
+input
+  -webkit-appearance: none
+  -webkit-border-radius: 0
+  border-radius: 0
+
+h1
+  padding: 5px
+  text-align: center
+
+.splashcontainer
+  margin-top: 0px
+
+.addForm
+  max-width: 720px
+  width: 80%
+  padding: 1px 0px 0px 10px
+  margin: 0 auto
+
+.addForm input[name=commit], .addForm input[type=button]
+  padding: 4px
+  float: center
+  border: none
+  position: relative
+  border-radius: $rounded-corners
+  background: $light-purple
+  cursor: pointer
+
+.addForm input[name=commit]:hover, .addForm input[type=button]:hover
+  background-color: $light-purple
+  color: white
+
+.container
+  max-width: 900px
+  margin: 0 auto !important
+  background: $secondary-background
+  width: 90%
+  border-radius: 5px
+
+.textItem
+  width: 100%
+  text-align: center
+  font-family: $font-stack
+  font-size: 20px
+
+.nav
+  background: $purple
+
+.nav2
+  background: $dark-purple
+
+.toiletLogo
+  width: 45px
+  height: 45px
+  background: asset-url("logo-100x100.png")
+  background-size: 100% 100%
+  position: relative
+  float: left
+  cursor: pointer
+  top: 2px
+
+.linkbutton
+  border: none
+  position: relative
+  border-radius: $rounded-corners
+  padding: 10px
+  margin: 5px
+  cursor: pointer
+  background-color: $light-purple
+  color: #FFFFFF
+
+.linkbutton:hover
+  background-color: $purple
+  color: white !important
+
+.whitelinkbutton
+  border: none
+  position: relative
+  float: left
+  border-radius: $rounded-corners
+  padding: 10px
+  margin: 5px
+  cursor: pointer
+  background-color: #FFFFFF
+  color: #000000
+
+.whitelinkbutton:hover
+  background-color: $light-purple
+  color: white
+
+.filter
+  float: left
+  margin: 0
+  .toggle
+    border-radius: $rounded-corners
+    width: 69px
+    height: 34px
+    padding: 0
+    background-size: 138px 34px
+    background-color: $dark-purple
+    overflow: hidden
+    margin: 8px
+
+#ada_filter
+  .filter_off
+    background-image: asset-url("ada-slider.svg")
+    background-position: 69px 0
+  .filter_on
+    background-image: asset-url("ada-slider.svg")
+    display: none
+
+#unisex_filter
+  .filter_off
+    background-image: asset-url("unisex-slider.svg")
+  .filter_on
+    background-image: asset-url("unisex-slider.svg")
+    background-position: 69px 0
+    display: none
+
+.mapToggle
+  float: right
+  border-raidus: $rounded-corners
+
+.mapToggle.linkbutton
+  padding: 7px
+  margin: 7.5px
+
+#mapArea
+  width: 100%
+  height: 400px
+
+.imgsplash
+  width: 600px
+  margin-top: 25px
+  margin-left: auto
+  margin-right: auto
+  font-family: $font-stack
+  font-weight: bolder
+  font-size: 60px
+  line-height: 10px
+  color: $purple
+  text-align: center
+  padding-bottom: 30px
+
+.fontLarge
+  font-size: 150px
+  line-height: 150px
+
+#navlist
+  text-align: center
+  margin-top: 50px
+  margin-bottom: 50px
+
+.listItem
+  position: relative
+  width: 100%
+  border-bottom: 1px solid #e1e1e1
+  background: $secondary-background
+  min-height: 115px
+
+.listItemTemplate
+  display: none
+
+.listItemImage
+  position: relative
+  width: 110px
+  height: 110px
+  margin: 15px
+  border-radius: $rounded-corners
+  background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat
+  display: inline-block
+
+.listItemImage img
+  width: 100%
+  height: 100%
+
+.itemInfo
+  position: absolute
+  top: 10px
+  bottom: 10px
+  left: 140px
+  right: 95px
+  overflow: none
+
+.itemName
+  position: relative
+  font-size: 20px
+  width: 100%
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+.itemStreet
+  position: relative
+  width: 100%
+  font-size: 15px
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+.itemRating
+  position: absolute
+  width: 150px
+  background: #41326b
+  border-radius: $rounded-corners
+  bottom: 10px
+  left: 0
+  color: #FFF
+  text-align: center
+  vertical-align: middle
+  font-family: Arial
+  font-size: 15px
+  padding: 11px 0
+  max-width: 100%
+
+.greenRating
+  background: $green
+
+.yellowRating
+  background: $yellow
+
+.redRating
+  background: $red
+  float: right
+
+.itemExtraInfo
+  position: absolute
+  top: 20px
+  right: 15px
+
+.itemDistance
+  position: relative
+  color: #676767
+  text-align: right
+  font-size: 15px
+  font-family: Arial
+  padding: 5px
+
+.unisexRestroom
+  width: 45px
+  height: 43px
+
+.ADARestroom
+  width: 44px
+  height: 47px
+
+.unisexRestroom img, .ADARestroom img
+  width: 100%
+  height: 100%
+
+.footer
+  text-align: center
+  text-size: 15px
+  color: #41326b
+  background-color: #ffffff
+
+.centerText
+  padding: 10px
+  text-align: center
+
+.fadedText
+  color: $gray
+
+.numberCircle
+  cursor: pointer
+
+.mapIconImage
+  position: absolute
+  top: 0
+  left: 0
+
+.numberCircle .numberCircleText
+  line-height: 37px
+  color: #FFF
+  text-align: center
+
+.showPageItem
+  min-height: 140px
+  border-bottom: none
+
+.showPageItem .itemInfo
+  left: 25%
+
+.showPageItem .itemName
+  font-weight: 600
+  font-size: 25px
+
+/* was originally just ".thumbsButton"
+a.thumbsButton.thumbsButton
+  position: relative
+  float: left
+  width: 50%
+  height: 100px
+  padding: 0
+  margin: 0
+  line-height: 100px
+  text-align: center
+  text-decoration: none
+  border: none
+  font-size: 40px
+  background-position: 15% 50%
+  background-repeat: no-repeat
+  margin-bottom: 20px
+
+/* was originally just ".thumbsUp"
+a.thumbsButton.thumbsUp
+  background-color: #d9ebd3
+  color: #69b74a
+  border-radius: 0px
+  background-image: asset-url("thumbsUp.jpg")
+
+a.thumbsButton.thumbsUp:hover
+  background-color: #a2d293
+  color: white
+
+/* was originally just ".thumbsDown"
+a.thumbsButton.thumbsDown
+  background-color: #f5c1c5
+  color: #e0140b
+  border-radius: 0px
+  background-image: asset-url("thumbsDown.jpg")
+
+a.thumbsButton.thumbsDown:hover
+  background-color: #dc8189
+  color: white
+
+input.thumbsButton.thumbsUp:hover
+  background-color: blue
+  color: orange
+
+.showPageContent
+  padding: 10px
+
+.showPageContent #mapArea
+  border-radius: 5px
+  float: left
+
+.ratingscontainer
+  height: 100px
+
+.markerPopup
+  display: none
+  position: absolute
+  top: -122px
+  left: 50%
+  margin-left: -195px
+  width: 370px
+  height: 122px
+  background-color: #FFF
+  border: 1px solid $purple
+  z-index: 1000
+  color: #000
+
+.markerPopup .listItem
+  position: static
+
+.markerPopup .listItemImage
+  display: none
+
+.markerPopup .itemInfo
+  left: 10px
+
+.markerPopup .itemExtraInfo
+  top: 0
+
+.markerPopup .itemRating
+  padding: 3px 0
+
+.itemStreet
+  color: #000
+
+#mapContainer, #list
+  overflow: hidden
+
+.submitRestroomButton
+  display: inline-block
+  background: asset-url("submit.svg") no-repeat
+  width: 150px
+  height: 40px
+  max-width: 100%
+  background-size: 200% auto
+  margin-top: 2px
+  margin-left: 3px
+  background-position: 0 50%
+
+.submitRestroomButton:hover
+  background-position: 100% 50%
+
+.icon
+  display: inline-block
+  width: 10px
+  height: 10px
+  background:
+    size: 200% 100%
+    position: 0 50%
+  padding: 12px
+  margin: 4px
+  &:hover
+    background-position: 100% 50%
+  &.iconGitHub
+    background-image: asset-url("buttons_github.svg")
+  &.iconTwitter
+    background-image: asset-url("buttons_twitter.svg")
+  &.iconFacebook
+    background-image: asset-url("buttons_facebook.svg")
+  &.iconTumblr
+    background-image: asset-url("buttons_tumblr.svg")
+  &.iconEmail
+    background-image: asset-url("buttons_mail.svg")
+
+.hiddenText
+  display: none
+
+footer
+  margin-top: 15px
+
+.numberCircle .listItem
+  border: none
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px)
+  .imgsplash
+    width: 100%
+  .fontLarge
+    font-size: 110px
+    line-height: 110px
+  .showPageItem.listItemImage
+  .showPageItem .itemInfo
+    left: 35%
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px)
+  .searchBar
+    font-size: 0.7rem
+  .itemName
+    font-size: 15px
+  .listItemImage
+    width: 60px
+    height: 60px
+    margin: 25px 10px
+  .itemInfo
+    left: 80px
+    right: 85px
+  .itemExtraInfo
+    top: 0
+  .itemDistance
+    font-size: 12px
+    padding-bottom: 0
+  .itemStreet
+    font-size: 10px
+  .itemRating
+    font-size: 12px
+    width: 120px
+  #mapArea
+    height: 200px
+  .fontLarge
+    font-size: 70px
+    line-height: 70px
+  .imgsplash
+    font-size: 40px
+  .textItem
+    font-size: 12px
+  .showPageItem .itemName
+    font-size: 15px
+  a.thumbsButton.thumbsButton
+    font-size: 18px
+    text-align: right
+    padding-right: 5px
+  .thumbsDown
+    background-image: url("thumbsDownSmall.jpg")
+  .thumbsUp
+    background-image: url("thumbsUpSmall.jpg")
+  .thumbsButton
+    font-size: 15px
+
+RESTROOMS.css.scss .minimalRestroomList
+  display: block
+  clear: both
+  margin-bottom: 2em
+  .listItem
+    min-height: inherit
+    clear: both
+    padding: 5px 0
+    border-width: 0
+    .listItemImage, .itemRating, .unisexRestroom, .ADARestroom
+      display: none
+    .itemInfo, .itemName, .itemStreet, .itemExtraInfo, .itemDistance
+      position: relative
+      width: auto
+      font-size: 14px
+      text-decoration: none
+    .itemInfo, .itemExtraInfo
+      top: auto
+      right: auto
+      bottom: auto
+      left: auto
+    .itemInfo, .itemName, .itemStreet
+      float: left
+      padding: 0 1em 0 0
+    .itemExtraInfo, .itemDistance
+      float: right
+      padding: 0
