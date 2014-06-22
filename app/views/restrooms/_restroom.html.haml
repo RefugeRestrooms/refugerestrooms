@@ -1,6 +1,36 @@
+.row
+  .col-md-2
+    .restroom-image-background
+      = image_tag('ToiletLogo.png', :class => 'restroom-image')
+  .col-md-6
+    .restroom-info
+      .restroom-name= link_to_unless_current(restroom.name, restroom)
+      .restroom-street= "#{restroom.street}, #{restroom.city}, #{restroom.state}"
+      - if restroom.rated?
+        - rating_class_name = case RatingLevel.for_restroom(restroom)
+        - when RatingLevel.green  then 'greenRating'
+        - when RatingLevel.yellow then 'yellowRating'
+        - when RatingLevel.red    then 'redRating'
+        - else ''
+        %div{:class => "itemRating #{rating_class_name}"}
+          = t('restroom.rating.positive', percentage: restroom.rating_percentage.round)
+      - else
+        .restroom-rating= t('restroom.rating.unrated')
+  .col-md-3
+    .itemExtraInfo
+      .itemDistance
+        - if restroom.respond_to?(:distance)
+          = restroom.distance.round(2)
+          miles
+      - if restroom.unisex?
+        .unisexRestroom
+          = image_tag "UnisexRestroom.png", {alt: "Unisex Restroom"}
+      - if restroom.accessible?
+        .ADARestroom
+          = image_tag "ADARestroom.png", {alt: "ADA Compliant Restroom"}
+
 %div{:class => "listItem #{restroom.unisex? ? '' : 'not_unisex'} #{restroom.accessible? ? '' : 'not_accessible'}", "data-id" => restroom.id}
-  .listItemImage
-    / image tag goes here
+  = image_tag('ToiletLogo.png', :class => 'restroom-image')
   .itemInfo
     .itemName= link_to_unless_current(restroom.name, restroom)
     .itemStreet="#{restroom.street}, #{restroom.city}, #{restroom.state}"

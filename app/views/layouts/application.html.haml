@@ -4,8 +4,9 @@
     = render 'layouts/head'
   %body
     %header
-      = render 'layouts/navigation'
-      = render 'layouts/header'
+      .container
+        = render 'layouts/navigation'
+        = render 'layouts/header'
     %main{:role => "main"}
       .container
         = render 'layouts/messages'
