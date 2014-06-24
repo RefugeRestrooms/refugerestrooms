@@ -34,6 +34,20 @@ module API
 
           paginate(r.text_search(params[:query]))
         end
+
+        desc "Search by location."
+        params do
+          optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
+          optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
+          requires :lat, type: Float, desc: "latitude"
+          requires :lng, type: Float, desc: "longitude"
+        end
+        get :by_location do
+          r = Restroom
+          r = r.accessible if params[:ada].present?
+          r = r.unisex if params[:unisex]
+          paginate(r.near([params[:lat], params[:lng]], 20, :order => 'distance'))
+        end
       end
     end
   end
