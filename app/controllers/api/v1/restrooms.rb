@@ -11,7 +11,7 @@ module API
         desc "Get all restroom records ordered by date descending."
         params do
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
-          optional :unirsex, type: Boolean, desc: "Only return restrooms that are unisex."
+          optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
         end
         get do
           r = Restroom
