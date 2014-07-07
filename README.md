@@ -20,7 +20,7 @@ Here are the steps to deploy:
  1. Talk to @tkwidmer about getting access as a collaborator for both the production and staging heroku instances.
  2. Link your local repo to the heroku remote repos. I suggest doing it this way:
   * `git remote add production git@heroku.com:refugerestrooms.git`
-  * `git remote add staging git@heroku.com:refugestaging.git
+  * `git remote add staging git@heroku.com:refugestaging.git`
  3. Merge changes into master.
  4. Pull master locally to make sure you have the latest changes. `git pull origin master`
  5. Push your changes to staging. `git push staging master`
