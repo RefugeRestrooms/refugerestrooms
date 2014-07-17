@@ -42,6 +42,7 @@ group :test do
   gem 'rake'
   gem 'cucumber-rails', '~> 1.4.1', require: false
   gem 'database_cleaner'
+  gem 'simplecov', '~> 0.7.1', require: false
   gem 'poltergeist'
 end
 

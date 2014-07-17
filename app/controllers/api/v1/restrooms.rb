@@ -11,7 +11,7 @@ module API
         desc "Get all restroom records ordered by date descending."
         params do
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
-          optional :unirsex, type: Boolean, desc: "Only return restrooms that are unisex."
+          optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
         end
         get do
           r = Restroom
@@ -33,6 +33,20 @@ module API
           r = r.unisex if params[:unisex].present?
 
           paginate(r.text_search(params[:query]))
+        end
+
+        desc "Search by location."
+        params do
+          optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
+          optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
+          requires :lat, type: Float, desc: "latitude"
+          requires :lng, type: Float, desc: "longitude"
+        end
+        get :by_location do
+          r = Restroom
+          r = r.accessible if params[:ada].present?
+          r = r.unisex if params[:unisex]
+          paginate(r.near([params[:lat], params[:lng]], 20, :order => 'distance'))
         end
       end
     end
