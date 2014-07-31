@@ -9,8 +9,8 @@ This project is open source. Feel free to contribute. We could use the help.
 
 
 ## Set Up For Contributing
-[Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Enviroment-for-Contributing-to-Refuge-Restrooms)
-[Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
+* [Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Enviroment-for-Contributing-to-Refuge-Restrooms)
+* [Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
 
 ## Deployment
 Currently right now we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
