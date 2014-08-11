@@ -60,11 +60,16 @@
  }
 }
 
-.search .currentLocationButtonLocating {
+.search .currentLocationButtonLocating, #guess.locating {
   background: #fff asset-url('loading.gif');
   background-repeat: no-repeat;
   background-position: 50%;
   &:hover {
     background-color: white;
   }
+}
+
+.searchButton:hover,.splashcontainer .currentLocationButton:hover {
+  background-color:#8377af;
+  border-color:#8377af;
 }
