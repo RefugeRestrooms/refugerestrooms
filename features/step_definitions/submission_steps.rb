@@ -6,8 +6,12 @@ Given(/^I submit a restroom in Vancouver$/) do
   fill_in 'restroom[street]', with: '684 East Hastings'
   fill_in 'restroom[city]', with: 'Vancouver'
   fill_in 'restroom[state]', with: 'British Columbia'
-  find('#restroom_country').find(:xpath, "option[contains(., 'Canada')][1]").select_option
+  find(:select, 'Country').first(:option, 'Canada').select_option
   click_button 'Save Restroom'
+end
+
+Then(/^I should see that the restroom has been created$/) do
+  expect(page).to have_content("A new restroom entry has been created for")
 end
 
 When(/^I am in (.*) and I guess my location on the submission page$/) do |city|
