@@ -69,8 +69,7 @@ class Restroom < ActiveRecord::Base
     end
 
     def perform_geocoding
-      return true if Rails.env == 'test'
+      return true if Rails.env == "test"
       geocode
     end
-
 end
