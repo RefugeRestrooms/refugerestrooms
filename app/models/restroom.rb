@@ -20,7 +20,7 @@ class Restroom < ActiveRecord::Base
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
-  after_validation :geocode, :lookup => :google
+  after_validation :perform_geocoding
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
@@ -68,4 +68,8 @@ class Restroom < ActiveRecord::Base
       end
     end
 
+    def perform_geocoding
+      return true if Rails.env == "test"
+      geocode
+    end
 end
