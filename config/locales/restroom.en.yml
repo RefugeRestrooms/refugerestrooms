@@ -30,7 +30,7 @@ en:
     upvote: 'Loved it!'
     downvote: 'Not safe'
     confirm:
-      upvote: 'Are you sure you want to upvote to his restroom?'
+      upvote: 'Are you sure you want to upvote to this restroom?'
       downvote: 'Are you sure you want to down vote this restroom?'
     flash:
       field: 'A required field has been left blank. Please recheck your submission and submit the form again.'
