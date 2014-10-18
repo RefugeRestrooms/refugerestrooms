@@ -9,6 +9,7 @@ SaferstallsRails::Application.routes.draw do
   get '/signs', to: 'welcome#signs'
   get '/text', to: 'welcome#text_msg'
   get '/contact', to: 'contacts#new'
+  get '/license', to: 'welcome#license'
 
   root to: "welcome#index"
 
