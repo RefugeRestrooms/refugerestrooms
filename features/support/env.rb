@@ -6,6 +6,9 @@
 
 require 'cucumber/rails'
 
+# Seed the db for testing
+load "#{Rails.root}/db/seeds.rb"
+
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
 # selectors in your step definitions to use the XPath syntax.
@@ -54,5 +57,6 @@ end
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
-Cucumber::Rails::Database.javascript_strategy = :truncation
+# Note: Changing this to truncation would require putting seeds in a before block
+Cucumber::Rails::Database.javascript_strategy = :transaction
 

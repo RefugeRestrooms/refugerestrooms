@@ -1,7 +1,11 @@
+require "simplecov"
+SimpleCov.start
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
+ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
-require 'rspec/rails'
+require "rspec/rails"
+require "webmock/rspec"
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -46,15 +50,15 @@ end
 Geocoder.configure(:lookup => :test)
 
 Geocoder::Lookup::Test.add_stub(
-  '123 Example St., San Francisco, CA, US', [
+  "123 Example St., San Francisco, CA, US", [
     {
-      'latitude'     => 37.7749295,
-      'longitude'    => -122.41941550000001,
-      'address'      => '123 Example St., San Francisco, CA, USA',
-      'state'        => 'California',
-      'state_code'   => 'CA',
-      'country'      => 'United States',
-      'country_code' => 'US'
+      "latitude"     => 37.7749295,
+      "longitude"    => -122.41941550000001,
+      "address"      => "123 Example St., San Francisco, CA, USA",
+      "state"        => "California",
+      "state_code"   => "CA",
+      "country"      => "United States",
+      "country_code" => "US"
     }
   ]
 )

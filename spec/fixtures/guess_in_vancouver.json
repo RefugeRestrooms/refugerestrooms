@@ -1,0 +1,487 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "678",
+               "short_name" : "678",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "East Hastings Street",
+               "short_name" : "E Hastings St",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Central",
+               "short_name" : "Central",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Vancouver",
+               "short_name" : "Vancouver",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "V6A",
+               "short_name" : "V6A",
+               "types" : [ "postal_code_prefix", "postal_code" ]
+            }
+         ],
+         "formatted_address" : "678 East Hastings Street, Vancouver, BC V6A, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 49.28097529999999,
+               "lng" : -123.0900812
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.28232428029149,
+                  "lng" : -123.0887322197085
+               },
+               "southwest" : {
+                  "lat" : 49.2796263197085,
+                  "lng" : -123.0914301802915
+               }
+            }
+         },
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "V6A 1R1",
+               "short_name" : "V6A 1R1",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Central",
+               "short_name" : "Central",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Vancouver",
+               "short_name" : "Vancouver",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Vancouver, BC V6A 1R1, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.281182,
+                  "lng" : -123.089526
+               },
+               "southwest" : {
+                  "lat" : 49.28064999999999,
+                  "lng" : -123.091313
+               }
+            },
+            "location" : {
+               "lat" : 49.2808441,
+               "lng" : -123.090451
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.28226498029149,
+                  "lng" : -123.0890705197085
+               },
+               "southwest" : {
+                  "lat" : 49.27956701970849,
+                  "lng" : -123.0917684802915
+               }
+            }
+         },
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Downtown Eastside",
+               "short_name" : "Downtown Eastside",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Vancouver",
+               "short_name" : "Vancouver",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Downtown Eastside, Vancouver, BC, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.2912178,
+                  "lng" : -123.0769588
+               },
+               "southwest" : {
+                  "lat" : 49.2790671,
+                  "lng" : -123.104376
+               }
+            },
+            "location" : {
+               "lat" : 49.280556,
+               "lng" : -123.083333
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.2912178,
+                  "lng" : -123.0769588
+               },
+               "southwest" : {
+                  "lat" : 49.2790671,
+                  "lng" : -123.104376
+               }
+            }
+         },
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "V6A",
+               "short_name" : "V6A",
+               "types" : [ "postal_code_prefix", "postal_code" ]
+            },
+            {
+               "long_name" : "Vancouver",
+               "short_name" : "Vancouver",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Vancouver, BC V6A, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.28983299999999,
+                  "lng" : -123.075211
+               },
+               "southwest" : {
+                  "lat" : 49.266959,
+                  "lng" : -123.106197
+               }
+            },
+            "location" : {
+               "lat" : 49.2777428,
+               "lng" : -123.0937344
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.28983299999999,
+                  "lng" : -123.075211
+               },
+               "southwest" : {
+                  "lat" : 49.266959,
+                  "lng" : -123.106197
+               }
+            }
+         },
+         "types" : [ "postal_code_prefix", "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Central",
+               "short_name" : "Central",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Vancouver",
+               "short_name" : "Vancouver",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Central, Vancouver, BC, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.2944285,
+                  "lng" : -123.0769588
+               },
+               "southwest" : {
+                  "lat" : 49.2704426,
+                  "lng" : -123.1466961
+               }
+            },
+            "location" : {
+               "lat" : 49.2834527,
+               "lng" : -123.1113031
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.2944285,
+                  "lng" : -123.0769588
+               },
+               "southwest" : {
+                  "lat" : 49.2704426,
+                  "lng" : -123.1466961
+               }
+            }
+         },
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Vancouver",
+               "short_name" : "Vancouver",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Vancouver, BC, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.31409499999999,
+                  "lng" : -123.023068
+               },
+               "southwest" : {
+                  "lat" : 49.1998604,
+                  "lng" : -123.22474
+               }
+            },
+            "location" : {
+               "lat" : 49.261226,
+               "lng" : -123.1139268
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.31409499999999,
+                  "lng" : -123.023068
+               },
+               "southwest" : {
+                  "lat" : 49.1998604,
+                  "lng" : -123.22474
+               }
+            }
+         },
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Greater Vancouver",
+               "short_name" : "Greater Vancouver",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Greater Vancouver, BC, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.5745409,
+                  "lng" : -122.408262
+               },
+               "southwest" : {
+                  "lat" : 49.00205589999999,
+                  "lng" : -123.4323841
+               }
+            },
+            "location" : {
+               "lat" : 49.2501243,
+               "lng" : -123.0824217
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.5745409,
+                  "lng" : -122.408262
+               },
+               "southwest" : {
+                  "lat" : 49.00205589999999,
+                  "lng" : -123.4323841
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "British Columbia",
+               "short_name" : "BC",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "British Columbia, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 60.0001489,
+                  "lng" : -114.0542211
+               },
+               "southwest" : {
+                  "lat" : 48.3089591,
+                  "lng" : -139.0570702
+               }
+            },
+            "location" : {
+               "lat" : 53.7266683,
+               "lng" : -127.6476206
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 60.0015155,
+                  "lng" : -114.0542211
+               },
+               "southwest" : {
+                  "lat" : 48.30907800000001,
+                  "lng" : -139.0570702
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 83.115061,
+                  "lng" : -52.6194086
+               },
+               "southwest" : {
+                  "lat" : 41.6765559,
+                  "lng" : -141.00187
+               }
+            },
+            "location" : {
+               "lat" : 56.130366,
+               "lng" : -106.346771
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 70,
+                  "lng" : -50
+               },
+               "southwest" : {
+                  "lat" : 42,
+                  "lng" : -142
+               }
+            }
+         },
+         "types" : [ "country", "political" ]
+      }
+   ],
+   "status" : "OK"
+}

@@ -5,14 +5,14 @@
   %div{:style => "float:left;width:45%;text-align:center;margin:0 15px;"}
     %h3= t(".head-accessible")
     %a{:href => "/rr-sign-with-handi.pdf"}
-      %img{:src => "/assets/rr-sign-with-handi.png", :style => "padding:15px;border:1px solid #444;"}/
+      = image_tag('rr-sign-with-handi.png', :style => "padding:15px;border:1px solid #444;")
     %p= t(".download")
-    %img{:src => "/assets/qrcode-sign-with-handi.png", :width => "200"}/
+    = image_tag('qrcode-sign-with-handi.png', :width => "200")
   %div{:style => "float:left;width:45%;text-align:center;margin:0 15px;"}
     %h3= t(".head-non-accessible")
     %a{:href => "/rr-sign-no-handi.pdf"}
-      %img{:src => "/assets/rr-sign-no-handi.png", :style => "padding:15px;border:1px solid #444;"}/
+      = image_tag('rr-sign-no-handi.png', :style => "padding:15px;border:1px solid #444;")
     %p= t(".download")
-    %img{:src => "/assets/qrcode-sign-no-handi.png", :width => "200"}/
+    = image_tag('qrcode-sign-no-handi.png', :width => "200")
   %div{:style => "clear:both;"}
     %br/
