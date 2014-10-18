@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require framework_and_overrides
- *= require bathrooms
+ *= require restrooms
  *= require nav
  *= require search
  */
@@ -26,10 +26,10 @@ body {
 
 .clearfix:before,
 .clearfix:after {
-  content: ".";    
-  display: block;    
-  height: 0;    
-  overflow: hidden; 
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
 }
 .clearfix:after {clear: both;}
 .clearfix {zoom: 1;} /* IE < 8 */
@@ -91,11 +91,6 @@ h1 {
   margin: 0 auto;
 }
 
-.header {
-  position: relative;
-  background: $purple;
-}
-
 .nav {
   background: $purple;
 }
@@ -112,13 +107,12 @@ h1 {
   position: relative;
   float: left;
   cursor: pointer;
-  top: 5px
+  top: 2px
 }
 
 .linkbutton {
   border: none;
   position: relative;
-  float: left;
   border-radius: $rounded-corners;
   padding: 10px;
   margin: 5px;
@@ -128,8 +122,8 @@ h1 {
 }
 
 .linkbutton:hover {
-  background-color: $purple; 
-  color: white;
+  background-color: $purple;
+  color: white !important;
 }
 
 .whitelinkbutton {
@@ -145,13 +139,13 @@ h1 {
 }
 
 .whitelinkbutton:hover {
-  background-color: $light-purple; 
+  background-color: $light-purple;
   color: white;
 }
 
 .filter {
   float: left;
-  
+
   .toggle {
     border-radius: $rounded-corners;
     width: 69px;
@@ -169,18 +163,18 @@ h1 {
     background-image: asset-url('ada-slider.svg');
     background-position: 69px 0;
   }
-  
+
   .filter_on {
     background-image: asset-url('ada-slider.svg');
     display: none;
-  }  
+  }
 }
 
 #unisex_filter {
   .filter_off {
     background-image: asset-url('unisex-slider.svg');
   }
-  
+
   .filter_on {
     background-image: asset-url('unisex-slider.svg');
     background-position: 69px 0;
@@ -191,6 +185,11 @@ h1 {
 .mapToggle {
   float: right;
   border-raidus: $rounded-corners;
+}
+
+.mapToggle.linkbutton {
+  padding: 7px;
+  margin: 7.5px;
 }
 
 #mapArea {
@@ -321,17 +320,17 @@ h1 {
   padding: 5px;
 }
 
-.unisexBathroom {
+.unisexRestroom {
   width: 45px;
   height: 43px;
 }
 
-.ADABathroom {
+.ADARestroom {
   width: 44px;
   height: 47px;
 }
 
-.unisexBathroom img, .ADABathroom img {
+.unisexRestroom img, .ADARestroom img {
   width: 100%;
   height: 100%;
 }
@@ -426,11 +425,6 @@ a.thumbsButton.thumbsDown:hover {
   color: white;
 }
 
-form input[type=submit], form input[type=submit]:not(.disabled):hover {
-  background: orange;
-  color: yellow;
-}
-
 input.thumbsButton.thumbsUp:hover {
   background-color: blue;
   color: orange;
@@ -491,7 +485,7 @@ input.thumbsButton.thumbsUp:hover {
   overflow: hidden;
 }
 
-.submitBathroomButton {
+.submitRestroomButton {
   display: inline-block;
   background: asset-url('submit.svg') no-repeat;
   width: 150px;
@@ -503,7 +497,7 @@ input.thumbsButton.thumbsUp:hover {
   background-position: 0 50%;
 }
 
-.submitBathroomButton:hover {
+.submitRestroomButton:hover {
   background-position: 100% 50%;
 }
 
@@ -517,23 +511,23 @@ input.thumbsButton.thumbsUp:hover {
   }
   padding: 12px;
   margin: 4px;
-  
+
   &:hover {
     background-position: 100% 50%;
   }
-  
+
   &.iconGitHub {
     background-image: asset-url('buttons_github.svg');
   }
-  
+
   &.iconTwitter {
     background-image: asset-url('buttons_twitter.svg');
   }
-  
+
   &.iconFacebook {
     background-image: asset-url('buttons_facebook.svg');
   }
-  
+
   &.iconTumblr {
     background-image: asset-url('buttons_tumblr.svg');
   }
@@ -544,7 +538,7 @@ input.thumbsButton.thumbsUp:hover {
 }
 
 .hiddenText {
-  visibility: hidden;
+  display: none;
 }
 
 footer {
@@ -566,7 +560,7 @@ footer {
   }
 
   .showPageItem.listItemImage {
-    
+
   }
 
   .showPageItem .itemInfo {
@@ -579,7 +573,7 @@ footer {
   .searchBar {
     font-size: 0.7rem;
   }
-  
+
   .itemName {
     font-size: 15px;
   }
@@ -625,7 +619,7 @@ footer {
   .imgsplash {
     font-size: 40px;
   }
-  
+
   .textItem {
     font-size: 12px;
   }
@@ -651,4 +645,8 @@ footer {
   .thumbsButton {
     font-size: 15px;
   }
+}
+
+a.iconLink:hover {
+  text-decoration:none;
 }

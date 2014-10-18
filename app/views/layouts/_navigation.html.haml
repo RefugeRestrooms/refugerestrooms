@@ -1,4 +1,4 @@
-%nav.nav.navbar-default{:role => "navigation"}
+%nav.nav.navbar-default.constraint{:role => "navigation"}
   / Brand and toggle get grouped for better mobile display
   .navbar-header
     %a#logo.toiletLogo{:href => "/"}
@@ -11,7 +11,7 @@
   / Collect the nav links, forms, and other content for toggling
   #bs-example-navbar-collapse-1.collapse.navbar-collapse
     %ul.nav.navbar-nav
-      %li= link_to "Submit a New Bathroom", new_bathroom_path
+      %li= link_to "Submit a New Restroom", new_restroom_path
       %li= link_to 'About', about_path
       %li= link_to 'Contact', contact_path
       %li.dropdown
@@ -20,6 +20,6 @@
           %b.caret
         %ul.dropdown-menu
           %li
-          %li= link_to 'Download Unisex Bathroom Signs', signs_path
+          %li= link_to 'Download Unisex Restroom Signs', signs_path
           %li= link_to 'Public API', '/api/docs/'
   / /.navbar-collapse
