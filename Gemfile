@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'geocoder', '~> 1.2.1'
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
 gem 'devise', '~> 3.2'
+gem 'rakismet'
 
 gem 'country_select'
 

@@ -32,6 +32,11 @@ class Restroom < ActiveRecord::Base
     end
   end
 
+  include Rakismet::Model
+  rakismet_attrs content: proc {
+    name + street + city + state + comment + directions + country
+  }
+
   after_find :strip_slashes
 
   scope :accessible, -> { where(accessible: true) }
