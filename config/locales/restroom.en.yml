@@ -43,6 +43,7 @@ en:
       updated: 'This restroom entry has been updated'
       deleted: 'This restroom entry has been deleted'
       searcherror: 'There was an error searching for your location.'
+      spam: 'Your submission was rejected as spam.'
     contact:
       contactlisting: "Contact us about this post!"
 
