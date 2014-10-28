@@ -25,7 +25,10 @@ class RestroomsController < ApplicationController
   def create
     @restroom = Restroom.new(permitted_params)
 
-    if @restroom.save
+    if @restroom.spam?
+      flash[:notice] = I18n.t('restroom.flash.spam')
+      render 'new'
+    elsif @restroom.save
       flash[:notice] = I18n.t('restroom.flash.new', name: @restroom.name)
       redirect_to @restroom
     else
