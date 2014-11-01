@@ -175,10 +175,10 @@ describe 'Restrooms API' do
       end
     end
 
-    context 'filters a list of restrooms by updated date' do
+    context "filters a list of restrooms by updated date" do
       before :each do
         FactoryGirl.create(:restroom, created_at: 1.day.ago)
-        get '/api/v1/restrooms/by_date', { updated: true,  day: Date.today.day, month: Date.today.month, year: Date.today.year}
+        get "api/v1/restrooms/by_date", updated: true,  day: Date.today.day, month: Date.today.month, year: Date.today.year
       end
       
       it "is successful" do
@@ -193,7 +193,7 @@ describe 'Restrooms API' do
     context 'filters a list of restrooms by created date' do
       before :each do
         FactoryGirl.create(:restroom, created_at: 1.week.ago)
-        get '/api/v1/restrooms/by_date', { day: Date.today.day, month: Date.today.month, year: Date.today.year}
+        get "/api/v1/restrooms/by_date", day: Date.today.day, month: Date.today.month, year: Date.today.year
       end
       
       it "is successful" do
