@@ -29,6 +29,10 @@ gem 'grape-swagger'
 gem 'grape-kaminari'
 gem 'kaminari'
 
+# Bugsnag sends bug alerts caught in production.
+# It's free for open source projects.
+gem 'bugsnag'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta2'
   gem "factory_girl_rails", "~> 4.0"
