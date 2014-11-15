@@ -6,6 +6,7 @@ $(function(){
 	var mapContainer = $("#mapContainer");
 	var list = $("#list");
 	var mapToggle = $(".mapToggle");
+	var search = $("#search");
 
 	function toggleMap (){
 		if (mapShow) {
