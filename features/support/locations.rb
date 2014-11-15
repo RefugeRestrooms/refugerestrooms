@@ -9,7 +9,7 @@ module Locations
 
   def mock_location(location_name)
     location = locations[location_name.to_sym]
-    page.execute_script "navigator.geolocation = {getCurrentPosition: function(success) { success({coords: {latitude: #{location[:latitude]}, longitude: #{location[:longitude]}}}); }}"
+    page.execute_script "locator.get = function() { return jQuery.when({latitude: #{location[:latitude]}, longitude: #{location[:longitude]}}); }"
   end
 end
 
