@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RestroomsController do
+describe RestroomsController, type: :controller do
   it "should get index" do
     get :index
     expect(response).to be_success
