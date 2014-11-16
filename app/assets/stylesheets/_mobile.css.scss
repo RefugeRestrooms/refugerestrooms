@@ -4,9 +4,6 @@
     padding-left: 0;
     padding-right: 0;
   }
-  .container {
-    width: 100%;
-  }
 
   .imgsplash {
     width: 100%;
@@ -28,6 +25,9 @@
 }
 
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .container {
+    width: 100%;
+  }
   .searchBar {
     font-size: 0.7rem;
   }
