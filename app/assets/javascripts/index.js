@@ -1,42 +1,19 @@
 $(function(){
+	var ANIMATE_DURATION = 250;
 	var headerHidden = false;
 	var mapOn = false;
 	var mapShow = false;
-	var mapHeight, listHeight;
 	var mapContainer = $("#mapContainer");
 	var list = $("#list");
 	var mapToggle = $(".mapToggle");
 	var search = $("#search");
 
-	function toggleMap (){
-		if (mapShow) {
-			mapToggle.html("Map View");
-			//animate
-			scrollUp(mapContainer, function(){scrollDown(list, listHeight);});
-		}else{
-			mapToggle.html("List View");
-			//animate
-			scrollUp(list, function(){scrollDown(mapContainer, mapHeight, doInit);});
-		}
+	function toggleMap() {
 		mapShow = !mapShow;
-	}
-
-	function scrollDown(object, height, callback){
-		object.show();
-		object.animate({height: height}, 1000, function(){
-			if (callback) {
-				callback();
-			}
-		});
-	}
-
-	function scrollUp(object, callback){
-		object.animate({height: 0}, 1000, function(){
-			object.hide();
-			if (callback) {
-				callback();
-			}
-		})
+		var callback = mapShow ? doInit : $.noop;
+		mapContainer.stop().slideToggle(ANIMATE_DURATION, callback);
+		list.stop().slideToggle(ANIMATE_DURATION);
+		mapToggle.text(mapShow ? 'List View' : 'Map View');
 	}
 
 	function doInit(){
@@ -61,17 +38,8 @@ $(function(){
 			//catch bad URL
 			searchLocation(search.val());
 		}
-		//get default height for animation later
-		mapHeight = mapContainer.height();
-		listHeight = list.height();
 
-		//hide the map
 		mapContainer.hide();
-		mapContainer.height(0);
-
-		mapToggle.click(function(){
-			//toggle which display is open
-			toggleMap();
-		});
+		mapToggle.click(toggleMap);
 	}
 });
