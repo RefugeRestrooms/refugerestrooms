@@ -228,7 +228,7 @@ h1 {
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
   background: $secondary-background;
-  min-height: 115px;
+  min-height: 13em;
 }
 
 .listItemTemplate {
@@ -263,30 +263,19 @@ h1 {
   position: relative;
   font-size: 20px;
   width: 100%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .itemStreet {
   position: relative;
   width: 100%;
-  font-size: 15px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .itemRating {
-  position: absolute;
   width: 150px;
   background: #41326b;
   border-radius: $rounded-corners;
-  bottom: 10px;
-  left: 0;
   color: #FFF;
   text-align: center;
-  vertical-align: middle;
   font-family: Arial;
   font-size: 15px;
   padding: 11px 0;
