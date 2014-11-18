@@ -54,6 +54,7 @@ Please cover any new code with specs. We prefer code to be covered using RSpec o
 
 - [SMS messaging Twillio Application](https://github.com/RefugeRestrooms/refugerest_sms)
 - [Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
+- [Yo Application](https://github.com/raptortech-js/YoRestrooms)
 
 ## IRC
 
