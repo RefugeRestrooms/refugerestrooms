@@ -42,3 +42,6 @@ geocoder.rb
 ## editor temp files
 *.swp
 *.swo
+
+## Vagrant working directory
+.vagrant
