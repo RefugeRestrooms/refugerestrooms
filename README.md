@@ -54,20 +54,14 @@ Please cover any new code with specs. We prefer code to be covered using RSpec o
 
 - [SMS messaging Twillio Application](https://github.com/RefugeRestrooms/refugerest_sms)
 - [Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
+- [iOS Native Application](https://github.com/RefugeRestrooms/refuge-ios)
 - [Yo Application](https://github.com/raptortech-js/YoRestrooms)
+- 
 
 ## IRC
 
 Server: irc.freenode.com
 Channel: #refugerestrooms
-
-## Contributors
-
-Teagan Widmer (tkwidmer), Alicia Woitte (awoitte), Stephan Leavans (leavens9), Veronica Ray (mathonsunday), Emily Leathers (eleather), Sabra Pratt (prattsj), Justin Bull (f3ndot), Natalie Groman (nataliegroman), Pamela Ocampo (pamo), Lisa French (lisafrench), Dominic Dagradi (dominic), Carol Gunby (rakuista), Dimiter Petrov (crackofdusk), Buck Doyle (backspace), Jeanine Otter (g-knee), Caden Lovelace (neoeno), r19m89s, Miriam Knadler (mknadler), Nik Markwell (duckinator), drcable Walpole (drcable), emstans, Kyra Pranks (kxra)
-
-## Consultants
-
-Kelly Becker ([KellyLSB](http://www.github.com/kellyLSB))
 
 ## License
 
