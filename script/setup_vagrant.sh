@@ -73,7 +73,7 @@ bundle install --quiet
 
 # Creating postres user
 echo 'Creating vagrant postgres user...'
-sudo -u postgres createuser vagrant
+sudo -u postgres createuser vagrant --createdb  --superuser
 
 # Seed db
 echo 'Seeding db...'
