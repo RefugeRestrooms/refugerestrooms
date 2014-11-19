@@ -69,12 +69,14 @@ else
   gem install bundler --no-rdoc --no-ri -q
 fi
 echo 'Running bundle install...'
-bundle install
+bundle install --gemfile=$REFUGE_PATH/Gemfile
 
 # Creating postres user
-echo 'Creating vagrant postgres user...'
-sudo -u postgres createuser vagrant --createdb  --superuser
+if ! psql -c 'SELECT rolname FROM pg_roles;' postgres | grep vagrant; then
+  echo 'Creating vagrant postgres user...'
+  sudo -u postgres createuser vagrant --createdb  --superuser
+fi
 
 # Seed db
 echo 'Seeding db...'
-rake db:setup
+bundle exec rake db:setup
