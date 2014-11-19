@@ -45,3 +45,4 @@ geocoder.rb
 
 ## Vagrant working directory
 .vagrant
+ruby

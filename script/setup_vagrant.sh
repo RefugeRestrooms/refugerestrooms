@@ -69,7 +69,7 @@ else
   gem install bundler --no-rdoc --no-ri -q
 fi
 echo 'Running bundle install...'
-bundle install --quiet
+bundle install
 
 # Creating postres user
 echo 'Creating vagrant postgres user...'
