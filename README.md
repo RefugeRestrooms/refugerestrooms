@@ -26,12 +26,6 @@ Here are the steps to deploy:
   * run any migrations `heroku run rake db:migrate --remote production`
 
 
-### Testing
-
-Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
-
-
-
 ## Tech
 
 * Ruby Version - ruby-2.0.0-p247

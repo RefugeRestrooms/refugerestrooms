@@ -1,5 +1,7 @@
 #Contributing
 
+# Setting Up Development Environment
+
 ### 1 Fork and clone the repository.
 
 ### 2 Install Vagrant.
@@ -15,4 +17,8 @@ run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2p
 
 ### 5 Assets
 * [Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
+
+## Testing
+
+Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
 
