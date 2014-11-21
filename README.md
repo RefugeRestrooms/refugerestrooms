@@ -22,13 +22,13 @@ Here are the steps to deploy:
  2. Link your local repo to the heroku remote repos. I suggest doing it this way:
   * `git remote add production git@heroku.com:refugerestrooms.git`
   * `git remote add staging git@heroku.com:refugestaging.git`
- 3. Merge changes into master.
- 4. Pull master locally to make sure you have the latest changes. `git pull origin master`
- 5. Push your changes to staging. `git push staging master`
-  * run any migrations `heroku run rake db:migrate --remote staging`
- 6. Verify your changes.
- 7. Push your changes to production. `git push production master`
-  * run any migrations `heroku run rake db:migrate --remote production`
+ 3. `git flow release start %{release number}`
+ 4. `git push staging release/%{release number}:master` and verify your changes on staging. (run any migrations `heroku run rake db:migrate --remote staging`)
+ 5. Run `git shortlog --grep "Merge pull request #" %{previous release}..HEAD` and copy the contents.
+ 6. `git flow release finish` and copy the contents of #5 into the release tags.
+ 7. `git push` and `git push --tags`
+ 8. `git push production master` and run any migrations `heroku run rake db:migrate --remote production`
+
 
 
 ### Testing
