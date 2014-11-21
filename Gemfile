@@ -29,6 +29,9 @@ gem 'grape-swagger'
 gem 'grape-kaminari'
 gem 'kaminari'
 
+gem 'rack-contrib'
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta2'
   gem "factory_girl_rails", "~> 4.0"

@@ -1,0 +1,99 @@
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+  main,
+  main .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .imgsplash {
+    width: 100%;
+  }
+
+  .fontLarge {
+    font-size: 110px;
+    line-height: 110px;
+  }
+
+  .showPageItem .itemInfo {
+    left: 35%;
+  }
+
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .searchBar {
+    font-size: 0.7rem;
+  }
+
+  .listItemImage {
+    width: 60px;
+    height: 60px;
+    margin: 25px 10px;
+  }
+
+  .itemInfo {
+    left: 80px;
+    right: 85px;
+  }
+
+  .itemExtraInfo {
+    top: 0;
+  }
+
+  .itemDistance {
+    font-size: 12px;
+    padding-bottom: 0;
+  }
+
+  .itemRating {
+    font-size: 12px;
+    width: 120px;
+  }
+
+  #mapArea {
+    height: 200px;
+  }
+
+  .fontLarge {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .imgsplash {
+    font-size: 40px;
+  }
+
+  .textItem {
+    font-size: 12px;
+  }
+
+  .showPageItem .itemName {
+    font-size: 15px;
+  }
+
+  a.thumbsButton.thumbsButton {
+    font-size: 18px;
+    text-align: right;
+    padding-right: 5px;
+  }
+
+  .thumbsDown {
+    background-image: url('thumbsDownSmall.jpg');
+  }
+
+  .thumbsUp {
+    background-image: url('thumbsUpSmall.jpg');
+  }
+
+  .thumbsButton {
+    font-size: 15px;
+  }
+}
+
+a.iconLink:hover {
+  text-decoration:none;
+}
