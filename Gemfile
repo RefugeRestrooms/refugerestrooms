@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
-gem 'rails', '4.0.5'
+gem 'rails', '4.1.6'
 gem 'pg'
 gem 'pg_search'
 gem 'sass-rails', '~> 4.0.3'
@@ -28,6 +28,11 @@ gem 'grape'
 gem 'grape-swagger'
 gem 'grape-kaminari'
 gem 'kaminari'
+
+# Bugsnag sends bug alerts caught in production.
+# It's free for open source projects.
+gem 'bugsnag'
+
 
 gem 'rack-contrib'
 gem 'rack-cors', :require => 'rack/cors'

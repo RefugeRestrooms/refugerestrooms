@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Restrooms API' do
+describe "Restrooms API", type: :request do
   it 'sends a list of restrooms order by date descending' do
     FactoryGirl.create_list(:restroom, 15)
 
