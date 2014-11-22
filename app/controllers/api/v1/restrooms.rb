@@ -2,7 +2,7 @@ module API
   module V1
     class Restrooms < Grape::API
       include Grape::Kaminari
-      paginate :per_page => 10
+      paginate per_page: 10, max_per_page: 100
 
       version 'v1'
       format :json
