@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: bathrooms_development
   pool: 5
-  host: ""
+  host: localhost
 
 test:
   adapter: postgresql

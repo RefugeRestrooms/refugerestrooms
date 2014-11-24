@@ -3,7 +3,7 @@
 # It's only tested with ubuntu 14.04
 set -e
 
-REFUGE_PATH=$HOME/refugerestrooms
+REFUGE_PATH=/vagrant/refugerestrooms
 
 # required packages
 declare -A packages
@@ -70,6 +70,12 @@ else
 fi
 echo 'Running bundle install...'
 bundle install --gemfile=$REFUGE_PATH/Gemfile
+
+# Change permissions on pg_hba.conf
+pg_hba=/etc/postgresql/9.3/main/pg_hba.conf
+sudo cp /vagrant/refugerestrooms/setup/pg_hba.conf $pg_hba
+sudo chown postgres:postgres $pg_hba
+sudo chmod 640 $pg_hba
 
 # Creating postres user
 if ! psql -c 'SELECT rolname FROM pg_roles;' postgres | grep vagrant; then

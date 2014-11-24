@@ -1,6 +1,6 @@
-#Contributing
+# Contributing
 
-# Setting Up Development Environment
+## Setting Up Development Environment
 
 ### 1 Fork and clone the repository.
 
@@ -8,7 +8,7 @@
 https://www.vagrantup.com/downloads
 
 ### 3 Capture the powers of vagrant
-  * In the repo dir: <code>vagrant up</code>
+  * In the repo dir: <code>vagrant up</code> (Safely ignore: 'dpkg-preconfigure: unable to re-open stdin: No such file or directory')
   * If changes have been made since running vagrant up: <code>vagrant provision</code>
   * To login to the machine: <code>vagrant ssh</code>
 

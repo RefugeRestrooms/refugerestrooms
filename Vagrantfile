@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Ubuntu 14.04 base box
   config.vm.box = "ubuntu/trusty64"
   config.vm.hostname = BOXNAME
+  #config.vm.box_download_checksum = 
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -26,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.ssh.forward_agent = true
 
   # Share refuge repo in vagrant home folder
-  config.vm.synced_folder ".", "/home/vagrant/refugerestrooms"
+  config.vm.synced_folder ".", "/vagrant/refugerestrooms"
 
   # View virtualbox provider docs for more options
   config.vm.provider "virtualbox" do |vb|
@@ -37,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # If this gets bigger I can make it into a chef run
   # mi-wood
-  config.vm.provision "shell", path: "script/setup_vagrant.sh", privileged: false
+  config.vm.provision "shell", path: "setup/setup_vagrant.sh", privileged: false
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
