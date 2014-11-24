@@ -7,11 +7,6 @@ REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. I
 
 This project is open source. Feel free to contribute. We could use the help.
 
-
-## Set Up For Contributing
-* [Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Enviroment-for-Contributing-to-Refuge-Restrooms)
-* [Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
-
 ## Deployment
 Currently right now we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
 
@@ -28,12 +23,6 @@ Here are the steps to deploy:
  6. `git flow release finish` and copy the contents of #5 into the release tags.
  7. `git push` and `git push --tags`
  8. `git push production master` and run any migrations `heroku run rake db:migrate --remote production`
-
-
-
-### Testing
-
-Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
 
 
 
