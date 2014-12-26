@@ -557,6 +557,10 @@ footer {
 
 #top-cities-content > p{
   font-size: 18px;
+  background-color: #796AA3;
+  border-bottom: 2px solid #41326b;
+  color: white;
+  padding: 3px;
 }
 
 ul {
@@ -583,4 +587,5 @@ ul li > a:hover{
   float: left;
   padding-left: 3em;
   text-align: left;
+  padding-top: 2em;
 }
