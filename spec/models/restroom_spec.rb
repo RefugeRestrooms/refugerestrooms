@@ -45,19 +45,45 @@ describe Restroom do
     it 'should return the top five cities with the most restroom data' do
       city_with_more_data = "City1"
       2.times do
-        FactoryGirl.create(:restroom, city: city_with_more_data)
+        FactoryGirl.create(:restroom, city: city_with_more_data, state: "IL")
         FactoryGirl.create(:restroom, city: "City2")
         FactoryGirl.create(:restroom, city: "City3")
         FactoryGirl.create(:restroom, city: "City4")
         FactoryGirl.create(:restroom, city: "City5")
       end
 
-      bathroom_in_city_with_less_data = FactoryGirl.create(:restroom, city: "City6")
+      bathroom_in_city_with_less_data = FactoryGirl.create(:restroom,
+        city: "City6", state: "MA")
 
       cities = Restroom.topcities
       expect(cities.count).to be 5
-      expect(cities).not_to include(bathroom_in_city_with_less_data.city)
-      expect(cities).to include(city_with_more_data)
+      expect(cities).not_to include([bathroom_in_city_with_less_data.city, "MA"])
+      expect(cities).to include([city_with_more_data, "IL"])
+    end
+
+    it 'should discriminate between same name cities in different states' do
+      city_exists_in_multiple_states = "City1"
+      states_city_with_less_data = "MA"
+      states_city_with_more_data = "IL"
+
+      2.times do
+        FactoryGirl.create(:restroom, city: city_exists_in_multiple_states,
+          state: states_city_with_more_data)
+        FactoryGirl.create(:restroom, city: "City2")
+        FactoryGirl.create(:restroom, city: "City3")
+        FactoryGirl.create(:restroom, city: "City4")
+        FactoryGirl.create(:restroom, city: "City5")
+      end
+
+      FactoryGirl.create(:restroom,
+      city: city_exists_in_multiple_states, state: states_city_with_less_data)
+
+      cities = Restroom.topcities
+
+      expect(cities).not_to include([city_exists_in_multiple_states,
+        states_city_with_less_data])
+      expect(cities).to include([city_exists_in_multiple_states,
+        states_city_with_more_data])
     end
   end
 end
