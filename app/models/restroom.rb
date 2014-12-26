@@ -61,8 +61,8 @@ class Restroom < ActiveRecord::Base
 
   def self.topcities
     Rails.cache.fetch("topcities", expires_in: 1.month) do
-      Restroom.group(:city, :state).count.sort_by {|x,y| y}.reverse
-        .first(5).map(&:first)
+      Restroom.group(:city, :state).count.sort_by { |_x, y| y }.reverse.
+      first(5).map(&:first)
     end
   end
 
