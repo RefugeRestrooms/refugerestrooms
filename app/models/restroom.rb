@@ -60,8 +60,10 @@ class Restroom < ActiveRecord::Base
   end
 
   def self.topcities
-    cities_with_restroom_count = Restroom.group(:city).count
-    cities_with_restroom_count.sort_by {|x,y| y}.reverse.first(5).map(&:first)
+    Rails.cache.fetch("topcities", expires_in: 1.month) do
+      cities_with_restroom_count = Restroom.group(:city).count
+      cities_with_restroom_count.sort_by {|x,y| y}.reverse.first(5).map(&:first)
+    end
   end
 
   # PostgreSQL Full-Text Search for the API.
