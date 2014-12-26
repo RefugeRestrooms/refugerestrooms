@@ -6,4 +6,7 @@
     %p
       = render "topcities"
     %p{:id => "preamble"}
-      = t('landing.development', contact_link: (link_to 'message', contact_path), github_link: (link_to 'Github', "http://www.github.com/RefugeRestrooms/refugerestrooms") ).html_safe
+      = t('landing.development',
+      contact_link: (link_to 'message', contact_path),
+      github_link: (link_to 'Github',
+      "http://www.github.com/RefugeRestrooms/refugerestrooms") ).html_safe
