@@ -40,4 +40,24 @@ describe Restroom do
     it { expect(Restroom.new.accessible?).to be false }
     it { expect(Restroom.new(accessible: true).accessible?).to be true }
   end
+
+  describe '#topcities' do
+    it 'should return the top five cities with the most restroom data' do
+      city_with_more_data = "City1"
+      2.times do
+        FactoryGirl.create(:restroom, city: city_with_more_data)
+        FactoryGirl.create(:restroom, city: "City2")
+        FactoryGirl.create(:restroom, city: "City3")
+        FactoryGirl.create(:restroom, city: "City4")
+        FactoryGirl.create(:restroom, city: "City5")
+      end
+
+      bathroom_in_city_with_less_data = FactoryGirl.create(:restroom, city: "City6")
+
+      cities = Restroom.topcities
+      expect(cities.count).to be 5
+      expect(cities).not_to include(bathroom_in_city_with_less_data.city)
+      expect(cities).to include(city_with_more_data)
+    end
+  end
 end
