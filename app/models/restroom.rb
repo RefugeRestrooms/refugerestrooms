@@ -59,6 +59,11 @@ class Restroom < ActiveRecord::Base
     upvote.to_f / (upvote + downvote).to_f * 100
   end
 
+  def self.topcities
+    cities_with_restroom_count = Restroom.group(:city).count
+    cities_with_restroom_count.sort_by {|x,y| y}.reverse.first(5).map(&:first)
+  end
+
   # PostgreSQL Full-Text Search for the API.
   def self.text_search(query)
     if query.present?
