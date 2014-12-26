@@ -11,6 +11,7 @@ https://www.vagrantup.com/downloads
   * In the repo dir: <code>vagrant up</code> (Safely ignore: 'dpkg-preconfigure: unable to re-open stdin: No such file or directory')
   * If changes have been made since running vagrant up: <code>vagrant provision</code>
   * To login to the machine: <code>vagrant ssh</code>
+  * `cd  /vagrant/refugerestrooms` to navigate to the refuge directory. This allows you to run `rails console`, `rails s`, run migrations etc. 
 
 ### 4 Optional tasks:
 run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2pee data. (Use <code>rake db:fix_accents[dry_run]</code> to preview the changes.)
