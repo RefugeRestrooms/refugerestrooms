@@ -86,5 +86,23 @@ describe Restroom do
       expect(cities).to include([city_exists_in_multiple_states,
       states_city_with_more_data])
     end
+
+    it 'should retrieve top cities case insensitively' do
+      correctly_capitalized_city_name= "City1"
+      miscapitalized_city_name="CITY1"
+
+      2.times do
+        FactoryGirl.create(:restroom, city: correctly_capitalized_city_name,
+        state: "IL")
+        FactoryGirl.create(:restroom, city: miscapitalized_city_name,
+        state: "IL")
+        FactoryGirl.create(:restroom, city: "City3")
+      end
+
+      cities = Restroom.topcities
+
+      expect(cities).not_to include([miscapitalized_city_name, "IL"])
+      expect(cities).to include([correctly_capitalized_city_name, "IL"])
+    end
   end
 end
