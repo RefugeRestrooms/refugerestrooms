@@ -61,11 +61,17 @@ class Restroom < ActiveRecord::Base
 
   def self.topcities
     Rails.cache.fetch("topcities", expires_in: 1.month) do
-      sql = "SELECT MAX(city), state, COUNT(DISTINCT id) AS count FROM " +
+      sql = "SELECT LOWER(city), state, COUNT(DISTINCT id) AS count FROM " +
       "restrooms GROUP BY LOWER(city), state ORDER BY count DESC LIMIT 5"
 
-      return ActiveRecord::Base.connection.execute(sql).
-      values.each { |city| city.pop }
+      cities =  ActiveRecord::Base.connection.execute(sql).values
+
+      cities.each do |city|
+        city.pop
+        city[0].capitalize!
+      end
+      
+      return cities
     end
   end
 
