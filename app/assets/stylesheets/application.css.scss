@@ -14,6 +14,7 @@
  *= require nav
  *= require search
  *= require _mobile
+ *= require top_cities
  */
 
 @import 'variables';
@@ -537,55 +538,4 @@ footer {
 
 .numberCircle .listItem {
   border: none;
-}
-
-/*top cities welcome page formatting*/
-#welcome-container{
-  margin-top: 25px;
-  width: 100%;
-  display: inline-block;
-}
-
-#top-cities-content {
-  border: 5px solid #41326b;
-  width: 30%;
-  display: inline-block;
-  float: left;
-  margin-left: 10px;
-  overflow: scroll;
-}
-
-#top-cities-content > p{
-  font-size: 18px;
-  background-color: #8377AF;
-  border-bottom: 2px solid #41326b;
-  color: white;
-  padding: 3px;
-}
-
-ul {
-  margin-top: 5px;
-}
-
-ul li{
-  text-align: left;
-}
-
-ul li > a{
-  text-decoration: none;
-  color: black;
-}
-
-ul li > a:hover{
-  text-decoration: none;
-  color: #8377AF;
-}
-
-#preamble {
-  width: 60%;
-  display: inline-block;
-  float: left;
-  padding-left: 3em;
-  text-align: left;
-  padding-top: 2em;
 }
