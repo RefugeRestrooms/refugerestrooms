@@ -59,7 +59,7 @@ class Restroom < ActiveRecord::Base
     upvote.to_f / (upvote + downvote).to_f * 100
   end
 
-  def self.topcities
+  def self.top_cities
     Rails.cache.fetch("topcities", expires_in: 1.month) do
       sql = "SELECT LOWER(city), state, COUNT(DISTINCT id) AS count FROM " +
       "restrooms GROUP BY LOWER(city), state ORDER BY count DESC LIMIT 5"
@@ -70,7 +70,7 @@ class Restroom < ActiveRecord::Base
         city.pop
         city[0].capitalize!
       end
-      
+
       return cities
     end
   end

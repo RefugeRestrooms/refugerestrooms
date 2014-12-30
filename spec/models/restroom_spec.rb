@@ -55,7 +55,7 @@ describe Restroom do
       bathroom_in_city_with_less_data = FactoryGirl.create(:restroom,
       city: "City6", state: "MA")
 
-      cities = Restroom.topcities
+      cities = Restroom.top_cities
       expect(cities.count).to be 5
       expect(cities).not_to include([bathroom_in_city_with_less_data.city,
       "MA"])
@@ -79,7 +79,7 @@ describe Restroom do
       FactoryGirl.create(:restroom,
       city: city_exists_in_multiple_states, state: states_city_with_less_data)
 
-      cities = Restroom.topcities
+      cities = Restroom.top_cities
 
       expect(cities).not_to include([city_exists_in_multiple_states,
       states_city_with_less_data])
@@ -99,7 +99,7 @@ describe Restroom do
         FactoryGirl.create(:restroom, city: "City3")
       end
 
-      cities = Restroom.topcities
+      cities = Restroom.top_cities
 
       expect(cities).not_to include([miscapitalized_city_name, "IL"])
       expect(cities).to include([correctly_capitalized_city_name, "IL"])
