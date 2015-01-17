@@ -2,6 +2,11 @@
   = image_tag('logo-dark.svg')
 = render partial: "layouts/search", locals: {splash: true}
 .centerText
-  %p
-    = t('landing.development', contact_link: (link_to 'message', contact_path), github_link: (link_to 'Github', "http://www.github.com/RefugeRestrooms/refugerestrooms") ).html_safe
-  %br/
+  %div{:id => "welcome-container"}
+    %p
+      = render "topcities"
+    %p{:id => "preamble"}
+      = t('landing.development',
+      contact_link: (link_to 'message', contact_path),
+      github_link: (link_to 'Github',
+      "http://www.github.com/RefugeRestrooms/refugerestrooms") ).html_safe
