@@ -23,7 +23,7 @@ class Restroom < ActiveRecord::Base
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
-  after_validation :geocode, :lookup => :google
+  after_validation :perform_geocoding
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
@@ -35,10 +35,18 @@ class Restroom < ActiveRecord::Base
     end
   end
 
+  include Rakismet::Model
+  rakismet_attrs content: proc {
+    name + street + city + state + comment + directions + country
+  }
+
   after_find :strip_slashes
 
   scope :accessible, -> { where(accessible: true) }
   scope :unisex, -> { where(unisex: true) }
+
+  scope :created_since, ->(date) { where("created_at >= ?", date) }
+  scope :updated_since, ->(date) { where("updated_at >= ?", date) }
 
   def full_address
     "#{street}, #{city}, #{state}, #{country}"
@@ -75,4 +83,8 @@ class Restroom < ActiveRecord::Base
       end
     end
 
+    def perform_geocoding
+      return true if Rails.env == "test"
+      geocode
+    end
 end

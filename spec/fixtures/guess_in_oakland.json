@@ -1,0 +1,540 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "1400",
+               "short_name" : "1400",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Broadway",
+               "short_name" : "Broadway",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "94612",
+               "short_name" : "94612",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "1400 Broadway, Oakland, CA 94612, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 37.8044652,
+               "lng" : -122.27081
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.80581418029149,
+                  "lng" : -122.2694610197085
+               },
+               "southwest" : {
+                  "lat" : 37.80311621970849,
+                  "lng" : -122.2721589802915
+               }
+            }
+         },
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "14th St:Franklin St",
+               "short_name" : "14th St:Franklin St",
+               "types" : [ "bus_station", "transit_station", "establishment" ]
+            },
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "94612",
+               "short_name" : "94612",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "14th St:Franklin St, Oakland, CA 94612, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 37.803832,
+               "lng" : -122.270193
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.8051809802915,
+                  "lng" : -122.2688440197085
+               },
+               "southwest" : {
+                  "lat" : 37.8024830197085,
+                  "lng" : -122.2715419802915
+               }
+            }
+         },
+         "types" : [ "bus_station", "transit_station", "establishment" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "14th St:Franklin St",
+               "short_name" : "14th St:Franklin St",
+               "types" : [ "bus_station", "transit_station", "establishment" ]
+            },
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "94612",
+               "short_name" : "94612",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "14th St:Franklin St, Oakland, CA 94612, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 37.803871,
+               "lng" : -122.269742
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.8052199802915,
+                  "lng" : -122.2683930197085
+               },
+               "southwest" : {
+                  "lat" : 37.8025220197085,
+                  "lng" : -122.2710909802915
+               }
+            }
+         },
+         "types" : [ "bus_station", "transit_station", "establishment" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Downtown, Oakland, CA, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.8118271,
+                  "lng" : -122.26288
+               },
+               "southwest" : {
+                  "lat" : 37.8020269,
+                  "lng" : -122.2764801
+               }
+            },
+            "location" : {
+               "lat" : 37.8049229,
+               "lng" : -122.2696423
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.8118271,
+                  "lng" : -122.26288
+               },
+               "southwest" : {
+                  "lat" : 37.8020269,
+                  "lng" : -122.2764801
+               }
+            }
+         },
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "94612",
+               "short_name" : "94612",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Oakland, CA 94612, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.8185081,
+                  "lng" : -122.2585229
+               },
+               "southwest" : {
+                  "lat" : 37.79855209999999,
+                  "lng" : -122.28141
+               }
+            },
+            "location" : {
+               "lat" : 37.8113159,
+               "lng" : -122.2682245
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.8185081,
+                  "lng" : -122.2585229
+               },
+               "southwest" : {
+                  "lat" : 37.79855209999999,
+                  "lng" : -122.28141
+               }
+            }
+         },
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Downtown Oakland",
+               "short_name" : "Downtown Oakland",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Downtown Oakland, Oakland, CA, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.8128271,
+                  "lng" : -122.2537799
+               },
+               "southwest" : {
+                  "lat" : 37.7857758,
+                  "lng" : -122.2854799
+               }
+            },
+            "location" : {
+               "lat" : 37.8032973,
+               "lng" : -122.2710602
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.8128271,
+                  "lng" : -122.2537799
+               },
+               "southwest" : {
+                  "lat" : 37.7857758,
+                  "lng" : -122.2854799
+               }
+            }
+         },
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Oakland",
+               "short_name" : "Oakland",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Oakland, CA, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.88472489999999,
+                  "lng" : -122.1149234
+               },
+               "southwest" : {
+                  "lat" : 37.699192,
+                  "lng" : -122.3426648
+               }
+            },
+            "location" : {
+               "lat" : 37.8043637,
+               "lng" : -122.2711137
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.88472489999999,
+                  "lng" : -122.1149234
+               },
+               "southwest" : {
+                  "lat" : 37.699192,
+                  "lng" : -122.3426648
+               }
+            }
+         },
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Alameda County",
+               "short_name" : "Alameda County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Alameda County, CA, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 37.9056681,
+                  "lng" : -121.4692139
+               },
+               "southwest" : {
+                  "lat" : 37.4545388,
+                  "lng" : -122.3426648
+               }
+            },
+            "location" : {
+               "lat" : 37.6016892,
+               "lng" : -121.7195459
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.9056681,
+                  "lng" : -121.4692139
+               },
+               "southwest" : {
+                  "lat" : 37.4545388,
+                  "lng" : -122.3426648
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "California, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 42.0095169,
+                  "lng" : -114.131211
+               },
+               "southwest" : {
+                  "lat" : 32.5342321,
+                  "lng" : -124.4096196
+               }
+            },
+            "location" : {
+               "lat" : 36.778261,
+               "lng" : -119.4179324
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 42.0095169,
+                  "lng" : -114.131211
+               },
+               "southwest" : {
+                  "lat" : 32.5342321,
+                  "lng" : -124.4096196
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "United States",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 71.389888,
+                  "lng" : -66.94976079999999
+               },
+               "southwest" : {
+                  "lat" : 18.9110642,
+                  "lng" : 172.4458955
+               }
+            },
+            "location" : {
+               "lat" : 37.09024,
+               "lng" : -95.712891
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.38,
+                  "lng" : -66.94
+               },
+               "southwest" : {
+                  "lat" : 25.82,
+                  "lng" : -124.39
+               }
+            }
+         },
+         "types" : [ "country", "political" ]
+      }
+   ],
+   "status" : "OK"
+}

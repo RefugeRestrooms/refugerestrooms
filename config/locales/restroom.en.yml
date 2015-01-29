@@ -32,7 +32,7 @@ en:
     upvote: 'Loved it!'
     downvote: 'Not safe'
     confirm:
-      upvote: 'Are you sure you want to upvote to his restroom?'
+      upvote: 'Are you sure you want to upvote to this restroom?'
       downvote: 'Are you sure you want to down vote this restroom?'
     flash:
       field: 'A required field has been left blank. Please recheck your submission and submit the form again.'
@@ -45,6 +45,7 @@ en:
       updated: 'This restroom entry has been updated'
       deleted: 'This restroom entry has been deleted'
       searcherror: 'There was an error searching for your location.'
+      spam: 'Your submission was rejected as spam.'
     contact:
       contactlisting: "Contact us about this post!"
 

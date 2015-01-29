@@ -18,6 +18,7 @@ gem 'paper_trail', '~> 3.0.1'
 gem 'geocoder', '~> 1.2.1'
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
 gem 'devise', '~> 3.2'
+gem 'rakismet'
 
 gem 'country_select'
 
@@ -28,6 +29,9 @@ gem 'grape'
 gem 'grape-swagger'
 gem 'grape-kaminari'
 gem 'kaminari'
+
+gem 'rack-contrib'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta2'
@@ -45,6 +49,7 @@ group :test do
   gem 'database_cleaner'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'poltergeist'
+  gem 'webmock', '~> 1.18.0'
 end
 
 group :doc do

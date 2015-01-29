@@ -7,7 +7,7 @@ Feature: Guess location
 
   Scenario: Guess from Canada
     When I am in Winnipeg and I guess my location on the submission page
-    Then I should see that I am at 91 Albert Street
+    Then I should see that I am at 93 Albert Street
     And I should see that I am in Winnipeg, Manitoba, Canada
 
     When I am in Vancouver and I guess my location on the submission page

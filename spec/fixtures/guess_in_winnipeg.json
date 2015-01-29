@@ -1,0 +1,488 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "93",
+               "short_name" : "93",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Albert Street",
+               "short_name" : "Albert St",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Winnipeg",
+               "short_name" : "Winnipeg",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "R3B 1H2",
+               "short_name" : "R3B 1H2",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "93 Albert Street, Winnipeg, MB R3B 1H2, Canada",
+         "geometry" : {
+            "location" : {
+               "lat" : 49.8975839,
+               "lng" : -97.1401965
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.8989328802915,
+                  "lng" : -97.13884751970849
+               },
+               "southwest" : {
+                  "lat" : 49.8962349197085,
+                  "lng" : -97.14154548029151
+               }
+            }
+         },
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "R3B 1G5",
+               "short_name" : "R3B 1G5",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Winnipeg",
+               "short_name" : "Winnipeg",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Winnipeg, MB R3B 1G5, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.897862,
+                  "lng" : -97.13975019999999
+               },
+               "southwest" : {
+                  "lat" : 49.8973112,
+                  "lng" : -97.1408625
+               }
+            },
+            "location" : {
+               "lat" : 49.89751529999999,
+               "lng" : -97.14005189999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.89893558029149,
+                  "lng" : -97.13895736970849
+               },
+               "southwest" : {
+                  "lat" : 49.8962376197085,
+                  "lng" : -97.1416553302915
+               }
+            }
+         },
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Exchange District",
+               "short_name" : "Exchange District",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Winnipeg",
+               "short_name" : "Winnipeg",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Exchange District, Winnipeg, MB, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.901449,
+                  "lng" : -97.13066909999999
+               },
+               "southwest" : {
+                  "lat" : 49.8950001,
+                  "lng" : -97.1441931
+               }
+            },
+            "location" : {
+               "lat" : 49.8975695,
+               "lng" : -97.1372174
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.901449,
+                  "lng" : -97.13066909999999
+               },
+               "southwest" : {
+                  "lat" : 49.8950001,
+                  "lng" : -97.1441931
+               }
+            }
+         },
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Downtown",
+               "short_name" : "Downtown",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Winnipeg",
+               "short_name" : "Winnipeg",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Downtown, Winnipeg, MB, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.9034309,
+                  "lng" : -97.1256521
+               },
+               "southwest" : {
+                  "lat" : 49.8817283,
+                  "lng" : -97.15244799999999
+               }
+            },
+            "location" : {
+               "lat" : 49.8942557,
+               "lng" : -97.13877359999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.9034309,
+                  "lng" : -97.1256521
+               },
+               "southwest" : {
+                  "lat" : 49.8817283,
+                  "lng" : -97.15244799999999
+               }
+            }
+         },
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "R3B",
+               "short_name" : "R3B",
+               "types" : [ "postal_code_prefix", "postal_code" ]
+            },
+            {
+               "long_name" : "Winnipeg",
+               "short_name" : "Winnipeg",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Winnipeg, MB R3B, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.9065959,
+                  "lng" : -97.10951209999999
+               },
+               "southwest" : {
+                  "lat" : 49.888391,
+                  "lng" : -97.15995989999999
+               }
+            },
+            "location" : {
+               "lat" : 49.8981546,
+               "lng" : -97.13816559999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.9065959,
+                  "lng" : -97.10951209999999
+               },
+               "southwest" : {
+                  "lat" : 49.888391,
+                  "lng" : -97.15995989999999
+               }
+            }
+         },
+         "types" : [ "postal_code_prefix", "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Winnipeg",
+               "short_name" : "Winnipeg",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Winnipeg, MB, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.9938741,
+                  "lng" : -96.9552281
+               },
+               "southwest" : {
+                  "lat" : 49.71377,
+                  "lng" : -97.349222
+               }
+            },
+            "location" : {
+               "lat" : 49.8997541,
+               "lng" : -97.13749369999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.9938741,
+                  "lng" : -96.9552281
+               },
+               "southwest" : {
+                  "lat" : 49.71377,
+                  "lng" : -97.349222
+               }
+            }
+         },
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Division No. 11",
+               "short_name" : "Division No. 11",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Division No. 11, MB, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 49.9938741,
+                  "lng" : -96.9552281
+               },
+               "southwest" : {
+                  "lat" : 49.71377,
+                  "lng" : -97.45384709999999
+               }
+            },
+            "location" : {
+               "lat" : 49.8560486,
+               "lng" : -97.2153613
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 49.9938741,
+                  "lng" : -96.9552281
+               },
+               "southwest" : {
+                  "lat" : 49.71377,
+                  "lng" : -97.45384709999999
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Manitoba",
+               "short_name" : "MB",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Manitoba, Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 60.0001031,
+                  "lng" : -88.9852265
+               },
+               "southwest" : {
+                  "lat" : 48.998861,
+                  "lng" : -102.0000041
+               }
+            },
+            "location" : {
+               "lat" : 53.7608608,
+               "lng" : -98.81387629999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 60.0006627,
+                  "lng" : -88.9852265
+               },
+               "southwest" : {
+                  "lat" : 48.998861,
+                  "lng" : -102.0000041
+               }
+            }
+         },
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Canada",
+               "short_name" : "CA",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Canada",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 83.115061,
+                  "lng" : -52.6194086
+               },
+               "southwest" : {
+                  "lat" : 41.6765559,
+                  "lng" : -141.00187
+               }
+            },
+            "location" : {
+               "lat" : 56.130366,
+               "lng" : -106.346771
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 70,
+                  "lng" : -50
+               },
+               "southwest" : {
+                  "lat" : 42,
+                  "lng" : -142
+               }
+            }
+         },
+         "types" : [ "country", "political" ]
+      }
+   ],
+   "status" : "OK"
+}
+

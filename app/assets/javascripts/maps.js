@@ -217,13 +217,27 @@ function handleSearchResults(lat, lng){
 	$(".search").find("form").submit();
 }
 
-function searchCurrent(){
-	getCurrent(function (pos) {
-			// set map
-			$("#search").val(currentLocationText);
-			handleSearchResults(pos.coords.latitude, pos.coords.longitude);
+function searchCurrent() {
+	var button = $('.currentLocationButton');
+	// if we are already searching, don't bother searching again
+	if (button.is('currentLocationButtonLocating')) {
+		return false;
+	}
 
-		});
+	button.addClass('currentLocationButtonLocating');
+
+	// we get a promise back from this API
+	var location = locator.get();
+
+	// always turn off our "working..." class when we've found it
+	location.always(function() {
+		button.removeClass('currentLocationButtonLocating');
+	});
+
+	location.then(function gotCoordinates(coords) {
+		$("#search").val(currentLocationText);
+		handleSearchResults(coords.latitude, coords.longitude);
+	}, emitError);
 }
 
 /*
@@ -231,22 +245,8 @@ function searchCurrent(){
  */
 
 function emitError(error){
-	alert(error);
-}
-
-function getCurrent (callback) {
-	if (navigator.geolocation) {
-		$('.currentLocationButton').addClass('currentLocationButtonLocating')
-
-		navigator.geolocation.getCurrentPosition(callback, function (error) {
-			// we only need to kill the animation if detection fails
-			// — otherwise it can run while the next page loads
-			$('.currentLocationButton').removeClass('currentLocationButtonLocating')
-			emitError("Location dectection failed due to:" + error);
-		});
-	}else{
-		emitError("Unable to aquire current location");
-	}
+	console.error(error.stack || error);
+	alert(error.message || error);
 }
 
 function guessPosition (coords, callback) {
