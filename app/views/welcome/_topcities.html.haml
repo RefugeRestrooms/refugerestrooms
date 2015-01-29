@@ -1,0 +1,7 @@
+%div{:id => "top-cities-content"}
+  %p
+    Popular Cities
+  %ul
+    - @cities.each do |city|
+      %li
+        = link_to city.join(", "), restrooms_path(search: city)

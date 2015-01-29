@@ -1,10 +1,12 @@
 language: ruby
 cache: bundler
 script:
+  - bundle exec rake db:setup RAILS_ENV=test
+  - bundle exec rake db:test:prepare
   - bundle exec rake spec
   - bundle exec rake cucumber
 rvm:
-  - 2.0.0
+  - 2.1.1
 notifications:
     irc: "chat.freenode.com#refugerestrooms"
     skip_join: true
