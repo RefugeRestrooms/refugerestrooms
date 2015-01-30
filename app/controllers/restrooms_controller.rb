@@ -2,7 +2,7 @@ class RestroomsController < ApplicationController
   respond_to :html, :json
 
   before_filter :list_restrooms, only: [:index]
-  before_filter :find_restroom, only: [:show, :update, :edit, :destroy, :vote]
+  before_filter :find_restroom, only: [:show, :update, :edit, :destroy, :upvote, :downvote]
 
   def index
     if params[:nearby]
@@ -57,26 +57,23 @@ class RestroomsController < ApplicationController
     end
   end
 
-  def vote
-    vote_action
-    if @restroom.increment!(@action)
-      flash[:notice] = I18n.t("restroom.flash.#{@action.to_s}success")
-    else
-      flash[:notice] = I18n.t("restroom.flash.#{@action.to_s}error")
-    end
-    redirect_to :back
+  def upvote
+    vote(:upvote)
+  end
+
+  def downvote
+    vote(:downvote)
   end
 
 private
 
-  def vote_action
-    if params[:restroom][:downvote]
-      @action = :downvote
-    elsif params[:restroom][:upvote]
-      @action = :upvote
+  def vote(action)
+    if @restroom.increment!(action)
+      flash[:notice] = I18n.t("restroom.flash.#{action.to_s}success")
     else
-      raise ArgumentError
+      flash[:notice] = I18n.t("restroom.flash.#{action.to_s}error")
     end
+    redirect_to :back
   end
 
   def list_restrooms

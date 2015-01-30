@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   resources :restrooms do
     member do
-      put 'vote'
+      put 'upvote'
+      put 'downvote'
     end
   end
 
