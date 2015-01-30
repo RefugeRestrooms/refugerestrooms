@@ -6,7 +6,7 @@ class Restroom < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   include PgSearch
 
-  has_paper_trail
+  has_paper_trail ignore: [ :upvote, :downvote ]
 
   pg_search_scope :search, against: {
     :name => 'A',
