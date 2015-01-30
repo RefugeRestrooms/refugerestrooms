@@ -163,7 +163,7 @@ GEM
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.6.11)
+    i18n (0.7.0)
     ice_nine (0.11.0)
     inherited_resources (1.5.1)
       actionpack (>= 3.2, < 4.2)
@@ -178,7 +178,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (5.0.2)
       railties (>= 3.2.16)
-    json (1.8.1)
+    json (1.8.2)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -190,14 +190,14 @@ GEM
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
-    minitest (5.4.3)
+    minitest (5.5.1)
     multi_json (1.10.1)
     multi_test (0.1.1)
     multi_xml (0.5.5)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
-    paper_trail (3.0.1)
+    paper_trail (3.0.6)
       activerecord (>= 3.0, < 5.0)
       activesupport (>= 3.0, < 5.0)
     pg (0.17.1)
@@ -352,7 +352,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mail_form
-  paper_trail (~> 3.0.1)
+  paper_trail (~> 3.0.6)
   pg
   pg_search
   poltergeist

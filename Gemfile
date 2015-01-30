@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-gem 'paper_trail', '~> 3.0.1'
+gem 'paper_trail', '~> 3.0.6'
 
 gem 'geocoder', '~> 1.2.1'
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
