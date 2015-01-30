@@ -45,14 +45,14 @@ describe Restroom do
     it 'should return the top five cities with the most restroom data' do
       city_with_more_data = "City1"
       2.times do
-        FactoryGirl.create(:restroom, city: city_with_more_data, state: "IL")
-        FactoryGirl.create(:restroom, city: "City2")
-        FactoryGirl.create(:restroom, city: "City3")
-        FactoryGirl.create(:restroom, city: "City4")
-        FactoryGirl.create(:restroom, city: "City5")
+        create(:restroom, city: city_with_more_data, state: "IL")
+        create(:restroom, city: "City2")
+        create(:restroom, city: "City3")
+        create(:restroom, city: "City4")
+        create(:restroom, city: "City5")
       end
 
-      bathroom_in_city_with_less_data = FactoryGirl.create(:restroom,
+      bathroom_in_city_with_less_data = create(:restroom,
       city: "City6", state: "MA")
 
       cities = Restroom.top_cities
@@ -68,23 +68,21 @@ describe Restroom do
       states_city_with_more_data = "IL"
 
       2.times do
-        FactoryGirl.create(:restroom, city: city_exists_in_multiple_states,
+        create(:restroom, city: city_exists_in_multiple_states,
         state: states_city_with_more_data)
-        FactoryGirl.create(:restroom, city: "City2")
-        FactoryGirl.create(:restroom, city: "City3")
-        FactoryGirl.create(:restroom, city: "City4")
-        FactoryGirl.create(:restroom, city: "City5")
+        create(:restroom, city: "City2")
+        create(:restroom, city: "City3")
+        create(:restroom, city: "City4")
+        create(:restroom, city: "City5")
       end
 
-      FactoryGirl.create(:restroom,
+      create(:restroom,
       city: city_exists_in_multiple_states, state: states_city_with_less_data)
 
       cities = Restroom.top_cities
 
-      expect(cities).not_to include([city_exists_in_multiple_states,
-      states_city_with_less_data])
-      expect(cities).to include([city_exists_in_multiple_states,
-      states_city_with_more_data])
+      expect(cities).not_to include([city_exists_in_multiple_states, states_city_with_less_data])
+      expect(cities).to include([city_exists_in_multiple_states, states_city_with_more_data])
     end
 
     it 'should retrieve top cities case insensitively' do
@@ -92,11 +90,9 @@ describe Restroom do
       miscapitalized_city_name="CITY1"
 
       2.times do
-        FactoryGirl.create(:restroom, city: correctly_capitalized_city_name,
-        state: "IL")
-        FactoryGirl.create(:restroom, city: miscapitalized_city_name,
-        state: "IL")
-        FactoryGirl.create(:restroom, city: "City3")
+        create(:restroom, city: correctly_capitalized_city_name, state: "IL")
+        create(:restroom, city: miscapitalized_city_name, state: "IL")
+        create(:restroom, city: "City3")
       end
 
       cities = Restroom.top_cities
