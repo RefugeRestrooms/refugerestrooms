@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :restrooms
+  resources :restrooms, except: [:edit, :destroy]
   mount API::Base => '/api'
 
   get '/about', to: 'welcome#about'
