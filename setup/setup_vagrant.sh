@@ -76,6 +76,7 @@ pg_hba=/etc/postgresql/9.3/main/pg_hba.conf
 sudo cp /vagrant/refugerestrooms/setup/pg_hba.conf $pg_hba
 sudo chown postgres:postgres $pg_hba
 sudo chmod 640 $pg_hba
+psql -c 'select pg_reload_conf();' postgres
 
 # Creating postres user
 if ! psql -c 'SELECT rolname FROM pg_roles;' postgres | grep vagrant; then
