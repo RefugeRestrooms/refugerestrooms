@@ -3,11 +3,11 @@
 .search {
   overflow: auto;
   width: 100%;
-  margin: 0 auto;
+  margin: 5px auto 0 auto;
 }
 
 .searchBarContainer {
-  margin: 15px 130px 15px 15px;
+  margin: 0 130px 15px 15px;
 }
 
 .searchBar {
@@ -17,17 +17,15 @@
   margin: 0;
   font-size: 1.2rem;
   border-radius: $rounded-corners;
+  font-size: 14px;
 }
 
 
 .header {
-  .searchBar {
-    border: 0;
-  }
 
   .searchButton, .currentLocationButton {
     position: absolute;
-    top: 15px;
+    top: 0;
     padding-right: 2px;
     padding-left: 2px;
     width: 50px;

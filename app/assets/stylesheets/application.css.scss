@@ -24,61 +24,46 @@ body {
   font-size: .8em;
   background: $purple;
   color: $base-color;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: ".";
-  display: block;
-  height: 0;
-  overflow: hidden;
-}
-.clearfix:after {clear: both;}
-.clearfix {zoom: 1;} /* IE < 8 */
-
-input {
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
-  border-radius: 0;
-}
-
-h1 {
-  padding: 5px;
-  text-align: center;
-}
-
-.splashcontainer {
-  margin-top: 0px;
-}
-
-.addForm {
-  max-width: 720px;
-  width: 80%;
-  padding: 1px 0px 0px 10px;
-  margin: 0 auto;
-}
-
-.addForm input[name=commit], .addForm input[type=button] {
-  padding: 4px;
-  float: center;
-  border: none;
-  position: relative;
-  border-radius: $rounded-corners;
-  background: $light-purple;
-  cursor: pointer;
-}
-
-.addForm input[name=commit]:hover, .addForm input[type=button]:hover {
-  background-color: $light-purple;
-  color: white;
+  font-family: arial;
+  min-width: 320px;
 }
 
 .container {
-  max-width: 900px;
+  max-width: 910px;
   margin: 0 auto !important;
   background: $secondary-background;
   width: 90%;
   border-radius: 5px;
+  padding: 5px;
+}
+// --------
+// UI Elements
+// --------
+
+// Linkbutton
+.linkbutton {
+  border: none;
+  position: relative;
+  border-radius: $rounded-corners;
+  padding: 10px;
+  margin: 8px;
+  cursor: pointer;
+  background-color: $light-purple;
+  color: #FFFFFF;
+}
+
+  .linkbutton:hover {
+    background-color: $purple;
+    color: white !important;
+  }
+
+// --------
+// Text styles
+// --------
+
+h1 {
+  padding: 5px;
+  text-align: center;
 }
 
 .textItem {
@@ -88,66 +73,78 @@ h1 {
   font-size: 20px;
 }
 
-.container {
-  padding: 5px;
-  margin: 0 auto;
+.hiddenText {
+  display: none;
 }
 
-.nav {
-  background: $purple;
+.splashcontainer {
+  margin-top: 0px;
 }
 
-.nav2 {
-  background: $dark-purple;
+.fontLarge {
+  font-size: 150px;
+  line-height: 150px;
 }
 
-.toiletLogo {
-  width: 45px;
-  height: 45px;
-  background: asset-url("logo-100x100.png");
-  background-size: 100% 100%;
-  position: relative;
-  float: left;
-  cursor: pointer;
-  top: 2px
+.paddedForSafety {
+  padding: 0 15px;
 }
 
-.linkbutton {
-  border: none;
-  position: relative;
-  border-radius: $rounded-corners;
+// --------
+// Pages
+// --------
+
+// Add Restroom Page
+
+.form-container {
   padding: 10px;
-  margin: 5px;
-  cursor: pointer;
-  background-color: $light-purple;
-  color: #FFFFFF;
 }
 
-.linkbutton:hover {
-  background-color: $purple;
-  color: white !important;
-}
+  // Title
+  .form-container h1 {
+    margin-top: 11px;
+    margin-bottom: 17px;
+  }
 
-.whitelinkbutton {
-  border: none;
-  position: relative;
-  float: left;
-  border-radius: $rounded-corners;
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  color: #000000;
-}
+  .addForm {
+    max-width: 720px;
+    width: 80%;
+    padding: 1px 0px 0px 10px;
+    margin: 0 auto;
+  }
 
-.whitelinkbutton:hover {
-  background-color: $light-purple;
-  color: white;
-}
+  .addForm input[name=commit], .addForm input[type=button] {
+    padding: 4px;
+    float: center;
+    border: none;
+    position: relative;
+    border-radius: $rounded-corners;
+    background: $light-purple;
+    cursor: pointer;
+  }
+
+  .addForm input[name=commit]:hover, .addForm input[type=button]:hover {
+    background-color: $light-purple;
+    color: white;
+  }
+
+  // Guess Button
+  #guess {
+    margin-bottom: 20px;
+  }
+  // Nearby Restrooms
+  #nearby h2 {
+    margin: 0 auto;
+  }
+
+// ------
+// Map and List Page
+// ------
+
+// Map Filters
 
 .filter {
   float: left;
-
   .toggle {
     border-radius: $rounded-corners;
     width: 69px;
@@ -183,6 +180,7 @@ h1 {
     display: none;
   }
 }
+// Map toggle (.linkbutton)
 
 .mapToggle {
   float: right;
@@ -191,16 +189,16 @@ h1 {
 
 .mapToggle.linkbutton {
   padding: 7px;
-  margin: 7.5px;
 }
 
+// Map
 #mapArea {
   width: 100%;
   height: 400px;
 }
 
 .imgsplash {
-  width: 600px;
+  max-width: 600px;
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -213,10 +211,6 @@ h1 {
   padding-bottom: 30px;
 }
 
-.fontLarge {
-  font-size: 150px;
-  line-height: 150px;
-}
 
 #navlist {
   text-align: center;
@@ -229,7 +223,7 @@ h1 {
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
   background: $secondary-background;
-  min-height: 16em;
+  min-height: 14em;
 }
 
 .listItemTemplate {
@@ -262,7 +256,7 @@ h1 {
 
 .itemName {
   position: relative;
-  font-size: 20px;
+  font-size: 24px;
   width: 100%;
 }
 
@@ -273,6 +267,7 @@ h1 {
 
 .itemRating {
   width: 150px;
+  margin-top: 10px;
   background: #41326b;
   border-radius: $rounded-corners;
   color: #FFF;
@@ -324,13 +319,6 @@ h1 {
 .unisexRestroom img, .ADARestroom img {
   width: 100%;
   height: 100%;
-}
-
-.footer {
-  text-align: center;
-  text-size: 15px;
-  color: #41326b;
-  background-color: #ffffff;
 }
 
 .centerText {
@@ -492,6 +480,28 @@ input.thumbsButton.thumbsUp:hover {
   background-position: 100% 50%;
 }
 
+
+.pagination {
+  margin-left: 10px;
+}
+
+
+// Footer
+footer {
+  margin-top: 25px;
+}
+
+.footer {
+  text-align: center;
+  text-size: 15px;
+  color: #41326b;
+  background-color: #ffffff;
+}
+
+.numberCircle .listItem {
+  border: none;
+}
+
 .icon {
   display: inline-block;
   width: 10px;
@@ -528,14 +538,7 @@ input.thumbsButton.thumbsUp:hover {
   }
 }
 
-.hiddenText {
-  display: none;
-}
-
-footer {
-  margin-top: 15px;
-}
-
-.numberCircle .listItem {
-  border: none;
+// Contact form
+#new_contact {
+  margin-top:10px;
 }

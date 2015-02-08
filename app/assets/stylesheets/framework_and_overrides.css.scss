@@ -19,7 +19,7 @@ img {
 
 .navbar-default {
   width: 100%;
-  background-color: transparent;
+  background: $purple;
   border-color: #41326B;
 }
 
@@ -67,9 +67,9 @@ header {
 main {
   @extend .container;
   background-color: #ffffff;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   width: 100%;
-  margin-top: 51px; // accommodate the navbar
+  padding-top: 10px;
   }
 section {
   @extend .row;

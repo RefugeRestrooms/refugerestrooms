@@ -1,3 +1,4 @@
+
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
   main,
   main .container {
@@ -18,6 +19,26 @@
     left: 35%;
   }
 
+  // Stack text columns
+  .welcomeContainerColumn {
+    width: 100%;
+  }
+
+  // Make map full width under 640
+  .container {
+    min-width: 310px;
+    width: 100%;
+  }
+  #mapArea {
+    width: 100%;
+  }
+
+  // Contact
+  #new_contact {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
 }
 
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
@@ -25,8 +46,9 @@
     width: 100%;
   }
 
+// Search Bar
   .searchBar {
-    font-size: 0.7rem;
+    font-size: 0.93em;
   }
 
   .listItemImage {
@@ -36,13 +58,19 @@
   }
 
   .itemInfo {
-    left: 80px;
+    left: 88px;
     right: 85px;
   }
 
   .itemExtraInfo {
     top: 0;
   }
+
+  .itemName {
+  position: relative;
+  font-size: 20px;
+  width: 100%;
+}
 
   .itemDistance {
     font-size: 12px;
@@ -52,10 +80,6 @@
   .itemRating {
     font-size: 12px;
     width: 120px;
-  }
-
-  #mapArea {
-    height: 200px;
   }
 
   .fontLarge {
@@ -92,6 +116,7 @@
   .thumbsButton {
     font-size: 15px;
   }
+
 }
 
 a.iconLink:hover {

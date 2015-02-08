@@ -1,5 +1,37 @@
 @import 'variables';
 
+nav {
+	padding: 5px 0;
+}
+
+.toiletLogo {
+  width: 45px;
+  height: 45px;
+  background: asset-url("logo-100x100.png");
+  background-size: 100% 100%;
+  position: relative;
+  float: left;
+  cursor: pointer;
+  top: 2px
+}
+
+.whitelinkbutton {
+  border: none;
+  position: relative;
+  float: left;
+  border-radius: $rounded-corners;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.whitelinkbutton:hover {
+  background-color: $light-purple;
+  color: white;
+}
+
 .navbar-default .navbar-nav > li > a {
   color: white;
 
@@ -10,4 +42,9 @@
 
 .navbar-default .navbar-brand {
   color: white;
+}
+
+// Nav 2
+.nav2 {
+  background: $dark-purple;
 }
