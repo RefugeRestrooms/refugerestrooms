@@ -47,16 +47,6 @@ class RestroomsController < ApplicationController
     redirect_to @restroom
   end
 
-  def destroy
-    if @restroom.destroy
-      flash[:notice] = I18n.t('restroom.flash.deleted')
-      redirect_to restrooms_path
-    else
-      display_errors
-      redirect_to @restroom
-    end
-  end
-
   def upvote
     vote(:upvote)
   end
