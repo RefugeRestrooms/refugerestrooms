@@ -43,8 +43,13 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  config.color = true
+
   # Include FactoryGirl methods into the RSpec test suite.
   config.include FactoryGirl::Syntax::Methods
+
+  # Guess spec type by directory location
+  config.infer_spec_type_from_file_location!
 end
 
 Geocoder.configure(:lookup => :test)

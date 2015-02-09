@@ -12,6 +12,8 @@ en:
 
   restroom:
     add_new: 'Submit a restroom to our database'
+    update: 'Update restroom'
+    update_info: 'Thanks for helping us keep this resource up to date! All updates will be approved by an Admin before becoming visible.'
     required: '* marks required field'
     guess_location: 'Guess current location'
     directions: 'Directions'

@@ -2,7 +2,7 @@ class RestroomsController < ApplicationController
   respond_to :html, :json
 
   before_filter :list_restrooms, only: [:index]
-  before_filter :find_restroom, only: [:show, :update, :edit, :destroy]
+  before_filter :find_restroom, only: [:show, :update, :edit, :upvote, :downvote]
 
   def index
     if params[:nearby]
@@ -38,21 +38,34 @@ class RestroomsController < ApplicationController
   end
 
   def update
-    if params[:restroom][:downvote]
-      Restroom.increment_counter(:downvote, @restroom.id)
-    elsif params[:restroom][:upvote]
-      Restroom.increment_counter(:upvote, @restroom.id)
-    elsif @restroom.update(permitted_params)
+    if @restroom.update(permitted_params)
       flash[:notice] = I18n.t('restroom.flash.updated')
     else
       display_errors
       render 'edit'
     end
-
     redirect_to @restroom
   end
 
+  def upvote
+    vote(:upvote)
+  end
+
+  def downvote
+    vote(:downvote)
+  end
+
 private
+
+  def vote(action)
+    if @restroom.increment!(action)
+      flash[:notice] = I18n.t("restroom.flash.#{action.to_s}success")
+    else
+      flash[:notice] = I18n.t("restroom.flash.#{action.to_s}error")
+    end
+    redirect_to :back
+  end
+
   def list_restrooms
     @restrooms = Restroom.all.page(params[:page])
     @restrooms = if params[:search].present? || params[:map] == "1"
