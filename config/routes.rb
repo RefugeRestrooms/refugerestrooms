@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :restrooms, except:[:edit, :destroy] do
     member do
-      put 'upvote'
-      put 'downvote'
+      post "vote", to: "restrooms#upvote"
+      delete "vote", to: "restrooms#downvote"
     end
   end
 
