@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :restrooms, except:[:edit, :destroy] do
+  resources :restrooms, except: [:destroy] do
     member do
       post "vote", to: "restrooms#upvote"
       delete "vote", to: "restrooms#downvote"

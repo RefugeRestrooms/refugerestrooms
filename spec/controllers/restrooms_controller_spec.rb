@@ -33,7 +33,7 @@ describe RestroomsController do
       allow(Restroom).to receive(:find) { @restroom }
     end
 
-    describe "PUT upvote" do
+    describe "POST upvote" do
 
       before :each do
         allow(@restroom).to receive(:increment!).and_return(true)
@@ -41,38 +41,38 @@ describe RestroomsController do
 
       it "should upvote" do
         expect(@restroom).to receive(:increment!).with(:upvote)
-        put :upvote, id: 1
+        post :upvote, id: 1
       end
 
       it "should redirect back" do
-        put :upvote, id: 1
+        post :upvote, id: 1
         expect(response).to redirect_to("http://example.com/restroom/1")
       end
 
       it "should notify the user they have voted" do
-        put :upvote, id: 1
-        expect(flash[:notice]).to eq("This restroom has been upvoted! Thank you for contributing to our community.")
+        post :upvote, id: 1
+        expect(flash[:notice]).to be_present
       end
     end
 
-    describe "PUT downvote" do
+    describe "DELETE downvote" do
       before :each do
         allow(@restroom).to receive(:increment!).and_return(true)
       end
 
       it "should downvote" do
         expect(@restroom).to receive(:increment!).with(:downvote)
-        put :downvote, id: 1
+        delete :downvote, id: 1
       end
 
       it "should redirect back" do
-        put :downvote, id: 1
+        delete :downvote, id: 1
         expect(response).to redirect_to("http://example.com/restroom/1")
       end
 
       it "should notify the user they have voted" do
-        put :downvote, id: 1
-        expect(flash[:notice]).to eq("This restroom has been downvoted! Thank you for contributing to our community.")
+        delete :downvote, id: 1
+        expect(flash[:notice]).to be_present
       end
     end
   end

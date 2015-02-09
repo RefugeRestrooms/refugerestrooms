@@ -3,14 +3,14 @@
 .showPageContent
   .ratingscontainer
     = link_to t('restroom.upvote'),
-                upvote_restroom_path,
+                vote_restroom_path,
                 confirm: t('restroom.confirm.upvote'),
-                method: 'put',
+                method: 'post',
                 class: 'thumbsButton thumbsUp'
     = link_to t('restroom.downvote'),
-                downvote_restroom_path,
+                vote_restroom_path,
                 confirm: t('restroom.confirm.downvote'),
-                method: 'put',
+                method: 'delete',
                 class: 'thumbsButton thumbsDown'
   %p
     %strong #{t('restrooom.directions')}:

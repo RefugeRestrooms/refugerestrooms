@@ -2,7 +2,7 @@ class RestroomsController < ApplicationController
   respond_to :html, :json
 
   before_filter :list_restrooms, only: [:index]
-  before_filter :find_restroom, only: [:show, :update, :edit, :destroy, :upvote, :downvote]
+  before_filter :find_restroom, only: [:show, :update, :edit, :upvote, :downvote]
 
   def index
     if params[:nearby]
