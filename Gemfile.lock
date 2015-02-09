@@ -202,6 +202,10 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
       arel
+    piwik_analytics (1.0.2)
+      actionpack
+      activesupport
+      rails (>= 3.0.0)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -351,6 +355,7 @@ DEPENDENCIES
   mail_form
   pg
   pg_search
+  piwik_analytics (~> 1.0.2)
   poltergeist
   pry (~> 0.9.12.6)
   quiet_assets (~> 1.0.2)
