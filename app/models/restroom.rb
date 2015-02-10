@@ -67,7 +67,7 @@ class Restroom < ActiveRecord::Base
       values =  ActiveRecord::Base.connection.execute(sql).values
 
       values.map do |value|
-        "#{value[0].titleize}, #{value[1]}"
+        [value[0].titleize, value[1]]
       end
     end
   end
