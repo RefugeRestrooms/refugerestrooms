@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'piwik_analytics', '~> 1.0.2'
 
 gem 'geocoder', '~> 1.2.1'
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
