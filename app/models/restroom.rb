@@ -64,14 +64,11 @@ class Restroom < ActiveRecord::Base
       sql = "SELECT LOWER(city), state, COUNT(DISTINCT id) AS count FROM " +
       "restrooms GROUP BY LOWER(city), state ORDER BY count DESC LIMIT 5"
 
-      cities =  ActiveRecord::Base.connection.execute(sql).values
+      values =  ActiveRecord::Base.connection.execute(sql).values
 
-      cities.each do |city|
-        city.pop
-        city[0].capitalize!
+      values.map do |value|
+        [value[0].titleize, value[1]]
       end
-
-      return cities
     end
   end
 
