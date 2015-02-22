@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Restrooms API' do
+describe "Restrooms API", type: :request do
   it 'sends a list of restrooms order by date descending' do
     FactoryGirl.create_list(:restroom, 15)
 
@@ -172,6 +172,36 @@ describe 'Restrooms API' do
 
       it "does not return non-accessible restrooms" do
         expect(json.reject { |restroom| restroom["accessible"] }.count).to eq 0
+      end
+    end
+
+    context "filters a list of restrooms by updated date" do
+      before :each do
+        FactoryGirl.create(:restroom, created_at: 1.day.ago)
+        get "api/v1/restrooms/by_date", updated: true,  day: Date.today.day, month: Date.today.month, year: Date.today.year
+      end
+
+      it "is successful" do
+        expect(response).to be_success
+      end
+
+      it "finds all restrooms" do
+        expect(json.length).to eq(5)
+      end
+    end
+
+    context "filters a list of restrooms by created date" do
+      before :each do
+        FactoryGirl.create(:restroom, created_at: 1.week.ago)
+        get "/api/v1/restrooms/by_date", day: Date.today.day, month: Date.today.month, year: Date.today.year
+      end
+
+      it "is successful" do
+        expect(response).to be_success
+      end
+
+      it "finds all but one of the restrooms" do
+        expect(json.length).to eq(4)
       end
     end
   end

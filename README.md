@@ -7,12 +7,20 @@ REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. I
 
 This project is open source. Feel free to contribute. We could use the help.
 
-
-## Set Up For Contributing
-* [Enviroment Setup Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Setting-up-the-Dev-Enviroment-for-Contributing-to-Refuge-Restrooms)
-* [Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
-
 ## Deployment
+
+ This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will get deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
+ 
+ When you want to make a release, you should do the following:
+ 1. Check the status of the app on refugestaging.herokuapp.com and make sure its functional. 
+ 2. Make sure the the most recent build of develop is passing on TravisCI
+ 3. Run `git flow release start %{release number}`
+ 4. Run `git shortlog --grep "Merge pull request #" %{previous release}..HEAD` and copy the contents into a new issue with the release tag here on github. This command gives you a list of PRs merged since the previous release.
+ 5. `git flow release finish` and copy the contents of #4 into the release tags.
+ 6. `git push` in the master branch and `git push --tags`
+  - this will trigger the heroku deploy to production. 
+ 
+#### Manual Releases
 Currently right now we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
 
 We have both a staging and a production instance on heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
@@ -22,24 +30,18 @@ Here are the steps to deploy:
  2. Link your local repo to the heroku remote repos. I suggest doing it this way:
   * `git remote add production git@heroku.com:refugerestrooms.git`
   * `git remote add staging git@heroku.com:refugestaging.git`
- 3. Merge changes into master.
- 4. Pull master locally to make sure you have the latest changes. `git pull origin master`
- 5. Push your changes to staging. `git push staging master`
-  * run any migrations `heroku run rake db:migrate --remote staging`
- 6. Verify your changes.
- 7. Push your changes to production. `git push production master`
-  * run any migrations `heroku run rake db:migrate --remote production`
-
-
-### Testing
-
-Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
+ 3. `git flow release start %{release number}`
+ 4. `git push staging release/%{release number}:master` and verify your changes on staging. (run any migrations `heroku run rake db:migrate --remote staging`)
+ 5. Run `git shortlog --grep "Merge pull request #" %{previous release}..HEAD` and copy the contents.
+ 6. `git flow release finish` and copy the contents of #5 into the release tags.
+ 7. `git push` and `git push --tags`
+ 8. `git push production master` and run any migrations `heroku run rake db:migrate --remote production`
 
 
 
 ## Tech
 
-* Ruby Version - ruby-2.0.0-p247
+* Ruby Version - ruby-2.1.1
 * Ruby on Rails
 * RSpec
 * Javascript
@@ -47,26 +49,20 @@ Please cover any new code with specs. We prefer code to be covered using RSpec o
 * Postgres
 * Geocoder Gem
 * Google Maps API
-* Twitter Boostrap Framework
+* Twitter Bootstrap Framework
 * Deployed on Heroku
 
 ## Links to Refuge project on other platforms
 
 - [SMS messaging Twillio Application](https://github.com/RefugeRestrooms/refugerest_sms)
 - [Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
+- [iOS Native Application](https://github.com/RefugeRestrooms/refuge-ios)
+- [Yo Application](https://github.com/raptortech-js/YoRestrooms)
 
 ## IRC
 
 Server: irc.freenode.com
 Channel: #refugerestrooms
-
-## Contributors
-
-Teagan Widmer (tkwidmer), Alicia Woitte (awoitte), Stephan Leavans (leavens9), Veronica Ray (mathonsunday), Emily Leathers (eleather), Sabra Pratt (prattsj), Justin Bull (f3ndot), Natalie Groman (nataliegroman), Pamela Ocampo (pamo), Lisa French (lisafrench), Dominic Dagradi (dominic), Carol Gunby (rakuista), Dimiter Petrov (crackofdusk), Buck Doyle (backspace), Jeanine Otter (g-knee), Caden Lovelace (neoeno), r19m89s, Miriam Knadler (mknadler), Nik Markwell (duckinator), drcable Walpole (drcable), emstans, Kyra Pranks (kxra)
-
-## Consultants
-
-Kelly Becker ([KellyLSB](http://www.github.com/kellyLSB))
 
 ## License
 
