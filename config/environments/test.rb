@@ -1,4 +1,4 @@
-SaferstallsRails::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # So we dont see the full SQL in test output. If you want to
   config.log = :info
@@ -8,6 +8,7 @@ SaferstallsRails::Application.configure do
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
+  config.cache_store = :null_store
 
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
@@ -36,5 +37,6 @@ SaferstallsRails::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
-  config.log_level = :warn
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
 end

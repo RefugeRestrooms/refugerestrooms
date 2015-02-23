@@ -2,7 +2,7 @@
   .listItemImage
     / image tag goes here
   .itemInfo
-    .itemName= link_to_unless_current(restroom.name, restroom)
+    .itemName= link_to_unless_current(restroom.name.titleize, restroom)
     .itemStreet="#{restroom.street}, #{restroom.city}, #{restroom.state}"
     - if restroom.rated?
       - rating_class_name = case RatingLevel.for_restroom(restroom)

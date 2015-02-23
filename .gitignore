@@ -35,6 +35,7 @@ geocoder.rb
 /.bundle
 /vendor/bundle
 .env
+.powrc
 
 ## Ignore .DS_Store files in case people haven't setup a global gitignore
 .DS_Store
@@ -42,3 +43,7 @@ geocoder.rb
 ## editor temp files
 *.swp
 *.swo
+
+## Vagrant working directory
+.vagrant
+ruby
