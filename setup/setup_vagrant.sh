@@ -8,13 +8,14 @@ REFUGE_PATH=/vagrant/refugerestrooms
 # required packages
 declare -A packages
 packages=( 
-  ["git"]="1:1.9.1-1"
-  ["nodejs"]="0.10.25~dfsg2-2ubuntu1"
-  ["phantomjs"]="1.9.0-1"
-  ["postgresql-server-dev-9.3"]="9.3.5-0ubuntu0.14.04.1"
-  ["postgresql-contrib-9.3"]="9.3.5-0ubuntu0.14.04.1" 
+  ["git"]="=1:1.9.1-1"
+  ["nodejs"]="=0.10.25~dfsg2-2ubuntu1"
+  ["phantomjs"]="=1.9.0-1"
+  ["postgresql-server-dev-9.3"]=""
+  ["postgresql-contrib-9.3"]=""
 )
 
+sudo apt-get update
 for package in "${!packages[@]}"
 do
   version=${packages["$package"]}
@@ -22,7 +23,7 @@ do
     echo $package' installed, skipping'
   else
     echo 'installing '$i', version '$version'...'
-    sudo apt-get install -y -q $package=$version
+    sudo apt-get install -y -q $package$version
   fi
 done
 
@@ -76,10 +77,10 @@ pg_hba=/etc/postgresql/9.3/main/pg_hba.conf
 sudo cp /vagrant/refugerestrooms/setup/pg_hba.conf $pg_hba
 sudo chown postgres:postgres $pg_hba
 sudo chmod 640 $pg_hba
-psql -c 'select pg_reload_conf();' postgres
+sudo -u postgres psql -c 'select pg_reload_conf();' postgres
 
 # Creating postres user
-if ! psql -c 'SELECT rolname FROM pg_roles;' postgres | grep vagrant; then
+if ! sudo -u postgres psql -c 'SELECT rolname FROM pg_roles;' postgres | grep vagrant; then
   echo 'Creating vagrant postgres user...'
   sudo -u postgres createuser vagrant --createdb  --superuser
 fi
