@@ -3,14 +3,17 @@
 # This Coffeescript file contains the class for the search bar and functionality.
 # It requires the RefugeRestrooms lib geocoder.
 
-class RefugeRestrooms.Search
+class Refuge.Restrooms.Search
+  searchDefaultText: "1 Embarcadero Center, San Francisco, CA"
+
   constructor: (form) ->
     # Define elements that will be in use in this class.
+    console.log("initializing search")
     @_form = form
     @_searchBar = @_form.find('input.search-bar')
     @_currentLocationButton = @_form.find('input.current-location-button')
     @_submitSearchButton = @_form.find('input.submit-search-button')
-    @_geocoder = new RefugeRestrooms.Library.Geocoder
+    @_geocoder = new Refuge.Library.Geocoder
 
     # Call Initialize Methods
     @_bindEvents()
@@ -20,7 +23,7 @@ class RefugeRestrooms.Search
   _bindEvents: =>
     # Bind the events to occur on button click.
     @_bindSearchButton()
-    @_bindCurrenetLocationButton()
+    @_bindCurrentLocationButton()
 
 
   _bindSearchButton: =>
@@ -28,26 +31,24 @@ class RefugeRestrooms.Search
     # the latitude and longitude update the form and then submit the form.
     @_submitSearchButton.click (event) ->
       event.preventDefault()
+      @_preventSearchWithDefault()
       console.log ("You hit the submit button")
-      # @_geocodeSearchString()
-      # @_submitSearch()
+      $('#lat').val() == undefined
+      $('#long').val() == undefined
+      @_geocoder.geocodeSearchString(string).then (searchCoords) =>
+        @_updateForm(searchCoords.lat, searchCoords.long)
+        @_form.submit()
 
 
-  _bindCurrenetLocationButton: =>
+  _bindCurrentLocationButton: =>
     # On Search Current Location Button:
     # Get current location, update the form, and then submit.
     @_currentLocationButton.click (event) =>
-    event.preventDefault()
-    console.log("You tried to search your current location")
-    @_geocoder.getCurrentLocation().then (currentCoords) =>
-      @_updateForm(currentCoords.lat, currentCoords.long, "Current Location")
-      @_form.submit()
-
-
-  _geocodeSearchString: ->
-    coords = @_geocoder.geocodeSearchString(string)
-    # Geocode Long/Lat
-    # Form Submit
+      event.preventDefault()
+      console.log("You tried to search your current location")
+      @_geocoder.getCurrentLocation().then (currentCoords) =>
+        @_updateForm(currentCoords.lat, currentCoords.long, "Current Location")
+        @_form.submit()
 
 
   _updateForm: (lat,long,searchString = undefined) =>
@@ -57,12 +58,23 @@ class RefugeRestrooms.Search
       searchField = @_form.find('#search').val(searchString)
 
 
-  # _preventSearchWithDefault: ->
+  _preventSearchWithDefault: ->
+    if @_searchBar.hasClass("fadedText") && @_searchBar.val() == @searchDefaultText
+      @_searchBox.val("")
 
-  _setDefaultText: ->
-    searchDefaultText = "1 Embarcadero Center, San Francisco, CA"
 
+  _setDefaultText: =>
+    if @_searchBar.val() == ""
+      @_searchBar.val(@searchDefaultText)
+      @_searchBar.addClass("fadedText")
+
+      @_searchBar.focus =>
+        @_searchBar.removeClass("fadedText")
+        @_searchBar.val("")
+
+        @_searchBar.blur =>
+          @_setDefaultText()
 
 $ ->
-  $.fn.initializeSearch       = -> new RefugeRestrooms.Search($(@))
-  # $('.search-restrooms-form').initializeSearch()
+  $.fn.initializeSearch       = -> new Refuge.Restrooms.Search($(@))
+  $('.search-restrooms-form').initializeSearch()

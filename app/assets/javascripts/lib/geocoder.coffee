@@ -1,6 +1,6 @@
 # TODO: Update API To NOT USE GOOGLE and use Open Source
 
-class RefugeRestrooms.Library.Geocoder
+class Refuge.Library.Geocoder
   geocodeSearchString: (string) ->
     # This function takes in a string and geocodes, returning two coordinates
     # a latitutde and longitude of the location of the search string.
