@@ -345,7 +345,6 @@ a.thumbsButton.thumbsUp {
     background-color: #d9ebd3;
     color: #69b74a;
     border-radius: 0px;
-    background-image: asset-url('thumbsUp.jpg');
 }
 a.thumbsButton.thumbsUp:hover {
     background-color: #a2d293;
@@ -357,7 +356,7 @@ a.thumbsButton.thumbsDown {
     background-color: #f5c1c5;
     color: #e0140b;
     border-radius: 0px;
-    background-image: asset-url('thumbsDown.jpg');
+    content: "";
 }
 a.thumbsButton.thumbsDown:hover {
     background-color: #dc8189;

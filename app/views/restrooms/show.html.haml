@@ -2,16 +2,20 @@
   = render partial: 'restrooms/restroom', locals: { restroom: @restroom }
 .showPageContent
   .ratingscontainer
-    = link_to t('restroom.upvote'),
-                restroom_path(restroom: { upvote: true }),
-                data: { confirm: t('restroom.confirm.upvote') },
+    = link_to restroom_path(restroom: { upvote: true }),
                 method: 'put',
-                class: 'thumbsButton thumbsUp'
-    = link_to t('restroom.downvote'),
-                restroom_path(restroom: { downvote: true }),
-                data: { confirm: t('restroom.confirm.downvote') },
+                class: 'thumbsButton thumbsUp' do
+      %span
+        %i.fa.fa-thumbs-up
+        Thumbs Up
+
+
+    = link_to restroom_path(restroom: { downvote: true }),
                 method: 'put',
-                class: 'thumbsButton thumbsDown'
+                class: 'thumbsButton thumbsDown' do
+      %span
+        %i.fa.fa-thumbs-down
+        Thumbs Down
   %p
     %strong #{t('restrooom.directions')}:
     = @restroom.directions
