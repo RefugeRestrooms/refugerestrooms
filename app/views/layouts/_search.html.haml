@@ -1,15 +1,15 @@
 - splash = false if local_assigns[:splash].nil?
+
 .row.search-container
   = form_tag restrooms_path, class: "search-restrooms-form", method: :get do
-    .col-xs-6.col-sm-8.col-md-10.search-bar-container
-      = text_field_tag :search, params[:search], :class => "search-bar form-control"
-      = hidden_field_tag :lat, ""
-      = hidden_field_tag :long, ""
-    .col-xs-6.col-sm-4.col-md-2
-      .search-btn-container
-        %button.btn.btn-default.submit-search-button{:type => "button", :title => 'Search', :value => "Search"}
+    = hidden_field_tag :lat, ""
+    = hidden_field_tag :long, ""
+    .input-group
+      = text_field_tag :search, params[:search], class: "form-control search-bar"
+      .input-group-btn
+        %button.btn.btn-default.submit-search-button{type: "button", title: "Search", value: "Search"}
           %i.fa.fa-search.fa-2x
           %i.fa.fa-refresh.fa-spin.fa-2x
-        %button.btn.btn-default.current-location-button{:type => "button", :title => 'Search by current location', :value => (splash ? "Search Current Location" : nil )}
+        %button.btn.btn-default.current-location-button{type: "button", title: "Search by Current Location", value: (splash ? "Search Current Location" : nil ) }
           %i.fa.fa-location-arrow.fa-2x
           %i.fa.fa-refresh.fa-spin.fa-2x

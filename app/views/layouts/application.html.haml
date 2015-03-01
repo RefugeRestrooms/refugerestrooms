@@ -3,8 +3,9 @@
   %head
     = render 'layouts/head'
   %body
-    %header
-      = render 'layouts/header'
+    - unless @mobile
+      %header
+        = render 'layouts/header'
     %main
       .container
         = render 'layouts/messages'

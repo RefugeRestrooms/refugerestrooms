@@ -1,0 +1,12 @@
+.guess-btn {
+  .fa-refresh {
+    display: none
+  }
+
+  &.locating {
+    .fa-refresh {
+      padding: 0px 10px;
+      display: inherit
+    }
+  }
+}

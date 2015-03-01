@@ -1,14 +1,11 @@
 @import 'variables';
 
-.search-bar {
-    height: 42px
-}
-
 .current-location-button {
     .fa-refresh {
         display: none;
     }
 }
+
 
 .submit-search-button {
     .fa-refresh {
@@ -16,21 +13,17 @@
     }
 }
 
+.search-bar {
+    height: 43px
+}
+
 
 .header {
     .search-container {
         margin: 10px 0px
     }
-
-    .btn {
-        margin: 0 5px
-    }
-
-    .search-btn-container {
-        float: right
-    }
-
 }
+
 
 .locating {
     background-position: 50%;
