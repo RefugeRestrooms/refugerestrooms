@@ -2,7 +2,14 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :restrooms, except: [:edit, :destroy]
-  mount API::Base => '/api'
+
+  namespace :api do
+    mount API::V1::Base => 'v1'
+
+    namespace :v2 do
+      resources :restrooms, except: [:edit, :destroy]
+    end
+  end
 
   get '/about', to: 'welcome#about'
   get '/signs', to: 'welcome#signs'
