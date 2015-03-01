@@ -98,14 +98,15 @@ h1 {
     position: relative;
     border-radius: $rounded-corners;
     padding: 10px;
-    margin: 5px;
     cursor: pointer;
     background-color: $light-purple;
     color: #FFFFFF;
 }
-.linkbutton:hover {
+.btn.linkbutton:hover{
+    color:white;
+}
+.linkbutton.active, .linkbutton.active:focus{
     background-color: $purple;
-    color: white !important;
 }
 .whitelinkbutton {
     border: none;
@@ -124,6 +125,7 @@ h1 {
 }
 .filter {
     float: left;
+    font-size: 15px;
     .toggle {
         border-radius: $rounded-corners;
         width: 69px;
@@ -135,33 +137,30 @@ h1 {
         margin: 8px;
     }
 }
-#ada_filter {
-    .filter_off {
-        background-image: asset-url('ada-slider.svg');
-        background-position: 69px 0;
-    }
-    .filter_on {
-        background-image: asset-url('ada-slider.svg');
-        display: none;
-    }
+.filter i.fa{
+    font-size: 22px;
 }
-#unisex_filter {
-    .filter_off {
-        background-image: asset-url('unisex-slider.svg');
-    }
-    .filter_on {
-        background-image: asset-url('unisex-slider.svg');
-        background-position: 69px 0;
-        display: none;
-    }
+
+.filter::after {
+    content: "Off";
+}
+
+.filter.active::after{
+    content: "On";
+}
+
+.filter_off {
+    background-color: $dark-purple;
+}
+.filter_on {
+    background-color: $light-purple;
 }
 .mapToggle {
     float: right;
     border-raidus: $rounded-corners;
 }
 .mapToggle.linkbutton {
-    padding: 7px;
-    margin: 7.5px;
+    padding: 8px;
 }
 #mapArea {
     width: 100%;

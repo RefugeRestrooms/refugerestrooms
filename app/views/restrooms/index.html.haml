@@ -1,14 +1,11 @@
 #filters.clearfix
-  #ada_filter.filter
-    .toggle.filter_off
-    .toggle.filter_on
-    %label{:for => "ada_filter"}
-      %span.hiddenText ADA Compliant Filter
-  #unisex_filter.filter
-    .toggle.filter_off
-    .toggle.filter_on
-    %label{:for => "unisex_filter"}
-      %span.hiddenText Unisex Filter
+  .btn-group{:data => {:toggle => "buttons"}}
+    %label#ada_filter.filter.btn.linkbutton
+      %input{:type => "checkbox"}
+      %i.fa.fa-wheelchair
+    %label#unisex_filter.filter.btn.linkbutton
+      %input{:type => "checkbox"}
+      %i.fa.fa-transgender-alt
   .mapToggle.filter.linkbutton
     Map View
 #results
