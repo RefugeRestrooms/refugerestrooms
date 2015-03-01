@@ -133,6 +133,8 @@ h1 {
 }
 .filter {
     float: left;
+    margin: 3px;
+    font-size: 15px;
     .toggle {
         border-radius: $rounded-corners;
         width: 69px;
@@ -144,25 +146,23 @@ h1 {
         margin: 8px;
     }
 }
-#ada_filter {
-    .filter_off {
-        background-image: asset-url('ada-slider.svg');
-        background-position: 69px 0;
-    }
-    .filter_on {
-        background-image: asset-url('ada-slider.svg');
-        display: none;
-    }
+.filter i.fa{
+    font-size: 22px;
 }
-#unisex_filter {
-    .filter_off {
-        background-image: asset-url('unisex-slider.svg');
-    }
-    .filter_on {
-        background-image: asset-url('unisex-slider.svg');
-        background-position: 69px 0;
-        display: none;
-    }
+
+.filter::after {
+    content: "Off";
+}
+
+.filter.active::after{
+    content: "On";
+}
+
+.filter_off {
+    background-color: $dark-purple;
+}
+.filter_on {
+    background-color: $light-purple;
 }
 .mapToggle {
     float: right;
