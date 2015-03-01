@@ -1,26 +1,26 @@
-.container.min-headroom
-  %nav.nav.navbar-default{:role => "navigation"}
-    / Brand and toggle get grouped for better mobile display
-    .navbar-header
-      %a#logo.toiletLogo{:href => "/"}
-      = link_to 'REFUGE restrooms', root_path, class: 'navbar-brand'
-      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-    / Collect the nav links, forms, and other content for toggling
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        %li= link_to "Submit a New Restroom", new_restroom_path
-        %li= link_to 'About', about_path
-        %li= link_to 'Contact', contact_path
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            Resources
-            %b.caret
-          %ul.dropdown-menu
-            %li
-            %li= link_to 'Download Unisex Restroom Signs', signs_path
-            %li= link_to 'Public API', '/api/docs/'
-    / /.navbar-collapse
+.container
+  .row.min-headroom
+    .col-xs-12
+      %nav.nav.navbar-default{:role => "navigation"}
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %a#logo.toiletLogo{:href => "/"}
+          = link_to 'REFUGE restrooms', root_path, class: 'navbar-brand'
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.fa.fa-bars.fa-2x
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to "Submit a New Restroom", new_restroom_path
+            %li= link_to 'About', about_path
+            %li= link_to 'Contact', contact_path
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                Resources
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                %li= link_to 'Download Unisex Restroom Signs', signs_path
+                %li= link_to 'Public API', '/api/docs/'
+        / /.navbar-collapse
