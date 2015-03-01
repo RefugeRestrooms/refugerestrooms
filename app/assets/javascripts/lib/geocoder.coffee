@@ -50,7 +50,7 @@ class Refuge.Library.Geocoder
 
   getCurrentLocation: ->
     # This function returns a promise that evaluates to an object with the
-    # latitute and longitute of the current coordinates.
+    # latitude and longitute of the current coordinates.
 
     support = navigator.geolocation? && navigator.geolocation
     options =

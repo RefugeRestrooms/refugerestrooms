@@ -1,14 +1,9 @@
-#welcome-container {
-    margin-top: 25px;
-    width: 100%;
-    display: inline-block;
+.splash-content {
+    margin-top: 50px
 }
+
 #top-cities-content {
     border: 5px solid #41326b;
-    width: 30%;
-    display: inline-block;
-    float: left;
-    margin-left: 10px;
     overflow: scroll;
 }
 #top-cities-content > p {
@@ -32,11 +27,10 @@ ul li > a:hover {
     text-decoration: none;
     color: #8377AF;
 }
+
 #preamble {
-    width: 60%;
     display: inline-block;
     float: left;
     padding-left: 3em;
     text-align: left;
-    padding-top: 2em;
 }
