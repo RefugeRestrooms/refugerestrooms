@@ -108,14 +108,15 @@ h1 {
     position: relative;
     border-radius: $rounded-corners;
     padding: 10px;
-    margin: 5px;
     cursor: pointer;
     background-color: $light-purple;
     color: #FFFFFF;
 }
-.linkbutton:hover {
+.btn.linkbutton:hover{
+    color:white;
+}
+.linkbutton.active, .linkbutton.active:focus{
     background-color: $purple;
-    color: white !important;
 }
 .whitelinkbutton {
     border: none;
@@ -134,7 +135,6 @@ h1 {
 }
 .filter {
     float: left;
-    margin: 3px;
     font-size: 15px;
     .toggle {
         border-radius: $rounded-corners;

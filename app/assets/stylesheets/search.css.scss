@@ -52,6 +52,9 @@
 }
 .currentLocationButtonLocating, #guess.locating {
     background-position: 50%;
+    color: white;
+    background-color: #8377af;
+    border-color: #8377af;
     .fa-location-arrow {
         display: none;
     }
