@@ -2,6 +2,6 @@
   %p
     Popular Cities
   %ul
-    - @cities.each do |city|
+    - @cities.each do |city_and_state|
       %li
-        = link_to city.join(", "), restrooms_path(search: city)
+        = link_to city_and_state.join(', '), restrooms_path(search: city_and_state)

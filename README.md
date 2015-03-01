@@ -49,7 +49,7 @@ Here are the steps to deploy:
 * Postgres
 * Geocoder Gem
 * Google Maps API
-* Twitter Boostrap Framework
+* Twitter Bootstrap Framework
 * Deployed on Heroku
 
 ## Links to Refuge project on other platforms

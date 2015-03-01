@@ -15,105 +15,49 @@
  *= require search
  *= require _mobile
  *= require top_cities
+ *= require common
  */
 
 @import 'variables';
-
 body {
-  font-family: $font-stack;
-  font-size: .8em;
-  background: $purple;
-  color: $base-color;
-  font-family: arial;
-  min-width: 320px;
+    font-family: $font-stack;
+    font-size: .8em;
+    background: $purple;
+    color: $base-color;
 }
-
-.container {
-  max-width: 910px;
-  margin: 0 auto !important;
-  background: $secondary-background;
-  width: 90%;
-  border-radius: 5px;
-  padding: 5px;
+.clearfix {
+    zoom: 1;
 }
-// --------
-// UI Elements
-// --------
+/* IE < 8 */
 
-// Linkbutton
-.linkbutton {
-  border: none;
-  position: relative;
-  border-radius: $rounded-corners;
-  padding: 10px;
-  margin: 8px;
-  cursor: pointer;
-  background-color: $light-purple;
-  color: #FFFFFF;
+.clearfix:before, .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
 }
-
-  .linkbutton:hover {
-    background-color: $purple;
-    color: white !important;
-  }
-
-// --------
-// Text styles
-// --------
-
+.clearfix:after {
+    clear: both;
+}
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
 h1 {
-  padding: 5px;
-  text-align: center;
+    padding: 5px;
+    text-align: center;
 }
-
-.textItem {
-  width: 100%;
-  text-align: center;
-  font-family: $font-stack;
-  font-size: 20px;
-}
-
-.hiddenText {
-  display: none;
-}
-
 .splashcontainer {
-  margin-top: 0px;
+    margin-top: 0px;
 }
-
-.fontLarge {
-  font-size: 150px;
-  line-height: 150px;
-}
-
-.paddedForSafety {
-  padding: 0 15px;
-}
-
-// --------
-// Pages
-// --------
-
-// Add Restroom Page
-
-.form-container {
-  padding: 10px;
-}
-
-  // Title
-  .form-container h1 {
-    margin-top: 11px;
-    margin-bottom: 17px;
-  }
-
-  .addForm {
+.addForm {
     max-width: 720px;
     width: 80%;
     padding: 1px 0px 0px 10px;
     margin: 0 auto;
-  }
-
-  .addForm input[name=commit], .addForm input[type=button] {
+}
+.addForm input[name=commit], .addForm input[type=button] {
     padding: 4px;
     float: center;
     border: none;
@@ -121,424 +65,401 @@ h1 {
     border-radius: $rounded-corners;
     background: $light-purple;
     cursor: pointer;
-  }
-
-  .addForm input[name=commit]:hover, .addForm input[type=button]:hover {
+}
+.addForm input[name=commit]:hover, .addForm {
     background-color: $light-purple;
     color: white;
-  }
-
-  // Guess Button
-  #guess {
-    margin-bottom: 20px;
-  }
-  // Nearby Restrooms
-  #nearby h2 {
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto !important;
+    background: $secondary-background;
+    width: 90%;
+    border-radius: 5px;
+}
+.textItem {
+    width: 100%;
+    text-align: center;
+    font-family: $font-stack;
+    font-size: 20px;
+}
+.container {
+    padding: 5px;
     margin: 0 auto;
-  }
-
-// ------
-// Map and List Page
-// ------
-
-// Map Filters
-
-.filter {
-  float: left;
-  .toggle {
+}
+.nav {
+    background: $purple;
+}
+.nav2 {
+    background: $dark-purple;
+}
+.toiletLogo {
+    width: 45px;
+    height: 45px;
+    background: asset-url("logo-100x100.png");
+    background-size: 100% 100%;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    top: 2px
+}
+.linkbutton {
+    border: none;
+    position: relative;
     border-radius: $rounded-corners;
-    width: 69px;
-    height: 34px;
-    padding: 0;
-    background-size: 138px 34px;
-    background-color: $dark-purple;
-    overflow: hidden;
-    margin: 8px;
-  }
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: $light-purple;
+    color: #FFFFFF;
 }
-
+.linkbutton:hover {
+    background-color: $purple;
+    color: white !important;
+}
+.whitelinkbutton {
+    border: none;
+    position: relative;
+    float: left;
+    border-radius: $rounded-corners;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.whitelinkbutton:hover {
+    background-color: $light-purple;
+    color: white;
+}
+.filter {
+    float: left;
+    .toggle {
+        border-radius: $rounded-corners;
+        width: 69px;
+        height: 34px;
+        padding: 0;
+        background-size: 138px 34px;
+        background-color: $dark-purple;
+        overflow: hidden;
+        margin: 8px;
+    }
+}
 #ada_filter {
-  .filter_off {
-    background-image: asset-url('ada-slider.svg');
-    background-position: 69px 0;
-  }
-
-  .filter_on {
-    background-image: asset-url('ada-slider.svg');
-    display: none;
-  }
+    .filter_off {
+        background-image: asset-url('ada-slider.svg');
+        background-position: 69px 0;
+    }
+    .filter_on {
+        background-image: asset-url('ada-slider.svg');
+        display: none;
+    }
 }
-
 #unisex_filter {
-  .filter_off {
-    background-image: asset-url('unisex-slider.svg');
-  }
-
-  .filter_on {
-    background-image: asset-url('unisex-slider.svg');
-    background-position: 69px 0;
-    display: none;
-  }
+    .filter_off {
+        background-image: asset-url('unisex-slider.svg');
+    }
+    .filter_on {
+        background-image: asset-url('unisex-slider.svg');
+        background-position: 69px 0;
+        display: none;
+    }
 }
-// Map toggle (.linkbutton)
-
 .mapToggle {
-  float: right;
-  border-raidus: $rounded-corners;
+    float: right;
+    border-raidus: $rounded-corners;
 }
-
 .mapToggle.linkbutton {
-  padding: 7px;
+    padding: 7px;
+    margin: 7.5px;
 }
-
-// Map
 #mapArea {
-  width: 100%;
-  height: 400px;
+    width: 100%;
+    height: 400px;
 }
-
 .imgsplash {
-  max-width: 600px;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: $font-stack;
-  font-weight: bolder;
-  font-size: 60px;
-  line-height: 10px;
-  color: $purple;
-  text-align: center;
-  padding-bottom: 30px;
+    width: 600px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-stack;
+    font-weight: bolder;
+    font-size: 60px;
+    line-height: 10px;
+    color: $purple;
+    text-align: center;
+    padding-bottom: 30px;
 }
-
-
+.fontLarge {
+    font-size: 150px;
+    line-height: 150px;
+}
 #navlist {
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-
 .listItem {
-  position: relative;
-  width: 100%;
-  border-bottom: 1px solid #e1e1e1;
-  background: $secondary-background;
-  min-height: 14em;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #e1e1e1;
+    background: $secondary-background;
+    min-height: 16em;
 }
-
 .listItemTemplate {
-  display: none;
+    display: none;
 }
-
 .listItemImage {
-  position: relative;
-  width: 110px;
-  height: 110px;
-  margin: 15px;
-  border-radius: $rounded-corners;
-  background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
-  display: inline-block;
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 15px;
+    border-radius: $rounded-corners;
+    background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
+    display: inline-block;
 }
-
 .listItemImage img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
-
 .itemInfo {
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 140px;
-  right: 95px;
-  overflow: none;
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 140px;
+    right: 95px;
+    overflow: none;
 }
-
 .itemName {
-  position: relative;
-  font-size: 24px;
-  width: 100%;
+    position: relative;
+    font-size: 20px;
+    width: 100%;
 }
-
 .itemStreet {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
 }
-
 .itemRating {
-  width: 150px;
-  margin-top: 10px;
-  background: #41326b;
-  border-radius: $rounded-corners;
-  color: #FFF;
-  text-align: center;
-  font-family: Arial;
-  font-size: 15px;
-  padding: 11px 0;
-  max-width: 100%;
+    width: 150px;
+    background: #41326b;
+    border-radius: $rounded-corners;
+    color: #FFF;
+    text-align: center;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 11px 0;
+    max-width: 100%;
 }
-
 .greenRating {
-  background: $green;
+    background: $green;
 }
-
 .yellowRating {
-  background: $yellow;
+    background: $yellow;
 }
-
 .redRating {
-  background: $red;
-  float: right;
+    background: $red;
+    float: right;
 }
-
 .itemExtraInfo {
-  position: absolute;
-  top: 20px;
-  right: 15px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
 }
-
 .itemDistance {
-  position: relative;
-  color: #676767;
-  text-align: right;
-  font-size: 15px;
-  font-family: Arial;
-  padding: 5px;
+    position: relative;
+    color: #676767;
+    text-align: right;
+    font-size: 15px;
+    font-family: Arial;
+    padding: 5px;
 }
-
 .unisexRestroom {
-  width: 45px;
-  height: 43px;
+    width: 45px;
+    height: 43px;
 }
-
 .ADARestroom {
-  width: 44px;
-  height: 47px;
+    width: 44px;
+    height: 47px;
 }
-
 .unisexRestroom img, .ADARestroom img {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
-
-.centerText {
-  padding: 10px;
-  text-align: center;
-}
-
-.fadedText {
-  color: $gray;
-}
-
-.numberCircle {
-  cursor: pointer;
-}
-
-.mapIconImage {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.numberCircle .numberCircleText {
-  line-height: 37px;
-  color: #FFF;
-  text-align: center;
-}
-
-.showPageItem {
-  min-height: 140px;
-  border-bottom: none;
-}
-
-.showPageItem .itemInfo {
-  left: 25%;
-}
-
-.showPageItem .itemName {
-  font-weight: 600;
-  font-size: 25px;
-}
-
-/* was originally just ".thumbsButton" */
-a.thumbsButton.thumbsButton {
-  position: relative;
-  float: left;
-  width: 50%;
-  height: 100px;
-  padding: 0;
-  margin: 0;
-  line-height: 100px;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  font-size: 40px;
-  background-position: 15% 50%;
-  background-repeat: no-repeat;
-  margin-bottom: 20px;
-}
-
-/* was originally just ".thumbsUp" */
-a.thumbsButton.thumbsUp {
-  background-color: #d9ebd3;
-  color: #69b74a;
-  border-radius: 0px;
-  background-image: asset-url('thumbsUp.jpg');
-}
-
-a.thumbsButton.thumbsUp:hover {
-  background-color: #a2d293;
-  color: white;
-}
-
-/* was originally just ".thumbsDown" */
-a.thumbsButton.thumbsDown  {
-  background-color: #f5c1c5;
-  color: #e0140b;
-  border-radius: 0px;
-  background-image: asset-url('thumbsDown.jpg');
-}
-
-a.thumbsButton.thumbsDown:hover {
-  background-color: #dc8189;
-  color: white;
-}
-
-input.thumbsButton.thumbsUp:hover {
-  background-color: blue;
-  color: orange;
-}
-
-.showPageContent {
-  padding: 10px;
-}
-
-.showPageContent #mapArea {
-  border-radius: 5px;
-  float: left;
-}
-
-.ratingscontainer {
-  height: 100px;
-}
-
-.markerPopup {
-  display: none;
-  position: absolute;
-  top: -122px;
-  left: 50%;
-  margin-left: -195px;
-  width: 370px;
-  height: 122px;
-  background-color: #FFF;
-  border: 1px solid $purple;
-  z-index: 1000;
-  color: #000;
-}
-
-.markerPopup .listItem {
-  position: static;
-}
-
-.markerPopup .listItemImage {
-  display: none;
-}
-
-.markerPopup .itemInfo {
-  left: 10px;
-}
-
-.markerPopup .itemExtraInfo {
-  top: 0;
-}
-
-.markerPopup .itemRating {
-  padding: 3px 0;
-}
-
-.itemStreet {
-  color: #000;
-}
-
-#mapContainer, #list {
-  overflow: hidden;
-}
-
-.submitRestroomButton {
-  display: inline-block;
-  background: asset-url('submit.svg') no-repeat;
-  width: 150px;
-  height: 40px;
-  max-width: 100%;
-  background-size: 200% auto;
-  margin-top: 2px;
-  margin-left: 3px;
-  background-position: 0 50%;
-}
-
-.submitRestroomButton:hover {
-  background-position: 100% 50%;
-}
-
-
-.pagination {
-  margin-left: 10px;
-}
-
-
-// Footer
-footer {
-  margin-top: 25px;
-}
-
 .footer {
-  text-align: center;
-  text-size: 15px;
-  color: #41326b;
-  background-color: #ffffff;
+    text-align: center;
+    text-size: 15px;
+    color: #41326b;
+    background-color: #ffffff;
 }
-
-.numberCircle .listItem {
-  border: none;
+.centerText {
+    padding: 10px;
+    text-align: center;
 }
+.fadedText {
+    color: $gray;
+}
+.numberCircle {
+    cursor: pointer;
+}
+.mapIconImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.numberCircle .numberCircleText {
+    line-height: 37px;
+    color: #FFF;
+    text-align: center;
+}
+.showPageItem {
+    min-height: 140px;
+    border-bottom: none;
+}
+.showPageItem .itemInfo {
+    left: 25%;
+}
+.showPageItem .itemName {
+    font-weight: 600;
+    font-size: 25px;
+}
+/* was originally just ".thumbsButton" */
 
-.icon {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: {
-    size: 200% 100%;
-    position: 0 50%;
-  }
-  padding: 12px;
-  margin: 4px;
+a.thumbsButton.thumbsButton {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    line-height: 100px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    font-size: 40px;
+    background-position: 15% 50%;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+/* was originally just ".thumbsUp" */
 
-  &:hover {
+a.thumbsButton.thumbsUp {
+    background-color: #d9ebd3;
+    color: #69b74a;
+    border-radius: 0px;
+}
+a.thumbsButton.thumbsUp:hover {
+    background-color: #a2d293;
+    color: white;
+}
+/* was originally just ".thumbsDown" */
+
+a.thumbsButton.thumbsDown {
+    background-color: #f5c1c5;
+    color: #e0140b;
+    border-radius: 0px;
+    content: "";
+}
+a.thumbsButton.thumbsDown:hover {
+    background-color: #dc8189;
+    color: white;
+}
+input.thumbsButton.thumbsUp:hover {
+    background-color: blue;
+    color: orange;
+}
+.showPageContent {
+    padding: 10px;
+}
+.showPageContent #mapArea {
+    border-radius: 5px;
+    float: left;
+}
+.ratingscontainer {
+    height: 100px;
+}
+.markerPopup {
+    display: none;
+    position: absolute;
+    top: -122px;
+    left: 50%;
+    margin-left: -195px;
+    width: 370px;
+    height: 122px;
+    background-color: #FFF;
+    border: 1px solid $purple;
+    z-index: 1000;
+    color: #000;
+}
+.markerPopup .listItem {
+    position: static;
+}
+.markerPopup .listItemImage {
+    display: none;
+}
+.markerPopup .itemInfo {
+    left: 10px;
+}
+.markerPopup .itemExtraInfo {
+    top: 0;
+}
+.markerPopup .itemRating {
+    padding: 3px 0;
+}
+.itemStreet {
+    color: #000;
+}
+#mapContainer, #list {
+    overflow: hidden;
+}
+.submitRestroomButton {
+    display: inline-block;
+    background: asset-url('submit.svg') no-repeat;
+    width: 150px;
+    height: 40px;
+    max-width: 100%;
+    background-size: 200% auto;
+    margin-top: 2px;
+    margin-left: 3px;
+    background-position: 0 50%;
+}
+.submitRestroomButton:hover {
     background-position: 100% 50%;
-  }
-
-  &.iconGitHub {
-    background-image: asset-url('buttons_github.svg');
-  }
-
-  &.iconTwitter {
-    background-image: asset-url('buttons_twitter.svg');
-  }
-
-  &.iconFacebook {
-    background-image: asset-url('buttons_facebook.svg');
-  }
-
-  &.iconTumblr {
-    background-image: asset-url('buttons_tumblr.svg');
-  }
-
-  &.iconEmail {
-    background-image: asset-url('buttons_mail.svg');
-  }
 }
-
-// Contact form
-#new_contact {
-  margin-top:10px;
+.icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: {
+        size: 200% 100%;
+        position: 0 50%;
+    }
+    padding: 12px;
+    margin: 4px;
+    &:hover {
+        background-position: 100% 50%;
+    }
+    &.iconGitHub {
+        background-image: asset-url('buttons_github.svg');
+    }
+    &.iconTwitter {
+        background-image: asset-url('buttons_twitter.svg');
+    }
+    &.iconFacebook {
+        background-image: asset-url('buttons_facebook.svg');
+    }
+    &.iconTumblr {
+        background-image: asset-url('buttons_tumblr.svg');
+    }
+    &.iconEmail {
+        background-image: asset-url('buttons_mail.svg');
+    }
+}
+.hiddenText {
+    display: none;
+}
+footer {
+    margin-top: 15px;
+}
+.numberCircle .listItem {
+    border: none;
 }

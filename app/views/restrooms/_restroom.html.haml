@@ -3,7 +3,7 @@
     / image tag goes here
   .itemInfo
     .itemName= link_to_unless_current(restroom.name.titleize, restroom)
-    .itemStreet="#{restroom.street.titleize}, #{restroom.city}, #{restroom.state}"
+    .itemStreet="#{restroom.street}, #{restroom.city}, #{restroom.state}"
     - if restroom.rated?
       - rating_class_name = case RatingLevel.for_restroom(restroom)
       - when RatingLevel.green  then 'greenRating'
@@ -22,7 +22,7 @@
         miles
     - if restroom.unisex?
       .unisexRestroom
-        = image_tag "UnisexRestroom.png", {alt: "Unisex Restroom"}
+        %i.fa.fa-transgender-alt.fa-3x
     - if restroom.accessible?
       .ADARestroom
-        = image_tag "ADARestroom.png", {alt: "ADA Compliant Restroom"}
+        %i.fa.fa-wheelchair.fa-3x

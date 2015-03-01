@@ -1,40 +1,34 @@
 .minimalRestroomList {
-  display: block;
-  clear: both;
-  margin-bottom: 2em;
-
-  .listItem {
-    min-height: inherit;
+    display: block;
     clear: both;
-    padding: 5px 0;
-    border-width: 0;
-
-    .listItemImage, .itemRating, .unisexRestroom, .ADARestroom {
-      display: none;
+    margin-bottom: 2em;
+    .listItem {
+        min-height: inherit;
+        clear: both;
+        padding: 5px 0;
+        border-width: 0;
+        .listItemImage, .itemRating, .unisexRestroom, .ADARestroom {
+            display: none;
+        }
+        .itemInfo, .itemName, .itemStreet, .itemExtraInfo, .itemDistance {
+            position: relative;
+            width: auto;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .itemInfo, .itemExtraInfo {
+            top: auto;
+            right: auto;
+            bottom: auto;
+            left: auto;
+        }
+        .itemInfo, .itemName, .itemStreet {
+            float: left;
+            padding: 0 1em 0 0;
+        }
+        .itemExtraInfo, .itemDistance {
+            float: right;
+            padding: 0;
+        }
     }
-
-    .itemInfo, .itemName, .itemStreet, .itemExtraInfo, .itemDistance {
-      position: relative;
-      width: auto;
-      font-size: 14px;
-      text-decoration: none;
-    }
-
-    .itemInfo, .itemExtraInfo {
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-    }
-
-    .itemInfo, .itemName, .itemStreet {
-      float: left;
-      padding: 0 1em 0 0;
-    }
-
-    .itemExtraInfo, .itemDistance {
-      float: right;
-      padding: 0;
-    }
-  }
 }
