@@ -1,16 +1,18 @@
-#filters.clearfix
-  .btn-group{:data => {:toggle => "buttons"}}
-    %label#ada_filter.filter.btn.linkbutton
-      %input{:type => "checkbox"}
-      %i.fa.fa-wheelchair
-    %label#unisex_filter.filter.btn.linkbutton
-      %input{:type => "checkbox"}
-      %i.fa.fa-transgender-alt
-  .mapToggle.filter.linkbutton
-    Map View
-#results
-  = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do
-    #mapArea
-  #list.restrooms-list
-    = render @restrooms
-    = paginate @restrooms
+.row
+  .col-xs-12.headroom
+    #filters.clearfix
+      .btn-group{:data => {:toggle => "buttons"}}
+        %label#ada_filter.filter.btn.linkbutton
+          %input{:type => "checkbox"}
+          %i.fa.fa-wheelchair
+        %label#unisex_filter.filter.btn.linkbutton
+          %input{:type => "checkbox"}
+          %i.fa.fa-transgender-alt
+      .mapToggle.filter.linkbutton
+        Map View
+    #results.headroom
+      = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do
+        #mapArea
+      #list.restrooms-list
+        = render @restrooms
+        = paginate @restrooms
