@@ -36,7 +36,6 @@
 }
 .search .currentLocationButton {
     word-wrap: break-word;
-    background: #FFF asset-url('currentLocation.png') no-repeat;
     background-size: 75%;
     background-position: 50%;
 }
@@ -52,9 +51,6 @@
     background: #fff asset-url('loading.gif');
     background-repeat: no-repeat;
     background-position: 50%;
-    &:hover {
-        background-color: white;
-    }
 }
 .searchButton:hover, .splashcontainer .currentLocationButton:hover {
     background-color: #8377af;
