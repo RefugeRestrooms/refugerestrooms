@@ -18,10 +18,12 @@ img {
     background-color: transparent;
     border-color: #41326B;
 }
-.btn:hover, .submit:hover, .btn:focus, .submit:focus {
+button.btn:hover, button.btn:focus {
     color: white;
-    text-decoration: none;
+    background-color: #8377af;
+    border-color: #8377af;
 }
+
 header {
     background-color: $purple;
 }
