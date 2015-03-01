@@ -1,48 +1,10 @@
 @import 'variables';
 
-.search {
-    overflow: auto;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.searchBarContainer {
-    margin: 15px 130px 15px 15px;
-}
-
 .search-bar {
-    width: 99%;
-    height: 50px;
-    padding: 0 0 0 1rem;
-    margin: 0;
-    font-size: 1.2rem;
-    border-radius: $rounded-corners;
-}
-
-.header {
-    .submit-search-button {
-        border: 0;
-    }
-    .submit-search-button, .current-location-button {
-        position: absolute;
-        top: 15px;
-        padding-right: 2px;
-        padding-left: 2px;
-        width: 50px;
-        height: 50px;
-    }
-    .submit-search-button {
-        right: 15px;
-    }
-    .current-location-button {
-        right: 75px;
-    }
+    height: 42px
 }
 
 .current-location-button {
-    word-wrap: break-word;
-    background-size: 75%;
-    background-position: 50%;
     .fa-spinner {
         display: none;
     }
@@ -51,6 +13,24 @@
 .submit-search-button {
     .fa-spinner {
         display: none;
+    }
+}
+
+
+.header {
+    .search-container {
+        margin: 10px 0px
+    }
+
+    .btn {
+        margin: 0 5px
+    }
+    .current-location-button {
+        float: right
+    }
+
+    .submit-search-button {
+        float: right
     }
 }
 

@@ -16,6 +16,7 @@
  *= require _mobile
  *= require top_cities
  *= require common
+ *= require restrooms/new
  */
 
 @import 'variables';
@@ -70,22 +71,11 @@ h1 {
     background-color: $light-purple;
     color: white;
 }
-.container {
-    max-width: 900px;
-    margin: 0 auto !important;
-    background: $secondary-background;
-    width: 90%;
-    border-radius: 5px;
-}
 .textItem {
     width: 100%;
     text-align: center;
     font-family: $font-stack;
     font-size: 20px;
-}
-.container {
-    padding: 5px;
-    margin: 0 auto;
 }
 .nav {
     background: $purple;
