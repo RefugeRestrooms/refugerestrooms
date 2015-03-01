@@ -15,6 +15,7 @@
  *= require search
  *= require _mobile
  *= require top_cities
+ *= require common
  */
 
 @import 'variables';
@@ -65,7 +66,7 @@ h1 {
     background: $light-purple;
     cursor: pointer;
 }
-.addForm input[name=commit]:hover, .addForm input[type=button]:hover {
+.addForm input[name=commit]:hover, .addForm {
     background-color: $light-purple;
     color: white;
 }
