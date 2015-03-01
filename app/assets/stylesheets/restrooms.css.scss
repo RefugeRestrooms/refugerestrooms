@@ -1,3 +1,202 @@
+@import 'variables';
+
+// Restrooms List
+.restrooms-list {
+    width: 100%;
+
+    // List Item
+    .listItem {
+        position: relative;
+        width: 100%;
+        border-bottom: 1px solid #e1e1e1;
+        background: $secondary-background;
+        min-height: 13em;
+        float: none;
+    }
+    .listItemTemplate {
+        display: none;
+    }
+    // Image
+    .listItemImage {
+        position: relative;
+        width: 110px;
+        height: 110px;
+        margin: 15px 0 15px 9px;
+        border-radius: $rounded-corners;
+        background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
+        display: inline-block;
+    }
+    .listItemImage img {
+        width: 90%;
+        height: 90%;
+    }
+    // Info
+    .itemInfo {
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 150px;
+        right: 95px;
+        overflow: none;
+    }
+    .itemName a{
+        position: relative;
+        font-size: 24px;
+        width: 100%;
+    }
+    .itemStreet {
+        position: relative;
+        width: 100%;
+        font-size: 1.3rem;
+    }
+    .itemDistance {
+        position: relative;
+        color: #676767;
+        text-align: right;
+        font-size: 15px;
+        font-family: Arial;
+        padding: 5px;
+    }
+    .itemRating {
+        width: 150px;
+        background: #41326b;
+        border-radius: $rounded-corners;
+        color: #FFF;
+        text-align: center;
+        font-family: Arial;
+        font-size: 10px;
+        margin-top: 10px;
+        padding: 11px 0;
+        max-width: 100%;
+    }
+    .greenRating {
+        background: $green;
+    }
+    .yellowRating {
+        background: $yellow;
+    }
+    .redRating {
+        background: $red;
+    }
+    // ADA / Gender Neutral Filters
+    .itemExtraInfo {
+        position: absolute;
+        top: 20px;
+        right: 15px;
+    }
+    .unisexRestroom {
+        width: 45px;
+        height: 43px;
+    }
+    .ADARestroom {
+        width: 44px;
+        height: 47px;
+    }
+    .unisexRestroom img, .ADARestroom img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// Restroom Page
+// Item - Restroom header
+.showPageItem {
+    min-height: 140px;
+    border-bottom: none;
+    .listItemImage {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin:  8px 0 0 0 ;
+        border-radius: $rounded-corners;
+        background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
+        display: inline-block;
+    }
+    .itemInfo {
+        margin-left: 30px;
+        display: inline-block;
+        vertical-align: top;
+        max-width: 600px;
+    }
+    .itemName {
+    font-weight: 600;
+    font-size: 24px;
+    }
+    .itemRating {
+        width: 150px;
+        background: #41326b;
+        border-radius: $rounded-corners;
+        color: #FFF;
+        text-align: center;
+        font-family: Arial;
+        font-size: 10px;
+        margin-top: 10px;
+        padding: 11px 0;
+        max-width: 100%;
+    }
+    .itemExtraInfo {
+        width: 45px;
+        height: 43px;
+        float: right;
+    }
+}
+// Restroom Page Content
+.showPageContent {
+    padding: 10px;
+
+    // Thumbs up and down buttons
+
+    a.thumbsButton.thumbsButton {
+        position: relative;
+        max-width: 480px;
+        height: 40px;
+        margin: 0;
+        line-height: 100px;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        font-size: 16px;
+        background-position: 15% 50%;
+        background-repeat: no-repeat;
+        margin-bottom: 20px;
+    }
+    /* was originally just ".thumbsUp" */
+
+    a.thumbsButton.thumbsUp {
+        background-color: #d9ebd3;
+        color: #69b74a;
+        border-radius: 0px;
+    }
+    a.thumbsButton.thumbsUp:hover {
+        background-color: #a2d293;
+        color: white;
+    }
+    /* was originally just ".thumbsDown" */
+
+    a.thumbsButton.thumbsDown {
+        background-color: #f5c1c5;
+        color: #e0140b;
+        border-radius: 0px;
+        content: "";
+    }
+    a.thumbsButton.thumbsDown:hover {
+        background-color: #dc8189;
+        color: white;
+    }
+    input.thumbsButton.thumbsUp:hover {
+        background-color: blue;
+        color: orange;
+    }
+
+    // Map Area
+    .showPageContent #mapArea {
+        border-radius: 5px;
+        float: left;
+    }
+}
+
+
+// Minimal List
 .minimalRestroomList {
     display: block;
     clear: both;
