@@ -3,7 +3,8 @@
   %head
     = render 'layouts/head'
   %body
-    - unless @mobile
+    - if @mobile
+      - # For iOS and Android clients redirecting to our pages for input of bathrooms, we will hide the header.
       %header
         = render 'layouts/header'
     %main

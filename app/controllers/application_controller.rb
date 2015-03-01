@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :mobile_filter_header
 
   def mobile_filter_header
-    @mobile = true if params[:mobile] == true
+    @mobile = true 
   end
 
 end
