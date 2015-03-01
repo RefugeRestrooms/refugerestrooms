@@ -3,10 +3,10 @@
 class Refuge.Library.Geocoder
   statusOK: google.maps.GeocoderStatus.OK
 
-  constructor: ->
-    @_googleGeocoder = new google.maps.Geocoder()
+  geocodeSearchString: (address) =>
+    _googleGeocoder = new google.maps.Geocoder()
+    statusOK = google.maps.GeocoderStatus.OK
 
-  geocodeSearchString: (address) ->
     # This function takes in a string and geocodes it, returning two coordinates.
     # It will resolve a promise with an object that contains the
     # latitude and longtitude.
@@ -14,18 +14,18 @@ class Refuge.Library.Geocoder
     requestBody = { 'address': address }
     promise = $.Deferred()
 
-    success: (results, status) =>
-      if (status == @statusOK)
+    success = (results, status) =>
+      if (status == statusOK)
         coords =
           lat: results[0].geometry.location.lat(),
           long: results[0].geometry.location.lng()
         promise.resolve(coords)
       else
         promise.reject(status)
-    fail: (err) ->
+    fail = (err) ->
       promise.rejext(err)
 
-    @_googleGeocoder.geocode(requestBody, success, fail)
+    _googleGeocoder.geocode(requestBody, success, fail)
 
     return promise.promise()
 
