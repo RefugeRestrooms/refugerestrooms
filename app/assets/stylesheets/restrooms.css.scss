@@ -107,7 +107,7 @@
         position: relative;
         width: 100px;
         height: 100px;
-        margin:  8px 0 0 0 ;
+        margin:  6px 0 0 0 ;
         border-radius: $rounded-corners;
         background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
         display: inline-block;
@@ -142,20 +142,24 @@
 }
 // Restroom Page Content
 .showPageContent {
-    padding: 10px;
 
     // Thumbs up and down buttons
 
-    a.thumbsButton.thumbsButton {
-        position: relative;
+    .ratingscontainer {
+        border-radius: $rounded-corners;
         max-width: 480px;
-        height: 40px;
+        margin-top: -20px;
+    }
+
+    a.thumbsButton.thumbsButton {
+        width: 50%;
         margin: 0;
+        padding: 10px 30px;
         line-height: 100px;
         text-align: center;
         text-decoration: none;
         border: none;
-        font-size: 16px;
+        font-size: 18px;
         background-position: 15% 50%;
         background-repeat: no-repeat;
         margin-bottom: 20px;
