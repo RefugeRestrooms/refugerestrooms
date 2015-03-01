@@ -2,10 +2,10 @@
 
 class Refuge.Library.Geocoder
   statusOK: google.maps.GeocoderStatus.OK
+  googleGeocoder: new google.maps.Geocoder()
 
   geocodeSearchString: (address) =>
     _googleGeocoder = new google.maps.Geocoder()
-    statusOK = google.maps.GeocoderStatus.OK
 
     # This function takes in a string and geocodes it, returning two coordinates.
     # It will resolve a promise with an object that contains the
@@ -15,7 +15,7 @@ class Refuge.Library.Geocoder
     promise = $.Deferred()
 
     success = (results, status) =>
-      if (status == statusOK)
+      if (status == @statusOK)
         coords =
           lat: results[0].geometry.location.lat(),
           long: results[0].geometry.location.lng()
@@ -26,6 +26,24 @@ class Refuge.Library.Geocoder
       promise.rejext(err)
 
     _googleGeocoder.geocode(requestBody, success, fail)
+
+    return promise.promise()
+
+  getAddress: (coords) =>
+    console.log "getting address"
+    requestBody = {'location': new google.maps.LatLng(coords.lat, coords.long)}
+    promise = $.Deferred()
+
+    console.log requestBody
+    success = (results, status) ->
+      console.log results
+      if status == @statusOK
+        promise.resolve(results)
+    fail = (err) ->
+      console.log err
+      promise.fail(err)
+
+    @googleGeocoder.geocode(requestBody, success, fail)
 
     return promise.promise()
 

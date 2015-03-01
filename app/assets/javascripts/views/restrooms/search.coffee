@@ -10,8 +10,8 @@ class Refuge.Restrooms.Search
     # Define elements that will be in use in this class.
     @_form = form
     @_searchBar = @_form.find('input.search-bar')
-    @_currentLocationButton = @_form.find('input.current-location-button')
-    @_submitSearchButton = @_form.find('input.submit-search-button')
+    @_currentLocationButton = @_form.find('.current-location-button')
+    @_submitSearchButton = @_form.find('.submit-search-button')
     @_geocoder = new Refuge.Library.Geocoder
 
     # Call Initialize Methods
@@ -24,12 +24,14 @@ class Refuge.Restrooms.Search
       # On Search Current Location Button:
       # Get current location, update the form, and then submit.
       event.preventDefault()
+      @_currentLocationButton.addClass('locating')
       @_searchCurrentLocation()
 
     @_submitSearchButton.click (event) =>
       # On submit button click, We geocode the search string and return
       # the latitude and longitude update the form and then submit the form.
       event.preventDefault()
+      @_submitSearchButton.addClass('locating')
       @_preventSearchWithDefault()
       $('#lat').val() == undefined
       $('#long').val() == undefined
