@@ -6,8 +6,9 @@
         = text_field_tag :search, params[:search], :class => "searchBar form-control"
         = hidden_field_tag :lat, ""
         = hidden_field_tag :long, ""
-        %button.searchButton.submit-search-button.btn.btn-default{:title => 'Search', :value => "Search"}
+        %button.btn.btn-default.submit-search-button{:type => "button", :title => 'Search', :value => "Search"}
           %i.fa.fa-search.fa-2x
-        %button.currentLocationButton.btn.btn-default.current-location-button{:title => 'Search by current location', :value => (splash ? "Search Current Location" : nil )}
+          %i.fa.fa-spinner.fa-spin.fa-2x
+        %button.btn.btn-default.current-location-button{:type => "button", :title => 'Search by current location', :value => (splash ? "Search Current Location" : nil )}
           %i.fa.fa-location-arrow.fa-2x
           %i.fa.fa-spinner.fa-spin.fa-2x

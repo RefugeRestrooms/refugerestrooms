@@ -1,12 +1,15 @@
 @import 'variables';
+
 .search {
     overflow: auto;
     width: 100%;
     margin: 0 auto;
 }
+
 .searchBarContainer {
     margin: 15px 130px 15px 15px;
 }
+
 .searchBar {
     width: 99%;
     height: 50px;
@@ -15,11 +18,12 @@
     font-size: 1.2rem;
     border-radius: $rounded-corners;
 }
+
 .header {
-    .searchBar {
+    .submit-search-button {
         border: 0;
     }
-    .searchButton, .currentLocationButton {
+    .submit-search-button, .current-location-button {
         position: absolute;
         top: 15px;
         padding-right: 2px;
@@ -27,39 +31,52 @@
         width: 50px;
         height: 50px;
     }
-    .searchButton {
+    .submit-search-button {
         right: 15px;
     }
-    .currentLocationButton {
+    .current-location-button {
         right: 75px;
     }
 }
-.currentLocationButton {
+
+.current-location-button {
     word-wrap: break-word;
     background-size: 75%;
     background-position: 50%;
+    .fa-spinner {
+        display: none;
+    }
 }
-.currentLocationButton .fa-spinner {
-    display: none;
+
+.submit-search-button {
+    .fa-spinner {
+        display: none;
+    }
 }
+
 .splashcontainer {
     .searchBarContainer {
         margin-right: 15px;
     }
-    .currentLocationButton {
+    .current-location-button {
         background-image: none;
     }
 }
-.currentLocationButtonLocating, #guess.locating {
+
+.locating {
     background-position: 50%;
     .fa-location-arrow {
+        display: none;
+    }
+    .fa-search {
         display: none;
     }
     .fa-spinner {
         display: inherit;
     }
 }
-.searchButton:hover, .splashcontainer .currentLocationButton:hover {
+
+.submit-search-button:hover, .splashcontainer .current-location-button:hover {
     background-color: #8377af;
     border-color: #8377af;
 }
