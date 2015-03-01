@@ -30,17 +30,14 @@ class Refuge.Library.Geocoder
     return promise.promise()
 
   getAddress: (coords) =>
-    console.log "getting address"
     requestBody = {'location': new google.maps.LatLng(coords.lat, coords.long)}
     promise = $.Deferred()
 
     console.log requestBody
-    success = (results, status) ->
-      console.log results
+    success = (results, status) =>
       if status == @statusOK
         promise.resolve(results)
     fail = (err) ->
-      console.log err
       promise.fail(err)
 
     @googleGeocoder.geocode(requestBody, success, fail)

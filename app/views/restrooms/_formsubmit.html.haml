@@ -1,10 +1,11 @@
 %h1= t('restroom.add_new')
+
 = simple_form_for @restroom, html: {class: 'submit-new-bathroom-form form-vertical'} do |f|
   %h5= t('restroom.required')
   .clearfix
     %button.btn.btn-default.guess-btn{:type => "button", :value => t('restroom.guess_location')}
       = t('restroom.guess_location')
-      %i.fa.fa-spinner.fa-spin.fa-2x
+      %i.fa.fa-refresh.fa-spin.fa-2x
 
   .nearby-container
     // Content of nearby restrooms gets rendered here.

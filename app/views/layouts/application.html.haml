@@ -5,10 +5,11 @@
   %body
     %header
       = render 'layouts/header'
-    %main{:role => "main"}
+    %main
       .container
         = render 'layouts/messages'
         = yield
         = render 'layouts/footer'
+
     = render 'layouts/ga_tag'
     = piwik_tracking_tag

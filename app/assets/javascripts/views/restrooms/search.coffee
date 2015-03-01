@@ -8,15 +8,23 @@ class Refuge.Restrooms.Search
 
   constructor: (form) ->
     # Define elements that will be in use in this class.
+    @_geocoder = new Refuge.Library.Geocoder
     @_form = form
     @_searchBar = @_form.find('input.search-bar')
+
     @_currentLocationButton = @_form.find('.current-location-button')
     @_submitSearchButton = @_form.find('.submit-search-button')
-    @_geocoder = new Refuge.Library.Geocoder
+
 
     # Call Initialize Methods
+    @_initAutocomplete()
     @_bindEvents()
     @_setDefaultText()
+
+
+  _initAutocomplete: =>
+    input = document.getElementById('search')
+    new google.maps.places.SearchBox(input)
 
 
   _bindEvents: =>
@@ -39,6 +47,12 @@ class Refuge.Restrooms.Search
         @_searchCurrentLocation()
       else
         @_searchQueryString()
+
+    @_form.on "keypress", (event) =>
+      if event.keyCode == 13
+        event.preventDefault()
+        @_submitSearchButton.click()
+        return false
 
 
   _searchQueryString: =>
@@ -71,7 +85,7 @@ class Refuge.Restrooms.Search
 
       @_searchBar.focus =>
         @_searchBar.removeClass("fadedText")
-        @_searchBar.val("")
+        @_searchBar.val("") if @_searchBar.val() == @searchDefaultText
 
         @_searchBar.blur =>
           @_setDefaultText()

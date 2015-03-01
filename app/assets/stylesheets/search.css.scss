@@ -5,13 +5,13 @@
 }
 
 .current-location-button {
-    .fa-spinner {
+    .fa-refresh {
         display: none;
     }
 }
 
 .submit-search-button {
-    .fa-spinner {
+    .fa-refresh {
         display: none;
     }
 }
@@ -25,22 +25,11 @@
     .btn {
         margin: 0 5px
     }
-    .current-location-button {
+
+    .search-btn-container {
         float: right
     }
 
-    .submit-search-button {
-        float: right
-    }
-}
-
-.splashcontainer {
-    .searchBarContainer {
-        margin-right: 15px;
-    }
-    .current-location-button {
-        background-image: none;
-    }
 }
 
 .locating {
@@ -51,8 +40,11 @@
     .fa-search {
         display: none;
     }
-    .fa-spinner {
+    .fa-refresh {
         display: inherit;
+    }
+    .btn-text {
+        display: none
     }
 }
 
