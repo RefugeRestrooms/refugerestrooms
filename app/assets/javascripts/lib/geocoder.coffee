@@ -1,9 +1,33 @@
 # TODO: Update API To NOT USE GOOGLE and use Open Source
 
 class Refuge.Library.Geocoder
-  geocodeSearchString: (string) ->
-    # This function takes in a string and geocodes, returning two coordinates
-    # a latitutde and longitude of the location of the search string.
+  statusOK: google.maps.GeocoderStatus.OK
+
+  constructor: ->
+    @_googleGeocoder = new google.maps.Geocoder()
+
+  geocodeSearchString: (address) ->
+    # This function takes in a string and geocodes it, returning two coordinates.
+    # It will resolve a promise with an object that contains the
+    # latitude and longtitude.
+
+    requestBody = { 'address': address }
+    promise = $.Deferred()
+
+    success: (results, status) =>
+      if (status == @statusOK)
+        coords =
+          lat: results[0].geometry.location.lat(),
+          long: results[0].geometry.location.lng()
+        promise.resolve(coords)
+      else
+        promise.reject(status)
+    fail: (err) ->
+      promise.rejext(err)
+
+    @_googleGeocoder.geocode(requestBody, success, fail)
+
+    return promise.promise()
 
 
   getCurrentLocation: ->
@@ -29,6 +53,6 @@ class Refuge.Library.Geocoder
       navigator.geolocation.getCurrentPosition( success, error, options )
     else
       # Geolocation not supported
-      promise.reject(NOT_SUPPORTED)
+      promise.reject("Not Supported")
 
     return promise.promise()

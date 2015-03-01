@@ -8,7 +8,6 @@ class Refuge.Restrooms.Search
 
   constructor: (form) ->
     # Define elements that will be in use in this class.
-    console.log("initializing search")
     @_form = form
     @_searchBar = @_form.find('input.search-bar')
     @_currentLocationButton = @_form.find('input.current-location-button')
@@ -21,34 +20,35 @@ class Refuge.Restrooms.Search
 
 
   _bindEvents: =>
-    # Bind the events to occur on button click.
-    @_bindSearchButton()
-    @_bindCurrentLocationButton()
+    @_currentLocationButton.click (event) =>
+      # On Search Current Location Button:
+      # Get current location, update the form, and then submit.
+      event.preventDefault()
+      @_searchCurrentLocation()
 
-
-  _bindSearchButton: =>
-    # On submit button click, We geocode the search string and return
-    # the latitude and longitude update the form and then submit the form.
-    @_submitSearchButton.click (event) ->
+    @_submitSearchButton.click (event) =>
+      # On submit button click, We geocode the search string and return
+      # the latitude and longitude update the form and then submit the form.
       event.preventDefault()
       @_preventSearchWithDefault()
-      console.log ("You hit the submit button")
       $('#lat').val() == undefined
       $('#long').val() == undefined
-      @_geocoder.geocodeSearchString(string).then (searchCoords) =>
-        @_updateForm(searchCoords.lat, searchCoords.long)
-        @_form.submit()
+      if @_searchBar.val() == ""
+        @_searchCurrentLocation()
+      else
+        @_searchQueryString()
 
 
-  _bindCurrentLocationButton: =>
-    # On Search Current Location Button:
-    # Get current location, update the form, and then submit.
-    @_currentLocationButton.click (event) =>
-      event.preventDefault()
-      console.log("You tried to search your current location")
-      @_geocoder.getCurrentLocation().then (currentCoords) =>
-        @_updateForm(currentCoords.lat, currentCoords.long, "Current Location")
-        @_form.submit()
+  _searchQueryString: =>
+    @_geocoder.geocodeSearchString(@_searchBar.val()).then (searchCoords) =>
+      @_updateForm(searchCoords.lat, searchCoords.long)
+      @_form.submit()
+
+
+  _searchCurrentLocation: =>
+    @_geocoder.getCurrentLocation().then (currentCoords) =>
+      @_updateForm(currentCoords.lat, currentCoords.long, "Current Location")
+      @_form.submit()
 
 
   _updateForm: (lat,long,searchString = undefined) =>
@@ -60,8 +60,7 @@ class Refuge.Restrooms.Search
 
   _preventSearchWithDefault: ->
     if @_searchBar.hasClass("fadedText") && @_searchBar.val() == @searchDefaultText
-      @_searchBox.val("")
-
+      @_searchBar.val("")
 
   _setDefaultText: =>
     if @_searchBar.val() == ""
