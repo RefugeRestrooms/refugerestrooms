@@ -1,6 +1,7 @@
 module API
   module V2
     class Api::V2::RestroomsController < ApplicationController
+      protect_from_forgery with: :null_session
 
       before_filter :list_restrooms, only: [:index]
       before_filter :find_restroom, only: [:show, :update]
@@ -27,6 +28,17 @@ module API
         end
       end
 
+      def create
+        @restroom = Restroom.new(creation_params)
+        if @restroom.spam?
+          render status: 400
+        elsif @restroom.save
+          render status: 201, json: @restroom
+        else
+          render status: 500
+        end
+      end
+
       private
 
       def find_restroom
@@ -42,6 +54,27 @@ module API
         else
           @restrooms.reverse_order
         end
+      end
+
+      def creation_params
+        required_params = [
+          :name,
+          :street,
+          :city,
+          :state,
+          :country,
+          :accessible,
+          :unisex,
+        ]
+
+        optional_params = [
+          :comment,
+          :directions,
+        ]
+
+        required_params.each { |param| params.require(param) }
+
+        params.permit(required_params + optional_params)
       end
 
       def permitted_params
