@@ -3,8 +3,11 @@
   .search
     = form_tag restrooms_path, class: "search-restrooms-form", method: :get do
       .searchBarContainer
-        = text_field_tag :search, params[:search], :class => "search-bar form-control"
-      = hidden_field_tag :lat, ""
-      = hidden_field_tag :long, ""
-      = submit_tag "Search", :type => 'button', :name => nil, :class=> "submit-search-button btn btn-default"
-      = submit_tag "", :type => 'button', :name => nil, :class=> "current-location-button btn btn-default", :title => 'Search by current location', :value => (splash ? "Search Current Location" : nil)
+        = text_field_tag :search, params[:search], :class => "searchBar form-control"
+        = hidden_field_tag :lat, ""
+        = hidden_field_tag :long, ""
+        %button.searchButton.submit-search-button.btn.btn-default{:title => 'Search', :value => "Search"}
+          %i.fa.fa-search.fa-2x
+        %button.currentLocationButton.btn.btn-default.current-location-button{:title => 'Search by current location', :value => (splash ? "Search Current Location" : nil )}
+          %i.fa.fa-location-arrow.fa-2x
+          %i.fa.fa-spinner.fa-spin.fa-2x

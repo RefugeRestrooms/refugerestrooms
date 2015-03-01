@@ -1,75 +1,65 @@
 @import 'variables';
-
 .search {
-  overflow: auto;
-  width: 100%;
-  margin: 0 auto;
+    overflow: auto;
+    width: 100%;
+    margin: 0 auto;
 }
-
 .searchBarContainer {
-  margin: 15px 130px 15px 15px;
+    margin: 15px 130px 15px 15px;
 }
-
 .searchBar {
-  width: 99%;
-  height: 50px;
-  padding: 0 0 0 1rem;
-  margin: 0;
-  font-size: 1.2rem;
-  border-radius: $rounded-corners;
-}
-
-
-.header {
-  .searchBar {
-    border: 0;
-  }
-
-  .searchButton, .currentLocationButton {
-    position: absolute;
-    top: 15px;
-    padding-right: 2px;
-    padding-left: 2px;
-    width: 50px;
+    width: 99%;
     height: 50px;
-  }
-
-  .searchButton {
-    right: 15px;
-  }
-
-  .currentLocationButton {
-    right: 75px;
-  }
+    padding: 0 0 0 1rem;
+    margin: 0;
+    font-size: 1.2rem;
+    border-radius: $rounded-corners;
 }
-
-.search .currentLocationButton {
-  word-wrap: break-word;
-  background: #FFF asset-url('currentLocation.png') no-repeat;
-  background-size: 75%;
-  background-position: 50%;
+.header {
+    .searchBar {
+        border: 0;
+    }
+    .searchButton, .currentLocationButton {
+        position: absolute;
+        top: 15px;
+        padding-right: 2px;
+        padding-left: 2px;
+        width: 50px;
+        height: 50px;
+    }
+    .searchButton {
+        right: 15px;
+    }
+    .currentLocationButton {
+        right: 75px;
+    }
 }
-
+.currentLocationButton {
+    word-wrap: break-word;
+    background-size: 75%;
+    background-position: 50%;
+}
+.currentLocationButton .fa-spinner {
+    display: none;
+}
 .splashcontainer {
-  .searchBarContainer {
-    margin-right: 15px;
-  }
-
-  .currentLocationButton {
-   background-image: none;
- }
+    .searchBarContainer {
+        margin-right: 15px;
+    }
+    .currentLocationButton {
+        background-image: none;
+    }
 }
-
-.search .currentLocationButtonLocating, #guess.locating {
-  background: #fff asset-url('loading.gif');
-  background-repeat: no-repeat;
-  background-position: 50%;
-  &:hover {
-    background-color: white;
-  }
+.currentLocationButtonLocating, #guess.locating {
+    background-position: 50%;
+    .fa-location-arrow {
+        display: none;
+    }
+    .fa-spinner {
+        display: inherit;
+    }
 }
-
-.searchButton:hover,.splashcontainer .currentLocationButton:hover {
-  background-color:#8377af;
-  border-color:#8377af;
+.searchButton:hover, .splashcontainer .currentLocationButton:hover {
+    background-color: #8377af;
+    border-color: #8377af;
 }
