@@ -34,10 +34,13 @@
         right: 75px;
     }
 }
-.search .currentLocationButton {
+.currentLocationButton {
     word-wrap: break-word;
     background-size: 75%;
     background-position: 50%;
+}
+.currentLocationButton .fa-spinner {
+    display: none;
 }
 .splashcontainer {
     .searchBarContainer {
@@ -47,10 +50,14 @@
         background-image: none;
     }
 }
-.search .currentLocationButtonLocating, #guess.locating {
-    background: #fff asset-url('loading.gif');
-    background-repeat: no-repeat;
+.currentLocationButtonLocating, #guess.locating {
     background-position: 50%;
+    .fa-location-arrow {
+        display: none;
+    }
+    .fa-spinner {
+        display: inherit;
+    }
 }
 .searchButton:hover, .splashcontainer .currentLocationButton:hover {
     background-color: #8377af;
