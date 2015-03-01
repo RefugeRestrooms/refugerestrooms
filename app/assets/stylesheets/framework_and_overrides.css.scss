@@ -10,22 +10,20 @@ img {
 .navbar-brand {
     font-size: inherit;
 }
+
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
     color: $light-purple
 }
+
 .navbar-default {
     width: 100%;
     background-color: transparent;
     border-color: #41326B;
 }
-.btn {
-    color: white;
-    background-color: #8377af;
-    border-color: #6756A8;
-}
+
 .btn-group > .btn {
     min-width: 75px;
-} 
+}
 button.btn:hover, button.btn:focus {
     color: white;
     background-color: #8377af;
