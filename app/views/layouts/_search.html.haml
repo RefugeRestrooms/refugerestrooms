@@ -3,7 +3,7 @@
   .search
     = form_tag restrooms_path, class: "search-restrooms-form", method: :get do
       .searchBarContainer
-        = text_field_tag :search, params[:search], :class => "searchBar form-control"
+        = text_field_tag :search, params[:search], :class => "search-bar form-control"
         = hidden_field_tag :lat, ""
         = hidden_field_tag :long, ""
         %button.btn.btn-default.submit-search-button{:type => "button", :title => 'Search', :value => "Search"}
