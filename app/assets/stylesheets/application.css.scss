@@ -8,8 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require framework_and_overrides
+ *= require_self
  *= require restrooms
  *= require nav
  *= require search
@@ -37,21 +37,26 @@ body {
     height: 0;
     overflow: hidden;
 }
+
 .clearfix:after {
     clear: both;
 }
+
 input {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     border-radius: 0;
 }
+
 h1 {
     padding: 5px;
     text-align: center;
 }
+
 .splashcontainer {
     margin-top: 0px;
 }
+
 .addForm {
     max-width: 720px;
     width: 80%;
@@ -77,12 +82,7 @@ h1 {
     font-family: $font-stack;
     font-size: 20px;
 }
-.nav {
-    background: $purple;
-}
-.nav2 {
-    background: $dark-purple;
-}
+
 .toiletLogo {
     width: 45px;
     height: 45px;

@@ -143,55 +143,6 @@
 // Restroom Page Content
 .showPageContent {
 
-    // Thumbs up and down buttons
-
-    .ratingscontainer {
-        border-radius: $rounded-corners;
-        max-width: 480px;
-        margin-top: -20px;
-    }
-
-    a.thumbsButton.thumbsButton {
-        width: 50%;
-        margin: 0;
-        padding: 10px 30px;
-        line-height: 100px;
-        text-align: center;
-        text-decoration: none;
-        border: none;
-        font-size: 18px;
-        background-position: 15% 50%;
-        background-repeat: no-repeat;
-        margin-bottom: 20px;
-    }
-    /* was originally just ".thumbsUp" */
-
-    a.thumbsButton.thumbsUp {
-        background-color: #d9ebd3;
-        color: #69b74a;
-        border-radius: 0px;
-    }
-    a.thumbsButton.thumbsUp:hover {
-        background-color: #a2d293;
-        color: white;
-    }
-    /* was originally just ".thumbsDown" */
-
-    a.thumbsButton.thumbsDown {
-        background-color: #f5c1c5;
-        color: #e0140b;
-        border-radius: 0px;
-        content: "";
-    }
-    a.thumbsButton.thumbsDown:hover {
-        background-color: #dc8189;
-        color: white;
-    }
-    input.thumbsButton.thumbsUp:hover {
-        background-color: blue;
-        color: orange;
-    }
-
     // Map Area
     .showPageContent #mapArea {
         border-radius: 5px;

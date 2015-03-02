@@ -1,11 +1,21 @@
 @import 'bootstrap';
 @import 'variables';
+
 // import the CSS framework
 // make all images responsive by default
+
+body {
+    font-family: $font-stack;
+    font-size: 1em;
+    background: white;
+    color: $base-color;
+}
+
 img {
     @extend .img-responsive;
     margin: 0 auto;
 }
+
 // override for the 'Home' navigation link
 .navbar-brand {
     font-size: inherit;
@@ -21,14 +31,6 @@ img {
     border-color: #41326B;
 }
 
-.btn-group > .btn {
-    min-width: 75px;
-}
-button.btn:hover, button.btn:focus {
-    color: white;
-    background-color: #8377af;
-    border-color: #8377af;
-}
 header {
     background-color: $purple;
 }

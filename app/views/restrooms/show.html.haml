@@ -1,10 +1,12 @@
-.headroom
-  .listItem.showPageItem{"data-id" => @restroom.id}
-    = render partial: 'restrooms/restroom', locals: { restroom: @restroom }
-  .showPageContent
-    .ratingscontainer
-      .btn-group.updown-btn-group
+.row.headroom
+  .col-xs-12
+    .listItem.showPageItem{"data-id" => @restroom.id}
+      = render partial: 'restrooms/restroom', locals: { restroom: @restroom }
 
+.showPageContent
+  .row
+    .col-xs-12
+      .btn-group{role: "group"}
         = link_to restroom_path(restroom: { upvote: true }),
                     method: 'put' do
           %button.btn.btn-lg.btn-success
@@ -16,16 +18,21 @@
           %button.btn.btn-lg.btn-danger
             %i.fa.fa-thumbs-down
             Thumbs Down
+  .row.headroom
+    .col-xs-12
 
-
-    %p
-      %strong #{t('restrooom.directions')}:
-      = @restroom.directions
-    %p
-      %strong #{t('restroom.comments')}:
-      = @restroom.comment
-    %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id, restroom_name: @restroom.name)
-    #map
-      %div#mapArea{ data: { latitude: @restroom.latitude, longitude: @restroom.longitude } }
-    %hr
-    = render partial: 'layouts/disqus_tag', locals: { identifier: "restroom-#{@restroom.id}", title: @restroom.name, url: request.original_url }
+      %p
+        %strong #{t('restrooom.directions')}:
+        = @restroom.directions
+      %p
+        %strong #{t('restroom.comments')}:
+        = @restroom.comment
+      %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id, restroom_name: @restroom.name)
+  .row
+    .col-xs-12
+      #map
+        %div#mapArea{ data: { latitude: @restroom.latitude, longitude: @restroom.longitude } }
+      %hr
+  .row
+    .col-xs-12
+      = render partial: 'layouts/disqus_tag', locals: { identifier: "restroom-#{@restroom.id}", title: @restroom.name, url: request.original_url }

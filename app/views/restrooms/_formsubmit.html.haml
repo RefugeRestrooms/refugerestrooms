@@ -3,7 +3,7 @@
 = simple_form_for @restroom, html: {class: 'submit-new-bathroom-form form-vertical'} do |f|
   %h5= t('restroom.required')
   .clearfix
-    %button.btn.btn-dark-purple.guess-btn{:type => "button", :value => t('restroom.guess_location')}
+    %button.btn.btn-light-purple.guess-btn{:type => "button", :value => t('restroom.guess_location')}
       = t('restroom.guess_location')
       %i.fa.fa-refresh.fa-spin
 
