@@ -1,0 +1,37 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin text-shadow($attributes...){
+  -webkit-text-shadow: $attributes;
+  -moz-text-shadow:    $attributes;
+  text-shadow:         $attributes;
+}
+
+@mixin box-shadow($attributes...){
+  -webkit-box-shadow: $attributes;
+  -moz-box-shadow:    $attributes;
+  box-shadow:         $attributes;
+}
+
+@mixin shadow($color) {
+  @include box-shadow(0px 0px 15px 0px $color);
+}
+
+@mixin inset-shadow($color) {
+  @include box-shadow(inset 0px 0px 15px 0px $color);
+}
+
+@mixin top-bottom-inset-shadow($offset, $blur, $spread, $color) {
+  @include box-shadow(inset 0px $offset $blur $spread $color, inset 0px #{-$offset} $blur $spread $color);
+}
+
+@mixin inset-text-shadow {
+  text-shadow: 1px 1px 0 white;
+}
+
+@mixin outset-text-shadow {
+  text-shadow: -1px -1px 0 white;
+}

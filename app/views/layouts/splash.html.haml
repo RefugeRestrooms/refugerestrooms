@@ -5,7 +5,8 @@
   %body
     .splash-background
       = render 'layouts/navigation'
-      = yield
+      .container
+        = yield
       = render 'layouts/footer'
     = render 'layouts/ga_tag'
     = piwik_tracking_tag

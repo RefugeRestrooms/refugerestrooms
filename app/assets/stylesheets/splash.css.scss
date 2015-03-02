@@ -1,3 +1,5 @@
+@import 'refuge_core';
+
 .splash-background {
   background: image-url('city-photo.jpg') no-repeat 50% 50% fixed;
   -webkit-background-size: cover;
@@ -10,7 +12,7 @@
   nav {
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
+    @include border-radius(5px);
   }
 
   footer {
@@ -37,7 +39,7 @@
   padding: 75px 10px 0px 10px;
 
   .splash-text-container {
-    border-radius: 5px;
+    @include border-radius(5px);
     color: white;
     background: rgb(0, 0, 0); /* fallback color */
     background: rgba(0, 0, 0, 0.7);
@@ -60,6 +62,7 @@
     font-size: 16pt;
     font-weight: bold;
     margin-bottom: 40px;
+    @include box-shadow(7px 7px 24px 0px rgba(50, 50, 50, 0.75));
 
     i {
       vertical-align: middle;
