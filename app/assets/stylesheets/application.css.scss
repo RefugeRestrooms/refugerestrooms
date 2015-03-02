@@ -20,15 +20,7 @@
  */
 
 @import 'variables';
-body {
-    font-family: $font-stack;
-    font-size: .8em;
-    background: $purple;
-    color: $base-color;
-}
-.clearfix {
-    zoom: 1;
-}
+
 /* IE < 8 */
 
 .clearfix:before, .clearfix:after {
