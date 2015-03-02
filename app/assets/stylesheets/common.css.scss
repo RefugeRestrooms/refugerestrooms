@@ -1,7 +1,10 @@
 @import 'variables';
 
+.centered-text {
+  text-align: center
+}
 
-// Headroom Classes
+// Headroom / Footroom Classes
 .min-headroom {
   margin-top: 10px
 }
@@ -18,16 +21,33 @@
   margin-top: 60px
 }
 
+.footroom {
+  margin-bottom: 20px
+}
+
 // Buttons
 
-// .btn-light-purple {
-//   color: white;
-//   background-color: #8377af;
-//   border-color: #6756A8;
+.btn-dark-purple {
+  color: white;
+  background-color: $dark-purple;
+}
 
-//   &:hover, &:focus {
-//     color: white;
-//     background-color: #8377af;
-//     border-color: #8377af;
-//   }
-// }
+.btn-purple {
+  color: white;
+  background-color: $purple;
+  &:hover, &:focus {
+    color: white
+  }
+}
+
+.btn-light-purple {
+  color: white;
+  background-color: $light-purple;
+  border-color: $light-purple;
+
+  &:hover, &:focus {
+    color: white;
+    background-color: $light-purple;
+    border-color: $light-purple;
+  }
+}

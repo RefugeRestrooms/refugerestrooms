@@ -1,10 +1,30 @@
 @import 'variables';
-.navbar-default .navbar-nav > li > a {
+
+.navbar-default{
+  padding: 5px 0px;
+  background-color: transparent;
+  border-color: transparent;
+
+  .navbar-brand {
     color: white;
     &:hover {
-        color: $light-purple;
+      color: white
     }
-}
-.navbar-default .navbar-brand {
+  }
+
+  ul.navbar-nav > li > a {
+    font-size: 10pt;
     color: white;
+    &:hover {
+      color: white
+    }
+  }
+
+  .navbar-toggle {
+    color: white;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
 }

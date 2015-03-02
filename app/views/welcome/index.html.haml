@@ -1,17 +1,18 @@
-.row
-  .col-xs-12
-    .imgsplash
-      = image_tag('logo-dark.svg')
+.splash-content
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2
+      .splash-text-container.centered-text
+        %h3.headroom
+          Sometimes life is tough...
+        %h1.centered-text
+          Find Your Refuge
 
-= render partial: "layouts/search", locals: {splash: true}
+  .row.more-headroom
+    .col-xs-12.col-sm-8.col-sm-offset-2
+      = render partial: "layouts/search", locals: {splash: true}
 
-.row.splash-content
-  .col-md-6
-    = render "topcities"
-  .col-md-6
-    .centerText
-      %p{:id => "preamble"}
-        = t('landing.development',
-        contact_link: (link_to 'message', contact_path),
-        github_link: (link_to 'Github',
-        "http://www.github.com/RefugeRestrooms/refugerestrooms") ).html_safe
+  .row.more-headroom
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      = button_to new_restroom_path, method: :get, class: "btn btn-lg btn-purple splash-add-restroom-btn" do
+        Add A Restroom
+        %i.fa.fa-plus-square-o.fa-2x

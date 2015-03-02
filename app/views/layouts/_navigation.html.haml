@@ -5,13 +5,13 @@
         / Brand and toggle get grouped for better mobile display
         .navbar-header
           %a#logo.toiletLogo{:href => "/"}
-          = link_to 'REFUGE restrooms', root_path, class: 'navbar-brand'
+          = link_to 'Refuge Restrooms', root_path, class: 'navbar-brand'
           %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
-            %span.fa.fa-bars.fa-2x
+            %i.fa.fa-bars.fa-2x
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
+          %ul.nav.navbar-nav.navbar-right
             %li= link_to "Submit a New Restroom", new_restroom_path
             %li= link_to 'About', about_path
             %li= link_to 'Contact', contact_path

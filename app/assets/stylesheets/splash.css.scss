@@ -1,0 +1,69 @@
+.splash-background {
+  background: image-url('city-photo.jpg') no-repeat 50% 50% fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100vh;
+
+  nav {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+  }
+
+  footer {
+    color: white;
+    background-color: transparent;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    height: 60px;
+    a {
+      color: white;
+      text-decoration: underline;
+      &.iconLink {
+        text-decoration: none
+      }
+    }
+  }
+
+}
+
+.splash-content {
+  padding: 75px 10px 0px 10px;
+
+  .splash-text-container {
+    border-radius: 5px;
+    color: white;
+    background: rgb(0, 0, 0); /* fallback color */
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 52pt;
+    padding-bottom: 20px
+  }
+
+  h3 {
+    font-weight: 400;
+    padding-top: 20px
+  }
+
+  .splash-add-restroom-btn {
+    margin: 0 auto;
+    display: block;
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    i {
+      vertical-align: middle;
+      margin-left: 20px
+    }
+  }
+}

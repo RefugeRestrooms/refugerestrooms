@@ -3,11 +3,9 @@
   %head
     = render 'layouts/head'
   %body
-    .splashcontainer
-      %header
-        = render 'layouts/navigation'
-      .container
-        = yield
-        = render 'layouts/footer'
+    .splash-background
+      = render 'layouts/navigation'
+      = yield
+      = render 'layouts/footer'
     = render 'layouts/ga_tag'
     = piwik_tracking_tag

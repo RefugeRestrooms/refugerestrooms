@@ -16,21 +16,6 @@ img {
     margin: 0 auto;
 }
 
-// override for the 'Home' navigation link
-.navbar-brand {
-    font-size: inherit;
-}
-
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-    color: $light-purple
-}
-
-.navbar-default {
-    width: 100%;
-    background-color: transparent;
-    border-color: #41326B;
-}
-
 header {
     background-color: $purple;
 }
