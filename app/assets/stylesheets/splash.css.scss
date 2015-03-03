@@ -1,5 +1,13 @@
 @import 'refuge_core';
 
+html {
+  height: 100%
+}
+
+body {
+  height: 100%
+}
+
 .splash-background {
   background: image-url('city-photo.jpg') no-repeat 50% 50% fixed;
   -webkit-background-size: cover;
@@ -7,7 +15,8 @@
   -o-background-size: cover;
   background-size: cover;
   min-width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
+  padding-bottom: 60px;
 
   nav {
     background: rgb(0, 0, 0);
@@ -18,6 +27,7 @@
   footer {
     color: white;
     background-color: transparent;
+    position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -68,8 +78,8 @@
     padding-top: 20px
   }
 
-  .splash-add-restroom-container {
-    padding-bottom: 40px
+  .splash-bottom-padding {
+    padding-bottom: 60px
   }
 
   .splash-add-restroom-btn {

@@ -22,11 +22,15 @@ class Refuge.Restrooms.NewRestroomForm
         @_geocoder.getAddress(coords).then (result) =>
           console.log "hit the callback"
           if result? && result.length > 0
-            @_getNewForm(coords).then =>
+            console.log result[0].formatted_address
+            console.log result[0]
+            @_getNewForm(coords).then (data, textStatus) =>
+              console.log data
+              $('.form-container').html(data).hide().fadeIn()
               @_requestNearbyRestrooms(coords)
 
 
-  _getNewForm: =>
+  _getNewForm: (coords) =>
     $.ajax
       type: 'GET'
       url: '/restrooms/new'
@@ -36,7 +40,8 @@ class Refuge.Restrooms.NewRestroomForm
           latitude: coords.lat
           longitude: coords.long
       success: (data, textStatus) ->
-        $('.new-restrooms-form-container').html(data)
+        # $('.new-restrooms-form-container').html(data)
+
 
   _requestNearbyRestrooms: (coords) ->
     $.ajax
@@ -46,8 +51,9 @@ class Refuge.Restrooms.NewRestroomForm
         nearby: true
         lat: coords.lat
         long: coords.long
-      success: (data, textStatus) ->
-        @_nearbyContainer.html(data)
+      success: (data, textStatus) =>
+        @_guessButton.removeClass('locating')
+        $('.nearby-container').html(data)
 
 $ ->
   $.fn.initializeNewRestroomForm = -> new Refuge.Restrooms.NewRestroomForm($(@))

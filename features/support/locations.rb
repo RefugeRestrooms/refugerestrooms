@@ -9,7 +9,27 @@ module Locations
 
   def mock_location(location_name)
     location = locations[location_name.to_sym]
-    page.execute_script "locator.get = function() { return jQuery.when({latitude: #{location[:latitude]}, longitude: #{location[:longitude]}}); }"
+    page.execute_script "
+      var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+      Refuge.Library.Geocoder = (function() {
+        function Geocoder() {
+          this.getAddress = __bind(this.getAddress, this);
+          this.geocodeSearchString = __bind(this.geocodeSearchString, this);
+        }
+
+        Geocoder.prototype.getCurrentLocation = function() {
+          return jQuery.when(
+            {
+              latitude: #{location[:latitude]},
+              longitude: #{location[:longitude]}
+              });
+        };
+
+        return Geocoder;
+
+      })();
+    "
   end
 end
 

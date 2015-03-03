@@ -32,7 +32,7 @@ When(/^I am in (.*) and I guess my location on the submission page$/) do |city|
 
   mock_location(city.to_sym)
 
-  find("#guess").click
+  find(".guess-btn").click
 end
 
 Then(/^I should see a spam rejection message$/) do
