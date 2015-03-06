@@ -1,85 +1,37 @@
 @import 'bootstrap';
-@import 'variables';
+@import 'refuge_core';
 
 // import the CSS framework
-
 // make all images responsive by default
+
+body {
+    overflow-x: hidden;
+    font-family: $font-stack;
+    font-size: 1em;
+    background: white;
+    color: $base-color;
+}
+
 img {
-  @extend .img-responsive;
-  margin: 0 auto;
-  }
-// override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
-
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: $light-purple
+    @extend .img-responsive;
+    margin: 0 auto;
 }
-
-.navbar-default {
-  width: 100%;
-  background-color: transparent;
-  border-color: #41326B;
-}
-
-.btn:hover, .submit:hover, .btn:focus, .submit:focus {
-  color: white;
-  text-decoration: none; }
 
 header {
-  background-color: $purple;
+    background-color: $purple;
 }
-
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
 
-.constraint {
-  position: relative;
-  max-width: 940px;
-  margin: auto;
-}
-
-.container {
-  @extend .constraint;
-  background-color: ffffff;
-}
-
-.column {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.form {
-  @extend .col-md-6;
-  }
-.form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
-  }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
-  }
 // apply styles to HTML elements
 // to make views framework-neutral
-main {
-  @extend .container;
-  background-color: #ffffff;
-  padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
-  }
-section {
-  @extend .row;
-  margin-top: 20px;
-  }
 
 // This fixes Bootstrap from messing with Google Maps CSS
 #mapArea img {
-  max-width: none;
+    max-width: none;
 }
 #mapArea label {
-  width: auto; display:inline;
+    width: auto;
+    display: inline;
 }

@@ -1,13 +1,30 @@
-@import 'variables';
+@import 'refuge_core';
 
-.navbar-default .navbar-nav > li > a {
-  color: white;
+.navbar-default{
+  padding: 5px 0px;
+  background-color: transparent;
+  border-color: transparent;
 
-  &:hover {
-    color: $light-purple;
+  .navbar-brand {
+    color: white;
+    &:hover {
+      color: white
+    }
   }
-}
 
-.navbar-default .navbar-brand {
-  color: white;
+  ul.navbar-nav > li > a {
+    font-size: 10pt;
+    color: white;
+    &:hover {
+      color: white
+    }
+  }
+
+  .navbar-toggle {
+    color: white;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
 }

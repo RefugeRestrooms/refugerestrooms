@@ -22,7 +22,7 @@
         miles
     - if restroom.unisex?
       .unisexRestroom
-        = image_tag "UnisexRestroom.png", {alt: "Unisex Restroom"}
+        %i.fa.fa-transgender-alt.fa-3x
     - if restroom.accessible?
       .ADARestroom
-        = image_tag "ADARestroom.png", {alt: "ADA Compliant Restroom"}
+        %i.fa.fa-wheelchair.fa-3x

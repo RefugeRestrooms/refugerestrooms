@@ -1,9 +1,9 @@
 When(/^I search for "(.*?)"$/) do |search|
   fill_in 'search', with: search
-  find('.searchButton').click
+  find('.submit-search-button').click
 end
 
 When(/^I search from (.*?)$/) do |location|
   mock_location location
-  find('.currentLocationButton').click
+  find('.current-location-button').click
 end

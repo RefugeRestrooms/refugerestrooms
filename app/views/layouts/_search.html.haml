@@ -1,10 +1,15 @@
 - splash = false if local_assigns[:splash].nil?
-.search.constraint
-  = form_tag restrooms_path, :method => :get do
-    = content_tag (splash ? :center : :div) do
-      .searchBarContainer
-        = text_field_tag :search, params[:search], :class => "searchBar form-control"
-      = hidden_field_tag :lat, ""
-      = hidden_field_tag :long, ""
-      = submit_tag "Search", :type => 'button', :name => nil, :class=> "searchButton submitButton btn btn-default"
-      = submit_tag "", :type => 'button', :name => nil, :class=> "currentLocationButton btn btn-default", :title => 'Search by current location', :value => (splash ? "Search Current Location" : nil)
+
+.row.search-container
+  = form_tag restrooms_path, class: "search-restrooms-form", method: :get do
+    = hidden_field_tag :lat, ""
+    = hidden_field_tag :long, ""
+    .input-group
+      = text_field_tag :search, params[:search], class: "form-control search-bar"
+      .input-group-btn
+        %button.btn.btn-light-purple.submit-search-button{type: "button", title: "Search", value: "Search"}
+          %i.fa.fa-search.fa-2x
+          %i.fa.fa-refresh.fa-spin.fa-2x
+        %button.btn.btn-light-purple.current-location-button{type: "button", title: "Search by Current Location", value: (splash ? "Search Current Location" : nil ) }
+          %i.fa.fa-location-arrow.fa-2x
+          %i.fa.fa-refresh.fa-spin.fa-2x

@@ -3,13 +3,15 @@
   %head
     = render 'layouts/head'
   %body
-    %header
-      = render 'layouts/navigation'
-      = render 'layouts/header'
-    %main{:role => "main"}
+    - if @mobile
+      - # For iOS and Android clients redirecting to our pages for input of bathrooms, we will hide the header.
+      %header
+        = render 'layouts/header'
+    %main
       .container
         = render 'layouts/messages'
         = yield
         = render 'layouts/footer'
+
     = render 'layouts/ga_tag'
     = piwik_tracking_tag
