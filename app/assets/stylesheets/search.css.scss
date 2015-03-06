@@ -1,56 +1,50 @@
-@import 'variables';
-.search {
-    overflow: auto;
-    width: 100%;
-    margin: 0 auto;
+@import 'refuge_core';
+
+.current-location-button {
+    .fa-refresh {
+        display: none;
+    }
 }
-.searchBarContainer {
-    margin: 15px 130px 15px 15px;
+
+.submit-search-button {
+    .fa-refresh {
+        display: none;
+    }
 }
-.searchBar {
-    width: 99%;
-    height: 50px;
-    padding: 0 0 0 1rem;
-    margin: 0;
-    font-size: 1.2rem;
-    border-radius: $rounded-corners;
-}
+
 .header {
-    .searchBar {
-        border: 0;
+
+    .search-container {
+        margin: 10px 0px
     }
-    .searchButton, .currentLocationButton {
-        position: absolute;
-        top: 15px;
-        padding-right: 2px;
-        padding-left: 2px;
-        width: 50px;
-        height: 50px;
+
+    .navbar-toggle:hover {
+        background-color: $light-purple;
+        border-color: $light-purple
     }
-    .searchButton {
-        right: 15px;
+
+}
+
+
+.search-container {
+    margin: 10px 0px;
+
+    .search-bar {
+        height: 44px;
+        border: 2px solid $purple;
     }
-    .currentLocationButton {
-        right: 75px;
+
+    .btn {
+        border: 2px solid $purple;
+        background-color: white;
+        color: $purple;
+        height: 44px;
     }
 }
-.currentLocationButton {
-    word-wrap: break-word;
-    background-size: 75%;
-    background-position: 50%;
-}
-.currentLocationButton .fa-spinner {
-    display: none;
-}
-.splashcontainer {
-    .searchBarContainer {
-        margin-right: 15px;
-    }
-    .currentLocationButton {
-        background-image: none;
-    }
-}
-.currentLocationButtonLocating, #guess.locating {
+
+
+
+.locating {
     background-position: 50%;
     color: white;
     background-color: #8377af;
@@ -58,7 +52,27 @@
     .fa-location-arrow {
         display: none;
     }
-    .fa-spinner {
+    .fa-search {
+        display: none;
+    }
+    .fa-refresh {
         display: inherit;
     }
+    .btn-text {
+        display: none
+    }
 }
+
+.current-location-button {
+    border-left: 1px solid black
+}
+
+// .submit-search-button:hover,
+// .submit-search-button:focus,
+// .current-location-button:hover,
+// .current-location-button:focus, {
+//     background-color: white;
+//     color: black;
+//     border-color: $light-purple;
+// }
+

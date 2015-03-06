@@ -1,12 +1,23 @@
-.imgsplash
-  = image_tag('logo-dark.svg')
-= render partial: "layouts/search", locals: {splash: true}
-.centerText
-  %div{:id => "welcome-container"}
-    %p
-      = render "topcities"
-    %p{:id => "preamble"}
-      = t('landing.development',
-      contact_link: (link_to 'message', contact_path),
-      github_link: (link_to 'Github',
-      "http://www.github.com/RefugeRestrooms/refugerestrooms") ).html_safe
+.splash-content
+  .row
+    .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3
+      .splash-text-container.centered-text
+        %h3.headroom
+          Sometimes life is tough...
+        %h1.centered-text
+          Find Refuge
+
+  .row.more-headroom
+    .col-xs-12.col-sm-8.col-sm-offset-2
+      = render partial: "layouts/search", locals: {splash: true}
+      = render partial: "welcome/topcities"
+
+  .row.more-headroom
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      = button_to new_restroom_path, method: :get, class: "btn btn-lg btn-purple splash-add-restroom-btn" do
+        Add A Restroom
+        %i.fa.fa-plus-square-o.fa-2x
+
+  .row.even-more-headroom.splash-bottom-padding
+    .col-xs-12.col-sm-6.col-sm-offset-3
+      = link_to image_tag("app-store.svg"), "https://itunes.apple.com/us/app/refuge-restrooms/id968531953?mt=8"

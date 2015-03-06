@@ -13,6 +13,46 @@
     .showPageItem .itemInfo {
         left: 35%;
     }
+
+    // Restrooms List
+    .restrooms-list {
+        .listItemImage {
+            width: 95px;
+            height: 95px;
+        }
+        .listItemImage img {
+            width: 90%;
+            height: 90%;
+        }
+        .itemInfo {
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 130px;
+        right: 95px;
+        overflow: none;
+    }
+    }
+
+    // Show restroom page
+    // Item
+    .showPageItem {
+        .listItemImage {
+            margin: 10px 0 0 10px;
+        }
+        .itemInfo {
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 100px;
+            right: 95px;
+            overflow: none;
+        }
+    }
+    .showPageContent {
+        padding: 10px;
+
+    }
 }
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
     .container {
@@ -21,25 +61,40 @@
     .searchBar {
         font-size: 0.7rem;
     }
-    .listItemImage {
-        width: 60px;
-        height: 60px;
-        margin: 25px 10px;
+
+    // Restrooms List
+    .restrooms-list {
+        .listItemImage {
+            width: 60px;
+            height: 60px;
+            margin: 15px 10px;
+            margin-top: 20px;
+        }
+        .itemInfo {
+            left: 90px;
+            right: 85px;
+        }
+        .itemName a{
+            position: relative;
+            font-size: 16px;
+            width: 100%;
+        }
+        .itemExtraInfo {
+            top: 0;
+        }
+        .itemDistance {
+            font-size: 12px;
+            padding-bottom: 0;
+        }
+        .itemRating {
+            font-size: 12px;
+            width: 120px;
+        }
+        .itemExtraInfo {
+        position: absolute;
+        top: 20px;
+        right: 15px;
     }
-    .itemInfo {
-        left: 80px;
-        right: 85px;
-    }
-    .itemExtraInfo {
-        top: 0;
-    }
-    .itemDistance {
-        font-size: 12px;
-        padding-bottom: 0;
-    }
-    .itemRating {
-        font-size: 12px;
-        width: 120px;
     }
     #mapArea {
         height: 200px;

@@ -3,13 +3,13 @@ Given(/^a restroom exists in Winnipeg$/) do
 end
 
 Then(/^I should( not)? see a restroom$/) do |negation|
-  expect(page).send(negation ? :not_to : :to, have_css('#results #list .listItem'))
+  expect(page).send(negation ? :not_to : :to, have_css('#list .listItem'))
 end
 
 Then(/^I should see an existing restroom nearby$/) do
-  expect(page).to have_css('#nearby .listItem')
+  page.has_css?(".nearby-container .listItem", :visible => true)
 end
 
 Then(/^I should not see an existing restroom nearby$/) do
-  expect(page).to have_css('#nearby .none')
+  page.has_css?(".nearby-container .none", :visible => true)
 end
