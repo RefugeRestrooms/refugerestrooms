@@ -69,15 +69,7 @@
         padding: 11px 0;
         max-width: 100%;
     }
-    .greenRating {
-        background: $green;
-    }
-    .yellowRating {
-        background: $yellow;
-    }
-    .redRating {
-        background: $red;
-    }
+
     // ADA / Gender Neutral Filters
     .itemExtraInfo {
         position: absolute;
@@ -121,18 +113,6 @@
     .itemName {
     font-weight: 600;
     font-size: 24px;
-    }
-    .itemRating {
-        width: 150px;
-        background: #41326b;
-        border-radius: $rounded-corners;
-        color: #FFF;
-        text-align: center;
-        font-family: Arial;
-        font-size: 10px;
-        margin-top: 10px;
-        padding: 11px 0;
-        max-width: 100%;
     }
     .itemExtraInfo {
         width: 45px;
@@ -184,5 +164,28 @@
             float: right;
             padding: 0;
         }
+    }
+}
+
+.itemRating {
+    width: 150px;
+    background: #41326b;
+    border-radius: $rounded-corners;
+    color: #FFF;
+    text-align: center;
+    font-family: Arial;
+    font-size: 10px;
+    margin-top: 10px;
+    padding: 11px 0;
+    max-width: 100%;
+
+    &.greenRating {
+    background: $green;
+    }
+    &.yellowRating {
+        background: $yellow;
+    }
+    &.redRating {
+        background: $red;
     }
 }
