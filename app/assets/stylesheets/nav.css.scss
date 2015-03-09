@@ -1,4 +1,17 @@
 @import 'variables';
+
+// Logo & Brand Name
+.nav {
+	height: 55px;
+}
+.toiletLogo {
+	margin-left: -15px;
+}
+.navbar-brand {
+	font-size: 1.33em;
+	font-weight: 500;
+}
+
 .navbar-default .navbar-nav > li > a {
     color: white;
     &:hover {

@@ -15,7 +15,7 @@
 .header {
 
     .search-container {
-        margin: 10px 0px
+        margin: 5px 0 10px 0px;
     }
 
     .navbar-toggle:hover {
@@ -41,6 +41,7 @@
         border: 2px solid $purple;
         background-color: white;
         color: $purple;
+        height: 44px;
     }
 }
 

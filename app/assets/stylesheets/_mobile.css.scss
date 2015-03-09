@@ -4,6 +4,7 @@
         padding-left: 0;
         padding-right: 0;
     }
+
     .imgsplash {
         width: 100%;
     }
@@ -13,6 +14,11 @@
     }
     .showPageItem .itemInfo {
         left: 35%;
+    }
+
+    // List Filters
+    .toggle-container {
+        margin: 0 15px;
     }
 
     // Restrooms List
@@ -26,13 +32,18 @@
             height: 90%;
         }
         .itemInfo {
-        position: absolute;
-        top: 10px;
-        bottom: 10px;
-        left: 130px;
-        right: 95px;
-        overflow: none;
-    }
+            position: absolute;
+            top: 10px;
+            bottom: 10px;
+            left: 130px;
+            right: 95px;
+            overflow: none;
+        }
+        .item
+        
+        .itemStreet {
+            font-size: 1em;
+        }
     }
 
     // Show restroom page
@@ -52,15 +63,27 @@
     }
     .showPageContent {
         padding: 10px;
-
     }
 }
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    // Nav bar
+    .navbar-brand {
+        font-size: 1.23em;
+        font-weight: 500;
+        margin-left: -15px;
+    }
+    .toiletLogo img {
+        width: 60%;
+    }
+    .navbar-toggle {
+        margin-top: 0px;
+    }
+
     .container {
         width: 100%;
     }
     .searchBar {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
 
     // Restrooms List
@@ -68,17 +91,19 @@
         .listItemImage {
             width: 60px;
             height: 60px;
-            margin: 15px 10px;
+            margin: 15px 20px;
             margin-top: 20px;
         }
         .itemInfo {
-            left: 90px;
+            left: 100px;
             right: 85px;
         }
-        .itemName a{
+        .itemName{
             position: relative;
-            font-size: 16px;
             width: 100%;
+        }
+        .itemStreet {
+            font-size: 12pt;
         }
         .itemExtraInfo {
             top: 0;
