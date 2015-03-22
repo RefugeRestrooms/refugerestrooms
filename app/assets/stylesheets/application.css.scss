@@ -101,7 +101,7 @@ h1 {
 .linkbutton.active, .linkbutton.active:focus{
     background-color: $purple;
 }
-.whitelinkbutton {
+.whitebutton {
     border: none;
     position: relative;
     float: left;
@@ -109,12 +109,16 @@ h1 {
     padding: 10px;
     margin: 5px;
     cursor: pointer;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: white;
+    color: $light-purple;
 }
-.whitelinkbutton:hover {
+.whitebutton:hover {
     background-color: $light-purple;
     color: white;
+}
+.whitebutton.active, .linkbutton.active:focus{
+    color: white;
+    background-color: $light-purple;
 }
 .filter {
     float: left;

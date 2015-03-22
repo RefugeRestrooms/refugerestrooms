@@ -54,7 +54,17 @@ class RestroomsController < ApplicationController
 
 private
   def list_restrooms
-    @restrooms = Restroom.all.page(params[:page])
+    params[:ada] ||= false
+    params[:unisex] ||= false
+    if params[:unisex] == 'true' && params[:ada] == 'true'
+      @restrooms = Restroom.where('accessible AND unisex').page(params[:page])
+    elsif params[:unisex] == 'true'
+      @restrooms = Restroom.where('unisex').page(params[:page])
+    elsif params[:ada] == 'true'
+      @restrooms = Restroom.where('accessible').page(params[:page])
+    else
+      @restrooms = Restroom.all.page(params[:page])
+    end
     @restrooms = if params[:search].present? || params[:map] == "1"
       @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
     else

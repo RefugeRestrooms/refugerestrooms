@@ -3,13 +3,22 @@
   .col-xs-12.headroom
     #filters.clearfix
       .btn-group{:data => {:toggle => "buttons"}}
-        %label#ada_filter.filter.btn.whitebutton
-          %input{:type => "checkbox"}
-          %i.fa.fa-wheelchair
-        %label#unisex_filter.filter.btn.whitebutton
-          %input{:type => "checkbox"}
-          %i.fa.fa-transgender-alt
-
+        - if params[:ada].present? && params[:ada] == 'true'
+          %label#ada_filter.filter.btn.whitebutton.active
+            %input{:type => "checkbox"}
+            %i.fa.fa-wheelchair
+        - else
+          %label#ada_filter.filter.btn.whitebutton
+            %input{:type => "checkbox"}
+            %i.fa.fa-wheelchair
+        - if params[:unisex].present? && params[:unisex] == 'true'
+          %label#unisex_filter.filter.btn.whitebutton.active
+            %input{:type => "checkbox"}
+            %i.fa.fa-transgender-alt
+        - else
+          %label#unisex_filter.filter.btn.whitebutton
+            %input{:type => "checkbox"}
+            %i.fa.fa-transgender-alt
       .map-toggle-btn.mapToggle.filter.whitebutton
         Map View
 
