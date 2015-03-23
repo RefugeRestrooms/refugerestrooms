@@ -138,11 +138,11 @@ h1 {
     font-size: 22px;
 }
 
-.filter::after {
+.filter.text::after {
     content: "Off";
 }
 
-.filter.active::after{
+.filter.text.active::after{
     content: "On";
 }
 
@@ -154,7 +154,6 @@ h1 {
 }
 .mapToggle {
     float: right;
-    border-raidus: $rounded-corners;
 }
 .mapToggle.linkbutton {
     padding: 8px;

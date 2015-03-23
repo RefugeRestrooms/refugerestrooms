@@ -4,25 +4,31 @@
     #filters.clearfix
       .btn-group{:data => {:toggle => "buttons"}}
         - if params[:ada].present? && params[:ada] == 'true'
-          %label#ada_filter.filter.btn.whitebutton.active
+          %label#ada_filter.filter.text.btn.whitebutton.active
             %input{:type => "checkbox"}
             %i.fa.fa-wheelchair
         - else
-          %label#ada_filter.filter.btn.whitebutton
+          %label#ada_filter.filter.textbtn.whitebutton
             %input{:type => "checkbox"}
             %i.fa.fa-wheelchair
         - if params[:unisex].present? && params[:unisex] == 'true'
-          %label#unisex_filter.filter.btn.whitebutton.active
+          %label#unisex_filter.filter.text.btn.whitebutton.active
             %input{:type => "checkbox"}
             %i.fa.fa-transgender-alt
         - else
-          %label#unisex_filter.filter.btn.whitebutton
+          %label#unisex_filter.filter.text.btn.whitebutton
             %input{:type => "checkbox"}
             %i.fa.fa-transgender-alt
       .btn-group.mapToggle{:data => {:toggle => "buttons"}}
-        %label#map_filter.filter.btn.whitebutton
-          %input{:type => "checkbox"}
-          Map
-        %label#list_filter.filter.btn.whitebutton
-          List
-
+        - if params[:map].present? && params[:map] == 'true'
+          %label#map_filter.filter.btn.whitebutton.active
+            %input{:type => "checkbox"}
+            Map
+          %label#list_filter.filter.btn.whitebutton
+            List
+        - else
+          %label#map_filter.filter.btn.whitebutton
+            %input{:type => "checkbox"}
+            Map
+          %label#list_filter.filter.btn.whitebutton.active
+            List

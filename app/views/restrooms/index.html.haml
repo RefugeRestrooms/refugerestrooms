@@ -15,19 +15,3 @@
         = render @restrooms
         = paginate @restrooms
 
-/ .row
-/   .col-xs-12.headroom
-/     .restrooms-index-content
-/       = content_tag 'div', id: 'map-container', data: { latitude: params[:lat], longitude: params[:long] } do
-/         #map-content
-/       .restrooms-list
-/         = render @restrooms
-/         = paginate @restrooms
-
-
-/ #results.headroom
-/   = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do
-/     #mapArea
-/   #list.restrooms-list
-/     = render @restrooms
-/     = paginate @restrooms

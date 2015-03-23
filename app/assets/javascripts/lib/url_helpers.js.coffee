@@ -1,10 +1,22 @@
 Refuge.Library.Helpers.URL = {
-    addSearchParameter: (key, value, url=document.url) ->
+    addSearchParam: (key, value, url=document.url) ->
       URI(url).addSearch(key, value)
 
-    removeSearchParameter: (key, value, url=document.url) ->
+    removeSearchParam: (key, value, url=document.url) ->
       URI(url).removeSearch(key)
 
-    replaceSearchParameter: (key, value) ->
-      @addSearchParameter(key, value, @removeSearchParameter(key))
+    replaceSearchParam: (key, value) ->
+      @addSearchParam(key, value, @removeSearchParam(key))
+
+  getParams: ->
+    query = window.location.search.substring(1)
+    raw_vars = query.split("&")
+
+    params = {}
+
+    for v in raw_vars
+      [key, val] = v.split("=")
+      params[key] = decodeURIComponent(val)
+
+    params
 }

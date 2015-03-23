@@ -5,12 +5,12 @@
 $ ->
   $('#ada_filter').click ->
     if $(this).hasClass("active")
-      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParameter('ada', false)
+      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParam('ada', false)
     else
-      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParameter('ada', true)
+      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParam('ada', true)
 
   $('#unisex_filter').click ->
     if $(this).hasClass("active")
-      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParameter('unisex', false)
+      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParam('unisex', false)
     else
-      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParameter('unisex', true)
+      window.location.href = Refuge.Library.Helpers.URL.replaceSearchParam('unisex', true)
