@@ -19,6 +19,10 @@
           %label#unisex_filter.filter.btn.whitebutton
             %input{:type => "checkbox"}
             %i.fa.fa-transgender-alt
-      .map-toggle-btn.mapToggle.filter.whitebutton
-        Map View
+      .btn-group.mapToggle{:data => {:toggle => "buttons"}}
+        %label#map_filter.filter.btn.whitebutton
+          %input{:type => "checkbox"}
+          Map
+        %label#list_filter.filter.btn.whitebutton
+          List
 

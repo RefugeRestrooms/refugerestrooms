@@ -102,15 +102,15 @@ h1 {
     background-color: $purple;
 }
 .whitebutton {
-    border: none;
+    border: 2px solid $purple;
     position: relative;
     float: left;
     border-radius: $rounded-corners;
     padding: 10px;
-    margin: 5px;
+    //margin: 5px;
     cursor: pointer;
     background-color: white;
-    color: $light-purple;
+    color: $purple;
 }
 .whitebutton:hover {
     background-color: $light-purple;

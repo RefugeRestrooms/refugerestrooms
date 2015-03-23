@@ -8,4 +8,5 @@
 
 window.Refuge = {}
 Refuge.Library = {}
+Refuge.Library.Helpers = {}
 Refuge.Restrooms = {}

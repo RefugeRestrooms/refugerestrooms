@@ -7,6 +7,9 @@
 %meta{:content => "initial-scale=1, maximum-scale=1", :name => "viewport"}/
 
 %script{:src => "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"}
+
+%script{:src => "https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.11.2/URI.min.js"}
+
 = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 = javascript_include_tag "application", "data-turbolinks-track" => true
 = csrf_meta_tags
