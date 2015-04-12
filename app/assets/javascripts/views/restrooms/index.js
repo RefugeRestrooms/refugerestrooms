@@ -1,24 +1,24 @@
 var Map = function() {
-	this.mapOn = false;
+  this.mapOn = false;
   this.mapShow = false;
-	this.mapContainer = $("#mapContainer");
-	this.list = $("#list");
+  this.mapContainer = $("#mapContainer");
+  this.list = $("#list");
   this.mapFilter = $("#map_filter");
   this.listFilter = $("#list_filter");
-	this.search = $("#search");
+  this.search = $("#search");
 
-	if (this.mapContainer.length > 0 && this.list.length > 0 && this.mapFilter.length > 0) {
-		if (!this.mapContainer.data('latitude') || !this.mapContainer.data('longitude')) {
-			//catch bad URL
-			searchLocation(this.search.val());
-		}
-		//get default height for animation later
-		this.mapHeight = this.mapContainer.height();
-		this.listHeight = this.list.height();
+  if (this.mapContainer.length > 0 && this.list.length > 0 && this.mapFilter.length > 0) {
+    if (!this.mapContainer.data('latitude') || !this.mapContainer.data('longitude')) {
+      //catch bad URL
+      searchLocation(this.search.val());
+    }
+    //get default height for animation later
+    this.mapHeight = this.mapContainer.height();
+    this.listHeight = this.list.height();
 
-		//hide the map
-		this.mapContainer.hide();
-		this.mapContainer.height(0);
+    //hide the map
+    this.mapContainer.hide();
+    this.mapContainer.height(0);
   }
 };
 
@@ -92,14 +92,14 @@ Map.prototype.updateButtons = function(click_type) {
 $(function(){
     var map = new Map();
     map.doInit();
-		$("#map_filter").click(function(){
+    $("#map_filter").click(function(){
       map.updateButtons('map');
       map.toggleMap();
     });
 
-		$("#list_filter").click(function(){
+    $("#list_filter").click(function(){
       map.updateButtons('list');
       map.toggleMap();
-		});
-	}
+    });
+  }
 );
