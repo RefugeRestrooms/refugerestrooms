@@ -13,6 +13,6 @@ en:
     p5:
       first: "<strong>First:</strong> Add listings. The database is only as big as you make it. The more listings, the more comprehensive and valuable the resource can be."
       second: "<strong>Secondly:</strong> Spread the word. Tweet. Facebook. Tumblr. Blog. Whatever it is that you do, do it. Let people know about this resource."
-      third: "<strong>Thirdly:</strong> If you know how to code, visit the github and let us know about a bug, suggest an improvement, or even contribute a little bit of code and help out the project. REFUGE is open source and we can't do it without you."
+      third: "<strong>Thirdly:</strong> If you know how to code, visit GitHub and let us know about a bug, suggest an improvement, or even contribute a little bit of code and help out the project. REFUGE is open source and we can't do it without you."
       fourth: "<strong>Fourthly: </strong> Donate. Keep your eyes peeled for an upcoming crowd funding campaign to fund some of the technology we need to use as well as to pay our fabulous designers and engineers a little bit of money for their hard and tireless work. They have been working for free to bring this service to you and we don't want anybody to work for free. Most of the core team are transgender and underemployed at this time."
-    contribute: 'Fork us and contribute on Github!'
+    contribute: 'Fork us and contribute on GitHub!'
