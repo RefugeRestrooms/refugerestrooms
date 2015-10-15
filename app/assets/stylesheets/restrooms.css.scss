@@ -70,7 +70,7 @@
         max-width: 100%;
     }
 
-    // ADA / Gender Neutral Filters
+    // ADA / Gender Neutral / Blocked Filters
     .itemExtraInfo {
         position: absolute;
         top: 20px;
@@ -83,6 +83,9 @@
     .ADARestroom {
         width: 44px;
         height: 47px;
+    }
+    .blockedRestroom {
+      color: red;
     }
     .unisexRestroom img, .ADARestroom img {
         width: 100%;
