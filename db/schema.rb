@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423031801) do
+ActiveRecord::Schema.define(version: 20151018191859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20140423031801) do
     t.integer  "downvote",   default: 0
     t.integer  "upvote",     default: 0
     t.string   "country"
+    t.boolean  "changing_table"
   end
 
 end
