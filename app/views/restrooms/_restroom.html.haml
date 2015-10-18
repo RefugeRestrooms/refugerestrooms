@@ -1,4 +1,4 @@
-%div{:class => "listItem #{restroom.unisex? ? '' : 'not_unisex'} #{restroom.accessible? ? '' : 'not_accessible'}", "data-id" => restroom.id}
+%div{:class => "listItem #{restroom.unisex? ? '' : 'not_unisex'} #{restroom.accessible? ? '' : 'not_accessible'} #{restroom.changing_table? ? '' : 'no_changing_table'}", "data-id" => restroom.id}
   .listItemImage
     / image tag goes here
   .itemInfo
@@ -26,3 +26,6 @@
     - if restroom.accessible?
       .ADARestroom
         %i.fa.fa-wheelchair.fa-3x
+    - if restroom.changing_table?
+      .changingTable
+        %i.fa.fa-child.fa-3x

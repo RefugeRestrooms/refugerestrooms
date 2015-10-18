@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20151018191859) do
     t.integer  "downvote",   default: 0
     t.integer  "upvote",     default: 0
     t.string   "country"
-    t.boolean  "changing_table"
+    t.boolean  "changing_table", default: false
   end
 
 end

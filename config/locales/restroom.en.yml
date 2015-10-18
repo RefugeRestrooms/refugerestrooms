@@ -20,6 +20,8 @@ en:
     comments: 'Comments'
     accessible: 'Accessible'
     not_accessible: 'Not accessible'
+    changing_table: 'Changing table'
+    no_changing_table: 'No changing table'
     type:
       unisex: 'Unisex / Gender neutral'
       single_stall: 'Gendered single stall or safe place'

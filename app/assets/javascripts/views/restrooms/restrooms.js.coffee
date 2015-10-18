@@ -3,15 +3,20 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('#ada_filter').click -> 
+  $('#ada_filter').click ->
     if $(this).hasClass("active")
       $('.listItem.not_accessible').show()
-    else 
+    else
       $('.listItem.not_accessible').hide()
-    
-  $('#unisex_filter').click -> 
+
+  $('#unisex_filter').click ->
     if $(this).hasClass("active")
       $('.listItem.not_unisex').show()
-    else 
+    else
       $('.listItem.not_unisex').hide()
 
+  $('#changing_table_filter').click ->
+    if $(this).hasClass("active")
+      $('.listItem.no_changing_table').show()
+    else
+      $('.listItem.no_changing_table').hide()
