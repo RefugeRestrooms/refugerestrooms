@@ -1,0 +1,27 @@
+/ Filters for ada, unisex and map toggle
+.row
+  .col-xs-12.headroom
+    #filters.clearfix
+      .btn-group{:data => {:toggle => "buttons"}}
+        - if params[:ada].present? && params[:ada] == 'true'
+          %label#ada_filter.filter.text.btn.whitebutton.active
+            %input{:type => "checkbox"}
+            %i.fa.fa-wheelchair
+        - else
+          %label#ada_filter.filter.text.btn.whitebutton
+            %input{:type => "checkbox"}
+            %i.fa.fa-wheelchair
+        - if params[:unisex].present? && params[:unisex] == 'true'
+          %label#unisex_filter.filter.text.btn.whitebutton.active
+            %input{:type => "checkbox"}
+            %i.fa.fa-transgender-alt
+        - else
+          %label#unisex_filter.filter.text.btn.whitebutton
+            %input{:type => "checkbox"}
+            %i.fa.fa-transgender-alt
+      .btn-group.mapToggle{:data => {:toggle => "buttons"}}
+        %label#map_filter.filter.btn.whitebutton
+          %input{:type => "checkbox"}
+          Map
+        %label#list_filter.filter.btn.whitebutton.active
+          List

@@ -355,7 +355,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mail_form
-  pg
+  pg (= 0.17.1)
   pg_search
   piwik_analytics (~> 1.0.2)
   poltergeist

@@ -101,20 +101,24 @@ h1 {
 .linkbutton.active, .linkbutton.active:focus{
     background-color: $purple;
 }
-.whitelinkbutton {
-    border: none;
+.whitebutton {
+    border: 2px solid $purple;
     position: relative;
     float: left;
     border-radius: $rounded-corners;
     padding: 10px;
-    margin: 5px;
+    //margin: 5px;
     cursor: pointer;
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: white;
+    color: $purple;
 }
-.whitelinkbutton:hover {
+.whitebutton:hover {
     background-color: $light-purple;
     color: white;
+}
+.whitebutton.active, .linkbutton.active:focus{
+    color: white;
+    background-color: $light-purple;
 }
 .filter {
     float: left;
@@ -134,11 +138,11 @@ h1 {
     font-size: 22px;
 }
 
-.filter::after {
+.filter.text::after {
     content: "Off";
 }
 
-.filter.active::after{
+.filter.text.active::after{
     content: "On";
 }
 
@@ -150,7 +154,6 @@ h1 {
 }
 .mapToggle {
     float: right;
-    border-raidus: $rounded-corners;
 }
 .mapToggle.linkbutton {
     padding: 8px;
