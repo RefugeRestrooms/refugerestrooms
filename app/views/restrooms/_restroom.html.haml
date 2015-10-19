@@ -26,3 +26,6 @@
     - if restroom.accessible?
       .ADARestroom
         %i.fa.fa-wheelchair.fa-3x
+    - if restroom.blocked?
+      .blockedRestroom
+        %i.fa.fa-ban.fa-3x

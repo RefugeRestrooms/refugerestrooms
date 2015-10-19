@@ -41,6 +41,8 @@ class Restroom < ActiveRecord::Base
 
   scope :accessible, -> { where(accessible: true) }
   scope :unisex, -> { where(unisex: true) }
+  scope :blocked, -> { where(blocked: true) }
+  scope :safe, -> { where(blocked: false) }
 
   scope :created_since, ->(date) { where("created_at >= ?", date) }
   scope :updated_since, ->(date) { where("updated_at >= ?", date) }
