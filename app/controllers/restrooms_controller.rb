@@ -77,6 +77,18 @@ private
   end
 
   def permitted_params
-    params.require(:restroom).permit!
+    params.require(:restroom).permit(
+      :name,
+      :street,
+      :city,
+      :state,
+      :country,
+      :accessible,
+      :unisex,
+      :directions,
+      :comment,
+      :longitude,
+      :latitude
+    )
   end
 end
