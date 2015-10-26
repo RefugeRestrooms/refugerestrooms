@@ -41,6 +41,11 @@ describe Restroom do
     it { expect(Restroom.new(accessible: true).accessible?).to be true }
   end
 
+  describe '#changing_table?' do
+    it { expect(Restroom.new.changing_table?).to be false }
+    it { expect(Restroom.new(changing_table: true).changing_table?).to be true }
+  end
+
   describe '#topcities' do
     it 'should return the top five cities with the most restroom data' do
       city_with_more_data = "City1"

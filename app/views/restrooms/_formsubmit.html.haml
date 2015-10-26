@@ -19,6 +19,7 @@
   = f.hidden_field :longitude
   = f.input :accessible, :collection => [[t('restroom.accessible'), true], [t('restroom.not_accessible'), false]], :include_blank => false
   = f.input :unisex, :collection => [[t('restroom.type.unisex'), true], [t('restroom.type.single_stall'), false]], :include_blank => false
+  = f.input :changing_table, :collection => [[t('restroom.changing_table'), true], [t('restroom.no_changing_table'), false]], :include_blank => false
   = f.input :directions, :placeholder => t('restroom.directions_hint'), :as => :text, :required => false, :input_html => { :class => "span6" }
   = f.input :comment, :placeholder => t('restroom.comments_hint'), :as => :text, :required => false, :input_html => { :class => "span6" }
   = f.button :submit, t('restroom.restsubmit'), :class => "linkbutton"
