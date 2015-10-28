@@ -29,6 +29,7 @@ gem 'grape', '0.7.0'
 gem 'grape-swagger', '~> 0.7.2'
 gem 'grape-kaminari'
 gem 'kaminari'
+gem 'high_voltage', '~> 2.4.0'
 
 # Bugsnag sends bug alerts caught in production.
 # It's free for open source projects.

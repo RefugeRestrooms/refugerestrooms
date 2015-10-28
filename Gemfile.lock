@@ -160,6 +160,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hashie (3.4.0)
+    high_voltage (2.4.0)
     hike (1.2.3)
     httparty (0.13.3)
       json (~> 1.8)
@@ -351,6 +352,7 @@ DEPENDENCIES
   grape-kaminari
   grape-swagger (~> 0.7.2)
   haml
+  high_voltage (~> 2.4.0)
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
