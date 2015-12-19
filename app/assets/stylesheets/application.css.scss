@@ -294,3 +294,19 @@ footer {
 .numberCircle .listItem {
     border: none;
 }
+
+.succeed {
+  color: green;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.failed {
+  color: red;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

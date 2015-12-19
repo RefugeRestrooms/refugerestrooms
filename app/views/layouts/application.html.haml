@@ -13,5 +13,7 @@
         = yield
         = render 'layouts/footer'
 
+    %javascript_include_tag 'validate', 'data-turbolinks-track' => true
+    
     = render 'layouts/ga_tag'
     = piwik_tracking_tag
