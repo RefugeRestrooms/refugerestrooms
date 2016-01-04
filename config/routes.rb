@@ -4,13 +4,9 @@ Rails.application.routes.draw do
   resources :restrooms, except: [:edit, :destroy]
   mount API::Base => '/api'
 
-  get '/about', to: 'welcome#about'
-  get '/signs', to: 'welcome#signs'
-  get '/text', to: 'welcome#text_msg'
   get '/contact', to: 'contacts#new'
-  get '/license', to: 'welcome#license'
-
-  root to: "welcome#index"
+  get "/*id" => 'pages#show', as: :page, format: false
+  root to: 'pages#index'
 
   resources "contacts", only: [:new, :create]
 end
