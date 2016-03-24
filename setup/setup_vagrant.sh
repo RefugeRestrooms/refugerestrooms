@@ -20,7 +20,7 @@ sudo apt-get update
 for package in "${!packages[@]}"
 do
   version=${packages["$package"]}
-  if dpkg -s $package | grep -q $version; then
+  if dpkg -s $package 2>/dev/null | grep -q "$version"; then
     echo $package' installed, skipping'
   else
     echo "installing $package, version $version..."
