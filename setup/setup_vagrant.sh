@@ -23,7 +23,7 @@ do
   if dpkg -s $package | grep -q $version; then
     echo $package' installed, skipping'
   else
-    echo 'installing '$i', version '$version'...'
+    echo "installing $package, version $version..."
     sudo apt-get install -y -q $package$version
   fi
 done
