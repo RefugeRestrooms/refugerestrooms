@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.3.0'
 
-gem 'rails', '4.1.6'
+gem 'rails', '~> 4.2.5.2'
 gem 'pg'
 gem 'pg_search'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass'
 gem 'haml'
 gem 'rails_12factor'
@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'piwik_analytics', '~> 1.0.2'
 
 gem 'geocoder', '~> 1.2.1'
-gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
+gem 'activeadmin', '1.0.0.pre2'
 gem 'devise', '~> 3.2'
 gem 'rakismet'
 
@@ -34,7 +34,6 @@ gem 'high_voltage', '~> 2.4.0'
 # Bugsnag sends bug alerts caught in production.
 # It's free for open source projects.
 gem 'bugsnag'
-
 
 gem 'rack-contrib'
 gem 'rack-cors', :require => 'rack/cors'
