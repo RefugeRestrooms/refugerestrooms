@@ -7,8 +7,9 @@ REFUGE_PATH=/vagrant
 
 # required packages
 declare -A packages
-packages=( 
+packages=(
   ["git"]="=1:1.9.1-1"
+  ["libreadline-dev"]=""
   ["nodejs"]="=0.10.25~dfsg2-2ubuntu1"
   ["phantomjs"]="=1.9.0-1"
   ["postgresql-server-dev-9.3"]=""
