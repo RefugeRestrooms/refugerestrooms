@@ -178,7 +178,7 @@ describe "Restrooms API", type: :request do
     context "filters a list of restrooms by updated date" do
       before :each do
         FactoryGirl.create(:restroom, created_at: 1.day.ago)
-        get "api/v1/restrooms/by_date", updated: true,  day: Date.today.day, month: Date.today.month, year: Date.today.year
+        get "/api/v1/restrooms/by_date", updated: true,  day: Date.today.day, month: Date.today.month, year: Date.today.year
       end
 
       it "is successful" do
