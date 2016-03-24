@@ -32,7 +32,7 @@ done
 echo 'installing rbenv...'
 cd
 if ! [ -d .rbenv ]; then
-  git clone git://github.com/sstephenson/rbenv.git .rbenv
+  git clone https://github.com/sstephenson/rbenv.git .rbenv
 fi
 if ! grep -q '.rbenv/bin' $HOME/.bashrc; then
   echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -41,7 +41,7 @@ if ! grep -q 'rbenv init' $HOME/.bashrc; then
   echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 fi
 if ! [ -d ~/.rbenv/plugins/ruby-build ]; then
-  git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 fi
 if ! grep -q ruby-build $HOME/.bashrc; then
   echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
