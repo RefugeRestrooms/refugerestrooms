@@ -3,12 +3,13 @@
 # It's only tested with ubuntu 14.04
 set -e
 
-REFUGE_PATH=/vagrant/refugerestrooms
+REFUGE_PATH=/vagrant
 
 # required packages
 declare -A packages
-packages=( 
+packages=(
   ["git"]="=1:1.9.1-1"
+  ["libreadline-dev"]=""
   ["nodejs"]="=0.10.25~dfsg2-2ubuntu1"
   ["phantomjs"]="=1.9.0-1"
   ["postgresql-server-dev-9.3"]=""
@@ -19,10 +20,10 @@ sudo apt-get update
 for package in "${!packages[@]}"
 do
   version=${packages["$package"]}
-  if dpkg -s $package | grep -q $version; then
+  if dpkg -s $package 2>/dev/null | grep -q "$version"; then
     echo $package' installed, skipping'
   else
-    echo 'installing '$i', version '$version'...'
+    echo "installing $package, version $version..."
     sudo apt-get install -y -q $package$version
   fi
 done
@@ -31,7 +32,7 @@ done
 echo 'installing rbenv...'
 cd
 if ! [ -d .rbenv ]; then
-  git clone git://github.com/sstephenson/rbenv.git .rbenv
+  git clone https://github.com/sstephenson/rbenv.git .rbenv
 fi
 if ! grep -q '.rbenv/bin' $HOME/.bashrc; then
   echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -40,7 +41,7 @@ if ! grep -q 'rbenv init' $HOME/.bashrc; then
   echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 fi
 if ! [ -d ~/.rbenv/plugins/ruby-build ]; then
-  git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 fi
 if ! grep -q ruby-build $HOME/.bashrc; then
   echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
@@ -74,7 +75,7 @@ bundle install --gemfile=$REFUGE_PATH/Gemfile
 
 # Change permissions on pg_hba.conf
 pg_hba=/etc/postgresql/9.3/main/pg_hba.conf
-sudo cp /vagrant/refugerestrooms/setup/pg_hba.conf $pg_hba
+sudo cp "$REFUGE_PATH/setup/pg_hba.conf" $pg_hba
 sudo chown postgres:postgres $pg_hba
 sudo chmod 640 $pg_hba
 sudo -u postgres psql -c 'select pg_reload_conf();' postgres
