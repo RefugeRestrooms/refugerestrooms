@@ -69,7 +69,7 @@ Channel: #refugerestrooms
 
 ## License
 
-Copyright (C) 2014 Teagan Widmer
+Copyright (C) 2014–2016 Teagan Widmer and contributors
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
