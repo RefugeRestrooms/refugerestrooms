@@ -42,11 +42,9 @@ Here are the steps to deploy:
  7. `git push` and `git push --tags`
  8. `git push production master` and run any migrations `heroku run rake db:migrate --remote production`
 
-
-
 ## Tech
 
-* Ruby Version - ruby-2.1.1
+* Ruby Version - ruby-2.3.0
 * Ruby on Rails
 * RSpec
 * Javascript
@@ -71,7 +69,7 @@ Channel: #refugerestrooms
 
 ## License
 
-Copyright (C) 2014 Teagan Widmer
+Copyright (C) 2014–2016 Teagan Widmer and contributors
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
