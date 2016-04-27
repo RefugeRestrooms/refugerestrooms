@@ -24,7 +24,9 @@
     .itemDistance
       - if restroom.respond_to?(:distance)
         = restroom.distance.round(2)
-        miles
+        miles /
+        = (restroom.distance * 1.609344).round(2)
+        kilometers
     - if restroom.unisex?
       .unisexRestroom
         %i.fa.fa-transgender-alt.fa-3x
