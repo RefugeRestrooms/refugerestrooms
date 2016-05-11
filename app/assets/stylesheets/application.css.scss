@@ -1,0 +1,291 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require framework_and_overrides
+ *= require_self
+ *= require restrooms
+ *= require nav
+ *= require search
+ *= require _mobile
+ *= require top_cities
+ *= require common
+ *= require restrooms/new
+ *= require splash
+ */
+
+@import 'refuge_core';
+
+/* IE < 8 */
+
+.clearfix:before, .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+h1 {
+    padding: 5px;
+    text-align: center;
+}
+
+.splashcontainer {
+    margin-top: 0px;
+}
+
+.addForm {
+    max-width: 720px;
+    width: 80%;
+    padding: 1px 0px 0px 10px;
+    margin: 0 auto;
+}
+.addForm input[name=commit], .addForm input[type=button] {
+    padding: 4px;
+    float: center;
+    border: none;
+    position: relative;
+    border-radius: $rounded-corners;
+    background: $light-purple;
+    cursor: pointer;
+}
+.addForm input[name=commit]:hover, .addForm {
+    background-color: $light-purple;
+    color: white;
+}
+.textItem {
+    width: 100%;
+    text-align: center;
+    font-family: $font-stack;
+    font-size: 20px;
+}
+
+.toiletLogo {
+    width: 45px;
+    height: 45px;
+    background: asset-url("logo-100x100.png");
+    background-size: 100% 100%;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    top: 2px
+}
+.linkbutton {
+    border: none;
+    position: relative;
+    border-radius: $rounded-corners;
+    padding: 10px;
+    cursor: pointer;
+    background-color: $light-purple;
+    color: #FFFFFF;
+}
+.btn.linkbutton:hover{
+    color:white;
+}
+.linkbutton.active, .linkbutton.active:focus{
+    background-color: $purple;
+}
+.whitelinkbutton {
+    border: none;
+    position: relative;
+    float: left;
+    border-radius: $rounded-corners;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.whitelinkbutton:hover {
+    background-color: $light-purple;
+    color: white;
+}
+.filter {
+    float: left;
+    font-size: 15px;
+    .toggle {
+        border-radius: $rounded-corners;
+        width: 69px;
+        height: 34px;
+        padding: 0;
+        background-size: 138px 34px;
+        background-color: $dark-purple;
+        overflow: hidden;
+        margin: 8px;
+    }
+}
+.filter i.fa{
+    font-size: 22px;
+}
+
+.filter::after {
+    content: "Off";
+}
+
+.filter.active::after{
+    content: "On";
+}
+
+.filter_off {
+    background-color: $dark-purple;
+}
+.filter_on {
+    background-color: $light-purple;
+}
+.mapToggle {
+    float: right;
+    border-raidus: $rounded-corners;
+}
+.mapToggle.linkbutton {
+    padding: 8px;
+}
+#mapArea {
+    width: 100%;
+    height: 400px;
+}
+.imgsplash {
+    width: 600px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-stack;
+    font-weight: bolder;
+    font-size: 60px;
+    line-height: 10px;
+    color: $purple;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.fontLarge {
+    font-size: 150px;
+    line-height: 150px;
+}
+
+footer {
+    overflow: hidden;
+    text-align: center;
+    font-size: 8pt;
+    color: #41326b;
+    background-color: #ffffff;
+}
+
+.centerText {
+    padding: 10px;
+    text-align: center;
+}
+.fadedText {
+    color: $gray;
+}
+.numberCircle {
+    cursor: pointer;
+}
+.mapIconImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.numberCircle .numberCircleText {
+    line-height: 37px;
+    color: #FFF;
+    text-align: center;
+}
+.ratingscontainer {
+    height: 100px;
+}
+.markerPopup {
+    display: none;
+    position: absolute;
+    top: -122px;
+    left: 50%;
+    margin-left: -195px;
+    width: 370px;
+    height: 122px;
+    background-color: #FFF;
+    border: 1px solid $purple;
+    z-index: 1000;
+    color: #000;
+}
+.markerPopup .listItem {
+    position: static;
+}
+.markerPopup .listItemImage {
+    display: none;
+}
+.markerPopup .itemInfo {
+    left: 10px;
+}
+.markerPopup .itemExtraInfo {
+    top: 0;
+}
+.markerPopup .itemRating {
+    padding: 3px 0;
+}
+.itemStreet {
+    color: #000;
+}
+#mapContainer, #list {
+    overflow: hidden;
+}
+.submitRestroomButton {
+    display: inline-block;
+    background: asset-url('submit.svg') no-repeat;
+    width: 150px;
+    height: 40px;
+    max-width: 100%;
+    background-size: 200% auto;
+    margin-top: 2px;
+    margin-left: 3px;
+    background-position: 0 50%;
+}
+.submitRestroomButton:hover {
+    background-position: 100% 50%;
+}
+.iconLink {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+}
+.icon {
+    color: #40326B;
+    &.fa-github-square:hover {
+        color: #808080;
+    }
+    &.fa-twitter-square:hover {
+        color: #5EA9DD;
+    }
+    &.fa-facebook-square:hover {
+        color: #3B5998;
+    }
+    &.fa-tumblr-square:hover {
+        color: #36465D;
+    }
+    &.fa-envelope:hover {
+        color: #BE1E2D;
+    }
+}
+.hiddenText {
+    display: none;
+}
+footer {
+    margin-top: 15px;
+}
+.numberCircle .listItem {
+    border: none;
+}
