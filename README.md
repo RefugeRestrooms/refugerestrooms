@@ -6,18 +6,18 @@ Develop CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestroo
 [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
 # REFUGE restrooms
 
-Providing safe restroom access for transgender, intersex, and gender noncomforming individuals.
+Providing safe restroom access to transgender, intersex, and gender noncomforming individuals.
 
-REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. It provides a resource for trans\* and queer individuals in need of gender neutral and other safe restrooms.
+REFUGE is an effort to fill the void left by the now-defunct Safe2Pee website. It provides a free resource to trans\* and queer individuals in need of gender neutral and other safe restrooms.
 
 This project is open source. Feel free to contribute. We could use the help.
 
 ## Deployment
 
- This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will get deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
+ This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
  
- When you want to make a release, you should do the following:
- 1. Check the status of the app on refugestaging.herokuapp.com and make sure its functional. 
+ When making a release, you should do the following:
+ 1. Check the status of the app on refugestaging.herokuapp.com and make sure it's functional. 
  2. Make sure the the most recent build of develop is passing on TravisCI
  3. Run `git flow release start %{release number}`
  4. Run `git shortlog --grep "Merge pull request #" %{previous release}..HEAD` and copy the contents into a new issue with the release tag here on github. This command gives you a list of PRs merged since the previous release.
@@ -26,7 +26,7 @@ This project is open source. Feel free to contribute. We could use the help.
   - this will trigger the heroku deploy to production. 
  
 #### Manual Releases
-Currently right now we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
+Currently, we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
 
 We have both a staging and a production instance on heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
 
@@ -71,7 +71,7 @@ Channel: #refugerestrooms
 
 Copyright (C) 2014–2016 Teagan Widmer and contributors
 
-This program is free software; you can redistribute it and/or modify
+This program is free software; you can redistribute and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation; either version 3 of the License, or
 (at your option) any later version.
