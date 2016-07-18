@@ -25,7 +25,7 @@
       - if restroom.respond_to?(:distance)
         = restroom.distance.round(2)
         miles /
-        = (restroom.distance * 1.609344).round(2)
+        = miles_to_kilometers(restroom.distance).round(2)
         kilometers
     - if restroom.unisex?
       .unisexRestroom
