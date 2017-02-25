@@ -5,7 +5,7 @@
 ### 1 Fork and clone the repository.
 
 ### 2 Install Vagrant.
-https://www.vagrantup.com/downloads
+https://www.vagrantup.com/downloads.html
 
 ### 3 Capture the powers of vagrant
   * In the repo dir: <code>vagrant up</code> (Safely ignore: 'dpkg-preconfigure: unable to re-open stdin: No such file or directory')
@@ -24,4 +24,3 @@ run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2p
 ## Testing
 
 Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
-
