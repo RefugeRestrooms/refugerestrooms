@@ -6,7 +6,7 @@ script:
   - bundle exec rake spec
   - bundle exec rake cucumber
 rvm:
-  - 2.3.0
+  - 2.3.1
 notifications:
     irc: "chat.freenode.com#refugerestrooms"
     skip_join: true
