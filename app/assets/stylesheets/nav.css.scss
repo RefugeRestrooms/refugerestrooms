@@ -10,6 +10,9 @@
     &:hover {
       color: white;
     }
+    &:focus {
+      color: $light-purple;
+    }
   }
 
   ul.navbar-nav > li > a {
