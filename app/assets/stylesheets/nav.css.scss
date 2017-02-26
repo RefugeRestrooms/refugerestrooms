@@ -8,15 +8,18 @@
   .navbar-brand {
     color: white;
     &:hover {
-      color: white
+      color: white;
+    }
+    &:focus {
+      color: $light-purple;
     }
   }
 
   ul.navbar-nav > li > a {
     font-size: 10pt;
     color: white;
-    &:hover {
-      color: white
+    &:hover, &:focus {
+      color: $light-purple;
     }
   }
 
