@@ -10,6 +10,9 @@ en:
         access: 'Accessible?'
         bath_type: 'Type of Restroom'
 
+  search_bar:
+    enter_location: 'Enter an address'
+
   restroom:
     add_new: 'Submit a restroom to our database'
     required: '* marks required field'

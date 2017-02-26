@@ -2,13 +2,13 @@
   .col-xs-12.headroom
     #filters.clearfix
       .btn-group{:data => {:toggle => "buttons"}}
-        %label#ada_filter.filter.btn.btn-light-purple.linkbutton
+        %label#ada_filter.filter.btn.btn-light-purple.linkbutton{:title => t("restroom.accessible")}
           %input{:type => "checkbox"}
           %i.fa.fa-wheelchair
-        %label#unisex_filter.filter.btn-light-purple.btn.linkbutton
+        %label#unisex_filter.filter.btn-light-purple.btn.linkbutton{:title => t("restroom.type.unisex")}
           %input{:type => "checkbox"}
           %i.fa.fa-transgender-alt
-        %label#changing_table_filter.filter.btn-light-purple.btn.linkbutton
+        %label#changing_table_filter.filter.btn-light-purple.btn.linkbutton{:title => t("restroom.changing_table")}
           %input{:type => "checkbox"}
           %i.fa.fa-child
 
