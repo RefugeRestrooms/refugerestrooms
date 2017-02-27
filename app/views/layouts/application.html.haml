@@ -1,5 +1,5 @@
 !!!
-%html
+%html(lang="en")
   %head
     = render 'layouts/head'
   %body
@@ -12,6 +12,5 @@
         = render 'layouts/messages'
         = yield
         = render 'layouts/footer'
-
     = render 'layouts/ga_tag'
     = piwik_tracking_tag
