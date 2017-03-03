@@ -14,7 +14,7 @@ https://www.vagrantup.com/downloads.html
   * `cd  /vagrant/` to navigate to the refuge repo.
   * There is a rake wrapper to execute commands in refuge repo on the vagrant machine
   without using ssh. Run `rake vagrant:shell[command]`
-  * To start the rails server and bind it to the vagrant machine's IP address: `rake vagrant:shell['rails s -b 0.0.0.0']`
+  * To start the rails server bind it to the vagrant machine's IP address after running `vagrant ssh`, use: `rails s -b 0.0.0.0`. Otherwise, run: `rake vagrant:shell['rails s -b 0.0.0.0']`
   * The website is available at `localhost:3000`
 
 ### 4 Optional tasks:
