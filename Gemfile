@@ -24,6 +24,7 @@ gem 'country_select'
 
 gem 'mail_form'
 gem 'simple_form', '~> 3.0.2'
+gem 'react-rails'
 
 gem 'grape', '0.7.0'
 gem 'grape-swagger', '~> 0.7.2'
