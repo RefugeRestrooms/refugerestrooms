@@ -1,11 +1,5 @@
 .splash-content
-  .row
-    .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3
-      .splash-text-container.centered-text
-        %h3.headroom
-          Sometimes life is tough...
-        %h1.centered-text
-          Find Refuge
+  = react_component('Splash')
 
   .row.more-headroom
     .col-xs-12.col-sm-8.col-sm-offset-2
@@ -14,15 +8,19 @@
 
   .row.more-headroom
     .col-xs-12.col-sm-6.col-sm-offset-3
-      = button_to new_restroom_path, method: :get, class: "btn btn-lg btn-purple splash-add-restroom-btn" do
-        Add A Restroom
-        %i.fa.fa-plus-square-o.fa-2x
+      = react_component('AddRestroomButton', href: new_restroom_path())
 
-  .row.even-more-headroom
-    .col-xs-12.col-sm-6.col-sm-offset-3
-      = link_to image_tag("app-store.svg"), "https://itunes.apple.com/us/app/refuge-restrooms/id968531953?mt=8"
+  = react_component('MobileButtons',
+    itunesImgSrc: image_path("app-store.svg"),
+    googleImageSrc: image_path("play-store.png"),
+  )
+  <br>
+  -# .row.even-more-headroom
+  -#   .col-xs-12.col-sm-6.col-sm-offset-3
+  -#     = link_to image_tag("app-store.svg"), "https://itunes.apple.com/us/app/refuge-restrooms/id968531953?mt=8"
+  -#
+  -# .row.more-headroom.splash-bottom-padding
+  -#   .col-xs-12.col-sm-6.col-sm-offset-3
+  -#     = link_to image_tag("play-store.png"), "https://play.google.com/store/apps/details?id=org.refugerestrooms"
 
-  .row.more-headroom.splash-bottom-padding
-    .col-xs-12.col-sm-6.col-sm-offset-3
-      = link_to image_tag("play-store.png"), "https://play.google.com/store/apps/details?id=org.refugerestrooms"
   = render 'layouts/footer'
