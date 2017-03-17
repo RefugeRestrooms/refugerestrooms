@@ -7,17 +7,17 @@ describe PagesController, type: :controller  do
   end
 
   it "#about"  do
-    get :show, id: 'about'
+    get :show, params: { id: 'about' }
     expect(response).to be_success
   end
 
   it "#signs"  do
-    get :show, id: 'signs'
+    get :show, params: { id: 'signs' }
     expect(response).to be_success
   end
 
   it "#text" do
-    get :show, id: 'text'
+    get :show, params: { id: 'text' }
     expect(response).to be_success
   end
 end
