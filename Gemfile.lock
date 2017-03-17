@@ -238,9 +238,9 @@ GEM
       websocket-driver (>= 0.2.0)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
-    pry (0.9.12.6)
-      coderay (~> 1.0)
-      method_source (~> 0.8)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (2.0.5)
     rack (2.0.1)
@@ -344,7 +344,7 @@ GEM
     turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (3.0.0)
+    uglifier (3.1.7)
       execjs (>= 0.3.0, < 3)
     unicode_utils (1.4.0)
     virtus (1.0.5)
@@ -394,7 +394,7 @@ DEPENDENCIES
   pg_search
   piwik_analytics (~> 1.0.2)
   poltergeist
-  pry (~> 0.9.12.6)
+  pry
   rack-cors
   rails (= 5.0.0)
   rails_12factor
@@ -406,6 +406,7 @@ DEPENDENCIES
   simple_form (~> 3.4)
   simplecov (~> 0.7.1)
   turbolinks
+  tzinfo-data
   uglifier (>= 1.3.0)
   webmock (~> 1.18.0)
 

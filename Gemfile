@@ -49,7 +49,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "factory_girl_rails", "~> 4.0"
   gem 'dotenv-rails'
-  gem 'pry', '~> 0.9.12.6'
+  gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
@@ -66,3 +66,6 @@ end
 group :doc do
   gem 'sdoc', require: false
 end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
