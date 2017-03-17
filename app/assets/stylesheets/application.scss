@@ -8,16 +8,7 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require framework_and_overrides
- *= require_self
- *= require restrooms
- *= require nav
- *= require search
- *= require _mobile
- *= require top_cities
- *= require common
- *= require restrooms/new
- *= require splash
+ * @import 'myfile'
  */
 
 @import 'refuge_core';
