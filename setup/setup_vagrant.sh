@@ -54,7 +54,7 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # Install ruby
-ruby_version=`cat $REFUGE_PATH/.ruby-version`
+ruby_version=$(cat $REFUGE_PATH/.ruby-version | tr -d '\n\r')
 if rbenv versions | grep $ruby_version; then
   echo 'ruby '$ruby_version' installed, skipping...'
 else
