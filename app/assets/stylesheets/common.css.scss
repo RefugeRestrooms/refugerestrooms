@@ -34,7 +34,7 @@
 
 .btn-purple {
   color: white;
-  background-color: rgba(65,50,107, .9);
+  background-color: transparentize($purple, 0.1);
   &:hover, &:focus {
     color: white
   }
