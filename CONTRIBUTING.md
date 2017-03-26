@@ -25,7 +25,7 @@ https://www.vagrantup.com/downloads.html
 
   * To sync local changes with the vagrant machine, you can run `vagrant rsync-auto` while developing
 
-  [1] You can run any command locally using `rake vagrant:shell[]` and it will be executed in the repo root of the vagrant machine. You can try `rake vagrant:shell['pwd'] and see it will print the directory that the repo is in on the vagrant machine!
+  [1] You can run any command locally using `rake vagrant:shell[]` and it will be executed in the repo root of the vagrant machine. You can try `rake vagrant:shell['pwd']` and see it will print the directory that the repo is in on the vagrant machine!
 
 ### 4 Optional tasks:
 run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2pee data. (Use <code>rake db:fix_accents[dry_run]</code> to preview the changes.)
