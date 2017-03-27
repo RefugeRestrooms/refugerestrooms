@@ -40,6 +40,7 @@ class Restroom < ActiveRecord::Base
   after_find :strip_slashes
 
   scope :accessible, -> { where(accessible: true) }
+  scope :changing_table, -> { where(changing_table: true) }
   scope :unisex, -> { where(unisex: true) }
 
   scope :created_since, ->(date) { where("created_at >= ?", date) }

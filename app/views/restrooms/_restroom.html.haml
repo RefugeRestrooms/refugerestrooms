@@ -1,6 +1,6 @@
 - unisex_class = restroom.unisex? ? '' : 'not_unisex'
 - accessible_class = restroom.accessible? ? '' : 'not_accessible'
-- changing_table_class = restroom.accessible? ? '' : 'no_changing_table'
+- changing_table_class = restroom.changing_table? ? '' : 'no_changing_table'
 
 %div{ class: "listItem #{unisex_class} #{accessible_class} #{changing_table_class}",
           data: { id: restroom.id} }

@@ -84,6 +84,7 @@ private
       :state,
       :country,
       :accessible,
+      :changing_table,
       :unisex,
       :directions,
       :comment,
