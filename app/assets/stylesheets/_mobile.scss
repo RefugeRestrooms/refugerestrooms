@@ -1,5 +1,7 @@
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
     main, main .container {
+        padding-left: 0;
+        padding-right: 0;
     }
     .imgsplash {
         width: 100%;
