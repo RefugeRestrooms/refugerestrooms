@@ -13,6 +13,7 @@
 - [ ] Added Unit Tests
 - [ ] CI Passes
 - [ ] Deploys to Heroku on test Correctly (Maintainers will handle)
+- [ ] Added Documentation (Service and Code when required)
 
 # Screenshots
 
