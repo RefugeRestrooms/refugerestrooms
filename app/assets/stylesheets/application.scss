@@ -295,3 +295,10 @@ footer {
 .numberCircle .listItem {
     border: none;
 }
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+    .form-vertical {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
