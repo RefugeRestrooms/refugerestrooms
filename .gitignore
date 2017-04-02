@@ -47,3 +47,6 @@ geocoder.rb
 ## Vagrant working directory
 .vagrant
 ruby
+
+## zsh rake pugin
+.rake_tasks

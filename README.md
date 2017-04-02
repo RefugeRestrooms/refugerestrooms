@@ -12,6 +12,10 @@ REFUGE is an effort to fill the void left by the now-defunct Safe2Pee website. I
 
 This project is open source. Feel free to contribute. We could use the help.
 
+## Contributing
+
+Changes to the site can be tested locally before deploying to the web. To get set up to edit the site and test your changes, see [`CONTRIBUTING.md`](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CONTRIBUTING.md).
+
 ## Deployment
 
  This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
