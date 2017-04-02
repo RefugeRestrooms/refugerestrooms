@@ -294,19 +294,11 @@ GEM
     rspec-core (3.5.4)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
-<<<<<<< HEAD
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
     rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
-=======
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
-    rspec-mocks (3.5.0)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.5.0)
->>>>>>> aae69f8cd04597781e86488c8fcbd5c1cc23f151
     rspec-rails (3.5.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
