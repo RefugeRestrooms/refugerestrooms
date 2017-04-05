@@ -23,8 +23,6 @@ https://www.vagrantup.com/downloads.html
         * To start the rails server use: `rails s -b 0.0.0.0`. 
         * Navigate to `localhost:3000`
 
-  * To sync local changes with the vagrant machine, you can run `vagrant rsync-auto` while developing
-
   [1] You can run any command locally using `rake vagrant:shell[]` and it will be executed in the repo root of the vagrant machine. You can try `rake vagrant:shell['pwd']` and see it will print the directory that the repo is in on the vagrant machine!
 
 ### 4 Optional tasks:
