@@ -12,6 +12,11 @@ REFUGE is an effort to fill the void left by the now-defunct Safe2Pee website. I
 
 This project is open source. Feel free to contribute. We could use the help.
 
+## Deployed Environments
+Production: [Link](http://www.refugerestrooms.org)
+
+Staging: [Link](http://staging.refugerestrooms.org)
+
 ## Contributing
 
 Changes to the site can be tested locally before deploying to the web. To get set up to edit the site and test your changes, see [`CONTRIBUTING.md`](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CONTRIBUTING.md).
