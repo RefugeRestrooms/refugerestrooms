@@ -1,8 +1,0 @@
-.top-cities-container
-  %p
-    %strong
-      Popular Cities:
-    - @cities.each do |city_and_state|
-      = link_to city_and_state.join(', '), restrooms_path(search: city_and_state)
-      - unless city_and_state == @cities.last
-        |
