@@ -18,7 +18,7 @@ Changes to the site can be tested locally before deploying to the web. To get se
 
 ## Deployment
 
- This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
+ This repo is set to automatically deploy to Heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
  
  When making a release, you should do the following:
  1. Check the status of the app on refugestaging.herokuapp.com and make sure it's functional. 
@@ -30,13 +30,13 @@ Changes to the site can be tested locally before deploying to the web. To get se
   - this will trigger the heroku deploy to production. 
  
 #### Manual Releases
-Currently, we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
+Currently, we deploy to Heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
 
-We have both a staging and a production instance on heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
+We have both a staging and a production instance on Heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
 
 Here are the steps to deploy:
- 1. Talk to @tkwidmer about getting access as a collaborator for both the production and staging heroku instances.
- 2. Link your local repo to the heroku remote repos. I suggest doing it this way:
+ 1. Talk to @tkwidmer about getting access as a collaborator for both the production and staging Heroku instances.
+ 2. Link your local repo to the Heroku remote repos. I suggest doing it this way:
   * `git remote add production git@heroku.com:refugerestrooms.git`
   * `git remote add staging git@heroku.com:refugestaging.git`
  3. `git flow release start %{release number}`
