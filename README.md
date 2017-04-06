@@ -18,7 +18,7 @@ Changes to the site can be tested locally before deploying to the web. To get se
 
 ## Deployment
 
- This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
+ This repo is set to automatically deploy to heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
  
  When making a release, you should do the following:
  1. Check the status of the app on refugestaging.herokuapp.com and make sure it's functional. 
