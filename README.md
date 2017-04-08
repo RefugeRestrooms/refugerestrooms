@@ -18,7 +18,7 @@ Changes to the site can be tested locally before deploying to the web. To get se
 
 ## Deployment
 
- This repo is set to automatically deploy to Heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
+ This repo is set to automatically deploy to Heroku. Once there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
  
  When making a release, you should do the following:
  1. Check the status of the app on refugestaging.herokuapp.com and make sure it's functional. 
@@ -30,9 +30,9 @@ Changes to the site can be tested locally before deploying to the web. To get se
   - this will trigger the heroku deploy to production. 
  
 #### Manual Releases
-Currently, we deploy to Heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
+Currently, we deploy to Heroku. Our application is small enough that it is free to host on Heroku, and we can wake up the server if the site has not been accessed in a while.
 
-We have both a staging and a production instance on Heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
+There are staging and a production instance on Heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
 
 Here are the steps to deploy:
  1. Talk to @tkwidmer about getting access as a collaborator for both the production and staging Heroku instances.
@@ -75,13 +75,12 @@ Channel: #refugerestrooms
 
 Copyright (C) 2014–2017 Teagan Widmer and contributors
 
-This program is free software; you can redistribute and/or modify
+This program is free software. /You can redistribute and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation; either version 3 of the License, or
 (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
+This program is distributed to be useful without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Affero General Public License for more details.
 
