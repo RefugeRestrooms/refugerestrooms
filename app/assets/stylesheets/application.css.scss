@@ -294,3 +294,12 @@ footer {
 .numberCircle .listItem {
     border: none;
 }
+
+a.iconLink {
+  text-decoration:none;
+}
+
+.searchButton:hover,.splashcontainer .currentLocationButton:hover {
+  background-color:#8377af;
+  border-color:#8377af;
+}
