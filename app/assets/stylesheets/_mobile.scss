@@ -1,3 +1,18 @@
+// Pixel Density-Related Rules
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    body .splash-background {
+        background-image: url('city-photo-2x.jpg');
+    }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi) {
+    body .splash-background {
+        background-image: url('city-photo-3x.jpg');
+    }
+}
+
+// Screen Width-Related Rules
+
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
     main, main .container {
         padding-left: 0;
