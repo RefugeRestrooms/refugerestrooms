@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.1'
 
-# The start of a new journey
 gem 'rails', '5.0.0'
-
 gem 'pg'
 gem 'pg_search'
-
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'haml'
@@ -17,33 +14,25 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
 gem 'piwik_analytics', '~> 1.0.2'
-
 gem 'geocoder', '~> 1.2.1'
-
-# inherited_resources is needed for activeadmin
-# for Rails 5
-gem 'activeadmin', '1.0.0.pre5'
-gem 'inherited_resources', '~> 1.7'
-
 gem 'devise', '~> 4.0'
 gem 'rakismet'
-
 gem 'country_select'
-
 gem 'mail_form'
 gem 'simple_form', '~> 3.4'
-
 gem 'grape', '0.7.0'
 gem 'grape-swagger', '~> 0.7.2'
 gem 'grape-kaminari'
 gem 'kaminari'
 gem 'high_voltage', '~> 3.0.0'
-
-# Bugsnag sends bug alerts caught in production.
-# It's free for open source projects.
 gem 'bugsnag'
-
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-jsonp'
+
+# inherited_resources is needed for activeadmin
+# for Rails 5
+gem 'activeadmin', '1.0.0.pre5'
+gem 'inherited_resources', '~> 1.7'
 
 group :development, :test do
   gem 'rspec-rails'
