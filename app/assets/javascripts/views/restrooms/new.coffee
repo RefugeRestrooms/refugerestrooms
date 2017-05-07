@@ -48,6 +48,7 @@ class Refuge.Restrooms.NewRestroomForm
       type: 'GET'
       url: '/restrooms'
       data:
+        search: true
         nearby: true
         lat: coords.lat
         long: coords.long

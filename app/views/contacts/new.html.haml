@@ -2,7 +2,7 @@
   %h1 Request Edit for #{@contact.restroom_name} Restroom
 - else
   %h1 Contact
-= simple_form_for @contact, html: {class: 'form-vertical' } do |f|
+= simple_form_for @contact, html: {class: 'form-vertical headroom'} do |f|
   %p
   = f.input :name, :required => true
   = f.input :email, :required => true
