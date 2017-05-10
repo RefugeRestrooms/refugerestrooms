@@ -5,6 +5,7 @@
 
 class Refuge.Restrooms.Search
   searchDefaultText: "1 Embarcadero Center, San Francisco, CA"
+  searchCurrentLocationText: "Searching by current location..."
 
   constructor: (form) ->
     # Define elements that will be in use in this class.
@@ -44,6 +45,7 @@ class Refuge.Restrooms.Search
       $('#lat').val() == undefined
       $('#long').val() == undefined
       if @_searchBar.val() == ""
+        @_searchBar.val(@searchCurrentLocationText)
         @_searchCurrentLocation()
       else
         @_searchQueryString()
@@ -85,7 +87,7 @@ class Refuge.Restrooms.Search
 
       @_searchBar.focus =>
         @_searchBar.removeClass("fadedText")
-        @_searchBar.val("") if @_searchBar.val() == @searchDefaultText
+        @_searchBar.val("") if @_searchBar.val() == @searchDefaultText or @searchCurrentLocationText
 
         @_searchBar.blur =>
           @_setDefaultText()
