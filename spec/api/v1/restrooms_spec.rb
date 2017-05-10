@@ -45,7 +45,7 @@ describe "Restrooms API", type: :request do
 
     context 'a list of unisex restrooms' do
       before :each do
-        get '/api/v1/restrooms', { unisex: true }
+        get '/api/v1/restrooms', params: { unisex: true }
       end
 
       it "is successful" do
@@ -63,7 +63,7 @@ describe "Restrooms API", type: :request do
 
     context 'a list of restrooms by ADA availability' do
       before :each do
-        get '/api/v1/restrooms', { ada: true }
+        get '/api/v1/restrooms', params: { ada: true }
       end
 
       it "is successful" do
@@ -86,7 +86,7 @@ describe "Restrooms API", type: :request do
     FactoryGirl.create(:restroom, name: 'Hipster Coffee Shop')
     FactoryGirl.create(:restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
 
-    get '/api/v1/restrooms/search', { query: 'Coffee Shop' }
+    get '/api/v1/restrooms/search', params: { query: 'Coffee Shop' }
     json = JSON.parse(response.body)
     expect(json.length).to eq(2)
     json.each do |restroom|
@@ -94,13 +94,13 @@ describe "Restrooms API", type: :request do
     end
 
     # Tests the full-text unaccent extensions
-    get '/api/v1/restrooms/search', { query: 'Cafe' }
+    get '/api/v1/restrooms/search', params: { query: 'Cafe' }
     json = JSON.parse(response.body)
     expect(json.length).to eq(1)
     expect(json[0]['name']).to eq('Moonlight Café')
 
     # Tests the full-text searching capability of multiple string attributes
-    get '/api/v1/restrooms/search', { query: 'Organic pretty tile' }
+    get '/api/v1/restrooms/search', params: { query: 'Organic pretty tile' }
     json = JSON.parse(response.body)
     expect(json.length).to eq(1)
     expect(json[0]['name']).to eq('Organic Co. Coffee')
@@ -109,7 +109,7 @@ describe "Restrooms API", type: :request do
   it 'paginates full-text searches a list of restrooms by 10 results' do
     FactoryGirl.create_list(:restroom, 15)
 
-    get '/api/v1/restrooms/search', { query: 'San Francisco' }
+    get '/api/v1/restrooms/search', params: { query: 'San Francisco' }
     expect(response).to be_success
 
     json = JSON.parse(response.body)
@@ -133,7 +133,7 @@ describe "Restrooms API", type: :request do
 
     context 'filters a full-text searched list of restrooms by unisex type' do
       before :each do
-        get '/api/v1/restrooms/search', { query: 'Coffee', unisex: true }
+        get '/api/v1/restrooms/search', params: { query: 'Coffee', unisex: true }
       end
 
       it "is successful" do
@@ -155,7 +155,7 @@ describe "Restrooms API", type: :request do
 
     context 'filters a full-text searched list of restrooms by ADA availability' do
       before :each do
-        get '/api/v1/restrooms/search', { query: 'Coffee', ada: true }
+        get '/api/v1/restrooms/search', params: { query: 'Coffee', ada: true }
       end
 
       it "is successful" do
@@ -178,7 +178,7 @@ describe "Restrooms API", type: :request do
     context "filters a list of restrooms by updated date" do
       before :each do
         FactoryGirl.create(:restroom, created_at: 1.day.ago)
-        get "/api/v1/restrooms/by_date", updated: true,  day: Date.today.day, month: Date.today.month, year: Date.today.year
+        get "/api/v1/restrooms/by_date", params: { updated: true, day: Date.today.day, month: Date.today.month, year: Date.today.year }
       end
 
       it "is successful" do
@@ -193,7 +193,7 @@ describe "Restrooms API", type: :request do
     context "filters a list of restrooms by created date" do
       before :each do
         FactoryGirl.create(:restroom, created_at: 1.week.ago)
-        get "/api/v1/restrooms/by_date", day: Date.today.day, month: Date.today.month, year: Date.today.year
+        get "/api/v1/restrooms/by_date", params: { day: Date.today.day, month: Date.today.month, year: Date.today.year }
       end
 
       it "is successful" do
