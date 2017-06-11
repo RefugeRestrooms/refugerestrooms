@@ -26,10 +26,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Default value: false
   # config.ssh.forward_agent = true
 
-  # Share refuge repo in vagrant home folder
-  config.vm.synced_folder ".", "/vagrant/", type: "rsync",
-    rsync__exclude: ".bundle"
-
   # View virtualbox provider docs for more options
   config.vm.provider "virtualbox" do |vb|
     vb.name = BOXNAME

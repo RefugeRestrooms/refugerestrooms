@@ -10,14 +10,28 @@ describe RestroomsController, type: :controller do
     let(:restroom) { FactoryGirl.create(:restroom) }
 
     it "should downvote" do
+      post_params = {
+        id: restroom.id,
+        restroom: {
+          downvote: true
+        }
+      }
+
       expect {
-        post :update, id: restroom.id, restroom: { downvote: true }
+        post :update, params: post_params
       }.to change { restroom.reload.downvote }.by 1
     end
 
     it "should upvote" do
+      post_params = {
+        id: restroom.id,
+        restroom: {
+          upvote: true
+        }
+      }
+
       expect {
-        post :update, id: restroom.id, restroom: { upvote: true }
+        post :update, params: post_params 
       }.to change { restroom.reload.upvote }.by 1
     end
   end

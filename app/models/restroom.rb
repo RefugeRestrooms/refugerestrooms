@@ -2,7 +2,7 @@
 # In the dataset on which the application is based, UNISEX is coded by 0, ADA
 # (accessible) is coded by 1
 
-class Restroom < ActiveRecord::Base
+class Restroom < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search, against: {
@@ -40,6 +40,7 @@ class Restroom < ActiveRecord::Base
   after_find :strip_slashes
 
   scope :accessible, -> { where(accessible: true) }
+  scope :changing_table, -> { where(changing_table: true) }
   scope :unisex, -> { where(unisex: true) }
 
   scope :created_since, ->(date) { where("created_at >= ?", date) }
@@ -57,19 +58,6 @@ class Restroom < ActiveRecord::Base
     return 0 unless rated?
 
     upvote.to_f / (upvote + downvote).to_f * 100
-  end
-
-  def self.top_cities
-    Rails.cache.fetch("topcities", expires_in: 1.month) do
-      sql = "SELECT LOWER(city), state, COUNT(DISTINCT id) AS count FROM " +
-      "restrooms GROUP BY LOWER(city), state ORDER BY count DESC LIMIT 5"
-
-      values =  ActiveRecord::Base.connection.execute(sql).values
-
-      values.map do |value|
-        [value[0].titleize, value[1]]
-      end
-    end
   end
 
   # PostgreSQL Full-Text Search for the API.

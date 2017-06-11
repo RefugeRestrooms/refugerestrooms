@@ -14,7 +14,6 @@
  *= require nav
  *= require search
  *= require _mobile
- *= require top_cities
  *= require common
  *= require restrooms/new
  *= require splash
@@ -261,7 +260,7 @@ footer {
     width: 10px;
     height: 10px;
     background: {
-        size: 200% 100%;
+        size: 200% auto;
         position: 0 50%;
     }
     padding: 12px;

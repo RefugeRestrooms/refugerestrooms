@@ -1,8 +1,8 @@
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
-  before_filter :list_restrooms, only: [:index]
-  before_filter :find_restroom, only: [:show, :update, :edit, :destroy]
+  before_action :list_restrooms, only: [:index]
+  before_action :find_restroom, only: [:show, :update, :edit, :destroy]
 
   def index
     if params[:nearby]
@@ -77,6 +77,19 @@ private
   end
 
   def permitted_params
-    params.require(:restroom).permit!
+    params.require(:restroom).permit(
+      :name,
+      :street,
+      :city,
+      :state,
+      :country,
+      :accessible,
+      :changing_table,
+      :unisex,
+      :directions,
+      :comment,
+      :longitude,
+      :latitude
+    )
   end
 end

@@ -6,18 +6,27 @@ Develop CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestroo
 [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
 # REFUGE restrooms
 
-Providing safe restroom access for transgender, intersex, and gender noncomforming individuals.
+Providing safe restroom access to transgender, intersex, and gender noncomforming individuals.
 
-REFUGE is an effort to fill the hole left by the now-defunct Safe2Pee website. It provides a resource for trans\* and queer individuals in need of gender neutral and other safe restrooms.
+REFUGE is an effort to fill the void left by the now-defunct Safe2Pee website. It provides a free resource to trans\* and queer individuals in need of gender neutral and other safe restrooms.
 
 This project is open source. Feel free to contribute. We could use the help.
 
+## Deployed Environments
+Production: [Link](http://www.refugerestrooms.org)
+
+Staging: [Link](http://staging.refugerestrooms.org)
+
+## Contributing
+
+Changes to the site can be tested locally before deploying to the web. To get set up to edit the site and test your changes, see [`CONTRIBUTING.md`](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CONTRIBUTING.md).
+
 ## Deployment
 
- This repo is set to automaticly deploy to heroku. Any time there is a merge into develop, the develop branch will get deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
+ This repo is set to automatically deploy to Heroku. Any time there is a merge into develop, the develop branch will be deployed to refugestaging.herokuapp.com. Any time there is a merge into master, the master branch will be released to refugerestrooms.org
  
- When you want to make a release, you should do the following:
- 1. Check the status of the app on refugestaging.herokuapp.com and make sure its functional. 
+ When making a release, you should do the following:
+ 1. Check the status of the app on refugestaging.herokuapp.com and make sure it's functional. 
  2. Make sure the the most recent build of develop is passing on TravisCI
  3. Run `git flow release start %{release number}`
  4. Run `git shortlog --grep "Merge pull request #" %{previous release}..HEAD` and copy the contents into a new issue with the release tag here on github. This command gives you a list of PRs merged since the previous release.
@@ -26,13 +35,13 @@ This project is open source. Feel free to contribute. We could use the help.
   - this will trigger the heroku deploy to production. 
  
 #### Manual Releases
-Currently right now we deploy to heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
+Currently, we deploy to Heroku. Our application is small enough that it is free to host on Heroku, and we dont mind the server having to wake up if nobody has accessed the site in a while.
 
-We have both a staging and a production instance on heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
+We have both a staging and a production instance on Heroku. The staging instance can be found at http://refugestaging.herokuapp.com/
 
 Here are the steps to deploy:
- 1. Talk to @tkwidmer about getting access as a collaborator for both the production and staging heroku instances.
- 2. Link your local repo to the heroku remote repos. I suggest doing it this way:
+ 1. Talk to @tkwidmer about getting access as a collaborator for both the production and staging Heroku instances.
+ 2. Link your local repo to the Heroku remote repos. I suggest doing it this way:
   * `git remote add production git@heroku.com:refugerestrooms.git`
   * `git remote add staging git@heroku.com:refugestaging.git`
  3. `git flow release start %{release number}`
@@ -42,11 +51,9 @@ Here are the steps to deploy:
  7. `git push` and `git push --tags`
  8. `git push production master` and run any migrations `heroku run rake db:migrate --remote production`
 
-
-
 ## Tech
 
-* Ruby Version - ruby-2.1.1
+* Ruby Version - ruby-2.3.0
 * Ruby on Rails
 * RSpec
 * Javascript
@@ -71,9 +78,9 @@ Channel: #refugerestrooms
 
 ## License
 
-Copyright (C) 2014 Teagan Widmer
+Copyright (C) 2014–2017 Teagan Widmer and contributors
 
-This program is free software; you can redistribute it and/or modify
+This program is free software; you can redistribute and/or modify
 it under the terms of the GNU Affero General Public License as published by
 the Free Software Foundation; either version 3 of the License, or
 (at your option) any later version.

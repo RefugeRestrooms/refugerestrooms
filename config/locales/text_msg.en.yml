@@ -1,6 +1,6 @@
 en:
-  welcome:
-     text_msg:
+  pages:
+     text:
         title: 'Get Closest Restroom by Text'
         intro: 'If you just need to get to the closest safe restroom <em>right now</em>, you can get it by text on any phone that has SMS.'
         instructions: 'Text your location to +1 (415) 367-3288'

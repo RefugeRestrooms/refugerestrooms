@@ -1,0 +1,23 @@
+.guess-btn {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  .fa-refresh {
+    display: none
+  }
+
+  &.locating {
+    .fa-refresh {
+      padding: 0px 10px;
+      display: inherit
+    }
+  }
+}
+div.nearby-container > h2 {
+	margin-top: 5px;
+}
+.new-restrooms-form-container {
+  margin-top: 32px;
+}
+.submit-new-bathroom-form {
+  margin-top: 32px;
+}

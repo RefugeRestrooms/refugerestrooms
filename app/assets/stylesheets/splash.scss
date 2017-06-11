@@ -16,7 +16,6 @@ body {
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
-  padding-bottom: 60px;
 
   nav {
     background: rgb(0, 0, 0);
@@ -27,7 +26,6 @@ body {
   footer {
     color: white;
     background-color: transparent;
-    position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
@@ -64,7 +62,7 @@ body {
     @include border-radius(5px);
     color: white;
     background: rgb(0, 0, 0); /* fallback color */
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
   }
 
   h1 {
@@ -83,8 +81,7 @@ body {
   }
 
   .splash-add-restroom-btn {
-    margin: 0 auto;
-    display: block;
+    width: 100%;
     font-size: 16pt;
     font-weight: bold;
     margin-bottom: 40px;
@@ -101,7 +98,7 @@ body {
   padding: 5px;
   color: white;
   background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.4);
   p {
     margin: 0
   }
