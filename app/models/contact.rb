@@ -20,7 +20,8 @@ class Contact < MailForm::Base
     {
       :subject => "My Contact Form #{restroom_id}",
       :to => "refugerestrooms@gmail.com",
-      :from => %("#{name}" <#{email}>)
+      :from => %("#{name}" <#{email}>), # :from overriden by google smtp config
+      :reply_to => %("#{name}" <#{email}>)
     }
   end
 end
