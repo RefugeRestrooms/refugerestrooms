@@ -55,7 +55,7 @@
         text-align: right;
         font-size: 15px;
         font-family: Arial;
-        padding: 5px;
+        padding: 5px 0;
     }
     .itemRating {
         width: 150px;
@@ -74,15 +74,18 @@
     .itemExtraInfo {
         position: absolute;
         top: 20px;
-        right: 15px;
+        right: 10px;
+        text-align: right;
     }
     .unisexRestroom {
         width: 45px;
         height: 43px;
+        display: inline-block;
     }
     .ADARestroom {
         width: 44px;
         height: 47px;
+        display: inline-block;
     }
     .unisexRestroom img, .ADARestroom img {
         width: 100%;
