@@ -63,10 +63,10 @@ class Refuge.Restrooms.Search
 
   _searchCurrentLocation: =>
     @_geocoder.getCurrentLocation()
-    .then (currentCoords) =>
+      .then (currentCoords) =>
         @_updateForm(currentCoords.lat, currentCoords.long, "Current Location")
         @_form.submit()
-    .then null, (err) =>
+      .then null, (err) =>
         @_currentLocationButton.removeClass('locating')
         alert "To search by location, please refresh the page and allow us to access your location!"
 
