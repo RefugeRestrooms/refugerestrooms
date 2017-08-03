@@ -1,0 +1,146 @@
+/* IE < 8 */
+.clearfix:before, .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+// Text formatting
+.centered-text {
+  text-align: center
+}
+
+.text-padding {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+h1 {
+    padding: 5px;
+    text-align: center;
+}
+
+.fontLarge {
+    font-size: 150px;
+    line-height: 150px;
+}
+
+.fadedText {
+    color: $gray;
+}
+
+// Headroom / Footroom Classes
+.min-headroom {
+  margin-top: 10px
+}
+
+.headroom {
+  margin-top: 20px
+}
+
+.more-headroom {
+  margin-top: 40px
+}
+
+.even-more-headroom {
+  margin-top: 60px
+}
+
+.footroom {
+  margin-bottom: 20px
+}
+
+// Buttons
+.btn-dark-purple {
+  color: white;
+  background-color: $dark-purple;
+}
+
+.btn-purple {
+  color: white;
+  background-color: transparentize($purple, 0.1);
+  &:hover, &:focus {
+    color: white
+  }
+}
+
+.btn-light-purple {
+  color: white;
+  background-color: $light-purple;
+  border-color: $light-purple;
+
+  &:hover, &:focus {
+    color: white;
+    background-color: $light-purple;
+    border-color: $light-purple;
+  }
+}
+
+.linkbutton {
+    border: none;
+    position: relative;
+    border-radius: $rounded-corners;
+    padding: 10px;
+    cursor: pointer;
+    background-color: $light-purple;
+    color: #FFFFFF;
+
+    &:hover {
+      color:white;
+    }
+
+    &.active, .active:focus {
+      background-color: $purple;
+    }
+}
+
+// Footer
+footer {
+    overflow: hidden;
+    text-align: center;
+    font-size: 8pt;
+    color: #41326b;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+
+.icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: {
+        size: 200% auto;
+        position: 0 50%;
+    }
+    padding: 12px;
+    margin: 4px;
+    &:hover {
+        background-position: 100% 50%;
+    }
+    &.iconGitHub {
+        background-image: asset-url('buttons_github.svg');
+    }
+    &.iconTwitter {
+        background-image: asset-url('buttons_twitter.svg');
+    }
+    &.iconFacebook {
+        background-image: asset-url('buttons_facebook.svg');
+    }
+    &.iconTumblr {
+        background-image: asset-url('buttons_tumblr.svg');
+    }
+    &.iconEmail {
+        background-image: asset-url('buttons_mail.svg');
+    }
+}
