@@ -23,7 +23,7 @@ class Refuge.Library.Geocoder
       else
         promise.reject(status)
     fail = (err) ->
-      promise.rejext(err)
+      promise.reject(err)
 
     _googleGeocoder.geocode(requestBody, success, fail)
 
@@ -38,7 +38,7 @@ class Refuge.Library.Geocoder
       if status == @statusOK
         promise.resolve(results)
     fail = (err) ->
-      promise.fail(err)
+      promise.reject(err)
 
     @googleGeocoder.geocode(requestBody, success, fail)
 
