@@ -1,0 +1,53 @@
+#mapArea {
+    width: 100%;
+    height: 400px;
+}
+
+.markerPopup {
+    display: none;
+    position: absolute;
+    top: -122px;
+    left: 50%;
+    margin-left: -195px;
+    width: 370px;
+    height: 122px;
+    background-color: #FFF;
+    border: 1px solid $purple;
+    z-index: 1000;
+    color: #000;
+}
+.markerPopup .listItem {
+    position: static;
+}
+.markerPopup .listItemImage {
+    display: none;
+}
+.markerPopup .itemInfo {
+    left: 10px;
+}
+.markerPopup .itemExtraInfo {
+    top: 0;
+}
+.markerPopup .itemRating {
+    padding: 3px 0;
+}
+
+.mapIconImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.numberCircle {
+    cursor: pointer;
+}
+
+.numberCircle .numberCircleText {
+    line-height: 37px;
+    color: #FFF;
+    text-align: center;
+}
+
+.numberCircle .listItem {
+    border: none;
+}
