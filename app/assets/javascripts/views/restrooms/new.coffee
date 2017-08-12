@@ -31,6 +31,7 @@ class Refuge.Restrooms.NewRestroomForm
               console.log data
               $('.form-container').html(data).hide().fadeIn()
               @_requestNearbyRestrooms(coords)
+              @_updateMap(coords)
 
 
   _bindPreviewButton: =>
