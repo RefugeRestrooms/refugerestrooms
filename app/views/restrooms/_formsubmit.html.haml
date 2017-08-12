@@ -7,6 +7,9 @@
       = t('restroom.guess_location')
       %i.fa.fa-refresh.fa-spin
 
+  / Add map for preview
+  %div#mapArea{ data: { latitude: 38.904735, longitude: -77.033812 } }
+
   .nearby-container.footroom
     // Content of nearby restrooms gets rendered here.
 
@@ -22,4 +25,8 @@
   = f.input :changing_table, :collection => [[t('restroom.changing_table'), true], [t('restroom.no_changing_table'), false]], :include_blank => false
   = f.input :directions, :placeholder => t('restroom.directions_hint'), :as => :text, :required => false, :input_html => { :class => "span6" }
   = f.input :comment, :placeholder => t('restroom.comments_hint'), :as => :text, :required => false, :input_html => { :class => "span6" }
+
+  / Click to preview location
+  %button{type: 'button', class: 'preview-btn linkbutton'}
+    = t('restroom.preview')
   = f.button :submit, t('restroom.restsubmit'), :class => "linkbutton"
