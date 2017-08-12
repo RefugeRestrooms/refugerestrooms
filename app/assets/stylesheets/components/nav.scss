@@ -1,5 +1,3 @@
-@import 'refuge_core';
-
 .navbar-default{
   padding: 5px 0px;
   background-color: transparent;
@@ -29,5 +27,16 @@
       background-color: white;
       color: black;
     }
+  }
+
+  .toiletLogo {
+      width: 45px;
+      height: 45px;
+      background: asset-url("logo-100x100.png");
+      background-size: 100% 100%;
+      position: relative;
+      float: left;
+      cursor: pointer;
+      top: 2px
   }
 }
