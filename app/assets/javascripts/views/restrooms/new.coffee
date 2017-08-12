@@ -7,12 +7,15 @@ class Refuge.Restrooms.NewRestroomForm
     @_guessButton = @_form.find('.guess-btn')
     @_nearbyContainer = $('.nearby-container')
     @_form_container = $('.new-restrooms-form-container')
+    @_previewButton = @_form.find('.preview-btn')
+    @_map = @_form.find('#mapArea')[0]
 
     # Initialization Methods
     @_bindEvents()
 
   _bindEvents: =>
     @_bindGuessButton()
+    @_bindPreviewButton()
 
   _bindGuessButton: =>
     @_guessButton.click (event) =>
@@ -28,6 +31,27 @@ class Refuge.Restrooms.NewRestroomForm
               console.log data
               $('.form-container').html(data).hide().fadeIn()
               @_requestNearbyRestrooms(coords)
+
+
+  _bindPreviewButton: =>
+    @_previewButton.click (event) =>
+      form = @_form[0]
+      name = form.elements.restroom_name.value
+      street = form.elements.restroom_street.value
+      city = form.elements.restroom_city.value
+      state = form.elements.restroom_state.value
+      country = form.elements.restroom_country.value
+      address = "#{name}, #{street}, #{city}, #{state}, #{country}"
+
+      # Obtain coordinates
+      @_geocoder.geocodeSearchString(address).then (coords) =>
+        @_updateMap(coords)
+
+
+  _updateMap: (coords) =>
+    @_map.dataset.latitude = coords.lat
+    @_map.dataset.longitude = coords.long
+    Maps.reloadMap(@_map)
 
 
   _getNewForm: (coords) =>
