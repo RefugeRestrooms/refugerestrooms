@@ -9,7 +9,7 @@ Given(/^I have filled out the address information$/) do
 end
 
 When(/^I click the preview button$/) do
-  find_button("Preview").trigger('click')
+  click_button "Preview"
 end
 
 Then(/^I should see the map preview$/) do
