@@ -36,6 +36,9 @@ class Refuge.Restrooms.NewRestroomForm
 
   _bindPreviewButton: =>
     @_previewButton.click (event) =>
+      # Show map
+      @_map.classList.remove("hidden")
+
       form = @_form[0]
       name = form.elements.restroom_name.value
       street = form.elements.restroom_street.value
