@@ -47,6 +47,17 @@ class Refuge.Restrooms.NewRestroomForm
         @_updateMap(coords)
 
 
+  _rebind: =>
+    @_map = $("#mapArea").get(0)
+    @_previewButton = $(".preview-btn")
+    @_guessButton = $(".guess-btn")
+
+    @_bindEvents()
+
+    # Rebind form
+    @_form = $('form.simple_form')
+
+
   _updateMap: (coords) =>
     # Show map
     @_map.classList.remove("hidden")
