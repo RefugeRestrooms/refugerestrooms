@@ -30,6 +30,7 @@ class Refuge.Restrooms.NewRestroomForm
             @_getNewForm(coords).then (data, textStatus) =>
               console.log data
               $('.form-container').html(data).hide().fadeIn()
+              @_rebind()
               @_requestNearbyRestrooms(coords)
               @_updateMap(coords)
 
@@ -47,6 +48,17 @@ class Refuge.Restrooms.NewRestroomForm
       # Obtain coordinates
       @_geocoder.geocodeSearchString(address).then (coords) =>
         @_updateMap(coords)
+
+
+  _rebind: =>
+    @_map = $("#mapArea").get(0)
+    @_previewButton = $(".preview-btn")
+    @_guessButton = $(".guess-btn")
+
+    @_bindEvents()
+
+    # Rebind form
+    @_form = $('form.simple_form')
 
 
   _updateMap: (coords) =>
