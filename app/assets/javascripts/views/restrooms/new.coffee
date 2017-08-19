@@ -36,9 +36,6 @@ class Refuge.Restrooms.NewRestroomForm
 
   _bindPreviewButton: =>
     @_previewButton.click (event) =>
-      # Show map
-      @_map.classList.remove("hidden")
-
       form = @_form[0]
       name = form.elements.restroom_name.value
       street = form.elements.restroom_street.value
@@ -53,6 +50,9 @@ class Refuge.Restrooms.NewRestroomForm
 
 
   _updateMap: (coords) =>
+    # Show map
+    @_map.classList.remove("hidden")
+
     @_map.dataset.latitude = coords.lat
     @_map.dataset.longitude = coords.long
     Maps.reloadMap(@_map)
