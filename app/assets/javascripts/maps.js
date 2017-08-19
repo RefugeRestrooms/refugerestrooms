@@ -268,4 +268,10 @@ $(function(){
 	if($map.length > 0) {
 		initMap($map.data('latitude'), $map.data('longitude'), showMarkerImage);
 	}
+
+	window.Maps = {
+		reloadMap: function(map) {
+			initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage);
+		}
+	}
 });
