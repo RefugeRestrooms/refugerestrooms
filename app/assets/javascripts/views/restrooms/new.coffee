@@ -53,8 +53,15 @@ class Refuge.Restrooms.NewRestroomForm
   _updateMap: (coords) =>
     @_map.dataset.latitude = coords.lat
     @_map.dataset.longitude = coords.long
-    Maps.reloadMap(@_map)
+    Maps.reloadDraggable(@_map, @_onDrag)
 
+  # Callback for map marker 'dragend' event
+  _onDrag: (event) =>
+    coords =
+      lat: event.latLng.lat(),
+      long: event.latLng.lng()
+    @_getNewForm(coords).then (data, textStatus) =>
+      @_updateForm(coords, data, textStatus)
 
   _getNewForm: (coords) =>
     $.ajax
