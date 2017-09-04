@@ -65,8 +65,6 @@ class Refuge.Restrooms.NewRestroomForm
         restroom:
           latitude: coords.lat
           longitude: coords.long
-      success: (data, textStatus) ->
-        # $('.new-restrooms-form-container').html(data)
 
   _updateForm: (coords, data, textStatus) =>
     $('.form-container').html(data).hide().fadeIn()
