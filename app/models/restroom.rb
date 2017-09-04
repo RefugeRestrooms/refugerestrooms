@@ -28,7 +28,7 @@ class Restroom < ApplicationRecord
       obj.street  = geo.address.split(',').first
       obj.city    = geo.city
       obj.state   = geo.state
-      obj.country = geo.country
+      obj.country = geo.country_code
     end
   end
 
