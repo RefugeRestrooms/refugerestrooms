@@ -29,9 +29,7 @@ class Refuge.Restrooms.NewRestroomForm
             console.log result[0]
             @_getNewForm(coords).then (data, textStatus) =>
               console.log data
-              $('.form-container').html(data).hide().fadeIn()
-              @_requestNearbyRestrooms(coords)
-              @_updateMap(coords)
+              @_updateForm(coords, data, textStatus)
 
 
   _bindPreviewButton: =>
@@ -70,6 +68,10 @@ class Refuge.Restrooms.NewRestroomForm
       success: (data, textStatus) ->
         # $('.new-restrooms-form-container').html(data)
 
+  _updateForm: (coords, data, textStatus) =>
+    $('.form-container').html(data).hide().fadeIn()
+    @_requestNearbyRestrooms(coords)
+    @_updateMap(coords)
 
   _requestNearbyRestrooms: (coords) ->
     $.ajax
