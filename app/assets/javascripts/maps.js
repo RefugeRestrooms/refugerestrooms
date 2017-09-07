@@ -4,7 +4,7 @@ function initMap(x, y, image, draggable, callback){
 	image = typeof image !== 'undefined' ? image : currentLocationImage;
 
 	// Draggable defaults to false
-	draggable = (draggable === undefined) ? false : true;
+	draggable =  draggable || false;
 
 	//init map
   var mapOptions = {
