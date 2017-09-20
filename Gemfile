@@ -29,10 +29,8 @@ gem 'bugsnag'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
 
-# inherited_resources is needed for activeadmin
-# for Rails 5
-gem 'activeadmin', '1.0.0.pre5'
-gem 'inherited_resources', '~> 1.7'
+# Upgraded to 1.0.0 for Rails 5.1.4
+gem 'activeadmin', '~> 1.0.0'
 
 group :development, :test do
   gem 'rspec-rails'
