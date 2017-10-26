@@ -85,6 +85,7 @@ class Refuge.Restrooms.NewRestroomForm
 
   _updateForm: (coords, data, textStatus) =>
     $('.form-container').html(data).hide().fadeIn()
+    @_rebind()
     @_requestNearbyRestrooms(coords)
     @_updateMap(coords)
 
