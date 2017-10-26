@@ -35,12 +35,11 @@ class Refuge.Restrooms.NewRestroomForm
   _bindPreviewButton: =>
     @_previewButton.click (event) =>
       form = @_form[0]
-      name = form.elements.restroom_name.value
       street = form.elements.restroom_street.value
       city = form.elements.restroom_city.value
       state = form.elements.restroom_state.value
       country = form.elements.restroom_country.value
-      address = "#{name}, #{street}, #{city}, #{state}, #{country}"
+      address = "#{street}, #{city}, #{state}, #{country}"
 
       # Obtain coordinates
       @_geocoder.geocodeSearchString(address).then (coords) =>
