@@ -29,9 +29,7 @@ class Refuge.Restrooms.NewRestroomForm
             console.log result[0]
             @_getNewForm(coords).then (data, textStatus) =>
               console.log data
-              $('.form-container').html(data).hide().fadeIn()
-              @_requestNearbyRestrooms(coords)
-              @_updateMap(coords)
+              @_updateForm(coords, data, textStatus)
 
 
   _bindPreviewButton: =>
@@ -55,8 +53,15 @@ class Refuge.Restrooms.NewRestroomForm
   _updateMap: (coords) =>
     @_map.dataset.latitude = coords.lat
     @_map.dataset.longitude = coords.long
-    Maps.reloadMap(@_map)
+    Maps.reloadDraggable(@_map, @_onDrag)
 
+  # Callback for map marker 'dragend' event
+  _onDrag: (event) =>
+    coords =
+      lat: event.latLng.lat(),
+      long: event.latLng.lng()
+    @_getNewForm(coords).then (data, textStatus) =>
+      @_updateForm(coords, data, textStatus)
 
   _getNewForm: (coords) =>
     $.ajax
@@ -67,9 +72,11 @@ class Refuge.Restrooms.NewRestroomForm
         restroom:
           latitude: coords.lat
           longitude: coords.long
-      success: (data, textStatus) ->
-        # $('.new-restrooms-form-container').html(data)
 
+  _updateForm: (coords, data, textStatus) =>
+    $('.form-container').html(data).hide().fadeIn()
+    @_requestNearbyRestrooms(coords)
+    @_updateMap(coords)
 
   _requestNearbyRestrooms: (coords) ->
     $.ajax

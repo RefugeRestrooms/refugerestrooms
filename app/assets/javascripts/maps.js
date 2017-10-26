@@ -1,7 +1,10 @@
 var map;
 
-function initMap(x, y, image){
+function initMap(x, y, image, draggable, callback){
 	image = typeof image !== 'undefined' ? image : currentLocationImage;
+
+	// Draggable defaults to false
+	draggable =  draggable || false;
 
 	//init map
   var mapOptions = {
@@ -21,9 +24,12 @@ function initMap(x, y, image){
 
   var currentLocation = new google.maps.Marker({
 	  position: myLatLng,
+	  draggable: draggable,
 	  map: map,
 	  icon: image
   });
+
+  currentLocation.addListener("dragend", callback);
 }
 
 
@@ -272,6 +278,10 @@ $(function(){
 	window.Maps = {
 		reloadMap: function(map) {
 			initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage);
+		},
+
+		reloadDraggable: function(map, callback) {
+		  initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage, true, callback);
 		}
 	}
 });
