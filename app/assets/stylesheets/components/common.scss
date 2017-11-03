@@ -119,32 +119,28 @@ footer {
     margin-top: 15px;
 }
 
-.icon {
+.iconLink {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: {
-        size: 200% auto;
-        position: 0 50%;
-    }
-    padding: 12px;
+    width: 24px;
+    height: 24px;
     margin: 4px;
-    &:hover {
-        background-position: 100% 50%;
+}
+
+.icon {
+    color: $purple;
+    &.fa-github-square:hover {
+        color: #808080;
     }
-    &.iconGitHub {
-        background-image: asset-url('buttons_github.svg');
+    &.fa-twitter-square:hover {
+        color: #5EA9DD;
     }
-    &.iconTwitter {
-        background-image: asset-url('buttons_twitter.svg');
+    &.fa-facebook-square:hover {
+        color: #3B5998;
     }
-    &.iconFacebook {
-        background-image: asset-url('buttons_facebook.svg');
+    &.fa-tumblr-square:hover {
+        color: #36465D;
     }
-    &.iconTumblr {
-        background-image: asset-url('buttons_tumblr.svg');
-    }
-    &.iconEmail {
-        background-image: asset-url('buttons_mail.svg');
+    &.fa-envelope:hover {
+        color: #BE1E2D;
     }
 }
