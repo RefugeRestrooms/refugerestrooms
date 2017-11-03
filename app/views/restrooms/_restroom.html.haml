@@ -28,11 +28,11 @@
         = miles_to_kilometers(restroom.distance).round(2)
         kilometers
     - if restroom.unisex?
-      .unisexRestroom
+      .unisexRestroom{:title => t("restroom.type.unisex")}
         %i.fa.fa-transgender-alt.fa-3x
     - if restroom.accessible?
-      .ADARestroom
+      .ADARestroom{:title => t("restroom.accessible")}
         %i.fa.fa-wheelchair.fa-3x
     - if restroom.changing_table?
-      .changingTable
+      .changingTable{:title => t("restroom.changing_table")}
         %i.fa.fa-child.fa-3x

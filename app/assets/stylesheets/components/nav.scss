@@ -5,6 +5,7 @@
 
   .navbar-brand {
     color: white;
+    padding: 13.5px 60px;
     &:hover {
       color: white;
     }
@@ -32,8 +33,9 @@
   .toiletLogo {
       width: 45px;
       height: 45px;
-      background: asset-url("logo-100x100.png");
-      background-size: 100% 100%;
+      background-image: asset-url("logo-100x100.png");
+      background-size: auto 100%;
+      background-repeat: no-repeat;
       position: relative;
       float: left;
       cursor: pointer;
