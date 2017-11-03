@@ -34,10 +34,10 @@ gem 'activeadmin', '~> 1.0.0'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem "factory_girl_rails", "~> 4.0"
-  gem 'dotenv-rails', "~> 2.2.1"
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'dotenv-rails', '~> 2.2.1'
   gem 'pry'
-  gem 'better_errors'
+  gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
 end
 
