@@ -46,7 +46,9 @@ module API
           r = Restroom
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex]
-          paginate(r.near([params[:lat], params[:lng]], 20, :order => 'distance'))
+          restrooms = r.near([params[:lat], params[:lng]])
+          yelp_restrooms = Restroom::Yelp.near(params[:lat], params[:lng])
+          paginate(restrooms + yelp_restrooms, 20, :order => 'distance'))
         end
 
         desc "Search for restroom records updated or created on or after a given date"

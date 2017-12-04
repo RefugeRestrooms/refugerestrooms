@@ -54,3 +54,6 @@ ruby
 
 ## zsh rake pugin
 .rake_tasks
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
