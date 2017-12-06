@@ -13,7 +13,7 @@ production:
   piwik:
     id_site: 2
     url: analytics.enspiral.info
-    use_async: false
+    use_async: true
     disabled: false
 
 development:
