@@ -7,7 +7,10 @@
 ### 2 Install Vagrant.
 https://www.vagrantup.com/downloads.html
 
-### 3 Capture the powers of vagrant
+### 3 Install VirtualBox
+https://www.virtualbox.org/wiki/Downloads
+
+### 4 Capture the powers of vagrant
   * In the repo dir: <code>vagrant up</code> (Safely ignore: 'dpkg-preconfigure: unable to re-open stdin: No such file or directory')
   * If changes have been made since running vagrant up: <code>vagrant provision</code>
   
@@ -25,10 +28,10 @@ https://www.vagrantup.com/downloads.html
 
   [1] You can run any command locally using `rake vagrant:shell[]` and it will be executed in the repo root of the vagrant machine. You can try `rake vagrant:shell['pwd']` and see it will print the directory that the repo is in on the vagrant machine!
 
-### 4 Optional tasks:
+### 5 Optional tasks:
 run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2pee data. (Use <code>rake db:fix_accents[dry_run]</code> to preview the changes.)
 
-### 5 Assets
+### 6 Assets
 * [Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
 
 ## Testing
