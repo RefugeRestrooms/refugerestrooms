@@ -36,4 +36,4 @@ run <code>rake db:fix_accents</code> to clean up encoding problems in the safe2p
 Please cover any new code with specs. We prefer code to be covered using RSpec or Capybara.
 
 ## Now What?
-Checkout our [Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki) and specificly the [newcomers guide](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Maintainers'-Manual-%5C--Newcomers'-Guide).
+Checkout our [Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki) and specifically the [newcomers guide](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Maintainers'-Manual-%5C--Newcomers'-Guide).
