@@ -6,7 +6,7 @@ Develop CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestroo
 [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
 # REFUGE restrooms
 
-Providing safe restroom access to transgender, intersex, and gender noncomforming individuals.
+Providing safe restroom access to transgender, intersex, and gender nonconforming individuals.
 
 REFUGE is an effort to fill the void left by the now-defunct Safe2Pee website. It provides a free resource to trans\* and queer individuals in need of gender neutral and other safe restrooms.
 
@@ -36,7 +36,7 @@ Changes to the site can be tested locally before deploying to the web. To get se
 
 ## Links to Refuge project on other platforms
 
-- [SMS messaging Twillio Application](https://github.com/RefugeRestrooms/refugerest_sms)
+- [SMS messaging Twilio Application](https://github.com/RefugeRestrooms/refugerest_sms)
 - [Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
 - [iOS Native Application](https://github.com/RefugeRestrooms/refuge-ios)
 - [Yo Application](https://github.com/raptortech-js/YoRestrooms)
