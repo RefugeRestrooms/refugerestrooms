@@ -154,6 +154,8 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
+    faraday (0.13.1)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.18)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
@@ -232,6 +234,7 @@ GEM
     multi_json (1.12.2)
     multi_test (0.1.2)
     multi_xml (0.6.0)
+    multipart-post (2.0.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -401,6 +404,7 @@ DEPENDENCIES
   devise (~> 4.3)
   dotenv-rails (~> 2.2.1)
   factory_girl_rails (~> 4.0)
+  faraday
   geocoder (~> 1.2.1)
   grape (= 0.7.0)
   grape-kaminari
