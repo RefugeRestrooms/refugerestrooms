@@ -16,12 +16,12 @@
       = button_to new_restroom_path, method: :get, class: "btn btn-lg btn-purple splash-add-restroom-btn" do
         Add A Restroom
         %i.fa.fa-plus-square-o.fa-2x
-
   .row.even-more-headroom
-    .col-xs-12.col-sm-6.col-sm-offset-3
+    .col-xs-6.col-sm-3.col-sm-offset-3
       = link_to image_tag("app-store.svg", role: "img"), "https://itunes.apple.com/us/app/refuge-restrooms/id968531953?mt=8"
-
+    .col-xs-6.col-sm-3
+      = link_to image_tag("play-store.png"), "https://play.google.com/store/apps/details?id=org.refugerestrooms"
   .row.more-headroom.splash-bottom-padding
     .col-xs-12.col-sm-6.col-sm-offset-3
-      = link_to image_tag("play-store.png"), "https://play.google.com/store/apps/details?id=org.refugerestrooms"
+      = link_to image_tag("patreon.png"), "https://patreon.com/refugerestrooms"
   = render 'layouts/footer'
