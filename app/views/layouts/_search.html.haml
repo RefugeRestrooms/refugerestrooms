@@ -7,9 +7,9 @@
     .input-group
       = text_field_tag :search, params[:search], class: "form-control search-bar", aria: {label: t("search_bar.enter_location")}
       .input-group-btn
-        %button.btn.btn-light-purple.submit-search-button{type: "button", title: "Search", value: "Search"}
+        %button.btn.btn-light-purple.submit-search-button{type: "button", title: "Search", value: "Search", aria: { label: "Search" }}
           %i.fa.fa-search.fa-2x
           %i.fa.fa-refresh.fa-spin.fa-2x
-        %button.btn.btn-light-purple.current-location-button{type: "button", title: "Search by Current Location", value: (splash ? "Search Current Location" : nil ) }
+        %button.btn.btn-light-purple.current-location-button{type: "button", title: "Search by Current Location", aria: { label: "Search by Current Location" }, value: (splash ? "Search Current Location" : nil ) }
           %i.fa.fa-location-arrow.fa-2x
           %i.fa.fa-refresh.fa-spin.fa-2x
