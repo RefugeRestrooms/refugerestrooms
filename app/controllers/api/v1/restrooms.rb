@@ -15,6 +15,7 @@ module API
         end
         get do
           r = Restroom
+          r = r.current
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex].present?
 
@@ -29,6 +30,7 @@ module API
         end
         get :search do
           r = Restroom
+          r = r.current
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex].present?
 
@@ -44,6 +46,7 @@ module API
         end
         get :by_location do
           r = Restroom
+          r = r.current
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex]
           paginate(r.near([params[:lat], params[:lng]], 20, :order => 'distance'))
@@ -60,6 +63,7 @@ module API
         end
         get :by_date do
           r = Restroom
+          r = r.current
           date = Date.new(params[:year], params[:month], params[:day])
           if params[:updated]
             r = r.updated_since(date)

@@ -39,6 +39,8 @@ class Restroom < ApplicationRecord
 
   after_find :strip_slashes
 
+  scope :current, -> { where(edit_id: 0) }
+
   scope :accessible, -> { where(accessible: true) }
   scope :changing_table, -> { where(changing_table: true) }
   scope :unisex, -> { where(unisex: true) }

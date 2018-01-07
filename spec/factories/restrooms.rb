@@ -7,6 +7,7 @@ FactoryBot.define do
     country 'US'
     upvote 22
     downvote 11
+    edit_id 0
 
     trait :geocoded do
       latitude 37.7749

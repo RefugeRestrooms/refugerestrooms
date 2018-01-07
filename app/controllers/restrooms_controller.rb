@@ -54,7 +54,7 @@ class RestroomsController < ApplicationController
 
 private
   def list_restrooms
-    @restrooms = Restroom.all.page(params[:page])
+    @restrooms = Restroom.current.page(params[:page])
     @restrooms = if params[:search].present? || params[:map] == "1"
       @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
     else
