@@ -1,4 +1,5 @@
 namespace :vagrant do
+  desc "Run a shell command on the Vagrant development box"
   task :shell, [:command] do |_t, args|
     fail "Usage rake vagrant:shell[command]" unless args[:command]
 
