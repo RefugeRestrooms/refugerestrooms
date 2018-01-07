@@ -1,0 +1,24 @@
+en:
+  business_info:
+    title: "Refuge Restrooms Business Info"
+    p1header: "1) What is Refuge Restrooms?"
+    p1: "REFUGE is a web application that seeks to provide safe restroom access for transgender, intersex, and gender nonconforming individuals. Read more about us on our <a href 'https://refugerestrooms.org'>About Page</a>."
+    p2header: "2) How did my facility get on this list?"
+    p2: "Someone used your restroom and wanted to submit your location as a resource. All our data is crowd-sourced and user-submitted."
+    p3header: "3) How can I be a good host?"
+    p3: "Thanks for asking! Often, REFUGE visitors just hope to make a quick stop and be on our way, and like any other visitor, potentially support your business or location while we're there. Friendly staff and good experiences can go a long way in getting some love for your location in the reviews section of the app (more on that below!)"
+    p4header: "4) Why are safe restrooms an issue?"
+    p4:
+      first: "Using the restroom is an everyday activity that can be difficult for members of our community to navigate -- especially when visiting areas outside of their daily routines. That's where our mapping project comes in."
+      second: "According to the <a href='http://www.ustranssurvey.org/'>US Trans Survey</a>:"
+      list1: "59% of respondents avoided using a restroom for fear of confrontation"
+      list2: "31% avoided eating or drinking while out, to avoid having to use the restroom"
+      list3: "24% had their presence in the restroom questioned"
+      list4: "12% had been harassed, attacked, or sexually assaulted in a restroom"
+      list5: "9% had been denied restroom access"
+      list6: "8% had developed a kidney issue or urinary tract infection from avoiding bathroom usage"
+    p5header: "5) What does a review mean?"
+    p5: "Reviews help visitors share experiences with each other about the location. We encourage visitors to share as much information as we have about each location on the map."
+    p6header: "6) How do I remove my listing?"
+    p6: "We hope you'll consider keeping your listing; it can mean a lot for people's health and wellbeing. However, if you'd rather not be listed, use our contact form to request a removal and our volunteers will work on it as soon as we can (this is an open source project so all work is done by volunteers)."
+

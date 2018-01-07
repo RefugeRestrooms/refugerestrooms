@@ -7,15 +7,16 @@
   .text-padding
     %h3
       = t('about.p1header')
-    %p= t('about.p1')
+    %p= t('about.p1.first')
+    %p= t('about.p1.second')
     %h3
       = t('about.p2header')
     %p
       = t('about.p2')
     %h3
       = t('about.p3header')
-    = t('about.p3')
-    %p/
+    %p
+      = t('about.p3')
     %h3
       = t('about.p4header')
     %p
@@ -30,3 +31,8 @@
       = t('about.p5.third').html_safe
     %p
       = t('about.p5.fourth').html_safe
+    %h3
+      = t('about.p6header')
+    %p
+      = t('about.p6').html_safe
+
