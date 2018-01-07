@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "Restrooms API", type: :request do
   it 'sends a list of restrooms order by date descending' do
-    FactoryBot.create_list(:restroom, 15)
+    create_list(:restroom, 15)
 
     get '/api/v1/restrooms'
     expect(response).to be_success
@@ -18,8 +18,20 @@ describe "Restrooms API", type: :request do
     end
   end
 
+  it 'does not list restroom edits' do
+    create(:restroom, id: 1)
+    create(:restroom, edit_id: 1)
+
+    get '/api/v1/restrooms'
+    expect(response).to be_success
+
+    json = JSON.parse(response.body)
+    puts json
+    expect(json.length).to eq(1)
+  end
+
   it 'paginates list of restrooms by 10 results' do
-    FactoryBot.create_list(:restroom, 15)
+    create_list(:restroom, 15)
 
     get '/api/v1/restrooms'
     expect(response).to be_success
@@ -35,10 +47,10 @@ describe "Restrooms API", type: :request do
 
   context 'filters' do
     before :each do
-      FactoryBot.create_list(:restroom, 5)
-      FactoryBot.create_list(:unisex_restroom, 5)
-      FactoryBot.create_list(:ada_restroom, 5)
-      FactoryBot.create_list(:unisex_and_ada_restroom, 5)
+      create_list(:restroom, 5)
+      create_list(:unisex_restroom, 5)
+      create_list(:ada_restroom, 5)
+      create_list(:unisex_and_ada_restroom, 5)
     end
 
     let(:json) { JSON.parse(response.body) }
@@ -81,10 +93,10 @@ describe "Restrooms API", type: :request do
   end
 
   it 'full-text searches a list of restrooms' do
-    FactoryBot.create(:restroom)
-    FactoryBot.create(:restroom, name: 'Frankie\'s Coffee Shop')
-    FactoryBot.create(:restroom, name: 'Hipster Coffee Shop')
-    FactoryBot.create(:restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
+    create(:restroom)
+    create(:restroom, name: 'Frankie\'s Coffee Shop')
+    create(:restroom, name: 'Hipster Coffee Shop')
+    create(:restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
 
     get '/api/v1/restrooms/search', params: { query: 'Coffee Shop' }
     json = JSON.parse(response.body)
@@ -107,7 +119,7 @@ describe "Restrooms API", type: :request do
   end
 
   it 'paginates full-text searches a list of restrooms by 10 results' do
-    FactoryBot.create_list(:restroom, 15)
+    create_list(:restroom, 15)
 
     get '/api/v1/restrooms/search', params: { query: 'San Francisco' }
     expect(response).to be_success
@@ -123,10 +135,10 @@ describe "Restrooms API", type: :request do
 
   context "queries" do
     before :each do
-      FactoryBot.create(:restroom)
-      FactoryBot.create(:unisex_restroom, name: 'Frankie\'s Coffee Shop')
-      FactoryBot.create(:ada_restroom, name: 'Hipster Coffee Shop')
-      FactoryBot.create(:unisex_and_ada_restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
+      create(:restroom)
+      create(:unisex_restroom, name: 'Frankie\'s Coffee Shop')
+      create(:ada_restroom, name: 'Hipster Coffee Shop')
+      create(:unisex_and_ada_restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
     end
 
     let(:json) { JSON.parse(response.body) }
@@ -177,7 +189,7 @@ describe "Restrooms API", type: :request do
 
     context "filters a list of restrooms by updated date" do
       before :each do
-        FactoryBot.create(:restroom, created_at: 1.day.ago)
+        create(:restroom, created_at: 1.day.ago)
         get "/api/v1/restrooms/by_date", params: { updated: true, day: Date.today.day, month: Date.today.month, year: Date.today.year }
       end
 
@@ -192,7 +204,7 @@ describe "Restrooms API", type: :request do
 
     context "filters a list of restrooms by created date" do
       before :each do
-        FactoryBot.create(:restroom, created_at: 1.week.ago)
+        create(:restroom, created_at: 1.week.ago)
         get "/api/v1/restrooms/by_date", params: { day: Date.today.day, month: Date.today.month, year: Date.today.year }
       end
 
