@@ -27,7 +27,7 @@
       %p
         %strong #{t('restroom.comments')}:
         = @restroom.comment
-      %p= link_to t('restroom.contact.contactlisting'), contact_path(restroom_id: @restroom.id, restroom_name: @restroom.name)
+      %p= link_to t('restroom.edit.editlisting'), new_restroom_path(id: @restroom.id, restroom_name: @restroom.name, edit_id: @restroom.id)
   .row
     .col-xs-12
       #map
