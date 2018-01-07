@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :restroom do
     name 'Moonlight Café'
     street '123 Example St.'

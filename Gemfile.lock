@@ -149,10 +149,10 @@ GEM
     equalizer (0.0.11)
     erubi (1.7.0)
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.18)
     formtastic (3.1.5)
@@ -400,7 +400,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 4.3)
   dotenv-rails (~> 2.2.1)
-  factory_girl_rails (~> 4.0)
+  factory_bot_rails (~> 4.8.2)
   geocoder (~> 1.2.1)
   grape (= 0.7.0)
   grape-kaminari

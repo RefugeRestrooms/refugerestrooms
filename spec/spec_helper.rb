@@ -43,8 +43,8 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  # Include FactoryGirl methods into the RSpec test suite.
-  config.include FactoryGirl::Syntax::Methods
+  # Include FactoryBot methods into the RSpec test suite.
+  config.include FactoryBot::Syntax::Methods
 end
 
 Geocoder.configure(:lookup => :test)
