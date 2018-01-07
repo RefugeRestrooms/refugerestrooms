@@ -34,7 +34,7 @@ gem 'activeadmin', '~> 1.0.0'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_bot_rails', '~> 4.8.2'
   gem 'dotenv-rails', '~> 2.2.1'
   gem 'pry'
   gem 'better_errors', '~> 2.4.0'

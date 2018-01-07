@@ -7,7 +7,7 @@ describe RestroomsController, type: :controller do
   end
 
   context "voting" do
-    let(:restroom) { FactoryGirl.create(:restroom) }
+    let(:restroom) { FactoryBot.create(:restroom) }
 
     it "should downvote" do
       post_params = {
