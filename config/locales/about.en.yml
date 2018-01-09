@@ -18,5 +18,5 @@ en:
       third: "<strong>Thirdly:</strong> If you know how to code, visit GitHub and let us know about a bug, suggest an improvement, or even contribute a little bit of code and help out the project. REFUGE is open source and we can't do it without you."
       fourth: "<strong>Fourthly: </strong> Donate. Keep your eyes peeled for an upcoming crowd funding campaign to fund some of the technology we need to use as well as to pay our fabulous designers and engineers a little bit of money for their hard and tireless work. They have been working for free to bring this service to you and we don't want anybody to work for free. Most of the core team are transgender and underemployed at this time."
     p6header: "Why is my business or organization listed?"
-    p6: "Find out more on our <a href 'https:refugerestrooms.org/business_info'>Business FAQ</a>!"
+    p6: "Find out more on our <a href='/business_info'>Business FAQ</a>!"
     contribute: 'Fork us and contribute on GitHub!'
