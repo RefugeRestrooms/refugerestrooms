@@ -80,7 +80,8 @@ function generateContent(data){
   var item = $(".listItem[data-id=" + data.id + "]");
   var container = $("<div class='markerPopup' />");
   container.append(item.clone());
-  return container.html();
+
+  return container[0].outerHTML;
 }
 
 function setPoint(data, number){
