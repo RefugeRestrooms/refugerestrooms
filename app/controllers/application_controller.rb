@@ -14,17 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
    def set_locale
-     I18n.locale = extract_locale_from_accept_language_header
+     I18n.locale = http_accept_language.compatible_language_from(I18n.available_locales)
    end
-
-  private
-    def extract_locale_from_accept_language_header
-      accept_language = request.env['HTTP_ACCEPT_LANGUAGE']
-      if accept_language.nil?
-        "en"
-      else
-        request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-      end
-    end
 
 end
