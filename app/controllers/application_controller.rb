@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
     @mobile = true
   end
 
-  def mobile_filter_header
-    @mobile = true
-  end
-
    def set_locale
      I18n.locale = http_accept_language.language_region_compatible_from(I18n.available_locales)
    end
