@@ -1,5 +1,10 @@
 - if @contact.restroom_name.present?
-  %h1= t('.request-edit')
+  - titlestring = t('.request-edit-for')
+  - titlestring << " "
+  - titlestring << @contact.restroom_name
+  - titlestring << " "
+  - titlestring << t('.restroom')
+  %h1= titlestring
 - else
   %h1= t('.contact-title')
 = simple_form_for @contact, html: {class: 'form-vertical headroom'} do |f|
