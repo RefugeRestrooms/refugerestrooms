@@ -1,14 +1,7 @@
 es:
   pages:
      text:
-<<<<<<< HEAD
         title: 'Recibir el baño más cercano por mensaje de texto'
         intro: 'Si necesitas llegar al baño seguro más cercano, <em>ahora mismo</em>, puedes recibirlo por mensaje de texto en cualquier teléfono que tiene SMS.'
         instructions: 'Envía tu ubicación +1 (415) 367-3288'
         tip: "Para obtener los resultados más precisos, incluya la dirección de la calle, la ciudad, el estado y el país. ¡Obtendrá una ubicación con nombre y dirección inmediatamente!"
-=======
-        title: 'Get Closest Restroom by Text'
-        intro: 'If you just need to get to the closest safe restroom <em>right now</em>, you can get it by text on any phone that has SMS.'
-        instructions: 'Text your location to +1 (415) 367-3288'
-        tip: "For the most accurate results, include street address, city, state and country. You'll get a location name and address back instantly!"
->>>>>>> ea547633d772e6a6ef9951632a45f7ce98edf22a
