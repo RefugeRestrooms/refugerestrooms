@@ -23,8 +23,8 @@ en:
   helpers:
     submit:
       contact:
-        # This is the "Submit message" button on the "Contact" page.
-        create: 'Submit message'
+        # This is the "Send message" button on the "Contact" page.
+        create: 'Send message'
 
     # Labels and hints examples
     # labels:
