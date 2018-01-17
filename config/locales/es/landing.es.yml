@@ -1,0 +1,3 @@
+es:
+  landing:
+    development: "Este sitio actualmente está en funcionamiento. Sin embargo, está en desarrollo. Puede que encuentre problemas técnicos (bugs). En ese caso, por favor someta un issue en %{github_link}, o envienos un %{contact_link} para poder resolverlo lo antes posible. Este proyecto es de código abierto. Te alentamos a contribuir en %{github_link}."
