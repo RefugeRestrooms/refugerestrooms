@@ -1,20 +1,20 @@
 %footer
   .footer
-    %a.iconLink{:href => "https://github.com/RefugeRestrooms/refugerestrooms", :aria => { :label => "Refuge Restrooms on github"}}
+    %a.iconLink{:href => "https://github.com/RefugeRestrooms/refugerestrooms", :aria => { :label => t('.aria-labels.github')}}
       %i.icon.fa.fa-github-square.fa-3x
-    %a.iconLink{:href => "https://twitter.com/refugerestrooms", :aria => { :label => "Refuge Restrooms on twitter"}}
+    %a.iconLink{:href => "https://twitter.com/refugerestrooms", :aria => { :label => t('.aria-labels.twitter')}}
       %i.icon.fa.fa-twitter-square.fa-3x
-    %a.iconLink{:href => "https://www.facebook.com/refugerestrooms", :aria => { :label => "Refuge Restrooms on facebook"}}
+    %a.iconLink{:href => "https://www.facebook.com/refugerestrooms", :aria => { :label => t('.aria-labels.facebook')}}
       %i.icon.fa.fa-facebook-square.fa-3x
-    %a.iconLink{:href => "http://blog.refugerestrooms.org/", :aria => { :label => "Refuge Restrooms's blog on tumblr"}}
+    %a.iconLink{:href => "http://blog.refugerestrooms.org/", :aria => { :label => t('.aria-labels.tumblr')}}
       %i.icon.fa.fa-tumblr-square.fa-3x
-    %a.iconLink{:href => contact_path, :aria => { :label => "Email Refuge Restrooms"}}
+    %a.iconLink{:href => contact_path, :aria => { :label => t('.aria-labels.email')}}
       %i.icon.fa.fa-envelope.fa-3x
     %br/
-    refuge restrooms is open source.
-    %a{:href => "https://github.com/RefugeRestrooms/refugerestrooms"} code on github.
+    = t('.refuge-restrooms-is-open-source')
+    %a{:href => "https://github.com/RefugeRestrooms/refugerestrooms"} #{t('.code-on-github')}
     %br/
-    contribute to the project
-    %a{:href => "https://patreon.com/refugerestrooms"} on patreon.
+    = t('.contribute-to-the-project')
+    %a{:href => "https://patreon.com/refugerestrooms"} #{t('.on-patreon')}
     %br/
-    = "\&copy; copyleft #{Date.today.year} refuge restrooms.".html_safe
+    = "\&copy; #{t('.copyleft')}  #{Date.today.year} #{t('.refuge-restrooms')}".html_safe

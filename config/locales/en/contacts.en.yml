@@ -1,0 +1,6 @@
+en:
+  contacts:
+    new:
+      request-edit-for-restroom: 'Request Edit for %{restroom_name} Restroom'
+      contact-title: 'Contact'
+      leave-this-field-blank: 'Leave this field blank!'
