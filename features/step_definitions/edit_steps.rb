@@ -7,7 +7,7 @@ Then(/^I should see the edit link$/) do
   expect(page).to have_content("Propose an edit to this listing.")
 end
 
-Given(/^I visit the edit page for 'Winnepeg restroom'$/) do
+Given(/^I visit the edit page for 'Winnepeg Restroom'$/) do
   FactoryBot.create(:restroom, {id: 1, name: 'Winnipeg restroom', street: '91 Albert St.', city: 'Winnipeg', state: 'MB', country: 'Canada'}.merge(locations[:Winnipeg]))
   visit '/restrooms/new?edit_id=1&restroom_id=1'
 end
