@@ -7,3 +7,7 @@ Feature: Edit restroom
   Scenario: View an edit
     When I visit the edit page for 'Winnepeg Restroom'
     Then I should see the restroom address
+
+  Scenario: Submit an edit
+    When I submit an edit to 'Winnepeg Restroom'
+    Then I should see that the edit has been submitted

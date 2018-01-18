@@ -13,13 +13,13 @@ Given(/^I visit the edit page for 'Winnepeg Restroom'$/) do
 end
 
 Then(/^I should see the restroom address$/) do
-  expect(page).to have_content("684 East hastings")
+  expect(page).to have_content("91 Albert St.")
 end
 
 Given(/^I submit an edit to 'Winnepeg Restroom'$/)  do
-  FactoryBot.create(:restroom, {id: 1, name: 'Winnipeg restroom', street: '91 Albert St.', city: 'Winnipeg', state: 'MB', country: 'Canada'}.merge(locations[:Winnipeg]))
+  FactoryBot.create(:restroom, {id: 1, name: 'Winnipeg Restroom', street: '91 Albert St.', city: 'Winnipeg', state: 'MB', country: 'Canada'}.merge(locations[:Winnipeg]))
   visit '/restrooms/new?edit_id=1&restroom_id=1'
-  fill_in'restroom[name]', with: 'Not Winnepeg restroom'
+  fill_in 'restroom[name]', with: 'Not Winnepeg restroom'
   click_button "Save Restroom"
 end
 
