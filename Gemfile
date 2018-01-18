@@ -28,6 +28,7 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'bugsnag'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
+gem 'http_accept_language'
 
 # Upgraded to 1.0.0 for Rails 5.1.4
 gem 'activeadmin', '~> 1.0.0'
