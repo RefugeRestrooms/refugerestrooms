@@ -2,7 +2,7 @@ en:
   business_info:
     title: "Refuge Restrooms Business Info"
     p1header: "1) What is Refuge Restrooms?"
-    p1: "REFUGE is a web application that seeks to provide safe restroom access for transgender, intersex, and gender nonconforming individuals. Read more about us on our <a href 'https://refugerestrooms.org'>About Page</a>."
+    p1: "REFUGE is a web application that seeks to provide safe restroom access for transgender, intersex, and gender nonconforming individuals. Read more about us on our <a href='/about'>About Page</a>."
     p2header: "2) How did my facility get on this list?"
     p2: "Someone used your restroom and wanted to submit your location as a resource. All our data is crowd-sourced and user-submitted."
     p3header: "3) How can I be a good host?"
