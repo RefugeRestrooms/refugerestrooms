@@ -26,7 +26,7 @@ es:
         subject: "Instrucciones de desbloqueo"
     omniauth_callbacks:
       failure: "No se te pudo autorizar de %{kind} debido a \"%{reason}\"."
-      success: "Identificado correctamente de %{kind}."
+      success: "Identificado correctamente como %{kind}."
     passwords:
       no_token: "No puedes acceder a esta página sino es por medio de un enlace para reestablecer de contraseña envíado a tu correo. Si accediste desde el enlace para reestablecer la contraseña, asegúrate de que la URL esté completa."
       send_instructions: "Recibirás un correo electrónico con instrucciones sobre cómo reestablecer tu contraseña en unos minutos."

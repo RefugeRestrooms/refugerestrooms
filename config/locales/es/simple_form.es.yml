@@ -9,7 +9,7 @@ es:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Por favor revise los problemas a continuación:"
+      default_message: "Por favor revise los problemas encontrados:"
     # Labels and hints examples
     # labels:
     #   defaults:

@@ -1,12 +1,12 @@
 es:
   business_info:
     title: "Preguntas frecuentes para organizaciones y empresas sobre Refuge Restrooms"
-    p1header: "1) Que es Refuge Restrooms?"
-    p1: "REFUGE es una aplicación por internet que busca proveer acceso seguro a baños para personas trans, intersex, y personas sin conformidad a un género. Puedes leer más en <a href='/about'>Acerca de REFUGE</a>."
+    p1header: "1) ¿Qué es Refuge Restrooms?"
+    p1: "REFUGE es una aplicación web que busca proveer acceso seguro a baños para personas trans, intersex, y personas sin conformidad a un género. Puedes leer más en <a href='/about'>Acerca de REFUGE</a>."
     p2header: "2) ¿Cómo llegó mi instalación a esta lista?"
     p2: "Alguien usó su baño y quizo enviar su ubicación como recurso. Todos nuestros datos son de fuentes múltiples y enviados por el usuario"
     p3header: "3) ¿Cómo puedo ser un buen anfitrión?"
-    p3: "¡Gracias por preguntar! A menudo, los visitantes de REFUGE solo esperan pasar rápidamente y irse, y como cualquier otro visitante, apoyar potencialmente su negocio o ubicación mientras esta ahí. El personal amigable y las buenas experiencias pueden aportar mucho en recibir amor por su espacio en la sección de comentarios de la aplicación (¡más sobre eso a continuación!)"
+    p3: "¡Gracias por preguntar! A menudo, los visitantes de REFUGE sólo esperan pasar rápidamente y irse, y como cualquier otro visitante, apoyar potencialmente su negocio o ubicación mientras esta ahí. Un personal amigable y las buenas experiencias pueden ayudar mucho a la hora de recibir comentarios positivos sobre su espacio en la sección de comentarios de la aplicación (¡más sobre eso a continuación!)"
     p4header: "4) ¿Por qué hay un problema con los baños seguros?"
     p4:
       first: "Usar el baño es una actividad cotidiana que puede ser difícil de navegar para personas de nuestra comunidad, especialmente cuando se visitan áreas fuera de sus rutinas diarias. Nuestro proyecto de mapeo aborda esta cuestión"
