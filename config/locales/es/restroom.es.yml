@@ -4,8 +4,8 @@ es:
       restroom:
         # only overridden attributes here, defaults work as expected
         # (e.g. database field 'city' will be appear as 'City')
-        name: 'Ubicación/Lugar/Nombre de Empresa'
-        street: 'Dirección de Calle'
+        name: 'Ubicación/Lugar/Nombre de la Empresa'
+        street: 'Dirección'
         state: 'Estado/Provincia'
         access: '¿Es accesible?'
         bath_type: 'Tipo de Baño'
@@ -17,7 +17,7 @@ es:
     add_new: 'Enviar un baño a nuestra base de datos'
     preview: 'Vista Previa'
     required: '* denota campo requerido'
-    guess_location: 'Adivinar ubicación actual'
+    guess_location: 'Encontrar ubicación actual'
     directions: 'Direcciones'
     directions_hint: '(por ejemplo: tercer piso al fondo, al lado de los vestidores...)'
     comments_hint: '(e.g.: baños son solo para "consumidores", hay que actuar como que estas por comprar algo...)'
@@ -33,7 +33,7 @@ es:
     rating:
       positive: '%{percentage}% positivo'
       unrated: 'Aún sin calificar'
-    upvote: '¡Lo amé!'
+    upvote: '¡Me gusta!'
     downvote: 'No es seguro'
     confirm:
       upvote: '¿Confirma que quiere darle una calificación positiva a este baño?'
