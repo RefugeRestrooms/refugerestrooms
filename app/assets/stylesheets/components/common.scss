@@ -40,6 +40,10 @@ h1 {
     line-height: 150px;
 }
 
+p.p-text-sizebump, .p-text-sizebump p {
+    font-size: 1.1em;
+}
+
 .fadedText {
     color: $gray;
 }
