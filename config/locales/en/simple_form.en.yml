@@ -1,3 +1,6 @@
+# See this documentation: https://github.com/plataformatec/simple_form#i18n
+# And this StackOverflow answer: https://stackoverflow.com/questions/35906089/changing-simple-form-submit-button-i18n-text
+
 en:
   simple_form:
     "yes": 'Yes'
@@ -10,6 +13,19 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+
+    labels:
+      defaults:
+        name: 'Name'
+        email: 'Email'
+        message: 'Message'
+
+  helpers:
+    submit:
+      contact:
+        # This is the "Send message" button on the "Contact" page.
+        create: 'Send message'
+
     # Labels and hints examples
     # labels:
     #   defaults:

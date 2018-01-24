@@ -8,9 +8,9 @@ class ContactsController < ApplicationController
     @contact.request = request
       if @contact.deliver
         flash.now[:error] = nil
-        flash.now[:notice] = 'Thank you for your message!'
+        flash.now[:notice] = I18n.t('contacts.submitted.thank-you-exclamation')
       else
-        flash.now[:error] = 'Cannot send message.'
+        flash.now[:error] = I18n.t('contacts.submitted.cannot-send')
         render :new
       end
   end
