@@ -1,0 +1,23 @@
+fr:
+  business_info:
+    title: "Questions fréquentes des organisations et entreprises à propos de Refuge Restrooms"
+    p1header: "1) Qu'est ce que Refuge Restrooms ?"
+    p1: "REFUGE est une application web visant à fournir un accès sécurisé à des toilettes aux personnes transgenres, intersexuées et non conformes dans le genre. En lire plus à propos de nous sur notre <a href='/about'>page À Propos</a>."
+    p2header: "2) Comment mon établissement est-il entré dans cette liste ?"
+    p2: "Quelqu'un a utilisé vos toilettes et voulait soumettre votre emplacement en tant que ressource. Toutes nos données sont fournies par l'utilisateur et soumises par l'utilisateur."
+    p3header: "3)Comment puis-je être un bon hôte ?"
+    p3: "Merci d'avoir posé la question! Souvent, les visiteurs de REFUGE espèrent faire un arrêt rapide et être sur notre chemin, et comme tout autre visiteur, potentiellement soutenir votre entreprise ou votre emplacement pendant que nous sommes là. Le personnel amical et de bonnes expériences peuvent apporter un peu d'amour pour votre espace dans la section des commentaires de l'application (plus d'informations ci-dessous)"
+    p4header: "4) Why are safe restrooms an issue?"
+    p4:
+      first: "Aller aux toilettes es une activité quotidienne qui peut être difficile à effectuer pour les membres de notre communauté -- en particulier quand ils se rendent dans des lieux étrangers à leurs habitudes. C'est à ce moment que notre projet carthographie intervient."
+      second: "Selon l'<a href='http://www.ustranssurvey.org/'>US Trans Survey</a>:"
+      list1: "59% des répondants évitent d'utiliser les toilettes par peur de confrontation"
+      list2: "31% évitent de manger ou boire à l'extérieur pour eviter d'utiliser les toilettes"
+      list3: "24%  ont été questionnés sur leur présence aux toilettes"
+      list4: "12% ont été harcelés, attaqués, ou agressés sexuellement dans les toilettes"
+      list5: "9% se sont vus refuser l'accès aux toilettes"
+      list6: "8% ont développé un problème rénal ou une infection des voies urinaires pour avoir éviter l'utilisation des toilettes"
+    p5header: "5) Que signifient les avis?"
+    p5: "Les avis aident les visiteurs à partager leurs expériences les uns avec les autres sur l'emplacement. Nous encourageons les visiteurs à partager autant d'informations que nous avons sur chaque emplacement de la carte."
+    p6header: "6) Comment puis je retirer mon référencement ?"
+    p6: "Nous espérons que vous envisagerez de conserver votre référencement. Cela peut signifier beaucoup pour la santé et le bien-être de la population. Cependant, si vous préférez ne pas être référencer, utilisez notre formulaire de contact pour demander un retrait et nos volontaires travailleront dessus dès que possible (ceci est un projet open source, tout le travail est donc réalisé par des bénévoles)."
