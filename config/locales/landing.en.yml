@@ -1,3 +1,0 @@
-en:
-  landing:
-    development: "This website is currently functional yet still under development. You may find that there are bugs. If you find any please submit an issue on %{github_link}, or send us a %{contact_link} so that we can resolve the issue ASAP. This is an Open Source project and we encourage you to contribute on %{github_link}."

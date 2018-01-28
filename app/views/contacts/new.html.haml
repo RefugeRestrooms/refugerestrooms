@@ -1,7 +1,7 @@
 - if @contact.restroom_name.present?
-  %h1 Request Edit for #{@contact.restroom_name} Restroom
+  %h1= t('.request-edit-for-restroom', restroom_name: @contact.restroom_name)
 - else
-  %h1 Contact
+  %h1= t('.contact-title')
 = simple_form_for @contact, html: {class: 'form-vertical headroom'} do |f|
   %p
   = f.input :name, :required => true
@@ -10,6 +10,6 @@
   .hidden
     = f.hidden_field :restroom_id, :required => false
     = f.hidden_field :restroom_name, :required => false
-    = f.hidden_field :nickname, :hint => 'Leave this field blank!'
+    = f.hidden_field :nickname, :hint => t('.leave-this-field-blank')
   .form-actions
-    = f.button :submit, 'Send message', :class=> "linkbutton"
+    = f.button :submit, :class=> "linkbutton"
