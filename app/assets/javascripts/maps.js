@@ -71,7 +71,7 @@ function placeMarker(lat, lng, content, number){
     content: content
   });
 
-  marker.addListener('click', () => {
+  marker.addListener('click', function() {
     infoWindow.open(map, marker);
   });
 }
