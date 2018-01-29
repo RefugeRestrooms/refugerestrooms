@@ -8,16 +8,13 @@ https://help.github.com/articles/fork-a-repo/
 ### 2 Install Docker.
 https://docs.docker.com/install/
 
-### 3 Run the Docker Container
+### 3 Build the Docker Container
 Build the container
 ```
 docker-compose build
 ```
 
-Once up, in a separate terminal run:
-```
-docker-compose run web rake db:migrate
-```
+### 4 Run the Docker Container
 
 You can now run and shutdown the app with:
 ```
@@ -27,18 +24,18 @@ docker-compose down
 
 It will be available at localhost:3000
 
-### 4 Run the Tests
+### 5 Run the Tests
 ```
 docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec cucumber
 ```
 
-### 5 Optional tasks:
+### 6 Optional tasks:
 To clean up encoding problems in the safe2pee data, run (Use `rake db:fix_accents[dry_run]` to preview the changes.):
 ```
 docker-compose run rake db:fixaccents
 ```
 
-### 6 Assets
+### 7 Assets
 * [Assets Repo](https://github.com/RefugeRestrooms/refuge_assets)
 
 ## Testing
