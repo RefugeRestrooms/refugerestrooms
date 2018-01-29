@@ -1,5 +1,8 @@
 var map;
 
+// Constants
+const MARKER_WIDTH = 37;
+
 function initMap(x, y, image, draggable, callback){
   image = typeof image !== 'undefined' ? image : currentLocationImage;
 
@@ -48,8 +51,8 @@ function placeMarker(lat, lng, content, number){
   // Create Icon
   var circleIcon = {
     url: circleMarkerImage,
-    size: new google.maps.Size(37, 37),
-    anchor: new google.maps.Point(18.5, 18.5)
+    size: new google.maps.Size(MARKER_WIDTH, MARKER_WIDTH),
+    anchor: new google.maps.Point(MARKER_WIDTH / 2, MARKER_WIDTH / 2)
   };
 
   // Create label
