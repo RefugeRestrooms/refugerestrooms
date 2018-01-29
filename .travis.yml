@@ -4,10 +4,3 @@ before_install:
   - docker-compose build
 script:
   - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec cucumber
-notifications:
-    irc: "chat.freenode.com#refugerestrooms"
-    skip_join: true
-    template:
-      - "Build #%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-      - "Change view : %{compare_url}"
-      - "Build details : %{build_url}"
