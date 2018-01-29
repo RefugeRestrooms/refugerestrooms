@@ -9,14 +9,23 @@ https://help.github.com/articles/fork-a-repo/
 https://docs.docker.com/install/
 
 ### 3 Run the Docker Container
+Build the container
 ```
-docker-compose up
+docker-compose build
 ```
 
 Once up, in a separate terminal run:
 ```
 docker-compose run web rake db:migrate
 ```
+
+You can now run and shutdown the app with:
+```
+docker-compose up
+docker-compose down
+```
+
+It will be available at localhost:3000
 
 ### 4 Run the Tests
 ```
