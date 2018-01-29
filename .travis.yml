@@ -1,12 +1,9 @@
 language: ruby
-cache: bundler
+services: docker
+before_install:
+  - docker build
 script:
-  - bundle exec rake db:setup RAILS_ENV=test
-  - bundle exec rake db:test:prepare
-  - bundle exec rake spec
-  - bundle exec rake cucumber
-rvm:
-  - 2.3.1
+  - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec cucumber
 notifications:
     irc: "chat.freenode.com#refugerestrooms"
     skip_join: true
