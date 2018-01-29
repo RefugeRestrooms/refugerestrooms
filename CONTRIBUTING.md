@@ -3,6 +3,7 @@
 ## Setting Up Development Environment
 
 ### 1 Fork and clone the repository.
+https://help.github.com/articles/fork-a-repo/
 
 ### 2 Install Docker.
 https://docs.docker.com/install/
