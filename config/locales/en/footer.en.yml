@@ -1,0 +1,15 @@
+en:
+  layouts:
+    footer:
+      aria-labels:
+        github: 'Refuge Restrooms on GitHub'
+        twitter: 'Refuge Restrooms on twitter'
+        facebook: 'Refuge Restrooms on Facebook'
+        tumblr: 'Refuge Restrooms blog on tumblr'
+        email: 'Email Refuge Restrooms'
+      refuge-restrooms-is-open-source: 'refuge restrooms is open source.'
+      code-on-github: 'code on github.'
+      contribute-to-the-project: 'contribute to the project'
+      on-patreon: 'on patreon.'
+      copyleft: 'copyleft'
+      refuge-restrooms: 'refuge restrooms.'
