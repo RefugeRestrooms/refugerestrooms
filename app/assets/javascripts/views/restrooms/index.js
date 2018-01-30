@@ -11,32 +11,14 @@ $(function(){
   function toggleMap (){
     if (mapShow) {
       mapToggle.html("Map View");
-      //animate
-      scrollUp(mapContainer, function(){scrollDown(list, listHeight);});
-    }else{
+      // animate
+      mapContainer.fadeIn(500, function() { list.fadeOut(500) });
+    } else{
       mapToggle.html("List View");
-      //animate
-      scrollUp(list, function(){scrollDown(mapContainer, mapHeight, doInit);});
+      // animate
+      list.fadeOut(500, function() { mapContainer.fadeIn(500, initPoints) });
     }
     mapShow = !mapShow;
-  }
-
-  function scrollDown(object, height, callback){
-    object.show();
-    object.animate({height: height}, 1000, function(){
-      if (callback) {
-        callback();
-      }
-    });
-  }
-
-  function scrollUp(object, callback){
-    object.animate({height: 0}, 1000, function(){
-      object.hide();
-      if (callback) {
-        callback();
-      }
-    })
   }
 
   function doInit(){
@@ -65,9 +47,8 @@ $(function(){
     mapHeight = mapContainer.height();
     listHeight = list.height();
 
-    //hide the map
-    mapContainer.hide();
-    mapContainer.height(0);
+    // hide the map
+    mapContainer.fadeOut(0);
 
     mapToggle.click(function(){
       //toggle which display is open
