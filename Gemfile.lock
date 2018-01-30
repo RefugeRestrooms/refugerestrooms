@@ -190,6 +190,7 @@ GEM
       activesupport (>= 4.1, < 5.2)
     hashie (3.5.6)
     high_voltage (3.0.0)
+    http_accept_language (2.1.1)
     i18n (0.8.6)
     i18n_data (0.8.0)
     ice_nine (0.11.2)
@@ -407,6 +408,7 @@ DEPENDENCIES
   grape-swagger (~> 0.7.2)
   haml
   high_voltage (~> 3.0.0)
+  http_accept_language
   jbuilder (~> 2.5)
   jquery-rails
   kaminari (~> 0.17.0)
@@ -436,4 +438,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.14.6
+   1.15.3

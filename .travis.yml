@@ -7,10 +7,3 @@ script:
   - bundle exec rake cucumber
 rvm:
   - 2.3.1
-notifications:
-    irc: "chat.freenode.com#refugerestrooms"
-    skip_join: true
-    template:
-      - "Build #%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-      - "Change view : %{compare_url}"
-      - "Build details : %{build_url}"
