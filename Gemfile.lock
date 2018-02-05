@@ -252,6 +252,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.0)
+    puma (3.11.2)
     rack (2.0.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -413,6 +414,7 @@ DEPENDENCIES
   pg_search
   poltergeist
   pry
+  puma
   rack-cors
   rack-jsonp
   rails (= 5.1.4)
