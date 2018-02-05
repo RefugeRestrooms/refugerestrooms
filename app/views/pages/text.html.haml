@@ -1,7 +1,7 @@
 .text-padding
-  %h1= t('pages.text_msg.title')
-  %p= t('pages.text_msg.intro').html_safe
-  %h2{:style => "text-align: center;"}= t('pages.text_msg.instructions')
-  %p= t('.tip')
-  %div{:style => "margin:30px auto;text-align:center;"}
+  %h1= t('pages.text.title')
+  %p.centered-text= t('pages.text.intro').html_safe
+  %h2.centered-text= t('pages.text.instructions')
+  %p.centered-text= t('.tip')
+  %div.centered-text{:style => "margin:30px auto"}
     %img{:src => "/assets/text-msg-demo.png"}/
