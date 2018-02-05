@@ -1,4 +1,4 @@
-class ChangeAccessAndBathTypeToBoolean < ActiveRecord::Migration
+class ChangeAccessAndBathTypeToBoolean < ActiveRecord::Migration[4.2]
   def up
     # If access is 1 it is accessible
     # If bath_type is 0 it is unisex
