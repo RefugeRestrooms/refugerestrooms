@@ -17,6 +17,19 @@ en:
     labels:
       defaults:
         name: 'Name'
+        street: 'Street'
+        city: 'City'
+        state: 'State/Province'
+        country: 'Country'
+        accessible: 'Accessible'
+        unisex: 'Unisex'
+        changing_table: 'Changing Table'
+        directions: 'Directions'
+        comment: 'Comment'
+        email: 'Email'
+        message: 'Message'
+      contact:
+        name: 'Name'
         email: 'Email'
         message: 'Message'
 

@@ -2,7 +2,9 @@ es:
   about:
     title: 'Acerca de REFUGE'
     p1header: '¿De qué se trata REFUGE restrooms?'
-    p1: 'REFUGE es una aplicación por internet que busca proveer acceso seguro a baños para personas trans, intersexo, y personas género no conformes. Cuando el sitio web Safe2Pee cesó de funcionar, dejó un vacio en nuestros corazones. REFUGE continúa el proyecto de Safe2Pee y vuelve a poner a disposición ese recurso valorado para quienes necesitan un espacio seguro para usar el baño. Es posible buscar baños por proximidad a una ubicación, agregar nuevos sanitarios a la lista, además de comentar y agregar un puntaje a los baños listados. Queremos crear una comunidad enfocada en más que solo buscar baños seguros, que sientan que pueden proyectar y participar en crear espacios para apoyar a personas trans, intersexo y personas género no conformes.'
+    p1:
+      first: 'REFUGE es una aplicación por internet que busca proveer acceso seguro a baños para personas trans, intersexo, y personas género no conformes. Es posible buscar baños por proximidad a una ubicación, agregar nuevos baños a la lista, además de comentar y agregar un puntaje a los baños listados.'
+      second: 'Estamos dirigidos por personas trans, y buscamos crear una comunidad centrada no solo en encontrar un acceso seguro a los baños, sino también en abogar por la seguridad de las personas transexuales, intersexo y género no conformes.'
     p2header: '¿De donde se sacaron todos estos datos?'
     p2: 'Las primeras 4500 entradas las tenemos gracias a la base de datos Safe2Pee. El resto de nuestros datos fueron generados por las personas que usan REFUGE. Si sabes de un baño que no discrimina por género: ¡Agregalo a nuestra base de datos!'
     p3header: '¿Por qué eligieron el nombre REFUGE (refugio)?'

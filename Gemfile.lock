@@ -192,6 +192,8 @@ GEM
     high_voltage (3.0.0)
     http_accept_language (2.1.1)
     i18n (0.8.6)
+    i18n-debug (1.1.0)
+      i18n (< 1)
     i18n_data (0.8.0)
     ice_nine (0.11.2)
     inherited_resources (1.7.2)
@@ -406,6 +408,7 @@ DEPENDENCIES
   haml
   high_voltage (~> 3.0.0)
   http_accept_language
+  i18n-debug
   jbuilder (~> 2.5)
   jquery-rails
   kaminari (~> 0.17.0)
