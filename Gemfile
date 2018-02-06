@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry'
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
+  gem 'i18n-debug'
 end
 
 group :test do

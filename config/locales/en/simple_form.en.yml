@@ -28,6 +28,10 @@ en:
         comment: 'Comment'
         email: 'Email'
         message: 'Message'
+      contact:
+        name: 'Name'
+        email: 'Email'
+        message: 'Message'
 
   helpers:
     submit:
