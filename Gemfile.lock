@@ -192,6 +192,8 @@ GEM
     high_voltage (3.0.0)
     http_accept_language (2.1.1)
     i18n (0.8.6)
+    i18n-debug (1.1.0)
+      i18n (< 1)
     i18n_data (0.8.0)
     ice_nine (0.11.2)
     inherited_resources (1.7.2)
@@ -242,10 +244,6 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
       arel (>= 6)
-    piwik_analytics (1.0.2)
-      actionpack
-      activesupport
-      rails (>= 3.0.0)
     poltergeist (1.16.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -256,6 +254,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (3.0.0)
+    puma (3.11.2)
     rack (2.0.3)
     rack-accept (0.4.5)
       rack (>= 0.4)
@@ -409,15 +408,16 @@ DEPENDENCIES
   haml
   high_voltage (~> 3.0.0)
   http_accept_language
+  i18n-debug
   jbuilder (~> 2.5)
   jquery-rails
   kaminari (~> 0.17.0)
   mail_form (>= 1.7.0)
   pg
   pg_search
-  piwik_analytics (~> 1.0.2)
   poltergeist
   pry
+  puma
   rack-cors
   rack-jsonp
   rails (= 5.1.4)

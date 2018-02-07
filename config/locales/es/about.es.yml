@@ -1,0 +1,22 @@
+es:
+  about:
+    title: 'Acerca de REFUGE'
+    p1header: '¿De qué se trata REFUGE restrooms?'
+    p1:
+      first: 'REFUGE es una aplicación por internet que busca proveer acceso seguro a baños para personas trans, intersexo, y personas género no conformes. Es posible buscar baños por proximidad a una ubicación, agregar nuevos baños a la lista, además de comentar y agregar un puntaje a los baños listados.'
+      second: 'Estamos dirigidos por personas trans, y buscamos crear una comunidad centrada no solo en encontrar un acceso seguro a los baños, sino también en abogar por la seguridad de las personas transexuales, intersexo y género no conformes.'
+    p2header: '¿De donde se sacaron todos estos datos?'
+    p2: 'Las primeras 4500 entradas las tenemos gracias a la base de datos Safe2Pee. El resto de nuestros datos fueron generados por las personas que usan REFUGE. Si sabes de un baño que no discrimina por género: ¡Agregalo a nuestra base de datos!'
+    p3header: '¿Por qué eligieron el nombre REFUGE (refugio)?'
+    p3: 'Creémos profundamente que todas las personas tienen el derecho de usar el baño de una manera segura y quisimos ponerle un nombre a nuestra aplicacion que tenga un poco de esa dignidad que le queremos otorgar a las personas que la usan. Simplemente, deseamos ser un refugio en tu momento de necesidad.'
+    p4header: '¿Cual es la importancia de los baños y por qué es relevante este recurso?'
+    p4: 'Una de las batallas más grandes que ocurre a diario en la lucha por derechos de las personas trans ocurre en el uso de los baños. Parece que cada semana un joven trans se torna en centro de una noticia nacional por usar el baño que corresponde al género con el cual se identifica. Evidentemente, creemos que cada persona trans debe tener el derecho de usar el baño que desea usar. Sin embargo, entendemos que a pesar de las victorias legislativas de últimos años en relación al uso de los baños públicos, muchas personas trans siguen enfrentandose con acoso tanto verbal como físico, sólo por usar el baño. Nadie debería enfrentarse con esa situación - y por eso es que creamos REFUGE.'
+    p5header: '¿Qué podemos hacer para ayudar?'
+    p5:
+      first: "<strong>Primero:</strong> Agregar a las entradas. La base de datos es tan grande como la hacen ustedes. Cuantas más entradas hay, más exhaustivo y valioso se hace el recurso."
+      second: "<strong>Segundo:</strong> Difundir entre sus contactos. Twitter. Facebook. Tumblr. Blog. Lo que sea que hace, hazlo. Haz saber a la gente que existe este recurso."
+      third: "<strong>Tercero:</strong> Sí sabe de programación, puedes visitar GitHub para avisarnos sobre un problema técnico (bug), para añadir un issue, o puede constribuir código para ayudarnos con el proyecto. REFUGE es de código abierto y no podemos hacerlo sin usted."
+      fourth: "<strong>Cuarto: </strong> Donar. Mantente en alerta, proxímamente habra una campaña de financiamiento masiva, para poder acceder a la tecnología que necesitamos usar y para poder pagarle un poco a quienes diseñan y desarrollan nuestra tecnología por su gran esfuerzo incansable. Han estado trabajando gratuitamente para traerte este servicio y no queremos que trabajen gratis. La mayoría de nuesto equipo principal son personas trans y están con bajo empleo en este momento."
+    p6header: "¿Por qué aparece mi organización o empresa en su listado?"
+    p6: "Obtenga más información sobre nuestras <a href='/business_info'>preguntas frecuentes para organizaciones y empresas</a>!"
+    contribute: 'Haz un Fork para contribuir en GitHub!'

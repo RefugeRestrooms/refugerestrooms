@@ -1,0 +1,60 @@
+es:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Ubicación/Lugar/Nombre de la Empresa'
+        street: 'Dirección'
+        state: 'Estado/Provincia'
+        access: '¿Es accesible?'
+        bath_type: 'Tipo de Baño'
+
+  search_bar:
+    enter_location: 'Introduce una dirección'
+
+  restroom:
+    add_new: 'Enviar un baño a nuestra base de datos'
+    preview: 'Vista Previa'
+    required: '* denota campo requerido'
+    guess_location: 'Encontrar ubicación actual'
+    directions: 'Direcciones'
+    directions_hint: '(por ejemplo: tercer piso al fondo, al lado de los vestidores...)'
+    comments_hint: '(e.g.: baños son solo para "consumidores", hay que actuar como que estas por comprar algo...)'
+    comments: 'Comentarios'
+    accessible: 'Es accesible'
+    not_accessible: 'No es accesible'
+    changing_table: 'Con mesa para cambiar pañales'
+    no_changing_table: 'Sin mesa para cambiar pañales'
+    type:
+      unisex: 'Unisex / Género neutro'
+      single_stall: 'Baño individual (con género) o lugar seguro'
+    restsubmit: 'Guardar Baño'
+    rating:
+      positive: '%{percentage}% positivo'
+      unrated: 'Aún sin calificar'
+    upvote: '¡Me gusta!'
+    downvote: 'No es seguro'
+    confirm:
+      upvote: '¿Confirma que quiere darle una calificación positiva a este baño?'
+      downvote: '¿Confirma que quiere darle una calificación negativa a este baño?'
+    flash:
+      field: 'Un campo requerido ha quedado en blanco. Por favor revise el formulario para volver a enviarlo.'
+      unexpected: 'Tuvimos un problema inesperado. Por favor, pongase en contacto si este problema continúa.'
+      upvoteerror: 'Se generó un problema inesperado con su calificación positiva.'
+      upvotesuccess: '¡Este baño se ha calificado en positivo! Gracias por contribuir a nuestra comunidad.'
+      downvoteerror: 'Se generó un problema inesperado con su calificación negativa.'
+      downvotesuccess: '¡Este baño se ha calificado en negativo! Gracias por contribuir a nuestra comunidad.'
+      new: 'Una nueva entrada de baño se ha creado para %{name}.'
+      updated: 'Esta entrada de baño ha sido actualizada'
+      deleted: 'Esta entrada de baño ha sido borrada'
+      searcherror: 'Hubo un error buscando su ubicación.'
+      spam: 'Su entrada fue rechazada por ser Spam'
+    contact:
+      contactlisting: "¡Contáctanos sobre esta entrada!"
+
+  restrooms:
+    nearby:
+      heading: 'Baños cercános'
+      body: 'Antes de enviarnos una nueva entrada, asegurese que no es uno de los baños cercános ya conocidos.'
+      none: 'No se encuentran baños cercános.'
