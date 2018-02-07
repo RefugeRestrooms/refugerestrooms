@@ -4,8 +4,8 @@ en:
   devise:
     confirmations:
       confirmed: "Votre compte a été validé avec succès."
-      send_instructions: "Vous recevrez un mail contenant des instructions pour valider votre compte dans quelques instants."
-      send_paranoid_instructions: "Si votre adresse email existe déjà dans notre base de données, vous recevrez un mail contenant des instructions pour valider votre compte dans quelques instants."
+      send_instructions: "Vous recevrez un email contenant des instructions pour valider votre compte dans quelques instants."
+      send_paranoid_instructions: "Si votre adresse email existe déjà dans notre base de données, vous recevrez un email contenant des instructions pour valider votre compte dans quelques instants."
     failure:
       already_authenticated: "Vous êtes déjà connecté."
       inactive: "Votre compte n'a pas encore été activé."
@@ -24,36 +24,36 @@ en:
       unlock_instructions:
         subject: "Instructions de déblocage"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: "Impossible de vous authentifier en tant que %{kind} en raison de \"%{reason}\"."
+      success: "Authentifié avec succès à partir du compte %{kind}."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
+      no_token: " Vous ne pouvez pas accéder à cette page sans passer par le lien de réinitialisation de mot de passe envoyé par email. Si vous venez bien de ce lien, veuillez vérifier que vous utilisez bien l'intégralité de l'url fournie."
+      send_instructions: "Vous recevrez un email contenant des instructions pour réinitialiser votre mot de passe dans quelques instants."
+      send_paranoid_instructions: "Si votre email est bien enregistré dans notre base de données, vous allez recevoir un lien de réinitialisation de votre mot de passe dans quelques minutes."
+      updated: "Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté."
+      updated_not_active: "Votre mot de passe a été modifié avec succès."
     registrations:
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      updated: "You updated your account successfully."
+      destroyed: "Au revoir! Votre compte a bien été désactivé. Nous espèrons vous revoir bientôt."
+      signed_up: "Bienvenue ! Inscription réalisée avec succès."
+      signed_up_but_inactive: "Inscription réalisée avec succès. Toutefois, vous ne pouvez pas vous connecter car votre compte n'a pas encore été activé."
+      signed_up_but_locked: "Inscription réalisée avec succès. Toutefois, vous ne pouvez pas vous connecter car votre compte est bloqué."
+      signed_up_but_unconfirmed: "Un e-mail a été envoyé à votre adresse email. Veuillez ouvrir le lien fourni pour activer votre compte."
+      update_needs_confirmation: "Votre compte a été mis à jour avec succès. Toutefois nous devons vérifier votre nouvelle adresse email. Veuillez vérifier votre email et cliquer sur le lien de confirmation reçu pour finaliser la confirmation de votre nouvelle adresse email."
+      updated: " Votre compte a été modifié avec succès."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "Connecté avec succès"
+      signed_out: "Déconnecté avec succès."
     unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "Vou recevrez un email contenant des instructions pour débloquer votre compte dans quelques instants."
+      send_paranoid_instructions: "Si votre compte existe, vous recevrez un email contenant des instructions pour débloquer votre compte dans quelques instants."
+      unlocked: "Votre compte a été débloqué avec succès. Veuillez vous connecter pour continuer."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: " a déjà été activé, veuillez essayer de vous connecter."
+      confirmation_period_expired: "a besoin d'être activé sous %{period}, veuillez demander un nouveau lien d'activation."
+      expired: "a expiré, veuillez demander un nouveau lien d'activation."
+      not_found: "est introuvable"
+      not_locked: "n'a pas été bloqué"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: " 1 erreur interdit cette %{resource} d'être enregistré:"
+        other: "%{count} erreurs interdisent cette %{resource} d'être enregistré:"
