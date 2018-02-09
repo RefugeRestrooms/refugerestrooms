@@ -6,6 +6,9 @@
 
 require 'cucumber/rails'
 
+require "simplecov"
+SimpleCov.start
+
 # Seed the db for testing
 load "#{Rails.root}/db/seeds.rb"
 
