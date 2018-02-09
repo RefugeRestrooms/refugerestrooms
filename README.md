@@ -2,8 +2,10 @@ Production CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerest
 
 Develop CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg?branch=develop)](https://travis-ci.org/RefugeRestrooms/refugerestrooms)
 
+Code Climate: [![Maintainability](https://api.codeclimate.com/v1/badges/a641d46a4ad2c2f01932/maintainability)](https://codeclimate.com/github/RefugeRestrooms/refugerestrooms/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a641d46a4ad2c2f01932/test_coverage)](https://codeclimate.com/github/RefugeRestrooms/refugerestrooms/test_coverage)
 
-[![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
+
+Waffle.io: [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
 # REFUGE restrooms
 
 Providing safe restroom access to transgender, intersex, and gender nonconforming individuals.
