@@ -1,0 +1,5 @@
+fr:
+  layouts:
+    search:
+      search: 'Recherche'
+      search-by-current-location: "Recherche à partir de votre position actuelle"
