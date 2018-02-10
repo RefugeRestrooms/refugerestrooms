@@ -1,4 +1,4 @@
-en:
+fr:
   layouts:
     footer:
       aria-labels:
@@ -7,9 +7,9 @@ en:
         facebook: 'Refuge Restrooms sur Facebook'
         tumblr: 'Le blog de Refuge Restrooms sur tumblr'
         email: 'Email Refuge Restrooms'
-      refuge-restrooms-is-open-source: 'refuge restrooms est open source.'
-      code-on-github: 'code sur github.'
-      contribute-to-the-project: 'contribuez au project'
-      on-patreon: 'sur patreon.'
+      refuge-restrooms-is-open-source: 'Refuge Restrooms est open source.'
+      code-on-github: 'Code sur github.'
+      contribute-to-the-project: 'Contribuez au projet'
+      on-patreon: 'sur Patreon.'
       copyleft: 'copyleft'
-      refuge-restrooms: 'refuge restrooms.'
+      refuge-restrooms: 'Refuge Restrooms.'

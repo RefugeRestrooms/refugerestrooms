@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+fr:
   devise:
     confirmations:
       confirmed: "Votre compte a été validé avec succès."
@@ -13,8 +13,8 @@ en:
       locked: "Votre compte est bloqué."
       last_attempt: "Il vous reste encore un essai avant que votre compte ne soit bloqué."
       not_found_in_database: "Email et/ou mot de passe invalide(s)."
-      timeout: " Votre session a expiré. Veuillez vous reconnecter pour continuer."
-      unauthenticated: " Vous devez être connecté ou inscrit avant de continuer."
+      timeout: "Votre session a expiré. Veuillez vous reconnecter pour continuer."
+      unauthenticated: "Vous devez être connecté ou inscrit avant de continuer."
       unconfirmed: "Vous devez confirmer votre compte avant de continuer."
     mailer:
       confirmation_instructions:

@@ -1,14 +1,14 @@
 fr:
   about:
     title: 'À propos de REFUGE'
-    p1header: 'REFUGE restrooms c'est quoi ?'
+    p1header: "REFUGE restrooms c'est quoi ?"
     p1:
-      first: 'Refuge Restrooms est une application web visant à fournir un accès sécurisé à des toilettes aux personnes transgenres, intersexuées et non conformes dans le genre. Les utilisateurs peuvent chercher des toilettes à proximité d'un lieu, référencer de nouvelles toilettes, ainsi que commenter et noter les toilettes listées.'
-      second: 'Nous sommes transgenres et cherchons à créer une communauté axée non seulement sur la rechercher de l'accès sécurisé aux toilettes mais aussi préconiser la sécurité des personnes transgenres, intersexuées et non conformes dans le genre.
+      first: "Refuge Restrooms est une application web visant à fournir un accès sécurisé à des toilettes aux personnes transgenres, intersexuées et non conformes dans le genre. Les utilisateurs peuvent chercher des toilettes à proximité d'un lieu, référencer de nouvelles toilettes, ainsi que commenter et noter les toilettes listées."
+      second: "Nous sommes transgenres et cherchons à créer une communauté axée non seulement sur la rechercher de l'accès sécurisé aux toilettes mais aussi préconiser la sécurité des personnes transgenres, intersexuées et non conformes dans le genre."
     p2header: 'Où avez vous eu toutes ces données ?'
-    p2: 'Les premières 4500 entrées proviennent de l'ancienne base de données Safe2Pee. Le reste de notre base de données est généré par nos utilisateurs. Si vous connaissez des toilettes non sexistes ou sécurisées, veuillez les ajouter à notre base de données !'
-    p3header: 'Pourquoi avoir choisi le nom REFUGE?'
-    p3: 'Nous croyons fermement que tout le monde a le droit d'utiliser les toilettes en toute sécurité et nous voulions que le nom de notre application reflète la dignité que nous voulons donner à nos utilisateurs. Nous espérons simplement offrir un lieu de refuge pour vos besoins.'
+    p2: "Les premières 4500 entrées proviennent de l'ancienne base de données Safe2Pee. Le reste de notre base de données est généré par nos utilisateurs. Si vous connaissez des toilettes non sexistes ou sécurisées, veuillez les ajouter à notre base de données !"
+    p3header: 'Pourquoi avoir choisi le nom REFUGE ?'
+    p3: "Nous croyons fermement que tout le monde a le droit d'utiliser les toilettes en toute sécurité et nous voulions que le nom de notre application reflète la dignité que nous voulons donner à nos utilisateurs. Nous espérons simplement offrir un lieu de refuge pour vos besoins."
     p4header: "Quelle est l'importance des toilettes et pourquoi avons nous besoin de cette application ?"
     p4: "L'un des plus grands champs de bataille où se déroule chaque jour la lutte pour les droits des transgenres est celui des toilettes: il semble que toutes les deux semaines un enfant transgenre soit au centre d'un reportage national parce qu'il utilise les toilettes assignées au sexe qu'il identifie. Évidemment, nous croyons que toute personne transgenre devrait avoir le droit d'utiliser les toilettes qu'elle souhaite. Pourtant, nous réalisons également que malgré les victoires législatives de ces dernières années concernant l'utilisation des toilettes, de nombreux individus transgenres sont toujours confrontés au harcèlement verbal et physique simplement pour avoir utilisé les toilettes. Personne ne devrait être confronté à cela - et c'est pourquoi nous avons créé REFUGE."
     p5header: 'Que pouvons nous faire pour aider?'

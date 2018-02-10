@@ -1,8 +1,0 @@
-fr:
-  restrooms:
-    index:
-      map-view-button-label: 'Voir la carte'
-
-    show:
-      thumbs-up-button-label: 'J'aime ces toilettes'
-      thumbs-down-button-label: 'Je n'aime pas ces toilettes'
