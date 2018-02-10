@@ -20,7 +20,7 @@ fr:
     guess_location: 'Trouver ma position actuelle'
     directions: 'Indications'
     directions_hint: "(ex: troisième étage au fond, à coté des cabines d'essayage...)"
-    comments_hint: '(ex: you have to be avous devez être un client, faites comme si vous cherchiez quelque chose...)'
+    comments_hint: '(ex: vous devez être un client, faites comme si vous cherchiez quelque chose...)'
     comments: 'Commentaires'
     accessible: 'Accessible'
     not_accessible: 'Inacessible'
