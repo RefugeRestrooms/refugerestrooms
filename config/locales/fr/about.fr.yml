@@ -1,22 +1,22 @@
 fr:
   about:
     title: 'À propos de REFUGE'
-    p1header: "REFUGE restrooms c'est quoi ?"
+    p1header: "REFUGE restrooms, qu'est-ce que c'est ?"
     p1:
       first: "Refuge Restrooms est une application web visant à fournir un accès sécurisé à des toilettes aux personnes transgenres, intersexuées et non conformes dans le genre. Les utilisateurs peuvent chercher des toilettes à proximité d'un lieu, référencer de nouvelles toilettes, ainsi que commenter et noter les toilettes listées."
-      second: "Nous sommes transgenres et cherchons à créer une communauté axée non seulement sur la rechercher de l'accès sécurisé aux toilettes mais aussi préconiser la sécurité des personnes transgenres, intersexuées et non conformes dans le genre."
+      second: "Nous sommes transgenres et cherchons à créer une communauté axée non seulement sur la recherche de l'accès sécurisé aux toilettes, mais aussi préconiser la sécurité des personnes transgenres, intersexuées et non conformes dans le genre."
     p2header: 'Où avez vous eu toutes ces données ?'
-    p2: "Les premières 4500 entrées proviennent de l'ancienne base de données Safe2Pee. Le reste de notre base de données est généré par nos utilisateurs. Si vous connaissez des toilettes non sexistes ou sécurisées, veuillez les ajouter à notre base de données !"
+    p2: "Les premières 4500 entrées proviennent de l'ancienne base de données Safe2Pee. Le reste de notre base de données est générée par nos utilisateurs. Si vous connaissez des toilettes non sexistes ou sécurisées, veuillez les ajouter à notre base de données !"
     p3header: 'Pourquoi avoir choisi le nom REFUGE ?'
     p3: "Nous croyons fermement que tout le monde a le droit d'utiliser les toilettes en toute sécurité et nous voulions que le nom de notre application reflète la dignité que nous voulons donner à nos utilisateurs. Nous espérons simplement offrir un lieu de refuge pour vos besoins."
     p4header: "Quelle est l'importance des toilettes et pourquoi avons nous besoin de cette application ?"
-    p4: "L'un des plus grands champs de bataille où se déroule chaque jour la lutte pour les droits des transgenres est celui des toilettes: il semble que toutes les deux semaines un enfant transgenre soit au centre d'un reportage national parce qu'il utilise les toilettes assignées au sexe qu'il identifie. Évidemment, nous croyons que toute personne transgenre devrait avoir le droit d'utiliser les toilettes qu'elle souhaite. Pourtant, nous réalisons également que malgré les victoires législatives de ces dernières années concernant l'utilisation des toilettes, de nombreux individus transgenres sont toujours confrontés au harcèlement verbal et physique simplement pour avoir utilisé les toilettes. Personne ne devrait être confronté à cela - et c'est pourquoi nous avons créé REFUGE."
+    p4: "L'un des plus grands champs de bataille où se déroule chaque jour la lutte pour les droits des transgenres est celui des toilettes : il semble que toutes les deux semaines un enfant transgenre est au centre d'un reportage national parce qu'il utilise les toilettes assignées au sexe qui l'identifie. Évidemment, nous croyons que toute personne transgenre devrait avoir le droit d'utiliser les toilettes qu'elle souhaite. Pourtant, nous réalisons également que malgré les victoires législatives de ces dernières années concernant l'utilisation des toilettes, de nombreux individus transgenres sont toujours confrontés au harcèlement verbal et physique simplement pour avoir utilisé les toilettes. Personne ne devrait être confronté à cela - et c'est pourquoi nous avons créé REFUGE."
     p5header: 'Que pouvons nous faire pour aider?'
     p5:
-      first: "<strong>Premièrement:</strong> Référencer des toilettes. La taille de la base de données dépend de votre participation. Plus il y a de toilettes référencées, plus l'application sera complète et aura de la valeure."
-      second: "<strong>Deuxièmement:</strong> Diffuser le message. Tweet. Facebook. Tumblr. Blog. Quoi que vous fassiez, faites-le. Faites connaître aux gens cette application."
-      third: "<strong>Troisièmement:</strong> Si vous savez coder, visitez GitHub et informez-nous d'un bug, suggérez une amélioration, ou ajoutez un peu de code et aidez le projet. REFUGE est open source et nous ne pouvons pas le faire sans vous."
-      fourth: "<strong>Quatrièmement: </strong> Faites un don. Gardez les yeux ouverts pour une campagne de crowdfunding à venir pour financer une partie de la technologie dont nous avons besoin et pour payer un peu nos fabuleux concepteurs et ingénieurs pour leur travail acharné et inlassable. Ils ont travaillé gratuitement pour vous offrir ce service et nous ne voulons pas que quiconque travaille gratuitement. La plupart des membres de l'équipe de base sont transgenres et sous-employés en ce moment."
+      first: "<strong>1.</strong> Référencer des toilettes. La taille de la base de données dépend de votre participation. Plus il y a de toilettes référencées, plus l'application sera complète et aura de la valeure."
+      second: "<strong>2.</strong> Diffuser le message. Tweet. Facebook. Tumblr. Blog. Quoi que vous fassiez, faites-le. Faites connaître aux gens cette application."
+      third: "<strong>3.</strong> Si vous savez coder, visitez GitHub et informez-nous d'un bug, suggérez une amélioration, ou ajoutez un peu de code et aidez le projet. REFUGE est open source et nous ne pouvons pas le faire sans vous."
+      fourth: "<strong>4.</strong> Faites un don. Gardez les yeux ouverts pour une campagne de crowdfunding à venir pour financer une partie de la technologie dont nous avons besoin et pour payer un peu nos fabuleux designers et développeurs pour leur travail acharné et inlassable. Ils ont travaillé gratuitement pour vous offrir ce service et nous pensons que tout travail mérite salaire. La plupart des membres de l'équipe de base sont transgenres et sous-employés en ce moment."
     p6header: "Pourquoi mon entreprise ou organisation est-elle répertoriée ?"
     p6: "En savoir plus sur notre <a href='/business_info'>Business FAQ</a>!"
-    contribute: 'Forkez nous et contribuez sur GitHub!'
+    contribute: 'Contribuez sur GitHub!'
