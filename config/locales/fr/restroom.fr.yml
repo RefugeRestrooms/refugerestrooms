@@ -1,0 +1,59 @@
+fr:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: "Emplacement/Lieu/Nom de l'entreprise"
+        street: 'Adresse'
+        state: 'État/Région'
+        access: 'Accessible?'
+        bath_type: 'Type de toilettes'
+
+  search_bar:
+    enter_location: 'Entrez une adresse'
+
+  restroom:
+    add_new: 'Soumettre des toilettes à notre base de données'
+    preview: 'Aperçu'
+    required: '* indique un champ requis'
+    guess_location: 'Trouver ma position actuelle'
+    directions: 'Indications'
+    directions_hint: "(ex: troisième étage au fond, à coté des cabines d'essayage...)"
+    comments_hint: '(ex: vous devez être un client, faites comme si vous cherchiez quelque chose...)'
+    comments: 'Commentaires'
+    accessible: 'Accessible'
+    not_accessible: 'Inacessible'
+    changing_table: 'Table à langer'
+    no_changing_table: 'Pas de table à langer'
+    type:
+      unisex: 'Unisexe / Non-sexiste'
+      single_stall: 'Toilettes individuelles (avec genre) ou lieu sûr'
+    restsubmit: 'Enregistrer les toilettes'
+    rating:
+      positive: '%{percentage}% positif'
+      unrated: 'Pas encore noté'
+    upvote: "J'ai adoré !"
+    downvote: 'Pas sécurisé'
+    confirm:
+      upvote: 'Êtes vous sûr de vouloir donner un vote positif pour ces toilettes ?'
+      downvote: 'Êtes vous sûr de vouloir donner un vote négatif pour ces toilettes ?'
+    flash:
+      field: "Un champ requis n'a pas été complété. Veuillez revérifier vos données et soumettre le formulaire à nouveau."
+      unexpected: 'Nous avons rencontré un problème inattendu, veuillez nous contacter si ce problème persiste.'
+      upvoteerror: "Une erreur inattendu s'est produite durant le vote positif de cette publication."
+      upvotesuccess: 'Ces toilettes ont reçu un vote positif ! Merci pour votre contribution à notre communauté.'
+      downvoteerror: "Une erreur inattendu s'est produite durant le vote négatif de cette publication."
+      downvotesuccess: 'Ces toilettes ont reçu un vote négatif ! Merci pour votre contribution à notre communauté.'
+      new: 'De nouvelles toilettes ont été ajoutées pour %{name}.'
+      updated: 'Ces toilettes ont été mises à jour'
+      deleted: 'Ces toilettes ont été supprimées'
+      searcherror: "Une erreur s'est produite lors de la recherche de votre position."
+    contact:
+      contactlisting: "Contactez nous à propos de cette publication !"
+
+  restrooms:
+    nearby:
+      heading: 'Toilettes à proximité'
+      body: "Avant de soumettre des toilettes, veuillez vous assurer qu'il ne s'agit pas de toilettes proches et déja connues."
+      none: 'Aucune toilettes trouvée à proximité.'
