@@ -1,43 +1,40 @@
-# See this documentation: https://github.com/plataformatec/simple_form#i18n
-# And this StackOverflow answer: https://stackoverflow.com/questions/35906089/changing-simple-form-submit-button-i18n-text
-
-en:
+es:
   simple_form:
-    "yes": 'Yes'
+    "yes": 'Si'
     "no": 'No'
     required:
-      text: 'required'
+      text: 'requerido'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "Por favor revise los problemas encontrados:"
 
     labels:
       defaults:
-        name: 'Name'
-        street: 'Street'
-        city: 'City'
-        state: 'State/Province'
-        country: 'Country'
-        accessible: 'Accessible'
+        name: 'Nombre'
+        street: 'Calle'
+        city: 'Ciudad'
+        state: 'Estado/Provincia'
+        country: 'País'
+        accessible: 'Accesible'
         unisex: 'Unisex'
-        changing_table: 'Changing Table'
-        directions: 'Directions'
-        comment: 'Comment'
+        changing_table: 'Con mesa para cambiar pañales'
+        directions: 'Indicaciones'
+        comment: 'Comentarios'
         email: 'Email'
-        message: 'Message'
+        message: 'Mensaje'
       contact:
-        name: 'Name'
+        name: 'Nombre'
         email: 'Email'
-        message: 'Message'
+        message: 'Mensaje'
 
   helpers:
     submit:
       contact:
         # This is the "Send message" button on the "Contact" page.
-        create: 'Send message'
+        create: 'Enviar'
 
     # Labels and hints examples
     # labels:
@@ -52,4 +49,3 @@ en:
     #   defaults:
     #     username: 'User name to sign in.'
     #     password: 'No special characters, please.'
-

@@ -14,18 +14,6 @@
     "EMAIL_PASSWORD": {
       "required": true
     },
-    "HEROKU_POSTGRESQL_AQUA_URL": {
-      "required": true
-    },
-    "HEROKU_POSTGRESQL_CYAN_URL": {
-      "required": true
-    },
-    "HEROKU_POSTGRESQL_NAVY_URL": {
-      "required": true
-    },
-    "HEROKU_POSTGRESQL_PURPLE_URL": {
-      "required": true
-    },
     "LANG": {
       "required": true
     },

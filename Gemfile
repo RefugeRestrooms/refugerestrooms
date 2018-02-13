@@ -13,7 +13,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
-gem 'piwik_analytics', '~> 1.0.2'
 gem 'geocoder', '~> 1.2.1'
 gem 'devise', '~> 4.3'
 gem 'rakismet'
@@ -29,6 +28,7 @@ gem 'bugsnag'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
 gem 'http_accept_language'
+gem 'puma'
 
 # Upgraded to 1.0.0 for Rails 5.1.4
 gem 'activeadmin', '~> 1.0.0'
@@ -40,6 +40,7 @@ group :development, :test do
   gem 'pry'
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
+  gem 'i18n-debug'
 end
 
 group :test do

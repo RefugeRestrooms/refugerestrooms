@@ -1,0 +1,59 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+fr:
+  devise:
+    confirmations:
+      confirmed: "Votre compte a été validé avec succès."
+      send_instructions: "Vous recevrez un email contenant des instructions pour valider votre compte dans quelques instants."
+      send_paranoid_instructions: "Si votre adresse email existe déjà dans notre base de données, vous recevrez un email contenant des instructions pour valider votre compte dans quelques instants."
+    failure:
+      already_authenticated: "Vous êtes déjà connecté."
+      inactive: "Votre compte n'a pas encore été activé."
+      invalid: "Email et/ou mot de passe invalide(s)."
+      locked: "Votre compte est bloqué."
+      last_attempt: "Il vous reste encore un essai avant que votre compte ne soit bloqué."
+      not_found_in_database: "Email et/ou mot de passe invalide(s)."
+      timeout: "Votre session a expiré. Veuillez vous reconnecter pour continuer."
+      unauthenticated: "Vous devez être connecté ou inscrit avant de continuer."
+      unconfirmed: "Vous devez confirmer votre compte avant de continuer."
+    mailer:
+      confirmation_instructions:
+        subject: "Instructions de confirmation"
+      reset_password_instructions:
+        subject: "Instructions de réinitialisation de votre mot de passe"
+      unlock_instructions:
+        subject: "Instructions de déblocage"
+    omniauth_callbacks:
+      failure: "Impossible de vous authentifier en tant que %{kind} en raison de \"%{reason}\"."
+      success: "Authentifié avec succès à partir du compte %{kind}."
+    passwords:
+      no_token: " Vous ne pouvez pas accéder à cette page sans passer par le lien de réinitialisation de mot de passe envoyé par email. Si vous venez bien de ce lien, veuillez vérifier que vous utilisez bien l'intégralité de l'url fournie."
+      send_instructions: "Vous recevrez un email contenant des instructions pour réinitialiser votre mot de passe dans quelques instants."
+      send_paranoid_instructions: "Si votre email est bien enregistré dans notre base de données, vous allez recevoir un lien de réinitialisation de votre mot de passe dans quelques minutes."
+      updated: "Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté."
+      updated_not_active: "Votre mot de passe a été modifié avec succès."
+    registrations:
+      destroyed: "Au revoir! Votre compte a bien été désactivé. Nous espèrons vous revoir bientôt."
+      signed_up: "Bienvenue ! Inscription réalisée avec succès."
+      signed_up_but_inactive: "Inscription réalisée avec succès. Toutefois, vous ne pouvez pas vous connecter car votre compte n'a pas encore été activé."
+      signed_up_but_locked: "Inscription réalisée avec succès. Toutefois, vous ne pouvez pas vous connecter car votre compte est bloqué."
+      signed_up_but_unconfirmed: "Un e-mail a été envoyé à votre adresse email. Veuillez ouvrir le lien fourni pour activer votre compte."
+      update_needs_confirmation: "Votre compte a été mis à jour avec succès. Toutefois nous devons vérifier votre nouvelle adresse email. Veuillez vérifier votre email et cliquer sur le lien de confirmation reçu pour finaliser la confirmation de votre nouvelle adresse email."
+      updated: " Votre compte a été modifié avec succès."
+    sessions:
+      signed_in: "Connecté avec succès"
+      signed_out: "Déconnecté avec succès."
+    unlocks:
+      send_instructions: "Vou recevrez un email contenant des instructions pour débloquer votre compte dans quelques instants."
+      send_paranoid_instructions: "Si votre compte existe, vous recevrez un email contenant des instructions pour débloquer votre compte dans quelques instants."
+      unlocked: "Votre compte a été débloqué avec succès. Veuillez vous connecter pour continuer."
+  errors:
+    messages:
+      already_confirmed: " a déjà été activé, veuillez essayer de vous connecter."
+      confirmation_period_expired: "a besoin d'être activé sous %{period}, veuillez demander un nouveau lien d'activation."
+      expired: "a expiré, veuillez demander un nouveau lien d'activation."
+      not_found: "est introuvable"
+      not_locked: "n'a pas été bloqué"
+      not_saved:
+        one: " 1 erreur interdit cette %{resource} d'être enregistré:"
+        other: "%{count} erreurs interdisent cette %{resource} d'être enregistré:"
