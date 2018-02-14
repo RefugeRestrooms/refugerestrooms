@@ -26,34 +26,34 @@ fil:
     omniauth_callbacks:
       failure: "Hindi makapagpatotoo sa iyo mula sa %{kind} dahil sa \"%{reason}\"."
       success: "Matagumpay na napatotoo mula sa %{kind} account."
-    passwords:
+    mga password:
       no_token: "Hindi ka maka-akses sa pahinang ito kung wala kang password reset mula sa iyong email. Kapag gusto mong baguhin ang password gamit ang email, dapat siguraduhin na gamitin ang buong URL na ibinigay."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-    registrations:
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
-      updated: "You updated your account successfully."
-    sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-    unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
-  errors:
-    messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      send_instructions: "Ikaw ay makatanggap ng email na may kalakip na mga tungkol sa kung papaano ma-reset ang iyong password sa iilang minuto."
+      send_paranoid_instructions: "Kapag ang iyung email ay nasa database na namin, ikaw ay makakatanggap ng recovery link sa iyong email address your email address sa iilang minuto."
+      updated: "Ang password mo ay matagumpay na napalitan.Ikaw ngayon ay naka-signed in na."
+      updated_not_active: "Ang iyong password ay matagumpay nang napalitan."
+    mga pagpaparehistro:
+      destroyed: "Paalam! Ang iyong account ay matagumpay na nakansela. Ninanais naming makita kayong muli."
+      signed_up: "Maligayang pagdating! You have signed up successfully."
+      signed_up_but_inactive: "Ikaw ay matagumpay na naka-signed up. Gayunpaman, hindi pa namin kayo mapasign in dahil ang iyong  account ay hindi pa aktibo."
+      signed_up_but_locked: "Ikaw ay matagumpay na naka-signed up. Gayunpaman,, hindi pa namin kayo mapasign in dahil ang iyong  account ay nakalock."
+      signed_up_but_unconfirmed: "Ang mensahi na may kompermasyon sa link ay naipadala na sa iyong email address. Kami ay nakikiusap na buksan ang link para mapagana ang iyong account."
+      update_needs_confirmation: "Ang iyong account ay matagumpay nang na-updeyt, pero kinakailangan pa naming i-verify ang iyong bagong email address. Kami ay nakiki-usap na tingnan ang iyong email at mag-klik sa confirm link para ma-finalize ang pagkomperma sa iyong bagong email address."
+      updated: "Matagumpay mong na-update ang iyong account."
+    mga sesyon:
+      signed_in: "Matagumpay kang naka-signed in."
+      signed_out: "Matagumpay kang naka-signed out."
+    mga unlock:
+      send_instructions: "Ikaw ay makakatanggap ng email namay kalakip na mga instruksiyon tungkol sa kung papaano ma-unlock ang iyong account sa iilang minuto."
+      send_paranoid_instructions: "Kapag ang iyong account ay umiiral, ikaw ay makakatanggap ng email namay kalakip na instruksiyon tungkol sa kung papaano ito ma-unlock sa iilang minuto."
+      unlocked: "Ang iyong account ay matagumpay nang na-unlock. Mag-sign in para makapagpatuloy."
+  mga error:
+    mga mensahe:
+      already_confirmed: "tapos nang nakomperma, maaaring subukang magsign in"
+      confirmation_period_expired: "kailangang ikomperma sa loob ng %{period}, maaaring magbigay ng bagong rekwest"
       expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      not_found: "hindi makita"
+      not_locked: "hindi nakalocked"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "may 1 error na nagbabawal sa %{resource} para mai-save:"
+        other: "%{count} may mga errors na nagbabawal sa %{resource} para mai-save:"
