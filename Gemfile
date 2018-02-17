@@ -40,12 +40,15 @@ group :development, :test do
   gem 'pry'
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
+end
+
+group :development do
   gem 'i18n-debug'
 end
 
 group :test do
   gem 'rake'
-  gem 'cucumber-rails', '~> 1.5.0', require: false
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'poltergeist'
