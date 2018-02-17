@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry-debugger'
 
 describe 'the restroom submission process', type: :feature do
   it 'should add a restroom when submitted' do
