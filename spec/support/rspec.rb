@@ -23,6 +23,5 @@ RSpec.configure do |config|
       with{|request| !request.body.include? "Spam"}.
       to_return(status: 200, body: 'false', headers: {})
   end
-
 end
 
