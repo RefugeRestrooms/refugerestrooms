@@ -16,4 +16,5 @@ WORKDIR /refugerestrooms
 COPY Gemfile /refugerestrooms/Gemfile
 COPY Gemfile.lock /refugerestrooms/Gemfile.lock
 RUN bundle install
+RUN apt-get install -y chromium
 COPY . /refugerestrooms
