@@ -3,8 +3,8 @@
 
 fr:
   simple_form:
-    "oui": 'Oui'
-    "non": 'Non'
+    "yes": 'Oui'
+    "no": 'Non'
     required:
       text: 'requis'
       mark: '*'
