@@ -40,13 +40,13 @@ describe 'the restroom search process', type: :feature, js: true do
   end
 
   it 'should search for location from the splash page' do
-    create(:restroom, name: 'Mission Creek Cafe')
+    create(:oakland_restroom, name: "Some Cafe")
 
     visit root_path
-    mock_location "San Francisco"
+    mock_location "Oakland"
     find('.current-location-button').click
 
-    expect(page).to_not have_content 'Mission Creek Cafe'
+    expect(page).to_not have_content 'Some Cafe'
   end
 
   it 'should search from the splash page with a screen reader' do
@@ -57,10 +57,10 @@ describe 'the restroom search process', type: :feature, js: true do
   end
 
   it 'should display a map' do
-    create(:restroom, name: 'Mission Creek Cafe')
+    create(:oakland_restroom)
 
     visit root_path
-    mock_location "San Francisco"
+    mock_location "Oakland"
     find('.current-location-button').click
     # TODO: Figure out why this isn't working.
     # print page.html
@@ -93,10 +93,10 @@ end
 
 describe 'the nearby restroom display process', type: :feature, js: true do
   it 'should show nearby restrooms when they exist' do
-    create(:restroom, name: 'Mission Creek Cafe')
+    create(:oakland_restroom)
     visit "/"
     click_link "Submit a New Restroom"
-    mock_location('San Francisco')
+    mock_location "Oakland"
 
     find(".guess-btn").click
 
@@ -106,11 +106,10 @@ describe 'the nearby restroom display process', type: :feature, js: true do
   it "should not show nearby restrooms when they don't exist" do
     visit "/"
     click_link "Submit a New Restroom"
-    mock_location('San Francisco')
+    mock_location "Oakland"
 
     find(".guess-btn").click
 
     page.has_css?(".nearby-container .none", :visible => true)
-  end
   end
 end
