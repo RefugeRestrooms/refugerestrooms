@@ -3,8 +3,7 @@ module Locations
     {
       Winnipeg: {latitude: 49.8975494, longitude: -97.140118},
       Vancouver: {latitude: 49.281006, longitude: -123.089959},
-      Oakland: {latitude: 37.8044, longitude: -122.2708},
-      San Francisco: {latitude: 37.7749, longitude: 122.4194}
+      Oakland: {latitude: 37.8044, longitude: -122.2708}
     }
   end
 
@@ -33,5 +32,3 @@ module Locations
     "
   end
 end
-
-World(Locations)
