@@ -1,17 +1,13 @@
-default: &default
+development:
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: postgres
-  password:
-  pool: 5
-
-development:
-  <<: *default
   database: bathrooms_development
-
+  pool: 5
+  host: localhost
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
   database: bathrooms_test
-
+  pool: 5
+  host: localhost

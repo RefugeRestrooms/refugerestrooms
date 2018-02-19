@@ -5,3 +5,6 @@ require File.expand_path('../config/application', __FILE__)
 
 SaferstallsRails::Application.load_tasks
 
+Dir.glob('.rake/*.rb').each do |f|
+  import f
+end
