@@ -15,5 +15,6 @@ RUN mkdir /refugerestrooms
 WORKDIR /refugerestrooms
 COPY Gemfile /refugerestrooms/Gemfile
 COPY Gemfile.lock /refugerestrooms/Gemfile.lock
+RUN gem install bundler
 RUN bundle install
 COPY . /refugerestrooms
