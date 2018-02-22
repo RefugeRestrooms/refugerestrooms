@@ -1,6 +1,6 @@
 # Mga karagdagang mga pagsasalin ng salita ay makikita sa https://github.com/plataformatec/devise/wiki/I18n
 
-fl:
+fil:
   devise:
     confirmations:
       confirmed: "Ang iyong account ay matagumpay na nakomperma."
