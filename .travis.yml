@@ -3,4 +3,4 @@ services: docker
 before_install:
   - docker-compose build
 script:
-  - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec cucumber
+  - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec

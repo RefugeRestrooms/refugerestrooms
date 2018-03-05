@@ -32,5 +32,3 @@ module Locations
     "
   end
 end
-
-World(Locations)
