@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'the restroom submission process', type: :feature do
+describe 'the restroom submission process', type: :feature, js: true do
   it 'should add a restroom when submitted' do
     visit root_path
     click_link "Submit a New Restroom"
@@ -26,6 +26,18 @@ describe 'the restroom submission process', type: :feature do
 
     expect(page).to have_content("Your submission was rejected as spam.")
   end
+
+  #it "should guess my location" do
+  #  visit "/"
+  #  click_link "Submit a New Restroom"
+  #  mock_location("Oakland")
+
+  #  find(".guess-btn").click
+
+  #  expect(page).to have_field('restroom[street]', with: "1400 Broadway")
+  #  expect(page).to have_field('restroom[city]', with: "Oakland")
+  #  expect(page).to have_field('restroom[state]', with: "CA")
+  #end
 end
 
 describe 'the restroom search process', type: :feature, js: true do
