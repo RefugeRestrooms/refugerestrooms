@@ -26,7 +26,7 @@ It will be available at localhost:3000
 
 ### 5 Run the Tests
 ```
-docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec cucumber
+docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec
 ```
 
 ### 6 Optional tasks:
