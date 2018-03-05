@@ -5,13 +5,19 @@ require 'rspec/rails'
 #
 
 Capybara.register_driver :poltergeist_debug do |app|
-  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+  Capybara::Poltergeist::Driver.new(app,
+    :js_errors => false
+  )
 end
+
 Capybara.javascript_driver = :poltergeist_debug
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
+
 RSpec.configure do |config|
+  config.include Locations
+
   config.before(:each) do
     stub_request(:get, "http://maps.googleapis.com/maps/api/geocode/json?language=en&latlng=37.8044,-122.2708")
       .with(:headers => {'Accept'=>'*/*', 'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3', 'User-Agent'=>'Ruby'})

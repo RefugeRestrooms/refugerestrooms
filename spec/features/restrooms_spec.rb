@@ -30,10 +30,10 @@ end
 
 describe 'the restroom search process', type: :feature, js: true do
   it 'should search for text from the splash page' do
-    create(:restroom, name: 'Mission Creek Cafe')
+    create(:restroom, :geocoded, name: 'Mission Creek Cafe')
 
     visit root_path
-    fill_in 'search', with: 'San Francisco'
+    fill_in 'search', with: 'Mission Creek Cafe'
     click_on 'Search'
 
     expect(page).to have_content 'Mission Creek Cafe'
@@ -44,7 +44,7 @@ describe 'the restroom search process', type: :feature, js: true do
 
     visit root_path
     mock_location "Oakland"
-    find('.current-location-button').click
+    click_on 'Search by Current Location'
 
     expect(page).to_not have_content 'Some Cafe'
   end
@@ -84,8 +84,9 @@ describe 'the preview process', type: :feature, js: true do
     fill_in "restroom[street]", with: "684 East Hastings"
     fill_in "restroom[city]", with: "Vancouver"
     fill_in "restroom[state]", with: "British Columbia"
-
     find(:select, "Country").first(:option, "Canada").select_option
+
+    click_on "Preview"
 
     expect(page).to have_css("div#mapArea", :visible => true)
   end

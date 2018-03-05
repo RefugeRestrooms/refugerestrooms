@@ -8,6 +8,11 @@ FactoryBot.define do
     upvote 22
     downvote 11
 
+    trait :geocoded do
+      latitude 37.7749
+      longitude -122.4194
+    end
+
     trait :unisex do
       unisex true
     end

@@ -7,7 +7,6 @@ gem 'pg_search'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'haml'
-gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
@@ -32,6 +31,10 @@ gem 'puma'
 
 # Upgraded to 1.0.0 for Rails 5.1.4
 gem 'activeadmin', '~> 1.0.0'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'rspec-rails'
