@@ -1,0 +1,5 @@
+es:
+  layouts:
+    search:
+      search: 'Buscar'
+      search-by-current-location: 'Buscar por ubicación actual'

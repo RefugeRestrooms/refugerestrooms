@@ -1,0 +1,11 @@
+es:
+  contacts:
+    new:
+      request-edit-for-restroom: 'Solicitar Edición para el baño de %{restroom_name}'
+      contact-title: 'Contacto'
+      leave-this-field-blank: 'Dejar este campo en blanco.'
+    submitted:
+      thank-you-period: 'Gracias por su mensaje.'
+      thank-you-exclamation: '¡Gracias por su mensaje!'
+      cannot-send: 'No se pudo enviar su mensaje.'
+      we-will-get-back-to-you: "Nos pondremos en contacto con usted pronto."

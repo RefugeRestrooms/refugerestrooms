@@ -1,16 +1,6 @@
 language: ruby
-cache: bundler
+services: docker
+before_install:
+  - docker-compose build
 script:
-  - bundle exec rake db:setup RAILS_ENV=test
-  - bundle exec rake db:test:prepare
-  - bundle exec rake spec
-  - bundle exec rake cucumber
-rvm:
-  - 2.3.1
-notifications:
-    irc: "chat.freenode.com#refugerestrooms"
-    skip_join: true
-    template:
-      - "Build #%{build_number} (%{branch} - %{commit} : %{author}): %{message}"
-      - "Change view : %{compare_url}"
-      - "Build details : %{build_url}"
+  - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec

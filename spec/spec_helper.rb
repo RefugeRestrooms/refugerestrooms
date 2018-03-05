@@ -42,9 +42,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
-
-  # Include FactoryBot methods into the RSpec test suite.
-  config.include FactoryBot::Syntax::Methods
 end
 
 Geocoder.configure(:lookup => :test)

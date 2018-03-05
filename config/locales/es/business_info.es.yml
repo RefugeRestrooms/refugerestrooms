@@ -1,0 +1,23 @@
+es:
+  business_info:
+    title: "Preguntas frecuentes para organizaciones y empresas sobre Refuge Restrooms"
+    p1header: "1) ¿Qué es Refuge Restrooms?"
+    p1: "REFUGE es una aplicación web que busca proveer acceso seguro a baños para personas trans, intersexo, y personas género no conformes. Puedes leer más en <a href='/about'>Acerca de REFUGE</a>."
+    p2header: "2) ¿Cómo llegó mi instalación a esta lista?"
+    p2: "Alguien usó su baño y quizo enviar su ubicación como recurso. Todos nuestros datos son de fuentes múltiples y enviados por el usuario"
+    p3header: "3) ¿Cómo puedo ser un buen anfitrión?"
+    p3: "¡Gracias por preguntar! A menudo, los visitantes de REFUGE sólo esperan pasar rápidamente y irse, y como cualquier otro visitante, apoyar potencialmente su negocio o ubicación mientras esta ahí. Un personal amigable y las buenas experiencias pueden ayudar mucho a la hora de recibir comentarios positivos sobre su espacio en la sección de comentarios de la aplicación (¡más sobre eso a continuación!)"
+    p4header: "4) ¿Por qué hay un problema con los baños seguros?"
+    p4:
+      first: "Usar el baño es una actividad cotidiana que puede ser difícil de navegar para personas de nuestra comunidad, especialmente cuando se visitan áreas fuera de sus rutinas diarias. Nuestro proyecto de mapeo aborda esta cuestión"
+      second: "Según la <a href='http://www.ustranssurvey.org/'> Encuesta estadounidense de personas trans </a>:"
+      list1: "El 59% de las personas encuestadas evitó usar un baño por temor a la confrontación"
+      list2: "El 31% evitó comer o beber mientras estaba afuera, para evitar tener que usar el baño"
+      list3: "El 24% de las personas fueron cuestionadas por usar el baño"
+      list4: "12% de las personas encuestadas fueron hostigadas, atacadas o agredidas sexualmente en un baño"
+      list5: "Al 9% se le denegó el acceso al baño"
+      list6: "8% desarrollaron un problema renal o una infección del tracto urinario por evitar el uso del baño"
+    p5header: "5) ¿Qué significa una calificación?"
+    p5: "Las calificaciones ayudan a quienes visitan, a compartir experiencias sobre la ubicación. Animamos a quienes usan los baños, a compartir toda la información que tenemos sobre cada ubicación en el mapa."
+    p6header: "6) ¿Cómo elimino mi listado?"
+    p6: "Esperamos que considere mantener su listado, ya que puede significar mucho para la salud y el bienestar de las personas. Sin embargo, si prefiere no figurar en la lista, utilice nuestro formulario de contacto para solicitar una eliminación y las personas que trabajan voluntariamente en nuestro proyecto lo revisaran lo más pronto que sea posible (este es un proyecto de código abierto, por lo que todo el trabajo se hace a voluntad)."

@@ -7,13 +7,11 @@ gem 'pg_search'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'haml'
-gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.5'
-gem 'piwik_analytics', '~> 1.0.2'
 gem 'geocoder', '~> 1.2.1'
 gem 'devise', '~> 4.3'
 gem 'rakismet'
@@ -28,9 +26,15 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'bugsnag'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
+gem 'http_accept_language'
+gem 'puma'
 
 # Upgraded to 1.0.0 for Rails 5.1.4
 gem 'activeadmin', '~> 1.0.0'
+
+group :production do
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'rspec-rails'
@@ -41,9 +45,13 @@ group :development, :test do
   gem 'binding_of_caller'
 end
 
+group :development do
+  gem 'i18n-debug'
+end
+
 group :test do
   gem 'rake'
-  gem 'cucumber-rails', '~> 1.5.0', require: false
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'poltergeist'

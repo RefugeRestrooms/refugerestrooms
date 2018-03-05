@@ -1,4 +1,4 @@
-class CreateBathrooms < ActiveRecord::Migration
+class CreateBathrooms < ActiveRecord::Migration[4.2]
   def change
     create_table :bathrooms do |t|
       t.string :name

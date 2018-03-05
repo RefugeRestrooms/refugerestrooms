@@ -9,6 +9,11 @@ FactoryBot.define do
     downvote 11
     edit_id 0
 
+    trait :geocoded do
+      latitude 37.7749
+      longitude -122.4194
+    end
+
     trait :unisex do
       unisex true
     end
@@ -28,5 +33,13 @@ FactoryBot.define do
     factory :unisex_restroom, traits: [:unisex]
     factory :ada_restroom, traits: [:ada]
     factory :unisex_and_ada_restroom, traits: [:unisex, :ada]
+
+    factory :oakland_restroom do
+      name 'Some Cafe'
+      street '1400 Broadway'
+      city 'Oakland'
+      state 'CA'
+      country 'US'
+    end
   end
 end

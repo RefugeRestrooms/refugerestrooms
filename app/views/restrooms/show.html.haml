@@ -11,13 +11,13 @@
                     method: 'put' do
           %button.btn.btn-lg.btn-success
             %i.fa.fa-thumbs-up
-            Thumbs Up
+            = t('.thumbs-up-button-label')
 
         = link_to restroom_path(restroom: { downvote: true }),
                     method: 'put' do
           %button.btn.btn-lg.btn-danger
             %i.fa.fa-thumbs-down
-            Thumbs Down
+            = t('.thumbs-down-button-label')
   .row.headroom
     .col-xs-12
 

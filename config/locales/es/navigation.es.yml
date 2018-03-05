@@ -1,0 +1,11 @@
+es:
+  layouts:
+    navigation:
+      toggle-navigation-button-label: 'Alternar navigación'
+      submit-a-new-restroom-hyperlink-label: 'Agregar un nuevo baño'
+      about-hyperlink-label: 'Acerca de Refuge'
+      contact-hyperlink-label: 'Contacto'
+
+      resources-dropdown-button-label: 'Recursos'
+      download-unisex-restroom-signs-hyperlink-label: 'Descargar señalización para baños unisex'
+      public-api-hyperlink-label: Public API

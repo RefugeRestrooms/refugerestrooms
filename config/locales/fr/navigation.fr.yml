@@ -1,0 +1,11 @@
+fr:
+  layouts:
+    navigation:
+      toggle-navigation-button-label: 'Basculer en mode navigation'
+      submit-a-new-restroom-hyperlink-label: 'Soumettre de nouvelles toilettes'
+      about-hyperlink-label: 'À Propos'
+      contact-hyperlink-label: 'Contact'
+
+      resources-dropdown-button-label: 'Ressources'
+      download-unisex-restroom-signs-hyperlink-label: 'Télécharger des panneaux pour toilettes unisexes'
+      public-api-hyperlink-label: "API Publique"

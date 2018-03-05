@@ -1,0 +1,11 @@
+fr:
+  contacts:
+    new:
+      request-edit-for-restroom: "Demande d'edition pour Toilettes %{restroom_name}"
+      contact-title: 'Contact'
+      leave-this-field-blank: 'Laissez ce champ vide !'
+    submitted:
+      thank-you-period: 'Merci pour votre message.'
+      thank-you-exclamation: 'Merci pour votre message !'
+      cannot-send: "Impossible d'envoyer votre message."
+      we-will-get-back-to-you: "Nous reviendrons vers vous bientôt."
