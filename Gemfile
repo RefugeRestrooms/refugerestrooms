@@ -7,7 +7,6 @@ gem 'pg_search'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'haml'
-gem 'rails_12factor'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
@@ -33,6 +32,10 @@ gem 'puma'
 # Upgraded to 1.0.0 for Rails 5.1.4
 gem 'activeadmin', '~> 1.0.0'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails', '~> 4.8.2'
@@ -40,12 +43,15 @@ group :development, :test do
   gem 'pry'
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
+end
+
+group :development do
   gem 'i18n-debug'
 end
 
 group :test do
   gem 'rake'
-  gem 'cucumber-rails', '~> 1.5.0', require: false
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'simplecov', '~> 0.7.1', require: false
   gem 'poltergeist'
