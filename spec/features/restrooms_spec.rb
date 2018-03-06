@@ -137,6 +137,6 @@ describe "the edit process", type: :feature do
     click_on "Save Restroom"
 
     expect(page).to have_content("Your edit has been submitted.")
-    expect(Restroom.find_by_edit_id(restroom.id).directions).to eq("This is an edit")
+    expect(Restroom.where(edit_id: restroom.id).size).to eq(2)
   end
 end

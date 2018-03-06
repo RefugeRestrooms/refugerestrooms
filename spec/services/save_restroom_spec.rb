@@ -22,12 +22,13 @@ describe 'the save process' do
   end
 
   it "updates the edit id and approved" do
-    restroom = build(:edit_restroom)
+    restroom = build(:restroom)
+    restroom.edit_id = 1
+    restroom.approved = false
 
     actual_restroom = SaveRestroom.new(restroom).call
 
     expect(Restroom.all.size).to eq(1)
-    expect(actual_restroom.id).to eq(2)
     expect(actual_restroom.edit_id).to eq(1)
     expect(actual_restroom.approved?).to eq(false)
   end
