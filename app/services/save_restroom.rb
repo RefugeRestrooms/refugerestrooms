@@ -4,7 +4,6 @@ class SaveRestroom
   end
 
   def call
-    p @restroom
     if @restroom.spam?
       @restroom.errors.add(:spam, 'This restroom is spam')
     else

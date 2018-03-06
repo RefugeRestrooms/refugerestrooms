@@ -88,7 +88,6 @@ private
 
   def permitted_params
     params.require(:restroom).permit(
-      :edit_id,
       :name,
       :street,
       :city,
@@ -100,7 +99,9 @@ private
       :directions,
       :comment,
       :longitude,
-      :latitude
+      :latitude,
+      :edit_id,
+      :approved
     )
   end
 end
