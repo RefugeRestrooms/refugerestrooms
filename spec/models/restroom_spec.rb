@@ -73,7 +73,6 @@ describe Restroom do
 
       restrooms = Restroom.current
 
-      p restrooms
       expect(restrooms.size).to eq(1)
       expect(restrooms.first.directions).to eq("Most Recent")
     end
