@@ -45,4 +45,37 @@ describe Restroom do
     it { expect(Restroom.new.changing_table?).to be false }
     it { expect(Restroom.new(changing_table: true).changing_table?).to be true }
   end
+
+  describe '.current' do
+    it 'should return active listings' do
+      create(:restroom, directions: "Most Recent")
+      create(:edit_restroom)
+
+      restrooms = Restroom.current
+
+      expect(restrooms.size).to eq(1)
+      expect(restrooms.first.directions).to eq("Most Recent")
+    end
+
+    it 'should return most recent edit approved' do
+      restroom = create(:restroom, id: 1, edit_id: 1)
+      create(:edit_restroom,
+             id: 2,
+             edit_id: restroom.id,
+             approved: true,
+             directions: "Most Recent"
+            )
+      create(:edit_restroom,
+             id: 3,
+             edit_id: restroom.id,
+             directions: "Not approved"
+            )
+
+      restrooms = Restroom.current
+
+      p restrooms
+      expect(restrooms.size).to eq(1)
+      expect(restrooms.first.directions).to eq("Most Recent")
+    end
+  end
 end

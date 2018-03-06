@@ -53,7 +53,6 @@ FactoryBot.define do
     end
 
     factory :edit_restroom do
-      id 2
       edit_id 1
       approved false
     end
