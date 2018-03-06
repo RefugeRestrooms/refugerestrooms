@@ -20,13 +20,12 @@ describe "Restrooms API", type: :request do
 
   it 'does not list restroom edits' do
     create(:restroom, id: 1)
-    create(:restroom, edit_id: 1)
+    create(:edit_restroom)
 
     get '/api/v1/restrooms'
     expect(response).to be_success
 
     json = JSON.parse(response.body)
-    puts json
     expect(json.length).to eq(1)
   end
 
@@ -93,7 +92,7 @@ describe "Restrooms API", type: :request do
   end
 
   it 'full-text searches a list of restrooms' do
-    create(:restroom)
+    create(:restroom, name: 'Moonlight Café')
     create(:restroom, name: 'Frankie\'s Coffee Shop')
     create(:restroom, name: 'Hipster Coffee Shop')
     create(:restroom, name: 'Organic Co. Coffee', comment: 'Pretty tile.')
