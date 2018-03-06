@@ -16,6 +16,7 @@ class RestroomsController < ApplicationController
     if params[:edit_id]
       @restroom = find_restroom
       @restroom.edit_id = params[:edit_id]
+      @restroom.approved = false
     elsif params[:guess]
       @restroom = Restroom.new(permitted_params)
       @restroom.reverse_geocode
@@ -26,19 +27,20 @@ class RestroomsController < ApplicationController
   end
 
   def create
-    @restroom = Restroom.new(permitted_params)
+    restroom = Restroom.new(permitted_params)
+    @restroom = SaveRestroom.new(restroom).call
 
-    if @restroom.spam?
-      flash[:notice] = I18n.t('restroom.flash.spam')
-      render 'new'
-    elsif @restroom.save
-      if @restroom.edit_id != nil && @restroom.edit_id != 0
-        flash[:notice] = I18n.t('restroom.flash.edit', name: @restroom.name)
-        redirect_to Restroom.find(@restroom.edit_id)
-      else
+    if @restroom.errors.empty?
+      if @restroom.approved?
         flash[:notice] = I18n.t('restroom.flash.new', name: @restroom.name)
         redirect_to @restroom
+      else
+        flash[:notice] = I18n.t('restroom.flash.edit', name: @restroom.name)
+        redirect_to restroom_path(@restroom.edit_id)
       end
+    elsif @restroom.errors.key?(:spam)
+      flash[:notice] = I18n.t('restroom.flash.spam')
+      render 'new'
     else
       display_errors
       render 'new'
