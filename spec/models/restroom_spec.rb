@@ -49,7 +49,8 @@ describe Restroom do
   describe '.current' do
     it 'should return active listings' do
       create(:restroom, directions: "Most Recent")
-      create(:edit_restroom)
+      edit = create(:restroom)
+      edit.update(approved: false, edit_id: 2)
 
       restrooms = Restroom.current
 
@@ -59,17 +60,10 @@ describe Restroom do
 
     it 'should return most recent edit approved' do
       restroom = create(:restroom, id: 1, edit_id: 1)
-      create(:edit_restroom,
-             id: 2,
-             edit_id: restroom.id,
-             approved: true,
-             directions: "Most Recent"
-            )
-      create(:edit_restroom,
-             id: 3,
-             edit_id: restroom.id,
-             directions: "Not approved"
-            )
+      edit1 = create(:restroom, id: 2, approved: true, directions: "Most Recent")
+      edit1.update(edit_id: restroom.id)
+      edit2 = create(:restroom, id: 3, directions: "Not approved", approved: false)
+      edit2.update(edit_id: restroom.id)
 
       restrooms = Restroom.current
 

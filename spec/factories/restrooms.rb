@@ -11,6 +11,10 @@ FactoryBot.define do
     directions 'Direction'
     approved true
 
+    after(:create) do |restroom|
+      restroom.update(edit_id: restroom.id)
+    end
+
     trait :geocoded do
       latitude 37.7749
       longitude -122.4194
@@ -51,10 +55,6 @@ FactoryBot.define do
       state 'Spam State'
       country 'Spam Country'
     end
-
-    factory :edit_restroom do
-      edit_id 1
-      approved false
-    end
   end
 end
+

@@ -20,7 +20,8 @@ describe "Restrooms API", type: :request do
 
   it 'does not list restroom edits' do
     create(:restroom, id: 1)
-    create(:edit_restroom)
+    edit = create(:restroom)
+    edit.update(approved: false, edit_id: 1)
 
     get '/api/v1/restrooms'
     expect(response).to be_success
