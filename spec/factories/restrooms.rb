@@ -9,6 +9,7 @@ FactoryBot.define do
     downvote 11
     comment 'Comment'
     directions 'Direction'
+    approved true
 
     trait :geocoded do
       latitude 37.7749
