@@ -1,21 +1,12 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS206: Consider reworking classes to avoid initClass
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 //= require lib/geocoder
 
 // This Coffeescript file contains the class for the search bar and functionality.
 // It requires the RefugeRestrooms lib geocoder.
 
-const Cls = (Refuge.Restrooms.Search = class Search {
-  static initClass() {
-    this.prototype.searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
-  }
-
+Refuge.Restrooms.Search = class Search {
   constructor(form) {
+    this.searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
+
     // Define elements that will be in use in this class.
     this._initAutocomplete = this._initAutocomplete.bind(this);
     this._bindEvents = this._bindEvents.bind(this);
@@ -40,7 +31,7 @@ const Cls = (Refuge.Restrooms.Search = class Search {
 
   _initAutocomplete() {
     const input = document.getElementById('search');
-    return new google.maps.places.SearchBox(input);
+    new google.maps.places.SearchBox(input);
   }
 
 
@@ -50,7 +41,7 @@ const Cls = (Refuge.Restrooms.Search = class Search {
       // Get current location, update the form, and then submit.
       event.preventDefault();
       this._currentLocationButton.addClass('locating');
-      return this._searchCurrentLocation();
+      this._searchCurrentLocation();
     });
 
     this._submitSearchButton.click(event => {
@@ -59,16 +50,14 @@ const Cls = (Refuge.Restrooms.Search = class Search {
       event.preventDefault();
       this._submitSearchButton.addClass('locating');
       this._preventSearchWithDefault();
-      $('#lat').val() === undefined;
-      $('#long').val() === undefined;
       if (this._searchBar.val() === "") {
-        return this._searchCurrentLocation();
+        this._searchCurrentLocation();
       } else {
-        return this._searchQueryString();
+        this._searchQueryString();
       }
     });
 
-    return this._form.on("keypress", event => {
+    this._form.on("keypress", event => {
       if (event.keyCode === 13) {
         event.preventDefault();
         this._submitSearchButton.click();
@@ -79,39 +68,37 @@ const Cls = (Refuge.Restrooms.Search = class Search {
 
 
   _searchQueryString() {
-    return this._geocoder.geocodeSearchString(this._searchBar.val()).then(searchCoords => {
+    this._geocoder.geocodeSearchString(this._searchBar.val()).then(searchCoords => {
       this._updateForm(searchCoords.lat, searchCoords.long);
-      return this._form.submit();
+      this._form.submit();
     });
   }
 
 
   _searchCurrentLocation() {
-    return this._geocoder.getCurrentLocation()
+    this._geocoder.getCurrentLocation()
       .then(currentCoords => {
         this._updateForm(currentCoords.lat, currentCoords.long, "Current Location");
-        return this._form.submit();
+        this._form.submit();
     }).then(null, err => {
         this._currentLocationButton.removeClass('locating');
-        return alert("To search by location, please refresh the page and allow us to access your location!");
+        alert("To search by location, please refresh the page and allow us to access your location!");
     });
   }
 
 
-  _updateForm(lat,long,searchString) {
-    if (searchString == null) { searchString = undefined; }
-    const latField = this._form.find('#lat').val(lat);
-    const longField = this._form.find('#long').val(long);
-    if (searchString != null) {
-      let searchField;
-      return searchField = this._form.find('#search').val(searchString);
+  _updateForm(lat, long, searchString) {
+    this._form.find('#lat').val(lat);
+    this._form.find('#long').val(long);
+    if (searchString) {
+      this._form.find('#search').val(searchString);
     }
   }
 
 
   _preventSearchWithDefault() {
     if (this._searchBar.hasClass("fadedText") && (this._searchBar.val() === this.searchDefaultText)) {
-      return this._searchBar.val("");
+      this._searchBar.val("");
     }
   }
 
@@ -120,20 +107,19 @@ const Cls = (Refuge.Restrooms.Search = class Search {
       this._searchBar.val(this.searchDefaultText);
       this._searchBar.addClass("fadedText");
 
-      return this._searchBar.focus(() => {
+      this._searchBar.focus(() => {
         this._searchBar.removeClass("fadedText");
         if (this._searchBar.val() === this.searchDefaultText) { this._searchBar.val(""); }
 
-        return this._searchBar.blur(() => {
-          return this._setDefaultText();
+        this._searchBar.blur(() => {
+          this._setDefaultText();
         });
       });
     }
   }
-});
-Cls.initClass();
+}
 
-$(function() {
-  $.fn.initializeSearch       = function() { return new Refuge.Restrooms.Search($(this)); };
-  return $('.search-restrooms-form').initializeSearch();
+$(() => {
+  $.fn.initializeSearch = function() { return new Refuge.Restrooms.Search($(this)); };
+  $('.search-restrooms-form').initializeSearch();
 });
