@@ -1,9 +1,3 @@
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 //= require lib/geocoder
 
 Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
@@ -30,22 +24,22 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
 
   _bindEvents() {
     this._bindGuessButton();
-    return this._bindPreviewButton();
+    this._bindPreviewButton();
   }
 
   _bindGuessButton() {
-    return this._guessButton.click(event => {
+    this._guessButton.click(event => {
       this._guessButton.addClass('locating');
       event.preventDefault();
-      return this._geocoder.getCurrentLocation().then(coords => {
-        return this._geocoder.getAddress(coords).then(result => {
+      this._geocoder.getCurrentLocation().then(coords => {
+        this._geocoder.getAddress(coords).then(result => {
           console.log("hit the callback");
-          if ((result != null) && (result.length > 0)) {
+          if (result && result.length > 0) {
             console.log(result[0].formatted_address);
             console.log(result[0]);
-            return this._getNewForm(coords).then((data, textStatus) => {
+            this._getNewForm(coords).then((data, textStatus) => {
               console.log(data);
-              return this._updateForm(coords, data, textStatus);
+              this._updateForm(coords, data, textStatus);
             });
           }
         });
@@ -55,7 +49,7 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
 
 
   _bindPreviewButton() {
-    return this._previewButton.click(event => {
+    this._previewButton.click(event => {
       const form = this._form[0];
       const street = form.elements.restroom_street.value;
       const city = form.elements.restroom_city.value;
@@ -64,8 +58,8 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
       const address = `${street}, ${city}, ${state}, ${country}`;
 
       // Obtain coordinates
-      return this._geocoder.geocodeSearchString(address).then(coords => {
-        return this._updateMap(coords);
+      this._geocoder.geocodeSearchString(address).then(coords => {
+        this._updateMap(coords);
       });
     });
   }
@@ -79,7 +73,7 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
     this._bindEvents();
 
     // Rebind form
-    return this._form = $('form.simple_form');
+    this._form = $('form.simple_form');
   }
 
 
@@ -89,7 +83,7 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
 
     this._map.dataset.latitude = coords.lat;
     this._map.dataset.longitude = coords.long;
-    return Maps.reloadDraggable(this._map, this._onDrag);
+    Maps.reloadDraggable(this._map, this._onDrag);
   }
 
   // Callback for map marker 'dragend' event
@@ -98,8 +92,8 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
       lat: event.latLng.lat(),
       long: event.latLng.lng()
     };
-    return this._getNewForm(coords).then((data, textStatus) => {
-      return this._updateForm(coords, data, textStatus);
+    this._getNewForm(coords).then((data, textStatus) => {
+      this._updateForm(coords, data, textStatus);
     });
   }
 
@@ -121,11 +115,11 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
     $('.form-container').html(data).hide().fadeIn();
     this._rebind();
     this._requestNearbyRestrooms(coords);
-    return this._updateMap(coords);
+    this._updateMap(coords);
   }
 
   _requestNearbyRestrooms(coords) {
-    return $.ajax({
+    $.ajax({
       type: 'GET',
       url: '/restrooms',
       data: {
@@ -136,13 +130,13 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
       },
       success: (data, textStatus) => {
         this._guessButton.removeClass('locating');
-        return $('.nearby-container').html(data);
+        $('.nearby-container').html(data);
       }
     });
   }
 };
 
-$(function() {
+$(() => {
   $.fn.initializeNewRestroomForm = function() { return new Refuge.Restrooms.NewRestroomForm($(this)); };
-  return $('.submit-new-bathroom-form').initializeNewRestroomForm();
+  $('.submit-new-bathroom-form').initializeNewRestroomForm();
 });
