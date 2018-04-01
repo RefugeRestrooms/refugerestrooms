@@ -1,0 +1,8 @@
+pl:
+  restrooms:
+    index:
+      map-view-button-label: 'Mapa'
+
+    show:
+      thumbs-up-button-label: 'Kciuk w górê'
+      thumbs-down-button-label: 'Kciuk w dó³'

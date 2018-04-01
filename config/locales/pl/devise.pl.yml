@@ -1,0 +1,57 @@
+pl:
+  devise:
+    confirmations:
+      confirmed: "Twoja rejestracja zosta³a potwierdzona."
+      send_instructions: "W ci¹gu paru minut powinieneœ otrzymaæ email z instrukcj¹, jak potwierdziæ rejestracjê."
+      send_paranoid_instructions: "Je¿eli Twój email znajduje siê w naszej bazie danych, w ci¹gu paru minut otrzymasz wiadomoœæ z instrukcj¹, jak potwierdziæ rejestracjê."
+    failure:
+      already_authenticated: "Jesteœ ju¿ zalogowany."
+      inactive: "Twoje konto nie jest jeszcze aktywne."
+      invalid: "Niepoprawny login lub has³o."
+      locked: "Twoje konto jest zablokowane."
+      last_attempt: "Pozosta³a jedna próba, zanim Twoje konto zostanie zablokowane."
+      not_found_in_database: "Niepoprawny email lub has³o."
+      timeout: "Sesja wygas³a. Zaloguj siê ponownie."
+      unauthenticated: "Musisz siê najpierw zalogowaæ lub zarejestrowaæ."
+      unconfirmed: "Musisz najpierw potwierdziæ swoje konto."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrukcja potwierdzenia konta"
+      reset_password_instructions:
+        subject: "Instrukcja zresetowania has³a"
+      unlock_instructions:
+        subject: "Instrukcja odblokowania konta"
+    omniauth_callbacks:
+      failure: "Nie mo¿na by³o potwiedziæ %{kind} poniewa¿ \"%{reason}\"."
+      success: "Potwierdzono %{kind}."
+    passwords:
+      no_token: "Brak dostêpu do strony: kliknij w link resetuj¹cy has³o, który znajduje siê w wiadomoœci email."
+      send_instructions: "W ci¹gu paru minut otrzymasz email z instrukcj¹ resetowania has³a."
+      send_paranoid_instructions: "Je¿eli Twój email znajduje siê w naszej bazie danych, w ci¹gu paru minut otrzymasz wiadomoœæ z linkiem do odzyskania has³a."
+      updated: "Zmieniono has³o. Jesteœ zalogowany."
+      updated_not_active: "Zmieniono has³o."
+    registrations:
+      destroyed: "Usuniêto konto. Liczymy, ¿e zobaczymy Ciê jeszcze ponownie."
+      signed_up: "Witaj! Zarejestrowano poprawnie."
+      signed_up_but_inactive: "Zarejestrowano poprawnie. Przed zalogowaniem musisz jednak jeszcze aktywowaæ konto."
+      signed_up_but_locked: "Zarejestrowano poprawnie. Twoje konto jest jednak zablokowane."
+      signed_up_but_unconfirmed: "Wys³ano wiadomoœæ email z linkiem potwierdzaj¹cym. Kliknij w link aby aktywowaæ konto."
+      update_needs_confirmation: "Uaktualniono konto. PotwierdŸ swój nowy adres email: kliknij w link otrzymany w wiadomoœci."
+      updated: "Uaktualniono konto."
+    sessions:
+      signed_in: "Zalogowano."
+      signed_out: "Wylogowano."
+    unlocks:
+      send_instructions: "W ci¹gu paru minut otrzymasz wiadomoœæ z instrukcj¹, jak odblokowaæ konto."
+      send_paranoid_instructions: "Je¿eli Twój email znajduje siê w naszej bazie danych, w ci¹gu paru minut otrzymasz wiadomoœæ z instrukcj¹, jak odblokowaæ konto."
+      unlocked: "Twoje konto zosta³o odblokowane. Zaloguj siê."
+  errors:
+    messages:
+      already_confirmed: "ju¿ potwierdzono, zaloguj siê"
+      confirmation_period_expired: "nale¿y potwierdziæ w przeci¹gu %{period}; poproœ o nowy"
+      expired: "wygas³, poproœ o nowy"
+      not_found: "nie znaleziono"
+      not_locked: "nie zablokowano"
+      not_saved:
+        one: "B³¹d w zapisaniu %{resource}:"
+        other: "%{count} b³êdy przy zapisywaniu %{resource}:"

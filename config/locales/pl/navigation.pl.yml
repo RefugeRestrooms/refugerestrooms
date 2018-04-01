@@ -1,0 +1,10 @@
+pl:
+  layouts:
+    navigation:
+      toggle-navigation-button-label: 'Nawigacja'
+      submit-a-new-restroom-hyperlink-label: 'Dodaj ³azienkê'
+      about-hyperlink-label: 'O Refuge'
+      contact-hyperlink-label: 'Kontakt'
+      resources-dropdown-button-label: 'Materia³y'
+      download-unisex-restroom-signs-hyperlink-label: 'Pobierz znaki ³azienek unisex'
+      public-api-hyperlink-label: Public API

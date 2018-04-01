@@ -1,0 +1,8 @@
+pl:
+  pages:
+    signs:
+      title: 'Pobierz znaki do ³azienek'
+      intro: 'Je¿eli w Twojej placówce znajduje siê publiczna ³azienka dostêpna niezale¿nie od p³ci, mo¿esz dodaæ j¹ do bazy danych i udostêpniæ któryœ z poni¿szych znaków. W ten sposób dasz znaæ odwiedzaj¹cym znaæ, ¿e cenisz ich bezpieczeñstwo i komfort. Pliki s¹ w formacie PDF, mo¿liwe do wydrukowania w wysokiej rozdzielczoœci.'
+      head-accessible: 'Z udogodnieniami dla osób niepe³nosprawnych'
+      head-non-accessible: 'Bez udogodnieñ dla osób niepe³nosprawnych'
+      download: 'Pobierz PDF'

@@ -1,0 +1,11 @@
+pl:
+  contacts:
+    new:
+      request-edit-for-restroom: 'Zasugeruj zmianê w ³azience %{restroom_name}'
+      contact-title: 'Kontakt'
+      leave-this-field-blank: 'Zostaw to pole puste!'
+    submitted:
+      thank-you-period: 'Dziêkujemy za wiadomoœæ.'
+      thank-you-exclamation: 'Dziêkujemy za wiadomoœæ!'
+      cannot-send: 'Nie mo¿na by³o wys³aæ wiadomoœci.'
+      we-will-get-back-to-you: "Odpowiemy wkrótce."

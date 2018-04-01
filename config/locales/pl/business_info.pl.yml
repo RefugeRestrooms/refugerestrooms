@@ -1,0 +1,23 @@
+pl:
+  business_info:
+    title: "Refuge Restrooms Business Info"
+    p1header: "1) Czym jest Refuge Restrooms?"
+    p1: "Refuge Restrooms to aplikacja u³atwiaj¹ca osobom transp³ciowym i interp³ciowym bezpieczny dostêp do ³azienek publicznych. Przeczytaj wiêcej <a href='/about'>na tej stronie</a>."
+    p2header: "2) Dlaczego moja placówka znajduje siê w bazie danych?"
+    p2: "Ktoœ doda³ lokalizacjê ³azienki, aby poinformowaæ o niej innych. Wszystkie zamieszczone lokalizacje s¹ dodane przez u¿ytkowników."
+    p3header: "3) Jak mogê pomóc?"
+    p3: "Mi³o, ¿e pytasz. Zwykle przy okazji skorzystania z ³azienki, u¿ytkownicy REFUGE zatrzymaj¹ siê w placówce i wespr¹ j¹ w jakiœ sposób - zamawiaj¹c coœ lub robi¹c zakupy. Mi³a obs³uga i dobre wra¿enia na pewno wp³yn¹ na pozytywne recenzje Twojej placówki w aplikacji (o tym wiêcej za chwilê)."
+    p4header: "4) Na czym polega problem ³azienek publicznych?"
+    p4:
+      first: "Korzystanie z ³azienek publicznych nie jest ³atwe dla osób transp³ciowych. St¹d wziê³a siê idea projektu."
+      second: "Zgodnie z <a href='http://www.ustranssurvey.org/'>US Trans Survey</a>:"
+      list1: "59% osób transp³ciowych bior¹cych udzia³ w badaniu unika³o skorzystania z ³azienki publicznej z obawy o konfrontacjê,"
+      list2: "31% unika³o jedzenia poza domem z obawy o koniecznoœæ skorzystania z publicznej ³azienki"
+      list3: "24% zosta³o zaczepionych w ³azience"
+      list4: "12% zosta³o zaatakowanych w ³azience"
+      list5: "9% odmówiono mo¿liwoœci dostêpu do ³azienki"
+      list6: "8% zaczê³o chorowaæ na nerki lub uk³ad moczowy z powodu unikania ³azienek"
+    p5header: "5) Co oznaczaj¹ recenzje?"
+    p5: "Recenzje pomagaj¹ odwiedzaj¹cym dzieliæ siê nawzajem doœwiadczeniami dotycz¹cymi placówki. Zachêcamy u¿ytkowników do dzielenia siê jak najwiêksz¹ liczb¹ informacji odnoœnie placówek i lokalizacji."
+    p6header: "6) Jak mogê usun¹æ moj¹ placówkê z bazy danych?"
+    p6: "Liczymy, ¿e rozwa¿ysz pozostawienie placówki w bazie danych: mo¿e to mieæ rzeczywisty wp³yw na czyjeœ zdrowie i bezpieczeñstwo. Je¿eli jednak nie chcesz, by placówka widnia³a w aplikacji, skontaktuj siê przez formularz kontaktowy, a nasi wolontariusze odpowiedz¹ Ci tak szybko, jak to mo¿liwe (REFUGE to projekt open source i ca³a praca jest wykonywana przez wolontariuszy)."

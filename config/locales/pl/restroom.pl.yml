@@ -1,0 +1,60 @@
+pl:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Nazwa placówki / miejsca'
+        street: 'Ulica'
+        state: 'Województwo'
+        access: 'Udogodnienia dla osób niepe³nosprawnych?'
+        bath_type: 'Typ ³azienki'
+
+  search_bar:
+    enter_location: 'Wpisz adres'
+
+  restroom:
+    add_new: 'Dodaj now¹ ³azienkê do bazy danych'
+    preview: 'Podgl¹d'
+    required: 'Pola oznaczone * s¹ obowi¹zkowe'
+    guess_location: 'Obecna lokalizacja urz¹dzenia'
+    directions: 'Wskazówki'
+    directions_hint: '(np.: na trzecim piêtrze, obok baru, ko³o przebieralni...)'
+    comments_hint: '(np.: musisz coœ kupiæ, udawaj ¿e siê rozgl¹dasz z zamiarem zakupu...)'
+    comments: 'Komentarze'
+    accessible: 'Dostêp dla osób niepe³nosprawnych'
+    not_accessible: 'Niedostêpna dla osób niepe³nosprawnych'
+    changing_table: 'Przewijak'
+    no_changing_table: 'Brak przewijaka'
+    type:
+      unisex: 'Oznaczona jako unisex'
+      single_stall: 'Jedna toaleta niezale¿nie od p³ci'
+    restsubmit: 'Zapisz ³azienkê'
+    rating:
+      positive: '%{percentage}% pozytywnych opinii'
+      unrated: 'Brak ocen'
+    upvote: 'Wszystko w porz¹dku!'
+    downvote: 'Nieodpowiednie warunki'
+    confirm:
+      upvote: 'Czy chcesz oceniæ tê ³azienkê pozytywnie?'
+      downvote: 'Czy chcesz oceniæ tê ³azienkê negatywnie?'
+    flash:
+      field: 'Nie wype³niono obowi¹zkowego pola.'
+      unexpected: 'B³¹d aplikacji.'
+      upvoteerror: 'Wyst¹pi³ problem przy ocenie ³azienki.'
+      upvotesuccess: 'Oceniono pozytywnie! Dziêkujemy za wk³ad.'
+      downvoteerror: 'Wyst¹pi³ problem przy ocenie ³azienki.'
+      downvotesuccess: 'Oceniono negatywnie. Dziêkujemy za wk³ad'
+      new: 'Dodano ³azienkê %{name}.'
+      updated: 'Uaktualniono informacje o tej ³azience.'
+      deleted: 'Usuniêto ³azienkê.'
+      searcherror: 'Wyst¹pi³ b³¹d przy szukaniu lokalizacji.'
+      spam: 'Wykryto spam.'
+    contact:
+      contactlisting: "Skontaktuj siê z nami odnoœnie tej lokalizacji!"
+
+  restrooms:
+    nearby:
+      heading: '£azienki w pobli¿u'
+      body: 'Zanim dodasz ³azienkê, sprawdŸ, czy nie zosta³a ju¿ wczeœniej dodana w pobli¿u.'
+      none: 'Nie znaleziono ³azienek w pobli¿u.'
