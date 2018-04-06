@@ -55,6 +55,6 @@ pl:
 
   restrooms:
     nearby:
-      heading: '£azienki w pobliżu'
+      heading: 'Łazienki w pobliżu'
       body: 'Zanim dodasz łazienkę, sprawdź, czy nie została już wcześniej dodana w pobliżu.'
       none: 'Nie znaleziono łazienek w pobliżu.'

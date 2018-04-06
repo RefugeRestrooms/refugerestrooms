@@ -2,7 +2,7 @@ pl:
   pages:
     signs:
       title: 'Pobierz znaki do łazienek'
-      intro: 'Jeżeli w Twojej placówce znajduje się publiczna łazienka dostępna niezależnie od płci, możesz dodać ją do bazy danych i udostępnić któryś z poniższych znaków. W ten sposób dasz znać odwiedzającym, że cenisz ich bezpieczeñstwo i komfort. Pliki są w formacie PDF, możliwe do wydrukowania w wysokiej rozdzielczości.'
+      intro: 'Jeżeli w Twojej placówce znajduje się publiczna łazienka dostępna niezależnie od płci, możesz dodać ją do bazy danych i udostępnić któryś z poniższych znaków. W ten sposób dasz znać odwiedzającym, że cenisz ich bezpieczeństwo i komfort. Pliki są w formacie PDF, możliwe do wydrukowania w wysokiej rozdzielczości.'
       head-accessible: 'Z udogodnieniami dla osób niepełnosprawnych'
       head-non-accessible: 'Bez udogodnień dla osób niepełnosprawnych'
       download: 'Pobierz PDF'
