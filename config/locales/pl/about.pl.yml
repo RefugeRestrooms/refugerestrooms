@@ -3,12 +3,12 @@ pl:
     title: 'O REFUGE'
     p1header: 'Czym jest REFUGE Restrooms?'
     p1:
-      first: 'Refuge Restrooms to aplikacja ułatwiająca osobom transpłciowym i interpłciowym bezpieczny dostęp do łazienek publicznych. Użytkownicy mogą znaleźć łazienki znajdujące się w promieniu konkretnej lokalizacji, dodać nową łazienkę do listy, a także skomentować i ocenić te dodane już wcześniej.'
+      first: 'Refuge Restrooms to aplikacja ułatwiająca osobom transpłciowym i interpłciowym bezpieczny dostęp do łazienek publicznych. Użytkownicy mogą znaleźć łazienki znajdujące się w pobliżu konkretnego miejsca, dodać nową łazienkę do listy, a także skomentować i ocenić te dodane już wcześniej.'
       second: 'Naszym celem jest nie tylko znajdowanie obecnie istniejących już łazienek bezpiecznych dla osób transpłciowych, ale także propagowanie działań mających na celu zwiększenie bezpieczeństwa osób transpłciowych i interpłciowych.'
     p2header: 'Skąd pochodzą wszystkie dane?'
     p2: 'Pierwsze 4500 lokalizacji pochodzi z danych nieprowadzonego już projektu Safe2Pee. Pozostałe są dodawane przez użytkowników. Jeżeli zauważysz, że łazienka w miejscu publicznym jest neutralna, dodaj ją do bazy danych.'
-    p3header: 'Skąd nazwa REFUGE (ang. azyl)?'
-    p3: 'Chcemy, żeby nasi użytkownicy byli godnie traktowani: bezpieczny dostęp do łazienki do podstawowe prawo człowieka. Chcemy zapewnić to bezpieczeństwo każdemu w razie potrzeby.'
+    p3header: 'Skąd nazwa REFUGE?'
+    p3: 'Refuge - ang. „azyl”. Chcemy, żeby nasi użytkownicy byli godnie traktowani: bezpieczny dostęp do łazienki do podstawowe prawo człowieka. Chcemy zapewnić to bezpieczeństwo każdemu w razie potrzeby.'
     p4header: "Dlaczego łazienki to taki wielki problem? Czemu służy ta aplikacja?"
     p4: "Dostęp do łazienek publicznych to ważny element walki o prawa osób transpłciowych. Ciągle słyszy się wiadomości o aferach spowodowanych tym, że osoba trans skorzystała z łazienki przeznaczonej dla płci, z którą się identyfikuje. Oczywiście każda osoba transpłciowa powinna mieć prawo do korzystania z takiej łazienki, z jakiej chce. Ale mimo wielu sukcesów sądowych, nie zawsze jest to jednak bezpieczne: osoby transpłciowe nierzadko doświadczają przemocy werbalnej i fizycznej tylko dlatego, że korzystają z łazienki. Takie doświadczenie nie powinno nikogo spotykać i dlatego stworzyliśmy REFUGE."
     p5header: 'Jak można pomóc?'
