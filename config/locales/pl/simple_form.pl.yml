@@ -12,44 +12,44 @@ pl:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "SprawdŸ poni¿sze informacje:"
+      default_message: "SprawdÅº poniÅ¼sze informacje:"
 
     labels:
       defaults:
         name: 'Nazwa'
         street: 'Ulica'
         city: 'Miasto'
-        state: 'Stan / województwo'
+        state: 'Stan / wojewÃ³dztwo'
         country: 'Kraj'
-        accessible: 'Z udogodnieniami dla osób niepe³nosprawnych'
+        accessible: 'Z udogodnieniami dla osÃ³b niepeÅ‚nosprawnych'
         unisex: 'Unisex'
         changing_table: 'Przewijak'
-        directions: 'Wskazówki'
+        directions: 'WskazÃ³wki'
         comment: 'Komentarz'
         email: 'Email'
-        message: 'Wiadomoœæ'
+        message: 'WiadomoÅ›Ä‡'
       contact:
-        name: 'Imiê'
+        name: 'ImiÄ™'
         email: 'Email'
-        message: 'Wiadomoœæ'
+        message: 'WiadomoÅ›Ä‡'
 
   helpers:
     submit:
       contact:
         # This is the "Send message" button on the "Contact" page.
-        create: 'Wyœlij wiadomoœæ'
+        create: 'WyÅ›lij wiadomoÅ›Ä‡'
 
     # Labels and hints examples
     # labels:
     #   defaults:
-    #     password: 'Has³o'
+    #     password: 'HasÅ‚o'
     #   user:
     #     new:
-    #       email: 'Podaj email aby siê zalogowaæ.'
+    #       email: 'Podaj email aby siÄ™ zalogowaÄ‡.'
     #     edit:
     #       email: 'email.'
     # hints:
     #   defaults:
     #     username: 'Login'
-    #     password: 'Bez znaków specjalnych.'
+    #     password: 'Bez znakÃ³w specjalnych.'
 

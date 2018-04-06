@@ -4,57 +4,57 @@ pl:
       restroom:
         # only overridden attributes here, defaults work as expected
         # (e.g. database field 'city' will be appear as 'City')
-        name: 'Nazwa placówki / miejsca'
+        name: 'Nazwa placÃ³wki / miejsca'
         street: 'Ulica'
-        state: 'Województwo'
-        access: 'Udogodnienia dla osób niepe³nosprawnych?'
-        bath_type: 'Typ ³azienki'
+        state: 'WojewÃ³dztwo'
+        access: 'Udogodnienia dla osÃ³b niepeÅ‚nosprawnych?'
+        bath_type: 'Typ Å‚azienki'
 
   search_bar:
     enter_location: 'Wpisz adres'
 
   restroom:
-    add_new: 'Dodaj now¹ ³azienkê do bazy danych'
-    preview: 'Podgl¹d'
-    required: 'Pola oznaczone * s¹ obowi¹zkowe'
-    guess_location: 'Obecna lokalizacja urz¹dzenia'
-    directions: 'Wskazówki'
-    directions_hint: '(np.: na trzecim piêtrze, obok baru, ko³o przebieralni...)'
-    comments_hint: '(np.: musisz coœ kupiæ, udawaj ¿e siê rozgl¹dasz z zamiarem zakupu...)'
+    add_new: 'Dodaj nowÄ… Å‚azienkÄ™ do bazy danych'
+    preview: 'PodglÄ…d'
+    required: 'Pola oznaczone * sÄ… obowiÄ…zkowe'
+    guess_location: 'Obecna lokalizacja urzÄ…dzenia'
+    directions: 'WskazÃ³wki'
+    directions_hint: '(np.: na trzecim piÄ™trze, obok baru, koÅ‚o przebieralni...)'
+    comments_hint: '(np.: musisz coÅ› kupiÄ‡, udawaj Å¼e siÄ™ rozglÄ…dasz z zamiarem zakupu...)'
     comments: 'Komentarze'
-    accessible: 'Dostêp dla osób niepe³nosprawnych'
-    not_accessible: 'Niedostêpna dla osób niepe³nosprawnych'
+    accessible: 'DostÄ™p dla osÃ³b niepeÅ‚nosprawnych'
+    not_accessible: 'NiedostÄ™pna dla osÃ³b niepeÅ‚nosprawnych'
     changing_table: 'Przewijak'
     no_changing_table: 'Brak przewijaka'
     type:
       unisex: 'Oznaczona jako unisex'
-      single_stall: 'Jedna toaleta niezale¿nie od p³ci'
-    restsubmit: 'Zapisz ³azienkê'
+      single_stall: 'Jedna toaleta niezaleÅ¼nie od pÅ‚ci'
+    restsubmit: 'Zapisz Å‚azienkÄ™'
     rating:
       positive: '%{percentage}% pozytywnych opinii'
       unrated: 'Brak ocen'
-    upvote: 'Wszystko w porz¹dku!'
+    upvote: 'Wszystko w porzÄ…dku!'
     downvote: 'Nieodpowiednie warunki'
     confirm:
-      upvote: 'Czy chcesz oceniæ tê ³azienkê pozytywnie?'
-      downvote: 'Czy chcesz oceniæ tê ³azienkê negatywnie?'
+      upvote: 'Czy chcesz oceniÄ‡ tÄ™ Å‚azienkÄ™ pozytywnie?'
+      downvote: 'Czy chcesz oceniÄ‡ tÄ™ Å‚azienkÄ™ negatywnie?'
     flash:
-      field: 'Nie wype³niono obowi¹zkowego pola.'
-      unexpected: 'B³¹d aplikacji.'
-      upvoteerror: 'Wyst¹pi³ problem przy ocenie ³azienki.'
-      upvotesuccess: 'Oceniono pozytywnie! Dziêkujemy za wk³ad.'
-      downvoteerror: 'Wyst¹pi³ problem przy ocenie ³azienki.'
-      downvotesuccess: 'Oceniono negatywnie. Dziêkujemy za wk³ad'
-      new: 'Dodano ³azienkê %{name}.'
-      updated: 'Uaktualniono informacje o tej ³azience.'
-      deleted: 'Usuniêto ³azienkê.'
-      searcherror: 'Wyst¹pi³ b³¹d przy szukaniu lokalizacji.'
+      field: 'Nie wypeÅ‚niono obowiÄ…zkowego pola.'
+      unexpected: 'BÅ‚Ä…d aplikacji.'
+      upvoteerror: 'WystÄ…piÅ‚ problem przy ocenie Å‚azienki.'
+      upvotesuccess: 'Oceniono pozytywnie! DziÄ™kujemy za wkÅ‚ad.'
+      downvoteerror: 'WystÄ…piÅ‚ problem przy ocenie Å‚azienki.'
+      downvotesuccess: 'Oceniono negatywnie. DziÄ™kujemy za wkÅ‚ad'
+      new: 'Dodano Å‚azienkÄ™ %{name}.'
+      updated: 'Uaktualniono informacje o tej Å‚azience.'
+      deleted: 'UsuniÄ™to Å‚azienkÄ™.'
+      searcherror: 'WystÄ…piÅ‚ bÅ‚Ä…d przy szukaniu lokalizacji.'
       spam: 'Wykryto spam.'
     contact:
-      contactlisting: "Skontaktuj siê z nami odnoœnie tej lokalizacji!"
+      contactlisting: "Skontaktuj siÄ™ z nami odnoÅ›nie tej lokalizacji!"
 
   restrooms:
     nearby:
-      heading: '£azienki w pobli¿u'
-      body: 'Zanim dodasz ³azienkê, sprawdŸ, czy nie zosta³a ju¿ wczeœniej dodana w pobli¿u.'
-      none: 'Nie znaleziono ³azienek w pobli¿u.'
+      heading: 'Â£azienki w pobliÅ¼u'
+      body: 'Zanim dodasz Å‚azienkÄ™, sprawdÅº, czy nie zostaÅ‚a juÅ¼ wczeÅ›niej dodana w pobliÅ¼u.'
+      none: 'Nie znaleziono Å‚azienek w pobliÅ¼u.'

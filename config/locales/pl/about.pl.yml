@@ -3,20 +3,20 @@ pl:
     title: 'O REFUGE'
     p1header: 'Czym jest REFUGE Restrooms?'
     p1:
-      first: 'Refuge Restrooms to aplikacja u³atwiaj¹ca osobom transp³ciowym i interp³ciowym bezpieczny dostêp do ³azienek publicznych. U¿ytkownicy mog¹ znaleŸæ ³azienki znajduj¹ce siê w promieniu konkretnej lokalizacji, dodaæ now¹ ³azienkê do listy, a tak¿e skomentowaæ i oceniæ te dodane ju¿ wczeœniej.'
-      second: 'Naszym celem jest nie tylko znajdowanie obecnie istniej¹cych ju¿ ³azienek bezpiecznych dla osób transp³ciowych, ale tak¿e propagowanie dzia³añ maj¹cych na celu zwiêkszenie bezpieczeñstwa osób transp³ciowych i interp³ciowych.'
-    p2header: 'Sk¹d pochodz¹ wszystkie dane?'
-    p2: 'Pierwsze 4500 lokalizacji pochodzi z danych nieprowadzonego ju¿ projektu Safe2Pee. Pozosta³e s¹ dodawane przez u¿ytkowników. Je¿eli zauwa¿ysz, ¿e ³azienka w miejscu publicznym jest neutralna, dodaj j¹ do bazy danych.'
-    p3header: 'Sk¹d nazwa REFUGE (ang. azyl)?'
-    p3: 'Chcemy, ¿eby nasi u¿ytkownicy byli godnie traktowani: bezpieczny dostêp do ³azienki do podstawowe prawo cz³owieka. Chcemy zapewniæ to bezpieczeñstwo ka¿demu w razie potrzeby.'
-    p4header: "Dlaczego ³azienki to taki wielki problem? Czemu s³u¿y ta aplikacja?"
-    p4: "Dostêp do ³azienek publicznych to wa¿ny element walki o prawa osób transp³ciowych. Ci¹gle s³yszy siê wiadomoœci o aferach spowodowanych tym, ¿e osoba trans skorzysta³a z ³azienki przeznaczonej dla p³ci, z któr¹ siê identyfikuje. Oczywiœcie ka¿da osoba transp³ciowa powinna mieæ prawo do korzystania z takiej ³azienki, z jakiej chce. Ale mimo wielu sukcesów s¹dowych, nie zawsze jest to jednak bezpieczne: osoby transp³ciowe nierzadko doœwiadczaj¹ przemocy werbalnej i fizycznej tylko dlatego, ¿e korzystaj¹ z ³azienki. Takie doœwiadczenie nie powinno nikogo spotykaæ i dlatego stworzyliœmy REFUGE."
-    p5header: 'Jak mo¿na pomóc?'
+      first: 'Refuge Restrooms to aplikacja uÅ‚atwiajÄ…ca osobom transpÅ‚ciowym i interpÅ‚ciowym bezpieczny dostÄ™p do Å‚azienek publicznych. UÅ¼ytkownicy mogÄ… znaleÅºÄ‡ Å‚azienki znajdujÄ…ce siÄ™ w promieniu konkretnej lokalizacji, dodaÄ‡ nowÄ… Å‚azienkÄ™ do listy, a takÅ¼e skomentowaÄ‡ i oceniÄ‡ te dodane juÅ¼ wczeÅ›niej.'
+      second: 'Naszym celem jest nie tylko znajdowanie obecnie istniejÄ…cych juÅ¼ Å‚azienek bezpiecznych dla osÃ³b transpÅ‚ciowych, ale takÅ¼e propagowanie dziaÅ‚aÅ„ majÄ…cych na celu zwiÄ™kszenie bezpieczeÅ„stwa osÃ³b transpÅ‚ciowych i interpÅ‚ciowych.'
+    p2header: 'SkÄ…d pochodzÄ… wszystkie dane?'
+    p2: 'Pierwsze 4500 lokalizacji pochodzi z danych nieprowadzonego juÅ¼ projektu Safe2Pee. PozostaÅ‚e sÄ… dodawane przez uÅ¼ytkownikÃ³w. JeÅ¼eli zauwaÅ¼ysz, Å¼e Å‚azienka w miejscu publicznym jest neutralna, dodaj jÄ… do bazy danych.'
+    p3header: 'SkÄ…d nazwa REFUGE (ang. azyl)?'
+    p3: 'Chcemy, Å¼eby nasi uÅ¼ytkownicy byli godnie traktowani: bezpieczny dostÄ™p do Å‚azienki do podstawowe prawo czÅ‚owieka. Chcemy zapewniÄ‡ to bezpieczeÅ„stwo kaÅ¼demu w razie potrzeby.'
+    p4header: "Dlaczego Å‚azienki to taki wielki problem? Czemu sÅ‚uÅ¼y ta aplikacja?"
+    p4: "DostÄ™p do Å‚azienek publicznych to waÅ¼ny element walki o prawa osÃ³b transpÅ‚ciowych. CiÄ…gle sÅ‚yszy siÄ™ wiadomoÅ›ci o aferach spowodowanych tym, Å¼e osoba trans skorzystaÅ‚a z Å‚azienki przeznaczonej dla pÅ‚ci, z ktÃ³rÄ… siÄ™ identyfikuje. OczywiÅ›cie kaÅ¼da osoba transpÅ‚ciowa powinna mieÄ‡ prawo do korzystania z takiej Å‚azienki, z jakiej chce. Ale mimo wielu sukcesÃ³w sÄ…dowych, nie zawsze jest to jednak bezpieczne: osoby transpÅ‚ciowe nierzadko doÅ›wiadczajÄ… przemocy werbalnej i fizycznej tylko dlatego, Å¼e korzystajÄ… z Å‚azienki. Takie doÅ›wiadczenie nie powinno nikogo spotykaÄ‡ i dlatego stworzyliÅ›my REFUGE."
+    p5header: 'Jak moÅ¼na pomÃ³c?'
     p5:
-      first: "<strong>Po pierwsze:</strong> Dodawaj ³azienki. Baza danych zale¿y od u¿ytkowników - a im wiêcej dodanych lokalizacji, tym bardziej wartoœciowa bêdzie aplikacja."
-      second: "<strong>Po drugie:</strong> Powiedz znajomym. Napisz tweeta, post na Facebooku, Tumblrze, swoim blogu. Podaj dalej informacjê o REFUGE."
-      third: "<strong>Po trzecie:</strong> Je¿eli programujesz, zajrzyj na naszego GitHuba i poinformuj nas o napotkanych bugach, zasugeruj poprawki albo napisz w³asny kod aby wspomóc projekt. REFUGE jest open source i nie mog³oby istnieæ bez pomocy wspó³twórców."
-      fourth: "<strong>Po czwarte: </strong> Dokonaj wp³aty. Organizujemy zbiórki i kampanie crowdfundingowe, aby mieæ za co kupowaæ sprzêt i p³aciæ twórcom aplikacji za ich pracê, aby nie by³a to ju¿ praca wolontariacka, jak pocz¹tkowo. Wiêkszoœæ twórców jest transp³ciowa i obecnie zatrudniona poni¿ej kwalifikacji."
-    p6header: "Dlaczego moja placówka znajduje siê w bazie danych?"
-    p6: "Dowiedz siê wiêcej w <a href='/business_info'>Business FAQ</a>."
+      first: "<strong>Po pierwsze:</strong> Dodawaj Å‚azienki. Baza danych zaleÅ¼y od uÅ¼ytkownikÃ³w - a im wiÄ™cej dodanych lokalizacji, tym bardziej wartoÅ›ciowa bÄ™dzie aplikacja."
+      second: "<strong>Po drugie:</strong> Powiedz znajomym. Napisz tweeta, post na Facebooku, Tumblrze, swoim blogu. Podaj dalej informacjÄ™ o REFUGE."
+      third: "<strong>Po trzecie:</strong> JeÅ¼eli programujesz, zajrzyj na naszego GitHuba i poinformuj nas o napotkanych bugach, zasugeruj poprawki albo napisz wÅ‚asny kod aby wspomÃ³c projekt. REFUGE jest open source i nie mogÅ‚oby istnieÄ‡ bez pomocy wspÃ³Å‚twÃ³rcÃ³w."
+      fourth: "<strong>Po czwarte: </strong> Dokonaj wpÅ‚aty. Organizujemy zbiÃ³rki i kampanie crowdfundingowe, aby mieÄ‡ za co kupowaÄ‡ sprzÄ™t i pÅ‚aciÄ‡ twÃ³rcom aplikacji za ich pracÄ™, aby nie byÅ‚a to juÅ¼ praca wolontariacka, jak poczÄ…tkowo. WiÄ™kszoÅ›Ä‡ twÃ³rcÃ³w jest transpÅ‚ciowa i obecnie zatrudniona poniÅ¼ej kwalifikacji."
+    p6header: "Dlaczego moja placÃ³wka znajduje siÄ™ w bazie danych?"
+    p6: "Dowiedz siÄ™ wiÄ™cej w <a href='/business_info'>Business FAQ</a>."
     contribute: 'Zajrzyj na naszego GitHuba!'
