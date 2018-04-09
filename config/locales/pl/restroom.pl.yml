@@ -1,0 +1,60 @@
+pl:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Nazwa placówki / miejsca'
+        street: 'Ulica'
+        state: 'Województwo'
+        access: 'Udogodnienia dla osób niepełnosprawnych?'
+        bath_type: 'Typ łazienki'
+
+  search_bar:
+    enter_location: 'Wpisz adres'
+
+  restroom:
+    add_new: 'Dodaj nową łazienkę do bazy danych'
+    preview: 'Podgląd'
+    required: 'Pola oznaczone * są obowiązkowe'
+    guess_location: 'Obecna lokalizacja urządzenia'
+    directions: 'Wskazówki'
+    directions_hint: '(np.: na trzecim piętrze, obok baru, koło przebieralni...)'
+    comments_hint: '(np.: musisz coś kupić, udawaj że się rozglądasz z zamiarem zakupu...)'
+    comments: 'Komentarze'
+    accessible: 'Dostęp dla osób niepełnosprawnych'
+    not_accessible: 'Niedostępna dla osób niepełnosprawnych'
+    changing_table: 'Przewijak'
+    no_changing_table: 'Brak przewijaka'
+    type:
+      unisex: 'Oznaczona jako unisex'
+      single_stall: 'Jedna toaleta niezależnie od płci'
+    restsubmit: 'Zapisz łazienkę'
+    rating:
+      positive: '%{percentage}% pozytywnych opinii'
+      unrated: 'Brak ocen'
+    upvote: 'Wszystko w porządku!'
+    downvote: 'Nieodpowiednie warunki'
+    confirm:
+      upvote: 'Czy chcesz ocenić tę łazienkę pozytywnie?'
+      downvote: 'Czy chcesz ocenić tę łazienkę negatywnie?'
+    flash:
+      field: 'Nie wypełniono obowiązkowego pola.'
+      unexpected: 'Błąd aplikacji.'
+      upvoteerror: 'Wystąpił problem przy ocenie łazienki.'
+      upvotesuccess: 'Oceniono pozytywnie! Dziękujemy za wkład.'
+      downvoteerror: 'Wystąpił problem przy ocenie łazienki.'
+      downvotesuccess: 'Oceniono negatywnie. Dziękujemy za wkład'
+      new: 'Dodano łazienkę %{name}.'
+      updated: 'Uaktualniono informacje o tej łazience.'
+      deleted: 'Usunięto łazienkę.'
+      searcherror: 'Wystąpił błąd przy szukaniu lokalizacji.'
+      spam: 'Wykryto spam.'
+    contact:
+      contactlisting: "Skontaktuj się z nami odnośnie tej lokalizacji!"
+
+  restrooms:
+    nearby:
+      heading: 'Łazienki w pobliżu'
+      body: 'Zanim dodasz łazienkę, sprawdź, czy nie została już wcześniej dodana w pobliżu.'
+      none: 'Nie znaleziono łazienek w pobliżu.'

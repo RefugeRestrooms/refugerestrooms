@@ -1,0 +1,23 @@
+pl:
+  business_info:
+    title: "Refuge Restrooms Business Info"
+    p1header: "1) Czym jest Refuge Restrooms?"
+    p1: "Refuge Restrooms to aplikacja ułatwiająca osobom transpłciowym i interpłciowym bezpieczny dostęp do łazienek publicznych. Przeczytaj więcej <a href='/about'>na tej stronie</a>."
+    p2header: "2) Dlaczego moja placówka znajduje się w bazie danych?"
+    p2: "Ktoś dodał lokalizację łazienki, aby poinformować o niej innych. Wszystkie zamieszczone lokalizacje są dodane przez użytkowników."
+    p3header: "3) Jak mogę pomóc?"
+    p3: "Miło, że pytasz. Zwykle przy okazji skorzystania z łazienki, użytkownicy REFUGE zatrzymają się w placówce i wesprą ją w jakiś sposób - zamawiając coś lub robiąc zakupy. Miła obsługa i dobre wrażenia na pewno wpłyną na pozytywne recenzje Twojej placówki w aplikacji (o tym więcej za chwilę)."
+    p4header: "4) Na czym polega problem łazienek publicznych?"
+    p4:
+      first: "Korzystanie z łazienek publicznych nie jest łatwe dla osób transpłciowych. Stąd wzięła się idea projektu."
+      second: "Zgodnie z <a href='http://www.ustranssurvey.org/'>US Trans Survey</a>:"
+      list1: "59% osób transpłciowych biorących udział w badaniu unikało skorzystania z łazienki publicznej z obawy o konfrontację,"
+      list2: "31% unikało jedzenia poza domem z obawy o konieczność skorzystania z publicznej łazienki"
+      list3: "24% zostało zaczepionych w łazience"
+      list4: "12% zostało zaatakowanych w łazience"
+      list5: "9% odmówiono możliwości dostępu do łazienki"
+      list6: "8% zaczęło chorować na nerki lub układ moczowy z powodu unikania łazienek"
+    p5header: "5) Co oznaczają recenzje?"
+    p5: "Recenzje pomagają odwiedzającym dzielić się nawzajem doświadczeniami dotyczącymi placówki. Zachęcamy użytkowników do dzielenia się jak największą liczbą informacji odnośnie placówek i lokalizacji."
+    p6header: "6) Jak mogę usunąć moją placówkę z bazy danych?"
+    p6: "Liczymy, że rozważysz pozostawienie placówki w bazie danych: może to mieć rzeczywisty wpływ na czyjeś zdrowie i bezpieczeństwo. Jeżeli jednak nie chcesz, by placówka widniała w aplikacji, skontaktuj się przez formularz kontaktowy, a nasi wolontariusze odpowiedzą Ci tak szybko, jak to możliwe (REFUGE to projekt open source i cała praca jest wykonywana przez wolontariuszy)."
