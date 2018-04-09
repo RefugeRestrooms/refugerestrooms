@@ -4,10 +4,14 @@ services:
     image: postgres
   web:
     build: .
+    privileged: true
     entrypoint: [setup/entry]
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/refugerestrooms
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY
     ports:
       - "3000:3000"
     depends_on:
