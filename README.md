@@ -45,7 +45,7 @@ If you just want to get your environment set up for making changes locally and t
 
 ## Slack
 
-If you want to join the Refuge Restrooms Slack channel, please email refugerestrooms@gmail.com for an invite.
+If you want to join the Refuge Restrooms Slack channel, you can do so by [clicking on this link.](https://join.slack.com/t/refugelgbt/shared_invite/enQtMzExOTAyMTExMjM3LTk2ZDQzNGFmMzFlY2YyZGI1NTU1YzFhMGFlZTdlNzA2MDlkYTRjNWVkMTVkOTlhZjJmNGFkMzY3NjFhZjgyMzM)
 
 ## License
 
