@@ -1,0 +1,11 @@
+pl:
+  contacts:
+    new:
+      request-edit-for-restroom: 'Zasugeruj zmianę w łazience %{restroom_name}'
+      contact-title: 'Kontakt'
+      leave-this-field-blank: 'Zostaw to pole puste!'
+    submitted:
+      thank-you-period: 'Dziękujemy za wiadomość.'
+      thank-you-exclamation: 'Dziękujemy za wiadomość!'
+      cannot-send: 'Nie można było wysłać wiadomości.'
+      we-will-get-back-to-you: "Odpowiemy wkrótce."

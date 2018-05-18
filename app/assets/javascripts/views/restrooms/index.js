@@ -11,7 +11,7 @@ $(function(){
     if (mapShow) {
       mapToggle.html("Map View");
       // animate
-      mapContainer.fadeIn(500, function() { list.fadeOut(500) });
+      mapContainer.fadeOut(500, function() { list.fadeIn(500) });
     } else{
       mapToggle.html("List View");
       // animate

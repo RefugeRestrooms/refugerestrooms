@@ -1,0 +1,10 @@
+pl:
+  layouts:
+    navigation:
+      toggle-navigation-button-label: 'Nawigacja'
+      submit-a-new-restroom-hyperlink-label: 'Dodaj łazienkę'
+      about-hyperlink-label: 'O Refuge'
+      contact-hyperlink-label: 'Kontakt'
+      resources-dropdown-button-label: 'Materiały'
+      download-unisex-restroom-signs-hyperlink-label: 'Pobierz znaki łazienek unisex'
+      public-api-hyperlink-label: Public API

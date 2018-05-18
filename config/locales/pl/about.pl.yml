@@ -1,0 +1,22 @@
+pl:
+  about:
+    title: 'O REFUGE'
+    p1header: 'Czym jest REFUGE Restrooms?'
+    p1:
+      first: 'Refuge Restrooms to aplikacja ułatwiająca osobom transpłciowym i interpłciowym bezpieczny dostęp do łazienek publicznych. Użytkownicy mogą znaleźć łazienki znajdujące się w pobliżu konkretnego miejsca, dodać nową łazienkę do listy, a także skomentować i ocenić te dodane już wcześniej.'
+      second: 'Naszym celem jest nie tylko znajdowanie obecnie istniejących już łazienek bezpiecznych dla osób transpłciowych, ale także propagowanie działań mających na celu zwiększenie bezpieczeństwa osób transpłciowych i interpłciowych.'
+    p2header: 'Skąd pochodzą wszystkie dane?'
+    p2: 'Pierwsze 4500 lokalizacji pochodzi z danych nieprowadzonego już projektu Safe2Pee. Pozostałe są dodawane przez użytkowników. Jeżeli zauważysz, że łazienka w miejscu publicznym jest neutralna, dodaj ją do bazy danych.'
+    p3header: 'Skąd nazwa REFUGE?'
+    p3: 'Refuge - ang. „azyl”. Chcemy, żeby nasi użytkownicy byli godnie traktowani: bezpieczny dostęp do łazienki do podstawowe prawo człowieka. Chcemy zapewnić to bezpieczeństwo każdemu w razie potrzeby.'
+    p4header: "Dlaczego łazienki to taki wielki problem? Czemu służy ta aplikacja?"
+    p4: "Dostęp do łazienek publicznych to ważny element walki o prawa osób transpłciowych. Ciągle słyszy się wiadomości o aferach spowodowanych tym, że osoba trans skorzystała z łazienki przeznaczonej dla płci, z którą się identyfikuje. Oczywiście każda osoba transpłciowa powinna mieć prawo do korzystania z takiej łazienki, z jakiej chce. Ale mimo wielu sukcesów sądowych, nie zawsze jest to jednak bezpieczne: osoby transpłciowe nierzadko doświadczają przemocy werbalnej i fizycznej tylko dlatego, że korzystają z łazienki. Takie doświadczenie nie powinno nikogo spotykać i dlatego stworzyliśmy REFUGE."
+    p5header: 'Jak można pomóc?'
+    p5:
+      first: "<strong>Po pierwsze:</strong> Dodawaj łazienki. Baza danych zależy od użytkowników - a im więcej dodanych lokalizacji, tym bardziej wartościowa będzie aplikacja."
+      second: "<strong>Po drugie:</strong> Powiedz znajomym. Napisz tweeta, post na Facebooku, Tumblrze, swoim blogu. Podaj dalej informację o REFUGE."
+      third: "<strong>Po trzecie:</strong> Jeżeli programujesz, zajrzyj na naszego GitHuba i poinformuj nas o napotkanych bugach, zasugeruj poprawki albo napisz własny kod aby wspomóc projekt. REFUGE jest open source i nie mogłoby istnieć bez pomocy współtwórców."
+      fourth: "<strong>Po czwarte: </strong> Dokonaj wpłaty. Organizujemy zbiórki i kampanie crowdfundingowe, aby mieć za co kupować sprzęt i płacić twórcom aplikacji za ich pracę, aby nie była to już praca wolontariacka, jak początkowo. Większość twórców jest transpłciowa i obecnie zatrudniona poniżej kwalifikacji."
+    p6header: "Dlaczego moja placówka znajduje się w bazie danych?"
+    p6: "Dowiedz się więcej w <a href='/business_info'>Business FAQ</a>."
+    contribute: 'Zajrzyj na naszego GitHuba!'
