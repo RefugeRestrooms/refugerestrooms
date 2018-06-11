@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "rails-erb-loader": "^5.4.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
+}
