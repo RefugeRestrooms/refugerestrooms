@@ -28,6 +28,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
 gem 'http_accept_language'
 gem 'puma'
+gem 'webpacker', '~> 3.5'
 
 # Upgraded to 1.0.0 for Rails 5.1.4
 gem 'activeadmin', '~> 1.0.0'
