@@ -1,6 +1,7 @@
-//= require lib/geocoder
+import { Geocoder } from '../../lib/geocoder';
+import { Maps } from '../../lib/maps';
 
-Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
+class NewRestroomForm {
   constructor(form) {
     this._bindEvents = this._bindEvents.bind(this);
     this._bindGuessButton = this._bindGuessButton.bind(this);
@@ -10,7 +11,7 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
     this._onDrag = this._onDrag.bind(this);
     this._getNewForm = this._getNewForm.bind(this);
     this._updateForm = this._updateForm.bind(this);
-    this._geocoder = new Refuge.Library.Geocoder;
+    this._geocoder = new Geocoder;
     this._form = form;
     this._guessButton = this._form.find('.guess-btn');
     this._nearbyContainer = $('.nearby-container');
@@ -137,6 +138,6 @@ Refuge.Restrooms.NewRestroomForm = class NewRestroomForm {
 };
 
 $(() => {
-  $.fn.initializeNewRestroomForm = function() { return new Refuge.Restrooms.NewRestroomForm($(this)); };
+  $.fn.initializeNewRestroomForm = function() { return new NewRestroomForm($(this)); };
   $('.submit-new-bathroom-form').initializeNewRestroomForm();
 });

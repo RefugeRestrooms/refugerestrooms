@@ -1,9 +1,9 @@
-//= require lib/geocoder
+import { Geocoder } from '../../lib/geocoder';
 
-// This Coffeescript file contains the class for the search bar and functionality.
+// This file contains the class for the search bar and functionality.
 // It requires the RefugeRestrooms lib geocoder.
 
-Refuge.Restrooms.Search = class Search {
+class Search {
   constructor(form) {
     this.searchDefaultText = "1 Embarcadero Center, San Francisco, CA";
 
@@ -14,7 +14,7 @@ Refuge.Restrooms.Search = class Search {
     this._searchCurrentLocation = this._searchCurrentLocation.bind(this);
     this._updateForm = this._updateForm.bind(this);
     this._setDefaultText = this._setDefaultText.bind(this);
-    this._geocoder = new Refuge.Library.Geocoder;
+    this._geocoder = new Geocoder;
     this._form = form;
     this._searchBar = this._form.find('input.search-bar');
 
@@ -120,6 +120,6 @@ Refuge.Restrooms.Search = class Search {
 }
 
 $(() => {
-  $.fn.initializeSearch = function() { return new Refuge.Restrooms.Search($(this)); };
+  $.fn.initializeSearch = function() { return new Search($(this)); };
   $('.search-restrooms-form').initializeSearch();
 });

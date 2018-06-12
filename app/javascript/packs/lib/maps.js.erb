@@ -1,7 +1,13 @@
-var map;
-
 // Constants
 const MARKER_WIDTH = 37;
+
+// Load image paths with erb templating
+<% helpers = ActionController::Base.helpers %>
+const currentLocationImage = "<%= helpers.image_path('marker-icon.png') %>";
+const circleMarkerImage = "<%= helpers.image_path('marker-circle.png') %>";
+const showMarkerImage = "<%= helpers.image_path('show-icon.png') %>";
+
+let map;
 
 function initMap(x, y, image, draggable, callback){
   image = typeof image !== 'undefined' ? image : currentLocationImage;
@@ -176,18 +182,25 @@ function guessPosition (coords, callback) {
   });
 }
 
-$(function(){
-  var $map = $('#mapArea');
-  if($map.length > 0) {
-    initMap($map.data('latitude'), $map.data('longitude'), showMarkerImage);
-  }
+export const Maps = {
+  reloadMap: (map) => {
+    initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage);
+  },
+  reloadDraggable: (map, callback) => {
+    initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage, true, callback);
+  },
+  loadMapWithPoints: (lat, long, points) => {
+    initMap(lat, long);
 
-  window.Maps = {
-    reloadMap: function(map) {
-      initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage);
-    },
-    reloadDraggable: function(map, callback) {
-      initMap(map.dataset.latitude, map.dataset.longitude, showMarkerImage, true, callback);
+    for (const [i, point] of points.entries()) {
+      setPoint(point, i + 1);
     }
+  }
+}
+
+$(function(){
+  let mapArea = $('#mapArea');
+  if(mapArea.length > 0) {
+    initMap(mapArea.data('latitude'), mapArea.data('longitude'), showMarkerImage);
   }
 });

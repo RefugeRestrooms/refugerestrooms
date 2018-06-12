@@ -1,6 +1,6 @@
 // TODO: Update API To NOT USE GOOGLE and use Open Source
 
-Refuge.Library.Geocoder = class Geocoder {
+export class Geocoder {
   constructor() {
     this.geocodeSearchString = this.geocodeSearchString.bind(this);
     this.getAddress = this.getAddress.bind(this);
