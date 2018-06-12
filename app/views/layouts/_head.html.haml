@@ -8,7 +8,7 @@
 
 %script{:src => "https://maps.googleapis.com/maps/api/js?v=3.31&libraries=places&key=AIzaSyBXcCrqzMlm-ZmtNQve7AuipNdE4vySUF0"}
 = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-= javascript_include_tag "application", "data-turbolinks-track" => true
+= javascript_pack_tag "application", "data-turbolinks-track": "reload"
 = csrf_meta_tags
 = render 'layouts/piwik_tag'
 
