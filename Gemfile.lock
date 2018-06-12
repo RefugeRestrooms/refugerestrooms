@@ -388,7 +388,6 @@ DEPENDENCIES
   http_accept_language
   i18n-debug
   jbuilder (~> 2.5)
-  jquery-rails
   kaminari (~> 0.17.0)
   mail_form (>= 1.7.0)
   pg
