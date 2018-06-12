@@ -12,4 +12,4 @@ before_script:
 script:
 - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec cucumber
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --prefix /refugerestrooms
