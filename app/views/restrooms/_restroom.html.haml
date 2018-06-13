@@ -2,7 +2,7 @@
 - accessible_class = restroom.accessible? ? '' : 'not_accessible'
 - changing_table_class = restroom.changing_table? ? '' : 'no_changing_table'
 
-%div{ class: "listItem #{unisex_class} #{accessible_class} #{changing_table_class}",
+%li{ class: "listItem clearfix #{unisex_class} #{accessible_class} #{changing_table_class}",
           data: { id: restroom.id} }
   .listItemImage
     / image tag goes here
@@ -27,12 +27,13 @@
         miles /
         = miles_to_kilometers(restroom.distance).round(2)
         kilometers
-    - if restroom.unisex?
-      .unisexRestroom{:title => t("restroom.type.unisex")}
-        %i.fa.fa-transgender-alt.fa-3x
-    - if restroom.accessible?
-      .ADARestroom{:title => t("restroom.accessible")}
-        %i.fa.fa-wheelchair.fa-3x
-    - if restroom.changing_table?
-      .changingTable{:title => t("restroom.changing_table")}
-        %i.fa.fa-child.fa-3x
+    .itemIcons
+      - if restroom.unisex?
+        .unisexRestroom{:title => t("restroom.type.unisex")}
+          %i.fa.fa-transgender-alt.fa-2x
+      - if restroom.accessible?
+        .ADARestroom{:title => t("restroom.accessible")}
+          %i.fa.fa-wheelchair.fa-2x
+      - if restroom.changing_table?
+        .changingTable{:title => t("restroom.changing_table")}
+          %i.fa.fa-child.fa-2x

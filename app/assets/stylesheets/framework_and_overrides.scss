@@ -34,3 +34,9 @@ header {
     width: auto;
     display: inline;
 }
+
+// Removes the negative margin applied by Bootstrap
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
