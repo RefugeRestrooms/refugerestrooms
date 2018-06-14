@@ -11,9 +11,6 @@
     "HEROKU_POSTGRESQL_CYAN_URL": {
       "required": true
     },
-    "HEROKU_POSTGRESQL_CYAN_URL": {
-      "required": true
-    },
     "DEVISE_SECRET_KEY": {
       "required": true
     },
