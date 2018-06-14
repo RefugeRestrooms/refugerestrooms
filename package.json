@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "yarn": ">=0.25.2",
     "@rails/webpacker": "3.5",
     "rails-erb-loader": "^5.4.2",
     "bootstrap": "^4.1.1",
