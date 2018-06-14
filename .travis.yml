@@ -1,6 +1,15 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c18df080592f9c99ca8080a6d5e052aa5fd3964044a0fe0b71e48f8e18998dc2
 language: ruby
 services: docker
 before_install:
   - docker-compose build
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --prefix /refugerestrooms
