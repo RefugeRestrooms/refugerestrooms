@@ -235,6 +235,8 @@ GEM
       rack
     rack-mount (0.8.3)
       rack (>= 1.0.0)
+    rack-proxy (0.6.4)
+      rack
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -351,6 +353,10 @@ GEM
     webmock (1.18.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
+    webpacker (3.5.3)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -382,7 +388,6 @@ DEPENDENCIES
   http_accept_language
   i18n-debug
   jbuilder (~> 2.5)
-  jquery-rails
   kaminari (~> 0.17.0)
   mail_form (>= 1.7.0)
   pg
@@ -405,6 +410,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   webmock (~> 1.18.0)
+  webpacker (~> 3.5)
 
 RUBY VERSION
    ruby 2.3.7p456
