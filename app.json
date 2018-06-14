@@ -5,6 +5,15 @@
     "postdeploy": "bundle exec rake db:setup"
   },
   "env": {
+    "DATABASE_URL": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_CYAN_URL": {
+      "required": true
+    },
+    "HEROKU_POSTGRESQL_CYAN_URL": {
+      "required": true
+    },
     "DEVISE_SECRET_KEY": {
       "required": true
     },
@@ -37,7 +46,6 @@
   },
   "addons": [
     "heroku-postgresql",
-    "heroku-postgresql"
   ],
   "buildpacks": [
     {
