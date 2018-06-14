@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby:2.3.7
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 ENV PHANTOM_JS=2.1.1
 RUN  apt-get update && \
