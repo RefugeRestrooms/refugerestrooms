@@ -1,4 +1,4 @@
-FROM ruby:2.3.1
+FROM ruby:2.3.7
 ENV PHANTOM_JS=2.1.1
 
 # Add the apt repository for yarn

@@ -23,7 +23,7 @@
           #mapArea
   .row
     .col-sm-12.headroom
-      #list.restrooms-list
+      %ul{:class => "restrooms-list", :id => "list"}
         = render @restrooms
         = paginate @restrooms
 / .row
