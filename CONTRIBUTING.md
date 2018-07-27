@@ -44,3 +44,5 @@ Please cover any new code with specs. We prefer code to be covered using RSpec o
 
 ## Now What?
 Checkout our [Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki) and specifically the [newcomers guide](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Maintainers'-Manual-%5C--Newcomers'-Guide).
+
+Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CODE_OF_CONDUCT.md), which gives guidance on our standards of community and interaction. These are designed to keep things constructive, respectful and welcoming for all the people who contribute to our project. It also explains how/where to direct any complaints about unwelcome behavior.
