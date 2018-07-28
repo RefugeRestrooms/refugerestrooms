@@ -126,3 +126,17 @@ describe 'the nearby restroom display process', type: :feature, js: true do
     page.has_css?(".nearby-container .none", :visible => true)
   end
 end
+
+describe "the edit process", type: :feature do
+  it "should create an edit listing" do
+    restroom = create(:restroom)
+    visit "/restrooms/#{restroom.id}"
+    click_link "Propose an edit to this listing."
+
+    fill_in "restroom[directions]", with: "This is an edit"
+    click_on "Save Restroom"
+
+    expect(page).to have_content("Your edit has been submitted.")
+    expect(Restroom.where(edit_id: restroom.id).size).to eq(2)
+  end
+end
