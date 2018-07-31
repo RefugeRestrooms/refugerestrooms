@@ -25,6 +25,8 @@ For more information on how to contribute to Refuge Restrooms, or how the techno
 
 If you just want to get your environment set up for making changes locally and testing, you can head directly to [CONTRIBUTING.md](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CONTRIBUTING.md).
 
+Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CODE_OF_CONDUCT.md), which gives guidance on our standards of community and interaction.
+
 ## Tech
 
 * Ruby Version - ruby-2.3.0
