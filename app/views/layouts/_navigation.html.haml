@@ -4,7 +4,7 @@
       %nav.nav.navbar-default{:role => "navigation"}
         / Brand and toggle get grouped for better mobile display
         .navbar-header
-          %a#logo.toiletLogo{:href => "/"}
+          = link_to root_path, id: "logo", class: "toiletLogo" do
             .navbar-brand Refuge Restrooms
           %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only= t('.toggle-navigation-button-label')
