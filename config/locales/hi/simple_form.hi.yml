@@ -1,0 +1,55 @@
+# See this documentation: https://github.com/plataformatec/simple_form#i18n
+# And this StackOverflow answer: https://stackoverflow.com/questions/35906089/changing-simple-form-submit-button-i18n-text
+
+hi:
+  simple_form:
+    "yes": 'हाँ'
+    "no": 'नहीं'
+    required:
+      text: 'आवश्यक'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "कृपया नीचे दी गई समस्याओं की समीक्षा करें:"
+
+    labels:
+      defaults:
+        name: 'नाम'
+        street: 'गली'
+        city: 'शहर'
+        state: 'राज्य / प्रांत'
+        country: 'देश'
+        accessible: 'सुलभ'
+        unisex: 'यूनिसेक्स'
+        changing_table: 'चेंजिंग टेबल'
+        directions: 'दिशानिर्देश'
+        comment: 'टिप्पणी'
+        email: 'ईमेल'
+        message: 'संदेश'
+      contact:
+        name: 'नाम'
+        email: 'ईमेल'
+        message: 'संदेश'
+
+  helpers:
+    submit:
+      contact:
+        # This is the "Send message" button on the "Contact" page.
+        create: 'संदेश भेजें'
+
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+

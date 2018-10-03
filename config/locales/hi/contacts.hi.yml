@@ -1,0 +1,11 @@
+hi:
+  contacts:
+    new:
+      request-edit-for-restroom:  '% {restroom_name} रेस्टरूम के लिए संशोधन का अनुरोध करें'
+      contact-title: 'संपर्क'
+      leave-this-field-blank: 'इस फील्ड को खाली छोड़ दो!'
+    submitted:
+      thank-you-period: 'आपके संदेश के लिए धन्यवाद।'
+      thank-you-exclamation: 'आपके संदेश के लिए धन्यवाद!'
+      cannot-send: 'सन्देश भेजने में दिक्कत आ रही हैं।'
+      we-will-get-back-to-you: "हम जल्द ही आपसे संपर्क करेंगे।"
