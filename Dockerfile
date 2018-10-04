@@ -1,5 +1,10 @@
-FROM ruby:2.3.7
+FROM ruby:2.3.7-slim
 ENV PHANTOM_JS=2.1.1
+
+# Add basic binaries and clean up the apt cache
+RUN apt-get update \
+  && apt-get install -y bzip2 curl gnupg wget \
+  && rm -rf /var/lib/apt/lists/*
 
 # Add the apt repository for yarn
 RUN curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
