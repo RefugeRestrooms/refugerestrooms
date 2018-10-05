@@ -29,8 +29,7 @@ gem 'http_accept_language'
 gem 'puma'
 gem 'webpacker', '~> 3.5'
 
-# Upgraded to 1.0.0 for Rails 5.1.4
-gem 'activeadmin', '~> 1.0.0'
+gem 'activeadmin', '~> 1.3'
 
 group :production do
   gem 'rails_12factor'
