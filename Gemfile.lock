@@ -294,9 +294,9 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    simple_form (3.5.0)
-      actionpack (> 4, < 5.2)
-      activemodel (> 4, < 5.2)
+    simple_form (4.0.1)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -384,7 +384,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   sdoc
-  simple_form (~> 3.5)
+  simple_form (~> 4.0)
   simplecov (~> 0.7.1)
   turbolinks
   tzinfo-data
