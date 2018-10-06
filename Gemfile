@@ -2,47 +2,48 @@ source 'https://rubygems.org'
 ruby '2.3.7'
 
 gem 'rails', '5.2.1'
+
+gem 'activeadmin', '~> 1.3'
 gem 'bootsnap', require: false
-gem 'pg'
-gem 'pg_search'
-gem 'sass-rails'
 gem 'bootstrap-sass'
-gem 'haml'
-gem 'uglifier', '>= 1.3.0'
+gem 'bugsnag'
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.5'
-gem 'geocoder', '~> 1.2.1'
-gem 'devise', '~> 4.3'
-gem 'rakismet'
 gem 'country_select'
-gem 'mail_form', '>= 1.7.0'
-gem 'simple_form', '~> 4.0'
+gem 'devise', '~> 4.3'
+gem 'geocoder', '~> 1.2.1'
 gem 'grape', '~> 1.1'
 gem 'grape-swagger', '~> 0.30'
 gem 'grape-kaminari'
-gem 'kaminari', '~> 0.17.0'
+gem 'haml'
 gem 'high_voltage', '~> 3.0.0'
-gem 'bugsnag'
+gem 'http_accept_language'
+gem 'jbuilder', '~> 2.5'
+gem 'kaminari', '~> 0.17.0'
+gem 'mail_form', '>= 1.7.0'
+gem 'pg'
+gem 'pg_search'
+gem 'puma'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
-gem 'http_accept_language'
-gem 'puma'
+gem 'rakismet'
+gem 'sass-rails'
+gem 'simple_form', '~> 4.0'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.5'
-
-gem 'activeadmin', '~> 1.3'
 
 group :production do
   gem 'rails_12factor'
 end
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_bot_rails', '~> 4.8.2'
-  gem 'dotenv-rails', '~> 2.2.1'
-  gem 'pry'
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
+  gem 'dotenv-rails', '~> 2.2.1'
+  gem 'factory_bot_rails', '~> 4.8.2'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -50,11 +51,10 @@ group :development do
 end
 
 group :test do
-  gem 'rake'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'simplecov', '~> 0.7.1', require: false
   gem 'poltergeist'
+  gem 'simplecov', '~> 0.7.1', require: false
   gem 'webmock', '~> 1.18.0'
 end
 

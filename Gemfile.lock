@@ -181,6 +181,10 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -291,6 +295,7 @@ GEM
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
+    ruby_dep (1.5.0)
     safe_yaml (1.0.4)
     sass (3.6.0)
       sass-listen (~> 4.0.0)
@@ -381,6 +386,7 @@ DEPENDENCIES
   i18n-debug
   jbuilder (~> 2.5)
   kaminari (~> 0.17.0)
+  listen (>= 3.0.5, < 3.2)
   mail_form (>= 1.7.0)
   pg
   pg_search
@@ -391,7 +397,6 @@ DEPENDENCIES
   rack-jsonp
   rails (= 5.2.1)
   rails_12factor
-  rake
   rakismet
   rspec-rails
   sass-rails
