@@ -1,0 +1,26 @@
+#swagger-ui-container {
+  margin-top: 20px;
+
+  .info .title {
+    display: none;
+  }
+  .opblock-summary-get {
+    background-color: #e7f0f7;
+    border: 1px solid #c3d9ec;
+    cursor: pointer;
+    padding: 5px;
+
+    .opblock-summary-method {
+      background-color: #0f6ab4;
+      color: #fff;
+      margin: 5px;
+      padding: 5px;
+    }
+  }
+
+  .opblock-body {
+    background-color: #e7f0f7;
+    border: 1px solid #c3d9ec;
+    padding: 5px;
+  }
+}

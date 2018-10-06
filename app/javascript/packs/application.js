@@ -10,5 +10,5 @@ import './views/restrooms/search'
 import ApiDocs from './views/api/docs'
 
 document.addEventListener('DOMContentLoaded', function() {
-  if (document.getElementById('api_docs') != null ) { ApiDocs.loadSearch() }
+  if (document.getElementById('swagger-ui-container') != null ) { ApiDocs.loadSearch() }
 })
