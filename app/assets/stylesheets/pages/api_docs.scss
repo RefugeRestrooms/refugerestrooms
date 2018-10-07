@@ -23,4 +23,9 @@
     border: 1px solid #c3d9ec;
     padding: 5px;
   }
+
+  .response-col_description pre {
+    overflow: scroll;
+    width: 80vw;
+  }
 }
