@@ -21,7 +21,8 @@ class Restroom < ApplicationRecord
   validates :street, uniqueness: {scope: [:city, :state], message: "is already registered"}
 
   geocoded_by :full_address
-  before_validation :perform_geocoding, :reverse_geocode
+  before_validation :perform_geocoding, if: ->(obj){ obj.full_address.present? }
+  before_validation :reverse_geocode, if: ->(obj){ obj.full_address.present? }
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
