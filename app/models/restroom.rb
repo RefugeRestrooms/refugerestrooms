@@ -20,11 +20,10 @@ class Restroom < ApplicationRecord
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
-  after_validation :perform_geocoding
+  after_validation :perform_geocoding, :reverse_geocode
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
-      obj.name    = geo.address
       obj.street  = geo.address.split(',').first
       obj.city    = geo.city
       obj.state   = geo.state
