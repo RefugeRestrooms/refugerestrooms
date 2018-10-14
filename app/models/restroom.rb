@@ -18,9 +18,10 @@ class Restroom < ApplicationRecord
   ignoring: :accents
 
   validates :name, :street, :city, :state, presence: true
+  validates :street, uniqueness: {scope: [:city, :state], message: "is already registered"}
 
   geocoded_by :full_address
-  after_validation :perform_geocoding, :reverse_geocode
+  before_validation :perform_geocoding, :reverse_geocode
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
