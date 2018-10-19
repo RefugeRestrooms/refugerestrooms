@@ -39,9 +39,9 @@ class RestroomsController < ApplicationController
 
   def update
     if params[:restroom][:downvote]
-      Restroom.increment_counter(:downvote, @restroom.id)
+      _vote_for_restroom(:downvote)
     elsif params[:restroom][:upvote]
-      Restroom.increment_counter(:upvote, @restroom.id)
+      _vote_for_restroom(:upvote)
     elsif @restroom.update(permitted_params)
       flash[:notice] = I18n.t('restroom.flash.updated')
     else
@@ -74,6 +74,15 @@ private
 
   def find_restroom
     @restroom = Restroom.find(params[:id])
+  end
+
+  def _vote_for_restroom(up_or_downvote)
+    if session[:voted_for] and session[:voted_for].include? @restroom.id
+      flash[:notice] = I18n.t('restroom.flash.alreadyvoted')
+    else
+      Restroom.increment_counter(up_or_downvote, @restroom.id)
+      session[:voted_for] = session[:voted_for] ? session[:voted_for].push(@restroom.id) : [@restroom.id]
+    end
   end
 
   def permitted_params
