@@ -140,24 +140,33 @@ GEM
     geocoder (1.2.14)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    grape (1.1.0)
+    grape (0.7.0)
       activesupport
       builder
-      mustermann-grape (~> 1.0.0)
+      hashie (>= 1.2.0)
+      multi_json (>= 1.3.2)
+      multi_xml (>= 0.5.2)
       rack (>= 1.3.0)
       rack-accept
+      rack-mount
       virtus (>= 1.0.0)
+    grape-entity (0.6.1)
+      activesupport (>= 5.0.0)
+      multi_json (>= 1.3.2)
     grape-kaminari (0.1.9)
       grape
       kaminari
-    grape-swagger (0.31.0)
-      grape (>= 0.16.2)
+    grape-swagger (0.7.2)
+      grape (>= 0.2.0)
+      grape-entity (>= 0.3.0)
+      kramdown (>= 1.3.1)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
+    hashie (3.6.0)
     high_voltage (3.0.0)
     http_accept_language (2.1.1)
     i18n (1.1.0)
@@ -181,6 +190,7 @@ GEM
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kramdown (1.15.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -204,9 +214,7 @@ GEM
       i18n (>= 0.6.4, <= 2)
     msgpack (1.2.4)
     multi_json (1.13.1)
-    mustermann (1.0.3)
-    mustermann-grape (1.0.0)
-      mustermann (~> 1.0.0)
+    multi_xml (0.6.0)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -231,6 +239,8 @@ GEM
     rack-cors (1.0.2)
     rack-jsonp (1.3.1)
       rack
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -377,9 +387,9 @@ DEPENDENCIES
   dotenv-rails (~> 2.2.1)
   factory_bot_rails (~> 4.8.2)
   geocoder (~> 1.2.1)
-  grape (~> 1.1)
+  grape (~> 0.7.0)
   grape-kaminari
-  grape-swagger (~> 0.30)
+  grape-swagger (~> 0.7.2)
   haml
   high_voltage (~> 3.0.0)
   http_accept_language
