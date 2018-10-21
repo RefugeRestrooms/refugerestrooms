@@ -1,59 +1,59 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+it:
   devise:
     confirmations:
-      confirmed: "Your account was successfully confirmed."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions about how to confirm your account in a few minutes."
+      confirmed: "Il tuo account è stato correttamente confermato."
+      send_instructions: "Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
+      send_paranoid_instructions: "Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
-      invalid: "Invalid email or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account will be locked."
-      not_found_in_database: "Invalid email or password."
-      timeout: "Your session expired. Please sign in again to continue."
-      unauthenticated: "You need to sign in or sign up before continuing."
-      unconfirmed: "You have to confirm your account before continuing."
+      already_authenticated: Hai già effettuato l'accesso."
+      inactive: "Il tuo account non è stato ancora attivato."
+      invalid: "Credenziali o password non valide."
+      locked: "Il tuo account è bloccato."
+      last_attempt: "Hai ancora un tentativo prima che l'account venga bloccato."
+      not_found_in_database: "Credenziali o password non valide."
+      timeout: "Sessione scaduta, accedere nuovamente per continuare."
+      unauthenticated: "Devi accedere o registrarti per continuare."
+      unconfirmed: "Devi confermare il tuo account per continuare."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Istruzioni per la conferma"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Istruzioni per reimpostare la password"
       unlock_instructions:
-        subject: "Unlock Instructions"
+        subject: "Istruzioni per sbloccare l'account"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: "Non è stato possibile autorizzarti da %{kind} perchè %{reason}."
+      success: "Autorizzato con successo dall'account %{kind}."
     passwords:
-      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
+      no_token: "Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email."
+      send_instructions: "Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto."
+      send_paranoid_instructions: "Se la tua e-mail esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password."
+      updated: "La tua password è stata cambiata. Ora sei collegato."
+      updated_not_active: "La tua password è stata cambiata."
     registrations:
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      signed_up: "Welcome! You have signed up successfully."
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please open the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address."
+      destroyed: "Arrivederci! L'account è stato cancellato. Speriamo di rivederci presto."
+      signed_up: "Iscrizione eseguita correttamente. Se abilitata, una conferma è stata inviata al tuo indirizzo email."
+      signed_up_but_inactive: "Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account non è ancora attivo."
+      signed_up_but_locked: "Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account è bloccato."
+      signed_up_but_unconfirmed: "Ti è stato inviato un messaggio con un link di conferma. Ti invitiamo a visitare il link per attivare il tuo account."
+      update_needs_confirmation: "Il tuo account è stato aggiornato, ma dobbiamo verificare la tua email. Ti invitiamo a consultare la tua email e cliccare sul link di conferma."
       updated: "You updated your account successfully."
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
+      signed_in: "Accesso effettuato con successo."
+      signed_out: "Sei uscito correttamente."
     unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto."
+      send_paranoid_instructions: "Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto."
+      unlocked: "Il tuo account è stato correttamente sbloccato. Ora sei collegato."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
-      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
-      not_found: "not found"
-      not_locked: "was not locked"
+      already_confirmed: "è stato già confermato"
+      confirmation_period_expired: "deve essere confermato entro %{period}, richiedi una nuova conferma"
+      expired: "è scaduto, si prega di richiederne uno nuovo"
+      not_found: "non trovato"
+      not_locked: "non era bloccato"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "Non posso salvare questo %{resource}: 1 errore'"
+        other: "Non posso salvare questo %{resource}: %{count} errori."

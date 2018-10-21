@@ -1,6 +1,6 @@
-en:
+it:
   layouts:
     search:
-      search: 'Search'
-      search-by-current-location: 'Search by Current Location'
+      search: 'Ricerca'
+      search-by-current-location: 'Cerca in base alla posizione attuale'
 

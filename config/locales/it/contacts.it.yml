@@ -1,11 +1,11 @@
-en:
+it:
   contacts:
     new:
-      request-edit-for-restroom: 'Request Edit for %{restroom_name} Restroom'
-      contact-title: 'Contact'
-      leave-this-field-blank: 'Leave this field blank!'
+      request-edit-for-restroom: 'Richiesta di modifica per il servizio igienico %{restroom_name}'
+      contact-title: 'Contatto'
+      leave-this-field-blank: 'Lascia questo spazio bianco!'
     submitted:
-      thank-you-period: 'Thank you for your message.'
-      thank-you-exclamation: 'Thank you for your message!'
-      cannot-send: 'Cannot send message.'
-      we-will-get-back-to-you: "We'll get back to you soon."
+      thank-you-period: 'Grazie per il tuo messaggio.'
+      thank-you-exclamation: 'Grazie per il tuo messaggio!'
+      cannot-send: 'Non riesco ad inviare il messaggio.'
+      we-will-get-back-to-you: "Torneremo presto."

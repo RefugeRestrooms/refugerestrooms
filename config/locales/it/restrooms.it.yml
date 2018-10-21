@@ -1,8 +1,8 @@
-en:
+it:
   restrooms:
     index:
-      map-view-button-label: 'Map View'
+      map-view-button-label: 'Visualizzazione mappa'
 
     show:
-      thumbs-up-button-label: 'Thumbs Up'
-      thumbs-down-button-label: 'Thumbs Down'
+      thumbs-up-button-label: 'Pollice su'
+      thumbs-down-button-label: 'Pollice giù'
