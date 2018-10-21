@@ -1,0 +1,60 @@
+en:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Location/Place/Business Name'
+        street: 'Street Address'
+        state: 'State/Province'
+        access: 'Accessible?'
+        bath_type: 'Type of Restroom'
+
+  search_bar:
+    enter_location: 'Enter an address'
+
+  restroom:
+    add_new: 'Submit a restroom to our database'
+    preview: 'Preview'
+    required: '* marks required field'
+    guess_location: 'Guess current location'
+    directions: 'Directions'
+    directions_hint: '(e.g.: third floor in the back, by the dressing rooms...)'
+    comments_hint: '(e.g.: you have to be a "paying customer", just act like you are browsing for a bit...)'
+    comments: 'Comments'
+    accessible: 'Accessible'
+    not_accessible: 'Not accessible'
+    changing_table: 'Changing table'
+    no_changing_table: 'No changing table'
+    type:
+      unisex: 'Unisex / Gender neutral'
+      single_stall: 'Gendered single stall or safe place'
+    restsubmit: 'Save Restroom'
+    rating:
+      positive: '%{percentage}% positive'
+      unrated: 'Not yet rated'
+    upvote: 'Loved it!'
+    downvote: 'Not safe'
+    confirm:
+      upvote: 'Are you sure you want to upvote to this restroom?'
+      downvote: 'Are you sure you want to down vote this restroom?'
+    flash:
+      field: 'A required field has been left blank. Please recheck your submission and submit the form again.'
+      unexpected: 'We ran into an unexpected problem, please contact us if the problem continues.'
+      upvoteerror: 'There was an unexpected problem upvoting this post.'
+      upvotesuccess: 'This restroom has been upvoted! Thank you for contributing to our community.'
+      downvoteerror: 'There was an unexpected problem downvoting this post.'
+      downvotesuccess: 'This restroom has been downvoted! Thank you for contributing to our community.'
+      new: 'A new restroom entry has been created for %{name}.'
+      updated: 'This restroom entry has been updated'
+      deleted: 'This restroom entry has been deleted'
+      searcherror: 'There was an error searching for your location.'
+      spam: 'Your submission was rejected as spam.'
+    contact:
+      contactlisting: "Contact us about this post!"
+
+  restrooms:
+    nearby:
+      heading: 'Nearby restrooms'
+      body: 'Before you submit a restroom, please ensure it is not already one of the known restrooms nearby.'
+      none: 'No restrooms were found nearby.'

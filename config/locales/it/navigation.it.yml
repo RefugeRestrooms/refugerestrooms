@@ -1,0 +1,11 @@
+en:
+  layouts:
+    navigation:
+      toggle-navigation-button-label: 'Toggle navigation'
+      submit-a-new-restroom-hyperlink-label: 'Submit a New Restroom'
+      about-hyperlink-label: 'About'
+      contact-hyperlink-label: 'Contact'
+
+      resources-dropdown-button-label: 'Resources'
+      download-unisex-restroom-signs-hyperlink-label: 'Download Unisex Restroom Signs'
+      public-api-hyperlink-label: Public API

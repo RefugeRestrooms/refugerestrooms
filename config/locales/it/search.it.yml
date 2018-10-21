@@ -1,0 +1,6 @@
+en:
+  layouts:
+    search:
+      search: 'Search'
+      search-by-current-location: 'Search by Current Location'
+
