@@ -1,7 +1,7 @@
-en:
+it:
   pages:
      text:
-        title: 'Get Closest Restroom by Text'
-        intro: 'If you just need to get to the closest safe restroom <em>right now</em>, you can get it by text on any phone that has SMS.'
-        instructions: 'Text your location to +1 (415) 367-3288'
-        tip: "For the most accurate results, include street address, city, state and country. You'll get a location name and address back instantly!"
+        title: 'Resta in contatto con Restroom via testo'
+        intro: 'Sei hai solo bisogno di arrivare al servizio igienico sicuro più vicino <em>adesso</em>, puoi riceverlo tramite testo su qualunque telefono che abbia gli SMS.'
+        instructions: 'Scrivi la tua posizione al +1 (415) 367-3288'
+        tip: "Per i risultati più precisi, includi indirizzo, città, stato/provincia e paese. Riceverai istantaneamente il nome di una località e l'indirizzo!"
