@@ -5,7 +5,7 @@ it:
     confirmations:
       confirmed: "Il tuo account è stato correttamente confermato."
       send_instructions: "Riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
-      send_paranoid_instructions: "Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
+      send_paranoid_instructions: "Se la tua email esiste nel nostro database, riceverai un messaggio email con le istruzioni per confermare il tuo account entro qualche minuto."
     failure:
       already_authenticated: Hai già effettuato l'accesso."
       inactive: "Il tuo account non è stato ancora attivato."
@@ -29,7 +29,7 @@ it:
     passwords:
       no_token: "Puoi accedere a questa pagina solamente dalla email di reset della password. Se vieni dalla email controlla di aver inserito l'url completo riportato nella email."
       send_instructions: "Riceverai un messaggio email con le istruzioni per reimpostare la tua password entro qualche minuto."
-      send_paranoid_instructions: "Se la tua e-mail esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password."
+      send_paranoid_instructions: "Se la tua email esiste nel nostro database, riceverai un messaggio email contentente un link per il ripristino della password."
       updated: "La tua password è stata cambiata. Ora sei collegato."
       updated_not_active: "La tua password è stata cambiata."
     registrations:
@@ -45,7 +45,7 @@ it:
       signed_out: "Sei uscito correttamente."
     unlocks:
       send_instructions: "Riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto."
-      send_paranoid_instructions: "Se la tua e-mail esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto."
+      send_paranoid_instructions: "Se la tua email esiste nel nostro database, riceverai un messaggio email con le istruzioni per sbloccare il tuo account entro qualche minuto."
       unlocked: "Il tuo account è stato correttamente sbloccato. Ora sei collegato."
   errors:
     messages:
