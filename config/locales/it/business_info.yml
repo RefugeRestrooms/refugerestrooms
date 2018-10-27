@@ -2,12 +2,12 @@ it:
   business_info:
     title: "Informazioni commerciali di Refuge Restrooms"
     p1header: "1) Cos'è Refuge Restrooms?"
-    p1: "REFUGE è una web application che punta a fornire l'accesso sicuro a servizi igienici per individui transgender, intersex, e genere non conformes. Leggi di più su di noi nulla nostra <a href='/about'>pagina About</a>."
+    p1: "REFUGE è una web application che punta a fornire l'accesso sicuro a servizi igienici per individui transgender, intersex, e genere non conforme. Leggi di più su di noi nulla nostra <a href='/about'>pagina About</a>."
     p2header: "2) Come ha fatto la mia struttura a finire su questa lista?"
-    p2: "Qualcuno ha usato i tuoi servizi igienici e ha voluto proporre il tuo località come una risorsa. Tutti i nostri dati sono crowd-sourced and sottoposti dagli utenti."
+    p2: "Qualcuno ha usato i tuoi servizi igienici e ha voluto proporre la tua località come una risorsa. Tutti i nostri dati sono crowd-sourced e sottoposti dagli utenti."
     p3header: "3) Come posso essere un buon padrone di casa?"
     p3: "Grazie per averlo chiesto! Spesso, i visitatori REFUGE sperano solo di fare una breve sosta e di essere sulla buona strada, e come ogni altro visitatore, potenzialmente supportano la tua attività o località mentre sono lì. Personale amichevole ed esperienza positive possono fare molto per avere una preferenza per la tua località nella sezione delle recensioni della nostra app (in basso per maggiori informazioni a riguardo!)"
-    p4header: "4) Perchè i servizi igienici sicuri sono un problema?"
+    p4header: "4) Perché i servizi igienici sicuri sono un problema?"
     p4:
       first: "Usare i servizi igienici è un'attività quotidiana che può essere difficoltosa da affrontare per i membri della nostra comunità -- specialmente quando si visitano aree al di fuori della nostra routine quotidiana. Ed è lì che il nostro progetto di mappatura entra in gioco."
       second: "Secondo il <a href='http://www.ustranssurvey.org/'>US Trans Survey</a>:"

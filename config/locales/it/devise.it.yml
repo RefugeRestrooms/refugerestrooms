@@ -39,7 +39,7 @@ it:
       signed_up_but_locked: "Iscrizione eseguita correttamente. Però non puoi accedere in quanto il tuo account è bloccato."
       signed_up_but_unconfirmed: "Ti è stato inviato un messaggio con un link di conferma. Ti invitiamo a visitare il link per attivare il tuo account."
       update_needs_confirmation: "Il tuo account è stato aggiornato, ma dobbiamo verificare la tua email. Ti invitiamo a consultare la tua email e cliccare sul link di conferma."
-      updated: "You updated your account successfully."
+      updated: "Il tuo account è stato aggiornato."
     sessions:
       signed_in: "Accesso effettuato con successo."
       signed_out: "Sei uscito correttamente."

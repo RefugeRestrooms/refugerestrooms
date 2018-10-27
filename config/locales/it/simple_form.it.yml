@@ -3,7 +3,7 @@
 
 it:
   simple_form:
-    "si": 'Si'
+    "si": 'Sì'
     "no": 'No'
     required:
       text: 'richiesto'

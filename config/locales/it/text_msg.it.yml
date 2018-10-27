@@ -1,7 +1,7 @@
 it:
   pages:
      text:
-        title: 'Resta in contatto con Restroom via testo'
+        title: 'Ricevi il servizio igienico più vicino tramite testo'
         intro: 'Sei hai solo bisogno di arrivare al servizio igienico sicuro più vicino <em>adesso</em>, puoi riceverlo tramite testo su qualunque telefono che abbia gli SMS.'
         instructions: 'Scrivi la tua posizione al +1 (415) 367-3288'
         tip: "Per i risultati più precisi, includi indirizzo, città, stato/provincia e paese. Riceverai istantaneamente il nome di una località e l'indirizzo!"
