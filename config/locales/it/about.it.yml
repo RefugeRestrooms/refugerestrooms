@@ -1,14 +1,14 @@
 it:
   about:
     title: 'Riguardo a REFUGE'
-    p1header: 'Cos'è REFUGE restrooms?'
+    p1header: "Cos'è REFUGE restrooms?"
     p1:
-      first: 'Refuge Restrooms è una web application che punta a fornire l'accesso sicuro a servizi igienici per individui transgender, intersex, e genere non conforme. Gli utenti possono cercare servizi igienici in base alla vicinanza ad una posizione richiesta, aggiungere nuovi annunci di servizi igienici, così come commentare e dare un punteggio agli annunci già esistenti.'
+      first: "Refuge Restrooms è una web application che punta a fornire l'accesso sicuro a servizi igienici per individui transgender, intersex, e genere non conforme. Gli utenti possono cercare servizi igienici in base alla vicinanza ad una posizione richiesta, aggiungere nuovi annunci di servizi igienici, così come commentare e dare un punteggio agli annunci già esistenti."
       second: 'Siamo trans e puntiamo a creare una comunità focalizzata non solo sul trovare accessi a servizi igienici sicuri già esistenti, ma anche sostenere la causa per la sicurezza di persone transgender, intersex, e di genere non conforme.'
     p2header: 'Da dove avete preso tutti questi dati?'
     p2: 'I primi 4500 inserimenti sono grazie al vecchio database Safe2Pee. Il resto del nostro database è generato dai nostri utenti. Se sei a conoscenza di un servizio igienico sicuro o gender neutral, per favore aggiungilo al nostro database!'
     p3header: 'Perché avete scelto il nome REFUGE?'
-    p3: 'Noi crediamo ciecamente che tutti abbiano il diritto di usare i servizi igienici in sicurezza e volevamo che il nome della nostra applicazione avesse un po' della stessa dignità che vogliamo dare ai nostri utenti. Molto semplicemente, speriamo di fornire un luogo di riparo nel momento in cui ne abbiate bisogno.'
+    p3: "Noi crediamo ciecamente che tutti abbiano il diritto di usare i servizi igienici in sicurezza e volevamo che il nome della nostra applicazione avesse un po' della stessa dignità che vogliamo dare ai nostri utenti. Molto semplicemente, speriamo di fornire un luogo di riparo nel momento in cui ne abbiate bisogno."
     p4header: "Qual è il problema principale dei servizi igienici e perché abbiamo bisogno di questa risorsa?"
     p4: "Uno dei più grandi campi di battaglia su cui la lotta per i diritti transgender si sta tenendo quotidianamente sono i servizi igienici. Sembra che ogni settimana un bambino transgender venga messo al centro delle notizie nazionali perché ha usato i servizi igienici attribuiti al genere con cui si identifica. Ovviamente, crediamo che ogni persona transgender debba avere il diritto di usare i servizi igienici che vuole. Però, ci rendiamo anche conto che a prescindere dalle vittorie legislative durante gli ultimi anni a proposito di utilizzo dei servizi igienici, molti individui transgender devono ancora far fronte a molestie sia verbali che fisiche semplicemente per poter usare i servizi igienici. Nessuno dovrebbe subirle - ed è per questo che abbiamo creato REFUGE."
     p5header: 'Cosa possiamo fare per aiutare?'

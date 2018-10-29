@@ -20,7 +20,7 @@ it:
     guess_location: 'Deduci posizione attuale'
     directions: 'Indicazioni'
     directions_hint: '(es.: terzo piano sul retro, vicino agli spogliatoi...)'
-    comments_hint: '(es.: devi essere un "cliente pagante", devi solo comportarti come se stessi cercando un po'...)'
+    comments_hint: "(es.: devi essere un \"cliente pagante\", devi solo comportarti come se stessi cercando un po'...)"
     comments: 'Commenti'
     accessible: 'Accessibile'
     not_accessible: 'Non accessibile'

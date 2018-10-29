@@ -2,7 +2,7 @@ it:
   pages:
     signs:
       title: 'Insegne Restroom scaricabili'
-      intro: 'Se hai un servizio igienico pubblico nel tuo edificio o nella tua attività che è gender-neutral, fallo sapere agli altri. Tu (e/o il proprietario/management dell'edificio) puoi aggiungerlo al database, e affiggere una delle insegne in basso per far sapere alle persone il tuo sostegno all'accesso sicuro per tutti. Entrambe le insegne sono file PDF stampabili.'
+      intro: "Se hai un servizio igienico pubblico nel tuo edificio o nella tua attività che è gender-neutral, fallo sapere agli altri. Tu (e/o il proprietario/management dell'edificio) puoi aggiungerlo al database, e affiggere una delle insegne in basso per far sapere alle persone il tuo sostegno all'accesso sicuro per tutti. Entrambe le insegne sono file PDF stampabili."
       head-accessible: 'Servizi igienici accessibili'
       head-non-accessible: 'Servizi igienici non accessibili'
       download: 'Scarica PDF'
