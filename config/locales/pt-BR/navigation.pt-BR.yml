@@ -1,0 +1,11 @@
+pt-BR:
+  layouts:
+    navigation:
+      toggle-navigation-button-label: 'Toggle navigation'
+      submit-a-new-restroom-hyperlink-label: 'Cadastrar Banheiro'
+      about-hyperlink-label: 'Sobre'
+      contact-hyperlink-label: 'Contato'
+
+      resources-dropdown-button-label: 'Recursos'
+      download-unisex-restroom-signs-hyperlink-label: 'Baixar Avisos de Banheiro Unissex'
+      public-api-hyperlink-label: API Pública
