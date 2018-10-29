@@ -1,0 +1,60 @@
+it:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Posizione/Luogo/Nome attività'
+        street: 'Via'
+        state: 'Stato/Provincia'
+        access: 'Accessibile?'
+        bath_type: 'Tipologia di servizio igienico'
+
+  search_bar:
+    enter_location: 'Inserisci un indirizzo'
+
+  restroom:
+    add_new: 'Invia un servizio igienico al nostro database'
+    preview: 'Anteprima'
+    required: '* segna un campo richiesto'
+    guess_location: 'Deduci posizione attuale'
+    directions: 'Indicazioni'
+    directions_hint: '(es.: terzo piano sul retro, vicino agli spogliatoi...)'
+    comments_hint: "(es.: devi essere un \"cliente pagante\", devi solo comportarti come se stessi cercando un po'...)"
+    comments: 'Commenti'
+    accessible: 'Accessibile'
+    not_accessible: 'Non accessibile'
+    changing_table: 'Fasciatoio'
+    no_changing_table: 'Nessun fasciatoio'
+    type:
+      unisex: 'Unisex / Gender neutral'
+      single_stall: 'Cabina singola di genere o luogo sicuro'
+    restsubmit: 'Salva servizio igienico'
+    rating:
+      positive: '%{percentage}% positivo'
+      unrated: 'Non ancora valutato'
+    upvote: 'Mi è piaciuto!'
+    downvote: 'Non sicuro'
+    confirm:
+      upvote: 'Sei sicuro di voler dare un voto positivo a questo servizio igienico?'
+      downvote: 'Sei sicuro di voler dare un voto negativo a questo servizio igienico?'
+    flash:
+      field: 'Un campo obbligatorio è stato lasciato in bianco. Per favore ricontrolla la tua richiesta a invia di nuovo il form.'
+      unexpected: 'Si è verificato un problema imprevisto, per favore contattaci se il problema persiste.'
+      upvoteerror: 'Si è verificato un problema imprevisto dando un voto positivo a questo post.'
+      upvotesuccess: 'Hai dato un voto positivo a questo servizio igienico! Grazie per aver contribuito alla nostra community.'
+      downvoteerror: 'Si è verificato un problema imprevisto dando un voto negativo a questo post.'
+      downvotesuccess: 'Hai dato un voto negativo a questo servizio igienico! Grazie per aver contribuito alla nostra community.'
+      new: 'Un nuovo servizio igienico è stato registrato per %{name}.'
+      updated: 'Questo servizio igienico è stato aggiornato'
+      deleted: 'Questo servizio igienico è stato eliminato'
+      searcherror: 'Si è verificato un errore durante la ricerca della tua posizione.'
+      spam: 'La tua richiesta è stata respinta come spam.'
+    contact:
+      contactlisting: "Contattaci riguardo a questo post!"
+
+  restrooms:
+    nearby:
+      heading: 'Servizi igienici nelle vicinanze'
+      body: 'Prima di inviare un servizio igienico, per favore assicurati che non sia uno dei servizi igienici già conosciuti nelle vicinanze.'
+      none: 'Nessun servizio igienico è stato trovato nelle vicinanze.'
