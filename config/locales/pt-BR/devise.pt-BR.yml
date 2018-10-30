@@ -12,7 +12,7 @@ pt-BR:
       invalid: "%{authentication_keys} ou senha inválida."
       locked: "Sua conta está bloqueada."
       last_attempt: "Você tem mais uma tentativa antes de sua conta ser bloqueada."
-      not_found_in_database: "%{authentication_keys} ou senha inválida."
+      not_found_in_database: 'Não encontrado no banco de dados.'
       timeout: "Sua sessão expirou. Por favor, faça login novamente para continuar."
       unauthenticated: "Você precisa entrar ou registrar-se antes de continuar."
       unconfirmed: "Você precisa confirmar seu endereço de email antes de continuar."
