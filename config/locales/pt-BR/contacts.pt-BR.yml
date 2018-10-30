@@ -3,7 +3,7 @@ pt-BR:
     new:
       request-edit-for-restroom: 'Solicitar alteração para o banheiro %{restroom_name}'
       contact-title: 'Contato'
-      leave-this-field-blank: 'Leave this field blank!'
+      leave-this-field-blank: 'Deixe este campo em branco!'
     submitted:
       thank-you-period: 'Obrigado por sua mensagem.'
       thank-you-exclamation: 'Obrigado por sua mensagem!'
