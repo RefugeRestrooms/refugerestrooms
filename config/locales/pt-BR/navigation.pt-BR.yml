@@ -1,7 +1,7 @@
 pt-BR:
   layouts:
     navigation:
-      toggle-navigation-button-label: 'Toggle navigation'
+      toggle-navigation-button-label: 'Alternar navegação'
       submit-a-new-restroom-hyperlink-label: 'Cadastrar Banheiro'
       about-hyperlink-label: 'Sobre'
       contact-hyperlink-label: 'Contato'
