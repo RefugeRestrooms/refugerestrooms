@@ -24,9 +24,10 @@
     .itemDistance
       - if restroom.respond_to?(:distance)
         = restroom.distance.round(2)
-        miles /
+        = t("restroom.distance.miles")
+        \/
         = miles_to_kilometers(restroom.distance).round(2)
-        kilometers
+        = t("restroom.distance.kilometers")
     .itemIcons
       - if restroom.unisex?
         .unisexRestroom{:title => t("restroom.type.unisex")}

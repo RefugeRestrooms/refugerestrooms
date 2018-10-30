@@ -20,6 +20,9 @@ es:
     guess_location: 'Encontrar ubicación actual'
     directions: 'Direcciones'
     directions_hint: '(por ejemplo: tercer piso al fondo, al lado de los vestidores...)'
+    distance:
+      miles: millas
+      kilometers: kilómetros
     comments_hint: '(e.g.: baños son solo para "consumidores", hay que actuar como que estas por comprar algo...)'
     comments: 'Comentarios'
     accessible: 'Es accesible'

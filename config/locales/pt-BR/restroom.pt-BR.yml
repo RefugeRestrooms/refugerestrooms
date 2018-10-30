@@ -20,6 +20,9 @@ pt-BR:
     guess_location: 'Adivinhar localização atual'
     directions: 'Instruções'
     directions_hint: '(por exemplo: terceiro andar nos fundos, perto dos vestiários...)'
+    distance:
+      miles: milhas
+      kilometers: quilômetros
     comments_hint: '(por exemplo: você tem que ser um "consumidor pagante", aja como se estivesse dando uma olhada...)'
     comments: 'Comentários'
     accessible: 'Acessível'
