@@ -2,8 +2,10 @@ Production CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerest
 
 Develop CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg?branch=develop)](https://travis-ci.org/RefugeRestrooms/refugerestrooms)
 
+Code Climate: [![Maintainability](https://api.codeclimate.com/v1/badges/a641d46a4ad2c2f01932/maintainability)](https://codeclimate.com/github/RefugeRestrooms/refugerestrooms/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a641d46a4ad2c2f01932/test_coverage)](https://codeclimate.com/github/RefugeRestrooms/refugerestrooms/test_coverage)
 
-[![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
+
+Waffle.io: [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
 # REFUGE restrooms
 
 Providing safe restroom access to transgender, intersex, and gender nonconforming individuals.
@@ -22,6 +24,8 @@ Staging: [Link](http://staging.refugerestrooms.org)
 For more information on how to contribute to Refuge Restrooms, or how the technology works, see the [Wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki).
 
 If you just want to get your environment set up for making changes locally and testing, you can head directly to [CONTRIBUTING.md](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CONTRIBUTING.md).
+
+Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CODE_OF_CONDUCT.md), which gives guidance on our standards of community and interaction.
 
 ## Tech
 
@@ -45,7 +49,7 @@ If you just want to get your environment set up for making changes locally and t
 
 ## Slack
 
-If you want to join the Refuge Restrooms Slack channel, please email refugerestrooms@gmail.com for an invite.
+If you want to join the Refuge Restrooms Slack channel, you can do so by [clicking on this link.](https://join.slack.com/t/refugelgbt/shared_invite/enQtMzExOTAyMTExMjM3LTk2ZDQzNGFmMzFlY2YyZGI1NTU1YzFhMGFlZTdlNzA2MDlkYTRjNWVkMTVkOTlhZjJmNGFkMzY3NjFhZjgyMzM)
 
 ## License
 

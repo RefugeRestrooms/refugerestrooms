@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "yarn": ">=1.0.2",
+    "@rails/webpacker": "3.5",
+    "rails-erb-loader": "^5.4.2",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "jquery-ujs": "^1.2.2",
+    "popper.js": "^1.14.3"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  },
+  "engines": {
+    "yarn": ">=1.0.2"
+  }
+}

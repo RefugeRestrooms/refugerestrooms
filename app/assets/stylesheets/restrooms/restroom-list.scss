@@ -1,0 +1,107 @@
+// Restrooms List
+.restrooms-list {
+  display: block;
+  padding: 0;
+  list-style: none;
+
+  .listItem {
+    display: block;
+    width: 100%;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid $gray;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .listItemImage {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin: 0.25em 1%;
+    width: 8%;
+    height: 8vw;
+    background: #41326b asset-url("ToiletLogo.png") 50% 50% no-repeat;
+    background-size: 60%;
+    border-radius: $rounded-corners;
+  }
+
+  .itemInfo {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    width: 58%;
+    margin: 0 1%;
+
+    a {
+      font-size: 15px;
+    }
+
+    .itemStreet {
+      margin-bottom: 0.5em;
+      font-size: 14px;
+    }
+
+    .itemRating {
+      width: 60%;
+      min-width: 105px;
+      max-width: 150px;
+      border-radius: $rounded-corners;
+      color: #FFF;
+      text-align: center;
+      font-family: $font-stack;
+      font-size: 14px;
+      padding: 0.5em;
+      margin: 0;
+    }
+  }
+
+  .itemExtraInfo {
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+    width: 27%;
+    margin: 0 0.5%;
+
+    .itemDistance {
+      font-size: 12px;
+      padding-bottom: 1em;
+      text-align: right;
+    }
+  }
+
+  .itemIcons {
+    text-align: right;
+
+    > * {
+      display: inline-block;
+    }
+  }
+
+
+  @include tablet {
+    .listItemImage {
+      width: 55px;
+      height: 55px;
+    }
+  }
+
+  @include desktop {
+    .listItemImage {
+      width: 55px;
+      height: 55px;
+    }
+    .itemInfo {
+      margin: 0 0.5%;
+      .itemName {
+        a {
+          font-size: 18px;
+        }
+      }
+      .itemStreet {
+        font-size: 15px;
+      }
+    }
+  }
+}

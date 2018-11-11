@@ -1,0 +1,6 @@
+pt-BR:
+  layouts:
+    search:
+      search: 'Buscar'
+      search-by-current-location: 'Buscar pela localização atual'
+

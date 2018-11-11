@@ -1,0 +1,28 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        accepted: "deve ser aceito(a)"
+        blank: "deve ser preenchido(a)"
+        confirmation: "não foi confirmado(a) corretamente"
+        date_starting_today: "não pode ser uma data passada"
+        empty: "deve ser preenchido(a)"
+        equal_to: "deve ser igual a %{count}"
+        even: "deve ser par"
+        exclusion: "é reservado(a)"
+        greater_than: "deve ser maior que %{count}"
+        greater_than_or_equal_to: "deve ser maior ou igual a %{count}"
+        inclusion: "não foi preenchido"
+        invalid: "está inválido(a)"
+        less_than: "deve ser menor que %{count}"
+        less_than_or_equal_to: "deve ser menor ou igual a %{count}"
+        not_a_number: "não é um número"
+        not_in_program: "não está no programa %{program}"
+        odd: "deve ser ímpar"
+        overlaps: "está conflitando com outro plano existente"
+        record_invalid: "não é válido"
+        taken: "já está em uso"
+        too_long: "é muito longo(a) (máximo de %{count} caracteres)"
+        too_short: "é muito curto(a) (mínimo de %{count} caracteres)"
+        uniq: "deve ser único(a)"
+        wrong_length: "tem o comprimento errado (deve ter %{count} caracteres)"

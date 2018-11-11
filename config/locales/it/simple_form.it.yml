@@ -1,0 +1,55 @@
+# See this documentation: https://github.com/plataformatec/simple_form#i18n
+# And this StackOverflow answer: https://stackoverflow.com/questions/35906089/changing-simple-form-submit-button-i18n-text
+
+it:
+  simple_form:
+    "si": 'Sì'
+    "no": 'No'
+    required:
+      text: 'richiesto'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Per favore descrivi il problema in basso:"
+
+    labels:
+      defaults:
+        name: 'Nome'
+        street: 'Via'
+        city: 'Città'
+        state: 'Regione/Provincia'
+        country: 'Paese'
+        accessible: 'Accessibile'
+        unisex: 'Unisex'
+        changing_table: 'Fasciatoio'
+        directions: 'Indicazioni'
+        comment: 'Commento'
+        email: 'Email'
+        message: 'Messaggio'
+      contact:
+        name: 'Nome'
+        email: 'Email'
+        message: 'Messaggio'
+
+  helpers:
+    submit:
+      contact:
+        # This is the "Send message" button on the "Contact" page.
+        create: 'Invia messaggio'
+
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+
