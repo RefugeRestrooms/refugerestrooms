@@ -21,8 +21,8 @@ class Restroom < ApplicationRecord
   validates :street, uniqueness: {scope: [:city, :state], message: "is already registered"}
 
   geocoded_by :full_address
-  before_validation :perform_geocoding, if: ->(obj){ obj.full_address.present? }
-  before_validation :reverse_geocode, if: ->(obj){ obj.full_address.present? }
+  before_validation :perform_geocoding, if: require_geocoding?
+  before_validation :reverse_geocode, if: require_geocoding?
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
@@ -48,7 +48,7 @@ class Restroom < ApplicationRecord
   scope :updated_since, ->(date) { where("updated_at >= ?", date) }
 
   def full_address
-    "#{street}, #{city}, #{state}, #{country}"
+    [street, city, state, country].compact.join(",")
   end
 
   def rated?
@@ -71,6 +71,10 @@ class Restroom < ApplicationRecord
   end
 
   private
+
+  def require_geocoding?
+    full_address.present?
+  end
 
     def strip_slashes
       ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|

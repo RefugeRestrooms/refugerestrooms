@@ -9,7 +9,7 @@ namespace :db do
       puts "Running reverse_geocode"
     end
 
-    puts ""
+    puts
 
     Restroom.all.each do |restroom|
 
