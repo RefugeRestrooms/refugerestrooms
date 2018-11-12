@@ -80,6 +80,7 @@ class Restroom < ApplicationRecord
 
     def perform_geocoding
       return true if Rails.env == "test"
+      return true if ENV["SEEDING_DONT_GEOCODE"]
       geocode
     end
 end
