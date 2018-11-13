@@ -1,0 +1,60 @@
+pt-BR:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Nome do Estabelecimento/Negócio/Local'
+        street: 'Endereço'
+        state: 'Estado'
+        access: 'Acessível?'
+        bath_type: 'Tipo de banheiro'
+
+  search_bar:
+    enter_location: 'Digite um endereço'
+
+  restroom:
+    add_new: 'Cadastre um banheiro no nosso banco de dados'
+    preview: 'Visualizar'
+    required: '* campo obrigatório'
+    guess_location: 'Adivinhar localização atual'
+    directions: 'Instruções'
+    directions_hint: '(por exemplo: terceiro andar nos fundos, perto dos vestiários...)'
+    comments_hint: '(por exemplo: você tem que ser um "consumidor pagante", aja como se estivesse dando uma olhada...)'
+    comments: 'Comentários'
+    accessible: 'Acessível'
+    not_accessible: 'Não acessível'
+    changing_table: 'Com Trocador'
+    no_changing_table: 'Sem Trocador'
+    type:
+      unisex: 'Unissex / Neutro'
+      single_stall: 'Cabine individual por gênero ou lugar seguro'
+    restsubmit: 'Cadastrar Banheiro'
+    rating:
+      positive: '%{percentage}% positivo'
+      unrated: 'Não avaliado'
+    upvote: 'Adorei!'
+    downvote: 'Não seguro'
+    confirm:
+      upvote: 'Tem certeza que deseja avaliar positivamente este banheiro?'
+      downvote: 'Tem certeza que deseja avaliar negativamente este banheiro?'
+    flash:
+      field: 'Um campo obrigatório foi deixado em branco. Por favor revise seu cadastro e envie o formulário novamente.'
+      unexpected: 'Tivemos um problema inesperado, por favor entre em contato se o problema persistir.'
+      upvoteerror: 'Houve um problema inesperado a avaliar positivamene este local.'
+      upvotesuccess: 'Este banheiro foi avaliado positivamente! Obrigado por contribuir com a nossa comunidade.'
+      downvoteerror: 'Houve um problema inesperado a avaliar negativamente este local.'
+      downvotesuccess: 'Este banheiro foi avaliado negativamente! Obrigado por contribuir com a nossa comunidade.'
+      new: 'Um novo banheiro foi cadastrado por %{name}.'
+      updated: 'Este banheiro foi atualizado'
+      deleted: 'Este banheiro foi removido'
+      searcherror: 'Houve um erro ao buscar a sua localização.'
+      spam: 'Seu cadastro foi rejeitado como spam.'
+    contact:
+      contactlisting: "Entre em contato sobre esta listagem!"
+
+  restrooms:
+    nearby:
+      heading: 'Banheiros próximos'
+      body: 'Antes de cadastrar um banheiro, por favor certifique-se de que ele ainda não está cadastrado.'
+      none: 'Nenhum banheiro foi encontrado por perto.'

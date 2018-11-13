@@ -1,0 +1,22 @@
+pt-BR:
+  about:
+    title: 'Sobre REFUGE'
+    p1header: 'O que é REFUGE restrooms?'
+    p1:
+      first: 'Refuge Restrooms é uma aplicação web que busca fornecer acesso a banheiros seguros para indivíduos transgêneros, intersexo ou não-conformantes de gênero. Pessoas podem procurar por banheiros por proximidade, adicionar novos lugares e também comentar e avaliar lugares existentes.'
+      second: 'Nossa liderança é trans e buscamos criar uma comunidade focada não apenas em achar acesso a banheiros seguros, mas também advogar pela segurança de pessoas transgêneras, intersexo ou não-conformantes de gênero.'
+    p2header: 'Onde vocês pegaram todos esses dados?'
+    p2: 'As primeiras 4500 entradas são graças ao velho banco de dados Safe2Pee. O resto do nosso banco de dados foi gerado por nossos usuários. Se você conhece um banheiro neutro ou seguro, por favor adicione ao nosso banco de dados!'
+    p3header: 'Por que vocês escolheram o nome REFUGE?'
+    p3: 'Nós acreditamos firmemente que todas as pessoas têm o direito de usar o banheiro com segurança e nós queríamos que o nome da nossa aplicação tivesse um pouco da mesma dignidade que queremos dar aos nossos usuários. Falando de um modo simples, gostaríamos de fornecer um lugar de refúgio na sua necessidade.'
+    p4header: "Qual a importância dos banheiros afinal, e por que precisamos desse recurso?"
+    p4: "Um dos maiores campos de batalha em que a luta por direitos de transgêneros acontece diariamente são os banheiros. Parece que toda semana uma criança transgênera vira o centro de uma notícia nacional porque ela usou um banheiro designado ao gênero com que ela se identificava. No entanto, nós também sabemos que apesar de vitórias legislativas em anos recentes a respeito do uso dos banheiros, muitos indivíduos transgêneros ainda enfrentam assédio verbal e físico simplesmente por usar um banheiro. Ninguém deveria passar por isso - e é por isso que criarmos o REFUGE."
+    p5header: 'O que podemos fazer para ajudar?'
+    p5:
+      first: "<strong>Primeiro:</strong> Adicione lugares. O banco de dados é tão grande quanto quisermos. Quanto mais lugares, mais compreensivo e valioso o recurso vai ser."
+      second: "<strong>Segundo:</strong> Espalhe a palavra. Twitter. Facebook. Tumblr. Blog. O que você usar, use. Faça as pessoas conhecerem este recurso."
+      third: "<strong>Terceiro:</strong> Se você sabe programar, visite o GitHub e informe um bug, sugira uma melhoria, o ainda contribua com um pouco de código e ajude o projeto. REFUGE é código aberto e não podemos fazê-lo sem você."
+      fourth: "<strong>Quarto: </strong> Doe. Fique ligado em uma campanha futura de crowdfunding para financiar alguma tecnologia que precisamos usar e também pagar nossa equipe de design e engenharia com um pouco de dinheiro pelo seu trabalho árduo e incansável. Essas pessoas têm trabalhado de graça para trazer esse serviço para vocês e não queremos que ninguém trabalhe de graça. Muitas pessoas do time principal são transgêneras e com subempregos no momento."
+    p6header: "Por que minha empresa ou organização está listada?"
+    p6: "Descubra mais no nosso <a href='/business_info'>FAQ para empresas</a>!"
+    contribute: 'Faça fork e contribua no GitHub!'

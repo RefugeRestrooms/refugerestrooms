@@ -3,7 +3,7 @@ env:
     - CC_TEST_REPORTER_ID=c18df080592f9c99ca8080a6d5e052aa5fd3964044a0fe0b71e48f8e18998dc2
 language: ruby
 services: docker
-before_install:
+install:
   - docker-compose build
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
