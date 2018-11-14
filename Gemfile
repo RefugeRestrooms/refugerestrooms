@@ -32,10 +32,6 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.5'
 
-group :production do
-  gem 'rails_12factor'
-end
-
 group :development, :test do
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
