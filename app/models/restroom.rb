@@ -21,8 +21,8 @@ class Restroom < ApplicationRecord
   validates :street, uniqueness: {scope: [:city, :state], message: "is already registered"}
 
   geocoded_by :full_address
-  before_validation :perform_geocoding, if: require_geocoding?
-  before_validation :reverse_geocode, if: require_geocoding?
+  before_validation :perform_geocoding, if: ->(obj){ require_geocoding? }
+  before_validation :reverse_geocode, if: ->(obj){ require_geocoding? }
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
@@ -46,6 +46,10 @@ class Restroom < ApplicationRecord
 
   scope :created_since, ->(date) { where("created_at >= ?", date) }
   scope :updated_since, ->(date) { where("updated_at >= ?", date) }
+
+  def require_geocoding?
+    full_address.present?
+  end
 
   def full_address
     [street, city, state, country].compact.join(",")
@@ -72,19 +76,15 @@ class Restroom < ApplicationRecord
 
   private
 
-  def require_geocoding?
-    full_address.present?
+  def strip_slashes
+    ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
+      attributes[field].try(:gsub!, "\\'", "'")
+    end
   end
 
-    def strip_slashes
-      ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
-        attributes[field].try(:gsub!, "\\'", "'")
-      end
-    end
-
-    def perform_geocoding
-      return true if Rails.env == "test"
-      return true if ENV["SEEDING_DONT_GEOCODE"]
-      geocode
-    end
+  def perform_geocoding
+    return true if Rails.env == "test"
+    return true if ENV["SEEDING_DONT_GEOCODE"]
+    geocode
+  end
 end
