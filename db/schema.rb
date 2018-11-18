@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2015_10_18_191859) do
     t.integer "upvote", default: 0
     t.string "country"
     t.boolean "changing_table", default: false
+    t.integer "edit_id", default: 0
+    t.boolean "approved", default: true
   end
 
 end
