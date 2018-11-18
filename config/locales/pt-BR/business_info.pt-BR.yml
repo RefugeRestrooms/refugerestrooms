@@ -1,0 +1,24 @@
+pt-BR:
+  business_info:
+    title: "Refuge Restrooms - Informações para Empresas"
+    p1header: "1) O que é Refuge Restrooms?"
+    p1: "REFUGE é uma aplicação web que busca fornecer acesso a banheiros seguros para indivíduos transgêneros, intersexo ou não-conformantes de gênero. Leia mais sobre nós na nossa página <a href='/about'>Sobre</a>."
+    p2header: "2) Como meu estabelecimento entrou nesta lista?"
+    p2: "Alguém usou seu banheiro e quis cadastrar seu estabelecimento como recurso. Todos os nossos dados são fornecidos e cadastrados por usuários."
+    p3header: "3) Como posso ser um bom anfitrião?"
+    p3: "Obrigado por perguntar! Frequentemente, visitantes do REFUGE só querem fazer uma parada rápida e seguir seu caminho, assim como qualquer outro visitante, e potencialmente ajudando seu negócio ou estabelecimento enquanto estão lá. Funcionários atenciosos e boas experiências podem ajudar bastante a conquistar simpatia pelo seu negócio ou estabelecimento na seção de avaliações da aplicação (mais sobre isso abaixo!)"
+    p4header: "4) Por que banheiros seguros são um problema?"
+    p4:
+      first: "Usar um banheiro é uma atividade do dia-a-dia que pode ser difícil para pessoas da nossa comunidade -- especialmente visitando áreas fora da sua rotina diária. Aí é que entra o nosso projeto de mapeamento."
+      second: "De acordo com a <a href='http://www.ustranssurvey.org/'>Pesquisa Trans Norteamericana</a>:"
+      list1: "59% das pessoas evitam usar um banheiro por medo de confronto"
+      list2: "31% evitam comer ou beber fora, para evitar ter que usar o banheiro"
+      list3: "24% tiveram sua presença no banheiro questionada"
+      list4: "12% foram assediadas, atacadas ou violentadas sexualmente em um banheiro"
+      list5: "9% tiveram acesso ao banheiro negado"
+      list6: "8% desenvolveram problemas nos rins ou no trato urinário por evitar o uso do banheiro"
+    p5header: "5) O que significa uma avaliação?"
+    p5: "Avaliações ajudam visitantes a compartilhar experiências com outras pessoas sobre um lugar. Nós encorajamos visitantes a compartilhar o máximo de informações possível sobre cada lugar no mapa."
+    p6header: "6) Como posso remover meu cadastro?"
+    p6: "Nós esperamos que você considere manter seu cadastro; ele pode significar muito para a saúde e o bem estar das pessoas. No entanto, se você preferir não ser listado, use o nosso formulário de contato para requisitar a remoção e nosso voluntariado irá trabalhar nisso assim que possível (este é um projeto de código aberto, portanto nosso trabalho é feito voluntariamente)."
+

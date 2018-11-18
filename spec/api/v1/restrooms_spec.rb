@@ -5,7 +5,7 @@ describe "Restrooms API", type: :request do
     create_list(:restroom, 15)
 
     get '/api/v1/restrooms'
-    expect(response).to be_success
+    assert_response :success
 
     json = JSON.parse(response.body)
     previous_record = nil
@@ -34,7 +34,7 @@ describe "Restrooms API", type: :request do
     create_list(:restroom, 15)
 
     get '/api/v1/restrooms'
-    expect(response).to be_success
+    assert_response :success
 
     json = JSON.parse(response.body)
     expect(json.length).to eq(10)
@@ -61,7 +61,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        expect(response).to be_success
+        assert_response :success
       end
 
       it "returns unisex restro3ms" do
@@ -79,7 +79,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        expect(response).to be_success
+        assert_response :success
       end
 
       it "returns accessible restrooms" do
@@ -122,7 +122,7 @@ describe "Restrooms API", type: :request do
     create_list(:restroom, 15)
 
     get '/api/v1/restrooms/search', params: { query: 'San Francisco' }
-    expect(response).to be_success
+    assert_response :success
 
     json = JSON.parse(response.body)
     expect(json.length).to eq(10)
@@ -149,7 +149,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        expect(response).to be_success
+        assert_response :success
       end
 
       it "finds two coffeeshops with unisex restrooms" do
@@ -171,7 +171,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        expect(response).to be_success
+        assert_response :success
       end
 
       it "finds two coffeeshops with accessible restrooms" do
@@ -194,7 +194,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        expect(response).to be_success
+        assert_response :success
       end
 
       it "finds all restrooms" do
@@ -209,7 +209,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        expect(response).to be_success
+        assert_response :success
       end
 
       it "finds all but one of the restrooms" do

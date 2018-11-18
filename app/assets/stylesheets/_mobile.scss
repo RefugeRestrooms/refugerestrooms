@@ -5,11 +5,6 @@
         background-image: image-url('city-photo-2x.jpg');
     }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-resolution: 288dpi) {
-    body .splash-background {
-        background-image: image-url('city-photo-3x.jpg');
-    }
-}
 
 // Screen Width-Related Rules
 

@@ -1,0 +1,6 @@
+hi:
+  layouts:
+    search:
+      search: 'खोज'
+      search-by-current-location: 'वर्तमान स्थान से खोजें'
+

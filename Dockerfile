@@ -1,5 +1,9 @@
-FROM ruby:2.3.7
+FROM ruby:2.3.7-slim
 ENV PHANTOM_JS=2.1.1
+
+# Add basic binaries
+RUN apt-get update \
+  && apt-get install -y bzip2 curl gnupg wget
 
 # Add the apt repository for yarn
 RUN curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
@@ -19,6 +23,10 @@ RUN apt-get install build-essential chrpath libssl-dev libxft-dev -y && \
   mv $PHANTOM_JS /usr/local/share && \
   ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin && \
   apt-get install -y yarn
+
+# Clean up the apt cache
+RUN rm -rf /var/lib/apt/lists/*
+
 RUN mkdir /refugerestrooms
 WORKDIR /refugerestrooms
 
