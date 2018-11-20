@@ -13,11 +13,7 @@ class RestroomsController < ApplicationController
   end
 
   def new
-    if params[:edit_id]
-      @restroom = find_restroom
-      @restroom.edit_id = params[:edit_id]
-      @restroom.approved = false
-    elsif params[:guess]
+    if params[:guess]
       @restroom = Restroom.new(permitted_params)
       @restroom.reverse_geocode
       render 'new', layout: false
@@ -27,20 +23,14 @@ class RestroomsController < ApplicationController
   end
 
   def create
-    restroom = Restroom.new(permitted_params)
-    @restroom = SaveRestroom.new(restroom).call
+    @restroom = Restroom.new(permitted_params)
 
-    if @restroom.errors.empty?
-      if @restroom.approved?
-        flash[:notice] = I18n.t('restroom.flash.new', name: @restroom.name)
-        redirect_to @restroom
-      else
-        flash[:notice] = I18n.t('restroom.flash.edit', name: @restroom.name)
-        redirect_to restroom_path(@restroom.edit_id)
-      end
-    elsif @restroom.errors.key?(:spam)
+    if @restroom.spam?
       flash[:notice] = I18n.t('restroom.flash.spam')
       render 'new'
+    elsif @restroom.save
+      flash[:notice] = I18n.t('restroom.flash.new', name: @restroom.name)
+      redirect_to @restroom
     else
       display_errors
       render 'new'
@@ -64,7 +54,7 @@ class RestroomsController < ApplicationController
 
 private
   def list_restrooms
-    @restrooms = Restroom.current.page(params[:page])
+    @restrooms = Restroom.all.page(params[:page])
     @restrooms = if params[:search].present? || params[:map] == "1"
       @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
     else
@@ -99,9 +89,7 @@ private
       :directions,
       :comment,
       :longitude,
-      :latitude,
-      :edit_id,
-      :approved
+      :latitude
     )
   end
 end

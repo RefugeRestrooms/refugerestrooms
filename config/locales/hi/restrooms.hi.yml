@@ -1,8 +1,0 @@
-hi:
-  restrooms:
-    index:
-      map-view-button-label: 'मानचित्र दृश्य'
-
-    show:
-      thumbs-up-button-label: 'शाबाशी'
-      thumbs-down-button-label: 'नाकामयाबी'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180613231032) do
+ActiveRecord::Schema.define(version: 2015_10_18_191859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,8 +64,6 @@ ActiveRecord::Schema.define(version: 20180613231032) do
     t.integer "upvote", default: 0
     t.string "country"
     t.boolean "changing_table", default: false
-    t.integer "edit_id", default: 0
-    t.boolean "approved", default: true
   end
 
 end

@@ -1,6 +1,6 @@
 %h1= t('restroom.add_new')
 
-= simple_form_for @restroom, :url => restrooms_path, :method => :post, html: {class: 'submit-new-bathroom-form form-vertical'} do |f|
+= simple_form_for @restroom, html: {class: 'submit-new-bathroom-form form-vertical'} do |f|
   %h5= t('restroom.required')
   .clearfix
     %button.btn.btn-light-purple.guess-btn{:type => "button", :value => t('restroom.guess_location')}
@@ -20,8 +20,6 @@
   = f.input :country, priority: ["United States", "Canada", "United Kingdom"], :required => true, input_html: {class: 'form-control'}
   = f.hidden_field :latitude
   = f.hidden_field :longitude
-  = f.hidden_field :edit_id
-  = f.hidden_field :approved
   = f.input :accessible, :collection => [[t('restroom.accessible'), true], [t('restroom.not_accessible'), false]], :include_blank => false
   = f.input :unisex, :collection => [[t('restroom.type.unisex'), true], [t('restroom.type.single_stall'), false]], :include_blank => false
   = f.input :changing_table, :collection => [[t('restroom.changing_table'), true], [t('restroom.no_changing_table'), false]], :include_blank => false
