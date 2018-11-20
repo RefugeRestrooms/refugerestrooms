@@ -40,10 +40,7 @@ class Restroom < ApplicationRecord
   after_find :strip_slashes
 
   scope :current, -> {
-    restroom_ids = find_by_sql(
-      "SELECT MAX(id) as id FROM restrooms WHERE approved = true GROUP BY edit_id"
-    )
-    Restroom.where(id: restroom_ids)
+    Restroom.where('id IN (SELECT MAX(id) from restrooms where approved = true group by edit_id)')
   }
 
   scope :accessible, -> { where(accessible: true) }
