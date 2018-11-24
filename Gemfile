@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.7'
+ruby '2.5.3'
 
 gem 'rails', '5.2.1'
 
@@ -51,7 +51,7 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'simplecov', '~> 0.7.1', require: false
-  gem 'webmock', '~> 1.18.0'
+  gem 'webmock', '~> 3.2.1'
 end
 
 group :doc do
