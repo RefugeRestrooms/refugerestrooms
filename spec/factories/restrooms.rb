@@ -1,12 +1,19 @@
 FactoryBot.define do
   factory :restroom do
-    name 'Moonlight Café'
-    street '123 Example St.'
+    name 'The SF LGBT Center'
+    street '1800 Market St'
     city 'San Francisco'
     state 'CA'
     country 'US'
     upvote 22
     downvote 11
+    comment 'Comment'
+    directions 'Direction'
+    approved true
+
+    after(:create) do |restroom|
+      restroom.update(edit_id: restroom.id)
+    end
 
     trait :geocoded do
       latitude 37.7749
@@ -40,5 +47,14 @@ FactoryBot.define do
       state 'CA'
       country 'US'
     end
+
+    factory :spam_restroom do
+      name 'Spam Cafe'
+      street 'Spam Street'
+      city 'Spam City'
+      state 'Spam State'
+      country 'Spam Country'
+    end
   end
 end
+

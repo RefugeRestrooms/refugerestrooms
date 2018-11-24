@@ -39,6 +39,10 @@ class Restroom < ApplicationRecord
 
   after_find :strip_slashes
 
+  scope :current, -> {
+    Restroom.where('id IN (SELECT MAX(id) FROM restrooms WHERE approved = true GROUP BY edit_id)')
+  }
+
   scope :accessible, -> { where(accessible: true) }
   scope :changing_table, -> { where(changing_table: true) }
   scope :unisex, -> { where(unisex: true) }
