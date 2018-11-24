@@ -20,6 +20,9 @@ en:
     guess_location: 'Guess current location'
     directions: 'Directions'
     directions_hint: '(e.g.: third floor in the back, by the dressing rooms...)'
+    distance:
+      miles: miles
+      kilometers: kilometers
     comments_hint: '(e.g.: you have to be a "paying customer", just act like you are browsing for a bit...)'
     comments: 'Comments'
     accessible: 'Accessible'

@@ -20,6 +20,9 @@ pl:
     guess_location: 'Obecna lokalizacja urządzenia'
     directions: 'Wskazówki'
     directions_hint: '(np.: na trzecim piętrze, obok baru, koło przebieralni...)'
+    distance:
+      miles: mi
+      kilometers: km
     comments_hint: '(np.: musisz coś kupić, udawaj że się rozglądasz z zamiarem zakupu...)'
     comments: 'Komentarze'
     accessible: 'Dostęp dla osób niepełnosprawnych'
