@@ -22,6 +22,8 @@ class Restroom < ApplicationRecord
     validates :street, uniqueness: {scope: [:city, :state], message: "is already registered"}
   end
 
+  attribute :force_geocoding
+
   geocoded_by :full_address
   before_validation :perform_geocoding, if: ->(obj){ require_geocoding? }
   before_validation :reverse_geocode, if: ->(obj){ require_geocoding? }
@@ -50,7 +52,7 @@ class Restroom < ApplicationRecord
   scope :updated_since, ->(date) { where("updated_at >= ?", date) }
 
   def require_geocoding?
-    return false if Rails.env == "test"
+    return false if Rails.env == "test" unless force_geocoding
     full_address.present?
   end
 
