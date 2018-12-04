@@ -1,0 +1,8 @@
+fil:
+  restrooms:
+    index:
+      map-view-button-label: 'Map View'
+
+    show:
+      thumbs-up-button-label: 'Thumbs Up'
+      thumbs-down-button-label: 'Thumbs Down'
