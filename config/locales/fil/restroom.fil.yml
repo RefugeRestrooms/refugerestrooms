@@ -1,0 +1,60 @@
+fil:
+  activerecord:
+    attributes:
+      restroom:
+        # only overridden attributes here, defaults work as expected
+        # (e.g. database field 'city' will be appear as 'City')
+        name: 'Lokasyon/Lugar/Pangalan ng Negosyo'
+        street: 'Ang Street Address'
+        state: 'Estado/Probinsya'
+        access: 'Madaling ma-akses?'
+        bath_type: 'Uri ng Pahingaan o Restroom'
+
+  search_bar:
+    enter_location: 'I-enter ang address'
+
+  restroom:
+    add_new: 'Magsumita ng pahingaan o restroom sa aming database'
+    preview: 'Prebyu'
+    required: '* markahan ang kailangan na field'
+    guess_location: 'Magpalagay ng kasalukuyang lokasyon'
+    directions: 'Direksyon'
+    directions_hint: '(hal.: ikatlong palapag sa likod, sa may bihisanang kwarto...)'
+    comments_hint: '(hal.: ikaw ay dapat "paying na kustomer", ikaw ay dapat na kumilos na parang nag-browsing para sa bit...)'
+    comments: 'Mga komento'
+    accessible: 'Madaling ma-akses'
+    not_accessible: 'Hindi pwedeng ma-akses'
+    changing_table: 'Pagpapalit ng mesa'
+    no_changing_table: 'Walang pagpapalit ng mesa'
+    type:
+      unisex: 'Unisex / Nyutral na kasarian'
+      single_stall: 'May pangalan ng kasarian na single stall o ligtas na lugar'
+    restsubmit: 'I-save ang Restroom'
+    rating:
+      positive: '%{percentage}% positibo'
+      unrated: 'Hindi pa nagradohan'
+    upvote: 'Mahal ko to!'
+    downvote: 'Hindi ligtas'
+    confirm:
+      upvote: 'Sigurado kaba na gusto mong mag-upvote sa pahingaang ito?'
+      downvote: 'Sigurado kaba na gusto mong i-downvote ang pahingaang ito?'
+    flash:
+      field: 'Ang kinakailangang ay naiwang blangko. Maaaring suriin muli ang pagpasa at muling i-submit ang form.'
+      unexpected: 'Kami ay nakakaranas ng hindi inaasahang problema, maaaring komuntak sa amin kung ang proleba ay magpapatuloy.'
+      upvoteerror: 'Mayroong hindi inaasahan problema sa pag-upvote sa post na ito.'
+      upvotesuccess: 'Ang pahingaang ito ay nai-upvote na! maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
+      downvoteerror: 'Mayroong hindi inaasahang problema sa pag-downvote sa post na ito.'
+      downvotesuccess: 'Ang restroom na ito ay nai-downvote na! Maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
+      new: 'Ang bagong pasko na pahingaan o restroom ay naisagawa na %{name}.'
+      updated: 'Ang entry ng pahingaan o restroom ay na-update na'
+      deleted: 'Ang pahingaang ito ay nai-delete na'
+      searcherror: 'May error sa paghahanap ng lokasyon.'
+      spam: 'Ang iyong isinumita ay na-reject bilang spam.'
+    contact:
+      contactlisting: "Kontakin kami tungkol sa post na ito!"
+
+  restrooms:
+    nearby:
+      heading: 'Kalapit na mga pahingaan o restroom'
+      body: 'bago magsumita ng pahingaan o restroom, siguraduhin na hindi ito kabilang sa mga kilala nang restrooms sa malapit.'
+      none: 'Walang nakitang restrooms sa malapit.'
