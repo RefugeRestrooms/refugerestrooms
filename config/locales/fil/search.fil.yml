@@ -1,0 +1,5 @@
+fil:
+  layouts:
+    search:
+      search: 'Paghahanap'
+      search-by-current-location: 'Maghanap ayon sa Kasalukuyang Lokasyon'

@@ -1,0 +1,15 @@
+fil:
+  layouts:
+    footer:
+      aria-labels:
+        github: 'Refuge Restrooms sa GitHub'
+        twitter: 'Refuge Restrooms sa twitter'
+        facebook: 'Refuge Restrooms sa Facebook'
+        tumblr: 'Refuge Restrooms blog sa tumblr'
+        email: 'Email Refuge Restrooms'
+      refuge-restrooms-is-open-source: 'Ang mga refugee ay bukas na pinagmumulan.'
+      code-on-github: 'code sa github.'
+      contribute-to-the-project: 'mag-ambag sa proyekto'
+      on-patreon: 'sa patreon.'
+      copyleft: 'copyleft'
+      refuge-restrooms: 'mga refugee.'

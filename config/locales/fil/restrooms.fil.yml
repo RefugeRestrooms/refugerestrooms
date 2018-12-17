@@ -1,0 +1,8 @@
+fil:
+  restrooms:
+    index:
+      map-view-button-label: 'View ng Mapa'
+
+    show:
+      thumbs-up-button-label: 'Thumbs Up'
+      thumbs-down-button-label: 'Thumbs Down'
