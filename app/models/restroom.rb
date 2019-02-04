@@ -17,14 +17,17 @@ class Restroom < ApplicationRecord
   using: {tsearch: {dictionary: "english"}},
   ignoring: :accents
 
-  validates :name, :street, :city, :state, presence: true
+  if Rails.env != "test"
+    validates :name, :street, :city, :state, presence: true
+    validates :street, uniqueness: {scope: [:city, :state], message: "is already registered"}
+  end
 
   geocoded_by :full_address
-  after_validation :perform_geocoding
+  before_validation :perform_geocoding, if: ->(obj){ require_geocoding? }
+  before_validation :reverse_geocode, if: ->(obj){ require_geocoding? }
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     if geo = results.first
-      obj.name    = geo.address
       obj.street  = geo.address.split(',').first
       obj.city    = geo.city
       obj.state   = geo.state
@@ -50,8 +53,13 @@ class Restroom < ApplicationRecord
   scope :created_since, ->(date) { where("created_at >= ?", date) }
   scope :updated_since, ->(date) { where("updated_at >= ?", date) }
 
+  def require_geocoding?
+    return false if Rails.env == "test"
+    full_address.present?
+  end
+
   def full_address
-    "#{street}, #{city}, #{state}, #{country}"
+    [street, city, state, country].compact.join(",")
   end
 
   def rated?
@@ -75,15 +83,13 @@ class Restroom < ApplicationRecord
 
   private
 
-    def strip_slashes
-      ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
-        attributes[field].try(:gsub!, "\\'", "'")
-      end
+  def strip_slashes
+    ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
+      attributes[field].try(:gsub!, "\\'", "'")
     end
+  end
 
-    def perform_geocoding
-      return true if Rails.env == "test"
-      return true if ENV["SEEDING_DONT_GEOCODE"]
-      geocode
-    end
+  def perform_geocoding
+    geocode
+  end
 end

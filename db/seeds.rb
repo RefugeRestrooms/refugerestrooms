@@ -10,7 +10,7 @@ require 'csv'
 
 Restroom.transaction do
   CSV.foreach('db/export.csv') do |row|
-    Restroom.create(
+    restroom = Restroom.new(
       :name => row[1],
       :street => row[3],
       :city => row[4],
@@ -21,7 +21,8 @@ Restroom.transaction do
       :comment => row[12],
       :latitude => row[8],
       :longitude => row[9],
-      :country => row[6]
+      :country => row[6],
       )
+    restroom.save(validate: false)
   end
 end
