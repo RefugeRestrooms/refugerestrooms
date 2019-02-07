@@ -40,5 +40,13 @@ FactoryBot.define do
       state 'CA'
       country 'US'
     end
+
+    factory :weird_restroom do
+      name 'Weirdly formatted restroom'
+      street '123 Example Street'.upcase!
+      city 'San Francisco'.upcase!
+      state 'CA'
+      country 'US'
+    end
   end
 end

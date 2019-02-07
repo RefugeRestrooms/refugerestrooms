@@ -45,4 +45,12 @@ describe Restroom do
     it { expect(Restroom.new.changing_table?).to be false }
     it { expect(Restroom.new(changing_table: true).changing_table?).to be true }
   end
+
+  describe "reverse geocoding" do
+    it "should normalize weird addresses" do
+      weird_restroom = build(:weird_restroom, force_geocoding: true)
+      weird_restroom.save
+      expect(weird_restroom.full_address).to eq "123 Example St.,San Francisco,California,US"
+    end
+  end
 end

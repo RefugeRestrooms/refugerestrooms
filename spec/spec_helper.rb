@@ -59,3 +59,33 @@ Geocoder::Lookup::Test.add_stub(
     }
   ]
 )
+
+Geocoder::Lookup::Test.add_stub(
+  "123 EXAMPLE STREET,SAN FRANCISCO,CA,US", [
+    {
+      "latitude"     => 37.7749295,
+      "longitude"    => -122.41941550000001,
+      "address"      => "123 Example St., San Francisco, CA, USA",
+      "city"         => "San Francisco",
+      "state"        => "California",
+      "state_code"   => "CA",
+      "country"      => "United States",
+      "country_code" => "US"
+    }
+  ]
+)
+
+Geocoder::Lookup::Test.add_stub(
+  [37.7749295, -122.41941550000001], [
+    {
+      "latitude"     => 37.7749295,
+      "longitude"    => -122.41941550000001,
+      "address"      => "123 Example St., San Francisco, CA, USA",
+      "city"         => "San Francisco",
+      "state"        => "California",
+      "state_code"   => "CA",
+      "country"      => "United States",
+      "country_code" => "US"
+    }
+  ]
+)
