@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.3.7'
+ruby '2.5.3'
 
 gem 'rails', '5.2.1'
 
-gem 'activeadmin', '~> 1.3'
+gem 'activeadmin', '~> 1.4.1'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'bugsnag'
@@ -18,7 +18,8 @@ gem 'haml'
 gem 'high_voltage', '~> 3.0.0'
 gem 'http_accept_language'
 gem 'jbuilder', '~> 2.5'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.1.1'
+gem 'kaminari-grape', '~> 1.0'
 gem 'mail_form', '>= 1.7.0'
 gem 'pg'
 gem 'pg_search'
@@ -31,10 +32,6 @@ gem 'simple_form', '~> 4.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.5'
-
-group :production do
-  gem 'rails_12factor'
-end
 
 group :development, :test do
   gem 'better_errors', '~> 2.4.0'
@@ -55,7 +52,7 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'simplecov', '~> 0.7.1', require: false
-  gem 'webmock', '~> 1.18.0'
+  gem 'webmock', '~> 3.2.1'
 end
 
 group :doc do
