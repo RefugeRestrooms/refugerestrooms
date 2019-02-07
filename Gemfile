@@ -3,7 +3,7 @@ ruby '2.5.3'
 
 gem 'rails', '5.2.1'
 
-gem 'activeadmin', '~> 1.3'
+gem 'activeadmin', '~> 1.4.1'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass'
 gem 'bugsnag'
@@ -18,7 +18,8 @@ gem 'haml'
 gem 'high_voltage', '~> 3.0.0'
 gem 'http_accept_language'
 gem 'jbuilder', '~> 2.5'
-gem 'kaminari', '~> 0.17.0'
+gem 'kaminari', '~> 1.1.1'
+gem 'kaminari-grape', '~> 1.0'
 gem 'mail_form', '>= 1.7.0'
 gem 'pg'
 gem 'pg_search'
