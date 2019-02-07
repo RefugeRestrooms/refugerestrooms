@@ -1,4 +1,4 @@
-FROM ruby:2.3.7-slim
+FROM ruby:2.5.3-slim
 ENV PHANTOM_JS=2.1.1
 
 # Add basic binaries

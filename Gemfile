@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.7'
+ruby '2.5.3'
 
 gem 'rails', '5.2.1'
 
@@ -33,10 +33,6 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.5'
 
-group :production do
-  gem 'rails_12factor'
-end
-
 group :development, :test do
   gem 'better_errors', '~> 2.4.0'
   gem 'binding_of_caller'
@@ -56,7 +52,7 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'simplecov', '~> 0.7.1', require: false
-  gem 'webmock', '~> 1.18.0'
+  gem 'webmock', '~> 3.2.1'
 end
 
 group :doc do
