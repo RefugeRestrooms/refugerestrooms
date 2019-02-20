@@ -18,11 +18,11 @@
         %i.fa.fa-plus-square-o.fa-2x
   .row.even-more-headroom
     .col-xs-6.col-sm-3.col-sm-offset-3
-      = link_to image_tag("app-store.svg", role: "img", alt: "Download on the App Store"), "https://itunes.apple.com/us/app/refuge-restrooms/id968531953?mt=8"
+      = link_to image_tag("app-store.svg", role: "img", alt: t('.html-alt-attributes.app-store')), "https://itunes.apple.com/us/app/refuge-restrooms/id968531953?mt=8"
     .col-xs-6.col-sm-3
-      = link_to image_tag("play-store.png", alt: "Get it on Google Play"), "https://play.google.com/store/apps/details?id=org.refugerestrooms"
+      = link_to image_tag("play-store.png", alt: t('.html-alt-attributes.play-store')), "https://play.google.com/store/apps/details?id=org.refugerestrooms"
 
   .row.more-headroom.splash-bottom-padding
     .col-xs-12.col-sm-6.col-sm-offset-3
-      = link_to image_tag("patreon.png", alt: "Become a patron"), "https://patreon.com/refugerestrooms"
+      = link_to image_tag("patreon.png", alt: t('.html-alt-attributes.patreon')), "https://patreon.com/refugerestrooms"
   = render 'layouts/footer'
