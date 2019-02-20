@@ -6,6 +6,6 @@ en:
       add-restroom-button-label: 'Add A Restroom'
 
       html-alt-attributes:
-        app-store: 'Download on the App Store'
-        play-store: 'Get it on Google Play'
-        patreon: 'Become a patron'
+        app-store: 'Refuge Restrooms iOS app download'
+        play-store: 'Refuge Restrooms Android app download'
+        patreon: 'Support the project on Patreon'
