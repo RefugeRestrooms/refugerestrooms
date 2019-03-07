@@ -4,3 +4,8 @@ en:
       life-is-tough: 'Sometimes life is tough...'
       find-refuge: 'Find Refuge'
       add-restroom-button-label: 'Add A Restroom'
+
+      html-alt-attributes:
+        app-store: 'Refuge Restrooms iOS app download'
+        play-store: 'Refuge Restrooms Android app download'
+        patreon: 'Support the project on Patreon'
