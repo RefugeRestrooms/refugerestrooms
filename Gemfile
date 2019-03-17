@@ -5,7 +5,7 @@ gem 'rails', '5.2.2.1'
 
 gem 'activeadmin', '~> 1.4.1'
 gem 'bootsnap', require: false
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bugsnag'
 gem 'coffee-rails', '~> 4.2'
 gem 'country_select'
