@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 ruby '2.5.3'
 
-gem 'rails', '5.2.1'
+gem 'rails', '5.2.2.1'
 
 gem 'activeadmin', '~> 1.4.1'
 gem 'bootsnap', require: false
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bugsnag'
 gem 'coffee-rails', '~> 4.2'
 gem 'country_select'
-gem 'devise', '~> 4.3'
+gem 'devise', '~> 4.6'
 gem 'geocoder', '~> 1.2.1'
 gem 'grape', '1.1'
 gem 'grape-swagger', '~> 0.31'
