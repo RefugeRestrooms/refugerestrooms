@@ -1,6 +1,6 @@
-Production CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg?branch=master)](https://travis-ci.org/RefugeRestrooms/refugerestrooms)
+Production CI: [![Build Status](https://travis-ci.com/RefugeRestrooms/refugerestrooms.svg?branch=master)](https://travis-ci.com/RefugeRestrooms/refugerestrooms)
 
-Develop CI: [![Build Status](https://travis-ci.org/RefugeRestrooms/refugerestrooms.svg?branch=develop)](https://travis-ci.org/RefugeRestrooms/refugerestrooms)
+Develop CI: [![Build Status](https://travis-ci.com/RefugeRestrooms/refugerestrooms.svg?branch=develop)](https://travis-ci.com/RefugeRestrooms/refugerestrooms)
 
 Code Climate: [![Maintainability](https://api.codeclimate.com/v1/badges/a641d46a4ad2c2f01932/maintainability)](https://codeclimate.com/github/RefugeRestrooms/refugerestrooms/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/a641d46a4ad2c2f01932/test_coverage)](https://codeclimate.com/github/RefugeRestrooms/refugerestrooms/test_coverage)
 
