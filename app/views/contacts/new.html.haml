@@ -11,5 +11,7 @@
     = f.hidden_field :restroom_id, :required => false
     = f.hidden_field :restroom_name, :required => false
     = f.hidden_field :nickname, :hint => t('.leave-this-field-blank')
+  .form-group
+    .g-recaptcha{'data-sitekey' => "#{ENV['RECAPTCHA_SITE_KEY']}"}
   .form-actions
     = f.button :submit, :class=> "linkbutton"
