@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-# Set up the database for development, and seed with placeholder data from `db/export.csv`
-SEEDING_DONT_GEOCODE="true" rails db:setup
+if [[ -z ${SKIP_CREATE_DB+x} ]]; then
+  # Set up the database for development, and seed with placeholder data from `db/export.csv`
+  SEEDING_DONT_GEOCODE="true" rails db:setup
+fi
 
 exec "$@"
