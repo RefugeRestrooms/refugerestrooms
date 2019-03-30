@@ -2,13 +2,13 @@
   "name": "refugerestrooms",
   "description": "refuge  heroku app.json",
   "scripts": {
-    "postdeploy": "bundle exec rake db:setup"
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "DATABASE_URL": {
+    "AKISMET_KEY": {
       "required": true
     },
-    "HEROKU_POSTGRESQL_CYAN_URL": {
+    "BUGSNAG_API_TOKEN": {
       "required": true
     },
     "DEVISE_SECRET_KEY": {
@@ -18,6 +18,9 @@
       "required": true
     },
     "EMAIL_PASSWORD": {
+      "required": true
+    },
+    "GOOGLE_MAPS_API_KEY": {
       "required": true
     },
     "LANG": {
