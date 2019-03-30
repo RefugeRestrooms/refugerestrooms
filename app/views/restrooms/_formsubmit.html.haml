@@ -1,6 +1,7 @@
 %h1= t('restroom.add_new')
 
 = simple_form_for @restroom, :url => restrooms_path, :method => :post, html: {class: 'submit-new-bathroom-form form-vertical'} do |f|
+  = link_to "Add a CSV file", new_bulk_upload_path
   %h5= t('restroom.required')
   .clearfix
     %button.btn.btn-light-purple.guess-btn{:type => "button", :value => t('restroom.guess_location')}
