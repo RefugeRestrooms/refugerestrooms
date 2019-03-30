@@ -30,6 +30,17 @@ The container will be reachable at this address: `localhost:3000`
 
 _(Point your web browser at `localhost:3000` or `127.0.0.1:3000`, or even `[IP address of computer running the container]:3000` from any computer on the same LAN. The last method is useful for testing the app/site on smart phones and tablets.)_
 
+## potential solutions for `docker-compose` issues
+
+There can be numerous challenges when using Docker. If you receive this error message:
+
+`'Bad response from Docker engine'`
+
+A potential solution is to undo what you have done.
+- `docker-compose rm`
+
+Then retry `docker-compose up`
+
 ### 5 Do some Development
 
 Files are shared between your computer and the Docker machine. If you update a file on your computer, the change should show up on the Docker machine, and vice-versa.
