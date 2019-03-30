@@ -1,0 +1,2 @@
+class BulkUpload < ApplicationRecord
+end
