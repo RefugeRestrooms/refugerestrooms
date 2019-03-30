@@ -15,6 +15,7 @@ en:
 
   restroom:
     add_new: 'Submit a restroom to our database'
+    bulk_upload: 'Want to add more than one? Submit a bulk upload request!'
     preview: 'Preview'
     required: '* marks required field'
     guess_location: 'Guess current location'

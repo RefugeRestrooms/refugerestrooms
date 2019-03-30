@@ -1,7 +1,7 @@
 - if @contact.restroom_name.present?
-  %h1= t('.request-edit-for-restroom', restroom_name: @contact.restroom_name)
+  %h1{class: 'title'}= t('.request-edit-for-restroom', restroom_name: @contact.restroom_name)
 - else
-  %h1= t('.contact-title')
+  %h1{class: 'title'}= t('.contact-title')
 = simple_form_for @contact, html: {class: 'form-vertical headroom'} do |f|
   %p
   = f.input :name, :required => true
