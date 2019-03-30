@@ -11,9 +11,6 @@
     "BUGSNAG_API_TOKEN": {
       "required": true
     },
-    "DATABASE_URL": {
-      "required": true
-    },
     "DEVISE_SECRET_KEY": {
       "required": true
     },
