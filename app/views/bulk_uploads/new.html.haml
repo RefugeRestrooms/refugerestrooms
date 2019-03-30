@@ -1,0 +1,5 @@
+%h3= t('restroom.add_bulk')
+
+= simple_form_for @bulk_upload do |f|
+  = f.file_field :file
+  = f.button :submit, t('restroom.csv_submit'), :class => "linkbutton"
