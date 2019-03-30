@@ -24,7 +24,7 @@ describe "Restrooms API", type: :request do
     edit.update(approved: false, edit_id: 1)
 
     get '/api/v1/restrooms'
-    expect(response).to be_success
+    expect(response).to be_successful
 
     json = JSON.parse(response.body)
     expect(json.length).to eq(1)
