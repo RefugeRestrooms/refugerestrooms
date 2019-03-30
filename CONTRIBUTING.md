@@ -26,6 +26,8 @@ You can now run the app with:
 docker-compose up
 ```
 
+If this results in a syntax error in cli.js, remove the docker image and re-run `docker-compose build` (this is especially likely to be the issue if your `docker-compose` commands got interrupted and had to be re-run a few times).
+
 The container will be reachable at this address: `localhost:3000`
 
 _(Point your web browser at `localhost:3000` or `127.0.0.1:3000`, or even `[IP address of computer running the container]:3000` from any computer on the same LAN. The last method is useful for testing the app/site on smart phones and tablets.)_
