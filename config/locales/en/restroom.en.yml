@@ -18,6 +18,7 @@ en:
     add_bulk: 'Upload CSV file'
     add_bulk_request_pending: 'You have successfully signed up, but you have not been approved to upload restroom CSVs yet. Your request is awaiting approval by the admins. Thank you for your patience and please check back later.' 
     signin_for_bulk_upload: 'Want to add a CSV? Only approved users may upload CSVs. When you sign up, an email will be sent to the admins to approve you. Please contact the admins if you have not recieved a response within a few days. Signup'
+    thank_you_for_your_submission: 'Thank you for your submission. Your entry is being processed and will be added soon.'
     csv_submit: 'Save CSV'
     preview: 'Preview'
     required: '* marks required field'
