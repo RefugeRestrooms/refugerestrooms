@@ -8,18 +8,19 @@ class BulkUploadsController < ApplicationController
 
   def create
     @bulk_upload = BulkUpload.new(bulk_upload_params)
+    @bulk_upload.user = current_user
     if @bulk_upload.save
       redirect_to bulk_upload_path(@bulk_upload)
     else
+      Rails.logger.error "Errors saving bulk_upload:"
+      @bulk_upload.errors.each { |field, message| Rails.logger.error "Field: #{field}, Message: #{message}" }
       render action: :new
     end
   end
 
   def show
-    
   end
 
- 
   private
     def authenticate_approved_user!
       unless user_signed_in?
