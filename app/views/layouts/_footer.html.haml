@@ -1,5 +1,6 @@
 %footer
   .footer
+    %h4= link_to "Signout", destroy_user_session_path, method: :delete
     %a.iconLink{:href => "https://github.com/RefugeRestrooms/refugerestrooms", :aria => { :label => t('.aria-labels.github')}}
       %i.icon.fa.fa-github-square.fa-3x
     %a.iconLink{:href => "https://twitter.com/refugerestrooms", :aria => { :label => t('.aria-labels.twitter')}}

@@ -16,6 +16,7 @@ en:
   restroom:
     add_new: 'Submit a restroom to our database'
     add_bulk: 'Upload CSV file'
+    signin_for_bulk_upload: 'Want to add a CSV? Signin'
     csv_submit: 'Save CSV'
     preview: 'Preview'
     required: '* marks required field'
