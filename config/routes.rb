@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :bulk_uploads, only: [:new, :create, :show]
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   devise_for :admin_users, ActiveAdmin::Devise.config
