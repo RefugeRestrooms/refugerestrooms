@@ -10,6 +10,7 @@ class BulkUploadsController < ApplicationController
     @bulk_upload = BulkUpload.new(bulk_upload_params)
     @bulk_upload.user = current_user
     if @bulk_upload.save
+      BulkImportJob.perform_later @bulk_upload
       redirect_to bulk_upload_path(@bulk_upload)
     else
       Rails.logger.error "Errors saving bulk_upload:"
