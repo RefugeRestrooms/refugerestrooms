@@ -1,6 +1,9 @@
 %footer
   .footer
-    %h4= link_to "Signout", destroy_user_session_path, method: :delete
+    - if current_user
+      %h4= link_to "Signout", destroy_user_session_path, method: :delete
+    - else
+      %h4= link_to "Login", new_user_session_path
     %a.iconLink{:href => "https://github.com/RefugeRestrooms/refugerestrooms", :aria => { :label => t('.aria-labels.github')}}
       %i.icon.fa.fa-github-square.fa-3x
     %a.iconLink{:href => "https://twitter.com/refugerestrooms", :aria => { :label => t('.aria-labels.twitter')}}
@@ -19,4 +22,3 @@
     %a{:href => "https://patreon.com/refugerestrooms"} #{t('.on-patreon')}
     %br/
     = "\&copy; #{t('.copyleft')}  #{Date.today.year} #{t('.refuge-restrooms')}".html_safe
-
