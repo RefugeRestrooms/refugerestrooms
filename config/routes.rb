@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  resources :bulk_uploads, only: [:new, :create, :show]
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :restrooms, except: [:edit, :destroy]
