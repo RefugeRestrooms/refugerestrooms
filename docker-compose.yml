@@ -13,3 +13,11 @@ services:
       - "3000:3000"
     depends_on:
       - db
+  jobber:
+    build: .
+    entrypoint: [setup/jobsEntry]
+    command: bundle exec rake jobs:work
+    volumes:
+      - .:/refugerestrooms
+    depends_on:
+      - db
