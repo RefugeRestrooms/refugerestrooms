@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :bulk_uploads, only: [:new, :create, :show]
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :restrooms, except: [:edit, :destroy]
-
-  resources :bulk_uploads, only: [:new, :create, :show]
 
   namespace :api do
     resources :docs, only: [:index]
