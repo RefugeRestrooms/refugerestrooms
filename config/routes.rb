@@ -5,18 +5,18 @@ Rails.application.routes.draw do
   }
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-    ActiveAdmin.routes(self)
-    resources :restrooms, except: [:edit, :destroy]
+  ActiveAdmin.routes(self)
+  resources :restrooms, except: [:edit, :destroy]
 
-    namespace :api do
-      resources :docs, only: [:index]
-    end
+  namespace :api do
+    resources :docs, only: [:index]
+  end
 
-    mount API::Base => '/api'
+  mount API::Base => '/api'
 
-    get '/contact', to: 'contacts#new'
-    get "/*id" => 'pages#show', as: :page, format: false
-    root 'pages#index'
+  get '/contact', to: 'contacts#new'
+  get "/*id" => 'pages#show', as: :page, format: false
+  root 'pages#index'
 
-    resources "contacts", only: [:new, :create]
+  resources "contacts", only: [:new, :create]
 end
