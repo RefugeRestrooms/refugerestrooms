@@ -10,12 +10,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super do |resource|
-  #     puts "**********************************************************"
-  #     UserMailer.approve_new_user_email(resource).deliver_now
-  #   end
-  # end
+  def create
+    puts "**********************************************************"
+    super
+    UserMailer.approve_new_user_email(@user).deliver_now
+  end
 
   # GET /resource/edit
   # def edit
