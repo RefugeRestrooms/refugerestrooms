@@ -3,6 +3,7 @@ class BulkUploadsController < ApplicationController
 
   def new
     @bulk_upload = BulkUpload.new
+    @user = current_user
   end
 
   def create

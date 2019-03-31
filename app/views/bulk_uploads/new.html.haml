@@ -1,10 +1,13 @@
 %h3= t('restroom.add_bulk')
 
-- if user_signed_in?
+- case
+- when user_signed_in? && @user.approved?
   = simple_form_for @bulk_upload do |f|
     = f.file_field :file
     = f.button :submit, t('restroom.csv_submit'), :class => "linkbutton"
+- when user_signed_in?
+  %p= t('restroom.add_bulk_request_pending')
 - else
   %p
     = t('restroom.signin_for_bulk_upload')
-    = link_to "here", new_user_registration_path 
+    = link_to "here.", new_user_registration_path 
