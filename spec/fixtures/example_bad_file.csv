@@ -1,0 +1,22 @@
+id,name,city,state,x,y,directions,comment,lat,long,created,updated,z,w,country,a,b,c
+1,Mission Creek Cafe,San Francisco,CA,FALSE,FALSE,Head straight back. behind a divider.,no key,37.757358,-122.42133,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+2,Rainbow Grocery Co-op,San Francisco,CA,TRUE,FALSE,"behind customer server, near the parking garage","need a key --- on cust service desk. sometimes they're both taken, wait by the comment board",37.769009,-122.415649,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+3,Beanery,San Francisco,CA,TRUE,FALSE,"in back, behind the counter",,37.76375,-122.466456,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+4,Coffee To The People,San Francisco,CA,TRUE,FALSE,towards the rear of the coffee shop.,usually clean,37.770064,-122.445174,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+5,Cafe Roma,San Francisco,CA,TRUE,FALSE,down a steep flight of stairs!,"kinda sketch, but hey, it's a place to pee in north beach...",37.79986,-122.409267,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+6,Maxfield's House of Caffine,san francisco,ca,TRUE,FALSE,in back to the left,no key,37.76314,-122.426473,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+7,Cafe Espresso,san francisco,CA,TRUE,FALSE,,up a steep hill,37.788854,-122.408345,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+8,Church Street Cafe,San Francisco,CA,TRUE,FALSE,in the back,Need to get a key,37.766657,-122.428856,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+9,Muddy Water's,San Francisco,CA,TRUE,FALSE,,,37.751843,-122.420841,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+10,Philz Coffee,SAN FRANCISCO,CA,TRUE,FALSE,"to the right of the counter, in back",,37.761047,-122.430769,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+11,Bang San Thai Restuarant,San Francisco,CA,TRUE,TRUE,in back to the left,two single stall gendered. different owners from mekong (closed in 2008) but still a nice place,37.785067,-122.417648,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+12,New College,SAN FRANCISCO,CA,TRUE,FALSE,,,37.776615,-122.418718,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+13,Rocking Java,SAN FRANCISCO,CA,TRUE,FALSE,,cool walls,37.76921,-122.452309,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+14,Pottery Barn,SAN FRANCISCO,CA,TRUE,TRUE,"Second floor, in the back.","You may have to walk around and pretend that you're looking at stuff to use the restrooms. There are 2 stalls (gendered) and they both lock. It's in a corner, so no one will really see which stall anyone goes into.",37.762896,-122.435026,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+15,Sparky's Diner,SAN FRANCISCO,CA,FALSE,TRUE,"in the back, down some steps","two single stalls. gender binary not rigidly enforced, people of a variety of genders openly use either.",37.766879,-122.429028,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+16,Muddy Water's Coffee,SAN FRANCISCO,CA,TRUE,FALSE,"in the back, you need to be buzzed in",,37.764496,-122.421674,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+17,GLBT Historical Society,SAN FRANCISCO,CA,TRUE,FALSE,"3rd Floor, has elevator. Open Tues-Sat, 1-5 pm.",Also worth a visit for their collection of GLBT historical material!,37.787017,-122.400826,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+18,El Rio,SAN FRANCISCO,CA,TRUE,FALSE,Back right of main bar room.,"Restrooms are labeled based on hardware available: urinals in one, toilets in the other. Not labeled by gender.",37.746667,-122.419385,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+19,LGBT Community Center,SAN FRANCISCO,CA,TRUE,FALSE,"Gender-free restroom on the main floor near the elevators, and also in the Three Dollar Bill Cafe.",,37.771704,-122.423845,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+20,maggie mudd ice cream,SAN FRANCISCO,CA,TRUE,FALSE,in back by the newspapers!,"amazing vegan ice cream! genderfree, locking, accessible, changing station.",37.739067,-122.413768,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
+21,Dolores Park Cafe,SAN FRANCISCO,CA,TRUE,FALSE,in the back!,,37.761278,-122.425808,2019-03-31 17:49:46 UTC,2019-03-31 17:49:46 UTC,0,0,US,FALSE,0,TRUE
