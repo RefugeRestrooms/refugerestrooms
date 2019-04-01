@@ -26,12 +26,12 @@ class BulkImportJob < ApplicationJob
       end
     end
 
-  # This is a stupidest-thing-that-could-work solution
-  # due to limited time at a hackathon.
-  # Please replace me with real validation error handling in the future.
-  if row_level_errors.length > 0
-    raise "problems with at least one CSV row"
-  end
+    # This is a stupidest-thing-that-could-work solution
+    # due to limited time at a hackathon.
+    # Please replace me with real validation error handling in the future.
+    if row_level_errors.length > 0
+      raise "problems with at least one CSV row"
+    end
 
   rescue Exception => e
     raise GenericError.new(message: e.message, upload: bulk_upload, row_level_errors: row_level_errors)
