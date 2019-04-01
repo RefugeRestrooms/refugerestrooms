@@ -16,6 +16,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     UserMailer.approve_new_user_email(@user).deliver_now
   end
 
+  private
+
+  def sign_up_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :notes)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :current_password, :notes)
+  end
   # GET /resource/edit
   # def edit
   #   super
