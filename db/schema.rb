@@ -9,7 +9,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 ActiveRecord::Schema.define(version: 2019_04_01_174056) do
 
   # These are extensions that must be enabled in order to support this database
@@ -109,6 +108,8 @@ ActiveRecord::Schema.define(version: 2019_04_01_174056) do
     t.boolean "changing_table", default: false
     t.integer "edit_id", default: 0
     t.boolean "approved", default: true
+    t.bigint "bulk_upload_id"
+    t.index ["bulk_upload_id"], name: "index_restrooms_on_bulk_upload_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -126,4 +127,5 @@ ActiveRecord::Schema.define(version: 2019_04_01_174056) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "restrooms", "bulk_uploads"
 end
