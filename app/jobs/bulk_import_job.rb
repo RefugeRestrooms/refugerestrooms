@@ -2,7 +2,16 @@ require 'csv'
 require 'geocoder'
 
 class BulkImportJob < ApplicationJob
+  class GenericError < StandardError
+    def initialize(message:, upload:, row_level_errors:)
+      @upload = upload
+      @row_level_errors = row_level_errors
+      super(message)
+    end
+  end
+
   queue_as :default
+  discard_on(GenericError)
 
   def perform(bulk_upload)
     contents = bulk_upload.file.download
@@ -35,14 +44,6 @@ class BulkImportJob < ApplicationJob
 
   rescue Exception => e
     raise GenericError.new(message: e.message, upload: bulk_upload, row_level_errors: row_level_errors)
-  end
-
-  class GenericError < StandardError
-    def initialize(message:, upload:, row_level_errors:)
-      @upload = upload
-      @row_level_errors = row_level_errors
-      super(message)
-    end
   end
 
   NonGeocodableRow = Struct.new(:row)

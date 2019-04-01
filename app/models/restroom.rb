@@ -83,6 +83,7 @@ class Restroom < ApplicationRecord
     end
 
     def perform_geocoding
+      return true # TODO: remove after demo
       return true if @geocoded_already
       return true if Rails.env == "test"
       return true if ENV["SEEDING_DONT_GEOCODE"]
