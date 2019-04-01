@@ -33,7 +33,7 @@ class BulkImportJob < ApplicationJob
     raise "problems with at least one CSV row"
   end
 
-  rescue e
+  rescue Exception => e
     raise GenericError.new(message: e.message, upload: bulk_upload, row_level_errors: row_level_errors)
   end
 
