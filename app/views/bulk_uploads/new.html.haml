@@ -16,7 +16,7 @@
     %li= "comment"
     %li= "lat"
     %li= "long"
-  = link_to "Sample downloadable CSV", bulk_uploads_download_csv_path
+  = link_to "Sample downloadable CSV", download_csv_bulk_uploads_path
   = simple_form_for @bulk_upload do |f|
     = f.file_field :file
     = f.button :submit, t('restroom.csv_submit'), :class => "linkbutton"
