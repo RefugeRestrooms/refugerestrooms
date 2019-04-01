@@ -11,9 +11,10 @@ class BulkImportJob < ApplicationJob
     CSV.parse(contents, headers: true) do |row|
       values = row.to_hash.slice "name", "street", "city", "state", "country"
       rr = Restroom.new values
+      rr.bulk_upload = bulk_upload
       if rr.valid?
         if rr.latitude && rr.longitude
-          rr.save
+          SaveRestroom.new(rr, false).call
         else
           # TODO: add row_error
           Rails.logger.warn "Unable to geocode data: #{values}"
