@@ -10,7 +10,7 @@ class BulkImportJob < ApplicationJob
     row_level_errors = []
 
     CSV.parse(contents, headers: true) do |row|
-      values = row.to_hash.slice "name", "street", "city", "state", "country"
+      values = row.to_hash.slice 'name', 'street', 'city', 'state', 'country', 'directions', 'comment'
       rr = Restroom.new values
       rr.bulk_upload = bulk_upload
       if rr.valid?
