@@ -2,6 +2,21 @@
 
 - case
 - when user_signed_in? && @user.approved?
+  %p= t('restroom.add_bulk_instructions')
+  %ul
+    %li= "name"
+    %li= "street"
+    %li= "city"
+    %li= "state"
+    %li= "country"
+    %li= "accessible"
+    %li= "changing_table"
+    %li= "unisex"
+    %li= "directions"
+    %li= "comment"
+    %li= "lat"
+    %li= "long"
+  = link_to "Sample downloadable CSV", bulk_uploads_download_csv_path
   = simple_form_for @bulk_upload do |f|
     = f.file_field :file
     = f.button :submit, t('restroom.csv_submit'), :class => "linkbutton"

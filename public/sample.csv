@@ -1,0 +1,3 @@
+name,street,city,state,country,accessible,changing_table,unisex,directions,comment,lat,long
+NatureBridge Office,1033 Fort Cronkhite,Sausalito,CA,US,true,false,true,You are here!,Hi Ruby by the Bay!,37.8322178,-122.536513
+NatureBridge Building 1,1033 Fort Cronkhite,Sausalito,CA,US,true,false,true,You are here!,Hi Ruby by the Bay!,37.8325482,-122.536623

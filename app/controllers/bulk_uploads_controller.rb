@@ -22,6 +22,14 @@ class BulkUploadsController < ApplicationController
   def show
   end
 
+  def download_csv
+    send_file(
+      "#{Rails.root}/public/sample.csv",
+      filename: "sample.csv",
+      type: ".csv"
+    )
+  end
+
   private
     def authenticate_approved_user!
       unless user_signed_in?
