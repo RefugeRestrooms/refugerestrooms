@@ -1,3 +1,3 @@
 ActiveAdmin.register User do
-  permit_params :email, :approved
+  permit_params :email, :approved, :notes
 end
