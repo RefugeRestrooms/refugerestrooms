@@ -2,5 +2,6 @@
 <p>
   The user with email: <%= @user.email %> would like to join Refuge Restrooms.<br>
   Please check this person out and approve or reject them.<br>
-  Here is an ActiveAdmin link: http://www.refugerestrooms.org/admin/users/<%= @user.id %>
+  Here is an ActiveAdmin link:
+  <%= Rails.env.production? ? "http://www.refugerestrooms.org" : "refuge-staging-14-pr-569.herokuapp.com" %>/admin/users/<%= @user.id %>
 </p>
