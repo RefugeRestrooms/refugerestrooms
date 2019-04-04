@@ -11,7 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    puts "**********************************************************"
     super
     UserMailer.approve_new_user_email(@user).deliver_now
   end
