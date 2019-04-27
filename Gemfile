@@ -4,11 +4,13 @@ ruby '2.5.3'
 gem 'rails', '5.2.2.1'
 
 gem 'activeadmin', '~> 1.4.1'
+gem "aws-sdk-s3", '~> 1.36.0', require: false
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bugsnag'
 gem 'coffee-rails', '~> 4.2'
 gem 'country_select'
+gem 'delayed_job_active_record'
 gem 'devise', '~> 4.6'
 gem 'geocoder', '~> 1.2.1'
 gem 'grape', '1.1'

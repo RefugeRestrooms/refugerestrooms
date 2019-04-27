@@ -27,7 +27,7 @@ module SaferstallsRails
     config.i18n.available_locales = [:en, :es, :fr, :hi, :it, :pl, :"pt-BR"]
     #config.i18n.default_locale = :fr
 
-
-
+    # ActiveJob
+    config.active_job.queue_adapter = :delayed_job
   end
 end

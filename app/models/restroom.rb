@@ -3,6 +3,7 @@
 # (accessible) is coded by 1
 
 class Restroom < ApplicationRecord
+  belongs_to :bulk_upload, optional: true
 
   include PgSearch
   pg_search_scope :search, against: {
@@ -34,7 +35,7 @@ class Restroom < ApplicationRecord
 
   include Rakismet::Model
   rakismet_attrs content: proc {
-    name + street + city + state + comment + directions + country
+    name + street + city + state + (comment || '')  + (directions || '') + country
   }
 
   after_find :strip_slashes
@@ -82,8 +83,12 @@ class Restroom < ApplicationRecord
     end
 
     def perform_geocoding
+      return true # TODO: remove after demo
+      return true if @geocoded_already
       return true if Rails.env == "test"
       return true if ENV["SEEDING_DONT_GEOCODE"]
-      geocode
+      geocode_succeeded = geocode
+      @geocoded_already = true
+      geocode_succeeded
     end
 end
