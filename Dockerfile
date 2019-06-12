@@ -15,17 +15,20 @@ RUN curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linu
   # Clean up extra (un-needed) PhantomJS files
   && rm -rf phantomjs-2.1.1-linux-x86_64/
 
-# Specify a version of Node.js to download and install
-ENV NODEJS_VERSION=v10.15.3
+# Specify a major version of Node.js to download and install
+ENV NODEJS_MAJOR_VERSION=10
 
 # Download and extract Node.js from archive supplied by nodejs.org
-RUN curl -L https://nodejs.org/dist/$NODEJS_VERSION/node-$NODEJS_VERSION-linux-x64.tar.xz -o nodejs.tar.xz \
+RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \
+  && ARCHIVE_FILENAME=$(grep -o "node-*.*.*-linux-x64.tar.xz" SHASUMS256.txt) \
+  && curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION.x/$ARCHIVE_FILENAME -o nodejs.tar.xz \
   && tar xf nodejs.tar.xz \
-  # Clean up the Node.js archive
-  && rm nodejs.tar.xz
+  && mv ./node-v*-linux-x64 /usr/local/nodejs \
+  # Clean up the Node.js archive and SHASUMS256.txt
+  && rm nodejs.tar.xz SHASUMS256.txt
 
 # Add Node.js binaries to PATH (includes Node and NPM, will include Yarn)
-ENV PATH="/node-$NODEJS_VERSION-linux-x64/bin/:${PATH}"
+ENV PATH="/usr/local/nodejs/bin/:${PATH}"
 
 # Install Yarn
 RUN npm install -g yarn
