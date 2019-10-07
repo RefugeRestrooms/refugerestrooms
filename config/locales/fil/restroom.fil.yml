@@ -20,6 +20,9 @@ fil:
     guess_location: 'Magpalagay ng kasalukuyang lokasyon'
     directions: 'Direksyon'
     directions_hint: '(hal.: ikatlong palapag sa likod, sa may bihisanang kwarto...)'
+    distance:
+      miles: 'milya'
+      kilometers: 'kilometro'
     comments_hint: '(hal.: ikaw ay dapat "paying na kustomer", ikaw ay dapat na kumilos na parang nag-browsing para sa bit...)'
     comments: 'Mga komento'
     accessible: 'Madaling ma-akses'
@@ -46,12 +49,13 @@ fil:
       downvoteerror: 'Mayroong hindi inaasahang problema sa pag-downvote sa post na ito.'
       downvotesuccess: 'Ang restroom na ito ay nai-downvote na! Maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
       new: 'Ang bagong pasko na pahingaan o restroom ay naisagawa na %{name}.'
-      updated: 'Ang entry ng pahingaan o restroom ay na-update na'
+      edit: 'Na-isumite na ang iyong pag-babago. Susuriin namin ito at babaguhin ang listahan'
+      updated: 'Ang entry ng pahingaan o restroom ay na-bago na'
       deleted: 'Ang pahingaang ito ay nai-delete na'
       searcherror: 'May error sa paghahanap ng lokasyon.'
       spam: 'Ang iyong isinumita ay na-reject bilang spam.'
-    contact:
-      contactlisting: "Kontakin kami tungkol sa post na ito!"
+    edit:
+      editlisting: Maghain ng isang pag-babago sa listahan na ito"
 
   restrooms:
     nearby:

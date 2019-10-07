@@ -1,7 +1,7 @@
 fil:
   restrooms:
     index:
-      map-view-button-label: 'View ng Mapa'
+      map-view-button-label: 'Tingna ang Mapa'
 
     show:
       thumbs-up-button-label: 'Thumbs Up'

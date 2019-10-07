@@ -4,3 +4,8 @@ fil:
       life-is-tough: 'Minsan ang buhay ay matigas ...'
       find-refuge: 'Maghanap ng Refuge'
       add-restroom-button-label: 'Magdagdag ng isang Silid'
+
+      html-alt-attributes:
+        app-store: 'I-download ang Refuge Restrooms iOS app'
+        play-store: 'I-download ang Refuge Restrooms Android app'
+        patreon: 'Suportahan ang proyekto sa Patreon'

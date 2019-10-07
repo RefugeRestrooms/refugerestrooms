@@ -1,7 +1,7 @@
 # See this documentation: https://github.com/plataformatec/simple_form#i18n
 # And this StackOverflow answer: https://stackoverflow.com/questions/35906089/changing-simple-form-submit-button-i18n-text
 
-en:
+fil:
   simple_form:
     "yes": 'Oo'
     "no": 'Hindi'
@@ -52,4 +52,3 @@ en:
     #   defaults:
     #     username: 'Pangalan ng user na mag-sign in.'
     #     password: 'Walang espesyal na mga character, mangyaring.'
-    

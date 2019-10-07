@@ -2,10 +2,10 @@ fil:
   layouts:
     navigation:
       toggle-navigation-button-label: 'I-toggle ang navigation'
-      submit-a-new-restroom-hyperlink-label: 'Magsumite ng Bagong Silid'
+      submit-a-new-restroom-hyperlink-label: 'Magsumite ng Bagong Restroom'
       about-hyperlink-label: 'Tungkol sa'
       contact-hyperlink-label: 'Makipag-ugnay sa'
 
       resources-dropdown-button-label: 'Mga Mapagkukunan'
-      download-unisex-restroom-signs-hyperlink-label: 'I-download ang Mga Palatandaan ng Unisex na Silid'
+      download-unisex-restroom-signs-hyperlink-label: 'I-download ang Mga Palatandaan ng Unisex na Restroom'
       public-api-hyperlink-label: 'Pampublikong API'
