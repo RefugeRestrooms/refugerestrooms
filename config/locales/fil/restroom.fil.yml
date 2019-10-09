@@ -8,13 +8,13 @@ fil:
         street: 'Ang Street Address'
         state: 'Estado/Probinsya'
         access: 'Madaling ma-akses?'
-        bath_type: 'Uri ng Pahingaan o Restroom'
+        bath_type: 'Uri ng Pahingaan o Banyo'
 
   search_bar:
     enter_location: 'I-enter ang address'
 
   restroom:
-    add_new: 'Magsumita ng pahingaan o restroom sa aming database'
+    add_new: 'Magsumita ng pahingaan o banyo sa aming database'
     preview: 'Prebyu'
     required: '* markahan ang kailangan na field'
     guess_location: 'Magpalagay ng kasalukuyang lokasyon'
@@ -32,7 +32,7 @@ fil:
     type:
       unisex: 'Unisex / Nyutral na kasarian'
       single_stall: 'May pangalan ng kasarian na single stall o ligtas na lugar'
-    restsubmit: 'I-save ang Restroom'
+    restsubmit: 'I-save ang banyo'
     rating:
       positive: '%{percentage}% positibo'
       unrated: 'Hindi pa nagradohan'
@@ -47,10 +47,10 @@ fil:
       upvoteerror: 'Mayroong hindi inaasahan problema sa pag-upvote sa post na ito.'
       upvotesuccess: 'Ang pahingaang ito ay nai-upvote na! maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
       downvoteerror: 'Mayroong hindi inaasahang problema sa pag-downvote sa post na ito.'
-      downvotesuccess: 'Ang restroom na ito ay nai-downvote na! Maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
-      new: 'Ang bagong pasko na pahingaan o restroom ay naisagawa na %{name}.'
+      downvotesuccess: 'Ang banyo na ito ay nai-downvote na! Maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
+      new: 'Ang bagong pasko na pahingaan o banyo ay naisagawa na %{name}.'
       edit: 'Na-isumite na ang iyong pag-babago. Susuriin namin ito at babaguhin ang listahan'
-      updated: 'Ang entry ng pahingaan o restroom ay na-bago na'
+      updated: 'Ang entry ng pahingaan o banyo ay na-bago na'
       deleted: 'Ang pahingaang ito ay nai-delete na'
       searcherror: 'May error sa paghahanap ng lokasyon.'
       spam: 'Ang iyong isinumita ay na-reject bilang spam.'
@@ -59,6 +59,6 @@ fil:
 
   restrooms:
     nearby:
-      heading: 'Kalapit na mga pahingaan o restroom'
-      body: 'bago magsumita ng pahingaan o restroom, siguraduhin na hindi ito kabilang sa mga kilala nang restrooms sa malapit.'
-      none: 'Walang nakitang restrooms sa malapit.'
+      heading: 'Kalapit na mga pahingaan o banyo'
+      body: 'bago magsumita ng pahingaan o banyo, siguraduhin na hindi ito kabilang sa mga kilala nang mga banyo sa malapit.'
+      none: 'Walang nakitang mga banyo sa malapit.'
