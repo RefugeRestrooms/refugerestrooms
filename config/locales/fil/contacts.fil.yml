@@ -1,7 +1,7 @@
 fil:
   contacts:
     new:
-      request-edit-for-restroom: 'Humiling ng edit para sa %{restroom_name}'
+      request-edit-for-restroom: 'Humiling ng pagbabago para sa %{restroom_name}'
       contact-title: 'Makipag-ugnay'
       leave-this-field-blank: 'Iwanang blangko ang patlang na ito!'
     submitted:
