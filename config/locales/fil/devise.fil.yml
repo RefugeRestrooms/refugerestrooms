@@ -29,7 +29,7 @@ fil:
     passwords:
       no_token: "Hindi ka maka-akses sa pahinang ito kung wala kang password reset mula sa iyong email. Kapag gusto mong baguhin ang password gamit ang email, dapat siguraduhin na gamitin ang buong URL na ibinigay."
       send_instructions: "Ikaw ay makatanggap ng email na may kalakip na mga tungkol sa kung papaano ma-reset ang iyong password sa iilang minuto."
-      send_paranoid_instructions: "Kapag ang iyung email ay nasa database na namin, ikaw ay makakatanggap ng recovery link sa iyong email address your email address sa iilang minuto."
+      send_paranoid_instructions: "Kung ang iyong email ay nasa database na namin, makakatanggap ka ng isang link sa pagbawi ng password sa iyong email address sa ilang minuto."
       updated: "Ang password mo ay matagumpay na napalitan.Ikaw ngayon ay naka-signed in na."
       updated_not_active: "Ang iyong password ay matagumpay nang napalitan."
     registration:

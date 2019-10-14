@@ -1,7 +1,7 @@
 fil:
   layouts:
     navigation:
-      toggle-navigation-button-label: 'I-toggle ang navigation'
+      toggle-navigation-button-label: 'I-toggle ang nabigasyon'
       submit-a-new-restroom-hyperlink-label: 'Magsumite ng Bagong Banyo'
       about-hyperlink-label: 'Tungkol sa'
       contact-hyperlink-label: 'Makipag-ugnay sa'

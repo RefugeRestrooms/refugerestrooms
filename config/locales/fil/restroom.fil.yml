@@ -5,16 +5,16 @@ fil:
         # only overridden attributes here, defaults work as expected
         # (e.g. database field 'city' will be appear as 'City')
         name: 'Lokasyon/Lugar/Pangalan ng Negosyo'
-        street: 'Ang Street Address'
+        street: 'Kalyeng kinaroroonan'
         state: 'Estado/Probinsya'
         access: 'Madaling ma-akses?'
-        bath_type: 'Uri ng Pahingaan o Banyo'
+        bath_type: 'Uri ng Pahingahan o Banyo'
 
   search_bar:
-    enter_location: 'I-enter ang address'
+    enter_location: 'I-lagay ang kinaroroonan'
 
   restroom:
-    add_new: 'Magsumita ng pahingaan o banyo sa aming database'
+    add_new: 'Magsumita ng Pahingahan o banyo sa aming database'
     preview: 'Prebyu'
     required: '* markahan ang kailangan na field'
     guess_location: 'Magpalagay ng kasalukuyang lokasyon'
@@ -23,7 +23,7 @@ fil:
     distance:
       miles: 'milya'
       kilometers: 'kilometro'
-    comments_hint: '(hal.: ikaw ay dapat "paying na kustomer", ikaw ay dapat na kumilos na parang nag-browsing para sa bit...)'
+    comments_hint: '(hal.: ikaw ay dapat mamimili, ikaw ay dapat na kumilos na parang nag-titingin lamang ng saglit...)'
     comments: 'Mga komento'
     accessible: 'Madaling ma-akses'
     not_accessible: 'Hindi pwedeng ma-akses'
@@ -31,7 +31,7 @@ fil:
     no_changing_table: 'Walang pagpapalit ng mesa'
     type:
       unisex: 'Unisex / Nyutral na kasarian'
-      single_stall: 'May pangalan ng kasarian na single stall o ligtas na lugar'
+      single_stall: 'May pangalan ng kasarian sa isang puwesto o ligtas na lugar'
     restsubmit: 'I-save ang banyo'
     rating:
       positive: '%{percentage}% positibo'
@@ -39,26 +39,26 @@ fil:
     upvote: 'Mahal ko to!'
     downvote: 'Hindi ligtas'
     confirm:
-      upvote: 'Sigurado kaba na gusto mong mag-upvote sa pahingaang ito?'
-      downvote: 'Sigurado kaba na gusto mong i-downvote ang pahingaang ito?'
+      upvote: 'Sigurado ka ba na gusto mong sang-ayunan ang pahingahang ito?'
+      downvote: 'Sigurado ka ba na gusto mong hindi sang-ayunan ang pahingahang ito?'
     flash:
       field: 'Ang kinakailangang ay naiwang blangko. Maaaring suriin muli ang pagpasa at muling i-submit ang form.'
       unexpected: 'Kami ay nakakaranas ng hindi inaasahang problema, maaaring komuntak sa amin kung ang proleba ay magpapatuloy.'
-      upvoteerror: 'Mayroong hindi inaasahan problema sa pag-upvote sa post na ito.'
-      upvotesuccess: 'Ang pahingaang ito ay nai-upvote na! maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
-      downvoteerror: 'Mayroong hindi inaasahang problema sa pag-downvote sa post na ito.'
-      downvotesuccess: 'Ang banyo na ito ay nai-downvote na! Maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
-      new: 'Ang bagong pasko na pahingaan o banyo ay naisagawa na %{name}.'
+      upvoteerror: 'Mayroong hindi inaasahan problema sa pagsang-ayon sa pahingahang ito.'
+      upvotesuccess: 'Ang pahingahang ito ay nasang-ayunan na! maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
+      downvoteerror: 'Mayroong hindi inaasahang problema sa hindi pagsang-ayon sa pahingahang ito.'
+      downvotesuccess: 'Ang banyo na ito ay hindi nasang-ayunan na! Maraming salamat sa pagbigay kontribusyon sa aming kumonidad.'
+      new: 'Ang bagong pasko na pahingahan o banyo ay naisagawa na %{name}.'
       edit: 'Na-isumite na ang iyong pag-babago. Susuriin namin ito at babaguhin ang listahan'
-      updated: 'Ang entry ng pahingaan o banyo ay na-bago na'
-      deleted: 'Ang pahingaang ito ay nai-delete na'
+      updated: 'Ang entry ng pahingahan o banyo ay na-bago na'
+      deleted: 'Ang pahingahang ito ay naalis na'
       searcherror: 'May error sa paghahanap ng lokasyon.'
-      spam: 'Ang iyong isinumita ay na-reject bilang spam.'
+      spam: 'Ang iyong isinumite ay tinanggihan bilang spam.'
     edit:
       editlisting: Maghain ng isang pag-babago sa listahan na ito"
 
   restrooms:
     nearby:
-      heading: 'Kalapit na mga pahingaan o banyo'
-      body: 'bago magsumita ng pahingaan o banyo, siguraduhin na hindi ito kabilang sa mga kilala nang mga banyo sa malapit.'
+      heading: 'Kalapit na mga pahingahan o banyo'
+      body: 'bago magsumita ng pahingahan o banyo, siguraduhin na hindi ito kabilang sa mga kilala nang mga banyo sa malapit.'
       none: 'Walang nakitang mga banyo sa malapit.'
