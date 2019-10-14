@@ -1,0 +1,54 @@
+# See this documentation: https://github.com/plataformatec/simple_form#i18n
+# And this StackOverflow answer: https://stackoverflow.com/questions/35906089/changing-simple-form-submit-button-i18n-text
+
+fil:
+  simple_form:
+    "yes": 'Oo'
+    "no": 'Hindi'
+    required:
+      text: 'kailangan'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Mangyaring suriin ang mga problema sa ibaba:"
+
+    labels:
+      defaults:
+        name: 'Pangalan'
+        street: 'Kalye'
+        city: 'Lungsod'
+        state: 'Estado / Lalawigan'
+        country: 'Bansa'
+        accessible: 'Magagamit'
+        unisex: 'Unisex'
+        changing_table: 'Pagpapalit ng lamesa'
+        directions: 'Mga Direksyon'
+        comment: 'Magkomento'
+        email: 'Email'
+        message: 'Mensahe'
+      contact:
+        name: 'Pangalan'
+        email: 'Email'
+        message: 'Mensahe'
+
+  helpers:
+    submit:
+      contact:
+        # This is the "Send message" button on the "Contact" page.
+        create: 'Magpadala ng Mensahe'
+
+    # Labels and hints examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail upang mag-sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'Pangalan ng user na mag-sign in.'
+    #     password: 'Walang espesyal na mga character, mangyaring.'
