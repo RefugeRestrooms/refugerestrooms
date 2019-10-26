@@ -24,8 +24,8 @@ module SaferstallsRails
 
     # I18n stuff
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.i18n.available_locales = [:en, :es, :fil, :fr, :hi, :it, :pl, :"pt-BR"]
-    #config.i18n.default_locale = :fr
+    config.i18n.available_locales = [:en, :es, :fil, :fr, :hi, :it, :pl, :"pt-BR", :tl]
+    config.i18n.default_locale = :en
 
 
 
