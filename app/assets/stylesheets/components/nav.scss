@@ -42,4 +42,14 @@
       cursor: pointer;
       top: 2px
   }
+
+  .dropdown-menu > li  {
+    &:not(:last-child) {
+      border-bottom: 1px solid $light-gray;
+    }
+
+    > a {
+      white-space: normal;
+    }
+  }
 }

@@ -6,7 +6,7 @@
     "jquery-ujs": "^1.2.2",
     "popper.js": "^1.14.3",
     "rails-erb-loader": "^5.4.2",
-    "swagger": "^0.7.5",
+    "swagger": "swagger-api/swagger-node#efffbbe68091b18ab6ececa06df9b41f1a4933b1",
     "swagger-ui": "^3.19.2",
     "yarn": ">=1.0.2"
   },

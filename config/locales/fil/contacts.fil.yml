@@ -1,0 +1,11 @@
+fil:
+  contacts:
+    new:
+      request-edit-for-restroom: 'Humiling ng pagbabago para sa %{restroom_name}'
+      contact-title: 'Makipag-ugnay'
+      leave-this-field-blank: 'Iwanang blangko ang patlang na ito!'
+    submitted:
+      thank-you-period: 'Salamat sa iyong mensahe.'
+      thank-you-exclamation: 'Salamat sa iyong mensahe!'
+      cannot-send: 'Hindi maipadala ang mensahe.'
+      we-will-get-back-to-you: "Babalik kami sa iyo sa lalong madaling panahon."

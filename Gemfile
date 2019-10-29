@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.5.7'
 
 gem 'rails', '5.2.2.1'
 
@@ -27,8 +27,8 @@ gem 'puma'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rack-jsonp'
 gem 'rakismet'
-gem 'sass-rails'
-gem 'simple_form', '~> 4.0'
+gem 'sassc-rails'
+gem 'simple_form', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 3.5'

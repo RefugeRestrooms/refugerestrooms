@@ -1,0 +1,8 @@
+fil:
+  restrooms:
+    index:
+      map-view-button-label: 'Tingna ang Mapa'
+
+    show:
+      thumbs-up-button-label: 'Sang-ayunan'
+      thumbs-down-button-label: 'Huwag Sang-ayunan'

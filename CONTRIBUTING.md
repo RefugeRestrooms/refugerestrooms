@@ -13,20 +13,27 @@ _(Older Mac or Windows PC? See [instructions for Docker Toolbox](https://github.
 
 _(Running Linux? See [instructions for Docker CE on Linux](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-CE-on-Linux-with-Refuge-Restrooms).)_
 
-### 3 Build the Docker Container
-Build the container from any [terminal](https://github.com/RefugeRestrooms/refugerestrooms/wiki/What-is-a-Terminal-(or-%22Terminal-Emulator%22)%3F-How-do-I-run-text-based-commands-on-my-computer%3F) program with:
+### 3 Build the Docker Containers
+Build the containers from any [terminal](https://github.com/RefugeRestrooms/refugerestrooms/wiki/What-is-a-Terminal-(or-%22Terminal-Emulator%22)%3F-How-do-I-run-text-based-commands-on-my-computer%3F) program with:
 ```
 docker-compose build
 ```
 
-### 4 Run the Docker Container
+Optional: list the containers you just built:
+```
+docker ps
+```
+
+You should see two containers: refugerestrooms_web and postgres.
+
+### 4 Run the Docker Containers
 
 You can now run the app with:
 ```
 docker-compose up
 ```
 
-The container will be reachable at this address: `localhost:3000`
+The web app will be reachable at this address: `localhost:3000`
 
 _(Point your web browser at `localhost:3000` or `127.0.0.1:3000`, or even `[IP address of computer running the container]:3000` from any computer on the same LAN. The last method is useful for testing the app/site on smart phones and tablets.)_
 
@@ -38,15 +45,39 @@ If you need to run commands on the Docker container directly, run this:
 ```
 docker-compose run web bash
 ```
-_(This will give you a full interactive terminal session running on the Docker machine. You can (for example) run `bundle update` to update the Gems in the Gemfile to more recent versions.)_
+_(This will give you a full interactive terminal session running on the Docker machine. For example, run `bundle update` to update the Gems in the Gemfile to more recent versions, or `rails console` to access web objects like `Restroom.first`.)_
 
 Occasionally, you might need to rebuild the Docker machine so it picks up major updates (such as a new version of Ruby, or an updated Gemfile). To do so, run `docker-compose down` and `docker-compose build`.
 
+If you want to access the postgres container to reach the psql command line do
+
+```
+docker-compose run db bash
+psql -h refugerestrooms_db_1 -U postgres
+```
+
+or equivalently:
+```
+docker-compose run db psql -h refugerestrooms_db_1 -U postgres
+```
+
 ### 6 Run the Tests
 ```
-docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec
+docker-compose run -e "RAILS_ENV=test" web rake db:migrate:reset spec
 ```
 _(If you want to know if your changes pass our automated testing, before even submitting your changes to RefugeRestrooms on Github, this will let you know.)_
+
+If you want to run an individual spec, first log in to the container, then the spec.  E.g.:
+```
+docker-compose run web bash
+rspec spec/models/restroom_spec.rb
+```
+
+This is equivalent, but slower during a code-test-code-test development cycle:
+
+```
+docker-compose run web rspec spec/models/restroom_spec.rb
+```
 
 ### 7 Shut down the Docker Container:
 In another terminal window, run:

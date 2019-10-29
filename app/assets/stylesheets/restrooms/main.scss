@@ -125,6 +125,10 @@
         overflow: hidden;
         margin: 8px;
     }
+
+    &.focus {
+      color: white;
+    }
 }
 .filter i.fa{
     font-size: 22px;

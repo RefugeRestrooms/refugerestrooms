@@ -6,6 +6,12 @@ Code Climate: [![Maintainability](https://api.codeclimate.com/v1/badges/a641d46a
 
 
 Waffle.io: [![Stories in Ready](https://badge.waffle.io/RefugeRestrooms/refugerestrooms.png?label=ready)](https://waffle.io/RefugeRestrooms/refugerestrooms)
+
+Bugsnag Open Source Bug Tracking:
+[Bugsnag](https://www.bugsnag.com)
+<br>
+<img src="https://global-uploads.webflow.com/5c741219fd0819540590e785/5c741219fd0819856890e790_asset%2039.svg" width="250" />
+
 # REFUGE restrooms
 
 Providing safe restroom access to transgender, intersex, and gender nonconforming individuals.
@@ -29,7 +35,7 @@ Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refuge
 
 ## Tech
 
-* Ruby Version - ruby-2.5.3
+* Ruby Version - ruby-2.5.7
 * Ruby on Rails
 * RSpec
 * Javascript
