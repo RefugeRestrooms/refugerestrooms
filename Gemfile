@@ -51,7 +51,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
-  gem 'simplecov', '~> 0.7.1', require: false
+  gem 'simplecov', '~> 0.17.1', require: false
   gem 'webmock', '~> 3.2.1'
 end
 
