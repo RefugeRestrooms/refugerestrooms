@@ -20,6 +20,12 @@
     }
 }
 
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+    .navbar-default .toiletLogo {
+        top: 8px;
+    }
+}
+
 @media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
     main, main .container {
         padding-left: 0;
