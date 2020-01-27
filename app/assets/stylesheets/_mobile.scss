@@ -8,18 +8,6 @@
 
 // Screen Width-Related Rules
 
-@media only screen and (max-width: 342px), only screen and (max-device-width: 344px) {
-
-    button.splash-add-restroom-btn > i.fa-plus-square-o {
-        margin-left: 2%;
-    }
-
-    .nav-column {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
-
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
     .navbar-default .toiletLogo {
         top: 8px;
@@ -60,9 +48,9 @@
     }
     .showPageContent {
         padding: 10px;
-
     }
 }
+
 @media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
     .container {
         width: 100%;
@@ -96,6 +84,17 @@
         font-size: 15px;
     }
 }
+
+@media only screen and (max-width: 342px), only screen and (max-device-width: 344px) {
+    button.splash-add-restroom-btn > i.fa-plus-square-o {
+        margin-left: 2%;
+    }
+    .nav-column {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 a.iconLink:hover {
     text-decoration: none;
 }
