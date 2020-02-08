@@ -45,7 +45,7 @@ describe 'the restroom search process', type: :feature, js: true do
     create(:restroom, :geocoded, name: 'Mission Creek Cafe')
 
     visit root_path
-    fill_in 'search', with: 'Mission Creek Cafe'
+    fill_in 'search', with: 'San Francisco'
     click_on 'Search'
 
     expect(page).to have_content 'Mission Creek Cafe'

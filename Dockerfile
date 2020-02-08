@@ -19,7 +19,7 @@ RUN curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linu
 ENV OPENSSL_CONF=/etc/ssl/
 
 # Specify a major version of Node.js to download and install
-ENV NODEJS_MAJOR_VERSION=10
+ENV NODEJS_MAJOR_VERSION=12
 
 # Download and extract Node.js from archive supplied by nodejs.org
 RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \

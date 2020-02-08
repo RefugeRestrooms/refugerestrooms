@@ -84,7 +84,7 @@ In another terminal window, run:
 ```
 docker-compose down
 ```
-_(Shutting down the container in this way is safer than exiting with `Ctrl + C` or `Cmd + C`, and prevents issues with breaking the `db` container.)_
+_(Shutting down the container in this way is safer than exiting with `Ctrl + C`, and prevents issues with breaking the `db` container.)_
 
 ### 8 Optional tasks:
 To clean up encoding problems in the safe2pee data, run (Use `rake db:fix_accents[dry_run]` to preview the changes.):
