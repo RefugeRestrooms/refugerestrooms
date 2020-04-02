@@ -3,7 +3,7 @@ ruby '2.5.7'
 
 gem 'rails', '5.2.4.2'
 
-gem 'activeadmin', '~> 1.4.1'
+gem 'activeadmin', '~> 2.1'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bugsnag'
