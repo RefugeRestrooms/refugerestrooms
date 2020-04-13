@@ -4,7 +4,7 @@
 
 class Restroom < ApplicationRecord
 
-  include PgSearch
+  include PgSearch::Model
   pg_search_scope :search, against: {
     :name => 'A',
     :street => 'B',

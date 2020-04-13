@@ -1,7 +1,7 @@
 env:
   global:
     - CC_TEST_REPORTER_ID=c18df080592f9c99ca8080a6d5e052aa5fd3964044a0fe0b71e48f8e18998dc2
-language: ruby
+language: minimal
 services: docker
 install:
   - docker-compose build

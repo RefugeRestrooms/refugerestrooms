@@ -40,3 +40,9 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+
+// Eliminates double-padding due to nested .container divs
+.header > .container > .container {
+  padding-left: 0;
+  padding-right: 0;
+}

@@ -1,5 +1,6 @@
 // Vendor
-import { } from 'jquery-ujs'
+require('@rails/ujs').start()
+require('jquery')
 import 'bootstrap/dist/js/bootstrap'
 
 // Views

@@ -1,38 +1,49 @@
-FROM ruby:2.5.3-slim
-ENV PHANTOM_JS=2.1.1
+FROM ruby:2.5.8-slim
 
 # Add basic binaries
 RUN apt-get update \
-  && apt-get install -y bzip2 curl gnupg wget
+  && apt-get install -y curl g++ gcc libfontconfig libpq-dev make patch xz-utils \
+  # Clean up the apt cache
+  && rm -rf /var/lib/apt/lists/*
 
-# Add the apt repository for yarn
-RUN curl -sS http://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
-  echo "deb http://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+# Download, extract and install PhantomJS from archive hosted at bitbucket
+RUN curl -L https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O \
+  # Extract and clean up the PhantomJS archive
+  && tar xf phantomjs-2.1.1-linux-x86_64.tar.bz2 && rm phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+  # Install PhantomJS binary to /usr/local/bin
+  && mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin \
+  # Clean up extra (un-needed) PhantomJS files
+  && rm -rf phantomjs-2.1.1-linux-x86_64/
 
-# Add the apt-repository for the latest node.js
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+# Work around an issue with running "phantomjs --version"
+ENV OPENSSL_CONF=/etc/ssl/
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN apt-get install build-essential chrpath libssl-dev libxft-dev -y && \
-  apt-get install libfreetype6 libfreetype6-dev -y && \
-  apt-get install libfontconfig1 libfontconfig1-dev -y && \
-  cd ~ && \
-  export PHANTOM_JS="phantomjs-2.1.1-linux-x86_64" && \
-  wget https://github.com/Medium/phantomjs/releases/download/v2.1.1/$PHANTOM_JS.tar.bz2 && \
-  tar xvjf $PHANTOM_JS.tar.bz2 && \
-  mv $PHANTOM_JS /usr/local/share && \
-  ln -sf /usr/local/share/$PHANTOM_JS/bin/phantomjs /usr/local/bin && \
-  apt-get install -y yarn
+# Specify a major version of Node.js to download and install
+ENV NODEJS_MAJOR_VERSION=12
 
-# Clean up the apt cache
-RUN rm -rf /var/lib/apt/lists/*
+# Download and extract Node.js from archive supplied by nodejs.org
+RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \
+  && ARCHIVE_FILENAME=$(grep -o "node-*.*.*-linux-x64.tar.xz" SHASUMS256.txt) \
+  && curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION.x/$ARCHIVE_FILENAME -o nodejs.tar.xz \
+  && tar xf nodejs.tar.xz \
+  && mv ./node-v*-linux-x64 /usr/local/nodejs \
+  # Clean up the Node.js archive and SHASUMS256.txt
+  && rm nodejs.tar.xz SHASUMS256.txt
 
+# Add Node.js binaries to PATH (includes Node and NPM, will include Yarn)
+ENV PATH="/usr/local/nodejs/bin/:${PATH}"
+
+# Install Yarn
+RUN npm install -g yarn
+
+# Make the "/refugerestrooms" folder, run all subsequent commands in that folder
 RUN mkdir /refugerestrooms
 WORKDIR /refugerestrooms
 
-COPY Gemfile /refugerestrooms/Gemfile
-COPY Gemfile.lock /refugerestrooms/Gemfile.lock
+# Install Ruby gems with Bundler
+COPY Gemfile Gemfile.lock /refugerestrooms/
 RUN bundle install
 
+# Install Node.js packages with Yarn
 COPY package.json yarn.lock /refugerestrooms/
-RUN yarn --pure-lockfile
+RUN yarn install --pure-lockfile

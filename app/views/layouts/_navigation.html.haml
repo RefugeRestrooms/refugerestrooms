@@ -1,6 +1,6 @@
 .container
   .row.min-headroom
-    .col-xs-12
+    .col-xs-12.nav-column
       %nav.nav.navbar-default{:role => "navigation"}
         / Brand and toggle get grouped for better mobile display
         .navbar-header
@@ -20,7 +20,6 @@
                 = t('.resources-dropdown-button-label')
                 %b.caret
               %ul.dropdown-menu
-                %li
                 %li= link_to t('.download-unisex-restroom-signs-hyperlink-label'), page_path('signs')
                 %li= link_to t('.public-api-hyperlink-label'), '/api/docs/'
         / /.navbar-collapse

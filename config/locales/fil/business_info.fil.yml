@@ -1,0 +1,23 @@
+fil:
+  business_info:
+    title: "Impormasyon tungkol sa ginagawa ng Refuge Restrooms"
+    p1header: "1) Ano ang Refuge Restrooms?"
+    p1: "Ang REFUGE ay isang web application na naglalayong magbigay ng ligtas na akses sa banyo para sa mga transgender, intersex, at mga indibidwal na di-magkatulad na kasarian. Magbasa nang higit pa tungkol sa amin sa aming <a href='/about'>Tungkol sa Pahina</a>."
+    p2header: "2) Paano napalista ang aking pasilidad sa listahang ito?"
+    p2: "Mayroong gumamit ang iyong banyo at isinumite ang iyong lokasyon bilang mapagkukunan. Ang lahat ng aming data ay isinumite ng iba't ibang taong mga gumagamit nito."
+    p3header: "3) Paano ako magiging isang mahusay na host?"
+    p3: "Salamat sa pagtatanong! Kadalasan, ang mga bisita ng REFUGE ay umaasa lamang na mabilis na huminto at magpatuloy, at tulad ng iba pang bisita, ay maaaring suportahan ang iyong negosyo o lokasyon habang kami ay naroon. Ang mahuhusay na kawani at mahusay na mga karanasan ay maaaring pumunta sa isang mahabang paraan sa pagkuha ng ilang mga pag-ibig para sa iyong lokasyon sa seksyon ng mga review ng app (higit pa sa na sa ibaba!)"
+    p4header: "4) Bakit isyu ang isang ligtas na banyo?"
+    p4:
+      first: "Ang paggamit ng banyo ay isang pang-araw-araw na aktibidad na mahirap para sa mga miyembro ng aming komunidad na pagtimunan - lalo na kapag bumibisita sa mga lugar sa labas ng kanilang pang-araw-araw na gawain. Iyan kung saan ang aming proyekto sa pagmamapa ay dumating."
+      second: "Ayon sa <a href='http://www.ustranssurvey.org/'>US Trans Survey</a>:"
+      list1: "59% ng mga sumasagot ang nag-iingat sa paggamit ng isang banyo para sa takot sa paghaharap"
+      list2: "31% iwasan ang pagkain o pag-inom habang nasa labas, upang maiwasan ang paggamit ng banyo"
+      list3: "24% ay nagkaroon ng kanilang presensya sa banyo na inuusisa"
+      list4: "12% ay ginigipit, tinutuligsa, o pinagsasamantalang sekswal sa isang banyo"
+      list5: "9% ay tinanggihan ang akses sa banyo"
+      list6: "8% ay nagkaroon ng isang isyu sa bato o impeksiyon sa ihi sa pag-iwas sa paggamit ng banyo"
+    p5header: "5) Ano ang ibig sabihin ng pagsusuri?"
+    p5: "Ang mga pagsusuri ay tumutulong sa mga bisita na magbahagi ng mga karanasan ng bawat isa tungkol sa lokasyon. Hinihikayat namin ang mga bisita na magbahagi ng mas maraming impormasyon gaya ng mayroon kami tungkol sa bawat lokasyon sa mapa."
+    p6header: "6) Paano ko aalisin ang aking listahan?"
+    p6: "Umaasa kami na iyong isasaalang-alang ang pagsunod sa iyong listahan; ito ay maaaring mangahulugan ng marami para sa kalusugan ng tao at kabutihan nito. Gayunpaman, kung mas gusto mong hindi nakalista, gamitin ang aming form sa pakikipag-ugnay upang humiling ng pag-alis at gagawin ito ng aming mga boluntaryo sa lalong madaling panahon na magagawa namin (ito ay isang bukas na proyektong pinagmulan upang lahat ng trabaho ay ginagawa ng mga boluntaryo)."
