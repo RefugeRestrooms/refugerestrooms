@@ -34,6 +34,8 @@ en:
         message: 'Message'
 
   helpers:
+    reCAPTCHA:
+      failed: 'reCAPTCHA required.'
     submit:
       contact:
         # This is the "Send message" button on the "Contact" page.

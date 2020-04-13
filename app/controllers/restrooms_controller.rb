@@ -1,3 +1,5 @@
+require_relative '../helpers/recaptcha_helper'
+
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
@@ -27,8 +29,17 @@ class RestroomsController < ApplicationController
   end
 
   def create
-    restroom = Restroom.new(permitted_params)
-    @restroom = SaveRestroom.new(restroom).call
+    @restroom = Restroom.new(permitted_params)
+
+    # Verify recaptcha code
+    recaptcha_response = params['g-recaptcha-response']
+    unless RecaptchaHelper.valid_token? recaptcha_response
+      flash.now[:error] = I18n.t('helpers.reCAPTCHA.failed')
+      render 'new'
+      return
+    end
+
+    @restroom = SaveRestroom.new(@restroom).call
 
     if @restroom.errors.empty?
       if @restroom.approved?

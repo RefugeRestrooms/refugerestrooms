@@ -28,6 +28,9 @@
   = f.input :directions, :placeholder => t('restroom.directions_hint'), :as => :text, :required => false, :input_html => { :class => "span6" }
   = f.input :comment, :placeholder => t('restroom.comments_hint'), :as => :text, :required => false, :input_html => { :class => "span6" }
 
+  .form-group
+    .g-recaptcha{'data-sitekey' => "#{ENV['RECAPTCHA_SITE_KEY']}"}
+
   / Click to preview location
   %button{type: 'button', class: 'preview-btn linkbutton'}
     = t('restroom.preview')

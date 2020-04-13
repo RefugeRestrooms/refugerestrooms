@@ -7,6 +7,7 @@
 %meta{:content => "initial-scale=1, maximum-scale=1", :name => "viewport"}/
 
 %script{:src => "https://maps.googleapis.com/maps/api/js?v=quarterly&libraries=places&key=AIzaSyBXcCrqzMlm-ZmtNQve7AuipNdE4vySUF0"}
+= javascript_include_tag "https://www.google.com/recaptcha/api.js", :async => true, :defer => true
 = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
 = javascript_pack_tag "application", "data-turbolinks-track": "reload"
 = csrf_meta_tags
