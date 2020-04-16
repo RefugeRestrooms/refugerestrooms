@@ -16,4 +16,20 @@
     %a{:href => "https://patreon.com/refugerestrooms"} #{t('.on-patreon')}
     %br/
     = "\&copy; #{t('.copyleft')}  #{Date.today.year} #{t('.refuge-restrooms')}".html_safe
-
+    %br/
+    %br/
+    = link_to 'English', request.query_parameters.merge({:locale => 'en'}), class: "locale_link"
+    &bull;
+    = link_to 'Español', request.query_parameters.merge({:locale => 'es'}), class: "locale_link"
+    &bull;
+    = link_to 'Filipino/Tagalog', request.query_parameters.merge({:locale => 'fil'}), class: "locale_link"
+    &bull;
+    = link_to 'Français', request.query_parameters.merge({:locale => 'fr'}), class: "locale_link"
+    &bull;
+    = link_to 'हिन्दी', request.query_parameters.merge({:locale => 'hi'}), class: "locale_link"
+    &bull;
+    = link_to 'Italiano', request.query_parameters.merge({:locale => 'it'}), class: "locale_link"
+    &bull;
+    = link_to 'polski', request.query_parameters.merge({:locale => 'pl'}), class: "locale_link"
+    &bull;
+    = link_to 'Português do Brasil', request.query_parameters.merge({:locale => 'pt-BR'}), class: "locale_link"
