@@ -4,7 +4,7 @@
       %nav.nav.navbar-default{:role => "navigation"}
         / Brand and toggle get grouped for better mobile display
         .navbar-header
-          = link_to root_path, id: "logo", class: "toiletLogo" do
+          %a#logo.toiletLogo{:href => "/"}
             .navbar-brand Refuge Restrooms
           %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only= t('.toggle-navigation-button-label')
@@ -21,5 +21,5 @@
                 %b.caret
               %ul.dropdown-menu
                 %li= link_to t('.download-unisex-restroom-signs-hyperlink-label'), page_path('signs')
-                %li= link_to t('.public-api-hyperlink-label'), api_docs_path
+                %li= link_to t('.public-api-hyperlink-label'), '/api/docs/'
         / /.navbar-collapse
