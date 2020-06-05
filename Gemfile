@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.8'
 
-gem 'rails', '5.2.4.2'
+gem 'rails', '5.2.4.3'
 
 gem 'activeadmin', '~> 2.1'
 gem 'bootsnap', require: false
@@ -18,7 +18,7 @@ gem 'haml'
 gem 'high_voltage', '~> 3.0.0'
 gem 'http_accept_language'
 gem 'jbuilder', '~> 2.5'
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.1'
 gem 'kaminari-grape', '~> 1.0'
 gem 'mail_form', '>= 1.7.0'
 gem 'pg'
