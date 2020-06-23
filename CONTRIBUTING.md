@@ -13,7 +13,7 @@ _(Older Mac or Windows PC? See [instructions for Docker Toolbox](https://github.
 
 _(Running Linux? See [instructions for Docker CE on Linux](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-CE-on-Linux-with-Refuge-Restrooms).)_
 
-Trouble with setting up docker? The [Troubleshooting Docker wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Troubleshooting-Docker) outlines solutions for common errors.
+Trouble with docker? The [Troubleshooting Docker wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Troubleshooting-Docker) outlines solutions for common errors.
 
 ### 3 Build the Docker Containers
 Build the containers from any [terminal](https://github.com/RefugeRestrooms/refugerestrooms/wiki/What-is-a-Terminal-(or-%22Terminal-Emulator%22)%3F-How-do-I-run-text-based-commands-on-my-computer%3F) program with:
