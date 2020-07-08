@@ -6,12 +6,14 @@
 https://help.github.com/articles/fork-a-repo/
 
 ### 2 Install Docker.
-- **Windows 10:** https://store.docker.com/editions/community/docker-ce-desktop-windows
+- **Windows 10 (Pro/Enterprise, 64-bit):** https://store.docker.com/editions/community/docker-ce-desktop-windows
 - **macOS El Capitan 10.11 and newer:** https://store.docker.com/editions/community/docker-ce-desktop-mac
 
-_(Older Mac or Windows PC? See [instructions for Docker Toolbox](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-Toolbox-with-Refuge-Restrooms).)_
+_(Other Mac or Windows OS? See [instructions for Docker Toolbox](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-Toolbox-with-Refuge-Restrooms).)_
 
 _(Running Linux? See [instructions for Docker CE on Linux](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-CE-on-Linux-with-Refuge-Restrooms).)_
+
+Trouble with docker? The [Troubleshooting Docker wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Troubleshooting-Docker) outlines solutions for common errors.
 
 ### 3 Build the Docker Containers
 Build the containers from any [terminal](https://github.com/RefugeRestrooms/refugerestrooms/wiki/What-is-a-Terminal-(or-%22Terminal-Emulator%22)%3F-How-do-I-run-text-based-commands-on-my-computer%3F) program with:
