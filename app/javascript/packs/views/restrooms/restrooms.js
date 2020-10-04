@@ -38,27 +38,21 @@ $(() => {
     applyFilters(filters);
   }
 
-  $('#ada_filter').click(function() {
-    if ($(this).hasClass("active")) {
-      removeFilter('accessible');
-    } else {
-      addFilter('accessible');
-    }
-  });
+  function addOnClickEvent([filterElementId, filter]) {
+    $(filterElementId).click(function() {
+      if ($(this).hasClass("active")) {
+        removeFilter(filter);
+      } else {
+        addFilter(filter);
+      }
+    });
+  }
 
-  $('#unisex_filter').click(function() {
-    if ($(this).hasClass("active")) {
-      removeFilter('unisex');
-    } else {
-      addFilter('unisex');
-    }
-  });
+  const filters = {
+    '#ada_filter': 'accessible',
+    '#unisex_filter': 'unisex',
+    '#changing_table_filter': 'changing_table'
+  }
 
-  $('#changing_table_filter').click(function() {
-    if ($(this).hasClass("active")) {
-      removeFilter('changing_table');
-    } else {
-      addFilter('changing_table');
-    }
-  });
+  Object.entries(filters).forEach(addOnClickEvent);
 });
