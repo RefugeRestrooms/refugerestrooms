@@ -1,1 +1,2 @@
-theme: jekyll-theme-slate
+title: Refuge Restrooms
+permalink: /:year/:month/:day/:title:output_ext
