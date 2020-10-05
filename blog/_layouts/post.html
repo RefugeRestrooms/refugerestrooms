@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{page.title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{site.url}}/refugerestrooms/css/main.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+     <h1>{{ page.title }}</h1>
+     <p class="meta">{{ page.date | date_to_string }}</p>
+     <div class="container">
+        {{ content }}
+     </div>
+     <footer>
+       <a href="https://github.com/RefugeRestrooms/refugerestrooms">github.com/refugerestrooms</a>
+     </footer>
+  </body>
+</html>
