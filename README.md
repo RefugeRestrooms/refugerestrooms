@@ -57,6 +57,10 @@ Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refuge
 
 If you want to join the Refuge Restrooms Slack channel, you can do so by [clicking on this link.](https://join.slack.com/t/refugelgbt/shared_invite/zt-3zaagpad-DvyfAPcepuRzFBJix1uYkg)
 
+## Blog
+
+See our latest blog posts [here.](https://RefugeRestrooms.github.io/refugerestrooms/blog/)
+
 ## License
 
 Copyright (C) 2014–2017 Teagan Widmer and contributors
