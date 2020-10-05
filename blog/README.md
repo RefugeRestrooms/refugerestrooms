@@ -1,3 +1,6 @@
+# Set up the Blog
+In the repository settings, navigate to GitHub pages. Select a branch to build the website from, a theme if desired, and a custom domain if desired. Save the settings.
+
 # How to Create a Blog Post
 Go to the _posts/ directory and create a new file with the format: YYYY-MM-DD-title-of-post.md
 <br>
