@@ -11,6 +11,7 @@
 
 require:
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   Exclude:
@@ -31,3 +32,19 @@ Style/FrozenStringLiteralComment:
 
 Style/StringLiterals:
   Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+    - factory
+    - define
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Style/RegexpLiteral:
+  AllowInnerSlashes: true

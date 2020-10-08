@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe RestroomsController, type: :controller do
-  it "should get index" do
+  it "#index" do
     get :index
     assert_response :success
   end
 
-  context "voting" do
+  describe "voting" do
     let(:restroom) { FactoryBot.create(:restroom) }
 
-    it "should downvote" do
+    it "can downvote" do
       post_params = {
         id: restroom.id,
         restroom: {
@@ -17,12 +17,12 @@ describe RestroomsController, type: :controller do
         }
       }
 
-      expect {
+      expect do
         post :update, params: post_params
-      }.to change { restroom.reload.downvote }.by 1
+      end.to change { restroom.reload.downvote }.by 1
     end
 
-    it "should upvote" do
+    it "can upvote" do
       post_params = {
         id: restroom.id,
         restroom: {
@@ -30,9 +30,9 @@ describe RestroomsController, type: :controller do
         }
       }
 
-      expect {
+      expect do
         post :update, params: post_params
-      }.to change { restroom.reload.upvote }.by 1
+      end.to change { restroom.reload.upvote }.by 1
     end
   end
 end
