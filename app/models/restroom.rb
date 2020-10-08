@@ -3,19 +3,21 @@
 # (accessible) is coded by 1
 
 class Restroom < ApplicationRecord
-
   include PgSearch::Model
-  pg_search_scope :search, against: {
-    :name => 'A',
-    :street => 'B',
-    :city => 'C',
-    :state => 'D',
-    :comment => 'B',
-    :directions => 'B',
-    :country => 'D',
-  },
-  using: {tsearch: {dictionary: "english"}},
-  ignoring: :accents
+  pg_search_scope(
+    :search,
+    against: {
+      :name => 'A',
+      :street => 'B',
+      :city => 'C',
+      :state => 'D',
+      :comment => 'B',
+      :directions => 'B',
+      :country => 'D',
+    },
+    using: { tsearch: { dictionary: "english" } },
+    ignoring: :accents
+  )
 
   validates :name, :street, :city, :state, presence: true
 
@@ -75,15 +77,16 @@ class Restroom < ApplicationRecord
 
   private
 
-    def strip_slashes
-      ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
-        attributes[field].try(:gsub!, "\\'", "'")
-      end
+  def strip_slashes
+    ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
+      attributes[field].try(:gsub!, "\\'", "'")
     end
+  end
 
-    def perform_geocoding
-      return true if Rails.env == "test"
-      return true if ENV["SEEDING_DONT_GEOCODE"]
-      geocode
-    end
+  def perform_geocoding
+    return true if Rails.env == "test"
+    return true if ENV["SEEDING_DONT_GEOCODE"]
+
+    geocode
+  end
 end

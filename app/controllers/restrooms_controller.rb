@@ -73,14 +73,15 @@ class RestroomsController < ApplicationController
     redirect_to @restroom
   end
 
-private
+  private
+
   def list_restrooms
     @restrooms = Restroom.current.page(params[:page])
     @restrooms = if params[:search].present? || params[:map] == "1"
-      @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
-    else
-      @restrooms.reverse_order
-    end
+                   @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+                 else
+                   @restrooms.reverse_order
+                 end
   end
 
   def display_errors

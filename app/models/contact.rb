@@ -5,7 +5,7 @@ class Contact < MailForm::Base
   attribute :restroom_name, :allow_blank => true
   validate :restroom_must_exist
   attribute :message
-  attribute :nickname,  :captcha  => true
+  attribute :nickname, :captcha => true
 
   def restroom_must_exist
     if restroom_id.present?
@@ -14,6 +14,7 @@ class Contact < MailForm::Base
       end
     end
   end
+
   # Declare the e-mail headers. It accepts anything the mail method
   # in ActionMailer accepts.
   def headers
