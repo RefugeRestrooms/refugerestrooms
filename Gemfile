@@ -42,6 +42,8 @@ group :development, :test do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
