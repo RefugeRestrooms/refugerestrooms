@@ -1,10 +1,11 @@
 require_relative '../helpers/recaptcha_helper'
 
+# rubocop:disable Metrics/ClassLength
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
   before_action :list_restrooms, only: [:index]
-  before_action :find_restroom, only: [:show, :update, :edit, :destroy]
+  before_action :find_restroom, only: %i[show update edit]
 
   def index
     if params[:nearby]
@@ -14,6 +15,7 @@ class RestroomsController < ApplicationController
     end
   end
 
+  # rubocop:disable Metrics/MethodLength
   def new
     if params[:edit_id]
       @restroom = find_restroom
@@ -27,7 +29,12 @@ class RestroomsController < ApplicationController
       @restroom = Restroom.new
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
+  def show; end
+
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def create
     @restroom = Restroom.new(permitted_params)
 
@@ -57,12 +64,18 @@ class RestroomsController < ApplicationController
       render 'new'
     end
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
+  def edit; end
+
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def update
     if params[:restroom][:downvote]
-      Restroom.increment_counter(:downvote, @restroom.id)
+      Restroom.increment_counter(:downvote, @restroom.id) # rubocop:disable Rails/SkipsModelValidations
     elsif params[:restroom][:upvote]
-      Restroom.increment_counter(:upvote, @restroom.id)
+      Restroom.increment_counter(:upvote, @restroom.id) # rubocop:disable Rails/SkipsModelValidations
     elsif @restroom.update(permitted_params)
       flash[:notice] = I18n.t('restroom.flash.updated')
     else
@@ -72,13 +85,15 @@ class RestroomsController < ApplicationController
 
     redirect_to @restroom
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
   private
 
   def list_restrooms
     @restrooms = Restroom.current.page(params[:page])
     @restrooms = if params[:search].present? || params[:map] == "1"
-                   @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+                   @restrooms.near([params[:lat], params[:long]], 20, order: 'distance')
                  else
                    @restrooms.reverse_order
                  end
@@ -86,7 +101,7 @@ class RestroomsController < ApplicationController
 
   def display_errors
     if @restroom.errors.any?
-      errors = @restroom.errors.each do |attribute, message|
+      @restroom.errors.each do
         flash[:alert] = I18n.t('restroom.flash.field')
       end
     else
@@ -98,6 +113,7 @@ class RestroomsController < ApplicationController
     @restroom = Restroom.find(params[:id])
   end
 
+  # rubocop:disable Metrics/MethodLength
   def permitted_params
     params.require(:restroom).permit(
       :name,
@@ -116,4 +132,6 @@ class RestroomsController < ApplicationController
       :approved
     )
   end
+  # rubocop:enable Metrics/MethodLength
 end
+# rubocop:enable Metrics/ClassLength
