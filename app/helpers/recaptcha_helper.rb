@@ -13,9 +13,7 @@ module RecaptchaHelper
     end
   end
 
-  private
-
-  def verify(token)
+  def self.verify(token)
     # Get secret from env
     secret = ENV['RECAPTCHA_SECRET_KEY']
 
