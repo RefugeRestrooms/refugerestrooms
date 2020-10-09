@@ -5,7 +5,7 @@ require 'json'
 # spec/spec_helper.rb
 #
 
-require_relative './locations.rb'
+require_relative './locations'
 
 Capybara.register_driver :poltergeist_debug do |app|
   Capybara::Poltergeist::Driver.new(
@@ -44,7 +44,7 @@ RSpec.configure do |config|
 
     # Akismet response for non-spam
     stub_request(:post, /.*.rest.akismet.com\/1.1\/comment-check/)
-      .with { |request| !request.body.include? "Spam" }
+      .with { |request| request.body.exclude? "Spam" }
       .to_return(status: 200, body: 'false', headers: {})
   end
 end

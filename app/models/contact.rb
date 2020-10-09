@@ -1,6 +1,6 @@
 class Contact < MailForm::Base
   attribute :name, validate: true
-  attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  attribute :email, validate: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i # rubocop:disable Style/RedundantRegexpEscape, Style/RedundantRegexpCharacterClass
   attribute :restroom_id, allow_blank: true
   attribute :restroom_name, allow_blank: true
   validate :restroom_must_exist
