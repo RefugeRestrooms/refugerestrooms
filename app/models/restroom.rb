@@ -25,7 +25,8 @@ class Restroom < ApplicationRecord
   after_validation :perform_geocoding
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
-    if geo == results.first
+    geo = restuls.first
+    if geo
       obj.name    = geo.address
       obj.street  = geo.address.split(',').first
       obj.city    = geo.city
