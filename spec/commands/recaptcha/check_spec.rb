@@ -36,4 +36,16 @@ RSpec.describe Recaptcha::Check, type: :command do
       expect(subject).to be_falsy
     end
   end
+
+  context 'with a non responding server' do
+    before { stub_request(:any, described_class::RECAPTCHA_URI).to_timeout }
+    
+    it 'does not raise error' do
+      expect {
+        subject
+      }.to_not raise_error
+    end
+
+    it { is_expected.to be_falsy }
+  end
 end

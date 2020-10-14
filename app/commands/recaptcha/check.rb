@@ -15,11 +15,13 @@ module Recaptcha
       request = Net::HTTP::Post.new(uri)
       request.set_form_data(secret: @secret, response: @token)
 
-      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |req|
+      response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true, read_timeout: 3) do |req|
         req.request(request)
       end
-      
+
       JSON.parse(response.body).dig('success')
+    rescue Net::ReadTimeout, Net::OpenTimeout
+      false
     end
 
     def uri
