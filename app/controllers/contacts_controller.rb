@@ -1,5 +1,3 @@
-require_relative '../helpers/recaptcha_helper'
-
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new(restroom_id: params['restroom_id'], restroom_name: params['restroom_name'])
@@ -15,7 +13,7 @@ class ContactsController < ApplicationController
 
     # Verify recaptcha code
     recaptcha_response = params['g-recaptcha-response']
-    unless RecaptchaHelper.valid_token? recaptcha_response
+    unless Recaptcha::Check.call(recaptcha_response)
       flash.now[:error] = I18n.t('helpers.reCAPTCHA.failed')
       render :new
       return
