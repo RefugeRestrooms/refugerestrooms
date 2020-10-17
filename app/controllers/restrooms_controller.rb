@@ -1,5 +1,3 @@
-require_relative '../helpers/recaptcha_helper'
-
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
@@ -34,7 +32,7 @@ class RestroomsController < ApplicationController
 
     # Verify recaptcha code
     recaptcha_response = params['g-recaptcha-response']
-    unless RecaptchaHelper.valid_token? recaptcha_response
+    unless Recaptcha::Check.call(recaptcha_response)
       flash.now[:error] = I18n.t('helpers.reCAPTCHA.failed')
       render 'new'
       return
