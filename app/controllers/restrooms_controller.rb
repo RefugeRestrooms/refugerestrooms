@@ -3,6 +3,7 @@ require_relative '../helpers/recaptcha_helper'
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
+  before_action :restrooms_filters, only: [:index]
   before_action :list_restrooms, only: [:index]
   before_action :find_restroom, only: [:show, :update, :edit, :destroy]
 
@@ -74,13 +75,28 @@ class RestroomsController < ApplicationController
   end
 
 private
+  def restrooms_filters
+    @filters =
+      params
+        .fetch(:filters, '')
+        .split(',')
+        .reduce({}) do |filters, filter|
+          filters[filter] = true if ['accessible', 'changing_table', 'unisex'].include?(filter)
+
+          filters
+        end
+  end
+
   def list_restrooms
-    @restrooms = Restroom.current.page(params[:page])
-    @restrooms = if params[:search].present? || params[:map] == "1"
-      @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
-    else
-      @restrooms.reverse_order
-    end
+    @restrooms = Restroom.current.where(@filters).page(params[:page])
+    @restrooms =
+      if params[:search].present? || params[:map] == "1"
+        @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+      else
+        @restrooms.reverse_order
+      end
+
+    @restrooms = @restrooms.out_of_range? ? @restrooms.page(1) : @restrooms
   end
 
   def display_errors
