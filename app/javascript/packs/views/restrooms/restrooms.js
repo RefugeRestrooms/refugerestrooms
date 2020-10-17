@@ -3,6 +3,12 @@
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(() => {
+  const filters = {
+    '#ada_filter': 'accessible',
+    '#unisex_filter': 'unisex',
+    '#changing_table_filter': 'changing_table'
+  };
+
   function getSearchParams() {
     const { search: search } = location;
     return new URLSearchParams(search);
@@ -38,7 +44,8 @@ $(() => {
     applyFilters(filters);
   }
 
-  function addOnClickEvent([filterElementId, filter]) {
+  function addOnClickEvent(filterElementId) {
+    const filter = filters[filterElementId];
     $(filterElementId).click(function() {
       if ($(this).hasClass("active")) {
         removeFilter(filter);
@@ -48,11 +55,5 @@ $(() => {
     });
   }
 
-  const filters = {
-    '#ada_filter': 'accessible',
-    '#unisex_filter': 'unisex',
-    '#changing_table_filter': 'changing_table'
-  }
-
-  Object.entries(filters).forEach(addOnClickEvent);
+  Object.keys(filters).forEach(addOnClickEvent);
 });
