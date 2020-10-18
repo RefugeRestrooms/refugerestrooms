@@ -1,50 +1,40 @@
 import { Maps } from '../../lib/maps';
 
+let URLParamsParser = window.URLSearchParams;
+
+// Polyfill for Poltergeist.
+if (!URLParamsParser) {
+  URLParamsParser = function (locationSearch) {
+    this.get = (key) => this.queryParams[key];
+    this.queryParams = locationSearch
+      .slice(1)
+      .split('&')
+      .map(param => param.split('='))
+      .reduce((acc, value) => {
+        return acc.concat(value);
+      }, [])
+      .reduce((acc, currValue, currIdx, ary) => {
+        if(currIdx % 2 == 0) {
+          acc[currValue] = ary[currIdx + 1];
+        }
+        return acc;
+      }, {});
+  }
+}
+
 $(function(){
-  var headerHidden = false;
-  var mapInitialized = false;
-  var mapShow = false;
-  var mapContainer = $("#mapContainer");
-  var list = $("#list");
-  var mapToggle = $(".mapToggle");
-  var search = $("#search");
-
-  function toggleMap (){
-    if (mapShow) {
-      mapToggle.html("Map View");
-      // animate
-      mapContainer.fadeOut(500, function() { list.fadeIn(500) });
-    } else{
-      mapToggle.html("List View");
-      // animate
-      list.fadeOut(500, function() { mapContainer.fadeIn(500, initPoints) });
-    }
-    mapShow = !mapShow;
+  function getSearchParams() {
+    const { search: search } = location;
+    return new URLParamsParser(search);
   }
 
-  function initPoints(){
-    // initialize the map if it wasn't already on
-    if (!mapInitialized && mapContainer.data('latitude') && mapContainer.data('longitude')) {
-      // get a list of points from the server based on the searched location
-      $.get( '/restrooms' + window.location.search , {}, (points) => {
-        Maps.loadMapWithPoints(mapContainer.data('latitude'), mapContainer.data('longitude'),
-                               points);
-      }, 'json');
-      mapInitialized = true;
-    }
-  }
+  if (getSearchParams().get('view') == 'map') {
+    $.get('/restrooms' + window.location.search , {}, (points) => {
+      const lat = getSearchParams().get('lat');
+      const long = getSearchParams().get('long');
 
-
-  if (mapContainer.length > 0 && list.length > 0 && mapToggle.length > 0) {
-    if (!mapContainer.data('latitude') || !mapContainer.data('longitude')) {
-      // catch bad URL
-      searchLocation(search.val());
-    }
-
-    // hide the map
-    mapContainer.fadeOut(0);
-
-    // toggle which display is open
-    mapToggle.click(toggleMap);
+      Maps.loadMapWithPoints(lat, long, points);
+      $("#mapContainer").fadeIn(500);
+    }, 'json');
   }
 });

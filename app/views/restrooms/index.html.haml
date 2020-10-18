@@ -12,15 +12,18 @@
           %input{:type => "checkbox", :checked => @filters.keys.include?('changing_table')}
           %i.fa.fa-child
 
-      .map-toggle-btn.mapToggle.linkbutton.btn-lg.btn-light-purple
-        = t('.map-view-button-label')
+      - view_label = @view == 'map' ? 'List View' : 'Map View'
+      - view_toggle = @view == 'map' ? {view: 'list'} : {view: 'map'}
+      = link_to view_label, restrooms_path(request.query_parameters.merge(view_toggle)), class: 'map-toggle-btn linkbutton btn pull-right btn-lg btn-light-purple'
 
 .restrooms-index-content
+- if @view == 'map'
   .row
     .col-sm-12.headroom
       #results
         = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do
           #mapArea
+- else
   .row
     .col-sm-12.headroom
       %ul{:class => "restrooms-list", :id => "list"}

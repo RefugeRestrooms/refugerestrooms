@@ -8,6 +8,7 @@ class RestroomsController < ApplicationController
   before_action :find_restroom, only: [:show, :update, :edit, :destroy]
 
   def index
+    @view = params[:view] || 'list'
     if params[:nearby]
       render :nearby, layout: false
     else
