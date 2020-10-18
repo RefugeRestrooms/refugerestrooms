@@ -1,6 +1,5 @@
 require_relative '../helpers/recaptcha_helper'
 
-# rubocop:disable Metrics/ClassLength
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
