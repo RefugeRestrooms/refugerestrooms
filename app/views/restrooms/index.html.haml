@@ -2,14 +2,14 @@
   .col-xs-12.headroom
     #filters.clearfix
       .btn-group{:data => {:toggle => "buttons"}}
-        %label#ada_filter.filter.btn.btn-light-purple.linkbutton{:title => t("restroom.accessible")}
-          %input{:type => "checkbox"}
+        %button#ada_filter.filter.btn.btn-light-purple.linkbutton{:title => t("restroom.accessible"), :class => ("active" if @filters.keys.include?('accessible'))}
+          %input{:type => "checkbox", :checked => @filters.keys.include?('accessible')}
           %i.fa.fa-wheelchair
-        %label#unisex_filter.filter.btn-light-purple.btn.linkbutton{:title => t("restroom.type.unisex")}
-          %input{:type => "checkbox"}
+        %button#unisex_filter.filter.btn-light-purple.btn.linkbutton{:title => t("restroom.type.unisex"), :class => ("active" if @filters.keys.include?('unisex'))}
+          %input{:type => "checkbox", :checked => @filters.keys.include?('unisex')}
           %i.fa.fa-transgender-alt
-        %label#changing_table_filter.filter.btn-light-purple.btn.linkbutton{:title => t("restroom.changing_table")}
-          %input{:type => "checkbox"}
+        %button#changing_table_filter.filter.btn-light-purple.btn.linkbutton{:title => t("restroom.changing_table"), :class => ("active" if @filters.keys.include?('changing_table'))}
+          %input{:type => "checkbox", :checked => @filters.keys.include?('changing_table')}
           %i.fa.fa-child
 
       .map-toggle-btn.mapToggle.linkbutton.btn-lg.btn-light-purple

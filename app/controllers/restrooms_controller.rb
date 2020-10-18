@@ -4,6 +4,7 @@ require_relative '../helpers/recaptcha_helper'
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
+  before_action :restrooms_filters, only: [:index]
   before_action :list_restrooms, only: [:index]
   before_action :find_restroom, only: %i[show update edit]
 
@@ -90,14 +91,29 @@ class RestroomsController < ApplicationController
 
   private
 
-  def list_restrooms
-    @restrooms = Restroom.current.page(params[:page])
-    @restrooms = if params[:search].present? || params[:map] == "1"
-                   @restrooms.near([params[:lat], params[:long]], 20, order: 'distance')
-                 else
-                   @restrooms.reverse_order
-                 end
+  def restrooms_filters
+    @filters =
+      params
+      .fetch(:filters, '')
+      .split(',')
+      .each_with_object({}) do |filter, filters|
+        filters[filter] = true if %w[accessible changing_table unisex].include?(filter)
+      end
   end
+
+  # rubocop:disable Metrics/AbcSize
+  def list_restrooms
+    @restrooms = Restroom.current.where(@filters).page(params[:page])
+    @restrooms =
+      if params[:search].present? || params[:map] == "1"
+        @restrooms.near([params[:lat], params[:long]], 20, order: 'distance')
+      else
+        @restrooms.reverse_order
+      end
+
+    @restrooms = @restrooms.out_of_range? ? @restrooms.page(1) : @restrooms
+  end
+  # rubocop:enable Metrics/AbcSize
 
   def display_errors
     if @restroom.errors.any?
