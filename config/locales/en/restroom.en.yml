@@ -48,6 +48,7 @@ en:
       upvotesuccess: 'This restroom has been upvoted! Thank you for contributing to our community.'
       downvoteerror: 'There was an unexpected problem downvoting this post.'
       downvotesuccess: 'This restroom has been downvoted! Thank you for contributing to our community.'
+      alreadyvoted: 'You have already voted for this restroom.'
       new: 'A new restroom entry has been created for %{name}.'
       edit: 'Your edit has been submitted. We will review it and update the listing'
       updated: 'This restroom entry has been updated'

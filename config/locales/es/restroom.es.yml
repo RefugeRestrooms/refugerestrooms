@@ -48,6 +48,7 @@ es:
       upvotesuccess: '¡Este baño se ha calificado en positivo! Gracias por contribuir a nuestra comunidad.'
       downvoteerror: 'Se generó un problema inesperado con su calificación negativa.'
       downvotesuccess: '¡Este baño se ha calificado en negativo! Gracias por contribuir a nuestra comunidad.'
+      alreadyvoted: 'Ya calificó a este baño.'
       new: 'Una nueva entrada de baño se ha creado para %{name}.'
       updated: 'Esta entrada de baño ha sido actualizada'
       deleted: 'Esta entrada de baño ha sido borrada'
