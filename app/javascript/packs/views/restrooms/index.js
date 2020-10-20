@@ -2,7 +2,7 @@ import { Maps } from '../../lib/maps';
 
 let URLParamsParser = window.URLSearchParams;
 
-// Polyfill for Poltergeist.
+// Polyfill for old browsers.
 if (!URLParamsParser) {
   URLParamsParser = function (locationSearch) {
     this.get = (key) => this.queryParams[key];
