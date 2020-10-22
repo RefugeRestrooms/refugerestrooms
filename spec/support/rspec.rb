@@ -18,7 +18,6 @@ Capybara.javascript_driver = :poltergeist_debug
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
-# rubocop:disable Metrics/BlockLength
 RSpec.configure do |config|
   config.include Locations
 
@@ -38,11 +37,6 @@ RSpec.configure do |config|
       .to_return(status: 200, body: recaptcha_response.to_json,
                  headers: { 'Content-Type' => 'application/json' })
 
-    recaptcha_response = { 'success' => true }
-    stub_request(:post, 'https://www.google.com/recaptcha/api/siteverify')
-      .to_return(status: 200, body: recaptcha_response.to_json,
-                 headers: { 'Content-Type' => 'application/json' })
-
     # Akismet response for spam
     stub_request(:post, /.*.rest.akismet.com\/1.1\/comment-check/)
       .with(body: /^.*Spam.*$/)
@@ -54,4 +48,3 @@ RSpec.configure do |config|
       .to_return(status: 200, body: 'false', headers: {})
   end
 end
-# rubocop:enable Metrics/BlockLength
