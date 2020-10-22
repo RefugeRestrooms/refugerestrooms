@@ -58,6 +58,7 @@ GEM
     arbre (1.2.1)
       activesupport (>= 3.0.0)
     arel (9.0.0)
+    ast (2.4.1)
     autoprefixer-rails (9.7.5)
       execjs
     bcrypt (3.1.13)
@@ -234,6 +235,9 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
+    parallel (1.19.2)
+    parser (2.7.2.0)
+      ast (~> 2.4.1)
     pg (1.2.3)
     pg_search (2.3.2)
       activerecord (>= 5.2)
@@ -285,6 +289,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
+    rainbow (3.0.0)
     rake (13.0.1)
     rakismet (1.5.4)
     ransack (2.3.2)
@@ -300,6 +305,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.4)
     rspec-core (3.9.1)
       rspec-support (~> 3.9.1)
     rspec-expectations (3.9.1)
@@ -317,6 +323,24 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.2)
+    rubocop (0.92.0)
+      parallel (~> 1.10)
+      parser (>= 2.7.1.5)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.7)
+      rexml
+      rubocop-ast (>= 0.5.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-ast (0.7.1)
+      parser (>= 2.7.1.5)
+    rubocop-rails (2.8.1)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 0.87.0)
+    rubocop-rspec (1.43.2)
+      rubocop (~> 0.87)
+    ruby-progressbar (1.10.1)
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     safe_yaml (1.0.5)
@@ -360,6 +384,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (1.7.0)
     unicode_utils (1.4.0)
     warden (1.2.8)
       rack (>= 2.0.6)
@@ -418,6 +443,9 @@ DEPENDENCIES
   rails (= 5.2.4.4)
   rakismet
   rspec-rails
+  rubocop
+  rubocop-rails
+  rubocop-rspec
   sassc-rails
   sdoc
   simple_form (~> 5.0)

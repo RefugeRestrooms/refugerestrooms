@@ -1,11 +1,12 @@
 require_relative '../helpers/recaptcha_helper'
 
+# rubocop:disable Metrics/ClassLength
 class RestroomsController < ApplicationController
   respond_to :html, :json
 
   before_action :restrooms_filters, only: [:index]
   before_action :list_restrooms, only: [:index]
-  before_action :find_restroom, only: [:show, :update, :edit, :destroy]
+  before_action :find_restroom, only: %i[show update edit]
 
   def index
     if params[:nearby]
@@ -15,6 +16,7 @@ class RestroomsController < ApplicationController
     end
   end
 
+  # rubocop:disable Metrics/MethodLength
   def new
     if params[:edit_id]
       @restroom = find_restroom
@@ -28,7 +30,12 @@ class RestroomsController < ApplicationController
       @restroom = Restroom.new
     end
   end
+  # rubocop:enable Metrics/MethodLength
 
+  def show; end
+
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def create
     @restroom = Restroom.new(permitted_params)
 
@@ -58,12 +65,18 @@ class RestroomsController < ApplicationController
       render 'new'
     end
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
+  def edit; end
+
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def update
     if params[:restroom][:downvote]
-      Restroom.increment_counter(:downvote, @restroom.id)
+      Restroom.increment_counter(:downvote, @restroom.id) # rubocop:disable Rails/SkipsModelValidations
     elsif params[:restroom][:upvote]
-      Restroom.increment_counter(:upvote, @restroom.id)
+      Restroom.increment_counter(:upvote, @restroom.id) # rubocop:disable Rails/SkipsModelValidations
     elsif @restroom.update(permitted_params)
       flash[:notice] = I18n.t('restroom.flash.updated')
     else
@@ -73,35 +86,38 @@ class RestroomsController < ApplicationController
 
     redirect_to @restroom
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 
-private
+  private
+
   def restrooms_filters
     @filters =
       params
-        .fetch(:filters, '')
-        .split(',')
-        .reduce({}) do |filters, filter|
-          filters[filter] = true if ['accessible', 'changing_table', 'unisex'].include?(filter)
-
-          filters
-        end
+      .fetch(:filters, '')
+      .split(',')
+      .each_with_object({}) do |filter, filters|
+        filters[filter] = true if %w[accessible changing_table unisex].include?(filter)
+      end
   end
 
+  # rubocop:disable Metrics/AbcSize
   def list_restrooms
     @restrooms = Restroom.current.where(@filters).page(params[:page])
     @restrooms =
       if params[:search].present? || params[:map] == "1"
-        @restrooms.near([params[:lat], params[:long]], 20, :order => 'distance')
+        @restrooms.near([params[:lat], params[:long]], 20, order: 'distance')
       else
         @restrooms.reverse_order
       end
 
     @restrooms = @restrooms.out_of_range? ? @restrooms.page(1) : @restrooms
   end
+  # rubocop:enable Metrics/AbcSize
 
   def display_errors
     if @restroom.errors.any?
-      errors = @restroom.errors.each do |attribute, message|
+      @restroom.errors.each do
         flash[:alert] = I18n.t('restroom.flash.field')
       end
     else
@@ -113,6 +129,7 @@ private
     @restroom = Restroom.find(params[:id])
   end
 
+  # rubocop:disable Metrics/MethodLength
   def permitted_params
     params.require(:restroom).permit(
       :name,
@@ -131,4 +148,6 @@ private
       :approved
     )
   end
+  # rubocop:enable Metrics/MethodLength
 end
+# rubocop:enable Metrics/ClassLength

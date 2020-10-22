@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe PagesController, type: :controller  do
-  it "should get index" do
+describe PagesController, type: :controller do
+  it "#index" do
     get :index
     assert_response :success
   end

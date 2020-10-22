@@ -9,9 +9,7 @@ class SaveRestroom
     else
       Restroom.transaction do
         @restroom.save
-        if @restroom.approved?
-          @restroom.update(edit_id: @restroom.id)
-        end
+        @restroom.update(edit_id: @restroom.id) if @restroom.approved?
       end
     end
     @restroom

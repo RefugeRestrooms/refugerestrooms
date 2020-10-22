@@ -12,9 +12,8 @@ describe "Restrooms API", type: :request do
     json.each do |rest_json|
       restroom = Restroom.find(rest_json['id'])
       expect(restroom.valid?).to be true
-      if previous_record.present?
-        expect(restroom.created_at).to be >= previous_record.created_at
-      end
+      # TODO: this assertion doesn't seem to ever run
+      expect(restroom.created_at).to be >= previous_record.created_at if previous_record.present?
     end
   end
 
@@ -45,8 +44,8 @@ describe "Restrooms API", type: :request do
     expect(response.header['X-Total']).to eq('15')
   end
 
-  context 'filters' do
-    before :each do
+  describe 'filters' do
+    before do
       create_list(:restroom, 5)
       create_list(:unisex_restroom, 5)
       create_list(:ada_restroom, 5)
@@ -55,8 +54,8 @@ describe "Restrooms API", type: :request do
 
     let(:json) { JSON.parse(response.body) }
 
-    context 'a list of unisex restrooms' do
-      before :each do
+    context 'when requesting a list of unisex restrooms' do
+      before do
         get '/api/v1/restrooms', params: { unisex: true }
       end
 
@@ -73,8 +72,8 @@ describe "Restrooms API", type: :request do
       end
     end
 
-    context 'a list of restrooms by ADA availability' do
-      before :each do
+    context 'when requesting a list of restrooms by ADA availability' do
+      before do
         get '/api/v1/restrooms', params: { ada: true }
       end
 
@@ -101,7 +100,7 @@ describe "Restrooms API", type: :request do
     get '/api/v1/restrooms/search', params: { query: 'Coffee Shop' }
     json = JSON.parse(response.body)
     expect(json.length).to eq(2)
-    json.each do |restroom|
+    json.each do
       expect(json[0]['name']).to match(/Coffee Shop/)
     end
 
@@ -133,8 +132,8 @@ describe "Restrooms API", type: :request do
     expect(response.header['X-Total']).to eq('15')
   end
 
-  context "queries" do
-    before :each do
+  describe "queries" do
+    before do
       create(:restroom)
       create(:unisex_restroom, name: 'Frankie\'s Coffee Shop')
       create(:ada_restroom, name: 'Hipster Coffee Shop')
@@ -143,8 +142,8 @@ describe "Restrooms API", type: :request do
 
     let(:json) { JSON.parse(response.body) }
 
-    context 'filters a full-text searched list of restrooms by unisex type' do
-      before :each do
+    context 'when looking for unisex restrooms and given a search query' do
+      before do
         get '/api/v1/restrooms/search', params: { query: 'Coffee', unisex: true }
       end
 
@@ -165,8 +164,8 @@ describe "Restrooms API", type: :request do
       end
     end
 
-    context 'filters a full-text searched list of restrooms by ADA availability' do
-      before :each do
+    context 'when searching for ADA accessible restrooms and given a search query' do
+      before do
         get '/api/v1/restrooms/search', params: { query: 'Coffee', ada: true }
       end
 
@@ -187,10 +186,16 @@ describe "Restrooms API", type: :request do
       end
     end
 
-    context "filters a list of restrooms by updated date" do
-      before :each do
+    context "when looking for restrooms by updated date" do
+      before do
         create(:restroom, created_at: 1.day.ago)
-        get "/api/v1/restrooms/by_date", params: { updated: true, day: Date.today.day, month: Date.today.month, year: Date.today.year }
+        params = {
+          updated: true,
+          day: Time.current.day,
+          month: Time.current.month,
+          year: Time.current.year
+        }
+        get "/api/v1/restrooms/by_date", params: params
       end
 
       it "is successful" do
@@ -202,10 +207,15 @@ describe "Restrooms API", type: :request do
       end
     end
 
-    context "filters a list of restrooms by created date" do
-      before :each do
+    context "when filtering by created date" do
+      before do
         create(:restroom, created_at: 1.week.ago)
-        get "/api/v1/restrooms/by_date", params: { day: Date.today.day, month: Date.today.month, year: Date.today.year }
+        params = {
+          day: Time.current.day,
+          month: Time.current.month,
+          year: Time.current.year
+        }
+        get "/api/v1/restrooms/by_date", params: params
       end
 
       it "is successful" do
