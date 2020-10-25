@@ -29,6 +29,7 @@ $(function(){
   }
 
   if (getSearchParams().get('view') == 'map') {
+    $("#list").hide();
     $.get('/restrooms' + window.location.search , {}, (points) => {
       const lat = getSearchParams().get('lat');
       const long = getSearchParams().get('long');
@@ -36,5 +37,7 @@ $(function(){
       Maps.loadMapWithPoints(lat, long, points);
       $("#mapContainer").fadeIn(500);
     }, 'json');
+  } else {
+    $("#mapContainer").hide();
   }
 });

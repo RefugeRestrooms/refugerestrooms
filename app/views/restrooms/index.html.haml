@@ -17,13 +17,11 @@
       = link_to view_label, restrooms_path(request.query_parameters.merge(view_toggle)), class: 'map-toggle-btn linkbutton btn pull-right btn-lg btn-light-purple'
 
 .restrooms-index-content
-- if @view == 'map'
   .row
     .col-sm-12.headroom
       #results
         = content_tag 'div', id: 'mapContainer', data: { latitude: params[:lat], longitude: params[:long] } do
           #mapArea
-- else
   .row
     .col-sm-12.headroom
       %ul{:class => "restrooms-list", :id => "list"}
