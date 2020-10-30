@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe RestroomsController, type: :controller do
+  it_behaves_like 'localized request', :index
+
   it "#index" do
     get :index
     assert_response :success
