@@ -4,6 +4,16 @@ require 'json'
 
 module RecaptchaHelper
   def self.valid_token?(token)
+    json_body = verify(token)
+
+    if json_body['success']
+      true
+    else
+      false
+    end
+  end
+
+  def self.verify(token)
     # Get secret from env
     secret = ENV['RECAPTCHA_SECRET_KEY']
 
@@ -14,12 +24,6 @@ module RecaptchaHelper
       https.request(request)
     end
 
-    # Check response
-    json_body = JSON.parse(response.body)
-    if json_body['success']
-      true
-    else
-      false
-    end
+    JSON.parse(response.body)
   end
 end

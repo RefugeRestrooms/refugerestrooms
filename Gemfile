@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.5.8'
 
-gem 'rails', '5.2.4.3'
+gem 'rails', '5.2.4.4'
 
 gem 'activeadmin', '~> 2.1'
 gem 'bootsnap', require: false
@@ -32,7 +32,7 @@ gem 'simple_form', '~> 5.0'
 gem 'sprockets', '< 4'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker', '~> 4'
+gem 'webpacker', '~> 5'
 
 group :development, :test do
   gem 'better_errors', '~> 2.4.0'
@@ -42,6 +42,9 @@ group :development, :test do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
