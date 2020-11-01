@@ -8,6 +8,7 @@ const circleMarkerImage = "<%= helpers.image_path('marker-circle.png') %>";
 const showMarkerImage = "<%= helpers.image_path('show-icon.png') %>";
 
 let map;
+let lastOpenedInfoWindow;
 
 function initMap(x, y, image, draggable, callback){
   image = typeof image !== 'undefined' ? image : currentLocationImage;
@@ -81,8 +82,20 @@ function placeMarker(lat, lng, content, number){
   });
 
   marker.addListener('click', function() {
+    closeLastOpenedInfoWindow();
     infoWindow.open(map, marker);
+    lastOpenedInfoWindow = infoWindow;
   });
+
+  google.maps.event.addListener(map, 'click', function(event) {
+    infoWindow.close();
+  });
+}
+
+function closeLastOpenedInfoWindow() {
+    if (lastOpenedInfoWindow) {
+        lastOpenedInfoWindow.close();
+    }
 }
 
 function generateContent(data){

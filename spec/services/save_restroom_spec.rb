@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'the save process' do
+describe SaveRestroom do
   it 'saves a restroom' do
     restroom = build(:restroom, id: 1)
 
-    actual_restroom = SaveRestroom.new(restroom).call
+    actual_restroom = described_class.new(restroom).call
 
     expect(Restroom.all.size).to eq(1)
     expect(actual_restroom.id).to eq(1)
@@ -15,7 +15,7 @@ describe 'the save process' do
   it 'creates an error for spam' do
     restroom = build(:spam_restroom)
 
-    actual_restroom = SaveRestroom.new(restroom).call
+    actual_restroom = described_class.new(restroom).call
 
     expect(Restroom.all.size).to eq(0)
     expect(actual_restroom.errors.key?(:spam)).to be true
@@ -26,11 +26,10 @@ describe 'the save process' do
     restroom.edit_id = 1
     restroom.approved = false
 
-    actual_restroom = SaveRestroom.new(restroom).call
+    actual_restroom = described_class.new(restroom).call
 
     expect(Restroom.all.size).to eq(1)
     expect(actual_restroom.edit_id).to eq(1)
     expect(actual_restroom.approved?).to eq(false)
   end
 end
-

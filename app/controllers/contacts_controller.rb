@@ -5,6 +5,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(restroom_id: params['restroom_id'], restroom_name: params['restroom_name'])
   end
 
+  # rubocop:disable Metrics/AbcSize
+  # rubocop:disable Metrics/MethodLength
   def create
     @contact = Contact.new(params[:contact])
     unless @contact.valid?
@@ -26,4 +28,6 @@ class ContactsController < ApplicationController
     flash.now[:error] = nil
     flash.now[:notice] = I18n.t('contacts.submitted.thank-you-exclamation')
   end
+  # rubocop:enable Metrics/AbcSize
+  # rubocop:enable Metrics/MethodLength
 end
