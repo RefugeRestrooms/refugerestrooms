@@ -2,7 +2,9 @@ it:
   business_info:
     title: "Informazioni commerciali di Refuge Restrooms"
     p1header: "1) Cos'è Refuge Restrooms?"
-    p1: "REFUGE è una web application che punta a fornire l'accesso sicuro a servizi igienici per individui transgender, intersex, e genere non conforme. Leggi di più su di noi nulla nostra <a href='/about'>pagina About</a>."
+    p1:
+      text: "REFUGE è una web application che punta a fornire l'accesso sicuro a servizi igienici per individui transgender, intersex, e genere non conforme. Leggi di più su di noi nulla nostra %{about_page_variable}."
+      about_page: "pagina About"
     p2header: "2) Come ha fatto la mia struttura a finire su questa lista?"
     p2: "Qualcuno ha usato i tuoi servizi igienici e ha voluto proporre la tua località come una risorsa. Tutti i nostri dati sono crowd-sourced e sottoposti dagli utenti."
     p3header: "3) Come posso essere un buon padrone di casa?"
@@ -21,4 +23,3 @@ it:
     p5: "Le recensioni aiutano i visitatori a condividere le esperienze tra di loro riguardo al luovo. Noi incoraggiamo i visitatori a condividere quanto più informazioni hanno riguardo ogni località sulla mappa."
     p6header: "6) Come rimuovo il mio annuncio?"
     p6: "Speriamo che tu considererai di lasciare il tuo annuncio; può significare molto per la salute ed il benessere delle persone. Ad ogni modo, se preferisci non essere in lista, usa il nostro form di contatto per richiedere una rimozione e i nostri volontari la prenderanno in carico il prima possibile (questo è un progetto open source, quindi tutto il lavoro è fatto da volontari)."
-

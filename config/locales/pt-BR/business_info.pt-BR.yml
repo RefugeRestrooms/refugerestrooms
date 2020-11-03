@@ -2,7 +2,9 @@ pt-BR:
   business_info:
     title: "Refuge Restrooms - Informações para Empresas"
     p1header: "1) O que é Refuge Restrooms?"
-    p1: "REFUGE é uma aplicação web que busca fornecer acesso a banheiros seguros para indivíduos transgêneros, intersexo ou não-conformantes de gênero. Leia mais sobre nós na nossa página <a href='/about'>Sobre</a>."
+    p1:
+      text: "REFUGE é uma aplicação web que busca fornecer acesso a banheiros seguros para indivíduos transgêneros, intersexo ou não-conformantes de gênero. Leia mais sobre nós na nossa página %{about_page_variable}."
+      about_page: "Sobre"
     p2header: "2) Como meu estabelecimento entrou nesta lista?"
     p2: "Alguém usou seu banheiro e quis cadastrar seu estabelecimento como recurso. Todos os nossos dados são fornecidos e cadastrados por usuários."
     p3header: "3) Como posso ser um bom anfitrião?"
@@ -21,4 +23,3 @@ pt-BR:
     p5: "Avaliações ajudam visitantes a compartilhar experiências com outras pessoas sobre um lugar. Nós encorajamos visitantes a compartilhar o máximo de informações possível sobre cada lugar no mapa."
     p6header: "6) Como posso remover meu cadastro?"
     p6: "Nós esperamos que você considere manter seu cadastro; ele pode significar muito para a saúde e o bem estar das pessoas. No entanto, se você preferir não ser listado, use o nosso formulário de contato para requisitar a remoção e nosso voluntariado irá trabalhar nisso assim que possível (este é um projeto de código aberto, portanto nosso trabalho é feito voluntariamente)."
-
