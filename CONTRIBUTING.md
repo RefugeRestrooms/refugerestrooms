@@ -6,12 +6,14 @@
 https://help.github.com/articles/fork-a-repo/
 
 ### 2 Install Docker.
-- **Windows 10:** https://store.docker.com/editions/community/docker-ce-desktop-windows
+- **Windows 10 (Pro/Enterprise, 64-bit):** https://store.docker.com/editions/community/docker-ce-desktop-windows
 - **macOS El Capitan 10.11 and newer:** https://store.docker.com/editions/community/docker-ce-desktop-mac
 
-_(Older Mac or Windows PC? See [instructions for Docker Toolbox](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-Toolbox-with-Refuge-Restrooms).)_
+_(Other Mac or Windows OS? See [instructions for Docker Toolbox](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-Toolbox-with-Refuge-Restrooms).)_
 
 _(Running Linux? See [instructions for Docker CE on Linux](https://github.com/RefugeRestrooms/refugerestrooms/wiki/How-to-use-Docker-CE-on-Linux-with-Refuge-Restrooms).)_
+
+Trouble with docker? The [Troubleshooting Docker wiki](https://github.com/RefugeRestrooms/refugerestrooms/wiki/Troubleshooting-Docker) outlines solutions for common errors.
 
 ### 3 Build the Docker Containers
 Build the containers from any [terminal](https://github.com/RefugeRestrooms/refugerestrooms/wiki/What-is-a-Terminal-(or-%22Terminal-Emulator%22)%3F-How-do-I-run-text-based-commands-on-my-computer%3F) program with:
@@ -79,14 +81,27 @@ This is equivalent, but slower during a code-test-code-test development cycle:
 docker-compose run web rspec spec/models/restroom_spec.rb
 ```
 
-### 7 Shut down the Docker Container:
+### 7 Linting Code
+Ruby code is linted with [rubocop](https://docs.rubocop.org/).
+
+If you want to lint your code before pushing it, you can run:
+```
+docker-compose run web rubocop
+```
+
+Some lint issues can be resolved automatically by running:
+```
+docker-compose run web rubocop --auto-correct
+```
+
+### 8 Shut down the Docker Container:
 In another terminal window, run:
 ```
 docker-compose down
 ```
 _(Shutting down the container in this way is safer than exiting with `Ctrl + C`, and prevents issues with breaking the `db` container.)_
 
-### 8 Optional tasks:
+### 9 Optional tasks:
 To clean up encoding problems in the safe2pee data, run (Use `rake db:fix_accents[dry_run]` to preview the changes.):
 ```
 docker-compose run rake db:fixaccents

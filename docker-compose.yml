@@ -1,9 +1,15 @@
 version: '3'
+
+volumes:
+  bundle: 
+    driver: local
+
 services:
   db:
     image: postgres:alpine
     environment:
       POSTGRES_PASSWORD: uaI7m2kmWd949DMv4dCh
+
   web:
     environment:
       PGPASSWORD: uaI7m2kmWd949DMv4dCh
@@ -13,6 +19,7 @@ services:
     volumes:
       - .:/refugerestrooms
       - /refugerestrooms/node_modules
+      - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
     depends_on:

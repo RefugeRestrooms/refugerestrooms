@@ -55,7 +55,7 @@ Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refuge
 
 ## Slack
 
-If you want to join the Refuge Restrooms Slack channel, you can do so by [clicking on this link.](https://join.slack.com/t/refugelgbt/shared_invite/enQtMzExOTAyMTExMjM3LTk2ZDQzNGFmMzFlY2YyZGI1NTU1YzFhMGFlZTdlNzA2MDlkYTRjNWVkMTVkOTlhZjJmNGFkMzY3NjFhZjgyMzM)
+If you want to join the Refuge Restrooms Slack channel, you can do so by [clicking on this link.](https://join.slack.com/t/refugelgbt/shared_invite/zt-3zaagpad-DvyfAPcepuRzFBJix1uYkg)
 
 ## License
 

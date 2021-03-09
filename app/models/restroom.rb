@@ -3,27 +3,31 @@
 # (accessible) is coded by 1
 
 class Restroom < ApplicationRecord
-
   include PgSearch::Model
-  pg_search_scope :search, against: {
-    :name => 'A',
-    :street => 'B',
-    :city => 'C',
-    :state => 'D',
-    :comment => 'B',
-    :directions => 'B',
-    :country => 'D',
-  },
-  using: {tsearch: {dictionary: "english"}},
-  ignoring: :accents
+  include Rakismet::Model
+
+  pg_search_scope(
+    :search,
+    against: {
+      name: 'A',
+      street: 'B',
+      city: 'C',
+      state: 'D',
+      comment: 'B',
+      directions: 'B',
+      country: 'D'
+    },
+    using: { tsearch: { dictionary: "english" } },
+    ignoring: :accents
+  )
 
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
-  after_validation :perform_geocoding
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
-    if geo = results.first
+    geo = results.first
+    if geo
       obj.name    = geo.address
       obj.street  = geo.address.split(',').first
       obj.city    = geo.city
@@ -32,15 +36,15 @@ class Restroom < ApplicationRecord
     end
   end
 
-  include Rakismet::Model
   rakismet_attrs content: proc {
     name + street + city + state + comment + directions + country
   }
 
+  after_validation :perform_geocoding
   after_find :strip_slashes
 
-  scope :current, -> {
-    Restroom.where('id IN (SELECT MAX(id) FROM restrooms WHERE approved = true GROUP BY edit_id)')
+  scope :current, lambda {
+    Restroom.where('id IN (SELECT MAX(id) FROM restrooms WHERE approved GROUP BY edit_id)')
   }
 
   scope :accessible, -> { where(accessible: true) }
@@ -55,13 +59,13 @@ class Restroom < ApplicationRecord
   end
 
   def rated?
-    upvote > 0 || downvote > 0
+    upvote.positive? || downvote.positive?
   end
 
   def rating_percentage
     return 0 unless rated?
 
-    upvote.to_f / (upvote + downvote).to_f * 100
+    upvote.to_f / (upvote + downvote) * 100
   end
 
   # PostgreSQL Full-Text Search for the API.
@@ -75,15 +79,16 @@ class Restroom < ApplicationRecord
 
   private
 
-    def strip_slashes
-      ['name', 'street', 'city', 'state', 'comment', 'directions'].each do |field|
-        attributes[field].try(:gsub!, "\\'", "'")
-      end
+  def strip_slashes
+    %w[name street city state comment directions].each do |field|
+      attributes[field].try(:gsub!, "\\'", "'")
     end
+  end
 
-    def perform_geocoding
-      return true if Rails.env == "test"
-      return true if ENV["SEEDING_DONT_GEOCODE"]
-      geocode
-    end
+  def perform_geocoding
+    return true if Rails.env.test?
+    return true if ENV["SEEDING_DONT_GEOCODE"]
+
+    geocode
+  end
 end

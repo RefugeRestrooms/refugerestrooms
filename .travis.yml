@@ -10,6 +10,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
+  - docker-compose run web rubocop
   - docker-compose run -e "RAILS_ENV=test" web rake db:test:prepare spec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT --prefix /refugerestrooms

@@ -3,11 +3,11 @@ class RatingLevel
     percentage = restroom.rating_percentage
 
     if percentage > 70
-      self.green
+      green
     elsif percentage > 50
-      self.yellow
+      yellow
     else
-      self.red
+      red
     end
   end
 
