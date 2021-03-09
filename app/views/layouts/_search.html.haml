@@ -4,6 +4,7 @@
   = form_tag restrooms_path, class: "search-restrooms-form", method: :get do
     = hidden_field_tag :lat, ""
     = hidden_field_tag :long, ""
+    = hidden_field_tag :locale, current_locale
     .input-group
       = text_field_tag :search, params[:search], class: "form-control search-bar", aria: {label: t("search_bar.enter_location")}
       .input-group-btn

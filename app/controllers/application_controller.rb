@@ -11,13 +11,22 @@ class ApplicationController < ActionController::Base
   end
 
   def switch_locale(&action)
-    locale = params[:locale] || http_accept_language.language_region_compatible_from(I18n.available_locales)
-    locale ||= I18n.default_locale
-
-    I18n.with_locale(locale, &action)
+    I18n.with_locale(current_locale, &action)
   end
 
   def default_url_options
     { locale: I18n.locale }
+  end
+
+  def current_locale
+    LocaleService.call(params[:locale], http_accept_locale)
+  end
+
+  helper_method :current_locale
+
+  private
+
+  def http_accept_locale
+    http_accept_language.language_region_compatible_from(I18n.available_locales)
   end
 end
