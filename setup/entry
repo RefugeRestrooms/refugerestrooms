@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Check by local gems and if is something is missing, run bundle install
+bundle check || bundle install --jobs 20 --retry 5
+
 # Set up the database for development, and seed with placeholder data from `db/export.csv`
 SEEDING_DONT_GEOCODE="true" rails db:setup
 
