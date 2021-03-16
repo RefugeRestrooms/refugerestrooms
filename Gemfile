@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.5.8'
+ruby '2.7.2'
 
-gem 'rails', '5.2.4.4'
+gem 'rails', '5.2.4.5'
 
 gem 'activeadmin', '~> 2.1'
 gem 'bootsnap', require: false
@@ -56,7 +56,7 @@ group :test do
   gem 'database_cleaner'
   gem 'poltergeist'
   gem 'simplecov', '~> 0.17.1', require: false
-  gem 'webmock', '~> 3.2.1'
+  gem 'webmock', '~> 3.12.1'
 end
 
 group :doc do

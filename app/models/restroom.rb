@@ -4,6 +4,8 @@
 
 class Restroom < ApplicationRecord
   include PgSearch::Model
+  include Rakismet::Model
+
   pg_search_scope(
     :search,
     against: {
@@ -22,7 +24,6 @@ class Restroom < ApplicationRecord
   validates :name, :street, :city, :state, presence: true
 
   geocoded_by :full_address
-  after_validation :perform_geocoding
 
   reverse_geocoded_by :latitude, :longitude do |obj, results|
     geo = results.first
@@ -35,15 +36,15 @@ class Restroom < ApplicationRecord
     end
   end
 
-  include Rakismet::Model
   rakismet_attrs content: proc {
     name + street + city + state + comment + directions + country
   }
 
+  after_validation :perform_geocoding
   after_find :strip_slashes
 
   scope :current, lambda {
-    Restroom.where('id IN (SELECT MAX(id) FROM restrooms WHERE approved = true GROUP BY edit_id)')
+    Restroom.where('id IN (SELECT MAX(id) FROM restrooms WHERE approved GROUP BY edit_id)')
   }
 
   scope :accessible, -> { where(accessible: true) }
