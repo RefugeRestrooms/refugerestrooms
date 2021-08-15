@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.7.3'
+ruby '2.7.4'
 
-gem 'rails', '5.2.5'
+gem 'rails', '5.2.6'
 
 gem 'activeadmin', '~> 2.1'
 gem 'bootsnap', require: false

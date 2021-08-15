@@ -35,7 +35,7 @@ Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refuge
 
 ## Tech
 
-* Ruby Version - ruby-2.7.3
+* Ruby Version - ruby-2.7.4
 * Ruby on Rails
 * RSpec
 * Javascript
