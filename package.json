@@ -18,7 +18,9 @@
   "resolutions": {
     "node-fetch": "^2.6.1",
     "**/watchpack-chokidar2/chokidar": "^3.4.1",
-    "webpack-dev-server/chokidar": "^3.4.1"
+    "webpack-dev-server/chokidar": "^3.4.1",
+    "webpack-dev-server/**/ansi-regex": "^5.0.1",
+    "@rails/webpacker/**/ansi-regex": "^5.0.1"
   },
   "engines": {
     "yarn": ">=1.0.2"
