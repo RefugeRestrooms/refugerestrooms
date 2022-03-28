@@ -3,6 +3,9 @@ name: Generic Proposal Issue Template
 about: Generic issue template for any proposed change. Has sections to add context
   and guidance for how to implement the proposal. Designed to make issues clear and
   easy to understand/work on.
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
