@@ -2,7 +2,9 @@ pl:
   business_info:
     title: "Refuge Restrooms Business Info"
     p1header: "1) Czym jest Refuge Restrooms?"
-    p1: "Refuge Restrooms to aplikacja ułatwiająca osobom transpłciowym i interpłciowym bezpieczny dostęp do łazienek publicznych. Przeczytaj więcej <a href='/about'>na tej stronie</a>."
+    p1:
+      text: "Refuge Restrooms to aplikacja ułatwiająca osobom transpłciowym i interpłciowym bezpieczny dostęp do łazienek publicznych. Przeczytaj więcej %{about_page_variable}."
+      about_page: "na tej stronie"
     p2header: "2) Dlaczego moja placówka znajduje się w bazie danych?"
     p2: "Ktoś dodał lokalizację łazienki, aby poinformować o niej innych. Wszystkie zamieszczone lokalizacje są dodane przez użytkowników."
     p3header: "3) Jak mogę pomóc?"

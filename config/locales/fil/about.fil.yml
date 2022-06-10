@@ -18,5 +18,7 @@ fil:
       third: "<strong>Ikatlo:</strong> Kung alam mo kun paano mag-code, bumisita sa GitHub at ipaalam sa amin ang tungkol sa bug, magmungkahi ng mga pagpapahusay, o kaya mag-ambag ng kunting code at tumulong sa proyektong ito. Ang REFUGE ay isang open source at hindi namin ito magagawa kung wala kayo."
       fourth: "<strong>Ikaapat: </strong> Mag-ambag. Maging mapagmatyag sa darating na pangangalap ng pondo mula sa mga tao para makapaglikha ng pondo sa iilang teknolohiya na kinakailangan gamitin pati narin ang pagbayad sa mga taga-desinyo at mga inhinyero kahit sa maliit na halaga para sa kanilang sipag at walang pagud na paggawa. Sila ay nagtratrabaho ng walang bayad para makapaghatid ng serbisyo sa inyo at hindi namin gusto na magtratrabaho ang sinuman ng libre. Karamihan sa aming grupo ay transgender at mga walang trabaho sa ngayon."
     p6header: "Bakit nakalista ang aking negosyo o organisasyon?"
-    p6: "Alamin ang higit pa sa aming <a href='/business_info'>Impormasyon tungkol sa aming ginagawa</a>!"
+    p6:
+      text: "Alamin ang higit pa sa aming %{business_faq_variable}!"
+      business_faq: "Impormasyon tungkol sa aming ginagawa"
     contribute: 'I-fork mo kami at mag-ambag sa GitHub!'

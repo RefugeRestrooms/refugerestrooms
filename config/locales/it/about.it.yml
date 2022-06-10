@@ -18,5 +18,7 @@ it:
       third: "<strong>Tre:</strong> Se sai programmare, visita GitHub e facci sapere riguardo a bug, suggerimenti e miglioramenti, o contribuisci anche solo un po' al codice e aiuta il progetto. REFUGE è open source e non possiamo farlo senza di te."
       fourth: "<strong>Quattro: </strong> Fai una donazione. Tieni gli occhi aperti per la campagna di crowdfunding in arrivo per finanziare parte della tecnologia che necessitiamo di utilizzare così come per dare ai nostri favolosi designer e ingegneri un po' di soldi per il loro duro e instancabile lavoro. Hanno lavorato gratuitamente per portare a voi questo servizio e noi vogliamo che nessuno lavori gratuitamente. La maggior parte del team principale è transgender e sottoccupato al momento."
     p6header: "Perchè la mia attività o la mia organizzazione è in lista?"
-    p6: "Scopri di più sulla nostra <a href='/business_info'>FAQ commerciale</a>!"
+    p6:
+      text: "Scopri di più sulla nostra %{business_faq_variable}!"
+      business_faq: "FAQ commerciale"
     contribute: 'Fai un fork e contribuisci su GitHub!'

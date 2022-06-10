@@ -2,7 +2,9 @@ en:
   business_info:
     title: "Refuge Restrooms Business Info"
     p1header: "1) What is Refuge Restrooms?"
-    p1: "REFUGE is a web application that seeks to provide safe restroom access for transgender, intersex, and gender nonconforming individuals. Read more about us on our <a href='/about'>About Page</a>."
+    p1:
+      text: "REFUGE is a web application that seeks to provide safe restroom access for transgender, intersex, and gender nonconforming individuals. Read more about us on our %{about_page_variable}."
+      about_page: "About Page"
     p2header: "2) How did my facility get on this list?"
     p2: "Someone used your restroom and wanted to submit your location as a resource. All our data is crowd-sourced and user-submitted."
     p3header: "3) How can I be a good host?"
@@ -21,4 +23,3 @@ en:
     p5: "Reviews help visitors share experiences with each other about the location. We encourage visitors to share as much information as we have about each location on the map."
     p6header: "6) How do I remove my listing?"
     p6: "We hope you'll consider keeping your listing; it can mean a lot for people's health and wellbeing. However, if you'd rather not be listed, use our contact form to request a removal and our volunteers will work on it as soon as we can (this is an open source project so all work is done by volunteers)."
-

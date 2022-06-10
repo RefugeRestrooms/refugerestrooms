@@ -5,7 +5,8 @@
     %h3 
       = t('business_info.p1header')
     %p 
-      = t('business_info.p1').html_safe
+      - @about_link_helper = link_to t('business_info.p1.about_page'), page_path('about')
+      = t('business_info.p1.text', about_page_variable: @about_link_helper).html_safe
     %h3 
       = t('business_info.p2header')
     %p 

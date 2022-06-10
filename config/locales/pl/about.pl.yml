@@ -18,5 +18,7 @@ pl:
       third: "<strong>Po trzecie:</strong> Jeżeli programujesz, zajrzyj na naszego GitHuba i poinformuj nas o napotkanych bugach, zasugeruj poprawki albo napisz własny kod aby wspomóc projekt. REFUGE jest open source i nie mogłoby istnieć bez pomocy współtwórców."
       fourth: "<strong>Po czwarte: </strong> Dokonaj wpłaty. Organizujemy zbiórki i kampanie crowdfundingowe, aby mieć za co kupować sprzęt i płacić twórcom aplikacji za ich pracę, aby nie była to już praca wolontariacka, jak początkowo. Większość twórców jest transpłciowa i obecnie zatrudniona poniżej kwalifikacji."
     p6header: "Dlaczego moja placówka znajduje się w bazie danych?"
-    p6: "Dowiedz się więcej w <a href='/business_info'>Business FAQ</a>."
+    p6:
+      text: "Dowiedz się więcej w %{business_faq_variable}."
+      business_faq: "Business FAQ"
     contribute: 'Zajrzyj na naszego GitHuba!'

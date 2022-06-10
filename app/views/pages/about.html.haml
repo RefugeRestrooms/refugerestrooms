@@ -34,5 +34,5 @@
     %h3
       = t('about.p6header')
     %p
-      = t('about.p6').html_safe
-
+      - @business_faq_link = link_to t('about.p6.business_faq'), page_path('business_info')
+      = t('about.p6.text', business_faq_variable: @business_faq_link).html_safe

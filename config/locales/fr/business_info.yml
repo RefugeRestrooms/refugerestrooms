@@ -2,7 +2,9 @@ fr:
   business_info:
     title: "Questions fréquentes des organisations et entreprises à propos de Refuge Restrooms"
     p1header: "1) Qu'est ce que Refuge Restrooms ?"
-    p1: "REFUGE est une application web visant à fournir un accès sécurisé à des toilettes aux personnes transgenres, intersexuées et non conformes dans le genre. En lire plus à propos de nous sur notre <a href='/about'>page À Propos</a>."
+    p1:
+      text: "REFUGE est une application web visant à fournir un accès sécurisé à des toilettes aux personnes transgenres, intersexuées et non conformes dans le genre. En lire plus à propos de nous sur notre %{about_page_variable}."
+      about_page: "page À Propos"
     p2header: "2) Comment mon établissement est-il entré dans cette liste ?"
     p2: "Quelqu'un a utilisé vos toilettes et voulait soumettre votre emplacement en tant que ressource. Toutes nos données sont fournies par l'utilisateur et soumises par l'utilisateur."
     p3header: "3) Comment puis-je être un bon hôte ?"

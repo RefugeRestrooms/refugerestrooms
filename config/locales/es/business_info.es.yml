@@ -2,7 +2,9 @@ es:
   business_info:
     title: "Preguntas frecuentes para organizaciones y empresas sobre Refuge Restrooms"
     p1header: "1) ¿Qué es Refuge Restrooms?"
-    p1: "REFUGE es una aplicación web que busca proveer acceso seguro a baños para personas trans, intersexo, y personas género no conformes. Puedes leer más en <a href='/about'>Acerca de REFUGE</a>."
+    p1:
+      text: "REFUGE es una aplicación web que busca proveer acceso seguro a baños para personas trans, intersexo, y personas género no conformes. Puedes leer más en %{about_page_variable}."
+      about_page: "Acerca de REFUGE"
     p2header: "2) ¿Cómo llegó mi instalación a esta lista?"
     p2: "Alguien usó su baño y quizo enviar su ubicación como recurso. Todos nuestros datos son de fuentes múltiples y enviados por el usuario"
     p3header: "3) ¿Cómo puedo ser un buen anfitrión?"

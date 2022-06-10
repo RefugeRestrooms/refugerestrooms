@@ -86,6 +86,46 @@ describe 'restrooms', type: :feature, js: true do
       # expect(page).to have_css('#mapArea.loaded')
       # expect(page).to have_css('#mapArea .numberCircleText')
     end
+
+    context 'with browser accept language header' do
+      before { page.driver.headers = { 'ACCEPT-LANGUAGE' => 'es' } }
+
+      it 'sets browser locale to the url after search' do
+        create(:restroom, :geocoded, name: 'Mission Creek Cafe')
+
+        visit root_path
+        expect(page.current_url).not_to match(/locale=es/)
+
+        fill_in 'search', with: 'San Francisco'
+        find('.submit-search-button').click
+
+        expect(page).to have_content 'Mission Creek Cafe'
+        expect(page.current_url).to match(/locale=es/)
+      end
+
+      it "translates page based on url not browser's" do
+        create(:restroom, :geocoded, name: 'Mission Creek Cafe')
+
+        visit root_path(locale: 'pt-BR')
+
+        expect(find('.submit-search-button').value).to eq('Buscar')
+        expect(page.current_url).to match(/locale=pt-BR/)
+      end
+    end
+
+    context 'with locale in url' do
+      it 'sets new locale to the url after search' do
+        create(:restroom, :geocoded, name: 'Mission Creek Cafe')
+
+        visit root_path(locale: :es)
+
+        fill_in 'search', with: 'San Francisco'
+        find('.submit-search-button').click
+
+        expect(page).to have_content 'Mission Creek Cafe'
+        expect(page.current_url).to match(/locale=es/)
+      end
+    end
   end
 
   describe 'preview' do
