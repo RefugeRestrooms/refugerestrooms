@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
     @mobile = true
   end
 
-  def switch_locale(&action)
+  def switch_locale(&)
     locale = http_accept_language.language_region_compatible_from(I18n.available_locales)
     locale ||= I18n.default_locale
 
-    I18n.with_locale(locale, &action)
+    I18n.with_locale(locale, &)
   end
 end

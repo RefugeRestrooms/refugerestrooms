@@ -1,4 +1,4 @@
-FROM ruby:2.7.6-slim
+FROM ruby:3.1.0-slim
 
 # Add basic binaries
 RUN apt-get update \

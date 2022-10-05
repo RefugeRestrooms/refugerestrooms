@@ -15,7 +15,7 @@ module RecaptchaHelper
 
   def self.verify(token)
     # Get secret from env
-    secret = ENV['RECAPTCHA_SECRET_KEY']
+    secret = ENV.fetch('RECAPTCHA_SECRET_KEY', nil)
 
     uri = URI('https://www.google.com/recaptcha/api/siteverify')
     request = Net::HTTP::Post.new(uri)

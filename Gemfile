@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.7.6'
+ruby '3.1.0'
 
-gem 'rails', '5.2.8'
+gem 'rails', '6.1.7'
 
 gem 'activeadmin', '~> 2.1'
 gem 'bootsnap', require: false
@@ -9,18 +9,21 @@ gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bugsnag'
 gem 'coffee-rails', '~> 4.2'
 gem 'country_select'
-gem 'devise', '~> 4.6'
+gem 'devise', '~> 4.8.1'
 gem 'geocoder', '~> 1.6.1'
-gem 'grape', '~> 1.3.0'
+gem 'grape', '~> 1.6.2'
 gem 'grape-swagger'
-gem 'grape-kaminari'
+gem 'grape-kaminari', '~> 0.4.3'
 gem 'haml'
 gem 'high_voltage', '~> 3.0.0'
 gem 'http_accept_language'
 gem 'jbuilder', '~> 2.5'
-gem 'kaminari', '~> 1.1'
+gem 'kaminari', '~> 1.2.2'
 gem 'kaminari-grape', '~> 1.0'
 gem 'mail_form', '>= 1.7.0'
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 gem 'pg'
 gem 'pg_search'
 gem 'puma'
@@ -37,9 +40,7 @@ gem 'webpacker', '~> 5'
 group :development, :test do
   gem 'better_errors', '~> 2.9.1'
   gem 'binding_of_caller'
-  gem 'dotenv-rails', '~> 2.2.1'
   gem 'factory_bot_rails', '~> 4.8.2'
-  gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry'
   gem 'rspec-rails'
   gem 'rubocop', require: false
