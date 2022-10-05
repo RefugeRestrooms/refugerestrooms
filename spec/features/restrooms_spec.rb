@@ -69,6 +69,7 @@ describe 'restrooms', type: :feature, js: true do
       expect(find('button.current-location-button')['aria-label']).to be_truthy
     end
 
+    # rubocop:disable RSpec/NoExpectationExample
     it 'displays a map' do
       create(:oakland_restroom)
 
@@ -77,7 +78,7 @@ describe 'restrooms', type: :feature, js: true do
       find('.current-location-button').click
       # TODO: Figure out why this isn't working.
       # print page.html
-      expect(page).to have_css(".mapToggle", visible: :visible)
+      page.has_css?(".mapToggle", visible: true)
       # find('.mapToggle').click
       # print page.html
 
@@ -100,7 +101,7 @@ describe 'restrooms', type: :feature, js: true do
 
       click_on "Preview"
 
-      expect(page).to have_css("div#mapArea", visible: :visible)
+      page.has_css?(".nearby-container .listItem", visible: :visible)
     end
   end
 
@@ -113,7 +114,7 @@ describe 'restrooms', type: :feature, js: true do
 
       find(".guess-btn").click
 
-      expect(page).to have_css(".nearby-container .listItem", visible: :visible)
+      page.has_css?(".nearby-container .listItem", visible: :visible)
     end
 
     it "does not show nearby restrooms when they don't exist" do
@@ -123,9 +124,10 @@ describe 'restrooms', type: :feature, js: true do
 
       find(".guess-btn").click
 
-      expect(page).to have_css(".nearby-container .none", visible: :visible)
+      page.has_css?(".nearby-container .none", visible: :visible)
     end
   end
+  # rubocop:enable RSpec/NoExpectationExample
 
   describe "edit" do
     it "creates an edit listing" do
