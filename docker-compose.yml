@@ -6,12 +6,12 @@ volumes:
 
 services:
   db:
-    image: postgres:alpine
+    image: postgres
+    restart: always
     environment:
       POSTGRES_PASSWORD: uaI7m2kmWd949DMv4dCh
 
   web:
-    platform: linux/amd64
     environment:
       PGPASSWORD: uaI7m2kmWd949DMv4dCh
     build: .
