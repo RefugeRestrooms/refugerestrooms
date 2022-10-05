@@ -59,7 +59,7 @@ class RestroomsController < ApplicationController
         redirect_to restroom_path(@restroom.edit_id)
       end
     elsif @restroom.errors.key?(:spam)
-      flash[:notice] = I18n.t('restroom.flash.spam')
+      flash.now[:notice] = I18n.t('restroom.flash.spam')
       render 'new'
     else
       display_errors
@@ -79,7 +79,7 @@ class RestroomsController < ApplicationController
     elsif params[:restroom][:upvote]
       Restroom.increment_counter(:upvote, @restroom.id) # rubocop:disable Rails/SkipsModelValidations
     elsif @restroom.update(permitted_params)
-      flash[:notice] = I18n.t('restroom.flash.updated')
+      flash.now[:notice] = I18n.t('restroom.flash.updated')
     else
       display_errors
       render 'edit'

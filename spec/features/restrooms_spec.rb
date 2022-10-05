@@ -22,7 +22,7 @@ describe 'restrooms', type: :feature, js: true do
       fill_in 'restroom[street]', with: 'Spamstreet'
       fill_in 'restroom[city]', with: 'Spamland'
       fill_in 'restroom[state]', with: 'Spamstate'
-      find('#restroom_country').find(:xpath, "option[contains(., 'Canada')][1]").select_option
+      find_by_id('restroom_country').find(:xpath, "option[contains(., 'Canada')][1]").select_option
       click_button 'Save Restroom'
 
       expect(page).to have_content("Your submission was rejected as spam.")
@@ -77,7 +77,7 @@ describe 'restrooms', type: :feature, js: true do
       find('.current-location-button').click
       # TODO: Figure out why this isn't working.
       # print page.html
-      page.has_css?(".mapToggle", visible: true)
+      expect(page).to have_css(".mapToggle", :visible)
       # find('.mapToggle').click
       # print page.html
 
@@ -113,7 +113,7 @@ describe 'restrooms', type: :feature, js: true do
 
       find(".guess-btn").click
 
-      page.has_css?(".nearby-container .listItem", visible: :visible)
+      expect(page).to have_css(".nearby-container .listItem", visible: :visible)
     end
 
     it "does not show nearby restrooms when they don't exist" do
@@ -123,7 +123,7 @@ describe 'restrooms', type: :feature, js: true do
 
       find(".guess-btn").click
 
-      page.has_css?(".nearby-container .none", visible: :visible)
+      expect(page).to have_css(".nearby-container .none", visible: :visible)
     end
   end
 

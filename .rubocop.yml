@@ -38,7 +38,7 @@ Style/StringLiterals:
   Enabled: false
 
 Metrics/BlockLength:
-  ExcludedMethods:
+  AllowedMethods:
     - describe
     - context
     - factory

@@ -9,7 +9,7 @@ describe SaveRestroom do
     expect(Restroom.all.size).to eq(1)
     expect(actual_restroom.id).to eq(1)
     expect(actual_restroom.edit_id).to eq(1)
-    expect(actual_restroom.approved?).to eq(true)
+    expect(actual_restroom.approved?).to be(true)
   end
 
   it 'creates an error for spam' do
@@ -30,6 +30,6 @@ describe SaveRestroom do
 
     expect(Restroom.all.size).to eq(1)
     expect(actual_restroom.edit_id).to eq(1)
-    expect(actual_restroom.approved?).to eq(false)
+    expect(actual_restroom.approved?).to be(false)
   end
 end

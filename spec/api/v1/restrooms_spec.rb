@@ -5,7 +5,7 @@ describe "Restrooms API", type: :request do
     create_list(:restroom, 15)
 
     get '/api/v1/restrooms'
-    assert_response :success
+    expect(response).to have_http_status(:success)
 
     json = JSON.parse(response.body)
     previous_record = nil
@@ -33,7 +33,7 @@ describe "Restrooms API", type: :request do
     create_list(:restroom, 15)
 
     get '/api/v1/restrooms'
-    assert_response :success
+    expect(response).to have_http_status(:success)
 
     json = JSON.parse(response.body)
     expect(json.length).to eq(10)
@@ -60,7 +60,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        assert_response :success
+        expect(response).to have_http_status(:success)
       end
 
       it "returns unisex restro3ms" do
@@ -78,7 +78,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        assert_response :success
+        expect(response).to have_http_status(:success)
       end
 
       it "returns accessible restrooms" do
@@ -121,7 +121,7 @@ describe "Restrooms API", type: :request do
     create_list(:restroom, 15)
 
     get '/api/v1/restrooms/search', params: { query: 'San Francisco' }
-    assert_response :success
+    expect(response).to have_http_status(:success)
 
     json = JSON.parse(response.body)
     expect(json.length).to eq(10)
@@ -148,7 +148,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        assert_response :success
+        expect(response).to have_http_status(:success)
       end
 
       it "finds two coffeeshops with unisex restrooms" do
@@ -170,7 +170,7 @@ describe "Restrooms API", type: :request do
       end
 
       it "is successful" do
-        assert_response :success
+        expect(response).to have_http_status(:success)
       end
 
       it "finds two coffeeshops with accessible restrooms" do
@@ -195,11 +195,11 @@ describe "Restrooms API", type: :request do
           month: Time.current.month,
           year: Time.current.year
         }
-        get "/api/v1/restrooms/by_date", params: params
+        get "/api/v1/restrooms/by_date", params:
       end
 
       it "is successful" do
-        assert_response :success
+        expect(response).to have_http_status(:success)
       end
 
       it "finds all restrooms" do
@@ -215,11 +215,11 @@ describe "Restrooms API", type: :request do
           month: Time.current.month,
           year: Time.current.year
         }
-        get "/api/v1/restrooms/by_date", params: params
+        get "/api/v1/restrooms/by_date", params:
       end
 
       it "is successful" do
-        assert_response :success
+        expect(response).to have_http_status(:success)
       end
 
       it "finds all but one of the restrooms" do
