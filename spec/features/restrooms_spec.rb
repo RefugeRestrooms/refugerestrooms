@@ -77,7 +77,7 @@ describe 'restrooms', type: :feature, js: true do
       find('.current-location-button').click
       # TODO: Figure out why this isn't working.
       # print page.html
-      expect(page).to have_css(".mapToggle", :visible)
+      expect(page).to have_css(".mapToggle", visible: :visible)
       # find('.mapToggle').click
       # print page.html
 
