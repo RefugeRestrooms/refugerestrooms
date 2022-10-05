@@ -21,7 +21,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari', '~> 1.1'
 gem 'kaminari-grape', '~> 1.0'
 gem 'mail_form', '>= 1.7.0'
-gem 'net-smtp'
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 gem 'pg'
 gem 'pg_search'
 gem 'puma'
