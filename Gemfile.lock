@@ -235,6 +235,10 @@ GEM
       ruby2_keywords (~> 0.0.1)
     mustermann-grape (1.0.2)
       mustermann (>= 1.0.0)
+    net-imap (0.3.1)
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
     net-protocol (0.1.2)
       io-wait
       timeout
@@ -443,6 +447,8 @@ DEPENDENCIES
   kaminari (~> 1.1)
   kaminari-grape (~> 1.0)
   mail_form (>= 1.7.0)
+  net-imap
+  net-pop
   net-smtp
   pg
   pg_search
