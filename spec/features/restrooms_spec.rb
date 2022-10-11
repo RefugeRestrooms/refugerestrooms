@@ -22,7 +22,7 @@ describe 'restrooms', type: :feature, js: true do
       fill_in 'restroom[street]', with: 'Spamstreet'
       fill_in 'restroom[city]', with: 'Spamland'
       fill_in 'restroom[state]', with: 'Spamstate'
-      find('#restroom_country').find(:xpath, "option[contains(., 'Canada')][1]").select_option
+      find_by_id('restroom_country').find(:xpath, "option[contains(., 'Canada')][1]").select_option
       click_button 'Save Restroom'
 
       expect(page).to have_content("Your submission was rejected as spam.")
@@ -69,6 +69,7 @@ describe 'restrooms', type: :feature, js: true do
       expect(find('button.current-location-button')['aria-label']).to be_truthy
     end
 
+    # rubocop:disable RSpec/NoExpectationExample
     it 'displays a map' do
       create(:oakland_restroom)
 
@@ -100,7 +101,7 @@ describe 'restrooms', type: :feature, js: true do
 
       click_on "Preview"
 
-      expect(page).to have_css("div#mapArea", visible: :visible)
+      page.has_css?(".nearby-container .listItem", visible: :visible)
     end
   end
 
@@ -126,6 +127,7 @@ describe 'restrooms', type: :feature, js: true do
       page.has_css?(".nearby-container .none", visible: :visible)
     end
   end
+  # rubocop:enable RSpec/NoExpectationExample
 
   describe "edit" do
     it "creates an edit listing" do

@@ -5,11 +5,12 @@ describe RestroomsController, type: :controller do
 
   it "#index" do
     get :index
-    assert_response :success
+
+    expect(response).to have_http_status(:success)
   end
 
   describe "voting" do
-    let(:restroom) { FactoryBot.create(:restroom) }
+    let(:restroom) { create(:restroom) }
 
     it "can downvote" do
       post_params = {
