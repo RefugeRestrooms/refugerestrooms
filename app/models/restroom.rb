@@ -1,5 +1,4 @@
-# Note:
-# In the dataset on which the application is based, UNISEX is coded by 0, ADA
+# NOTE: In the dataset on which the application is based, UNISEX is coded by 0, ADA
 # (accessible) is coded by 1
 
 class Restroom < ApplicationRecord
