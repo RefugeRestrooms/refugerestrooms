@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-slim
+FROM ruby:3.2.1-slim
 
 # Add basic binaries
 RUN apt-get update \
