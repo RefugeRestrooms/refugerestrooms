@@ -19,7 +19,7 @@ RUN curl -L https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantom
 ENV OPENSSL_CONF=/etc/ssl/
 
 # Specify a major version of Node.js to download and install
-ENV NODEJS_MAJOR_VERSION=16
+ENV NODEJS_MAJOR_VERSION=18
 
 # Download and extract Node.js from archive supplied by nodejs.org
 RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \
