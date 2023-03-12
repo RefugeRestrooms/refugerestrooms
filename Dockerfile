@@ -48,4 +48,4 @@ RUN bundle install
 
 # Install Node.js packages with Yarn
 COPY package.json yarn.lock /refugerestrooms/
-RUN yarn install --pure-lockfile
+RUN yarn install --pure-lockfile && yarn cache clean
