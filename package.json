@@ -25,6 +25,7 @@
     "swagger-ui/**/@braintree/sanitize-url": "^6.0.0"
   },
   "engines": {
-    "yarn": ">=1.0.2"
+    "yarn": ">=1.0.2",
+    "node": "16.x"
   }
 }
