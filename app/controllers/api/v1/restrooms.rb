@@ -1,6 +1,8 @@
 module API
   module V1
     class Restrooms < Grape::API
+      PAGY_OPTIONS = {items_param: :per_page, items: 10, max_items: 100}
+
       helpers Grape::Pagy::Helpers
 
       version 'v1'
@@ -10,10 +12,7 @@ module API
       resource :restrooms do
         desc "Get all restroom records ordered by date descending."
         params do
-          use :pagy,
-              items_param: :per_page,
-              items: 10,
-              max_items: 100
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
         end
@@ -28,10 +27,7 @@ module API
 
         desc "Perform full-text search of restroom records."
         params do
-          use :pagy,
-              items_param: :per_page,
-              items: 10,
-              max_items: 100
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
           requires :query, type: String, desc: "Your search query."
@@ -47,10 +43,7 @@ module API
 
         desc "Search by location."
         params do
-          use :pagy,
-              items_param: :per_page,
-              items: 10,
-              max_items: 100
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
           requires :lat, type: Float, desc: "latitude"
@@ -66,10 +59,7 @@ module API
 
         desc "Search for restroom records updated or created on or after a given date"
         params do
-          use :pagy,
-              items_param: :per_page,
-              items: 10,
-              max_items: 100
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
           optional(
