@@ -1,7 +1,7 @@
 module API
   module V1
     class Restrooms < Grape::API
-      PAGY_OPTIONS = {items_param: :per_page, items: 10, max_items: 100}
+      PAGY_OPTIONS = { items_param: :per_page, items: 10, max_items: 100 }.freeze
 
       helpers Grape::Pagy::Helpers
 
