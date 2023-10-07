@@ -104,15 +104,14 @@ class RestroomsController < ApplicationController
 
   # rubocop:disable Metrics/AbcSize
   def list_restrooms
-    @restrooms = Restroom.current.where(@filters).page(params[:page])
+    @restrooms = Restroom.current.where(@filters)
     @restrooms =
       if params[:search].present? || params[:map] == "1"
         @restrooms.near([params[:lat], params[:long]], 20, order: 'distance')
       else
         @restrooms.reverse_order
       end
-
-    @restrooms = @restrooms.out_of_range? ? @restrooms.page(1) : @restrooms
+    @pagy, @restrooms = pagy(@restrooms)[0].overflow? ? pagy(@restrooms, page: 1) : pagy(@restrooms)
   end
   # rubocop:enable Metrics/AbcSize
 

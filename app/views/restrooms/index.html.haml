@@ -26,7 +26,7 @@
     .col-sm-12.headroom
       %ul{:class => "restrooms-list", :id => "list"}
         = render @restrooms
-        = paginate @restrooms
+        != pagy_nav @pagy
 / .row
 /   .col-xs-12.headroom
 /     .restrooms-index-content
@@ -34,7 +34,7 @@
 /         #map-content
 /       .restrooms-list
 /         = render @restrooms
-/         = paginate @restrooms
+/         != pagy_nav @pagy
 
 
 / #results.headroom
@@ -42,4 +42,4 @@
 /     #mapArea
 /   #list.restrooms-list
 /     = render @restrooms
-/     = paginate @restrooms
+/     != pagy_nav @pagy

@@ -1,8 +1,9 @@
 module API
   module V1
     class Restrooms < Grape::API
-      include Grape::Kaminari
-      paginate per_page: 10, max_per_page: 100
+      PAGY_OPTIONS = { items_param: :per_page, items: 10, max_items: 100 }.freeze
+
+      helpers Grape::Pagy::Helpers
 
       version 'v1'
       format :json
@@ -11,6 +12,7 @@ module API
       resource :restrooms do
         desc "Get all restroom records ordered by date descending."
         params do
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
         end
@@ -20,11 +22,12 @@ module API
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex].present?
 
-          paginate(r.order(created_at: :desc))
+          pagy(r.order(created_at: :desc))
         end
 
         desc "Perform full-text search of restroom records."
         params do
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
           requires :query, type: String, desc: "Your search query."
@@ -35,11 +38,12 @@ module API
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex].present?
 
-          paginate(r.text_search(params[:query]))
+          pagy(r.text_search(params[:query]))
         end
 
         desc "Search by location."
         params do
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
           requires :lat, type: Float, desc: "latitude"
@@ -50,11 +54,12 @@ module API
           r = r.current
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex]
-          paginate(r.near([params[:lat], params[:lng]], 20, order: 'distance'))
+          pagy(r.near([params[:lat], params[:lng]], 20, order: 'distance'))
         end
 
         desc "Search for restroom records updated or created on or after a given date"
         params do
+          use :pagy, **PAGY_OPTIONS
           optional :ada, type: Boolean, desc: "Only return restrooms that are ADA accessible."
           optional :unisex, type: Boolean, desc: "Only return restrooms that are unisex."
           optional(
@@ -77,7 +82,7 @@ module API
               end
           r = r.accessible if params[:ada].present?
           r = r.unisex if params[:unisex].present?
-          paginate(r.order(created_at: :desc))
+          pagy(r.order(created_at: :desc))
         end
       end
       # rubocop:enable Metrics/BlockLength
