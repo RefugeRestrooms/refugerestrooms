@@ -16,6 +16,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "resolutions": {
+    "postcss": "^8.4.31",
     "node-fetch": "^2.6.1",
     "**/watchpack-chokidar2/chokidar": "^3.4.1",
     "webpack-dev-server/chokidar": "^3.4.1",
