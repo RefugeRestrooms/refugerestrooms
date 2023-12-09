@@ -1,5 +1,5 @@
-# this seems to be needed to correct the loading order of the controllers
-# there may be a better way to do this
+# TODO autoloading order changed. This should be managed by configs instead:
+# https://guides.rubyonrails.org/v7.0/autoloading_and_reloading_constants.html#autoloading-when-the-application-boots
 require_relative '../app/controllers/api/v1/base'
 require_relative '../app/controllers/api/base'
 
