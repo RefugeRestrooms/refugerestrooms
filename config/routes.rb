@@ -1,3 +1,8 @@
+# this seems to be needed to correct the loading order of the controllers
+# there may be a better way to do this
+require_relative '../app/controllers/api/v1/base'
+require_relative '../app/controllers/api/base'
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
