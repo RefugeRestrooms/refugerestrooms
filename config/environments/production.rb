@@ -109,4 +109,7 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
+
+  # Need autoloading to work in production too
+  Rails.application.config.enable_dependency_loading
 end
