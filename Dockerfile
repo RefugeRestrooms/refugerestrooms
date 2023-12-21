@@ -20,8 +20,11 @@ RUN curl -L https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantom
 # Work around an issue with running "phantomjs --version"
 ENV OPENSSL_CONF=/etc/ssl/
 
+# Work around an issue with a deprecated hash function in Rails Webpacker 5
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 # Specify a major version of Node.js to download and install
-ENV NODEJS_MAJOR_VERSION=16
+ENV NODEJS_MAJOR_VERSION=20
 
 # Download and extract Node.js from archive supplied by nodejs.org
 RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \

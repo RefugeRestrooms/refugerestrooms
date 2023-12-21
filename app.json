@@ -26,6 +26,10 @@
     "LANG": {
       "required": true
     },
+    "NODE_OPTIONS": {
+      "required": true,
+      "value": "--openssl-legacy-provider"
+    },
     "RACK_ENV": {
       "required": true
     },
