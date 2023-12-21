@@ -1,3 +1,7 @@
+# TODO autoloading order changed. This should be managed by configs instead:
+# https://guides.rubyonrails.org/v7.0/autoloading_and_reloading_constants.html#autoloading-when-the-application-boots
+require_relative 'restrooms'
+
 module API
   module V1
     class Base < Grape::API

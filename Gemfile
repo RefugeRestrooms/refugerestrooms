@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 ruby '3.2.2'
 
-gem 'rails', '6.1.7.6'
+gem 'rails', '7.1.2'
 
-gem 'activeadmin', '~> 2.1'
+gem 'activeadmin', '~> 3.1.0'
 gem 'bootsnap', require: false
 gem 'bootstrap-sass', '>= 3.4.1'
 gem 'bugsnag'
@@ -55,7 +55,7 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
-  gem 'simplecov', '~> 0.17.1', require: false
+  gem 'simplecov', '~> 0.22.0', require: false
   gem 'webmock', '~> 3.12.1'
 end
 

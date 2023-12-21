@@ -1,3 +1,8 @@
+# TODO autoloading order changed. This should be managed by configs instead:
+# https://guides.rubyonrails.org/v7.0/autoloading_and_reloading_constants.html#autoloading-when-the-application-boots
+require_relative '../app/controllers/api/v1/base'
+require_relative '../app/controllers/api/base'
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
