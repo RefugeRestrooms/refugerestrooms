@@ -2,23 +2,9 @@ FROM ruby:3.2.2-slim
 
 # Add basic binaries
 RUN apt-get update \
-  && apt-get install -y curl g++ gcc libfontconfig libpq-dev make patch xz-utils \
+  && apt-get install -y curl g++ gcc libfontconfig libpq-dev make patch xz-utils chromium \
   # Clean up the apt cache
   && rm -rf /var/lib/apt/lists/*
-
-# Download, extract and install PhantomJS from archive hosted at bitbucket
-RUN curl -L https://github.com/Medium/phantomjs/releases/download/v2.1.1/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O \
-  # Check the file's integrity against its known sha1sum
-  && test "`sha1sum phantomjs-2.1.1-linux-x86_64.tar.bz2`" = "f8afc8a24eec34c2badccc93812879a3d6f2caf3  phantomjs-2.1.1-linux-x86_64.tar.bz2" || (echo "PhantomJS tarball SHA1sum did not match!" && exit 1) \
-  # Extract and clean up the PhantomJS archive
-  && tar xf phantomjs-2.1.1-linux-x86_64.tar.bz2 && rm phantomjs-2.1.1-linux-x86_64.tar.bz2 \
-  # Install PhantomJS binary to /usr/local/bin
-  && mv phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin \
-  # Clean up extra (un-needed) PhantomJS files
-  && rm -rf phantomjs-2.1.1-linux-x86_64/
-
-# Work around an issue with running "phantomjs --version"
-ENV OPENSSL_CONF=/etc/ssl/
 
 # Work around an issue with a deprecated hash function in Rails Webpacker 5
 ENV NODE_OPTIONS=--openssl-legacy-provider

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RestroomsController, type: :controller do
+describe RestroomsController do
   it_behaves_like 'localized request', :index
 
   it "#index" do

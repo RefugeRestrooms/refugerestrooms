@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'restrooms', type: :feature, js: true do
+describe 'restrooms', :js do
   describe 'submission' do
     it 'adds a restroom when submitted' do
       visit root_path
@@ -47,7 +47,7 @@ describe 'restrooms', type: :feature, js: true do
 
       visit root_path
       fill_in 'search', with: 'San Francisco'
-      click_on 'Search'
+      click_button 'Search'
 
       expect(page).to have_content 'Mission Creek Cafe'
     end
@@ -57,7 +57,7 @@ describe 'restrooms', type: :feature, js: true do
 
       visit root_path
       mock_location "Oakland"
-      click_on 'Search by Current Location'
+      click_button 'Search by Current Location'
 
       expect(page).not_to have_content 'Some Cafe'
     end
@@ -99,7 +99,7 @@ describe 'restrooms', type: :feature, js: true do
       fill_in "restroom[state]", with: "British Columbia"
       find(:select, "Country").first(:option, "Canada").select_option
 
-      click_on "Preview"
+      click_button "Preview"
 
       page.has_css?(".nearby-container .listItem", visible: :visible)
     end
@@ -136,7 +136,7 @@ describe 'restrooms', type: :feature, js: true do
       click_link "Propose an edit to this listing."
 
       fill_in "restroom[directions]", with: "This is an edit"
-      click_on "Save Restroom"
+      click_button "Save Restroom"
 
       expect(page).to have_content("Your edit has been submitted.")
       expect(Restroom.where(edit_id: restroom.id).size).to eq(2)

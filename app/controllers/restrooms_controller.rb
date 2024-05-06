@@ -17,6 +17,8 @@ class RestroomsController < ApplicationController
     end
   end
 
+  def show; end
+
   # rubocop:disable Metrics/MethodLength
   def new
     if params[:edit_id]
@@ -33,7 +35,7 @@ class RestroomsController < ApplicationController
   end
   # rubocop:enable Metrics/MethodLength
 
-  def show; end
+  def edit; end
 
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
@@ -68,8 +70,6 @@ class RestroomsController < ApplicationController
   end
   # rubocop:enable Metrics/AbcSize
   # rubocop:enable Metrics/MethodLength
-
-  def edit; end
 
   # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PagesController, type: :controller do
+describe PagesController do
   it_behaves_like 'localized request', :index
 
   it "#index" do

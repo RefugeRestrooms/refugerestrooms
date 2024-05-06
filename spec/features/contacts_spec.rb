@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'the contact process', type: :feature do
+describe 'the contact process' do
   it 'shows a generic contact when contact is not from restroom form' do
     restroom = create(:restroom, name: "Mission Creek Cafe")
 
