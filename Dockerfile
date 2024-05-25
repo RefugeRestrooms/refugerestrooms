@@ -6,8 +6,11 @@ RUN apt-get update \
   # Clean up the apt cache
   && rm -rf /var/lib/apt/lists/*
 
+# Work around an issue with a deprecated hash function in Rails Webpacker 5
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 # Specify a major version of Node.js to download and install
-ENV NODEJS_MAJOR_VERSION=16
+ENV NODEJS_MAJOR_VERSION=20
 
 # Download and extract Node.js from archive supplied by nodejs.org
 RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \
