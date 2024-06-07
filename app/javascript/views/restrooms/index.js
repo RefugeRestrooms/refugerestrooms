@@ -1,4 +1,4 @@
-import { Maps } from '../../lib/maps';
+import { Maps } from '../../lib/maps.js.erb';
 
 let URLParamsParser = window.URLSearchParams;
 

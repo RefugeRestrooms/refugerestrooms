@@ -8,8 +8,8 @@
 
 %script{:src => "https://maps.googleapis.com/maps/api/js?v=quarterly&libraries=places&key=AIzaSyCEjTsxAkHtqGhECdsqNwwpW5pslQcJuuE"}
 = javascript_include_tag "https://www.google.com/recaptcha/api.js", :async => true, :defer => true
+= javascript_include_tag "application", "data-turbolinks-track": "reload", type: "module"
 = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-= javascript_pack_tag "application", "data-turbolinks-track": "reload"
 = csrf_meta_tags
 = render 'layouts/piwik_tag'
 

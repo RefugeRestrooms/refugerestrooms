@@ -1,5 +1,5 @@
 import { Geocoder } from '../../lib/geocoder';
-import { Maps } from '../../lib/maps';
+import { Maps } from '../../lib/maps.js.erb';
 
 class NewRestroomForm {
   constructor(form) {

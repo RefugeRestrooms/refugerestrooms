@@ -34,7 +34,7 @@ gem 'simple_form', '~> 5.0'
 gem 'sprockets', '< 4'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker', '~> 5'
+gem 'jsbundling-rails'
 
 group :development, :test do
   gem 'better_errors', '~> 2.9.1'

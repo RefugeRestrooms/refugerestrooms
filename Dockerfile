@@ -7,7 +7,7 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # Specify a major version of Node.js to download and install
-ENV NODEJS_MAJOR_VERSION=16
+ENV NODEJS_MAJOR_VERSION=20
 
 # Download and extract Node.js from archive supplied by nodejs.org
 RUN curl -L https://nodejs.org/dist/latest-v$NODEJS_MAJOR_VERSION\.x/SHASUMS256.txt -O \
