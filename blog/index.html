@@ -1,0 +1,19 @@
+---
+layout: default
+title: Refuge Restrooms
+---
+<div>
+	<h1>Welcome to Our Blog</h1>
+	<p>REFUGE restrooms indexes and maps safe restroom locations for trans, intersex, and gender nonconforming individuals.</p>
+	<ul class="posts">
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="/refugerestrooms{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
+  <h2>Our Code of Conduct</h2>
+      <p>In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making 
+         participation in our project and our community a harassment-free experience for everyone, regardless of age, 
+         body size, disability, ethnicity, gender identity and expression, level of experience, nationality, 
+         personal appearance, race, religion, or sexual identity and orientation.</p>
+      <a href="https://github.com/RefugeRestrooms/refugerestrooms/blob/develop/CODE_OF_CONDUCT.md">Read our full code of conduct here</a>
+</div>
