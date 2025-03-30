@@ -49,7 +49,8 @@ Please also read our [Code of Conduct](https://github.com/RefugeRestrooms/refuge
 ## Links to Refuge project on other platforms
 
 - [SMS messaging Twilio Application](https://github.com/RefugeRestrooms/refugerest_sms)
-- [Android Native Application](https://github.com/RefugeRestrooms/refugerestrooms-android)
+- [Android Native Application (Java)](https://github.com/RefugeRestrooms/refugerestrooms-android)
+- [Android Native Application (Kotlin + Jetpack Compose)](https://github.com/Alejandro-Casanova/Refuge-Restrooms-Android)
 - [iOS Native Application](https://github.com/RefugeRestrooms/refuge-ios)
 - [Yo Application](https://github.com/raptortech-js/YoRestrooms)
 
