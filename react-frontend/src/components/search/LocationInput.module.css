@@ -1,0 +1,200 @@
+/* LocationInput component styles */
+
+.locationInput {
+  position: relative;
+  width: 100%;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.input {
+  flex: 1;
+  min-width: 0; /* Allow input to shrink */
+}
+
+.locationButton {
+  flex-shrink: 0;
+  padding: 0.5rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingIcon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 0.25rem;
+}
+
+.suggestion {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.suggestion:last-child {
+  border-bottom: none;
+}
+
+.suggestion:hover,
+.suggestion.selected {
+  background-color: #f8fafc;
+}
+
+.suggestionText {
+  flex: 1;
+  font-size: 0.875rem;
+  color: #374151;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggestionMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.suggestionIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: #9ca3af;
+}
+
+.confidence {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.loadingIndicator {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  z-index: 1000;
+  margin-top: 0.25rem;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .inputContainer {
+    gap: 0.25rem;
+  }
+  
+  .locationButton {
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0.25rem;
+  }
+  
+  .suggestions {
+    max-height: 150px;
+  }
+  
+  .suggestion {
+    padding: 0.5rem;
+  }
+  
+  .suggestionText {
+    font-size: 0.8125rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .suggestions,
+  .loadingIndicator {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .suggestion {
+    border-bottom-color: #374151;
+  }
+  
+  .suggestion:hover,
+  .suggestion.selected {
+    background-color: #374151;
+  }
+  
+  .suggestionText {
+    color: #e5e7eb;
+  }
+  
+  .confidence,
+  .suggestionIcon {
+    color: #9ca3af;
+  }
+  
+  .loadingIndicator {
+    color: #d1d5db;
+  }
+}
+
+/* Focus and accessibility styles */
+.suggestion:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: -2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .suggestions,
+  .loadingIndicator {
+    border-width: 2px;
+  }
+  
+  .suggestion:hover,
+  .suggestion.selected {
+    background-color: #000;
+    color: #fff;
+  }
+}

@@ -5,6 +5,7 @@ export * from './ui';
 
 // Demo Components
 export { UIComponentsDemo } from './demo/UIComponentsDemo';
+export { LocationDemo } from './demo/LocationDemo';
 
 // Search Components
 export * from './search';

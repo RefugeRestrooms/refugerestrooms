@@ -1,0 +1,154 @@
+/* LocationDemo component styles */
+
+.locationDemo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.locationDemo h2 {
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #f9fafb;
+}
+
+.section h3 {
+  color: #374151;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.locationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.locationDetails {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+}
+
+.locationDetails p {
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+.locationDetails strong {
+  color: #374151;
+}
+
+.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.placeholder {
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+.supportInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.supportInfo p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.examples {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+}
+
+.examples p {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  color: #374151;
+}
+
+.examples ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.examples li {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .locationDemo {
+    padding: 1rem;
+  }
+  
+  .section {
+    padding: 1rem;
+  }
+  
+  .locationDetails {
+    padding: 0.75rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .locationDemo h2 {
+    color: #f9fafb;
+  }
+  
+  .section {
+    background: #374151;
+    border-color: #4b5563;
+  }
+  
+  .section h3 {
+    color: #f3f4f6;
+  }
+  
+  .locationDetails,
+  .examples {
+    background: #1f2937;
+    border-color: #4b5563;
+    color: #e5e7eb;
+  }
+  
+  .locationDetails strong {
+    color: #f3f4f6;
+  }
+  
+  .placeholder {
+    color: #9ca3af;
+  }
+  
+  .examples p {
+    color: #f3f4f6;
+  }
+  
+  .examples li {
+    color: #d1d5db;
+  }
+}
