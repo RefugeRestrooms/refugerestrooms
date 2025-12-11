@@ -1,0 +1,44 @@
+/* Icon Component Styles - React Native Compatible */
+
+.icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  color: currentColor;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Size classes for convenience */
+.small {
+  width: 16px;
+  height: 16px;
+}
+
+.medium {
+  width: 24px;
+  height: 24px;
+}
+
+.large {
+  width: 32px;
+  height: 32px;
+}
+
+/* Interactive states */
+.icon:hover {
+  opacity: 0.8;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .icon {
+    stroke-width: 2.5;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,286 @@
+/* Toast Component Styles - React Native Compatible */
+
+.container {
+  position: fixed;
+  z-index: 1100;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  padding: 16px;
+}
+
+/* Container positions */
+.topright {
+  top: 0;
+  right: 0;
+}
+
+.topleft {
+  top: 0;
+  left: 0;
+}
+
+.bottomright {
+  bottom: 0;
+  right: 0;
+  flex-direction: column-reverse;
+}
+
+.bottomleft {
+  bottom: 0;
+  left: 0;
+  flex-direction: column-reverse;
+}
+
+.topcenter {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottomcenter {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+}
+
+/* Toast styles */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid;
+  pointer-events: auto;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.toast.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.exiting {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+/* Toast types */
+.success {
+  border-left-color: #10b981;
+}
+
+.success .icon {
+  color: #10b981;
+}
+
+.error {
+  border-left-color: #ef4444;
+}
+
+.error .icon {
+  color: #ef4444;
+}
+
+.warning {
+  border-left-color: #f59e0b;
+}
+
+.warning .icon {
+  color: #f59e0b;
+}
+
+.info {
+  border-left-color: #3b82f6;
+}
+
+.info .icon {
+  color: #3b82f6;
+}
+
+/* Toast elements */
+.icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.message {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.actionButton {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 2px;
+}
+
+.actionButton:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.actionButton:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.closeButton {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  margin-top: 2px;
+}
+
+.closeButton:hover {
+  color: #6b7280;
+  background-color: #f3f4f6;
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .container {
+    max-width: calc(100vw - 32px);
+    padding: 16px;
+  }
+  
+  .toast {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .title,
+  .message {
+    font-size: 13px;
+  }
+  
+  /* Adjust positions for mobile */
+  .topright,
+  .topleft,
+  .topcenter {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    max-width: none;
+  }
+  
+  .bottomright,
+  .bottomleft,
+  .bottomcenter {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    max-width: none;
+  }
+  
+  /* Mobile slide animations */
+  .toast {
+    transform: translateY(-100%);
+  }
+  
+  .toast.visible {
+    transform: translateY(0);
+  }
+  
+  .toast.exiting {
+    transform: translateY(-100%);
+  }
+  
+  .bottomright .toast,
+  .bottomleft .toast,
+  .bottomcenter .toast {
+    transform: translateY(100%);
+  }
+  
+  .bottomright .toast.visible,
+  .bottomleft .toast.visible,
+  .bottomcenter .toast.visible {
+    transform: translateY(0);
+  }
+  
+  .bottomright .toast.exiting,
+  .bottomleft .toast.exiting,
+  .bottomcenter .toast.exiting {
+    transform: translateY(100%);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .toast {
+    border: 2px solid;
+    border-left-width: 6px;
+  }
+  
+  .actionButton {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    transition: opacity 0.2s ease-out;
+    transform: none;
+  }
+  
+  .toast.visible {
+    transform: none;
+  }
+  
+  .toast.exiting {
+    transform: none;
+  }
+  
+  .actionButton,
+  .closeButton {
+    transition: none;
+  }
+}

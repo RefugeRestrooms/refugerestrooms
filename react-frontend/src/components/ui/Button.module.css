@@ -1,0 +1,164 @@
+/* Button Component Styles - React Native Compatible */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; /* Mobile touch feedback */
+}
+
+.button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Sizes */
+.small {
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  min-height: 32px;
+}
+
+.medium {
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 44px; /* Touch-friendly minimum */
+}
+
+.large {
+  padding: 16px 32px;
+  font-size: 18px;
+  line-height: 1.5;
+  min-height: 52px;
+}
+
+/* Variants */
+.primary {
+  background-color: #0066cc;
+  color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: #0052a3;
+}
+
+.primary:active:not(:disabled) {
+  background-color: #003d7a;
+  transform: translateY(1px);
+}
+
+.secondary {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: #e8e8e8;
+  border-color: #ccc;
+}
+
+.secondary:active:not(:disabled) {
+  background-color: #ddd;
+  transform: translateY(1px);
+}
+
+.danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.danger:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.danger:active:not(:disabled) {
+  background-color: #bd2130;
+  transform: translateY(1px);
+}
+
+.ghost {
+  background-color: transparent;
+  color: #0066cc;
+  border: 1px solid transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: rgba(0, 102, 204, 0.1);
+  border-color: #0066cc;
+}
+
+.ghost:active:not(:disabled) {
+  background-color: rgba(0, 102, 204, 0.2);
+  transform: translateY(1px);
+}
+
+/* States */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+.hiddenText {
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+  
+  .button:active:not(:disabled) {
+    transform: none;
+  }
+}

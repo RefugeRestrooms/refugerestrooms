@@ -3,6 +3,9 @@
 // UI Components
 export * from './ui';
 
+// Demo Components
+export { UIComponentsDemo } from './demo/UIComponentsDemo';
+
 // Search Components
 export * from './search';
 
