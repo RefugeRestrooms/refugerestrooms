@@ -16,10 +16,39 @@ type Restroom {
   downvote: Int!
   approved: Boolean!
   spamScore: Float
+  overallScore: Float
+  safetyScore: Float
+  totalFeedback: Int
+  confidence: FeedbackConfidence
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   distance: Float
   relevanceScore: Float
+}
+
+enum FeedbackReason {
+  SAFE
+  CLEAN
+  ACCESSIBLE
+  ACCURATE
+  PRIVATE
+  UNSAFE
+  DIRTY
+  INACCESSIBLE
+  OUTDATED
+  INAPPROPRIATE
+}
+
+enum FeedbackConfidence {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+type FeedbackResponse {
+  success: Boolean!
+  message: String!
+  restroom: Restroom
 }
 
 input CreateRestroomInput {
@@ -52,6 +81,12 @@ type Mutation {
   createRestroom(input: CreateRestroomInput!): Restroom
   updateRestroom(id: ID!, input: UpdateRestroomInput!): Restroom
   deleteRestroom(id: ID!): DeleteRestroomResponse
+  submitFeedback(
+    restroomId: ID!
+    positive: Boolean!
+    reasons: [FeedbackReason!]
+    comment: String
+  ): Restroom
 }
 
 type DeleteRestroomResponse {

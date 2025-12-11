@@ -1,344 +1,303 @@
-# Testing Guide
+# Test Suite for REFUGE Restrooms AWS POC
 
-Complete guide for testing the REFUGE Restrooms GraphQL API.
+## Overview
 
-## Quick Start
+This directory contains comprehensive test scripts for validating the AWS serverless implementation of REFUGE Restrooms functionality.
 
-After deploying with CDK, you'll have these outputs:
-- **GraphQL Endpoint**: `https://xxxxx.appsync-api.us-east-1.amazonaws.com/graphql`
-- **API Key**: `da2-xxxxxxxxxxxxxxxxxxxxxxxxxx`
+## Test Scripts
 
-## Test Files Overview
+### Core Functionality Tests
 
-| File | Type | Purpose |
-|------|------|---------|
-| `test-restrooms.sh` | End-to-End | Complete CRUD test (create, get, delete, verify) |
-| `local-test.js` | Local | Validate Lambda logic without AWS |
+#### `test-restrooms.sh`
+Tests basic CRUD operations for restrooms:
+- Create restroom
+- Get restroom by ID
+- Update restroom
+- Delete restroom
+- List restrooms with pagination
 
-## End-to-End Test (Recommended)
+#### `test-search.sh`
+Tests search functionality:
+- Text search across restroom fields
+- Geospatial search by location
+- Combined text + location search
+- Search with filters (accessible, unisex, etc.)
 
-Tests the complete restroom lifecycle:
+#### `test-geospatial.sh`
+Tests location-based features:
+- Distance calculation
+- Radius-based filtering
+- Geocoding integration
+- Sorting by distance
 
+#### `test-pagination.sh`
+Tests pagination across all list operations:
+- Token-based pagination
+- Limit handling
+- Large dataset pagination
+- Edge cases
+
+### Security & Quality Tests
+
+#### `test-spam-protection.sh`
+Tests spam protection mechanisms:
+- Legitimate content (should pass)
+- Spam keywords (should be flagged/rejected)
+- URLs in inappropriate fields
+- Excessive content length
+- Rate limiting (5 submissions/hour per IP)
+
+**⚠️ Cleanup Note:** This test creates multiple restrooms that may need manual cleanup.
+
+#### `test-feedback-system.sh`
+Tests the enhanced feedback system:
+- Positive feedback with reason categories
+- Negative feedback with reason categories
+- Simple thumbs up/down
+- Input validation
+- Rate limiting (3 feedback/restroom/day per IP)
+- Score calculation and updates
+
+**✅ Cleanup:** This test automatically cleans up the test restroom it creates.
+
+### Utility Scripts
+
+### Utility Scripts (in `../scripts/`)
+
+#### `cleanup-test-data.sh`
+Interactive cleanup script for removing test data:
+- Identifies test restrooms by name patterns
+- Confirms before deletion
+- Provides cleanup status
+- Handles bulk cleanup operations
+
+#### `validate-tests.sh`
+Validates test compliance with cleanup standards:
+- Checks for required cleanup patterns
+- Ensures all tests follow standards
+- Provides remediation guidance
+
+#### `local-test.js`
+Node.js script for local testing without GraphQL:
+- Direct Lambda function testing
+- Mocked event data
+- Useful for development and debugging
+
+## Usage
+
+### Prerequisites
+
+1. **Deployed AWS Infrastructure**
+   ```bash
+   cd aws-poc/cdk
+   cdk deploy
+   ```
+
+2. **Environment Variables**
+   ```bash
+   export GRAPHQL_ENDPOINT="https://your-appsync-endpoint/graphql"
+   export API_KEY="your-api-key"
+   ```
+
+### Running Tests
+
+#### Individual Test Scripts
 ```bash
-./test-restrooms.sh \
-  "https://xxxxx.appsync-api.us-east-1.amazonaws.com/graphql" \
-  "da2-xxxxxxxxxxxxxxxxxxxxxxxxxx"
+cd aws-poc/test
+
+# Basic functionality
+./test-restrooms.sh $GRAPHQL_ENDPOINT $API_KEY
+
+# Search capabilities
+./test-search.sh $GRAPHQL_ENDPOINT $API_KEY
+./test-geospatial.sh $GRAPHQL_ENDPOINT $API_KEY
+
+# Security features
+./test-spam-protection.sh $GRAPHQL_ENDPOINT $API_KEY
+./test-feedback-system.sh $GRAPHQL_ENDPOINT $API_KEY
+
+# Cleanup (if needed)
+../scripts/cleanup-test-data.sh $GRAPHQL_ENDPOINT $API_KEY
 ```
 
-**What it does:**
-1. ✅ **Create** - Creates a test restroom with geocoding
-2. ✅ **Get** - Retrieves it back by ID and verifies data
-3. ✅ **Delete** - Deletes the restroom
-4. ✅ **Verify** - Confirms it was deleted
-
-**Expected output:**
-```
-==========================================
-REFUGE Restrooms - End-to-End Test
-==========================================
-
-Test 1: Creating a restroom...
-✓ Test 1 PASSED: Restroom created with ID: restroom-1764788094730-abc123
-✓ Geocoding successful: 37.791501, -122.398676
-
-Test 2: Retrieving the restroom...
-✓ Test 2 PASSED: Restroom retrieved successfully
-✓ Data verification passed
-
-Test 3: Deleting the restroom...
-✓ Test 3 PASSED: Restroom deleted successfully
-
-Test 4: Verifying deletion...
-✓ Test 4 PASSED: Restroom confirmed deleted (not found)
-
-==========================================
-All Tests Completed!
-==========================================
-
-Summary:
-  ✓ Create restroom
-  ✓ Get restroom
-  ✓ Delete restroom
-  ✓ Verify deletion
-
-End-to-end test PASSED! 🎉
-```
-
-## Local Testing (No AWS Required)
-
-Validates Lambda business logic without deploying:
-
+#### Full Test Suite
 ```bash
-node local-test.js
+# Run all tests in sequence
+for test in test-*.sh; do
+    echo "Running $test..."
+    ./$test $GRAPHQL_ENDPOINT $API_KEY
+    echo "Completed $test"
+    echo "---"
+done
 ```
 
-**What it tests:**
-- Input validation (required fields)
-- Restroom object creation
-- Default values
-- Error handling
+## Test Data Management
 
-**Expected output:**
-```
-✓ Validation passed
-✓ Geocoded to: 37.7749, -122.4194
-✓ Restroom object created
-✓ Correctly caught error: Name is required
-```
+### Automatic Cleanup
 
-## Manual Testing Options
+**Rate Limiting Data:**
+- TTL: 7 days (automatic cleanup)
+- Table: `refuge-rate-limits-{env}`
 
-### Option 1: Using the Test Scripts
+**Feedback Data (Non-Production):**
+- TTL: 90 days (automatic cleanup)
+- Table: `refuge-feedback-{env}`
 
-### Option 2: Using AWS AppSync Console
+**Spam Protection Data:**
+- TTL: 24 hours (automatic cleanup)
+- Stored in rate limiting table
 
-1. Go to AWS AppSync Console
-2. Select your API: `refuge-restrooms-api-dev`
-3. Click "Queries" in the left sidebar
-4. Copy the mutation from `test-mutation.graphql`
-5. Click "Run" to execute
+### Manual Cleanup
 
-### Option 3: Using curl
+**Test Restrooms:**
+- Created by: `test-spam-protection.sh`, `test-feedback-system.sh`
+- Cleanup: Use `cleanup-test-data.sh` or delete manually
+- Identification: Look for names containing "Test", "Bitcoin", "Casino", etc.
 
-### Create a restroom:
-```bash
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: YOUR_API_KEY" \
-  -d '{
-    "query": "mutation CreateRestroom($input: CreateRestroomInput!) { createRestroom(input: $input) { id name street city state latitude longitude accessible unisex approved createdAt } }",
-    "variables": {
-      "input": {
-        "name": "Example Cafe",
-        "street": "789 Valencia Street",
-        "city": "San Francisco",
-        "state": "CA",
-        "country": "US",
-        "accessible": true,
-        "unisex": true,
-        "changingTable": false
-      }
-    }
-  }' \
-  YOUR_API_ENDPOINT
-```
+**Feedback Records (Production):**
+- No automatic cleanup in production
+- Manual cleanup required if needed
+- Query by `restroomId` in feedback table
 
-### Get a restroom:
-```bash
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: YOUR_API_KEY" \
-  -d '{
-    "query": "query GetRestroom($id: ID!) { getRestroom(id: $id) { id name street city state latitude longitude } }",
-    "variables": {
-      "id": "restroom-1234567890-abc123"
-    }
-  }' \
-  YOUR_API_ENDPOINT
-```
+### Test Environment Best Practices
 
-### Option 4: Using Postman
+1. **Use Separate Environment**
+   ```bash
+   # Deploy to test environment
+   cdk deploy --context environment=test
+   ```
 
-1. Import the GraphQL schema from `../schema/schema.graphql`
-2. Set up a POST request to your AppSync endpoint
-3. Add header: `x-api-key: YOUR_API_KEY`
-4. Use the queries from `test-mutation.graphql` and `test-query.graphql`
+2. **Regular Cleanup**
+   ```bash
+   # Run cleanup after test sessions
+   ./cleanup-test-data.sh $ENDPOINT $API_KEY
+   ```
 
-## Expected Results
+3. **Monitor Test Data**
+   ```bash
+   # Check for test restrooms
+   aws dynamodb scan \
+     --table-name refuge-restrooms-test \
+     --filter-expression "contains(#name, :test)" \
+     --expression-attribute-names '{"#name": "name"}' \
+     --expression-attribute-values '{":test": {"S": "Test"}}'
+   ```
 
-### Successful Creation Response:
-```json
-{
-  "data": {
-    "createRestroom": {
-      "id": "restroom-1701234567890-xyz789",
-      "name": "Example Cafe",
-      "street": "789 Valencia Street",
-      "city": "San Francisco",
-      "state": "CA",
-      "country": "US",
-      "latitude": 37.7599,
-      "longitude": -122.4214,
-      "accessible": true,
-      "unisex": true,
-      "changingTable": false,
-      "approved": false,
-      "createdAt": "2024-12-02T10:30:00.000Z"
-    }
-  }
-}
-```
+## Test Patterns and Conventions
 
-### Successful Get Response:
-```json
-{
-  "data": {
-    "getRestroom": {
-      "id": "restroom-1701234567890-xyz789",
-      "name": "Example Cafe",
-      "street": "789 Valencia Street",
-      "city": "San Francisco",
-      "state": "CA",
-      "country": "US",
-      "latitude": 37.7599,
-      "longitude": -122.4214,
-      "accessible": true,
-      "unisex": true,
-      "changingTable": false,
-      "comment": "",
-      "directions": "",
-      "upvote": 0,
-      "downvote": 0,
-      "approved": false,
-      "createdAt": "2024-12-02T10:30:00.000Z",
-      "updatedAt": "2024-12-02T10:30:00.000Z"
-    }
-  }
-}
-```
+### Test Restroom Naming
+- Use "Test" prefix/suffix for easy identification
+- Include test purpose: "Test Feedback Restroom", "Rate Test Restroom 1"
+- Avoid realistic names that could be confused with real data
 
-## Validation Tests
+### Error Handling
+- Tests should handle API errors gracefully
+- Provide clear success/failure indicators (✅/❌)
+- Include response details for debugging
 
-The Lambda function validates:
-- ✓ Name is required and not empty
-- ✓ Street is required and not empty
-- ✓ City is required and not empty
-- ✓ State is required and not empty
+### Rate Limiting Awareness
+- Tests may trigger rate limits (this is expected)
+- Include delays between requests when testing rate limits
+- Document expected rate limit behavior
 
-Try creating a restroom without required fields to test validation:
-```graphql
-mutation TestValidation {
-  createRestroom(input: {
-    name: ""
-    street: "123 Main St"
-    city: "San Francisco"
-    state: "CA"
-    country: "US"
-    accessible: false
-    unisex: false
-    changingTable: false
-  }) {
-    id
-  }
-}
-```
-
-Expected error:
-```json
-{
-  "errors": [{
-    "message": "Failed to create restroom: Validation failed: Name is required"
-  }]
-}
-```
-
-## Checking DynamoDB
-
-View created restrooms directly in DynamoDB:
-```bash
-aws dynamodb scan \
-  --table-name refuge-restrooms-dev \
-  --max-items 10
-```
-
-## Monitoring
-
-Check Lambda logs:
-```bash
-# Create function logs
-aws logs tail /aws/lambda/refuge-create-restroom-dev --follow
-
-# Get function logs
-aws logs tail /aws/lambda/refuge-get-restroom-dev --follow
-```
+### Data Validation
+- Verify response structure and required fields
+- Check score calculations and updates
+- Validate error messages and status codes
 
 ## Troubleshooting
 
-### "Unauthorized" error
-- Check that your API key is correct
-- Ensure the API key hasn't expired
+### Common Issues
 
-### "Internal server error"
-- Check Lambda logs for detailed error messages
-- Verify Lambda has permissions to access DynamoDB
+**"Too many submissions" errors:**
+- Expected during rate limiting tests
+- Wait for rate limit window to reset (1 hour for spam protection, 24 hours for feedback)
+- Use different IP or test environment
 
-### Geocoding returns null coordinates
+**Test restrooms not found:**
+- Check if previous tests failed to create restrooms
+- Verify API endpoint and key are correct
+- Check CloudWatch logs for Lambda errors
 
-Check Lambda logs:
+**Cleanup script not finding test data:**
+- Test restrooms may have been created with different names
+- Check DynamoDB table directly
+- Use AWS console to identify and delete manually
+
+### Debugging
+
+**View Lambda Logs:**
 ```bash
-aws logs tail /aws/lambda/refuge-create-restroom-dev --follow --profile personal
+aws logs tail /aws/lambda/refuge-create-restroom-dev --follow
+aws logs tail /aws/lambda/refuge-submit-feedback-dev --follow
 ```
 
-Verify Place Index exists:
+**Check DynamoDB Tables:**
 ```bash
-aws location describe-place-index \
-  --index-name refuge-restrooms-places-dev \
-  --profile personal
+aws dynamodb scan --table-name refuge-restrooms-dev --max-items 10
+aws dynamodb scan --table-name refuge-feedback-dev --max-items 10
 ```
 
-### Test script fails with "command not found"
-
-Make script executable:
+**Validate GraphQL Schema:**
 ```bash
-chmod +x test-restrooms.sh
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: $API_KEY" \
+  -d '{"query": "query { __schema { types { name } } }"}' \
+  $GRAPHQL_ENDPOINT
 ```
 
-## Next Steps
+## Contributing
 
-After testing:
-- ✅ Verify geocoding works (latitude/longitude populated)
-- ✅ Check CloudWatch logs for errors
-- ✅ View data in DynamoDB
-- ✅ Test error scenarios (invalid data, missing fields)
-- 📋 Add more test cases
-- 📋 Set up automated CI/CD testing
-- 📋 Add load testing
+### Mandatory Test Standards
 
-See `../NEXT-STEPS.md` for adding more features!
+**🚨 CRITICAL: All tests MUST clean up after themselves from the start**
 
+When adding new tests, you MUST:
 
-## Complete Test Workflow
+1. **Use the test template:** Start with `test-template.sh` as your base
+2. **Track all created resources:** Use arrays to track restroom IDs, feedback, etc.
+3. **Implement cleanup function:** Use `trap cleanup EXIT` to ensure cleanup runs
+4. **Test cleanup works:** Verify cleanup runs on success, failure, and interruption
+5. **Follow naming convention:** `test-{feature}.sh`
+6. **Add to this README:** Document the test purpose and what it cleans up
 
-```bash
-# 1. Run local tests (no AWS needed)
-node local-test.js
-
-# 2. Deploy to AWS
-cd ../cdk
-cdk deploy --profile personal
-
-# 3. Copy the outputs
-# GraphQLApiEndpoint = https://xxxxx.appsync-api.us-east-1.amazonaws.com/graphql
-# GraphQLApiKey = da2-xxxxxxxxxxxxxxxxxxxxxxxxxx
-
-# 4. Run end-to-end test
-cd ../test
-./test-restrooms.sh \
-  "https://xxxxx.appsync-api.us-east-1.amazonaws.com/graphql" \
-  "da2-xxxxxxxxxxxxxxxxxxxxxxxxxx"
-```
-
-## Viewing Test Data
-
-### DynamoDB Console
-
-1. Go to DynamoDB Console
-2. Select table: `refuge-restrooms-dev`
-3. Click "Explore table items"
-
-### AWS CLI
+### Test Template Usage
 
 ```bash
-aws dynamodb scan \
-  --table-name refuge-restrooms-dev \
-  --profile personal
+# Copy the template for new tests
+cp test-template.sh test-my-feature.sh
+
+# Customize the template:
+# 1. Update feature name and description
+# 2. Replace example tests with your test logic
+# 3. Add any additional cleanup (feedback, etc.)
+# 4. Test that cleanup works properly
 ```
 
-### Get specific restroom
+### Cleanup Requirements
 
-```bash
-aws dynamodb get-item \
-  --table-name refuge-restrooms-dev \
-  --key '{"id": {"S": "restroom-1234567890-abc123"}}' \
-  --profile personal
-```
+**Automatic Cleanup (Required):**
+- ✅ All created restrooms MUST be deleted
+- ✅ Use `trap cleanup EXIT` for reliability
+- ✅ Handle cleanup failures gracefully
+- ✅ Provide clear cleanup status messages
+
+**Additional Resources:**
+- Feedback records: Auto-cleanup via TTL (non-prod) or manual deletion
+- Rate limit records: Auto-cleanup via 7-day TTL
+- Spam protection records: Auto-cleanup via 24-hour TTL
+
+### Output Standards
+
+- ✅ for success, ❌ for failure, ⚠️ for warnings
+- 🧪 for test start, 🧹 for cleanup, 🏁 for completion
+- Clear resource IDs in output for debugging
+- Consistent error handling across all tests
+
+## Security Considerations
+
+- **API Keys:** Never commit API keys to version control
+- **Test Data:** Ensure test data doesn't contain sensitive information
+- **Rate Limits:** Respect rate limits to avoid impacting other users
+- **Cleanup:** Always clean up test data to avoid accumulation

@@ -17,6 +17,9 @@ echo "🧪 Testing Spam Protection for REFUGE Restrooms API"
 echo "Endpoint: $ENDPOINT"
 echo ""
 
+# Array to track created restroom IDs for cleanup
+CREATED_RESTROOMS=()
+
 # Test 1: Normal restroom creation (should succeed)
 echo "Test 1: Creating legitimate restroom..."
 LEGITIMATE_MUTATION='{
@@ -44,10 +47,16 @@ RESPONSE=$(curl -s -X POST \
 
 echo "Response: $RESPONSE"
 
+# Extract restroom ID for cleanup
+LEGITIMATE_ID=$(echo "$RESPONSE" | grep -o '"id":"[^"]*"' | cut -d'"' -f4)
+if [ -n "$LEGITIMATE_ID" ]; then
+    CREATED_RESTROOMS+=("$LEGITIMATE_ID")
+fi
+
 if echo "$RESPONSE" | grep -q '"approved":true'; then
-    echo "✅ Legitimate restroom created and auto-approved"
+    echo "✅ Legitimate restroom created and auto-approved (ID: $LEGITIMATE_ID)"
 else
-    echo "⚠️  Legitimate restroom created but requires approval"
+    echo "⚠️  Legitimate restroom created but requires approval (ID: $LEGITIMATE_ID)"
 fi
 echo ""
 
@@ -78,12 +87,18 @@ RESPONSE=$(curl -s -X POST \
 
 echo "Response: $RESPONSE"
 
+# Extract restroom ID for cleanup (if created despite spam detection)
+SPAM_ID=$(echo "$RESPONSE" | grep -o '"id":"[^"]*"' | cut -d'"' -f4)
+if [ -n "$SPAM_ID" ]; then
+    CREATED_RESTROOMS+=("$SPAM_ID")
+fi
+
 if echo "$RESPONSE" | grep -q "error"; then
     echo "✅ Spam content rejected"
 elif echo "$RESPONSE" | grep -q '"approved":false'; then
-    echo "✅ Spam content flagged for review"
+    echo "✅ Spam content flagged for review (ID: $SPAM_ID)"
 else
-    echo "❌ Spam content was not detected"
+    echo "❌ Spam content was not detected (ID: $SPAM_ID)"
 fi
 echo ""
 
@@ -114,12 +129,18 @@ RESPONSE=$(curl -s -X POST \
 
 echo "Response: $RESPONSE"
 
+# Extract restroom ID for cleanup (if created despite URL detection)
+URL_ID=$(echo "$RESPONSE" | grep -o '"id":"[^"]*"' | cut -d'"' -f4)
+if [ -n "$URL_ID" ]; then
+    CREATED_RESTROOMS+=("$URL_ID")
+fi
+
 if echo "$RESPONSE" | grep -q "error"; then
     echo "✅ URL in name rejected"
 elif echo "$RESPONSE" | grep -q '"approved":false'; then
-    echo "✅ URL in name flagged for review"
+    echo "✅ URL in name flagged for review (ID: $URL_ID)"
 else
-    echo "❌ URL in name was not detected"
+    echo "❌ URL in name was not detected (ID: $URL_ID)"
 fi
 echo ""
 
@@ -152,10 +173,16 @@ RESPONSE=$(curl -s -X POST \
 
 echo "Response: $RESPONSE"
 
+# Extract restroom ID for cleanup
+LONG_ID=$(echo "$RESPONSE" | grep -o '"id":"[^"]*"' | cut -d'"' -f4)
+if [ -n "$LONG_ID" ]; then
+    CREATED_RESTROOMS+=("$LONG_ID")
+fi
+
 if echo "$RESPONSE" | grep -q '"approved":false'; then
-    echo "✅ Excessive comment flagged for review"
+    echo "✅ Excessive comment flagged for review (ID: $LONG_ID)"
 else
-    echo "⚠️  Excessive comment not flagged (may be acceptable)"
+    echo "⚠️  Excessive comment not flagged (may be acceptable) (ID: $LONG_ID)"
 fi
 echo ""
 
@@ -190,7 +217,12 @@ for i in {1..6}; do
         echo "✅ Rate limit triggered at request $i"
         break
     elif echo "$RESPONSE" | grep -q '"id"'; then
-        echo "   Request $i succeeded"
+        # Extract restroom ID for cleanup
+        RATE_ID=$(echo "$RESPONSE" | grep -o '"id":"[^"]*"' | cut -d'"' -f4)
+        if [ -n "$RATE_ID" ]; then
+            CREATED_RESTROOMS+=("$RATE_ID")
+        fi
+        echo "   Request $i succeeded (ID: $RATE_ID)"
     else
         echo "   Request $i failed: $RESPONSE"
     fi
@@ -198,6 +230,45 @@ for i in {1..6}; do
     # Small delay between requests
     sleep 0.5
 done
+echo ""
+
+# Cleanup: Delete all created test restrooms
+echo "🧹 Cleaning up test data..."
+
+if [ ${#CREATED_RESTROOMS[@]} -eq 0 ]; then
+    echo "No restrooms to clean up (all may have been rejected by spam protection)"
+else
+    echo "Cleaning up ${#CREATED_RESTROOMS[@]} test restrooms..."
+    
+    for restroom_id in "${CREATED_RESTROOMS[@]}"; do
+        if [ -n "$restroom_id" ]; then
+            echo "Deleting restroom: $restroom_id"
+            
+            DELETE_MUTATION='{
+              "query": "mutation DeleteRestroom($id: ID!) { deleteRestroom(id: $id) { success message } }",
+              "variables": {
+                "id": "'$restroom_id'"
+              }
+            }'
+            
+            RESPONSE=$(curl -s -X POST \
+              -H "Content-Type: application/json" \
+              -H "x-api-key: $API_KEY" \
+              -d "$DELETE_MUTATION" \
+              "$ENDPOINT")
+            
+            if echo "$RESPONSE" | grep -q '"success":true'; then
+                echo "✅ Deleted restroom: $restroom_id"
+            else
+                echo "⚠️  Failed to delete restroom: $restroom_id"
+                echo "   Response: $RESPONSE"
+            fi
+        fi
+    done
+fi
+
+echo ""
+echo "📝 Note: Rate limit entries will be automatically cleaned up by DynamoDB TTL (7 days)."
 echo ""
 
 echo "🏁 Spam protection tests completed!"
@@ -208,3 +279,4 @@ echo "- Spam keywords should be rejected or flagged"
 echo "- URLs in names should be flagged"
 echo "- Excessive content should be flagged"
 echo "- Rate limiting should prevent abuse"
+echo "- ✅ Test data automatically cleaned up"

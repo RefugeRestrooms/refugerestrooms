@@ -1,5 +1,47 @@
 # Utility Scripts
 
+This directory contains utility scripts for managing and maintaining the REFUGE Restrooms AWS POC.
+
+## cleanup-test-data.sh
+
+Interactive script for cleaning up test data created by test scripts.
+
+### Usage
+```bash
+./cleanup-test-data.sh <GRAPHQL_ENDPOINT> <API_KEY>
+```
+
+### Features
+- **Pattern matching**: Identifies test restrooms by common naming patterns
+- **Interactive confirmation**: Asks before deleting each restroom
+- **Bulk cleanup**: Handles multiple test restrooms efficiently
+- **Safe operation**: Only targets obvious test data
+
+### Test Patterns Detected
+- Names containing "Test", "Bitcoin", "Casino", "https://"
+- Rate limiting test restrooms
+- Spam protection test restrooms
+- Feedback system test restrooms
+
+## validate-tests.sh
+
+Validates that all test scripts follow mandatory cleanup standards.
+
+### Usage
+```bash
+./validate-tests.sh
+```
+
+### Validation Checks
+- ✅ Resource tracking arrays (CREATED_RESTROOMS, CREATED_IDS)
+- ✅ Cleanup function implementation
+- ✅ Exit trap registration (trap cleanup EXIT)
+- ✅ DeleteRestroom mutation for cleanup
+
+### Exit Codes
+- `0`: All tests pass compliance checks
+- `1`: One or more tests fail compliance
+
 ## cleanup-restrooms.sh
 
 Safely delete all restrooms from development or staging environments.

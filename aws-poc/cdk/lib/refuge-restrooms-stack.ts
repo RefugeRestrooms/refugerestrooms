@@ -49,6 +49,36 @@ export class RefugeRestroomsStack extends cdk.Stack {
         : cdk.RemovalPolicy.DESTROY,
     });
 
+    // Feedback Table for restroom ratings and reviews
+    const feedbackTable = new dynamodb.Table(this, 'FeedbackTable', {
+      tableName: `refuge-feedback-${environment}`,
+      partitionKey: {
+        name: 'id',
+        type: dynamodb.AttributeType.STRING,
+      },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      encryption: dynamodb.TableEncryption.AWS_MANAGED,
+      // TTL for automatic cleanup of old feedback (optional - can be disabled for production)
+      timeToLiveAttribute: environment === 'prod' ? undefined : 'ttl',
+      removalPolicy: environment === 'prod' 
+        ? cdk.RemovalPolicy.RETAIN 
+        : cdk.RemovalPolicy.DESTROY,
+    });
+
+    // GSI for querying feedback by restroom
+    feedbackTable.addGlobalSecondaryIndex({
+      indexName: 'RestroomIndex',
+      partitionKey: {
+        name: 'restroomId',
+        type: dynamodb.AttributeType.STRING,
+      },
+      sortKey: {
+        name: 'createdAt',
+        type: dynamodb.AttributeType.STRING,
+      },
+      projectionType: dynamodb.ProjectionType.ALL,
+    });
+
     // Global Secondary Indexes
     restroomsTable.addGlobalSecondaryIndex({
       indexName: 'CreatedAtIndex',
@@ -154,15 +184,36 @@ export class RefugeRestroomsStack extends cdk.Stack {
       tracing: lambda.Tracing.ACTIVE,
     });
 
+    const submitFeedbackFunction = new lambda.Function(this, 'SubmitFeedbackFunction', {
+      functionName: `refuge-submit-feedback-${environment}`,
+      runtime: lambda.Runtime.NODEJS_18_X,
+      handler: 'index.handler',
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda/submitFeedback')),
+      timeout: cdk.Duration.seconds(30),
+      memorySize: 512,
+      environment: {
+        TABLE_NAME: restroomsTable.tableName,
+        FEEDBACK_TABLE: feedbackTable.tableName,
+        RATE_LIMIT_TABLE: rateLimitTable.tableName,
+      },
+      logRetention: logs.RetentionDays.ONE_WEEK,
+      tracing: lambda.Tracing.ACTIVE,
+    });
+
     // Grant DynamoDB permissions
     restroomsTable.grantReadWriteData(createRestroomFunction);
     restroomsTable.grantReadData(getRestroomFunction);
     restroomsTable.grantReadWriteData(deleteRestroomFunction);
     restroomsTable.grantReadWriteData(updateRestroomFunction);
     restroomsTable.grantReadData(listRestroomsFunction);
+    restroomsTable.grantReadWriteData(submitFeedbackFunction);
     
     // Grant rate limiting table permissions
     rateLimitTable.grantReadWriteData(createRestroomFunction);
+    rateLimitTable.grantReadWriteData(submitFeedbackFunction);
+    
+    // Grant feedback table permissions
+    feedbackTable.grantReadWriteData(submitFeedbackFunction);
 
     // Grant AWS Location Service permissions
     createRestroomFunction.addToRolePolicy(
@@ -228,6 +279,11 @@ export class RefugeRestroomsStack extends cdk.Stack {
       listRestroomsFunction
     );
 
+    const submitFeedbackDataSource = api.addLambdaDataSource(
+      'SubmitFeedbackDataSource',
+      submitFeedbackFunction
+    );
+
     // Resolvers
     createRestroomDataSource.createResolver('CreateRestroomResolver', {
       typeName: 'Mutation',
@@ -252,6 +308,11 @@ export class RefugeRestroomsStack extends cdk.Stack {
     listRestroomsDataSource.createResolver('ListRestroomsResolver', {
       typeName: 'Query',
       fieldName: 'listRestrooms',
+    });
+
+    submitFeedbackDataSource.createResolver('SubmitFeedbackResolver', {
+      typeName: 'Mutation',
+      fieldName: 'submitFeedback',
     });
 
     // Outputs
