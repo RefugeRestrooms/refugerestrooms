@@ -1,0 +1,124 @@
+scalar AWSDateTime
+
+type Restroom {
+  id: ID!
+  name: String!
+  street: String!
+  city: String!
+  state: String!
+  country: String!
+  latitude: Float
+  longitude: Float
+  accessible: Boolean!
+  unisex: Boolean!
+  changingTable: Boolean!
+  comment: String
+  directions: String
+  upvote: Int!
+  downvote: Int!
+  approved: Boolean!
+  spamScore: Float
+  overallScore: Float
+  safetyScore: Float
+  totalFeedback: Int
+  confidence: FeedbackConfidence
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  distance: Float
+  relevanceScore: Float
+}
+
+enum FeedbackReason {
+  SAFE
+  CLEAN
+  ACCESSIBLE
+  ACCURATE
+  PRIVATE
+  UNSAFE
+  DIRTY
+  INACCESSIBLE
+  OUTDATED
+  INAPPROPRIATE
+}
+
+enum FeedbackConfidence {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+type FeedbackResponse {
+  success: Boolean!
+  message: String!
+  restroom: Restroom
+}
+
+input CreateRestroomInput {
+  name: String!
+  street: String!
+  city: String!
+  state: String!
+  country: String!
+  accessible: Boolean!
+  unisex: Boolean!
+  changingTable: Boolean!
+  comment: String
+  directions: String
+}
+
+input UpdateRestroomInput {
+  name: String
+  street: String
+  city: String
+  state: String
+  country: String
+  accessible: Boolean
+  unisex: Boolean
+  changingTable: Boolean
+  comment: String
+  directions: String
+}
+
+type Mutation {
+  createRestroom(input: CreateRestroomInput!): Restroom
+  updateRestroom(id: ID!, input: UpdateRestroomInput!): Restroom
+  deleteRestroom(id: ID!): DeleteRestroomResponse
+  submitFeedback(
+    restroomId: ID!
+    positive: Boolean!
+    reasons: [FeedbackReason!]
+    comment: String
+  ): Restroom
+}
+
+type DeleteRestroomResponse {
+  success: Boolean!
+  message: String!
+  id: ID
+}
+
+type RestroomConnection {
+  items: [Restroom!]!
+  nextToken: String
+  count: Int!
+}
+
+type Query {
+  getRestroom(id: ID!): Restroom
+  listRestrooms(
+    limit: Int
+    nextToken: String
+    accessible: Boolean
+    unisex: Boolean
+    changingTable: Boolean
+    lat: Float
+    lng: Float
+    radius: Int
+    query: String
+  ): RestroomConnection
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

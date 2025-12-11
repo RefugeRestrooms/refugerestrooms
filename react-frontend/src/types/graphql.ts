@@ -1,68 +1,73 @@
-// GraphQL query and mutation interfaces
+// Re-export all generated types and hooks
+export * from './generated';
 
-export interface ListRestroomsQuery {
-  lat?: number;
-  lng?: number;
-  radius?: number;
+// Additional type definitions for the application
+export interface SearchFilters {
   accessible?: boolean;
   unisex?: boolean;
   changingTable?: boolean;
-  query?: string;
-  limit?: number;
-  nextToken?: string;
+  radius: number;
 }
 
-export interface RestroomResponse {
-  id: string;
+export interface SearchLocation {
+  latitude: number;
+  longitude: number;
+  address?: string;
+}
+
+export interface SearchState {
+  query: string;
+  location?: SearchLocation;
+  filters: SearchFilters;
+  sorting: {
+    field: 'distance' | 'rating' | 'name';
+    direction: 'asc' | 'desc';
+  };
+  pagination: {
+    limit: number;
+    nextToken?: string;
+  };
+}
+
+export interface RestroomFormData {
   name: string;
   street: string;
   city: string;
   state: string;
   country: string;
-  latitude?: number;
-  longitude?: number;
   accessible: boolean;
   unisex: boolean;
   changingTable: boolean;
   comment?: string;
   directions?: string;
-  upvote: number;
-  downvote: number;
-  distance?: number;
-  overallScore?: number;
-  safetyScore?: number;
-  totalFeedback?: number;
-  confidence?: 'LOW' | 'MEDIUM' | 'HIGH';
 }
 
-export interface CreateRestroomInput {
+// Error types for better error handling
+export interface GraphQLFormattedError {
+  message: string;
+  locations?: Array<{
+    line: number;
+    column: number;
+  }>;
+  path?: Array<string | number>;
+  extensions?: {
+    code?: string;
+    exception?: {
+      stacktrace?: string[];
+    };
+  };
+}
+
+export interface NetworkError {
   name: string;
-  street: string;
-  city: string;
-  state: string;
-  country: string;
-  accessible: boolean;
-  unisex: boolean;
-  changingTable: boolean;
-  comment?: string;
-  directions?: string;
+  message: string;
+  statusCode?: number;
+  result?: any;
 }
 
-export interface FeedbackInput {
-  restroomId: string;
-  positive: boolean;
-  reasons: FeedbackReason[];
-  comment?: string;
+// Apollo Client error types
+export interface ApolloErrorInfo {
+  graphQLErrors: GraphQLFormattedError[];
+  networkError: NetworkError | null;
+  message: string;
 }
-
-export type FeedbackReason =
-  | 'CLEAN'
-  | 'SAFE'
-  | 'ACCESSIBLE'
-  | 'PRIVATE'
-  | 'WELL_LIT'
-  | 'DIRTY'
-  | 'UNSAFE'
-  | 'INACCESSIBLE'
-  | 'NO_PRIVACY'
-  | 'POORLY_LIT';

@@ -1,0 +1,79 @@
+query GetRestroom($id: ID!) {
+  getRestroom(id: $id) {
+    id
+    name
+    street
+    city
+    state
+    country
+    latitude
+    longitude
+    accessible
+    unisex
+    changingTable
+    comment
+    directions
+    upvote
+    downvote
+    approved
+    overallScore
+    safetyScore
+    totalFeedback
+    confidence
+    createdAt
+    updatedAt
+    distance
+  }
+}
+
+query ListRestrooms(
+  $limit: Int
+  $nextToken: String
+  $accessible: Boolean
+  $unisex: Boolean
+  $changingTable: Boolean
+  $lat: Float
+  $lng: Float
+  $radius: Int
+  $query: String
+) {
+  listRestrooms(
+    limit: $limit
+    nextToken: $nextToken
+    accessible: $accessible
+    unisex: $unisex
+    changingTable: $changingTable
+    lat: $lat
+    lng: $lng
+    radius: $radius
+    query: $query
+  ) {
+    items {
+      id
+      name
+      street
+      city
+      state
+      country
+      latitude
+      longitude
+      accessible
+      unisex
+      changingTable
+      comment
+      directions
+      upvote
+      downvote
+      approved
+      overallScore
+      safetyScore
+      totalFeedback
+      confidence
+      createdAt
+      updatedAt
+      distance
+    }
+    nextToken
+    count
+  }
+}

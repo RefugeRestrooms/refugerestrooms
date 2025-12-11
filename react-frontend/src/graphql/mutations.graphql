@@ -1,0 +1,98 @@
+mutation CreateRestroom($input: CreateRestroomInput!) {
+  createRestroom(input: $input) {
+    id
+    name
+    street
+    city
+    state
+    country
+    latitude
+    longitude
+    accessible
+    unisex
+    changingTable
+    comment
+    directions
+    upvote
+    downvote
+    approved
+    overallScore
+    safetyScore
+    totalFeedback
+    confidence
+    createdAt
+    updatedAt
+  }
+}
+
+mutation UpdateRestroom($id: ID!, $input: UpdateRestroomInput!) {
+  updateRestroom(id: $id, input: $input) {
+    id
+    name
+    street
+    city
+    state
+    country
+    latitude
+    longitude
+    accessible
+    unisex
+    changingTable
+    comment
+    directions
+    upvote
+    downvote
+    approved
+    overallScore
+    safetyScore
+    totalFeedback
+    confidence
+    createdAt
+    updatedAt
+  }
+}
+
+mutation DeleteRestroom($id: ID!) {
+  deleteRestroom(id: $id) {
+    success
+    message
+    id
+  }
+}
+
+mutation SubmitFeedback(
+  $restroomId: ID!
+  $positive: Boolean!
+  $reasons: [FeedbackReason!]
+  $comment: String
+) {
+  submitFeedback(
+    restroomId: $restroomId
+    positive: $positive
+    reasons: $reasons
+    comment: $comment
+  ) {
+    id
+    name
+    street
+    city
+    state
+    country
+    latitude
+    longitude
+    accessible
+    unisex
+    changingTable
+    comment
+    directions
+    upvote
+    downvote
+    approved
+    overallScore
+    safetyScore
+    totalFeedback
+    confidence
+    createdAt
+    updatedAt
+  }
+}
