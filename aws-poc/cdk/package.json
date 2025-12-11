@@ -1,0 +1,28 @@
+{
+  "name": "refuge-restrooms-cdk",
+  "version": "1.0.0",
+  "description": "AWS CDK infrastructure for REFUGE Restrooms POC",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "synth": "cdk synth",
+    "diff": "cdk diff"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "aws-cdk": "2.162.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.162.1",
+    "constructs": "^10.3.0"
+  }
+}

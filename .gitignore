@@ -60,3 +60,7 @@ ruby
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# AWS POC Lambda node_modules
+aws-poc/lambda/*/node_modules/
+aws-poc/cdk/node_modules/

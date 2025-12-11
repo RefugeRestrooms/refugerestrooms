@@ -1,0 +1,10 @@
+{
+  "name": "spam-protection",
+  "version": "1.0.0",
+  "description": "Spam protection utilities for REFUGE Restrooms",
+  "main": "index.js",
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0"
+  }
+}
