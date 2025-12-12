@@ -1,0 +1,130 @@
+.filterPanel {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.clearButton {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.clearButton:hover {
+  color: #333;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filterToggle {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.filterToggle:hover {
+  border-color: #007bff;
+  background: #f8f9fa;
+}
+
+.filterToggle:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.filterToggle.active {
+  border-color: #007bff;
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.filterIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.filterLabel {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.checkIcon {
+  width: 16px;
+  height: 16px;
+  color: #007bff;
+  margin-left: 8px;
+}
+
+.radiusGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 8px;
+}
+
+.radiusButton {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .filterPanel {
+    padding: 12px;
+  }
+  
+  .radiusGroup {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filterToggle {
+    padding: 10px;
+  }
+  
+  .filterLabel {
+    font-size: 0.85rem;
+  }
+}

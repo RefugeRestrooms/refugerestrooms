@@ -48,7 +48,7 @@
   - Handle geolocation permissions and fallback scenarios
   - _Requirements: 1.1, 1.4_
 
-- [ ] 5. Create search interface and functionality
+- [x] 5. Create search interface and functionality
   - Build SearchInterface component with location input and filters
   - Implement FilterPanel for accessibility features (wheelchair, unisex, changing table)
   - Create SortControls for distance, rating, and alphabetical sorting
@@ -68,7 +68,7 @@
   - **Property 7: Filter reset round-trip**
   - **Validates: Requirements 6.5**
 
-- [ ] 6. Implement restroom display components
+- [x] 6. Implement restroom display components
   - Create RestroomCard component for search results and lists
   - Build RestroomDetail component for full restroom information display
   - Implement AccessibilityBadges for visual feature indicators

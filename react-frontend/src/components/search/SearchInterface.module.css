@@ -1,0 +1,152 @@
+.searchInterface {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.searchHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.locationSection {
+  width: 100%;
+}
+
+.locationInput {
+  width: 100%;
+}
+
+.controlsSection {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filtersToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.filterIndicator {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: #f44336;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.refreshButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.clearButton {
+  color: #666;
+  font-weight: 500;
+}
+
+.clearButton:hover {
+  color: #333;
+}
+
+.filtersPanel {
+  margin-bottom: 20px;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sortSection {
+  margin-bottom: 20px;
+}
+
+.resultsSection {
+  width: 100%;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .searchInterface {
+    max-width: none;
+    margin: 0;
+  }
+  
+  .searchHeader {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .controlsSection {
+    justify-content: space-between;
+  }
+  
+  .filtersToggle,
+  .refreshButton {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .clearButton {
+    flex-shrink: 0;
+  }
+  
+  .filtersPanel {
+    margin-bottom: 16px;
+  }
+  
+  .sortSection {
+    margin-bottom: 16px;
+  }
+}
+
+/* Tablet responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .searchHeader {
+    padding: 18px;
+  }
+  
+  .controlsSection {
+    justify-content: flex-start;
+  }
+}
+
+/* Desktop responsive */
+@media (min-width: 1025px) {
+  .searchHeader {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .locationSection {
+    flex: 1;
+  }
+  
+  .controlsSection {
+    flex-shrink: 0;
+  }
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useApolloClient } from '@apollo/client/react';
 import './App.css';
 import { GraphQLDemo } from './components/demo/GraphQLDemo';
+import { SearchDemo } from './components/demo/SearchDemo';
 
 function App() {
   const client = useApolloClient();
@@ -52,7 +53,11 @@ function App() {
           </p>
         </div>
 
-        <GraphQLDemo />
+        <SearchDemo />
+        
+        <div style={{ marginTop: '40px', paddingTop: '40px', borderTop: '1px solid #eee' }}>
+          <GraphQLDemo />
+        </div>
       </main>
     </div>
   );

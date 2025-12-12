@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Error state */
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 8px;
+}
+
+.error p {
+  font-size: 1rem;
+  color: #c62828;
+  margin: 0 0 16px 0;
+}
+
+.error button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.error button:hover {
+  background: #0056b3;
+}
+
+/* Empty state */
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+
+.empty p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Restroom list */
+.restroomList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+    gap: 12px;
+  }
+  
+  .restroomList {
+    gap: 12px;
+  }
+  
+  .loading,
+  .error,
+  .empty {
+    padding: 40px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .loading,
+  .error,
+  .empty {
+    padding: 30px 12px;
+  }
+  
+  .error p,
+  .empty p,
+  .loading p {
+    font-size: 0.9rem;
+  }
+}

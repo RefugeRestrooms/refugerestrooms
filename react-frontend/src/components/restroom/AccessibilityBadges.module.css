@@ -1,0 +1,209 @@
+.accessibilityBadges {
+  display: flex;
+  gap: 8px;
+}
+
+.accessibilityBadges.horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.accessibilityBadges.vertical {
+  flex-direction: column;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+  border: 1px solid;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+/* Size variants */
+.badge.small {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  gap: 4px;
+}
+
+.badge.medium {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  gap: 6px;
+}
+
+.badge.large {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  gap: 8px;
+}
+
+/* Active state - feature is available */
+.badge.active {
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+  border-color: #4caf50;
+  color: #2e7d32;
+  box-shadow: 0 1px 3px rgba(76, 175, 80, 0.2);
+}
+
+.badge.active:hover {
+  background: linear-gradient(135deg, #e0f2e0 0%, #e8f5e8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
+}
+
+/* Inactive state - feature is not available */
+.badge.inactive {
+  background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+  border-color: #e0e0e0;
+  color: #757575;
+  opacity: 0.8;
+}
+
+.badge.inactive:hover {
+  background: linear-gradient(135deg, #eeeeee 0%, #f5f5f5 100%);
+  border-color: #d0d0d0;
+}
+
+/* Icon styling */
+.badgeIcon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.badge.small .badgeIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.badge.medium .badgeIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.badge.large .badgeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.badge.active .badgeIcon {
+  color: #2e7d32;
+}
+
+.badge.inactive .badgeIcon {
+  color: #9e9e9e;
+}
+
+/* Label styling */
+.badgeLabel {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.badge.active .badgeLabel {
+  color: #2e7d32;
+}
+
+.badge.inactive .badgeLabel {
+  color: #757575;
+}
+
+/* Hover effects */
+.badge.active:hover .badgeIcon {
+  transform: scale(1.1);
+}
+
+/* Focus styles for accessibility */
+.badge:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .badge.active {
+    background: #ffffff;
+    border-color: #000000;
+    color: #000000;
+    border-width: 2px;
+  }
+  
+  .badge.inactive {
+    background: #f0f0f0;
+    border-color: #666666;
+    color: #666666;
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    transition: none;
+  }
+  
+  .badge:hover {
+    transform: none;
+  }
+  
+  .badgeIcon {
+    transition: none;
+  }
+  
+  .badge:hover .badgeIcon {
+    transform: none;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .accessibilityBadges.horizontal {
+    gap: 6px;
+  }
+  
+  .badge.medium {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .badge.large {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accessibilityBadges.horizontal {
+    gap: 4px;
+  }
+  
+  /* Hide labels on very small screens for horizontal layout */
+  .accessibilityBadges.horizontal .badgeLabel {
+    display: none;
+  }
+  
+  .badge {
+    padding: 6px;
+    border-radius: 50%;
+    min-width: 32px;
+    min-height: 32px;
+    justify-content: center;
+  }
+  
+  .badge.small {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 4px;
+  }
+  
+  .badge.large {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 8px;
+  }
+}

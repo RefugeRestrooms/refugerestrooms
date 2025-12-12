@@ -6,12 +6,16 @@ export type IconName =
   | 'location'
   | 'filter'
   | 'sort'
+  | 'sort-up'
+  | 'sort-down'
   | 'close'
   | 'check'
   | 'warning'
   | 'error'
   | 'info'
   | 'loading'
+  | 'refresh'
+  | 'feedback'
   | 'arrow-left'
   | 'arrow-right'
   | 'arrow-up'
@@ -44,6 +48,8 @@ const iconPaths: Record<IconName, string | React.ReactElement> = {
   location: <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z" />,
   filter: <path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />,
   sort: <path d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />,
+  'sort-up': <path d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />,
+  'sort-down': <path d="M3 20h13M3 16h9m-9-4h6m4 0l4 4m0 0l4-4m-4 4V8" />,
   close: <path d="M6 18L18 6M6 6l12 12" />,
   check: <path d="M5 13l4 4L19 7" />,
   warning: <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />,
@@ -69,6 +75,8 @@ const iconPaths: Record<IconName, string | React.ReactElement> = {
       <path d="M16.24 7.76l2.83-2.83" opacity="0.2" />
     </g>
   ),
+  refresh: <path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />,
+  feedback: <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />,
   'arrow-left': <path d="M19 12H5m7-7l-7 7 7 7" />,
   'arrow-right': <path d="M5 12h14m-7-7l7 7-7 7" />,
   'arrow-up': <path d="M12 19V5m-7 7l7-7 7 7" />,

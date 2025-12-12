@@ -1,0 +1,203 @@
+.searchResults {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+
+.resultCount {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resultCard {
+  width: 100%;
+}
+
+/* Loading state */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loadingIcon {
+  width: 32px;
+  height: 32px;
+  color: #007bff;
+  margin-bottom: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loadingText {
+  margin: 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Error state */
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.errorIcon {
+  width: 48px;
+  height: 48px;
+  color: #f44336;
+  margin-bottom: 16px;
+}
+
+.errorTitle {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.errorMessage {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Empty state */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  width: 48px;
+  height: 48px;
+  color: #9e9e9e;
+  margin-bottom: 16px;
+}
+
+.emptyTitle {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.emptyMessage {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Load more section */
+.loadMoreSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 16px;
+}
+
+.loadingMore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.loadMoreButton {
+  padding: 12px 24px;
+  font-weight: 500;
+}
+
+/* Pagination error */
+.paginationError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  color: #856404;
+  font-size: 0.9rem;
+}
+
+.paginationError .errorIcon {
+  width: 16px;
+  height: 16px;
+  color: #f39c12;
+  margin: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 12px;
+  }
+  
+  .resultsList {
+    gap: 12px;
+  }
+  
+  .loadingState,
+  .errorState,
+  .emptyState {
+    padding: 40px 16px;
+  }
+  
+  .loadingIcon,
+  .errorIcon,
+  .emptyIcon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .errorTitle,
+  .emptyTitle {
+    font-size: 1.1rem;
+  }
+  
+  .loadMoreSection {
+    margin-top: 16px;
+    padding: 12px;
+  }
+  
+  .paginationError {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}

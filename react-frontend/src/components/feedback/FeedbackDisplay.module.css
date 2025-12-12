@@ -1,0 +1,319 @@
+.feedbackDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* No feedback state */
+.noFeedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.noFeedbackIcon {
+  width: 48px;
+  height: 48px;
+  color: #ccc;
+  margin-bottom: 16px;
+}
+
+.noFeedback h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.noFeedback p {
+  margin: 0;
+  font-size: 0.95rem;
+  max-width: 300px;
+}
+
+/* Rating overview */
+.ratingOverview {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.mainRating {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.scoreCircle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.scoreNumber {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.scoreLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.ratingDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.totalReviews {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.safetyScore {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.safetyIcon {
+  width: 16px;
+  height: 16px;
+  color: #4caf50;
+}
+
+/* Confidence indicator */
+.confidenceIndicator {
+  display: flex;
+  align-items: flex-start;
+}
+
+.confidenceBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 16px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: help;
+}
+
+.confidenceIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.confidenceText {
+  white-space: nowrap;
+}
+
+/* Rating breakdown */
+.ratingBreakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.breakdownItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.breakdownLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 80px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.positiveIcon {
+  width: 16px;
+  height: 16px;
+  color: #4caf50;
+}
+
+.negativeIcon {
+  width: 16px;
+  height: 16px;
+  color: #f44336;
+}
+
+.breakdownBar {
+  flex: 1;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.breakdownFill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.breakdownValue {
+  min-width: 30px;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Feedback summary */
+.feedbackSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summaryTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.summaryItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.summaryItem svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.accessibleIcon {
+  color: #2196f3;
+}
+
+.unisexIcon {
+  color: #9c27b0;
+}
+
+.babyIcon {
+  color: #ff9800;
+}
+
+.communityIcon {
+  color: #607d8b;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .feedbackDisplay {
+    padding: 16px;
+    gap: 20px;
+  }
+  
+  .ratingOverview {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .mainRating {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .scoreCircle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .scoreNumber {
+    font-size: 1.3rem;
+  }
+  
+  .confidenceIndicator {
+    justify-content: center;
+  }
+  
+  .breakdownItem {
+    gap: 8px;
+  }
+  
+  .breakdownLabel {
+    min-width: 70px;
+    font-size: 0.8rem;
+  }
+  
+  .summaryItems {
+    gap: 6px;
+  }
+  
+  .summaryItem {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedbackDisplay {
+    padding: 12px;
+    gap: 16px;
+  }
+  
+  .scoreCircle {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .scoreNumber {
+    font-size: 1.1rem;
+  }
+  
+  .scoreLabel {
+    font-size: 0.6rem;
+  }
+  
+  .breakdownLabel {
+    min-width: 60px;
+  }
+  
+  .confidenceBadge {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+}

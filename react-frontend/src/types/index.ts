@@ -1,5 +1,6 @@
 // Core data types for the application
 export * from './graphql';
+export * from './search';
 
 export interface UIState {
   loading: {

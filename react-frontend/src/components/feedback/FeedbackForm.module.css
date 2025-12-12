@@ -1,0 +1,325 @@
+.feedbackForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Restroom info header */
+.restroomInfo {
+  text-align: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.restroomName {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.restroomAddress {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Section titles */
+.sectionTitle {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Rating section */
+.ratingSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ratingButtons {
+  display: flex;
+  gap: 12px;
+}
+
+.ratingButton {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.ratingButton:hover {
+  border-color: #007bff;
+  background: #f8f9fa;
+}
+
+.ratingButton.active {
+  border-color: #007bff;
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.ratingIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.ratingButton.active .ratingIcon {
+  color: #1976d2;
+}
+
+/* Reasons section */
+.reasonsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reasonsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reasonItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reasonItem:hover {
+  border-color: #007bff;
+  background: #f8f9fa;
+}
+
+.reasonItem.selected {
+  border-color: #007bff;
+  background: #e3f2fd;
+}
+
+.reasonCheckbox {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+}
+
+.reasonContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.reasonLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.reasonDescription {
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* Comment section */
+.commentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.commentTextarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s ease;
+}
+
+.commentTextarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.commentTextarea::placeholder {
+  color: #999;
+}
+
+.commentMeta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.characterCount {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Error styling */
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  color: #c62828;
+  font-size: 0.85rem;
+}
+
+.errorIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Form actions */
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Focus styles for accessibility */
+.ratingButton:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.reasonItem:focus-within {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .feedbackForm {
+    gap: 20px;
+  }
+  
+  .ratingButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .ratingButton {
+    flex-direction: row;
+    justify-content: center;
+    padding: 12px;
+  }
+  
+  .reasonItem {
+    padding: 10px;
+  }
+  
+  .reasonLabel {
+    font-size: 0.85rem;
+  }
+  
+  .reasonDescription {
+    font-size: 0.75rem;
+  }
+  
+  .actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  
+  .actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedbackForm {
+    gap: 16px;
+  }
+  
+  .restroomInfo {
+    padding: 12px;
+  }
+  
+  .restroomName {
+    font-size: 1.1rem;
+  }
+  
+  .ratingButton {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+  
+  .ratingIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .reasonItem {
+    padding: 8px;
+  }
+  
+  .commentTextarea {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .ratingButton {
+    border-width: 3px;
+  }
+  
+  .ratingButton.active {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+  }
+  
+  .reasonItem.selected {
+    background: #ffffff;
+    border-color: #000000;
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .ratingButton,
+  .reasonItem,
+  .commentTextarea {
+    transition: none;
+  }
+}
