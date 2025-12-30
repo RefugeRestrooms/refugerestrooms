@@ -291,8 +291,44 @@ import type { LocationCoordinates, LocationAddress, LocationResult } from './loc
 1. **Start with Types** - Define interfaces and types first
 2. **Import Correctly** - Use type-only imports where required
 3. **Test Early** - Write tests alongside component development
-4. **Validate Continuously** - Use TypeScript diagnostics to catch issues
-5. **Handle Errors** - Implement comprehensive error handling
+4. **Resolve All Warnings** - Fix warnings immediately, not just errors
+5. **Validate Continuously** - Use TypeScript diagnostics to catch issues
+6. **Handle Errors** - Implement comprehensive error handling
+7. **Clean Test Output** - Ensure tests run without warnings or errors
+
+### Quality Gates for Development
+
+#### Before Committing Code
+- [ ] All TypeScript errors resolved
+- [ ] All test warnings resolved (especially `act()` warnings)
+- [ ] No network errors in test output
+- [ ] Clean console output during test runs
+- [ ] All tests passing
+- [ ] Code follows established patterns
+
+#### Test Quality Checklist
+- [ ] Tests use proper async patterns with `act()` when needed
+- [ ] Apollo Client tests use test providers, not production clients
+- [ ] No network requests in unit/component tests
+- [ ] Proper mock cleanup between tests
+- [ ] Tests are isolated and don't depend on external state
+- [ ] Console output is clean (no warnings or errors)
+
+### Warning Resolution Strategy
+
+**Immediate Action Required:**
+- `act()` warnings - Indicate improper React state handling
+- Network errors - Suggest missing test isolation
+- TypeScript errors - Block compilation and deployment
+
+**High Priority:**
+- Console warnings - May indicate runtime issues
+- Deprecation warnings - Future compatibility concerns
+- Performance warnings - User experience impact
+
+**Medium Priority:**
+- Linting warnings - Code quality and consistency
+- Accessibility warnings - User experience for all users
 
 ## Debugging TypeScript Issues
 
@@ -314,6 +350,148 @@ node -e "console.log(Object.keys(require('@apollo/client/react')))"
 
 ## Test Configuration Patterns
 
+### Resolving Test Warnings and Errors
+
+**CRITICAL: Always resolve test warnings, not just errors**
+- Test warnings indicate potential issues with test reliability and best practices
+- `act()` warnings specifically indicate improper handling of React state updates
+- Network errors in tests suggest missing mocks or improper test isolation
+- Clean test output improves developer experience and catches real issues
+
+### React Testing Library `act()` Patterns
+
+#### Async Component Rendering
+```typescript
+// ✅ Correct - Proper async rendering with act()
+import { render, screen, act, waitFor } from '@testing-library/react';
+
+const renderWithProviders = async (component: React.ReactElement) => {
+  let result: any;
+  await act(async () => {
+    result = render(
+      <TestProviders>
+        {component}
+      </TestProviders>
+    );
+  });
+  
+  // Wait for any async operations to complete
+  await waitFor(() => {
+    // Just wait a tick for any immediate state updates
+  });
+  
+  return result;
+};
+
+// Usage in tests
+describe('Component', () => {
+  it('renders correctly', async () => {
+    await renderWithProviders(<Component />);
+    expect(screen.getByText('Expected Text')).toBeInTheDocument();
+  });
+});
+```
+
+#### When `act()` Warnings Occur
+- Components with `useEffect` hooks that trigger state updates on mount
+- Async operations like geolocation, API calls, or debounced inputs
+- Components that use timers, intervals, or other async side effects
+- Any state update that happens after the initial render
+
+#### Common `act()` Warning Scenarios
+```typescript
+// ❌ Problematic - Components with async effects
+const ComponentWithAsyncEffects = () => {
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    // This will trigger act() warnings in tests
+    fetchData().then(setData);
+  }, []);
+  
+  return <div>{data}</div>;
+};
+
+// ✅ Solution - Wrap render in act() and wait for updates
+it('handles async effects', async () => {
+  await act(async () => {
+    render(<ComponentWithAsyncEffects />);
+  });
+  
+  await waitFor(() => {
+    expect(screen.getByText('Expected Data')).toBeInTheDocument();
+  });
+});
+```
+
+### Apollo Client Testing Patterns
+
+#### Test-Specific Apollo Client Setup
+```typescript
+// ✅ Correct - Create mock Apollo Client for tests
+// src/test/mocks/apollo.ts
+import { ApolloClient, InMemoryCache, ApolloLink } from '@apollo/client';
+
+// Create a no-op link that doesn't execute any operations
+const noOpLink = new ApolloLink(() => {
+  // Return a promise that never resolves (effectively ignoring all queries)
+  return new Promise(() => {});
+});
+
+export const mockApolloClient = new ApolloClient({
+  link: noOpLink,
+  cache: new InMemoryCache(),
+  defaultOptions: {
+    watchQuery: {
+      errorPolicy: 'ignore',
+      notifyOnNetworkStatusChange: false,
+    },
+    query: {
+      errorPolicy: 'ignore',
+    },
+    mutate: {
+      errorPolicy: 'ignore',
+    },
+  },
+});
+```
+
+#### Test Provider Setup
+```typescript
+// ✅ Correct - Test-specific provider
+// src/test/providers/TestApolloProvider.tsx
+import React from 'react';
+import { ApolloProvider as BaseApolloProvider } from '@apollo/client/react';
+import { mockApolloClient } from '../mocks/apollo';
+
+export const TestApolloProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <BaseApolloProvider client={mockApolloClient}>
+      {children}
+    </BaseApolloProvider>
+  );
+};
+```
+
+#### Avoiding Network Errors in Tests
+```typescript
+// ❌ Problematic - Using production Apollo Client in tests
+import { ApolloProvider } from '../providers/ApolloProvider'; // Makes real network requests
+
+// ✅ Correct - Using test Apollo Client
+import { TestApolloProvider } from '../../test/providers/TestApolloProvider'; // No network requests
+
+const renderWithApollo = async (component: React.ReactElement) => {
+  await act(async () => {
+    render(
+      <TestApolloProvider>
+        {component}
+      </TestApolloProvider>
+    );
+  });
+};
+```
+
 ### Vitest Setup File
 ```typescript
 // src/test/setup.ts
@@ -326,6 +504,62 @@ vi.stubGlobal('confirm', vi.fn().mockReturnValue(true));
 // Mock console methods to reduce test noise
 vi.spyOn(console, 'warn').mockImplementation(() => {});
 vi.spyOn(console, 'error').mockImplementation(() => {});
+```
+
+### Test Quality Standards
+
+#### Warning Resolution Priority
+1. **Always resolve test warnings** - Warnings indicate potential reliability issues
+2. **Fix `act()` warnings immediately** - They signal improper React state handling
+3. **Eliminate network errors** - Tests should be isolated from external dependencies
+4. **Address console errors/warnings** - Clean test output improves debugging
+
+#### Test Isolation Best Practices
+```typescript
+// ✅ Correct - Isolated test setup
+describe('Component Tests', () => {
+  beforeEach(() => {
+    // Reset all mocks and state before each test
+    vi.clearAllMocks();
+    vi.unstubAllGlobals();
+    localStorage.clear();
+  });
+
+  afterEach(() => {
+    // Clean up after each test
+    vi.restoreAllMocks();
+  });
+});
+```
+
+#### Mock Strategy for Different Test Types
+```typescript
+// ✅ Unit Tests - Mock external dependencies
+vi.mock('../../services/api', () => ({
+  fetchData: vi.fn().mockResolvedValue(mockData)
+}));
+
+// ✅ Integration Tests - Use test providers with controlled behavior
+const renderWithTestProviders = (component) => {
+  return render(
+    <TestApolloProvider>
+      <TestLocationProvider>
+        {component}
+      </TestLocationProvider>
+    </TestApolloProvider>
+  );
+};
+
+// ✅ Component Tests - Focus on user interactions and rendering
+it('handles user input correctly', async () => {
+  const user = userEvent.setup();
+  render(<SearchForm onSubmit={mockSubmit} />);
+  
+  await user.type(screen.getByLabelText('Search'), 'test query');
+  await user.click(screen.getByRole('button', { name: 'Search' }));
+  
+  expect(mockSubmit).toHaveBeenCalledWith('test query');
+});
 ```
 
 ### Test File Organization
@@ -352,6 +586,79 @@ describe('ComponentName', () => {
 
   describe('form validation', () => {
     it('validates required fields', async () => {
+      // Test implementation
+    });
+  });
+});
+```
+
+### Debugging Test Issues
+
+#### Common Test Warning Patterns and Solutions
+
+**`act()` Warnings**
+```bash
+# Warning message:
+# "An update to ComponentName inside a test was not wrapped in act(...)"
+
+# Root causes:
+# - useEffect hooks triggering state updates
+# - Async operations (timers, promises, network requests)
+# - Event handlers that update state
+
+# Solution: Wrap renders and interactions in act()
+await act(async () => {
+  render(<Component />);
+});
+```
+
+**Network Errors in Tests**
+```bash
+# Error message:
+# "Error: getaddrinfo ENOTFOUND mock-endpoint.com"
+
+# Root cause: Tests using production Apollo Client or real network requests
+# Solution: Use test-specific providers with mock clients
+```
+
+**Console Warnings/Errors**
+```bash
+# Warning message:
+# "Warning: React does not recognize the `customProp` prop on a DOM element"
+
+# Root cause: Passing non-standard props to DOM elements
+# Solution: Filter props or use proper component interfaces
+```
+
+#### Test Debugging Workflow
+1. **Identify the warning type** - `act()`, network, console, etc.
+2. **Locate the source component** - Check which component triggers the warning
+3. **Understand the async operation** - Find what's causing state updates
+4. **Apply appropriate solution** - Use `act()`, mocks, or proper cleanup
+5. **Verify the fix** - Run tests to ensure warnings are resolved
+6. **Test in isolation** - Run specific test files to confirm the fix
+
+#### Test Performance Optimization
+```typescript
+// ✅ Correct - Efficient test setup
+describe('Component Suite', () => {
+  // Use beforeAll for expensive setup that doesn't change
+  beforeAll(async () => {
+    await setupTestDatabase();
+  });
+
+  // Use beforeEach for test-specific setup
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // Group related tests to share setup
+  describe('when user is authenticated', () => {
+    beforeEach(() => {
+      mockAuthState({ isAuthenticated: true });
+    });
+
+    it('shows user dashboard', () => {
       // Test implementation
     });
   });

@@ -1,36 +1,43 @@
-import React from 'react';
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import App from './App';
-import { ApolloProvider } from './components/providers/ApolloProvider';
+import { TestApolloProvider } from './test/providers/TestApolloProvider';
 
-const renderWithApollo = (component: React.ReactElement) => {
-  return render(
-    <ApolloProvider>
-      {component}
-    </ApolloProvider>
-  );
+const renderWithApollo = async (component: React.ReactElement) => {
+  let result: any;
+  await act(async () => {
+    result = render(
+      <TestApolloProvider>
+        {component}
+      </TestApolloProvider>
+    );
+  });
+  
+  // Wait for any async operations to complete
+  await waitFor(() => {
+    // Just wait a tick for any immediate state updates
+  });
+  
+  return result;
 };
 
 describe('App', () => {
-  it('renders the main heading', () => {
-    renderWithApollo(<App />);
+  it('renders the main heading', async () => {
+    await renderWithApollo(<App />);
     expect(screen.getByText('REFUGE Restrooms')).toBeInTheDocument();
   });
 
-  it('renders the subtitle', () => {
-    renderWithApollo(<App />);
+  it('renders the subtitle', async () => {
+    await renderWithApollo(<App />);
     expect(
       screen.getByText('Safe restroom access for everyone')
     ).toBeInTheDocument();
   });
 
-  it('shows development ready message', () => {
-    renderWithApollo(<App />);
+  it('renders the home page content', async () => {
+    await renderWithApollo(<App />);
     expect(
-      screen.getByText(
-        'React Frontend Application - Development Environment Ready'
-      )
+      screen.getByText('Find Safe Restrooms')
     ).toBeInTheDocument();
   });
 });

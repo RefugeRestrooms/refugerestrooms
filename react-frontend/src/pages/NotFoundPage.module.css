@@ -1,0 +1,91 @@
+.notFoundPage {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  max-width: 500px;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.content h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  color: #495057;
+}
+
+.content p {
+  margin: 0 0 2rem 0;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.homeButton,
+.backButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.homeButton {
+  background-color: #3498db;
+  color: white;
+}
+
+.homeButton:hover {
+  background-color: #2980b9;
+}
+
+.backButton {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.backButton:hover {
+  background-color: #7f8c8d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .notFoundPage {
+    padding: 1rem;
+  }
+  
+  .content {
+    padding: 1.5rem;
+  }
+  
+  .content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .homeButton,
+  .backButton {
+    width: 100%;
+    max-width: 200px;
+  }
+}

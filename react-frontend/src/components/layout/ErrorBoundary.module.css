@@ -1,0 +1,117 @@
+.errorBoundary {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem;
+  border: 1px solid #e74c3c;
+  border-radius: 8px;
+  background-color: #fdf2f2;
+}
+
+.errorContent h2 {
+  color: #e74c3c;
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.errorContent p {
+  color: #666;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.errorDetails {
+  text-align: left;
+  margin: 1rem 0 2rem 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+}
+
+.errorDetails summary {
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: #e9ecef;
+  border-bottom: 1px solid #ddd;
+  font-weight: 500;
+}
+
+.errorDetails summary:hover {
+  background-color: #dee2e6;
+}
+
+.errorStack {
+  padding: 1rem;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  color: #495057;
+}
+
+.errorActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.retryButton,
+.homeButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.retryButton {
+  background-color: #3498db;
+  color: white;
+}
+
+.retryButton:hover {
+  background-color: #2980b9;
+}
+
+.homeButton {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.homeButton:hover {
+  background-color: #7f8c8d;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .errorBoundary {
+    padding: 1rem;
+  }
+  
+  .errorContent {
+    padding: 1.5rem;
+  }
+  
+  .errorActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .retryButton,
+  .homeButton {
+    width: 100%;
+    max-width: 200px;
+  }
+}
