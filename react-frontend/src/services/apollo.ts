@@ -63,7 +63,7 @@ const errorLink = onError((errorResponse: any) => {
   }
 });
 
-// Cache configuration with pagination support
+// Cache configuration with enhanced policies for optimal performance
 const cache = new InMemoryCache({
   typePolicies: {
     Query: {
@@ -71,26 +71,76 @@ const cache = new InMemoryCache({
         listRestrooms: {
           // Cache key based on search parameters
           keyArgs: ['accessible', 'unisex', 'changingTable', 'lat', 'lng', 'radius', 'query'],
-          merge(existing, incoming) {
+          merge(existing, incoming, { args }) {
             if (!existing) {
               return incoming;
             }
             
             // Handle pagination by merging items
+            const existingItems = existing.items || [];
+            const incomingItems = incoming.items || [];
+            
+            // If this is a new search (no nextToken), replace existing data
+            if (!args?.nextToken) {
+              return incoming;
+            }
+            
+            // Otherwise, append new items for pagination
             return {
               ...incoming,
-              items: [...(existing.items || []), ...(incoming.items || [])],
+              items: [...existingItems, ...incomingItems],
             };
           },
+        },
+        getRestroom: {
+          // Cache individual restroom queries by ID
+          keyArgs: ['id'],
         },
       },
     },
     Restroom: {
       keyFields: ['id'],
       fields: {
-        // Optimize caching for restroom data
+        // Distance is computed based on user location, don't cache
         distance: {
-          // Distance is computed based on user location, don't cache
+          merge: false,
+        },
+        // Feedback data should be merged to handle optimistic updates
+        upvote: {
+          merge(existing, incoming) {
+            return incoming;
+          },
+        },
+        downvote: {
+          merge(existing, incoming) {
+            return incoming;
+          },
+        },
+        overallScore: {
+          merge(existing, incoming) {
+            return incoming;
+          },
+        },
+        safetyScore: {
+          merge(existing, incoming) {
+            return incoming;
+          },
+        },
+        totalFeedback: {
+          merge(existing, incoming) {
+            return incoming;
+          },
+        },
+      },
+    },
+    Mutation: {
+      fields: {
+        createRestroom: {
+          // Invalidate relevant queries after creating a restroom
+          merge: false,
+        },
+        submitFeedback: {
+          // Handle feedback submission optimistically
           merge: false,
         },
       },
@@ -123,4 +173,49 @@ export const clearCache = async (): Promise<void> => {
 
 export const resetCache = async (): Promise<void> => {
   await apolloClient.resetStore();
+};
+
+// Cache invalidation helpers
+export const invalidateRestroomQueries = async (): Promise<void> => {
+  await apolloClient.refetchQueries({
+    include: ['listRestrooms'],
+  });
+};
+
+export const invalidateRestroomById = async (id: string): Promise<void> => {
+  await apolloClient.refetchQueries({
+    include: ['getRestroom'],
+    variables: { id },
+  });
+};
+
+// Optimistic update helpers
+export const updateRestroomInCache = (id: string, updates: Partial<any>): void => {
+  apolloClient.cache.modify({
+    id: apolloClient.cache.identify({ __typename: 'Restroom', id }),
+    fields: {
+      ...Object.keys(updates).reduce((acc, key) => {
+        acc[key] = () => updates[key];
+        return acc;
+      }, {} as Record<string, () => any>),
+    },
+  });
+};
+
+// Network status helpers
+export const isOnline = (): boolean => {
+  return navigator.onLine;
+};
+
+export const addNetworkStatusListener = (callback: (online: boolean) => void): (() => void) => {
+  const handleOnline = () => callback(true);
+  const handleOffline = () => callback(false);
+  
+  window.addEventListener('online', handleOnline);
+  window.addEventListener('offline', handleOffline);
+  
+  return () => {
+    window.removeEventListener('online', handleOnline);
+    window.removeEventListener('offline', handleOffline);
+  };
 };

@@ -220,6 +220,18 @@ const handleAsyncOperation = async () => {
 - Use explicit re-exports to resolve ambiguity
 - Organize types in separate files when needed
 
+### 8. State Management
+- Use specific context hooks instead of full UI context
+- Handle offline states in all user interactions
+- Implement proper error boundaries for state errors
+- Don't bypass the storage service for localStorage operations
+
+### 9. Cache Management
+- Use cache sync service instead of manual Apollo cache operations
+- Coordinate between Apollo cache and local storage
+- Handle cache invalidation properly after mutations
+- Consider offline scenarios in all cache operations
+
 ## UI Component Patterns
 
 ### Button Component Usage
@@ -286,15 +298,133 @@ import type { LocationCoordinates, LocationAddress, LocationResult } from './loc
 // LocationResult never used
 ```
 
+## State Management Patterns
+
+### UI Context Usage
+```typescript
+// ✅ Correct - Use specific hooks for focused state access
+import { useLoading, useErrors, useNotifications } from '../contexts/UIContext';
+
+const MyComponent = () => {
+  const { loading, setLoading } = useLoading();
+  const { errors, setError, clearErrors } = useErrors();
+  const { addNotification } = useNotifications();
+
+  // Component logic
+};
+
+// ❌ Incorrect - Using full UI context when only specific state is needed
+import { useUI } from '../contexts/UIContext';
+
+const MyComponent = () => {
+  const { state, setLoading, setError } = useUI(); // Too broad
+};
+```
+
+### Local Storage Integration
+```typescript
+// ✅ Correct - Use storage service with error handling
+import { storageService } from '../services/storage';
+
+const saveUserPreferences = (preferences: UIPreferences) => {
+  const success = storageService.setUIPreferences(preferences);
+  if (!success) {
+    console.warn('Failed to save preferences - storage unavailable');
+  }
+};
+
+// ❌ Incorrect - Direct localStorage usage without error handling
+const saveUserPreferences = (preferences: UIPreferences) => {
+  localStorage.setItem('preferences', JSON.stringify(preferences)); // Can throw
+};
+```
+
+### Optimistic Updates Pattern
+```typescript
+// ✅ Correct - Proper optimistic update with rollback
+import { useOptimisticUpdates } from '../hooks/useOptimisticUpdates';
+
+const MyComponent = () => {
+  const { submitFeedbackOptimistically } = useOptimisticUpdates();
+
+  const handleFeedback = async (feedback: FeedbackInput) => {
+    const result = await submitFeedbackOptimistically(restroomId, feedback);
+    
+    if (result.success) {
+      // Handle success (notification already shown by hook)
+    } else {
+      // Handle error (error notification already shown by hook)
+    }
+  };
+};
+
+// ❌ Incorrect - Manual optimistic updates without proper error handling
+const handleFeedback = async (feedback: FeedbackInput) => {
+  // Update UI immediately
+  setOptimisticState(newState);
+  
+  try {
+    await submitFeedback(feedback);
+  } catch (error) {
+    // Forgot to revert optimistic state
+    console.error(error);
+  }
+};
+```
+
+### Cache Synchronization
+```typescript
+// ✅ Correct - Use cache sync service for data management
+import { cacheSyncService } from '../services/cacheSync';
+
+const syncData = async () => {
+  const result = await cacheSyncService.syncRestrooms({ forceRefresh: true });
+  
+  if (result.success) {
+    console.log(`Synced ${result.syncedItems} items`);
+  } else {
+    console.error('Sync failed:', result.errors);
+  }
+};
+
+// ❌ Incorrect - Manual cache management without proper coordination
+const syncData = async () => {
+  await apolloClient.refetchQueries(); // Doesn't coordinate with local storage
+};
+```
+
+### Network Status Handling
+```typescript
+// ✅ Correct - Use network status from UI context
+import { useNetworkStatus } from '../contexts/UIContext';
+
+const MyComponent = () => {
+  const { networkStatus } = useNetworkStatus();
+
+  if (!networkStatus.isOnline) {
+    return <OfflineIndicator />;
+  }
+
+  return <OnlineContent />;
+};
+
+// ❌ Incorrect - Direct navigator.onLine usage without context
+const MyComponent = () => {
+  const isOnline = navigator.onLine; // Doesn't update reactively
+};
+```
+
 ## Development Workflow
 
 1. **Start with Types** - Define interfaces and types first
 2. **Import Correctly** - Use type-only imports where required
-3. **Test Early** - Write tests alongside component development
-4. **Resolve All Warnings** - Fix warnings immediately, not just errors
-5. **Validate Continuously** - Use TypeScript diagnostics to catch issues
-6. **Handle Errors** - Implement comprehensive error handling
-7. **Clean Test Output** - Ensure tests run without warnings or errors
+3. **Use Context Appropriately** - Use specific hooks instead of full context
+4. **Handle Offline States** - Always consider offline scenarios
+5. **Test Early** - Write tests alongside component development
+6. **Resolve All Warnings** - Fix warnings immediately, not just errors
+7. **Validate Continuously** - Use TypeScript diagnostics to catch issues
+8. **Handle Errors** - Implement comprehensive error handling
+9. **Clean Test Output** - Ensure tests run without warnings or errors
 
 ### Quality Gates for Development
 
@@ -305,6 +435,9 @@ import type { LocationCoordinates, LocationAddress, LocationResult } from './loc
 - [ ] Clean console output during test runs
 - [ ] All tests passing
 - [ ] Code follows established patterns
+- [ ] State management uses appropriate context hooks
+- [ ] Offline scenarios are handled properly
+- [ ] Cache synchronization is implemented where needed
 
 #### Test Quality Checklist
 - [ ] Tests use proper async patterns with `act()` when needed
@@ -313,6 +446,8 @@ import type { LocationCoordinates, LocationAddress, LocationResult } from './loc
 - [ ] Proper mock cleanup between tests
 - [ ] Tests are isolated and don't depend on external state
 - [ ] Console output is clean (no warnings or errors)
+- [ ] Storage service mocks are used for localStorage tests
+- [ ] UI context tests verify state transitions properly
 
 ### Warning Resolution Strategy
 
@@ -347,6 +482,115 @@ node -e "console.log(Object.keys(require('@apollo/client/react')))"
 - Run tests after each significant change
 - Use focused test runs during development
 - Ensure all tests pass before considering task complete
+
+### State Management Testing Patterns
+
+#### UI Context Testing
+```typescript
+// ✅ Correct - Test UI context with proper providers
+import { render, screen, act } from '@testing-library/react';
+import { UIProvider, useUI } from '../contexts/UIContext';
+
+const TestComponent = () => {
+  const { state, setLoading, addNotification } = useUI();
+  return (
+    <div>
+      <div data-testid="loading">{state.loading.search.toString()}</div>
+      <button onClick={() => setLoading('search', true)}>Set Loading</button>
+      <button onClick={() => addNotification({ type: 'success', message: 'Test' })}>
+        Add Notification
+      </button>
+    </div>
+  );
+};
+
+describe('UI Context', () => {
+  it('should update loading state', async () => {
+    await act(async () => {
+      render(
+        <UIProvider>
+          <TestComponent />
+        </UIProvider>
+      );
+    });
+
+    const button = screen.getByText('Set Loading');
+    await act(async () => {
+      button.click();
+    });
+
+    expect(screen.getByTestId('loading')).toHaveTextContent('true');
+  });
+});
+```
+
+#### Storage Service Testing
+```typescript
+// ✅ Correct - Mock localStorage for storage tests
+import { vi, beforeEach } from 'vitest';
+import { storageService } from '../services/storage';
+
+const localStorageMock = {
+  getItem: vi.fn(),
+  setItem: vi.fn(),
+  removeItem: vi.fn(),
+  clear: vi.fn(),
+};
+
+Object.defineProperty(globalThis, 'localStorage', {
+  value: localStorageMock,
+  writable: true,
+});
+
+describe('StorageService', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    localStorageMock.getItem.mockReturnValue(null);
+  });
+
+  it('should handle storage operations', () => {
+    localStorageMock.setItem.mockReturnValue(undefined);
+    
+    const result = storageService.setUserLocation({
+      latitude: 40.7128,
+      longitude: -74.0060,
+    });
+
+    expect(result).toBe(true);
+    expect(localStorageMock.setItem).toHaveBeenCalled();
+  });
+});
+```
+
+#### Cache Sync Testing
+```typescript
+// ✅ Correct - Mock dependencies for cache sync tests
+import { vi } from 'vitest';
+import { cacheSyncService } from '../services/cacheSync';
+
+vi.mock('../services/apollo', () => ({
+  apolloClient: {
+    cache: {
+      extract: vi.fn(() => ({ 'Restroom:1': { id: '1', name: 'Test' } })),
+    },
+  },
+  invalidateRestroomQueries: vi.fn(),
+}));
+
+vi.mock('../services/storage', () => ({
+  storageService: {
+    getOfflineRestrooms: vi.fn(() => []),
+    setOfflineRestrooms: vi.fn(() => true),
+  },
+}));
+
+describe('CacheSyncService', () => {
+  it('should sync restrooms successfully', async () => {
+    const result = await cacheSyncService.syncRestrooms({ forceRefresh: true });
+    expect(result.success).toBe(true);
+  });
+});
+```
 
 ## Test Configuration Patterns
 
