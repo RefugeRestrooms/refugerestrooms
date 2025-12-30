@@ -13,6 +13,12 @@ Object.defineProperty(globalThis.navigator, 'geolocation', {
   writable: true,
 });
 
+// Mock window.confirm
+Object.defineProperty(globalThis.window, 'confirm', {
+  value: vi.fn(() => true),
+  writable: true,
+});
+
 // Mock IntersectionObserver
 globalThis.IntersectionObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),

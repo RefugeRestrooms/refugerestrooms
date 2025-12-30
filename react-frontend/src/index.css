@@ -11,6 +11,29 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Color variables */
+  --color-primary: #646cff;
+  --color-primary-light: rgba(100, 108, 255, 0.1);
+  --color-surface: #ffffff;
+  --color-surface-hover: #f5f5f5;
+  --color-surface-disabled: #f0f0f0;
+  --color-text-primary: #213547;
+  --color-text-secondary: #666666;
+  --color-text-disabled: #999999;
+  --color-border: #d1d5db;
+  --color-border-light: #e5e7eb;
+  --color-error: #dc2626;
+  --color-error-light: #fef2f2;
+  --color-error-dark: #991b1b;
+
+  /* Border radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 a {
@@ -64,5 +87,20 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-surface: #1a1a1a;
+    --color-surface-hover: #2a2a2a;
+    --color-surface-disabled: #333333;
+    --color-text-primary: rgba(255, 255, 255, 0.87);
+    --color-text-secondary: rgba(255, 255, 255, 0.6);
+    --color-text-disabled: rgba(255, 255, 255, 0.4);
+    --color-border: #374151;
+    --color-border-light: #4b5563;
+    --color-error-light: #1f1f1f;
+    --color-error-dark: #fca5a5;
   }
 }

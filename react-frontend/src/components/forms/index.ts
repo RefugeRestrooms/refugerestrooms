@@ -1,2 +1,3 @@
 // Form Component exports
-// To be implemented in future tasks
+export { RestroomForm } from './RestroomForm';
+export type { RestroomFormProps } from './RestroomForm';

@@ -145,6 +145,63 @@ export const parseCoordinates = (coordinatesString: string): LocationCoordinates
   return null;
 };
 
+/**
+ * Parse address components from a formatted address string
+ */
+export const parseAddressComponents = (formattedAddress: string): {
+  street?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  postalCode?: string;
+} | null => {
+  if (!formattedAddress || formattedAddress.trim().length === 0) {
+    return null;
+  }
+
+  // Split by commas and clean up whitespace
+  const parts = formattedAddress.split(',').map(part => part.trim());
+  
+  if (parts.length < 2) {
+    return null;
+  }
+
+  // Basic parsing logic - this would be more sophisticated in production
+  // with actual geocoding service response parsing
+  const components: {
+    street?: string;
+    city?: string;
+    state?: string;
+    country?: string;
+    postalCode?: string;
+  } = {};
+
+  if (parts.length >= 1) {
+    components.street = parts[0];
+  }
+  if (parts.length >= 2) {
+    components.city = parts[1];
+  }
+  if (parts.length >= 3) {
+    // Try to parse state and postal code from the third part
+    const stateAndZip = parts[2].trim();
+    const stateZipMatch = stateAndZip.match(/^([A-Z]{2})\s*(\d{5}(-\d{4})?)?$/);
+    if (stateZipMatch) {
+      components.state = stateZipMatch[1];
+      if (stateZipMatch[2]) {
+        components.postalCode = stateZipMatch[2];
+      }
+    } else {
+      components.state = stateAndZip;
+    }
+  }
+  if (parts.length >= 4) {
+    components.country = parts[3];
+  }
+
+  return components;
+};
+
 // Mock implementations for development
 // These should be replaced with actual geocoding service integrations
 

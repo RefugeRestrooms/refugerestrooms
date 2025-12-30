@@ -9,6 +9,7 @@ import {
   reverseGeocode, 
   getAddressSuggestions,
   parseCoordinates,
+  parseAddressComponents,
   GeocodingResult,
   GeocodingError 
 } from '../services/geocoding';
@@ -27,6 +28,13 @@ export interface UseGeocodingActions {
   reverseGeocode: (coordinates: LocationCoordinates) => Promise<GeocodingResult | null>;
   getSuggestions: (query: string) => Promise<void>;
   parseCoordinatesInput: (input: string) => LocationCoordinates | null;
+  parseAddressComponents: (formattedAddress: string) => {
+    street?: string;
+    city?: string;
+    state?: string;
+    country?: string;
+    postalCode?: string;
+  } | null;
   clearResults: () => void;
   clearSuggestions: () => void;
   clearError: () => void;
@@ -131,6 +139,10 @@ export const useGeocoding = (): UseGeocodingReturn => {
     return parseCoordinates(input);
   }, []);
 
+  const parseAddressComponentsAction = useCallback((formattedAddress: string) => {
+    return parseAddressComponents(formattedAddress);
+  }, []);
+
   const clearResults = useCallback((): void => {
     setState(prev => ({ ...prev, results: [] }));
   }, []);
@@ -149,6 +161,7 @@ export const useGeocoding = (): UseGeocodingReturn => {
     reverseGeocode: reverseGeocodeAction,
     getSuggestions,
     parseCoordinatesInput,
+    parseAddressComponents: parseAddressComponentsAction,
     clearResults,
     clearSuggestions,
     clearError
