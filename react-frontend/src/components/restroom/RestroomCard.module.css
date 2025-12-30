@@ -191,3 +191,33 @@
     justify-content: center;
   }
 }
+/* Fe
+edback summary integration */
+.feedbackSummary {
+  margin-left: auto;
+  padding: 8px;
+  border: none;
+  background: transparent;
+}
+
+.feedbackSummary .scoreCircle {
+  width: 40px;
+  height: 40px;
+}
+
+.feedbackSummary .scoreValue {
+  font-size: 0.9rem;
+}
+
+.feedbackSummary .scoreInfo {
+  display: none; /* Hide text in compact card view */
+}
+
+.feedbackSummary .confidence {
+  margin-top: 4px;
+}
+
+.feedbackSummary .confidenceBadge {
+  padding: 2px 6px;
+  font-size: 0.6rem;
+}

@@ -7,7 +7,8 @@ import React from 'react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 import { AccessibilityBadges } from './AccessibilityBadges';
-import { Restroom } from '../../types/generated';
+import { FeedbackSummary } from '../feedback/FeedbackSummary';
+import type { Restroom } from '../../types/generated';
 import styles from './RestroomCard.module.css';
 
 export interface RestroomCardProps {
@@ -15,6 +16,7 @@ export interface RestroomCardProps {
   onSelect?: (restroom: Restroom) => void;
   onFeedback?: (restroom: Restroom) => void;
   showDistance?: boolean;
+  showFeedbackSummary?: boolean;
   className?: string;
 }
 
@@ -23,6 +25,7 @@ export const RestroomCard: React.FC<RestroomCardProps> = ({
   onSelect,
   onFeedback,
   showDistance = true,
+  showFeedbackSummary = false,
   className = ''
 }) => {
   const handleCardClick = () => {
@@ -99,7 +102,12 @@ export const RestroomCard: React.FC<RestroomCardProps> = ({
           )}
         </div>
         
-        {rating && (
+        {showFeedbackSummary ? (
+          <FeedbackSummary 
+            restroom={restroom} 
+            className={styles.feedbackSummary}
+          />
+        ) : rating && (
           <div className={styles.rating}>
             <span className={styles.score}>{rating.score}%</span>
             <span className={styles.ratingCount}>({rating.total})</span>
@@ -144,7 +152,7 @@ export const RestroomCard: React.FC<RestroomCardProps> = ({
         <div className={styles.actions}>
           <Button
             onClick={handleFeedbackClick}
-            variant="text"
+            variant="ghost"
             size="small"
             className={styles.feedbackButton}
             aria-label={`Provide feedback for ${restroom.name}`}

@@ -10,6 +10,7 @@ export type IconName =
   | 'sort-down'
   | 'close'
   | 'check'
+  | 'check-circle'
   | 'warning'
   | 'error'
   | 'info'
@@ -25,13 +26,20 @@ export type IconName =
   | 'heart'
   | 'star'
   | 'user'
+  | 'users'
   | 'menu'
   | 'home'
   | 'settings'
   | 'accessibility'
   | 'wheelchair'
   | 'baby'
-  | 'unisex';
+  | 'unisex'
+  | 'thumbs-up'
+  | 'thumbs-down'
+  | 'shield'
+  | 'help'
+  | 'directions'
+  | 'edit';
 
 export interface IconProps {
   name: IconName;
@@ -92,7 +100,15 @@ const iconPaths: Record<IconName, string | React.ReactElement> = {
   accessibility: <path d="M16 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM12 14l-4 6h2l2-4 2 4h2l-4-6zM8 10h8l-1 2H9l-1-2z" />,
   wheelchair: <path d="M12 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM21 9h-6l-2-5a1 1 0 0 0-1-.8c-.4-.1-.8.1-1 .4L8 8.3V6a1 1 0 0 0-2 0v4.7c0 .3.1.6.3.8L9 14.1V21a1 1 0 0 0 2 0v-7.5l-2.2-2.3L12 8l1.2 3H21a1 1 0 0 0 0-2z M7.5 12a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9zm0 7a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />,
   baby: <path d="M12 2a3 3 0 0 1 3 3c0 1.5-1 2.7-2.4 2.9L14 9.5c.6.8 1 1.8 1 2.9v1.6c0 2.2-1.8 4-4 4s-4-1.8-4-4V12.4c0-1.1.4-2.1 1-2.9l1.4-1.6C8 7.7 7 6.5 7 5a3 3 0 0 1 3-3h2zm-1 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm2 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z M6 16h12v2a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-2z" />,
-  unisex: <path d="M12 1a3 3 0 0 1 3 3c0 1.7-1.3 3-3 3s-3-1.3-3-3a3 3 0 0 1 3-3zM8 8h8c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-2v6h-4v-6H8c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2z" />
+  unisex: <path d="M12 1a3 3 0 0 1 3 3c0 1.7-1.3 3-3 3s-3-1.3-3-3a3 3 0 0 1 3-3zM8 8h8c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2h-2v6h-4v-6H8c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2z" />,
+  'check-circle': <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4L12 14.01l-3-3" />,
+  users: <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />,
+  'thumbs-up': <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />,
+  'thumbs-down': <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17" />,
+  shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />,
+  help: <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" />,
+  directions: <path d="M21.64 12.64l-6-6a.91.91 0 0 0-1.28 0L9 12l5.36 5.36a.91.91 0 0 0 1.28 0l6-6a.91.91 0 0 0 0-1.28zM14 7l3 3-3 3M6 12h12" />,
+  edit: <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
 };
 
 export const Icon: React.FC<IconProps> = ({

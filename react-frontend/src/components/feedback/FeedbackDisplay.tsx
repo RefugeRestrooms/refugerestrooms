@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { Icon } from '../ui/Icon';
-import { Restroom } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 import styles from './FeedbackDisplay.module.css';
 
 export interface FeedbackDisplayProps {

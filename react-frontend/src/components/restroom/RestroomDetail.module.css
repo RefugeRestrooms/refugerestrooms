@@ -384,4 +384,18 @@
   .sectionTitle {
     font-size: 1.1rem;
   }
+}/
+* Feedback summary in detail view */
+.feedbackSummary {
+  margin-bottom: 20px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.feedbackSummary .mainScore {
+  justify-content: center;
+}
+
+.feedbackSummary .metrics {
+  background: white;
 }

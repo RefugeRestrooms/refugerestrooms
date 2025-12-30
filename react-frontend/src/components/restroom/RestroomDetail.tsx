@@ -10,9 +10,11 @@ import { Icon } from '../ui/Icon';
 import { AccessibilityBadges } from './AccessibilityBadges';
 import { FeedbackDisplay } from '../feedback/FeedbackDisplay';
 import { FeedbackForm } from '../feedback/FeedbackForm';
+import { FeedbackSummary } from '../feedback/FeedbackSummary';
 import { Modal } from '../ui/Modal';
 import { Toast } from '../ui/Toast';
-import { Restroom, GET_RESTROOM } from '../../types/generated';
+import { GET_RESTROOM } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 import styles from './RestroomDetail.module.css';
 
 export interface RestroomDetailProps {
@@ -29,7 +31,7 @@ export const RestroomDetail: React.FC<RestroomDetailProps> = ({
   className = ''
 }) => {
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
-  const [showDirections, setShowDirections] = useState(false);
+
   const [notification, setNotification] = useState<{
     type: 'success' | 'error' | 'info';
     message: string;
@@ -130,7 +132,7 @@ export const RestroomDetail: React.FC<RestroomDetailProps> = ({
         {onBack && (
           <Button
             onClick={onBack}
-            variant="text"
+            variant="ghost"
             className={styles.backButton}
             aria-label="Go back to search results"
           >
@@ -241,6 +243,14 @@ export const RestroomDetail: React.FC<RestroomDetailProps> = ({
             </Button>
           </div>
           
+          {/* Compact feedback summary */}
+          <FeedbackSummary 
+            restroom={restroom} 
+            showDetails={true}
+            className={styles.feedbackSummary}
+          />
+          
+          {/* Detailed feedback display */}
           <FeedbackDisplay restroom={restroom} />
         </div>
 

@@ -7,7 +7,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
-import { Restroom, SUBMIT_FEEDBACK, FeedbackReason } from '../../types/generated';
+import { SUBMIT_FEEDBACK } from '../../types/generated';
+import type { Restroom, FeedbackReason } from '../../types/generated';
 import styles from './FeedbackForm.module.css';
 
 export interface FeedbackFormProps {
@@ -56,7 +57,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
     onCompleted: () => {
       onSubmit();
     },
-    onError: (error) => {
+    onError: (error: any) => {
       setErrors({ submit: error.message });
     }
   });

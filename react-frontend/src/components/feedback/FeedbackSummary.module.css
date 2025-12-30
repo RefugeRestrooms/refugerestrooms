@@ -1,0 +1,308 @@
+.feedbackSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+/* No data state */
+.noData {
+  padding: 20px;
+  text-align: center;
+}
+
+.noDataContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #999;
+}
+
+.noDataIcon {
+  width: 32px;
+  height: 32px;
+  color: #ccc;
+}
+
+.noDataText {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Main score section */
+.mainScore {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.scoreCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scoreValue {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.scoreInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scoreLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.reviewCount {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Metrics section */
+.metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.metricIcon {
+  width: 14px;
+  height: 14px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.metricLabel {
+  color: #666;
+  min-width: 50px;
+}
+
+.metricValue {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Confidence indicator */
+.confidence {
+  display: flex;
+  justify-content: center;
+}
+
+.confidenceBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: help;
+}
+
+.confidenceIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.confidenceText {
+  white-space: nowrap;
+}
+
+/* Indicators section */
+.indicators {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: #e3f2fd;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.indicatorIcon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Compact variant */
+.feedbackSummary.compact {
+  flex-direction: row;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+}
+
+.compact .mainScore {
+  gap: 12px;
+}
+
+.compact .scoreCircle {
+  width: 40px;
+  height: 40px;
+}
+
+.compact .scoreValue {
+  font-size: 0.9rem;
+}
+
+.compact .scoreInfo {
+  gap: 0;
+}
+
+.compact .scoreLabel {
+  font-size: 0.8rem;
+}
+
+.compact .reviewCount {
+  font-size: 0.7rem;
+}
+
+.compact .confidence {
+  margin-left: auto;
+}
+
+.compact .confidenceBadge {
+  padding: 4px 8px;
+  font-size: 0.7rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .feedbackSummary {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .mainScore {
+    gap: 12px;
+  }
+  
+  .scoreCircle {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .scoreValue {
+    font-size: 1rem;
+  }
+  
+  .metrics {
+    padding: 10px;
+    gap: 6px;
+  }
+  
+  .metric {
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  
+  .indicators {
+    gap: 6px;
+  }
+  
+  .indicator {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedbackSummary {
+    padding: 10px;
+  }
+  
+  .mainScore {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .scoreCircle {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .scoreValue {
+    font-size: 0.9rem;
+  }
+  
+  .scoreLabel {
+    font-size: 0.8rem;
+  }
+  
+  .reviewCount {
+    font-size: 0.75rem;
+  }
+  
+  .metrics {
+    padding: 8px;
+  }
+  
+  .confidenceBadge {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .feedbackSummary {
+    border-width: 2px;
+    border-color: #000;
+  }
+  
+  .scoreCircle {
+    border: 2px solid #000;
+  }
+  
+  .confidenceBadge {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .indicator {
+    border: 1px solid #1976d2;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .scoreCircle {
+    box-shadow: none;
+  }
+}
