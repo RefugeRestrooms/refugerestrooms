@@ -1,0 +1,138 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+  margin-bottom: 1rem;
+}
+
+.banner.online {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  border: 1px solid var(--color-success);
+}
+
+.banner.offline {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
+  border: 1px solid var(--color-warning);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0; /* Allow text to truncate */
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.message {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.retryButton,
+.dismissButton {
+  padding: 0.25rem 0.5rem;
+  min-height: auto;
+  font-size: 0.8125rem;
+}
+
+.retryButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dismissButton {
+  padding: 0.25rem;
+  min-width: auto;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .banner {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .content {
+    gap: 0.5rem;
+  }
+  
+  .actions {
+    justify-content: flex-end;
+  }
+  
+  .message {
+    font-size: 0.8125rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .banner.online {
+    background-color: var(--color-success);
+    color: white;
+  }
+  
+  .banner.offline {
+    background-color: var(--color-warning);
+    color: white;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .banner.online {
+    background-color: var(--color-success-dark);
+    color: var(--color-success-light);
+  }
+  
+  .banner.offline {
+    background-color: var(--color-warning-dark);
+    color: var(--color-warning-light);
+  }
+  
+  .banner {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}

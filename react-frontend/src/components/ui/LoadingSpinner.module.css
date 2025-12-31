@@ -1,0 +1,72 @@
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.spinner.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.spinner.small {
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.spinner.large {
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.icon {
+  color: var(--color-primary);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.message {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.spinner.small .message {
+  font-size: 0.75rem;
+}
+
+.spinner.large .message {
+  font-size: 1rem;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .icon {
+    color: var(--color-text-primary);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    animation: none;
+  }
+}

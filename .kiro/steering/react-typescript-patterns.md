@@ -1,5 +1,123 @@
 # React TypeScript Development Patterns
 
+## Error Handling and User Feedback Patterns
+
+### Error Boundary Implementation
+```typescript
+// ✅ Correct - Enhanced Error Boundary with comprehensive error handling
+import { EnhancedErrorBoundary } from '../components/layout/EnhancedErrorBoundary';
+
+// Wrap components that might throw errors
+<EnhancedErrorBoundary 
+  level="component" 
+  maxRetries={3}
+  onError={(error, errorInfo) => logError(error, errorInfo)}
+>
+  <SomeComponent />
+</EnhancedErrorBoundary>
+
+// ❌ Incorrect - No error boundary protection
+<SomeComponent /> // Can crash entire app if error occurs
+```
+
+### Loading States and Progress Indicators
+```typescript
+// ✅ Correct - Use LoadingSpinner for consistent loading states
+import { LoadingSpinner } from '../components/ui/LoadingSpinner';
+
+const MyComponent = () => {
+  const [loading, setLoading] = useState(false);
+  
+  if (loading) {
+    return <LoadingSpinner message="Loading restrooms..." size="medium" />;
+  }
+  
+  return <div>Content</div>;
+};
+
+// ❌ Incorrect - Inconsistent loading indicators
+const MyComponent = () => {
+  if (loading) {
+    return <div>Loading...</div>; // No accessibility, inconsistent styling
+  }
+};
+```
+
+### Retry Mechanisms
+```typescript
+// ✅ Correct - Use RetryButton for failed operations
+import { RetryButton } from '../components/ui/RetryButton';
+
+const handleRetry = async () => {
+  try {
+    await refetchData();
+  } catch (error) {
+    console.error('Retry failed:', error);
+    throw error; // Let RetryButton handle retry logic
+  }
+};
+
+<RetryButton 
+  onRetry={handleRetry}
+  maxRetries={3}
+  variant="primary"
+>
+  Try Again
+</RetryButton>
+
+// ❌ Incorrect - Manual retry implementation without proper error handling
+const [retryCount, setRetryCount] = useState(0);
+const handleRetry = () => {
+  setRetryCount(prev => prev + 1);
+  // Manual retry logic - error prone
+};
+```
+
+### Network Status Handling
+```typescript
+// ✅ Correct - Use NetworkStatusBanner for network status feedback
+import { NetworkStatusBanner } from '../components/ui/NetworkStatusBanner';
+
+const App = () => (
+  <div>
+    <NetworkStatusBanner 
+      showRetryButton 
+      onRetry={() => window.location.reload()}
+    />
+    <MainContent />
+  </div>
+);
+
+// ✅ Correct - Use OfflineIndicator for inline status
+import { OfflineIndicator } from '../components/ui/OfflineIndicator';
+
+const SearchForm = () => (
+  <form>
+    <OfflineIndicator showWhenOnline={false} />
+    <input type="text" placeholder="Search..." />
+  </form>
+);
+```
+
+### Error Message Patterns
+```typescript
+// ✅ Correct - User-friendly error messages with context
+const getErrorMessage = (error: Error): string => {
+  if (error.name === 'ChunkLoadError') {
+    return 'Failed to load application resources. Please refresh the page.';
+  }
+  
+  if (error.message.includes('Network Error')) {
+    return 'Unable to connect to the server. Please check your internet connection.';
+  }
+  
+  return 'Something went wrong. Please try again.';
+};
+
+// ❌ Incorrect - Technical error messages exposed to users
+const errorMessage = error.message; // "TypeError: Cannot read property 'map' of undefined"
+```
+
 ## Apollo Client Integration
 
 ### Correct Import Patterns
@@ -948,3 +1066,215 @@ useEffect(() => {
   return () => clearTimeout(timer);
 }, [searchTerm]);
 ```
+
+## Error Handling Component Testing Patterns
+
+### Error Boundary Testing
+```typescript
+// ✅ Correct - Test error boundaries with proper error simulation
+import { render, screen, act } from '@testing-library/react';
+import { vi } from 'vitest';
+import { EnhancedErrorBoundary } from './EnhancedErrorBoundary';
+
+// Component that throws an error for testing
+const ThrowError = ({ shouldThrow }: { shouldThrow: boolean }) => {
+  if (shouldThrow) {
+    throw new Error('Test error');
+  }
+  return <div>No error</div>;
+};
+
+describe('EnhancedErrorBoundary', () => {
+  beforeEach(() => {
+    // Mock console.error to avoid noise in tests
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  it('catches and displays errors gracefully', async () => {
+    await act(async () => {
+      render(
+        <EnhancedErrorBoundary>
+          <ThrowError shouldThrow={true} />
+        </EnhancedErrorBoundary>
+      );
+    });
+
+    expect(screen.getByText('Something went wrong')).toBeInTheDocument();
+    expect(screen.getByText('Try Again')).toBeInTheDocument();
+  });
+});
+```
+
+### Loading Spinner Testing
+```typescript
+// ✅ Correct - Test loading states with proper accessibility
+import { LoadingSpinner } from './LoadingSpinner';
+
+describe('LoadingSpinner', () => {
+  it('has proper accessibility attributes', () => {
+    render(<LoadingSpinner message="Loading restrooms..." />);
+    
+    const spinner = screen.getByRole('status');
+    expect(spinner).toHaveAttribute('aria-label', 'Loading');
+    expect(screen.getByText('Loading restrooms...')).toBeInTheDocument();
+  });
+
+  it('supports overlay mode', () => {
+    render(<LoadingSpinner overlay />);
+    
+    expect(screen.getByRole('status')).toHaveClass(styles.overlay);
+  });
+});
+```
+
+### Network Status Component Testing
+```typescript
+// ✅ Correct - Mock UIContext for network status components
+const mockNetworkStatus = {
+  isOnline: false,
+  lastOnline: null,
+};
+
+vi.mock('../../contexts/UIContext', () => ({
+  useNetworkStatus: () => ({ networkStatus: mockNetworkStatus }),
+  useNotifications: () => ({ addNotification: vi.fn() }),
+}));
+
+describe('NetworkStatusBanner', () => {
+  it('shows offline message when disconnected', () => {
+    render(<NetworkStatusBanner />);
+    
+    expect(screen.getByText(/currently offline/)).toBeInTheDocument();
+    expect(screen.getByRole('alert')).toHaveAttribute('aria-live', 'polite');
+  });
+});
+```
+
+### Retry Button Testing
+```typescript
+// ✅ Correct - Test retry mechanisms with proper async handling
+describe('RetryButton', () => {
+  it('handles failed retries and shows error messages', async () => {
+    const failingRetry = vi.fn().mockRejectedValue(new Error('Network error'));
+    render(<RetryButton onRetry={failingRetry} />);
+    
+    const button = screen.getByRole('button');
+    await act(async () => {
+      button.click();
+    });
+
+    expect(screen.getByText('Network error')).toBeInTheDocument();
+    expect(screen.getByText('Retry (1/3)')).toBeInTheDocument();
+  });
+
+  it('disables button when max retries reached', async () => {
+    const failingRetry = vi.fn().mockRejectedValue(new Error('Test error'));
+    render(<RetryButton onRetry={failingRetry} maxRetries={1} />);
+    
+    const button = screen.getByRole('button');
+    await act(async () => {
+      button.click();
+    });
+
+    expect(button).toBeDisabled();
+    expect(screen.getByText('Max retries reached')).toBeInTheDocument();
+  });
+});
+```
+
+## Component Integration Patterns
+
+### Error Boundary Placement
+```typescript
+// ✅ Correct - Strategic error boundary placement
+const App = () => (
+  <EnhancedErrorBoundary level="critical" maxRetries={3}>
+    <Router>
+      <Routes>
+        <Route path="/search" element={
+          <EnhancedErrorBoundary level="page">
+            <SearchPage />
+          </EnhancedErrorBoundary>
+        } />
+        <Route path="/restroom/:id" element={
+          <EnhancedErrorBoundary level="component">
+            <RestroomDetail />
+          </EnhancedErrorBoundary>
+        } />
+      </Routes>
+    </Router>
+  </EnhancedErrorBoundary>
+);
+
+// ❌ Incorrect - No error boundaries or only at root level
+const App = () => (
+  <Router>
+    <Routes>
+      <Route path="/search" element={<SearchPage />} />
+      <Route path="/restroom/:id" element={<RestroomDetail />} />
+    </Routes>
+  </Router>
+);
+```
+
+### Loading State Integration
+```typescript
+// ✅ Correct - Consistent loading states throughout app
+const SearchResults = () => {
+  const { loading, error, data } = useQuery(SEARCH_RESTROOMS);
+
+  if (loading) {
+    return <LoadingSpinner message="Searching for restrooms..." />;
+  }
+
+  if (error) {
+    return (
+      <EnhancedErrorBoundary level="component">
+        <div>Error occurred</div>
+      </EnhancedErrorBoundary>
+    );
+  }
+
+  return <RestroomList restrooms={data.restrooms} />;
+};
+```
+
+## Development Workflow Best Practices
+
+### Task Completion Checklist
+- [ ] All TypeScript errors resolved
+- [ ] All test warnings resolved (especially `act()` warnings)
+- [ ] Clean console output during test runs
+- [ ] All tests passing
+- [ ] Code follows established patterns
+- [ ] Error boundaries implemented where appropriate
+- [ ] Loading states implemented for async operations
+- [ ] Network status handling implemented
+- [ ] Accessibility attributes added
+- [ ] **Update steering instructions with new patterns learned**
+
+### Quality Gates for Development
+
+#### Before Committing Code
+- [ ] All TypeScript errors resolved
+- [ ] All test warnings resolved (especially `act()` warnings)
+- [ ] No network errors in test output
+- [ ] Clean console output during test runs
+- [ ] All tests passing
+- [ ] Code follows established patterns
+- [ ] Error handling components used appropriately
+- [ ] Loading states implemented consistently
+- [ ] Network status components integrated where needed
+- [ ] **Steering instructions updated with new patterns**
+
+## Important Reminder
+
+**ALWAYS UPDATE STEERING INSTRUCTIONS**: At the end of every task implementation, update the steering instructions in `.kiro/steering/` to include:
+- New patterns discovered or implemented
+- Common pitfalls encountered and their solutions
+- Best practices learned during development
+- Component usage patterns and integration guidelines
+- Testing patterns for new functionality
+- Any architectural decisions or conventions established
+
+This ensures that future development maintains consistency and leverages lessons learned from previous implementations.

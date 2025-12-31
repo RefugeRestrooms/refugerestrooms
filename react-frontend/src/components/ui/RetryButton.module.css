@@ -1,0 +1,103 @@
+.retryButton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover .icon {
+  transform: rotate(180deg);
+}
+
+.button:disabled .icon {
+  transform: none;
+}
+
+.errorMessage,
+.maxRetriesMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+}
+
+.errorMessage {
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+  border: 1px solid var(--color-error);
+}
+
+.maxRetriesMessage {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
+  border: 1px solid var(--color-warning);
+}
+
+.errorIcon,
+.warningIcon {
+  flex-shrink: 0;
+}
+
+.hasError .button {
+  margin-bottom: 0.25rem;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .errorMessage,
+  .maxRetriesMessage {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .errorMessage {
+    background-color: var(--color-error);
+    color: white;
+  }
+  
+  .maxRetriesMessage {
+    background-color: var(--color-warning);
+    color: white;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .errorMessage {
+    background-color: var(--color-error-dark);
+    color: var(--color-error-light);
+  }
+  
+  .maxRetriesMessage {
+    background-color: var(--color-warning-dark);
+    color: var(--color-warning-light);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .icon {
+    transition: none;
+  }
+  
+  .button:hover .icon {
+    transform: none;
+  }
+}
