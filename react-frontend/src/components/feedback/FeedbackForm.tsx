@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client/react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 import { SUBMIT_FEEDBACK } from '../../types/generated';
@@ -57,7 +57,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
     onCompleted: () => {
       onSubmit();
     },
-    onError: (error: any) => {
+    onError: (error: Error) => {
       setErrors({ submit: error.message });
     }
   });
@@ -118,7 +118,7 @@ export const FeedbackForm: React.FC<FeedbackFormProps> = ({
           comment: formData.comment.trim() || undefined
         }
       });
-    } catch (error) {
+    } catch {
       // Error handled by onError callback
     }
   };

@@ -4,7 +4,11 @@ import { EnhancedErrorBoundary } from './EnhancedErrorBoundary';
 
 // Mock the RetryButton component
 vi.mock('../ui/RetryButton', () => ({
-  RetryButton: ({ children, onRetry, className }: any) => (
+  RetryButton: ({ children, onRetry, className }: { 
+    children: React.ReactNode; 
+    onRetry: () => void; 
+    className?: string; 
+  }) => (
     <button onClick={onRetry} className={className}>
       {children}
     </button>
@@ -13,7 +17,11 @@ vi.mock('../ui/RetryButton', () => ({
 
 // Mock the Icon component
 vi.mock('../ui/Icon', () => ({
-  Icon: ({ name, size, className }: any) => (
+  Icon: ({ name, size, className }: { 
+    name: string; 
+    size?: string; 
+    className?: string; 
+  }) => (
     <span className={className} data-testid={`icon-${name}`} data-size={size}>
       {name}
     </span>

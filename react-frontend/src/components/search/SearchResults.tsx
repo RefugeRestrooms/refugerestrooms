@@ -7,7 +7,7 @@ import React from 'react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 import { RestroomCard } from '../restroom/RestroomCard';
-import { Restroom } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 import styles from './SearchResults.module.css';
 
 export interface SearchResultsProps {
@@ -137,7 +137,7 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
           <span>Failed to load more results: {error}</span>
           <Button
             onClick={handleLoadMore}
-            variant="text"
+            variant="ghost"
             size="small"
             disabled={loading}
           >

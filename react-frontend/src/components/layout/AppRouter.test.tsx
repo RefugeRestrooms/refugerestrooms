@@ -4,7 +4,7 @@ import { AppRouter } from './AppRouter';
 import { TestApolloProvider } from '../../test/providers/TestApolloProvider';
 
 const renderWithApollo = async (component: React.ReactElement) => {
-  let result: any;
+  let result: ReturnType<typeof render> | undefined;
   await act(async () => {
     result = render(
       <TestApolloProvider>
@@ -12,6 +12,8 @@ const renderWithApollo = async (component: React.ReactElement) => {
       </TestApolloProvider>
     );
   });
+  
+  return result!;
   
   // Wait for any async operations to complete
   await waitFor(() => {

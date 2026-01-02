@@ -2,10 +2,10 @@
  * RestroomCard component tests
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { RestroomCard } from './RestroomCard';
-import { Restroom } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 
 const mockRestroom: Restroom = {
   id: '1',

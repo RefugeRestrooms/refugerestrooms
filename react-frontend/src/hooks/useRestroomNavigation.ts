@@ -4,7 +4,7 @@
  */
 
 import { useState, useCallback } from 'react';
-import { Restroom } from '../types/generated';
+import type { Restroom } from '../types/generated';
 
 export interface RestroomNavigationState {
   currentView: 'search' | 'detail' | 'edit';
@@ -12,13 +12,13 @@ export interface RestroomNavigationState {
   searchContext: {
     query?: string;
     location?: { lat: number; lng: number };
-    filters?: Record<string, any>;
+    filters?: Record<string, unknown>;
   } | null;
 }
 
 export interface UseRestroomNavigationReturn {
   navigationState: RestroomNavigationState;
-  navigateToDetail: (restroom: Restroom, searchContext?: any) => void;
+  navigateToDetail: (restroom: Restroom, searchContext?: Record<string, unknown>) => void;
   navigateToEdit: (restroom: Restroom) => void;
   navigateToSearch: () => void;
   goBack: () => void;
@@ -36,7 +36,7 @@ export const useRestroomNavigation = (
 
   const [navigationHistory, setNavigationHistory] = useState<RestroomNavigationState[]>([]);
 
-  const navigateToDetail = useCallback((restroom: Restroom, searchContext?: any) => {
+  const navigateToDetail = useCallback((restroom: Restroom, searchContext?: Record<string, unknown>) => {
     setNavigationHistory(prev => [...prev, navigationState]);
     setNavigationState({
       currentView: 'detail',

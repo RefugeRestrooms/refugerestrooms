@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { ApolloProvider as BaseApolloProvider } from '@apollo/client/react';
 import { apolloClient, addNetworkStatusListener } from '../../services/apollo';
-import { UIProvider, useUI } from '../../contexts/UIContext';
+import { UIProvider } from '../../contexts/UIProvider';
+import { useUI } from '../../contexts/UIContextHooks';
 import { cacheSyncService } from '../../services/cacheSync';
 
 interface ApolloProviderProps {

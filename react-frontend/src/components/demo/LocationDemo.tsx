@@ -6,7 +6,7 @@ import React, { useState } from 'react';
 import { LocationInput } from '../search/LocationInput';
 import { Button } from '../ui/Button';
 import { useLocation } from '../../hooks/useLocation';
-import { LocationCoordinates } from '../../services/location';
+import type { LocationCoordinates } from '../../services/location';
 import { formatCoordinates } from '../../services/geocoding';
 import { formatDistance, calculateDistance } from '../../utils';
 import styles from './LocationDemo.module.css';

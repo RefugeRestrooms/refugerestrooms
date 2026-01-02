@@ -10,10 +10,10 @@ import {
   getAddressSuggestions,
   parseCoordinates,
   parseAddressComponents,
-  GeocodingResult,
-  GeocodingError 
+  type GeocodingResult,
+  type GeocodingError 
 } from '../services/geocoding';
-import { LocationCoordinates } from '../services/location';
+import type { LocationCoordinates } from '../services/location';
 import { debounce } from '../utils';
 
 export interface UseGeocodingState {
@@ -55,28 +55,31 @@ export const useGeocoding = (): UseGeocodingReturn => {
 
   // Debounced function for suggestions to avoid too many API calls
   const debouncedGetSuggestions = useRef(
-    debounce(async (query: string) => {
+    debounce((...args: unknown[]) => {
+      const query = args[0] as string;
       if (query.trim().length < 2) {
         setState(prev => ({ ...prev, suggestions: [] }));
         return;
       }
 
-      try {
-        const suggestions = await getAddressSuggestions(query, 5);
-        setState(prev => ({ 
-          ...prev, 
-          suggestions, 
-          loading: false,
-          error: null 
-        }));
-      } catch (error) {
-        setState(prev => ({ 
-          ...prev, 
-          suggestions: [],
-          loading: false,
-          error: error as GeocodingError 
-        }));
-      }
+      (async () => {
+        try {
+          const suggestions = await getAddressSuggestions(query, 5);
+          setState(prev => ({ 
+            ...prev, 
+            suggestions, 
+            loading: false,
+            error: null 
+          }));
+        } catch (error) {
+          setState(prev => ({ 
+            ...prev, 
+            suggestions: [],
+            loading: false,
+            error: error as GeocodingError 
+          }));
+        }
+      })();
     }, 300)
   ).current;
 

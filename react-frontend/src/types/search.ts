@@ -2,7 +2,7 @@
  * Search-related types and interfaces
  */
 
-import { LocationCoordinates } from '../services/location';
+import type { LocationCoordinates } from '../services/location';
 
 export interface SearchFilters {
   accessible?: boolean;

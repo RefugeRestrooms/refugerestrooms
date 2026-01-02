@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from '@apollo/client/react';
+import { useQuery, useMutation, type QueryHookOptions, type MutationHookOptions } from '@apollo/client/react';
 import {
   GET_RESTROOM,
   LIST_RESTROOMS,
@@ -77,32 +77,32 @@ export interface SubmitFeedbackData {
 }
 
 // Custom Hooks
-export const useGetRestroomQuery = (variables: GetRestroomVariables, options?: any) => {
+export const useGetRestroomQuery = (variables?: GetRestroomVariables, options?: QueryHookOptions<GetRestroomData, GetRestroomVariables>) => {
   return useQuery<GetRestroomData, GetRestroomVariables>(GET_RESTROOM, {
-    variables,
     ...options,
+    variables: variables || options?.variables || { id: '' },
   });
 };
 
-export const useListRestroomsQuery = (variables?: ListRestroomsVariables, options?: any) => {
+export const useListRestroomsQuery = (variables?: ListRestroomsVariables, options?: QueryHookOptions<ListRestroomsData, ListRestroomsVariables>) => {
   return useQuery<ListRestroomsData, ListRestroomsVariables>(LIST_RESTROOMS, {
     variables,
     ...options,
   });
 };
 
-export const useCreateRestroomMutation = (options?: any) => {
+export const useCreateRestroomMutation = (options?: MutationHookOptions<CreateRestroomData, CreateRestroomVariables>) => {
   return useMutation<CreateRestroomData, CreateRestroomVariables>(CREATE_RESTROOM, options);
 };
 
-export const useUpdateRestroomMutation = (options?: any) => {
+export const useUpdateRestroomMutation = (options?: MutationHookOptions<UpdateRestroomData, UpdateRestroomVariables>) => {
   return useMutation<UpdateRestroomData, UpdateRestroomVariables>(UPDATE_RESTROOM, options);
 };
 
-export const useDeleteRestroomMutation = (options?: any) => {
+export const useDeleteRestroomMutation = (options?: MutationHookOptions<DeleteRestroomData, DeleteRestroomVariables>) => {
   return useMutation<DeleteRestroomData, DeleteRestroomVariables>(DELETE_RESTROOM, options);
 };
 
-export const useSubmitFeedbackMutation = (options?: any) => {
+export const useSubmitFeedbackMutation = (options?: MutationHookOptions<SubmitFeedbackData, SubmitFeedbackVariables>) => {
   return useMutation<SubmitFeedbackData, SubmitFeedbackVariables>(SUBMIT_FEEDBACK, options);
 };

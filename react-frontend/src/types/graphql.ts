@@ -62,7 +62,7 @@ export interface NetworkError {
   name: string;
   message: string;
   statusCode?: number;
-  result?: any;
+  result?: unknown;
 }
 
 // Apollo Client error types

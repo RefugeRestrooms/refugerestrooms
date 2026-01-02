@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen, act, waitFor } from '@testing-library/react';
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { UIProvider, useUI, useNotifications } from './UIContext';
+import { UIProvider } from './UIProvider';
+import { useUI, useNotifications } from './UIContextHooks';
 
 // Mock storage service
 vi.mock('../services/storage', () => ({

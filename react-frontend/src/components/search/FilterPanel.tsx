@@ -5,8 +5,9 @@
 
 import React from 'react';
 import { Button } from '../ui/Button';
-import { Icon } from '../ui/Icon';
-import { SearchFilters, RADIUS_OPTIONS } from '../../types/search';
+import { Icon, type IconName } from '../ui/Icon';
+import type { SearchFilters } from '../../types/search';
+import { RADIUS_OPTIONS } from '../../types/search';
 import styles from './FilterPanel.module.css';
 
 export interface FilterPanelProps {
@@ -54,7 +55,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
         {hasActiveFilters && (
           <Button
             onClick={handleClearFilters}
-            variant="text"
+            variant="ghost"
             size="small"
             disabled={disabled}
             className={styles.clearButton}
@@ -119,7 +120,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
 interface FilterToggleProps {
   id: string;
   label: string;
-  icon: string;
+  icon: IconName;
   active: boolean;
   disabled: boolean;
   onClick: () => void;

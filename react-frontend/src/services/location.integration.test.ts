@@ -25,7 +25,7 @@ describe('Location Services Integration', () => {
       clearWatch: vi.fn()
     };
 
-    Object.defineProperty(global, 'navigator', {
+    Object.defineProperty(globalThis, 'navigator', {
       value: { geolocation: mockGeolocation },
       writable: true
     });

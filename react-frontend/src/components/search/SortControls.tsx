@@ -6,7 +6,8 @@
 import React from 'react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
-import { SearchSort, SORT_OPTIONS } from '../../types/search';
+import type { SearchSort } from '../../types/search';
+import { SORT_OPTIONS } from '../../types/search';
 import styles from './SortControls.module.css';
 
 export interface SortControlsProps {
@@ -44,11 +45,6 @@ export const SortControls: React.FC<SortControlsProps> = ({
       return 'sort';
     }
     return sorting.direction === 'asc' ? 'sort-up' : 'sort-down';
-  };
-
-  const getSortLabel = (field: SearchSort['field']) => {
-    const option = SORT_OPTIONS.find(opt => opt.value === field);
-    return option?.label || field;
   };
 
   return (

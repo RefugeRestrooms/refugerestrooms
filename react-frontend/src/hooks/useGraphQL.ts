@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { parseApolloError, retryWithBackoff } from '../utils/errorHandling';
 import type { AppError } from '../utils/errorHandling';
+import type { NetworkError } from '../types/graphql';
 
 /**
  * Custom hook for GraphQL operations with error handling and retry logic
@@ -26,7 +27,7 @@ export const useGraphQL = () => {
       
       return result;
     } catch (error) {
-      const appError = parseApolloError(error);
+      const appError = parseApolloError(error as Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string; extensions?: { code?: string } }> });
       
       if (options?.onError) {
         options.onError(appError);
@@ -41,14 +42,14 @@ export const useGraphQL = () => {
   /**
    * Handle Apollo query errors consistently
    */
-  const handleQueryError = useCallback((error: any): AppError => {
+  const handleQueryError = useCallback((error: Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string; extensions?: { code?: string } }> }): AppError => {
     return parseApolloError(error);
   }, []);
 
   /**
    * Handle Apollo mutation errors consistently
    */
-  const handleMutationError = useCallback((error: any): AppError => {
+  const handleMutationError = useCallback((error: Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string; extensions?: { code?: string } }> }): AppError => {
     return parseApolloError(error);
   }, []);
 

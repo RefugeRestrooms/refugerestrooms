@@ -23,7 +23,7 @@ const mockPermissions = {
 };
 
 // Mock navigator
-Object.defineProperty(global, 'navigator', {
+Object.defineProperty(globalThis, 'navigator', {
   value: {
     geolocation: mockGeolocation,
     permissions: mockPermissions
@@ -47,14 +47,18 @@ describe('Location Services', () => {
 
     it('should return false when geolocation is not supported', () => {
       // Temporarily remove geolocation
-      const originalGeolocation = global.navigator.geolocation;
+      const originalGeolocation = globalThis.navigator.geolocation;
       // @ts-expect-error - Testing unsupported scenario
-      delete global.navigator.geolocation;
+      delete globalThis.navigator.geolocation;
       
       expect(isGeolocationSupported()).toBe(false);
       
       // Restore geolocation
-      global.navigator.geolocation = originalGeolocation;
+      Object.defineProperty(globalThis.navigator, 'geolocation', {
+        value: originalGeolocation,
+        writable: true,
+        configurable: true
+      });
     });
   });
 
@@ -143,9 +147,9 @@ describe('Location Services', () => {
 
     it('should reject with NOT_SUPPORTED when geolocation is unavailable', async () => {
       // Temporarily remove geolocation
-      const originalGeolocation = global.navigator.geolocation;
+      const originalGeolocation = globalThis.navigator.geolocation;
       // @ts-expect-error - Testing unsupported scenario
-      delete global.navigator.geolocation;
+      delete globalThis.navigator.geolocation;
 
       await expect(getCurrentLocation()).rejects.toEqual({
         code: 'NOT_SUPPORTED',
@@ -153,7 +157,11 @@ describe('Location Services', () => {
       });
 
       // Restore geolocation
-      global.navigator.geolocation = originalGeolocation;
+      Object.defineProperty(globalThis.navigator, 'geolocation', {
+        value: originalGeolocation,
+        writable: true,
+        configurable: true
+      });
     });
   });
 
@@ -231,9 +239,9 @@ describe('Location Services', () => {
       const onError = vi.fn();
 
       // Temporarily remove geolocation
-      const originalGeolocation = global.navigator.geolocation;
+      const originalGeolocation = globalThis.navigator.geolocation;
       // @ts-expect-error - Testing unsupported scenario
-      delete global.navigator.geolocation;
+      delete globalThis.navigator.geolocation;
 
       const watchId = watchLocation(onSuccess, onError);
 
@@ -244,7 +252,11 @@ describe('Location Services', () => {
       });
 
       // Restore geolocation
-      global.navigator.geolocation = originalGeolocation;
+      Object.defineProperty(globalThis.navigator, 'geolocation', {
+        value: originalGeolocation,
+        writable: true,
+        configurable: true
+      });
     });
   });
 
@@ -258,14 +270,18 @@ describe('Location Services', () => {
 
     it('should handle missing geolocation gracefully', () => {
       // Temporarily remove geolocation
-      const originalGeolocation = global.navigator.geolocation;
+      const originalGeolocation = globalThis.navigator.geolocation;
       // @ts-expect-error - Testing unsupported scenario
-      delete global.navigator.geolocation;
+      delete globalThis.navigator.geolocation;
 
       expect(() => clearLocationWatch(123)).not.toThrow();
 
       // Restore geolocation
-      global.navigator.geolocation = originalGeolocation;
+      Object.defineProperty(globalThis.navigator, 'geolocation', {
+        value: originalGeolocation,
+        writable: true,
+        configurable: true
+      });
     });
   });
 
@@ -282,16 +298,20 @@ describe('Location Services', () => {
 
     it('should return prompt when permissions API is not available', async () => {
       // Temporarily remove permissions
-      const originalPermissions = global.navigator.permissions;
+      const originalPermissions = globalThis.navigator.permissions;
       // @ts-expect-error - Testing unsupported scenario
-      delete global.navigator.permissions;
+      delete globalThis.navigator.permissions;
 
       const result = await checkGeolocationPermission();
 
       expect(result).toBe('prompt');
 
       // Restore permissions
-      global.navigator.permissions = originalPermissions;
+      Object.defineProperty(globalThis.navigator, 'permissions', {
+        value: originalPermissions,
+        writable: true,
+        configurable: true
+      });
     });
 
     it('should return prompt when permission query fails', async () => {

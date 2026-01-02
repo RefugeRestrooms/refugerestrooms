@@ -10,6 +10,8 @@ import {
   clearLocationWatch,
   isGeolocationSupported,
   checkGeolocationPermission,
+} from '../services/location';
+import type {
   LocationResult,
   GeolocationError 
 } from '../services/location';

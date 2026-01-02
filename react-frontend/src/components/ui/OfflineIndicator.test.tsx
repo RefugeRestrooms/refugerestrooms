@@ -5,20 +5,23 @@ import { OfflineIndicator } from './OfflineIndicator';
 // Mock the UIContext
 const mockNetworkStatus = {
   isOnline: false,
-  lastOnline: null,
+  lastOnline: null as number | null,
 };
 
 const mockUseNetworkStatus = vi.fn(() => ({
   networkStatus: mockNetworkStatus,
 }));
 
-vi.mock('../../contexts/UIContext', () => ({
+vi.mock('../../contexts/UIContextHooks', () => ({
   useNetworkStatus: () => mockUseNetworkStatus(),
 }));
 
 // Mock the Icon component
 vi.mock('./Icon', () => ({
-  Icon: ({ name, accessibilityLabel }: any) => (
+  Icon: ({ name, accessibilityLabel }: { 
+    name: string; 
+    accessibilityLabel?: string; 
+  }) => (
     <span data-testid={`icon-${name}`} aria-label={accessibilityLabel}>
       {name}
     </span>

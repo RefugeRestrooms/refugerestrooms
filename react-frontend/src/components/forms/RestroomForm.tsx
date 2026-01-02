@@ -298,15 +298,18 @@ export const RestroomForm: React.FC<RestroomFormProps> = ({
         setCoordinates(null);
         setAddressInput('');
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Failed to create restroom:', error);
       
       let errorMessage = 'Failed to create restroom. Please try again.';
       
-      if (error.networkError) {
+      if (error && typeof error === 'object' && 'networkError' in error) {
         errorMessage = 'Network error. Please check your connection and try again.';
-      } else if (error.graphQLErrors?.length > 0) {
-        errorMessage = error.graphQLErrors[0].message;
+      } else if (error && typeof error === 'object' && 'graphQLErrors' in error) {
+        const graphQLErrors = (error as { graphQLErrors: Array<{ message: string }> }).graphQLErrors;
+        if (graphQLErrors?.length > 0) {
+          errorMessage = graphQLErrors[0].message;
+        }
       }
       
       setErrors({ general: errorMessage });

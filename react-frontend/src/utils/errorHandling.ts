@@ -7,14 +7,14 @@ export interface AppError {
   type: 'network' | 'graphql' | 'validation' | 'unknown';
   message: string;
   code?: string;
-  details?: any;
+  details?: unknown;
   retryable: boolean;
 }
 
 /**
  * Parse Apollo Client errors into a standardized format
  */
-export const parseApolloError = (error: any): AppError => {
+export const parseApolloError = (error: Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string; extensions?: { code?: string } }> }): AppError => {
   // Handle network errors
   if (error.networkError) {
     const networkError = error.networkError as NetworkError;
@@ -94,7 +94,7 @@ export const parseApolloError = (error: any): AppError => {
 /**
  * Get a user-friendly error message from an Apollo error
  */
-export const getErrorMessage = (error: any): string => {
+export const getErrorMessage = (error: Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string }> }): string => {
   const appError = parseApolloError(error);
   return appError.message;
 };
@@ -102,7 +102,7 @@ export const getErrorMessage = (error: any): string => {
 /**
  * Check if an error is retryable
  */
-export const isRetryableError = (error: any): boolean => {
+export const isRetryableError = (error: Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string }> }): boolean => {
   const appError = parseApolloError(error);
   return appError.retryable;
 };
@@ -141,7 +141,7 @@ export const retryWithBackoff = async <T>(
       }
       
       // Check if error is retryable (for Apollo errors)
-      if (error instanceof Error && 'networkError' in error && !isRetryableError(error as any)) {
+      if (error instanceof Error && 'networkError' in error && !isRetryableError(error as Error & { networkError?: NetworkError; graphQLErrors?: Array<{ message: string }> })) {
         break;
       }
       

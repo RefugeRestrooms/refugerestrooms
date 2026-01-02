@@ -32,8 +32,9 @@ export const GraphQLDemo: React.FC = () => {
     error: restroomError,
     networkStatus: restroomNetworkStatus,
   } = useGetRestroomQuery(
-    { id: selectedRestroomId },
+    undefined,
     {
+      variables: { id: selectedRestroomId || '' },
       skip: !selectedRestroomId,
       errorPolicy: 'all',
     }
@@ -91,7 +92,16 @@ export const GraphQLDemo: React.FC = () => {
           <div>
             <p>Found {restroomsData.listRestrooms.items.length} restrooms</p>
             <ul style={{ listStyle: 'none', padding: 0 }}>
-              {restroomsData.listRestrooms.items.map((restroom: any) => (
+              {restroomsData.listRestrooms.items.map((restroom: { 
+                id: string; 
+                name: string; 
+                street?: string; 
+                city?: string; 
+                state?: string; 
+                accessible?: boolean; 
+                unisex?: boolean; 
+                changingTable?: boolean; 
+              }) => (
                 <li
                   key={restroom.id}
                   style={{

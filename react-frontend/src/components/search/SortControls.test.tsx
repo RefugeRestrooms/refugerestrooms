@@ -2,7 +2,7 @@
  * SortControls component tests
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { SortControls } from './SortControls';
 import { DEFAULT_SEARCH_STATE } from '../../types/search';

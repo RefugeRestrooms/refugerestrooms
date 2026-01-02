@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { SearchInterface } from '../search/SearchInterface';
 import { Modal } from '../ui/Modal';
 import { Button } from '../ui/Button';
-import { Restroom } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 import styles from './SearchDemo.module.css';
 
 export const SearchDemo: React.FC = () => {

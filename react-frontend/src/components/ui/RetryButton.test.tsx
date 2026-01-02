@@ -4,7 +4,15 @@ import { RetryButton } from './RetryButton';
 
 // Mock the Button component
 vi.mock('./Button', () => ({
-  Button: ({ children, onClick, disabled, variant, size, loading, className }: any) => (
+  Button: ({ children, onClick, disabled, variant, size, loading, className }: { 
+    children: React.ReactNode; 
+    onClick?: () => void; 
+    disabled?: boolean; 
+    variant?: string; 
+    size?: string; 
+    loading?: boolean; 
+    className?: string; 
+  }) => (
     <button 
       onClick={onClick} 
       disabled={disabled}
@@ -18,7 +26,10 @@ vi.mock('./Button', () => ({
 
 // Mock the Icon component
 vi.mock('./Icon', () => ({
-  Icon: ({ name, accessibilityLabel }: any) => (
+  Icon: ({ name, accessibilityLabel }: { 
+    name: string; 
+    accessibilityLabel?: string; 
+  }) => (
     <span data-testid={`icon-${name}`} aria-label={accessibilityLabel}>
       {name}
     </span>
@@ -59,7 +70,7 @@ describe('RetryButton', () => {
   });
 
   it('shows loading state during retry', async () => {
-    const slowRetry = vi.fn(() => new Promise(resolve => setTimeout(resolve, 100)));
+    const slowRetry = vi.fn((): Promise<void> => new Promise(resolve => setTimeout(resolve, 100)));
     render(<RetryButton onRetry={slowRetry} />);
     
     const button = screen.getByRole('button');
@@ -127,7 +138,7 @@ describe('RetryButton', () => {
   });
 
   it('hides icon during loading', async () => {
-    const slowRetry = vi.fn(() => new Promise(resolve => setTimeout(resolve, 100)));
+    const slowRetry = vi.fn((): Promise<void> => new Promise(resolve => setTimeout(resolve, 100)));
     render(<RetryButton onRetry={slowRetry} />);
     
     const button = screen.getByRole('button');

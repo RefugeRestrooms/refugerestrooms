@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNetworkStatus, useNotifications } from '../../contexts/UIContext';
+import { useNetworkStatus, useNotifications } from '../../contexts/UIContextHooks';
 import { Icon } from './Icon';
 import { Button } from './Button';
 import styles from './NetworkStatusBanner.module.css';
@@ -26,33 +26,45 @@ export const NetworkStatusBanner: React.FC<NetworkStatusBannerProps> = ({
   const [isVisible, setIsVisible] = useState(false);
   const [wasOffline, setWasOffline] = useState(false);
 
+  // Handle visibility based on network status
   useEffect(() => {
     if (!networkStatus.isOnline) {
       // Show banner when going offline
-      setIsVisible(true);
-      setWasOffline(true);
-    } else if (wasOffline && networkStatus.isOnline) {
-      // Show reconnection message
-      setIsVisible(true);
-      
-      // Add success notification
-      addNotification({
-        type: 'success',
-        message: 'Connection restored',
-        duration: 3000,
-      });
-
-      // Auto-hide after delay if enabled
-      if (autoHide) {
-        const timer = setTimeout(() => {
-          setIsVisible(false);
-          setWasOffline(false);
-        }, autoHideDelay);
-
-        return () => clearTimeout(timer);
-      }
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+        setWasOffline(true);
+      }, 0);
+      return () => clearTimeout(timer);
     }
-  }, [networkStatus.isOnline, wasOffline, autoHide, autoHideDelay, addNotification]);
+  }, [networkStatus.isOnline]);
+
+  useEffect(() => {
+    if (wasOffline && networkStatus.isOnline) {
+      // Show reconnection message
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+        
+        // Add success notification
+        addNotification({
+          type: 'success',
+          message: 'Connection restored',
+          duration: 3000,
+        });
+
+        // Auto-hide after delay if enabled
+        if (autoHide) {
+          const hideTimer = setTimeout(() => {
+            setIsVisible(false);
+            setWasOffline(false);
+          }, autoHideDelay);
+
+          return () => clearTimeout(hideTimer);
+        }
+      }, 0);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [wasOffline, networkStatus.isOnline, autoHide, autoHideDelay, addNotification]);
 
   const handleDismiss = () => {
     setIsVisible(false);

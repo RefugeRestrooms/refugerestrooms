@@ -7,14 +7,14 @@ import { FeedbackForm } from './FeedbackForm';
 const mockMutate = vi.fn();
 let mockLoading = false;
 let mockOnCompleted: (() => void) | undefined;
-let mockOnError: ((error: any) => void) | undefined;
+let mockOnError: ((error: Error) => void) | undefined;
 
-vi.mock('@apollo/client', () => ({
-  useMutation: (mutation: any, options?: any) => {
+vi.mock('@apollo/client/react', () => ({
+  useMutation: (_mutation: unknown, options?: { onCompleted?: () => void; onError?: (error: Error) => void }) => {
     mockOnCompleted = options?.onCompleted;
     mockOnError = options?.onError;
     
-    const mutateFunction = async (mutationOptions: any) => {
+    const mutateFunction = async (mutationOptions: unknown) => {
       try {
         const result = await mockMutate(mutationOptions);
         if (mockOnCompleted) {
@@ -23,14 +23,17 @@ vi.mock('@apollo/client', () => ({
         return result;
       } catch (error) {
         if (mockOnError) {
-          mockOnError(error);
+          mockOnError(error as Error);
         }
         throw error;
       }
     };
     
     return [mutateFunction, { loading: mockLoading }];
-  },
+  }
+}));
+
+vi.mock('@apollo/client', () => ({
   gql: (strings: TemplateStringsArray) => strings[0]
 }));
 
@@ -49,7 +52,14 @@ vi.mock('../ui/Button.module.css', () => ({
 
 // Mock UI components
 vi.mock('../ui/Button', () => ({
-  Button: ({ children, onClick, disabled, loading, type = 'button', ...props }: any) => (
+  Button: ({ children, onClick, disabled, loading, type = 'button', ...props }: { 
+    children: React.ReactNode; 
+    onClick?: () => void; 
+    disabled?: boolean; 
+    loading?: boolean; 
+    type?: 'button' | 'submit' | 'reset';
+    [key: string]: unknown;
+  }) => (
     <button 
       type={type}
       onClick={onClick} 
@@ -62,7 +72,7 @@ vi.mock('../ui/Button', () => ({
 }));
 
 vi.mock('../ui/Icon', () => ({
-  Icon: ({ name, className }: any) => (
+  Icon: ({ name, className }: { name: string; className?: string }) => (
     <span className={className} data-testid={`icon-${name}`}>
       {name}
     </span>

@@ -33,8 +33,19 @@ export interface UserLocation {
 export interface FormDraft {
   id: string;
   type: 'restroom' | 'feedback';
-  data: Record<string, any>;
+  data: Record<string, unknown>;
   timestamp: number;
+}
+
+export interface OfflineRestroom {
+  id: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+  accessible?: boolean;
+  unisex?: boolean;
+  changingTable?: boolean;
+  [key: string]: unknown;
 }
 
 export interface UIPreferences {
@@ -153,17 +164,17 @@ class StorageService {
   }
 
   // Offline restrooms cache
-  getOfflineRestrooms(): any[] {
-    return this.get<any[]>(STORAGE_KEYS.OFFLINE_RESTROOMS) || [];
+  getOfflineRestrooms(): OfflineRestroom[] {
+    return this.get<OfflineRestroom[]>(STORAGE_KEYS.OFFLINE_RESTROOMS) || [];
   }
 
-  setOfflineRestrooms(restrooms: any[]): boolean {
+  setOfflineRestrooms(restrooms: OfflineRestroom[]): boolean {
     // Limit to 100 restrooms to prevent storage bloat
     const limitedRestrooms = restrooms.slice(0, 100);
     return this.set(STORAGE_KEYS.OFFLINE_RESTROOMS, limitedRestrooms);
   }
 
-  addOfflineRestroom(restroom: any): boolean {
+  addOfflineRestroom(restroom: OfflineRestroom): boolean {
     const restrooms = this.getOfflineRestrooms();
     const existingIndex = restrooms.findIndex(r => r.id === restroom.id);
     
@@ -254,7 +265,7 @@ class StorageService {
     let used = 0;
     try {
       for (const key in localStorage) {
-        if (localStorage.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(localStorage, key)) {
           used += localStorage[key].length + key.length;
         }
       }

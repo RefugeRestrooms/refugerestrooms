@@ -4,7 +4,7 @@ import App from './App';
 import { TestApolloProvider } from './test/providers/TestApolloProvider';
 
 const renderWithApollo = async (component: React.ReactElement) => {
-  let result: any;
+  let result: ReturnType<typeof render> | undefined;
   await act(async () => {
     result = render(
       <TestApolloProvider>
@@ -18,7 +18,7 @@ const renderWithApollo = async (component: React.ReactElement) => {
     // Just wait a tick for any immediate state updates
   });
   
-  return result;
+  return result!;
 };
 
 describe('App', () => {

@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 import { AccessibilityBadges } from './AccessibilityBadges';
@@ -42,7 +42,7 @@ export const RestroomDetail: React.FC<RestroomDetailProps> = ({
     errorPolicy: 'all'
   });
 
-  const restroom = data?.getRestroom;
+  const restroom = (data as { getRestroom?: Restroom })?.getRestroom;
 
   const handleFeedbackSubmit = async () => {
     setShowFeedbackForm(false);

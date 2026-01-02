@@ -532,6 +532,69 @@ const MyComponent = () => {
 };
 ```
 
+### Apollo Client Error Handling Patterns
+
+#### Proper Error Link Implementation
+```typescript
+// ✅ Correct - Properly typed error handler with void return
+import { onError } from '@apollo/client/link/error';
+
+interface GraphQLError {
+  message: string;
+  locations?: unknown;
+  path?: unknown;
+}
+
+interface NetworkError {
+  message: string;
+  statusCode?: number;
+}
+
+interface ErrorResponse {
+  graphQLErrors?: GraphQLError[];
+  networkError?: NetworkError;
+}
+
+const errorLink = onError((errorResponse): void => {
+  const { graphQLErrors, networkError } = errorResponse as ErrorResponse;
+  
+  if (graphQLErrors) {
+    graphQLErrors.forEach((error: GraphQLError) => {
+      console.error(`GraphQL error: ${error.message}`);
+    });
+  }
+
+  if (networkError) {
+    console.error(`Network error: ${networkError.message}`);
+    
+    if (networkError.statusCode) {
+      switch (networkError.statusCode) {
+        case 401:
+          console.error('Unauthorized: Check API key configuration');
+          break;
+        case 403:
+          console.error('Forbidden: Insufficient permissions');
+          break;
+        default:
+          console.error(`HTTP ${networkError.statusCode}: ${networkError.message}`);
+      }
+    }
+  }
+});
+
+// ❌ Incorrect - Returning values from error handler
+const errorLink = onError((errorResponse) => {
+  // ... error handling
+  return forward(operation); // Error: onError handlers must return void
+});
+```
+
+#### Error Handler Type Requirements
+- Apollo Client error handlers must return `void`
+- Cannot return observables or retry operations directly from onError
+- Use proper TypeScript interfaces for error response typing
+- Avoid `any` types by creating specific interfaces
+
 ## Development Workflow
 
 1. **Start with Types** - Define interfaces and types first

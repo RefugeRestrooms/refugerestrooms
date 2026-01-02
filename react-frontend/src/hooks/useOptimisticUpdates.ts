@@ -1,9 +1,7 @@
 import { useCallback } from 'react';
-import { useMutation } from '@apollo/client/react';
 import { updateRestroomInCache } from '../services/apollo';
-import { useUI } from '../contexts/UIContext';
+import { useUI } from '../contexts/UIContextHooks';
 import { storageService } from '../services/storage';
-import type { Restroom } from '../types/generated';
 
 /**
  * Hook for handling optimistic updates with fallback to offline storage
@@ -61,7 +59,9 @@ export const useOptimisticUpdates = () => {
 
       return { success: true, offline: false };
 
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Failed to submit feedback. Please try again.';
+      
       // Revert optimistic update on error
       updateRestroomInCache(restroomId, {
         upvote: (current: number) => feedback.positive ? current - 1 : current,
@@ -73,16 +73,16 @@ export const useOptimisticUpdates = () => {
 
       addNotification({
         type: 'error',
-        message: error.message || 'Failed to submit feedback. Please try again.',
+        message: errorMessage,
         duration: 5000,
       });
 
-      return { success: false, error: error.message };
+      return { success: false, error: errorMessage };
     }
   }, [state.networkStatus.isOnline, addPendingOperation, removePendingOperation, addNotification]);
 
   // Optimistic restroom creation
-  const createRestroomOptimistically = useCallback(async (restroomData: any) => {
+  const createRestroomOptimistically = useCallback(async (restroomData: Record<string, unknown>) => {
     const tempId = `temp-${Date.now()}`;
     const operationId = addPendingOperation({
       type: 'create',
@@ -129,16 +129,18 @@ export const useOptimisticUpdates = () => {
 
       return { success: true, offline: false };
 
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Failed to add restroom. Please try again.';
+      
       removePendingOperation(operationId);
 
       addNotification({
         type: 'error',
-        message: error.message || 'Failed to add restroom. Please try again.',
+        message: errorMessage,
         duration: 5000,
       });
 
-      return { success: false, error: error.message };
+      return { success: false, error: errorMessage };
     }
   }, [state.networkStatus.isOnline, addPendingOperation, removePendingOperation, addNotification]);
 

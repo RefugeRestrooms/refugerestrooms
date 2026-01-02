@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Icon } from '../ui/Icon';
+import { Icon, type IconName } from '../ui/Icon';
 import styles from './AccessibilityBadges.module.css';
 
 export interface AccessibilityBadgesProps {
@@ -29,7 +29,7 @@ export const AccessibilityBadges: React.FC<AccessibilityBadgesProps> = ({
   const badges = [
     {
       key: 'accessible',
-      icon: 'wheelchair',
+      icon: 'wheelchair' as IconName,
       label: 'Wheelchair Accessible',
       shortLabel: 'Accessible',
       active: accessible,
@@ -39,7 +39,7 @@ export const AccessibilityBadges: React.FC<AccessibilityBadgesProps> = ({
     },
     {
       key: 'unisex',
-      icon: 'unisex',
+      icon: 'unisex' as IconName,
       label: 'Gender Neutral',
       shortLabel: 'Unisex',
       active: unisex,
@@ -49,7 +49,7 @@ export const AccessibilityBadges: React.FC<AccessibilityBadgesProps> = ({
     },
     {
       key: 'changingTable',
-      icon: 'baby',
+      icon: 'baby' as IconName,
       label: 'Changing Table',
       shortLabel: 'Baby Change',
       active: changingTable,
@@ -85,7 +85,7 @@ export const AccessibilityBadges: React.FC<AccessibilityBadgesProps> = ({
 };
 
 interface AccessibilityBadgeProps {
-  icon: string;
+  icon: IconName;
   label: string;
   active: boolean;
   description: string;

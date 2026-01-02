@@ -13,9 +13,10 @@ import { Icon } from '../ui/Icon';
 import { useListRestroomsQuery } from '../../hooks/useRestroomQueries';
 import { useLoadingState } from '../../utils/loadingStates';
 import { parseApolloError } from '../../utils/errorHandling';
-import { LocationCoordinates } from '../../services/location';
-import { Restroom } from '../../types/generated';
-import { SearchState, SearchParams, DEFAULT_SEARCH_STATE } from '../../types/search';
+import type { LocationCoordinates } from '../../services/location';
+import type { Restroom } from '../../types/generated';
+import type { SearchState, SearchParams } from '../../types/search';
+import { DEFAULT_SEARCH_STATE } from '../../types/search';
 import styles from './SearchInterface.module.css';
 
 export interface SearchInterfaceProps {
@@ -75,6 +76,7 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({
   // Execute search when search state changes
   useEffect(() => {
     const params = buildSearchParams(searchState);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSearchParams(params);
   }, [searchState, buildSearchParams]);
 
@@ -144,7 +146,7 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({
     } catch (error) {
       console.error('Failed to load more results:', error);
     }
-  }, [data?.listRestrooms?.nextToken, loading, fetchMore, searchParams]);
+  }, [data, loading, fetchMore, searchParams]);
 
   // Handle search refresh
   const handleRefresh = useCallback(() => {
@@ -156,7 +158,7 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({
     setSearchState(DEFAULT_SEARCH_STATE);
   }, []);
 
-  const results = data?.listRestrooms?.items || [];
+  const results = (data?.listRestrooms?.items?.filter(Boolean) || []) as Restroom[];
   const hasMore = !!data?.listRestrooms?.nextToken;
   const totalCount = data?.listRestrooms?.count;
   const errorMessage = error ? parseApolloError(error).message : undefined;
@@ -211,7 +213,7 @@ export const SearchInterface: React.FC<SearchInterfaceProps> = ({
             searchState.filters.changingTable !== undefined) && (
             <Button
               onClick={handleClearSearch}
-              variant="text"
+              variant="ghost"
               size="medium"
               className={styles.clearButton}
               aria-label="Clear search"

@@ -7,7 +7,7 @@ import React from 'react';
 import { RestroomCard } from './RestroomCard';
 import { RestroomDetail } from './RestroomDetail';
 import { useRestroomNavigation } from '../../hooks/useRestroomNavigation';
-import { Restroom } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 import styles from './RestroomContainer.module.css';
 
 export interface RestroomContainerProps {

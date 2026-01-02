@@ -384,8 +384,9 @@
   .sectionTitle {
     font-size: 1.1rem;
   }
-}/
-* Feedback summary in detail view */
+}
+
+/* Feedback summary in detail view */
 .feedbackSummary {
   margin-bottom: 20px;
   background: #f8f9fa;

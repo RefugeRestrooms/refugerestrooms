@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { RestroomCard, RestroomDetail, RestroomContainer } from '../restroom';
 import { Button } from '../ui/Button';
-import { Restroom } from '../../types/generated';
+import type { Restroom } from '../../types/generated';
 import styles from './RestroomDemo.module.css';
 
 const mockRestrooms: Restroom[] = [

@@ -5,6 +5,7 @@
 
 import { apolloClient, invalidateRestroomQueries } from './apollo';
 import { storageService } from './storage';
+import type { OfflineRestroom } from './storage';
 
 export interface SyncOptions {
   forceRefresh?: boolean;
@@ -56,7 +57,7 @@ class CacheSyncService {
 
       // Get cached restrooms from Apollo
       const cacheData = apolloClient.cache.extract();
-      const cachedRestrooms = this.extractRestroomsFromCache(cacheData);
+      const cachedRestrooms = this.extractRestroomsFromCache(cacheData as Record<string, unknown>);
 
       // Get offline restrooms from storage
       const offlineRestrooms = storageService.getOfflineRestrooms();
@@ -74,8 +75,9 @@ class CacheSyncService {
       if (navigator.onLine) {
         try {
           await invalidateRestroomQueries();
-        } catch (error: any) {
-          errors.push(`Failed to refresh from server: ${error.message}`);
+        } catch (error: unknown) {
+          const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+          errors.push(`Failed to refresh from server: ${errorMessage}`);
         }
       }
 
@@ -88,8 +90,9 @@ class CacheSyncService {
         timestamp: now,
       };
 
-    } catch (error: any) {
-      errors.push(`Sync failed: ${error.message}`);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      errors.push(`Sync failed: ${errorMessage}`);
       return {
         success: false,
         syncedItems,
@@ -148,8 +151,9 @@ class CacheSyncService {
         timestamp: Date.now(),
       };
 
-    } catch (error: any) {
-      errors.push(`User data sync failed: ${error.message}`);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      errors.push(`User data sync failed: ${errorMessage}`);
       return {
         success: false,
         syncedItems,
@@ -190,7 +194,7 @@ class CacheSyncService {
         available: storage.available,
       },
       apollo: {
-        entities: Object.keys(apolloCache).length,
+        entities: apolloCache && typeof apolloCache === 'object' ? Object.keys(apolloCache).length : 0,
       },
       lastSync: this.lastSyncTimestamp,
       syncInProgress: this.syncInProgress,
@@ -205,14 +209,14 @@ class CacheSyncService {
   /**
    * Extract restroom data from Apollo cache
    */
-  private extractRestroomsFromCache(cacheData: any): any[] {
-    const restrooms: any[] = [];
+  private extractRestroomsFromCache(cacheData: Record<string, unknown>): OfflineRestroom[] {
+    const restrooms: OfflineRestroom[] = [];
     
     Object.keys(cacheData).forEach(key => {
       if (key.startsWith('Restroom:')) {
-        const restroom = cacheData[key];
-        if (restroom && restroom.id) {
-          restrooms.push(restroom);
+        const restroom = cacheData[key] as Record<string, unknown>;
+        if (restroom && restroom.id && typeof restroom.id === 'string') {
+          restrooms.push(restroom as OfflineRestroom);
         }
       }
     });
@@ -223,7 +227,7 @@ class CacheSyncService {
   /**
    * Merge restroom data from different sources
    */
-  private mergeRestroomData(cachedRestrooms: any[], offlineRestrooms: any[]): any[] {
+  private mergeRestroomData(cachedRestrooms: OfflineRestroom[], offlineRestrooms: OfflineRestroom[]): OfflineRestroom[] {
     const merged = new Map();
 
     // Add cached restrooms

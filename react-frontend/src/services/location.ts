@@ -184,7 +184,7 @@ export const checkGeolocationPermission = async (): Promise<PermissionState> => 
   try {
     const permission = await navigator.permissions.query({ name: 'geolocation' });
     return permission.state;
-  } catch (error) {
+  } catch {
     // Fallback if permission query fails
     return 'prompt';
   }

@@ -2,7 +2,7 @@
  * Unit tests for geocoding services
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 // Use the actual functions
 const geocodeAddress = actualGeocodeAddress;
 const reverseGeocode = actualReverseGeocode;

@@ -2,7 +2,7 @@
  * FilterPanel component tests
  */
 
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { FilterPanel } from './FilterPanel';
 import { DEFAULT_SEARCH_STATE } from '../../types/search';

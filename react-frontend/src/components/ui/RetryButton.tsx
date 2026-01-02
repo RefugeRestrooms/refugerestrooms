@@ -43,17 +43,16 @@ export const RetryButton: React.FC<RetryButtonProps> = ({
         await retryWithBackoff(async () => {
           await result;
         }, maxRetries);
-      } else {
-        // Synchronous retry
-        result;
       }
+      // For synchronous operations, no additional handling needed
 
       // Reset retry count on success
       setRetryCount(0);
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Retry failed';
       const newRetryCount = retryCount + 1;
       setRetryCount(newRetryCount);
-      setLastError(error.message || 'Retry failed');
+      setLastError(errorMessage);
       
       // If we've exceeded max retries, keep the error visible
       if (newRetryCount >= maxRetries) {

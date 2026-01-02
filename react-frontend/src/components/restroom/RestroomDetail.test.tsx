@@ -2,7 +2,6 @@
  * Basic tests for RestroomDetail component structure
  */
 
-import React from 'react';
 import { describe, it, expect } from 'vitest';
 
 // Simple test to verify component exports

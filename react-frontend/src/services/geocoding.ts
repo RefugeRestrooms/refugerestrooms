@@ -3,7 +3,7 @@
  * Uses browser-based geocoding APIs with fallback strategies
  */
 
-import { LocationCoordinates, LocationAddress, LocationResult } from './location';
+import type { LocationCoordinates, LocationAddress } from './location';
 
 export interface GeocodingResult {
   coordinates: LocationCoordinates;
@@ -36,7 +36,7 @@ export const geocodeAddress = async (address: string): Promise<GeocodingResult> 
     // In production, replace with actual geocoding service
     const mockResult = await mockGeocodeAddress(address);
     return mockResult;
-  } catch (error) {
+  } catch {
     throw {
       code: 'NETWORK_ERROR',
       message: 'Failed to geocode address'
@@ -63,7 +63,7 @@ export const reverseGeocode = async (
     // In production, replace with actual reverse geocoding service
     const mockResult = await mockReverseGeocode(coordinates);
     return mockResult;
-  } catch (error) {
+  } catch {
     throw {
       code: 'NETWORK_ERROR',
       message: 'Failed to reverse geocode coordinates'
@@ -88,7 +88,7 @@ export const getAddressSuggestions = async (
     // In production, replace with actual autocomplete service
     const mockResults = await mockGetAddressSuggestions(query, limit);
     return mockResults;
-  } catch (error) {
+  } catch {
     // Return empty array on error to not break autocomplete
     return [];
   }

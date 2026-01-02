@@ -9,8 +9,8 @@ import { Input } from '../ui/Input';
 import { Icon } from '../ui/Icon';
 import { useLocation } from '../../hooks/useLocation';
 import { useGeocoding } from '../../hooks/useGeocoding';
-import { LocationCoordinates } from '../../services/location';
-import { GeocodingResult } from '../../services/geocoding';
+import type { LocationCoordinates } from '../../services/location';
+import type { GeocodingResult } from '../../services/geocoding';
 import styles from './LocationInput.module.css';
 
 export interface LocationInputProps {
@@ -195,7 +195,6 @@ export const LocationInput: React.FC<LocationInputProps> = ({
           size="small"
           className={styles.locationButton}
           aria-label="Use current location"
-          title="Use current location"
         >
           {location.loading ? (
             <Icon name="loading" className={styles.loadingIcon} />
