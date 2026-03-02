@@ -83,6 +83,7 @@ class RestroomsController < ApplicationController
     else
       display_errors
       render 'edit'
+      return
     end
 
     redirect_to @restroom
@@ -117,9 +118,7 @@ class RestroomsController < ApplicationController
 
   def display_errors
     if @restroom.errors.any?
-      @restroom.errors.each do
-        flash[:alert] = I18n.t('restroom.flash.field')
-      end
+      flash[:alert] = I18n.t('restroom.flash.field')
     else
       flash[:alert] = I18n.t('restroom.flash.unexpected')
     end
