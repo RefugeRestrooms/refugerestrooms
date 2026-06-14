@@ -19,6 +19,7 @@ class RestroomsController < ApplicationController
 
   def show; end
 
+  # rubocop:disable Metrics/AbcSize
   # rubocop:disable Metrics/MethodLength
   def new
     if params[:edit_id]
@@ -29,10 +30,20 @@ class RestroomsController < ApplicationController
       @restroom = Restroom.new(permitted_params)
       @restroom.reverse_geocode
       render 'new', layout: false
+    elsif params[:restroom].is_a?(ActionController::Parameters)
+      # Prefill the normal styled form from URL params (e.g. a third-party
+      # app deep-linking known details into a new submission). Unlike :guess,
+      # we keep the full layout and skip reverse-geocoding so the supplied
+      # name/address are preserved rather than overwritten. Values are escaped
+      # by the form helpers; nothing is persisted (create still enforces
+      # reCAPTCHA + moderation). The is_a? guard keeps a malformed non-hash
+      # `restroom` param (e.g. ?restroom=foo) on the blank-form path.
+      @restroom = Restroom.new(permitted_params)
     else
       @restroom = Restroom.new
     end
   end
+  # rubocop:enable Metrics/AbcSize
   # rubocop:enable Metrics/MethodLength
 
   def edit; end

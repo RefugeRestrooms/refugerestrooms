@@ -139,6 +139,31 @@ describe 'restrooms', :js do
     end
   end
 
+  describe "prefill" do
+    it "prefills the new-restroom form from URL params" do
+      visit "/restrooms/new?restroom[name]=Powell's Books" \
+            "&restroom[street]=1005 W Burnside St" \
+            "&restroom[city]=Portland&restroom[state]=OR"
+
+      expect(page).to have_field('restroom[name]', with: "Powell's Books")
+      expect(page).to have_field('restroom[street]', with: "1005 W Burnside St")
+      expect(page).to have_field('restroom[city]', with: "Portland")
+      expect(page).to have_field('restroom[state]', with: "OR")
+    end
+
+    it "renders a blank form when no params are given" do
+      visit "/restrooms/new"
+
+      expect(page).to have_field('restroom[name]', with: "")
+    end
+
+    it "safely ignores a malformed (non-hash) restroom param" do
+      visit "/restrooms/new?restroom=foo"
+
+      expect(page).to have_field('restroom[name]', with: "")
+    end
+  end
+
   describe "vote" do
     it "shows 'Not yet rated' message initially" do
       restroom = create(:restroom, upvote: 0, downvote: 0)
